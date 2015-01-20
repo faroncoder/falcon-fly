@@ -1,0 +1,62 @@
+#!/bin/bash
+typedest="$1"
+appname="$2"
+binpull="home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
+if [ -z $1 ]
+	then
+	echo -n "HTML or Node? "
+	read typedest
+fi
+if [ -z $2 ]
+	then
+	echo -n "Name of app? "
+	read appname
+fi
+
+if [ $typedest == "n" ]
+	then
+	pathdir="/home/faron/lib/script/nodes/projects/$appname"
+	mkdir -p $pathdir
+	echo "app created and heading to the path now..."
+	cd $pathdir
+	echo "app is being building..."
+	express $pathdir --hbs
+	sed -i -e 's/public\/favicon.ico/public\/jsc\/img\/favicon.ico/g' app.js
+	sed -i -e 's/\/\/app.use/app.use/g' app.js
+	app-jsc n $appname
+	echo "fetching and install nodes from npm rep..."
+	npm install
+	echo "configuring $appname ..."
+	cp $binpull/html-full.txt $pathdir/public/index.html
+	echo "app created!  Current directory: $PWD and you may begin scripting..."
+	exit 0
+
+fi
+if [ $typedest == "h" ]
+	then
+	pathdir="/home/faron/lib/script/htmls/projects/$appname"
+	mkdir -p $pathdir
+	echo "app created and heading to the path now..."
+	cd $pathdir
+	echo "app is being building..."
+	app-jsc h $appname
+	echo "configuring $appname ..."
+	cp $binpull/html-full.txt $pathdir/index.html
+	echo "now we are here and you may begin scripting..."
+
+	exit 0
+fi
+
+
+##########################
+
+# if [ ! -d $pathdir ]
+#	then
+#	echo "creating new project: $appname"
+# 	mkdir -p $pathdir
+#	html-jsc $pathjsc
+# fi
+
+
+
+exit 0

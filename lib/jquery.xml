@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<snippets>
+<branch title="JQuery">
+<!-- http://api.jquery.com/ -->
+<branch title="Ajax">
+	<leaf title="jQuery.ajax()" type="insert" tooltip="Perform an asynchronous HTTP (Ajax) request."><before>jQuery.ajax(</before><after>)</after></leaf>
+	<leaf title=".ajaxComplete()" type="insert" tooltip="Register a handler to be called when Ajax requests complete. This is an Ajax Event."><before>.ajaxComplete(</before><after>)</after></leaf>
+	<leaf title=".ajaxError()" type="insert" tooltip="Register a handler to be called when Ajax requests complete with an error. This is an Ajax Event."><before>.ajaxError(</before><after>)</after></leaf>
+	<leaf title=".ajaxSend()" type="insert" tooltip="Show a message before an Ajax request is sent."><before>.ajaxSend(</before><after>)</after></leaf>
+	<leaf title="jQuery.ajaxSetup()" type="insert" tooltip="Set default values for future Ajax requests."><before>jQuery.ajaxSetup(</before><after>)</after></leaf>
+	<leaf title=".ajaxStart()" type="insert" tooltip="Register a handler to be called when the first Ajax request begins. This is an Ajax Event."><before>.ajaxStart(</before><after>)</after></leaf>
+	<leaf title=".ajaxStop()" type="insert" tooltip="Register a handler to be called when all Ajax requests have completed. This is an Ajax Event."><before>.ajaxStop(</before><after>)</after></leaf>
+	<leaf title=".ajaxSuccess()" type="insert" tooltip="Show a message when an Ajax request completes successfully."><before>.ajaxSuccess(</before><after>)</after></leaf>
+	<leaf title="jQuery.get()" type="insert" tooltip="Load data from the server using a HTTP GET request."><before>jQuery.get(</before><after>)</after></leaf>
+	<leaf title="jQuery.getJSON()" type="insert" tooltip="Load JSON-encoded data from the server using a GET HTTP request."><before>jQuery.getJSON(</before><after>)</after></leaf>
+	<leaf title="jQuery.getScript()" type="insert" tooltip="Load a JavaScript file from the server using a GET HTTP request, then execute it."><before>jQuery.getScript(</before><after>)</after></leaf>
+	<leaf title=".load()" type="insert" tooltip="Load data from the server and place the returned HTML into the matched element."><before>.load(</before><after>)</after></leaf>
+	<leaf title="jQuery.param()" type="insert" tooltip="Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request."><before>jQuery.param(</before><after>)</after></leaf>
+	<leaf title="jQuery.post()" type="insert" tooltip="Load data from the server using a HTTP POST request."><before>jQuery.post(</before><after>)</after></leaf>
+	<leaf title=".serialize()" type="insert" tooltip="Encode a set of form elements as a string for submission."><before>.serialize(</before><after>)</after></leaf>
+	<leaf title=".serializeArray()" type="insert" tooltip="Encode a set of form elements as an array of names and values."><before>.serializeArray(</before><after>)</after></leaf>
+</branch>
+<branch title="Attributes">
+	<leaf title=".addClass()"  type="insert" tooltip="Adds the specified class(es) to each of the set of matched elements."><before>.addClass(</before><after>)</after></leaf>
+	<leaf title=".attr()"  type="insert" tooltip="Get the value of an attribute for the first element in the set of matched elements."><before>.attr(</before><after>)</after></leaf>
+	<leaf title=".hasClass()"  type="insert" tooltip="Determine whether any of the matched elements are assigned the given class."><before>.hasClass(</before><after>)</after></leaf>
+	<leaf title=".html()"  type="insert" tooltip="Get the HTML contents of the first element in the set of matched elements."><before>.html(</before><after>)</after></leaf>
+	<leaf title=".removeAttr()"  type="insert" tooltip="Remove an attribute from each element in the set of matched elements."><before>.removeAttr(</before><after>)</after></leaf>
+	<leaf title=".removeClass()"  type="insert" tooltip="Remove a single class, multiple classes, or all classes from each element in the set of matched elements."><before>.removeClass(</before><after>)</after></leaf>
+	<leaf title=".toggleClass()"  type="insert" tooltip="Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."><before>.toggleClass(</before><after>)</after></leaf>
+	<leaf title=".val()"  type="insert" tooltip="Get the current value of the first element in the set of matched elements."><before>.val(</before><after>)</after></leaf>
+</branch>
+<branch title="Core">
+	<leaf title="jQuery()"  type="insert" tooltip="Accepts a string containing a CSS selector which is then used to match a set of elements."><before>jQuery(</before><after>)</after></leaf>
+	<leaf title="jQuery.noConflict()"  type="insert" tooltip="Relinquish jQuery's control of the $ variable."><before>jQuery.noConflict(</before><after>)</after></leaf>
+</branch>
+<branch title="CSS">
+	<leaf title=".addClass()"  type="insert" tooltip="Adds the specified class(es)"><before>.addClass(</before><after>)</after></leaf>  
+	 <leaf title=".css()" type="insert" tooltip="Get the value of a style property for the first element in the set of matched elements."><before>.css(</before><after>)</after></leaf>
+	<leaf title=".hasClass()"  type="insert" tooltip="Determine whether any of the matched elements are assigned the given class."><before>.hasClass(</before><after>)</after></leaf>
+	<leaf title=".height()"  type="insert" tooltip="Get the current computed height for the first element in the set of matched elements."><before>.height(</before><after>)</after></leaf>
+	<leaf title=".innerHeight()"  type="insert" tooltip="Get the current computed height for the first element in the set of matched elements, including padding but not border."><before>.innerHeight(</before><after>)</after></leaf>
+	<leaf title=".innerWidth()"  type="insert" tooltip="Get the current computed width for the first element in the set of matched elements, including padding but not border."><before>.innerWidth(</before><after>)</after></leaf>
+	<leaf title=".offset()"  type="insert" tooltip="Get the current coordinates of the first element in the set of matched elements, relative to the document."><before>.offset(</before><after>)</after></leaf>
+	<leaf title=".outerHeight()"  type="insert" tooltip="Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin."><before>.outerHeight(</before><after>)</after></leaf>
+	<leaf title=".outerWidth()"  type="insert" tooltip="Get the current computed width for the first element in the set of matched elements, including padding and border."><before>.outerWidth(</before><after>)</after></leaf>
+	<leaf title=".position()"  type="insert" tooltip="Get the current coordinates of the first element in the set of matched elements, relative to the offset parent."><before>.position(</before><after>)</after></leaf>
+	<leaf title=".removeClass()"  type="insert" tooltip="Remove a single class, multiple classes, or all classes from each element in the set of matched elements."><before>.removeClass(</before><after>)</after></leaf>
+	<leaf title=".scrollLeft()"  type="insert" tooltip="Get the current horizontal position of the scroll bar for the first element in the set of matched elements."><before>.scrollLeft(</before><after>)</after></leaf>
+	<leaf title=".scrollTop()"  type="insert" tooltip="Get the current vertical position of the scroll bar for the first element in the set of matched elements."><before>.scrollTop(</before><after>)</after></leaf>
+	<leaf title=".toggleClass()"  type="insert" tooltip="Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."><before>.toggleClass(</before><after>)</after></leaf>
+	<leaf title=".width()"  type="insert" tooltip="Get the current computed width for the first element in the set of matched elements."><before>.width(</before><after>)</after></leaf>
+</branch>
+<branch title="Data">
+	<leaf title=".clearQueue()"  type="insert" tooltip="Remove from the queue all items that have not yet been run."><before>.clearQueue(</before><after>)</after></leaf>
+	<leaf title=".data()"  type="insert" tooltip="Store arbitrary data associated with the matched elements."><before>.data(</before><after>)</after></leaf>
+	<leaf title="jQuery.data()"  type="insert" tooltip="Store arbitrary data associated with the specified element."><before>jQuery.data(</before><after>)</after></leaf>
+	<leaf title=".dequeue()"  type="insert" tooltip="Execute the next function on the queue for the matched elements."><before>.dequeue(</before><after>)</after></leaf>
+	<leaf title="jQuery.dequeue()"  type="insert" tooltip="Execute the next function on the queue for the matched element."><before>jQuery.dequeue(</before><after>)</after></leaf>
+	<leaf title=".queue()"  type="insert" tooltip="Show the queue of functions to be executed on the matched elements."><before>.queue(</before><after>)</after></leaf>
+</branch>
+<branch title="Dimensions">
+	<leaf title=".height()"  type="insert" tooltip="Get the current computed height for the first element in the set of matched elements."><before>.height(</before><after>)</after></leaf>
+	<leaf title=".innerHeight()"  type="insert" tooltip="Get the current computed height for the first element in the set of matched elements, including padding but not border."><before>.innerHeight(</before><after>)</after></leaf>
+	<leaf title=".innerWidth()"  type="insert" tooltip="Get the current computed width for the first element in the set of matched elements, including padding but not border."><before>.innerWidth(</before><after>)</after></leaf>
+	<leaf title=".outerHeight()"  type="insert" tooltip="Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin."><before>.outerHeight(</before><after>)</after></leaf>
+	<leaf title=".outerWidth()"  type="insert" tooltip="Get the current computed width for the first element in the set of matched elements, including padding and border."><before>.outerWidth(</before><after>)</after></leaf>
+	<leaf title=".width()"  type="insert" tooltip="Get the current computed width for the first element in the set of matched elements."><before>.width(</before><after>)</after></leaf>
+</branch>
+<branch title="Effects">
+	<leaf title=".animate()"  type="insert" tooltip="Perform a custom animation of a set of CSS properties."><before>.animate(</before><after>)</after></leaf>
+	<leaf title=".clearQueue()"  type="insert" tooltip="Remove from the queue all items that have not yet been run."><before>.clearQueue(</before><after>)</after></leaf>
+	<leaf title=".delay()"  type="insert" tooltip="Set a timer to delay execution of subsequent items in the queue."><before>.delay(</before><after>)</after></leaf>
+	<leaf title=".dequeue()"  type="insert" tooltip="Execute the next function on the queue for the matched elements."><before>.dequeue(</before><after>)</after></leaf>
+	<leaf title=".fadeIn()"  type="insert" tooltip="Display the matched elements by fading them to opaque."><before>.fadeIn(</before><after>)</after></leaf>
+	<leaf title=".fadeOut()"  type="insert" tooltip="Hide the matched elements by fading them to transparent."><before>.fadeOut(</before><after>)</after></leaf>
+	<leaf title=".fadeTo()"  type="insert" tooltip="Adjust the opacity of the matched elements."><before>.fadeTo(</before><after>)</after></leaf>
+	<leaf title="jQuery.fx.off"  type="insert" tooltip="Globally disable all animations."><before>jQuery.fx.off</before><after></after></leaf>
+	<leaf title=".hide()"  type="insert" tooltip="Hide the matched elements."><before>.hide(</before><after>)</after></leaf>
+	<leaf title=".queue()"  type="insert" tooltip="Show the queue of functions to be executed on the matched elements."><before>.queue(</before><after>)</after></leaf>
+	<leaf title=".show()"  type="insert" tooltip="Display the matched elements."><before>.show(</before><after>)</after></leaf>
+	<leaf title=".slideDown()"  type="insert" tooltip="Display the matched elements with a sliding motion."><before>.slideDown(</before><after>)</after></leaf>
+	<leaf title=".slideToggle()"  type="insert" tooltip="Display or hide the matched elements with a sliding motion."><before>.slideToggle(</before><after>)</after></leaf>
+	<leaf title=".slideUp()"  type="insert" tooltip="Hide the matched elements with a sliding motion."><before>.slideUp(</before><after>)</after></leaf>
+	<leaf title=".stop()"  type="insert" tooltip="Stop the currently-running animation on the matched elements."><before>.stop(</before><after>)</after></leaf>
+	<leaf title=".toggle()"  type="insert" tooltip="Bind two or more handlers to the matched elements, to be executed on alternate clicks."><before>.toggle(</before><after>)</after></leaf>
+</branch>
+<branch title="Events">
+	<leaf title=".bind()" type="insert" tooltip="Attach a handler to an event for the elements."><before>.bind(</before><after>)</after></leaf>
+	<leaf title=".blur()" type="insert" tooltip="Bind an event handler to the “blur“ JavaScript event, or trigger that event on an element."><before>.blur(</before><after>)</after></leaf>
+	<leaf title=".change()" type="insert" tooltip="Bind an event handler to the “change“ JavaScript event, or trigger that event on an element."><before>.change(</before><after>)</after></leaf>
+	<leaf title=".click()" type="insert" tooltip="Bind an event handler to the “click“ JavaScript event, or trigger that event on an element."><before>.click(</before><after>)</after></leaf>
+	<leaf title=".dblclick()" type="insert" tooltip="Bind an event handler to the “dblclick“ JavaScript event, or trigger that event on an element."><before>.dblclick(</before><after>)</after></leaf>
+	<leaf title=".delegate()" type="insert" tooltip="Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements."><before>.delegate(</before><after>)</after></leaf>
+	<leaf title=".die()" type="insert" tooltip="Remove all event handlers previously attached using .live() from the elements."><before>.die(</before><after>)</after></leaf>
+	<leaf title=".error()" type="insert" tooltip="Bind an event handler to the “error“ JavaScript event."><before>.error(</before><after>)</after></leaf>
+	<leaf title="event.currentTarget" type="insert" tooltip="The current DOM element within the event bubbling phase."><before>event.currentTarget</before><after></after></leaf>
+	<leaf title="event.data" type="insert" tooltip="Contains the optional data passed to jQuery.fn.bind when the current executing handler was bound."><before>event.data</before><after></after></leaf>
+	<leaf title="event.isDefaultPrevented()" type="insert" tooltip="Returns whether event.preventDefault()" ><before>event.isDefaultPrevented(</before><after>)</after></leaf>
+	<leaf title="event.isImmediatePropagationStopped()" type="insert" tooltip="Returns whether event.stopImmediatePropagation() was ever called on this event event.isImmediatePropagationStopped()object."><before>event.isImmediatePropagationStopped(</before><after>)</after></leaf>
+	<leaf title="event.pageY" type="insert" tooltip="The mouse position relative to the top edge of the document."><before>event.pageY</before><after></after></leaf>
+	<leaf title="event.preventDefault()" type="insert" tooltip="If this method is called, the default action of the event will not be triggered."><before>event.preventDefault(</before><after>)</after></leaf>
+	<leaf title="event.relatedTarget" type="insert" tooltip="The other DOM element involved in the event, if any."><before>event.relatedTarget</before><after></after></leaf>
+	<leaf title="event.result" type="insert" tooltip="This attribute contains the last value returned by an event handler that was triggered by this event, unless the value was undefined."><before>event.result</before><after></after></leaf>
+	<leaf title="event.stopImmediatePropagation()" type="insert" tooltip="Prevents other event handlers from being called."><before>event.stopImmediatePropagation(</before><after>)</after></leaf>
+	<leaf title="event.stopPropagation()" type="insert" tooltip="Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event."><before>event.stopPropagation(</before><after>)</after></leaf>
+	<leaf title="event.target" type="insert" tooltip="The DOM element that initiated the event."><before>event.target</before><after></after></leaf>
+	<leaf title="event.timeStamp" type="insert" tooltip="This attribute returns the number of milliseconds since January 1, 1970, when the event is triggered."><before>event.timeStamp</before><after></after></leaf>
+	<leaf title="event.type" type="insert" tooltip="Describes the nature of the event."><before>event.type</before><after></after></leaf>
+	<leaf title="event.which" type="insert" tooltip="For key or button events, this attribute indicates the specific button or key that was pressed."><before>event.which</before><after></after></leaf>
+	<leaf title=".focus()" type="insert" tooltip="Bind an event handler to the “focus“ JavaScript event, or trigger that event on an element."><before>.focus(</before><after>)</after></leaf>
+	<leaf title=".focusin()" type="insert" tooltip="Bind an event handler to the “focusin“ JavaScript event."><before>.focusin(</before><after>)</after></leaf>
+	<leaf title=".focusout()" type="insert" tooltip="Bind an event handler to the “focusout“ JavaScript event."><before>.focusout(</before><after>)</after></leaf>
+	<leaf title=".hover()" type="insert" tooltip="Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements."><before>.hover(</before><after>)</after></leaf>
+	<leaf title=".keydown()" type="insert" tooltip="Bind an event handler to the “keydown“ JavaScript event, or trigger that event on an element."><before>.keydown(</before><after>)</after></leaf>
+	<leaf title=".keypress()" type="insert" tooltip="Bind an event handler to the “keypress“ JavaScript event, or trigger that event on an element."><before>.keypress(</before><after>)</after></leaf>
+	<leaf title=".keyup()" type="insert" tooltip="Bind an event handler to the “keyup“ JavaScript event, or trigger that event on an element."><before>.keyup(</before><after>)</after></leaf>
+	<leaf title=".live()" type="insert" tooltip="Attach a handler to the event for all elements which match the current selector, now or in the future."><before>.live(</before><after>)</after></leaf>
+	<leaf title=".load()" type="insert" tooltip="Bind an event handler to the “load“ JavaScript event."><before>.load(</before><after>)</after></leaf>
+	<leaf title=".mousedown()" type="insert" tooltip="Bind an event handler to the “mousedown“ JavaScript event, or trigger that event on an element."><before>.mousedown(</before><after>)</after></leaf>
+	<leaf title=".mouseenter()" type="insert" tooltip="Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element."><before>.mouseenter(</before><after>)</after></leaf>
+	<leaf title=".mouseleave()" type="insert" tooltip="Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element."><before>.mouseleave(</before><after>)</after></leaf>
+	<leaf title=".mousemove()" type="insert" tooltip="Bind an event handler to the “mousemove“ JavaScript event, or trigger that event on an element."><before>.mousemove(</before><after>)</after></leaf>
+	<leaf title=".mouseout()" type="insert" tooltip="Bind an event handler to the “mouseout“ JavaScript event, or trigger that event on an element."><before>.mouseout(</before><after>)</after></leaf>
+	<leaf title=".mouseover()" type="insert" tooltip="Bind an event handler to the “mouseover“ JavaScript event, or trigger that event on an element."><before>.mouseover(</before><after>)</after></leaf>
+	<leaf title=".mouseup()" type="insert" tooltip="Bind an event handler to the “mouseup“ JavaScript event, or trigger that event on an element."><before>.mouseup(</before><after>)</after></leaf>
+	<leaf title=".one()" type="insert" tooltip="Attach a handler to an event for the elements. The handler is executed at most once per element."><before>.one(</before><after>)</after></leaf>
+	<leaf title="jQuery.proxy()" type="insert" tooltip="Takes a function and returns a new one that will always have a particular context."><before>jQuery.proxy(</before><after>)</after></leaf>
+	<leaf title=".ready()" type="insert" tooltip="Specify a function to execute when the DOM is fully loaded."><before>.ready(</before><after>)</after></leaf>
+	<leaf title=".resize()" type="insert" tooltip="Bind an event handler to the “resize“ JavaScript event, or trigger that event on an element."><before>.resize(</before><after>)</after></leaf>
+	<leaf title=".scroll()" type="insert" tooltip="Bind an event handler to the “scroll“ JavaScript event, or trigger that event on an element."><before>.scroll(</before><after>)</after></leaf>
+	<leaf title=".select()" type="insert" tooltip="Bind an event handler to the “select“ JavaScript event, or trigger that event on an element."><before>.select(</before><after>)</after></leaf>
+	<leaf title=".submit()" type="insert" tooltip="Bind an event handler to the “submit“ JavaScript event, or trigger that event on an element."><before>.submit(</before><after>)</after></leaf>
+	<leaf title=".toggle()" type="insert" tooltip="Bind two or more handlers to the matched elements, to be executed on alternate clicks."><before>.toggle(</before><after>)</after></leaf>
+	<leaf title=".trigger()" type="insert" tooltip="Execute all handlers and behaviors attached to the matched elements for the given event type."><before>.trigger(</before><after>)</after></leaf>
+	<leaf title=".triggerHandler()" type="insert" tooltip="Execute all handlers attached to an element for an event."><before>.triggerHandler(</before><after>)</after></leaf>
+	<leaf title=".unbind()" type="insert" tooltip="Remove a previously-attached event handler from the elements."><before>.unbind(</before><after>)</after></leaf>
+	<leaf title=".undelegate()" type="insert" tooltip="Remove a handler from the event for all elements which match the current selector, now or in the future, based upon a specific set of root elements."><before>.undelegate(</before><after>)</after></leaf>
+	<leaf title=".unload()" type="insert" tooltip="Bind an event handler to the “unload“ JavaScript event."><before>.unload(</before><after>)</after></leaf>
+</branch>
+<branch title="Forms">
+	<leaf title=".blur()" type="insert" tooltip="Bind an event handler to the “blur“ JavaScript event, or trigger that event on an element."><before>.blur(</before><after>)</after></leaf>
+	<leaf title=".change()" type="insert" tooltip="Bind an event handler to the “change“ JavaScript event, or trigger that event on an element."><before>.change(</before><after>)</after></leaf>
+	<leaf title=".focus()" type="insert" tooltip="Bind an event handler to the “focus“ JavaScript event, or trigger that event on an element."><before>.focus(</before><after>)</after></leaf>
+	<leaf title="jQuery.param()" type="insert" tooltip="Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request."><before>jQuery.param(</before><after>)</after></leaf>
+	<leaf title=".select()" type="insert" tooltip="Bind an event handler to the “select“ JavaScript event, or trigger that event on an element."><before>.select(</before><after>)</after></leaf>
+	<leaf title=".serialize()" type="insert" tooltip="Encode a set of form elements as a string for submission."><before>.serialize(</before><after>)</after></leaf>
+	<leaf title=".serializeArray()" type="insert" tooltip="Encode a set of form elements as an array of names and values."><before>.serializeArray(</before><after>)</after></leaf>
+	<leaf title=".submit()" type="insert" tooltip="Bind an event handler to the “submit“ JavaScript event, or trigger that event on an element."><before>.submit(</before><after>)</after></leaf>
+	<leaf title=".val()" type="insert" tooltip="Get the current value of the first element in the set of matched elements."><before>.val(</before><after>)</after></leaf>
+</branch>
+<branch title="Manipulation">
+	<leaf title=".addClass()" type="insert" tooltip="Adds the specified class(es) to each of the set of matched elements."><before>.addClass(</before><after>)</after></leaf>
+	<leaf title=".after()" type="insert" tooltip="Insert content, specified by the parameter, after each element in the set of matched elements."><before>.after(</before><after>)</after></leaf>
+	<leaf title=".append()" type="insert" tooltip="Insert content, specified by the parameter, to the end of each element in the set of matched elements."><before>.append(</before><after>)</after></leaf>
+	<leaf title=".appendTo()" type="insert" tooltip="Insert every element in the set of matched elements to the end of the target."><before>.appendTo(</before><after>)</after></leaf>
+	<leaf title=".attr()" type="insert" tooltip="Get the value of an attribute for the first element in the set of matched elements."><before>.attr(</before><after>)</after></leaf>
+	<leaf title=".before()" type="insert" tooltip="Insert content, specified by the parameter, before each element in the set of matched elements."><before>.before(</before><after>)</after></leaf>
+	<leaf title=".clone()" type="insert" tooltip="Create a copy of the set of matched elements."><before>.clone(</before><after>)</after></leaf>
+	<leaf title=".css()" type="insert" tooltip="Get the value of a style property for the first element in the set of matched elements."><before>.css(</before><after>)</after></leaf>
+	<leaf title=".detach()" type="insert" tooltip="Remove the set of matched elements from the DOM."><before>.detach(</before><after>)</after></leaf>
+	<leaf title=".empty()" type="insert" tooltip="Remove all child nodes of the set of matched elements from the DOM."><before>.empty(</before><after>)</after></leaf>
+	<leaf title=".hasClass()" type="insert" tooltip="Determine whether any of the matched elements are assigned the given class."><before>.hasClass(</before><after>)</after></leaf>
+	<leaf title=".height()" type="insert" tooltip="Get the current computed height for the first element in the set of matched elements."><before>.height(</before><after>)</after></leaf>
+	<leaf title=".html()" type="insert" tooltip="Get the HTML contents of the first element in the set of matched elements."><before>.html(</before><after>)</after></leaf>
+	<leaf title=".innerHeight()" type="insert" tooltip="Get the current computed height for the first element in the set of matched elements, including padding but not border."><before>.innerHeight(</before><after>)</after></leaf>
+	<leaf title=".innerWidth()" type="insert" tooltip="Get the current computed width for the first element in the set of matched elements, including padding but not border."><before>.innerWidth(</before><after>)</after></leaf>
+	<leaf title=".insertAfter()" type="insert" tooltip="Insert every element in the set of matched elements after the target."><before>.insertAfter(</before><after>)</after></leaf>
+	<leaf title=".insertBefore()" type="insert" tooltip="Insert every element in the set of matched elements before the target."><before>.insertBefore(</before><after>)</after></leaf>
+	<leaf title=".offset()" type="insert" tooltip="Get the current coordinates of the first element in the set of matched elements, relative to the document."><before>.offset(</before><after>)</after></leaf>
+	<leaf title=".outerHeight()" type="insert" tooltip="Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin."><before>.outerHeight(</before><after>)</after></leaf>
+	<leaf title=".outerWidth()" type="insert" tooltip="Get the current computed width for the first element in the set of matched elements, including padding and border."><before>.outerWidth(</before><after>)</after></leaf>
+	<leaf title=".position()" type="insert" tooltip="Get the current coordinates of the first element in the set of matched elements, relative to the offset parent."><before>.position(</before><after>)</after></leaf>
+	<leaf title=".prepend()" type="insert" tooltip="Insert content, specified by the parameter, to the beginning of each element in the set of matched elements."><before>.prepend(</before><after>)</after></leaf>
+	<leaf title=".prependTo()" type="insert" tooltip="Insert every element in the set of matched elements to the beginning of the target."><before>.prependTo(</before><after>)</after></leaf>
+	<leaf title=".remove()" type="insert" tooltip="Remove the set of matched elements from the DOM."><before>.remove(</before><after>)</after></leaf>
+	<leaf title=".removeAttr()" type="insert" tooltip="Remove an attribute from each element in the set of matched elements."><before>.removeAttr(</before><after>)</after></leaf>
+	<leaf title=".removeClass()" type="insert" tooltip="Remove a single class, multiple classes, or all classes from each element in the set of matched elements."><before>.removeClass(</before><after>)</after></leaf>
+	<leaf title=".replaceAll()" type="insert" tooltip="A selector expression indicating which element(s) to replace."><before>.replaceAll(</before><after>)</after></leaf>
+	<leaf title=".replaceWith()" type="insert" tooltip="Replace each element in the set of matched elements with the provided new content."><before>.replaceWith(</before><after>)</after></leaf>
+	<leaf title=".scrollLeft()" type="insert" tooltip="Get the current horizontal position of the scroll bar for the first element in the set of matched elements."><before>.scrollLeft(</before><after>)</after></leaf>
+	<leaf title=".scrollTop()" type="insert" tooltip="Get the current vertical position of the scroll bar for the first element in the set of matched elements."><before>.scrollTop(</before><after>)</after></leaf>
+	<leaf title=".text()" type="insert" tooltip="Get the combined text contents of each element in the set of matched elements, including their descendants."><before>.text(</before><after>)</after></leaf>
+	<leaf title=".toggleClass()" type="insert" tooltip="Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the switch argument."><before>.toggleClass(</before><after>)</after></leaf>
+	<leaf title=".unwrap()" type="insert" tooltip="Remove the parents of the set of matched elements from the DOM, leaving the matched elements in their place."><before>.unwrap(</before><after>)</after></leaf>
+	<leaf title=".val()" type="insert" tooltip="Get the current value of the first element in the set of matched elements."><before>.val(</before><after>)</after></leaf>
+	<leaf title=".width()" type="insert" tooltip="Get the current computed width for the first element in the set of matched elements."><before>.width(</before><after>)</after></leaf>
+	<leaf title=".wrap()" type="insert" tooltip="Wrap an HTML structure around each element in the set of matched elements."><before>.wrap(</before><after>)</after></leaf>
+	<leaf title=".wrapAll()" type="insert" tooltip="Wrap an HTML structure around all elements in the set of matched elements."><before>.wrapAll(</before><after>)</after></leaf>
+	<leaf title=".wrapInner()" type="insert" tooltip="Wrap an HTML structure around the content of each element in the set of matched elements."><before>.wrapInner(</before><after>)</after></leaf>
+</branch>
+<branch title="Miscellaneous">
+	<leaf title=".data()" type="insert" tooltip="Store arbitrary data associated with the matched elements."><before>.data(</before><after>)</after></leaf>
+	<leaf title=".each()" type="insert" tooltip="Iterate over a jQuery object, executing a function for each matched element."><before>.each(</before><after>)</after></leaf>
+	<leaf title=".get()" type="insert" tooltip="Retrieve the DOM elements matched by the jQuery object."><before>.get(</before><after>)</after></leaf>
+	<leaf title=".index()" type="insert" tooltip="Search for a given element from among the matched elements."><before>.index(</before><after>)</after></leaf>
+	<leaf title="jQuery.noConflict()" type="insert" tooltip="Relinquish jQuery's control of the $ variable."><before>jQuery.noConflict(</before><after>)</after></leaf>
+	<leaf title="jQuery.param()" type="insert" tooltip="Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request."><before>jQuery.param(</before><after>)</after></leaf>
+	<leaf title=".removeData()" type="insert" tooltip="Remove a previously-stored piece of data."><before>.removeData(</before><after>)</after></leaf>
+	<leaf title=".size()" type="insert" tooltip="Return the number of DOM elements matched by the jQuery object."><before>.size(</before><after>)</after></leaf>
+	<leaf title=".toArray()" type="insert" tooltip="Retrieve all the DOM elements contained in the jQuery set, as an array."><before>.toArray(</before><after>)</after></leaf>
+</branch>
+<branch title="Offset">
+	<leaf title=".offset()" type="insert" tooltip="Get the current coordinates of the first element in the set of matched elements, relative to the document."><before>.offset(</before><after>)</after></leaf>
+	<leaf title=".offsetParent()" type="insert" tooltip="Get the closest ancestor element that is positioned."><before>.offsetParent(</before><after>)</after></leaf>
+	<leaf title=".position()" type="insert" tooltip="Get the current coordinates of the first element in the set of matched elements, relative to the offset parent."><before>.position(</before><after>)</after></leaf>
+	<leaf title=".scrollLeft()" type="insert" tooltip="Get the current horizontal position of the scroll bar for the first element in the set of matched elements."><before>.scrollLeft(</before><after>)</after></leaf>
+	<leaf title=".scrollTop()" type="insert" tooltip="Get the current vertical position of the scroll bar for the first element in the set of matched elements."><before>.scrollTop(</before><after>)</after></leaf>
+</branch>
+<branch title="Plugin Authoring">
+	<leaf title=".context" type="insert" tooltip="The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document."><before>.context</before><after></after></leaf>
+	<leaf title="jQuery.error" type="insert" tooltip="Takes a string and throws an exception containing it."><before>jQuery.error</before><after></after></leaf>
+	<leaf title="jQuery.pushStack()" type="insert" tooltip="Add a collection of DOM elements onto the jQuery stack."><before>jQuery.pushStack(</before><after>)</after></leaf>
+	<leaf title=".selector" type="insert" tooltip="A selector representing selector originally passed to jQuery()."><before>.selector</before><after></after></leaf>
+</branch>
+<branch title="Properties">
+	<leaf title="jQuery.browser" type="insert" tooltip="We recommend against using this property."><before>jQuery.browser</before><after></after></leaf>
+	<leaf title=".context" type="insert" tooltip="The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document."><before>.context</before><after></after></leaf>
+	<leaf title="jQuery.fx.off" type="insert" tooltip="Globally disable all animations."><before>jQuery.fx.off</before><after></after></leaf>
+	<leaf title=".length" type="insert" tooltip="The number of elements in the jQuery object."><before>.length</before><after></after></leaf>
+	<leaf title=".selector" type="insert" tooltip="A selector representing selector originally passed to jQuery()."><before>.selector</before><after></after></leaf>
+	<leaf title="jQuery.support" type="insert" tooltip="A collection of properties that represent the presence of different browser features or bugs."><before>jQuery.support</before><after></after></leaf>
+</branch>
+<branch title="Selectors">
+
+</branch>
+<branch title="Traversing">
+	<leaf title=".add()" type="insert" tooltip="Add elements to the set of matched elements."><before>.add(</before><after>)</after></leaf>
+	<leaf title=".andSelf()" type="insert" tooltip="Add the previous set of elements on the stack to the current set."><before>.andSelf(</before><after>)</after></leaf>
+	<leaf title=".children()" type="insert" tooltip="Get the children of each element in the set of matched elements, optionally filtered by a selector."><before>.children(</before><after>)</after></leaf>
+	<leaf title=".closest()" type="insert" tooltip="Get the first ancestor element that matches the selector, beginning at the current element and progressing up through the DOM tree."><before>.closest(</before><after>)</after></leaf>
+	<leaf title=".contents()" type="insert" tooltip="Get the children of each element in the set of matched elements, including text nodes."><before>.contents(</before><after>)</after></leaf>
+	<leaf title=".each()" type="insert" tooltip="Iterate over a jQuery object, executing a function for each matched element."><before>.each(</before><after>)</after></leaf>
+	<leaf title=".end()" type="insert" tooltip="End the most recent filtering operation in the current chain and return the set of matched elements to its previous state."><before>.end(</before><after>)</after></leaf>
+	<leaf title=".eq()" type="insert" tooltip="Reduce the set of matched elements to the one at the specified index."><before>.eq(</before><after>)</after></leaf>
+	<leaf title=".filter()" type="insert" tooltip="Reduce the set of matched elements to those that match the selector or pass the function's test."><before>.filter(</before><after>)</after></leaf>
+	<leaf title=".find()" type="insert" tooltip="Get the descendants of each element in the current set of matched elements, filtered by a selector."><before>.find(</before><after>)</after></leaf>
+	<leaf title=".first()" type="insert" tooltip="Reduce the set of matched elements to the first in the set."><before>.first(</before><after>)</after></leaf>
+	<leaf title=".has()" type="insert" tooltip="Reduce the set of matched elements to those that have a descendant that matches the selector or DOM element."><before>.has(</before><after>)</after></leaf>
+	<leaf title=".is()" type="insert" tooltip="Check the current matched set of elements against a selector and return true if at least one of these elements matches the selector."><before>.is(</before><after>)</after></leaf>
+	<leaf title=".last()" type="insert" tooltip="Reduce the set of matched elements to the final one in the set."><before>.last(</before><after>)</after></leaf>
+	<leaf title=".map()" type="insert" tooltip="Pass each element in the current matched set through a function, producing a new jQuery object containing the return values."><before>.map(</before><after>)</after></leaf>
+	<leaf title=".next()" type="insert" tooltip="Get the immediately following sibling of each element in the set of matched elements, optionally filtered by a selector."><before>.next(</before><after>)</after></leaf>
+	<leaf title=".nextAll()" type="insert" tooltip="Get all following siblings of each element in the set of matched elements, optionally filtered by a selector."><before>.nextAll(</before><after>)</after></leaf>
+	<leaf title=".nextUntil()" type="insert" tooltip="Get all following siblings of each element up to but not including the element matched by the selector."><before>.nextUntil(</before><after>)</after></leaf>
+	<leaf title=".not()" type="insert" tooltip="Remove elements from the set of matched elements."><before>.not(</before><after>)</after></leaf>
+	<leaf title=".offsetParent()" type="insert" tooltip="Get the closest ancestor element that is positioned."><before>.offsetParent(</before><after>)</after></leaf>
+	<leaf title=".parent()" type="insert" tooltip="Get the parent of each element in the current set of matched elements, optionally filtered by a selector."><before>.parent(</before><after>)</after></leaf>
+	<leaf title=".parents()" type="insert" tooltip="Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector."><before>.parents(</before><after>)</after></leaf>
+	<leaf title=".parentsUntil()" type="insert" tooltip="Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector."><before>.parentsUntil(</before><after>)</after></leaf>
+	<leaf title=".prev()" type="insert" tooltip="Get the immediately preceding sibling of each element in the set of matched elements, optionally filtered by a selector."><before>.prev(</before><after>)</after></leaf>
+	<leaf title=".prevAll()" type="insert" tooltip="Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector."><before>.prevAll(</before><after>)</after></leaf>
+	<leaf title=".prevUntil()" type="insert" tooltip="Get all preceding siblings of each element up to but not including the element matched by the selector."><before>.prevUntil(</before><after>)</after></leaf>
+	<leaf title=".siblings()" type="insert" tooltip="Get the siblings of each element in the set of matched elements, optionally filtered by a selector."><before>.siblings(</before><after>)</after></leaf>
+	<leaf title=".slice()" type="insert" tooltip="Reduce the set of matched elements to a subset specified by a range of indices."><before>.slice(</before><after>)</after></leaf>
+</branch>
+<branch title="Utilities">
+	<leaf title="jQuery.boxModel" type="insert" tooltip="Deprecated in jQuery 1.3 (see jQuery.support). States if the current page, in the user's browser, is being rendered using the W3C CSS Box Model."><before>jQuery.boxModel</before><after></after></leaf>
+	<leaf title="jQuery.browser" type="insert" tooltip="We recommend against using this property, please try to use feature detection instead (see jQuery.support). Contains flags for the useragent, read from navigator.userAgent. While jQuery.browser will not be removed from future versions of jQuery, every effort to use jQuery.support and proper feature detection should be made."><before>jQuery.browser</before><after></after></leaf>
+	<leaf title=".clearQueue()" type="insert" tooltip="Remove from the queue all items that have not yet been run."><before>.clearQueue(</before><after>)</after></leaf>
+	<leaf title="jQuery.contains()" type="insert" tooltip="Check to see if a DOM node is within another DOM node."><before>jQuery.contains(</before><after>)</after></leaf>
+	<leaf title="jQuery.data()" type="insert" tooltip="Store arbitrary data associated with the specified element."><before>jQuery.data(</before><after>)</after></leaf>
+	<leaf title=".dequeue()" type="insert" tooltip="Execute the next function on the queue for the matched elements."><before>.dequeue(</before><after>)</after></leaf>
+	<leaf title="jQuery.dequeue()" type="insert" tooltip="Execute the next function on the queue for the matched element."><before>jQuery.dequeue(</before><after>)</after></leaf>
+	<leaf title="jQuery.each()" type="insert" tooltip="Iterates through the array displaying each number as both a word and numeral"><before>jQuery.each(</before><after>)</after></leaf>
+	<leaf title="jQuery.extend()" type="insert" tooltip="Merge the contents of two or more objects together into the first object."><before>jQuery.extend(</before><after>)</after></leaf>
+	<leaf title="jQuery.globalEval()" type="insert" tooltip="Execute some JavaScript code globally."><before>jQuery.globalEval(</before><after>)</after></leaf>
+	<leaf title="jQuery.grep()" type="insert" tooltip="Finds the elements of an array which satisfy a filter function. The original array is not affected."><before>jQuery.grep(</before><after>)</after></leaf>
+	<leaf title="jQuery.inArray()" type="insert" tooltip="Search for a specified value within an array and return its index (or -1 if not found)."><before>jQuery.inArray(</before><after>)</after></leaf>
+	<leaf title="jQuery.isArray()" type="insert" tooltip="Determine whether the argument is an array."><before>jQuery.isArray(</before><after>)</after></leaf>
+	<leaf title="jQuery.isEmptyObject()" type="insert" tooltip="Check to see if an object is empty (contains no properties)."><before>jQuery.isEmptyObject(</before><after>)</after></leaf>
+	<leaf title="jQuery.isFunction()" type="insert" tooltip="Determine if the argument passed is a Javascript function object."><before>jQuery.isFunction(</before><after>)</after></leaf>
+	<leaf title="jQuery.isPlainObject()" type="insert" tooltip="Check to see if an object is a plain object (created using {} or new Object()."><before>jQuery.isPlainObject(</before><after>)</after></leaf>
+	<leaf title="jQuery.isXMLDoc()" type="insert" tooltip="Check to see if a DOM node is within an XML document (or is an XML document)."><before>jQuery.isXMLDoc(</before><after>)</after></leaf>
+	<leaf title="jQuery.makeArray()" type="insert" tooltip="Convert an array-like object into a true JavaScript array."><before>jQuery.makeArray(</before><after>)</after></leaf>
+	<leaf title="jQuery.map()" type="insert" tooltip="Translate all items in an array or array-like object to another array of items."><before>jQuery.map(</before><after>)</after></leaf>
+	<leaf title="jQuery.merge()" type="insert" tooltip="Merge the contents of two arrays together into the first array."><before>jQuery.merge(</before><after>)</after></leaf>
+	<leaf title="jQuery.noop()" type="insert" tooltip="An empty function."><before>jQuery.noop(</before><after>)</after></leaf>
+	<leaf title="jQuery.parseJSON" type="insert" tooltip="Takes a well-formed JSON string and returns the resulting JavaScript object."><before>jQuery.parseJSON</before><after></after></leaf>
+	<leaf title="jQuery.proxy()" type="insert" tooltip="Takes a function and returns a new one that will always have a particular context."><before>jQuery.proxy(</before><after>)</after></leaf>
+	<leaf title=".queue()" type="insert" tooltip="Show the queue of functions to be executed on the matched elements."><before>.queue(</before><after>)</after></leaf>
+	<leaf title="jQuery.queue()" type="insert" tooltip="Show the queue of functions to be executed on the matched element."><before>jQuery.queue(</before><after>)</after></leaf>
+	<leaf title="jQuery.removeData()" type="insert" tooltip="Remove a previously-stored piece of data."><before>jQuery.removeData(</before><after>)</after></leaf>
+	<leaf title="jQuery.support" type="insert" tooltip="A collection of properties that represent the presence of different browser features or bugs."><before>jQuery.support</before><after></after></leaf>
+	<leaf title="jQuery.trim()" type="insert" tooltip="Remove the whitespace from the beginning and end of a string."><before>jQuery.trim(</before><after>)</after></leaf>
+	<leaf title="jQuery.unique()" type="insert" tooltip="Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers."><before>jQuery.unique(</before><after>)</after></leaf>
+</branch>
+<branch title="Version">
+
+</branch>
+</branch>
+</snippets>

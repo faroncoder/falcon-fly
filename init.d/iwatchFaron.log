@@ -1,0 +1,31 @@
+Couldn't initialize inotify.  Are you running Linux 2.6.13 or later, and was the
+CONFIG_INOTIFY option enabled when your kernel was compiled?  If so, 
+something mysterious has gone wrong.  Please e-mail radu.voicilas@gmail.com
+ and mention that you saw this message.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 810, in __bootstrap_inner
+    self.run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/faron/lib/media/desktop/engine/method1/./inotifyexec", line 76, in delay_call
+    delayed_callback(None)
+  File "/home/faron/lib/media/desktop/engine/method1/./inotifyexec", line 146, in callback
+    subprocess.call(command_args)
+  File "/usr/lib/python2.7/subprocess.py", line 522, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 710, in __init__
+    errread, errwrite)
+  File "/usr/lib/python2.7/subprocess.py", line 1327, in _execute_child
+    raise child_exception
+OSError: [Errno 2] No such file or directory
+
+[1m+ 'blipme'[0m
+Traceback (most recent call last):
+  File "/home/faron/lib/media/desktop/engine/method1/./inotifyexec", line 149, in <module>
+    watch_delay_call('.', callback)
+  File "/home/faron/lib/media/desktop/engine/method1/./inotifyexec", line 107, in watch_delay_call
+    wm = pyinotify.WatchManager()
+  File "/usr/lib/python2.7/dist-packages/pyinotify.py", line 1747, in __init__
+    raise OSError(err % self._inotify_wrapper.str_errno())
+OSError: Cannot initialize new instance of inotify, Errno=Too many open files (EMFILE)
