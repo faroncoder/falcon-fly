@@ -1,43 +1,30 @@
 #/bin/bash
-PATHLOC="$1"
-if [ -z "$1" ]
-	then
-		echo -n "which directory that has the latest filename order? "
-		read PATHLOC
-		if [ -z "$PATHLOC" ]
-			then
-				PATHLOC=""
-		fi
+PATHLOC=$1
+# if [ -z "$1" ]
+# 	then
+# 				PATHLOC="$PWD"
+# 	fi
+#PREFILE="$( echo "$file" | cut -d "." -f1 )";
+#ADUP=$( find $PATHLOC -maxdepth 1 -type d | sort | tail -1 )
+#NAD=$( basename $ADUP )
+#DUH="$( echo $NAD )"
+MEXT=`expr 0 + 1`
 
-fi
-
-ADUP=$( find $PATHLOC -maxdepth 1 -type d | sort | tail -1 )
-NAD=$( basename $ADUP )
-DUH="$( echo $NAD )"
-MEXT=`expr $DUH + 1`
-> a.list
-ls *.mp4 >> a.list
-
-# while read line
-# 	do
-# 		FILEASS=$( seq -w 000000 $MEXT | tail -1 )
-# 		echo $FILEASS $line >> mkdir.list
-# 		MEXT=`expr $MEXT + 1`
-# 	done < a.list
-# rm a.list
-
-while read line
+orderfiles=( $( find $PWD -type f -name '*.mkv' ) )
+for line in "${orderfiles[@]}";
 	do
-		FILEASS=$( seq -w 000000 $MEXT | tail -1 )
-		FILE="$( rev <<< "$line" | cut -d"." -f2 | rev )"
-		#MKDIR=$( echo $line | awk '{ print $1 }' )
-		#FILETR=$( echo $line | awk '{ print $2 }' )
-		mkdir -p $FILEASS
-		mv $FILE* $FILEASS
+		getname=$( echo $line | cut -d '.' -f1 )
+		getnewname=$( seq -w 0 $( echo $MEXT ) | tail -n 1 )
+		mv $line $getnewname.mkv
+		echo "moving $line $getnewname.mkv"
+
+		#rename 's/$( echo $getname )/$( echo $getnewname )/g' $line
 		MEXT=`expr $MEXT + 1`
 
+		#find -name "$FILE*" -type f -exec mv {} $FILEASS
+		#mv $line $FILEASS.$FILE
 
-	done < a.list
+	done
 
 exit 0
 

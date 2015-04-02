@@ -1,5 +1,6 @@
 #!/bin/bash
-FILEGRAB="$( find ./ -maxdepth 1 -type f  -name '*.mkv' ! -name '*.sh' | sort | head -n1 )"
+cd /home/faron/var/streamings/files/mkv
+FILEGRAB="$( find . -maxdepth 1 -type f  -name '*.mkv' ! -name '*.sh' | sort | head -n1 )"
 
 function startffmpeg {
 
@@ -76,7 +77,8 @@ if [ -z "$1" ]
       then
             FILEGRAB="$( find ./ -maxdepth 1 -type f  -name '*.mkv' ! -name '*.sh' | sort | head -n1 )"
             startffmpeg
-            SCRIPTME="$( basename $0 )"
+            #SCRIPTME="$( basename $0 )"
+            SCRIPTME="$0"
             $SCRIPTME
 
                 if [ -z "$FILEGRAB" ]

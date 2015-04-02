@@ -1,22 +1,51 @@
 #!/bin/bash
+GETDATE="$( date )"
+YEAR="$( echo $GETDATE | awk '{print$6}' )"
+DAY="$( echo $GETDATE | awk '{print$3}' )"
+MONTH="$( echo $GETDATE | awk '{print$2}' )"
+TIME="$( echo $GETDATE | awk '{print$4}' )"
+NOW="$MONTH-$DAY-$YEAR @ $TIME"
+mypath="$(readlink -f "$0")"
+fileonly="$( basename $mypath )"
+streamlog="/home/faron/var/streamings/encoding.log"
 
-> listing.txt
-ls -p *.mp4 >> listing.txt
 
-while read line
+function tsizing {
+            PREFILE="$( rev <<< "$INPUT" | cut -d"." -f2 | rev )"
+            ffmpeg -i "$INPUT" -y -map 0 -c:v copy -bsf:v h264_mp4toannexb -c:a copy -copyts "$PREFILE.ts"  < /dev/null
+            echo "$NOW :: $fileonly :: $INPUT :: MP4 ---> TS" >> $streamlog
+            MPEG2TransportStreamIndexer "$PREFILE.ts" < /dev/null
+            echo "$NOW :: $fileonly :: $INPUT :: TS ---> TSX" >> $streamlog
+            testMPEG2TransportStreamTrickPlay "$PREFILE.ts" 0 1 "$PREFILE-out.ts" < /dev/null
+            echo "$NOW :: $fileonly :: $INPUT :: OUTPUT TS ---> TSX" >> $streamlog
+            MPEG2TransportStreamIndexer "$PREFILE-out.ts" < /dev/null
+            echo "$NOW :: $fileonly :: $INPUT <--- task completed" >> $streamlog
+}
 
-PREFILE="$( rev <<< "$line" | cut -d"." -f2 | rev )"
-INPUT="$PWD/$line"
+## IF NO ARG GIVEN THEN WILL DO BATCH FILES IN FOLDER
+if [ -z "$1" ]
+    then
+    $INPUT="$PWD/$line"
+    echo -n "proceed with batch files processing? "
+    read ACKLW
 
-    do
-        /home/local/bin/ffmpeg -i "$INPUT" -map 0 -c:v copy -bsf:v h264_mp4toannexb -c:a copy -copyts "$PREFILE.ts"  < /dev/null
-
-        /home/local/bin/MPEG2TransportStreamIndexer "$PREFILE.ts" < /dev/null
-        /home/local/bin/testMPEG2TransportStreamTrickPlay "$PREFILE.ts" 0 1 "$PREFILE-out.ts" < /dev/null
-        /home/local/bin/MPEG2TransportStreamIndexer "$PREFILE-out.ts" < /dev/null
-        echo "ts-tsx-er-ing completed..."
-    done < listing.txt
-
-rm listing.txt
+    if [ "$ACKLW"=="y" ]
+        then
+        > listing.txt
+        ls -p *.mp4 >> listing.txt
+        while read line
+            do
+                INPUT="$PWD/$line"
+                tsizing
+            done < listing.txt
+        else
+            echo "terminating..."
+            exit 0
+    fi
+else
+    INPUT="$1"
+    tsizing
+    exit 0
+fi
 
 exit 0

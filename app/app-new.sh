@@ -1,7 +1,7 @@
 #!/bin/bash
 typedest="$1"
 appname="$2"
-binpull="home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
+binpull="/home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
 if [ -z $1 ]
 	then
 	echo -n "HTML or Node? "
@@ -13,9 +13,9 @@ if [ -z $2 ]
 	read appname
 fi
 
-if [ $typedest == "n" ]
+if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 	then
-	pathdir="/home/faron/lib/script/nodes/projects/$appname"
+	pathdir="/home/faron/lib/script/node/projects/$appname"
 	mkdir -p $pathdir
 	echo "app created and heading to the path now..."
 	cd $pathdir
@@ -24,7 +24,7 @@ if [ $typedest == "n" ]
 	sed -i -e 's/public\/favicon.ico/public\/jsc\/img\/favicon.ico/g' app.js
 	sed -i -e 's/\/\/app.use/app.use/g' app.js
 	app-jsc n $appname
-	echo "fetching and install nodes from npm rep..."
+	echo "fetching and install node from npm rep..."
 	npm install
 	echo "configuring $appname ..."
 	cp $binpull/html-full.txt $pathdir/public/index.html
@@ -32,7 +32,7 @@ if [ $typedest == "n" ]
 	exit 0
 
 fi
-if [ $typedest == "h" ]
+if [ "$typedest"="h" ] || [ "$typedest"="H" ]
 	then
 	pathdir="/home/faron/lib/script/htmls/projects/$appname"
 	mkdir -p $pathdir

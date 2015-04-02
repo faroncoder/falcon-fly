@@ -1,7 +1,7 @@
 
 # while
-#      inotifywait -d -o home/faron/bin/core/scripting/faron-scriptor/init.d/events.log -e create,close_write /home/faron/lib/media/desktop/engine/method1;
-#      do /home/faron/lib/media/desktop/engine/method1/./inotifyexec blipme
+#      inotifywait -d -o home/faron/bin/core/scripting/faron-scriptor/init.d/events.log -e create,close_write /home/faron/var/Desktop/engine/method1;
+#      do /home/faron/var/Desktop/engine/method1/./inotifyexec blipme
 #  done
 
 #  #   #done
@@ -17,12 +17,12 @@
 #       #   fi
 #       # done
 # #while
-#  #   inotifywait -d -o home/faron/bin/core/scripting/faron-scriptor/init.d/events.log -e create,close_write /home/faron/lib/media/desktop/engine/method1
+#  #   inotifywait -d -o home/faron/bin/core/scripting/faron-scriptor/init.d/events.log -e create,close_write /home/faron/var/Desktop/engine/method1
 # # do
 #  #      blipme
 #  #   done
 
-# #cd /home/faron/lib/media/desktop/engine/method1 && inotifyexec /home/faron/bin/blipme < /dev/null
+# #cd /home/faron/var/Desktop/engine/method1 && inotifyexec /home/faron/bin/blipme < /dev/null
 
-# /home/faron/lib/media/desktop/engine/method1/./inotifyexec blipme
+# /home/faron/var/Desktop/engine/method1/./inotifyexec blipme
 

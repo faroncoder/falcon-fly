@@ -12,20 +12,20 @@ if [ -z "$2" ]
 	read appname
 fi
 
-if [ "$typedest" == "n" ]
+if [ "$typedest"=="n" ] || [ "$typedest"=="N" ]
 	then
-	pathdir="/home/faron/lib/script/nodes/projects/$appname/public"
+	pathdir="/home/faron/lib/script/node/projects/$appname/public"
 
 fi
-if [ "$typedest" == "h" ]
+if [ "$typedest"=="h" ] || [ "$typedest"=="H" ]
 	then
 	pathdir="/home/faron/lib/script/htmls/projects/$appname"
 fi
 
-binpull="home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
-	cp $binpull/jsc-build.tar.bz2 $pathdir/
-	echo "unpacking jsc build"
+binpull="/home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
 	cd $pathdir
+	cp $binpull/jsc-build.tar.bz2 ./
+	echo "unpacking jsc build"
 	tar -jxvf jsc-build.tar.bz2
 	echo "cleaning installation files and sync-ing all files for node & public files..."
 	rm jsc-build.tar.bz2
