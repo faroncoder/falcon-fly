@@ -17,29 +17,24 @@ populateoption
 	EXT=$( echo "$TYPE" | cut -d '.' -f2 )
 
 orderfiles=( $( find $PWD -type f -name "*.$EXT" | rev | cut -d "/" -f1 | rev ) )
-if [ "$EXT"="flv" ]
-	then
+if [[ "$EXT" == "flv" ]]; then
 		EXTTYPE="x-flv"
 	fi
 
-if [ "$EXT"="mp4" ]
-	then
+if [[ "$EXT" == "mp4" ]]; then
 	EXTTYPE="mp4"
-fi
-if [ "$EXT"="webm" ]
-	then
+	fi
+if [[ "$EXT"="webm" ]]; then
 	EXTTYPE="webm"
 fi
 
 echo -n "[f]ile or [u]rl? "
 			read TYPEURL
 
-			if [ $TYPEURL="f" ];
-				then
-					FILELOCA="./jsc/media";
+			if [[ "$TYPEURL" == "f" ]]; then 
+					FILELOCA="./jsc/media"
 			fi
-			if [ "$TYPEURL"=="u" ];
-				then
+			if [[ "$TYPEURL" == "u" ]]; then 
 					echo -n "address of url (including http or such protocol)? ";
 					read FILELOCA;
 			fi
@@ -52,10 +47,6 @@ for f in "${orderfiles[@]}";
 		sed -i -e "s/FILELOCA/$( echo $FILELOCA )/g" "$NAME.html"
 		sed -i -e "s/EXTTYPE/$( echo $EXTTYPE )/g" "$NAME.html"
 		sed -i -e "s/EXT/$( echo $EXT )/g" "$NAME.html"
-
-
-
-
 done
 
 
