@@ -13,15 +13,15 @@
 
 #----------------------------------------------------------------------
 #some global params
-@create = false
-@migrate = false
+@create = true
+@migrate = true
 @update = true
 @update_message_default = "updates via command line"
 @update_message = @update_message_default
-@debug = false
-@done = false
-@print = false
-@error = false
+@debug = true
+@done = true
+@print = true
+@error = true
 
 #----------------------------------------------------------------------
 #fancy schmancy color scheme
