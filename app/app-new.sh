@@ -1,7 +1,7 @@
 #!/bin/bash
 typedest="$1"
 appname="$2"
-binpull="/home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
+binpull="$HOME/.falcon/scripting/faron-scriptor/app/libsafe"
 if [ -z $1 ]
 	then
 	echo -n "HTML or Node? "
@@ -15,7 +15,7 @@ fi
 
 if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 	then
-	pathdir="/home/faron/lib/script/node/projects/$appname"
+	pathdir="/home/faron/var/Scripts/node/projects/$appname"
 	mkdir -p $pathdir
 	echo "app created and heading to the path now..."
 	cd $pathdir
@@ -34,7 +34,7 @@ if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 fi
 if [ "$typedest"="h" ] || [ "$typedest"="H" ]
 	then
-	pathdir="/home/faron/lib/script/htmls/projects/$appname"
+	pathdir="/home/faron/var/Scripts/htmls/projects/$appname"
 	mkdir -p $pathdir
 	echo "app created and heading to the path now..."
 	cd $pathdir

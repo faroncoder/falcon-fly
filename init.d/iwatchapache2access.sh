@@ -6,7 +6,7 @@
 
 #  #   #done
 #             #	do
-#        #		cd /drive/home/faron/lib/script/nodes/projects/cmd_line && node app < /dev/null
+#        #		cd /drive/home/faron/var/Scripts/nodes/projects/cmd_line && node app < /dev/null
 
 #        #	done
 

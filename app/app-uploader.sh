@@ -14,12 +14,12 @@ fi
 
 if [ "$typedest" == "n" ]
 	then
-	pathdir="/drive/home/faron/lib/script/nodes/projects/$appname/public"
+	pathdir="/drive/home/faron/var/Scripts/nodes/projects/$appname/public"
 
 fi
 if [ "$typedest" == "h" ]
 	then
-	pathdir="/drive/home/faron/lib/script/htmls/projects/$appname"
+	pathdir="/drive/home/faron/var/Scripts/htmls/projects/$appname"
 fi
 
 binpull="home/faron/bin/core/scripting/faron-scriptor/app/libsafe"

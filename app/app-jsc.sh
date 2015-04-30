@@ -14,15 +14,15 @@ fi
 
 if [ "$typedest"=="n" ] || [ "$typedest"=="N" ]
 	then
-	pathdir="/home/faron/lib/script/node/projects/$appname/public"
+	pathdir="/home/faron/var/Scripts/node/projects/$appname/public"
 
 fi
 if [ "$typedest"=="h" ] || [ "$typedest"=="H" ]
 	then
-	pathdir="/home/faron/lib/script/htmls/projects/$appname"
+	pathdir="/home/faron/var/Scripts/htmls/projects/$appname"
 fi
 
-binpull="/home/faron/bin/core/scripting/faron-scriptor/app/libsafe"
+binpull="$HOME/.falcon/scripting/faron-scriptor/app/libsafe"
 	cd $pathdir
 	cp $binpull/jsc-build.tar.bz2 ./
 	echo "unpacking jsc build"

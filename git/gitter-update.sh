@@ -1,6 +1,6 @@
 #!/bin/bash
 function gitupdategits {
-BASELOC="/home/faron/bin/core/scripting/falcon-gits"
+BASELOC="$HOME/.falcon/scripting/falcon-gits"
 GIT="/home/faron/tmp/gits.list"
 cd $BASELOC
 > $GIT
@@ -31,7 +31,7 @@ ffrm gits.list
 }
 
 function gitupdatemaster {
-BASELOC="/home/faron/bin/core/scripting/faron-scriptor"
+BASELOC="$HOME/.falcon/scripting/faron-scriptor"
 cd $BASELOC
                               echo "updating GIT for $line..."
                               #git fetch

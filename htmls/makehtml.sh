@@ -1,5 +1,5 @@
 #!/bin/bash
-BINPULL="/home/faron/bin/core/scripting/faron-scriptor/htmls/VALVE"
+BINPULL="$HOME/.falcon/scripting/faron-scriptor/htmls/VALVE"
 
 function populateoption {
 	find $BINPULL -type f ! -name '*old*' -exec basename {} \;

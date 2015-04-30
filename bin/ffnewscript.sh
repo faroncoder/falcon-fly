@@ -1,6 +1,6 @@
 #!/bin/bash
 newfile="$1"
-newbin="/home/faron/bin/core/scripting/faron-scriptor/newbin"
+newbin="$HOME/.falcon/scripting/faron-scriptor/newbin"
 if [ -z "$1" ]
 	then
 	echo -n "name of new file? "

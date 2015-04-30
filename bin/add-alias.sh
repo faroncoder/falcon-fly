@@ -5,7 +5,7 @@
       read aliascomm
 
 queryalias="alias $aliasesname=\" $aliascomm \""
-echo $queryalias >> /home/faron/bin/core/data/bash/bash_aliases
+echo $queryalias >> $HOME/.falcon/data/bash/.bash_aliases
 
 echo "alias added..."
 

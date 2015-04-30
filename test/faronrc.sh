@@ -1,7 +1,7 @@
 #!/bin/bash
 FARON_PATH="/usr/bin:/home/faron/bin:/home/local/bin"
 export PATH="$PATH:$FARON_PATH"
-LOG="/home/faron/bin/core/logs/faronrc/logging.log"
+LOG="$HOME/.falcon/logs/faronrc/logging.log"
 DTW=$( date )
 cd /home/faron/.faronrc-listen
 
