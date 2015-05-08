@@ -1,7 +1,7 @@
 #!/bin/bash
 typedest="$1"
 appname="$2"
-binpull="$HOME/.falcon/scripting/faron-scriptor/app/libsafe"
+binpull="$HOME/.falcon/scripting/falcon-fly/app/libsafe"
 if [ -z $1 ]
 	then
 	echo -n "HTML or Node? "

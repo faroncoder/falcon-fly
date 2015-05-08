@@ -8,12 +8,12 @@
 # Description:       <DESCRIPTION>
 ### END INIT INFO
 
-SCRIPT=home/faron/bin/core/scripting/faron-scriptor/init.d/iwatchapache2access.sh
+SCRIPT=home/faron/bin/core/scripting/falcon-fly/init.d/iwatchapache2access.sh
 RUNAS=faron
 NAME=iwatchFaron
 PATH="/sbin:/bin"
 PIDFILE=/var/run/$NAME.pid
-LOGFILE=home/faron/bin/core/scripting/faron-scriptor/init.d/$NAME.log
+LOGFILE=home/faron/bin/core/scripting/falcon-fly/init.d/$NAME.log
 
 #test -x $SCRIPT  || exit 0
 

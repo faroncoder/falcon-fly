@@ -1,5 +1,5 @@
 #!/bin/bash
-BINPULL="$HOME/.falcon/scripting/faron-scriptor/htmls/VALVE"
+BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VALVE"
 orderfiles=( $( find $BINPULL -type f ) )
 
 function populateoption {

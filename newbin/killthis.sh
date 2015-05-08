@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mv $1 $HOME/.falcon/outbox/
+mv $1 $HOME/.falcon/killed/
 
 exit 0
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #cd /home/faron/var/streamings/files/raw
-#$HOME/.falcon/scripting/faron-scriptor/bin/file-name-cleaner.sh
+#$HOME/.falcon/scripting/falcon-fly/bin/file-name-cleaner.sh
 /home/faron/bin/bin/file-name-cleaner
 mv *.mkv mkv/
 

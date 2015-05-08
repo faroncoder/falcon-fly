@@ -13,7 +13,7 @@ if [ -z $2 ]
 fi
 domfile="$domid.php"
 locfile="/home/faron/$dom/$domfile"
-binpull="home/faron/bin/core/scripting/faron-scriptor"
+binpull="home/faron/bin/core/scripting/falcon-fly"
 ##########################
 cp $binpull/php-new.txt $locfile
 exit 0

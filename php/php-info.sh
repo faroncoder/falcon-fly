@@ -15,7 +15,7 @@ fi
 domfile="$domid.php"
 locfile="/home/faron/$dom/$domfile"
 #DIRCOMM="$HOME/bin/commands"
-binpull="home/faron/bin/core/scripting/faron-scriptor"
+binpull="home/faron/bin/core/scripting/falcon-fly"
 #LOCDIR="$DIRFILE"
 #CSFILE="$LOCDIR/jsc/css"
 #JSFILE="$LOCDIR/jsc/js"
