@@ -1,10 +1,6 @@
 #!/bin/bash
 # By keeping options in alphabetical order, it's easy to add more.
 
-display_help() {
-	cat "$HOME/.bash_colors"
-}
-
 while :
 do
     case "$1" in

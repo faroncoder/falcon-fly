@@ -24,13 +24,13 @@ fi
 	ALBUMFILE=""
 	CONTAINTERFILE=""
 	ARTISTFILE=""
-	MAXRAT="1024k"
+	MAXRAT="896k"
 	BITRAT="800k"
-	BUFFRAT="750k"
-	CRF="22.0"
+	BUFFRAT="$MAXRAT"
+	CRF="25.0"
 	COMMENTFILE="Encoded by Faron the Falcon $( date )"
 
-function ffmpegstart {
+ffmpegstart() {
 		ffmpeg -i `printf "$LOADER"` \
 		-map 0 \
 		-coder 1 \
@@ -40,64 +40,63 @@ function ffmpegstart {
 		-partitions +parti4x4+partp8x8+partb8x8 \
 		-me_method hex \
 		-subq 6 \
+		-crf "$CRF" \
 		-me_range 16 \
 		-keyint_min 25 \
 		-sc_threshold 40 \
 		-i_qfactor 0.71 \
 		-b_strategy 1 \
 		-movflags +faststart \
-		-g 250 \
+		-g 60 \
 		-pix_fmt yuv420p \
-		-b:v "$BITRAT" \
 		-maxrate "$MAXRAT" \
-		-minrate "$BITRAT" \
 		-bufsize "$BUFFRAT" \
 		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
 		-ar 44100 \
 		-ac 2 \
 		-ab 128k \
-		-pass 1 \
-		-f `echo $TYPE` "$PWD/ffmpeg2-$PREFILE-$HEIGHTWT.$TYPE" < /dev/null && \
-		ffmpeg -ss 00:00:00.00 -i `printf "$LOADER"` \
-		-coder 1 \
-		-map 0 \
-		-reset_timestamps 1 \
-		-flags +loop \
-		-cmp chroma \
-		-partitions +parti4x4+partp8x8+partb8x8 \
-		-me_method hex \
-		-subq 6 \
-		-me_range 16 \
-		-keyint_min 25 \
-		-sc_threshold 40 \
-		-i_qfactor 0.71 \
-		-b_strategy 1 \
-		-movflags +faststart \
-		-g 250 \
-		-pix_fmt yuv420p \
-		-b:v "$BITRAT" \
-		-maxrate "$MAXRAT" \
-		-bufsize "$MAXRAT" \
-		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
-		-pass 2 \
-		-ar 44100 \
-		-ac 2 \
-		-ab 128k \
-		-metadata title="$TITLEFILE" \
-		-metadata album="$ALBUMFILE" \
-		-metadata year="$YEARFILE" \
-		-metadata container="$CONTAINTERFILE" \
-		-metadata artist="$ARTISTFILE" \
-		-metadata comment="$COMMENTFILE"  \
-		-f "$TYPE" "$PWD/output/$PREFILE-$HEIGHTWT.$TYPE" < /dev/null
-	}
-function thumbing {
+		-f `echo $TYPE` "$PWD/output/$PREFILE-$HEIGHTWT.$TYPE" < /dev/null
+		}
+	# 	ffmpeg -ss 00:00:00.00 -i `printf "$LOADER"` \
+	# 	-coder 1 \
+	# 	-map 0 \
+	# 	-reset_timestamps 1 \
+	# 	-flags +loop \
+	# 	-cmp chroma \
+	# 	-partitions +parti4x4+partp8x8+partb8x8 \
+	# 	-me_method hex \
+	# 	-subq 6 \
+	# 	-me_range 16 \
+	# 	-keyint_min 25 \
+	# 	-sc_threshold 40 \
+	# 	-i_qfactor 0.71 \
+	# 	-b_strategy 1 \
+	# 	-movflags +faststart \
+	# 	-g 250 \
+	# 	-pix_fmt yuv420p \
+	# 	-b:v "$BITRAT" \
+	# 	-maxrate "$MAXRAT" \
+	# 	-bufsize "$MAXRAT" \
+	# 	-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
+	# 	-pass 2 \
+	# 	-ar 44100 \
+	# 	-ac 2 \
+	# 	-ab 128k \
+	# 	-metadata title="$TITLEFILE" \
+	# 	-metadata album="$ALBUMFILE" \
+	# 	-metadata year="$YEARFILE" \
+	# 	-metadata container="$CONTAINTERFILE" \
+	# 	-metadata artist="$ARTISTFILE" \
+	# 	-metadata comment="$COMMENTFILE"  \
+	# 	-f "$TYPE" "$PWD/output/$PREFILE-$HEIGHTWT.$TYPE" < /dev/null
+
+thumbing() {
 	THUMBLOC="$PWD/output/$PREFILE.mp4"
 	HEIGHTPNG="256"
 	ffmpeg -ss 00:01:00 -i $THUMBLOC -t 1 -vf -vf scale=-1:$HEIGHTPNG -f image2 -vframes 1 "$PWD/thumbs/$INPUT.png" < /dev/null
 	}
 
-function mp4er {
+mp4er() {
 	LIB264="$( echo $INPUT -y -vcodec libx264 -preset ultrafast -qp 0 -tune zerolatency -crf $CRF -acodec libfdk_aac  )"
 	LOADER="$( echo $LIB264 )"
 	TYPE="mp4"
@@ -105,9 +104,9 @@ function mp4er {
 	thumbing
 	}
 
-function webmer {
+webmer() {
 	INPUT="$PWD/output/$PREFILE-$HEIGHTWT.mp4"
-	LIBWEBM="$( echo $INPUT -y -vcodec libvpx -q:v 1 -qmin 10 -qmax 42 -q:a 6 -acodec libvorbis )"
+	LIBWEBM="$( echo $INPUT -y -vcodec libvpx -q:v 5 -qmin 10 -qmax 42 -q:a 6 -acodec libvorbis )"
 	LOADER="$( echo $LIBWEBM )"
 	TYPE="webm"
 	thumbing
@@ -196,7 +195,6 @@ function webmer {
 
 function cleanup {
 	mv $INPUT completed/
-	rm ffmpeg2*
 }
 
 if [ -z "$2" ];
@@ -215,7 +213,7 @@ if [ -z "$INPUT" ];
 	fi
 
 	mp4er
-	webmer
+	#webmer
 	cleanup
 
 $0 $HEIGHTWT  ## self-execute the script again for reloop

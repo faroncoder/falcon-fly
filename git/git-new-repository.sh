@@ -4,7 +4,14 @@
 		read comfirmgit
 		confirmgitnew="https://github.com/faroncoder/$gitnewname.git"
 
-		if [ "$comfirmgit" == "y" ]
+
+if [ ! -f "$HOME/.ssh/git_rsa.pub" ]; then
+		ssh-keygen -t rsa -C "faronledger@gmail.com"
+		echo "save to ~/.ssh/git_rsa at command prompt"
+		exit 0
+fi
+
+if [ "$comfirmgit" == "y" ]
 			then
 				touch README.md
 				git init
