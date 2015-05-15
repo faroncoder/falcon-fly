@@ -24,15 +24,15 @@ fi
 	ALBUMFILE=""
 	CONTAINTERFILE=""
 	ARTISTFILE=""
-	MAXRAT="896k"
+	MAXRAT="1024k"
 	BITRAT="800k"
+	MINRAT="800K"
 	BUFFRAT="$MAXRAT"
-	CRF="25.0"
+	CRF="25"
 	COMMENTFILE="Encoded by Faron the Falcon $( date )"
 
 ffmpegstart() {
-		ffmpeg -i `printf "$LOADER"` \
-		-map 0 \
+		ffmpeg -ss 00:00:00 -i `printf "$LOADER"` \
 		-coder 1 \
 		-reset_timestamps 1 \
 		-flags +loop \
@@ -40,7 +40,6 @@ ffmpegstart() {
 		-partitions +parti4x4+partp8x8+partb8x8 \
 		-me_method hex \
 		-subq 6 \
-		-crf "$CRF" \
 		-me_range 16 \
 		-keyint_min 25 \
 		-sc_threshold 40 \
@@ -50,12 +49,14 @@ ffmpegstart() {
 		-g 60 \
 		-pix_fmt yuv420p \
 		-maxrate "$MAXRAT" \
+		-b:v "$BITRAT" \
+		-minrate "$MINRAT" \
 		-bufsize "$BUFFRAT" \
 		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
 		-ar 44100 \
 		-ac 2 \
 		-ab 128k \
-		-f `echo $TYPE` "$PWD/output/$PREFILE-$HEIGHTWT.$TYPE" < /dev/null
+		-f "$TYPE" "$PWD/output/$PREFILE-$HEIGHTWT.$TYPE" < /dev/null
 		}
 	# 	ffmpeg -ss 00:00:00.00 -i `printf "$LOADER"` \
 	# 	-coder 1 \
@@ -93,11 +94,11 @@ ffmpegstart() {
 thumbing() {
 	THUMBLOC="$PWD/output/$PREFILE.mp4"
 	HEIGHTPNG="256"
-	ffmpeg -ss 00:01:00 -i $THUMBLOC -t 1 -vf -vf scale=-1:$HEIGHTPNG -f image2 -vframes 1 "$PWD/thumbs/$INPUT.png" < /dev/null
+	ffmpeg -ss 00:01:00 -i $THUMBLOC -t 1 -vf scale=-1:$HEIGHTPNG -f image2 -vframes 1 "$PWD/thumbs/$INPUT.png" < /dev/null
 	}
 
 mp4er() {
-	LIB264="$( echo $INPUT -y -vcodec libx264 -preset ultrafast -qp 0 -tune zerolatency -crf $CRF -acodec libfdk_aac  )"
+	LIB264="$( echo $INPUT -y -vcodec libx264 -preset fast -tune zerolatency -profile main -level 3.1 -qp 0 -tune zerolatency -crf $CRF -acodec libfdk_aac  )"
 	LOADER="$( echo $LIB264 )"
 	TYPE="mp4"
 	ffmpegstart

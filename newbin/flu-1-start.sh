@@ -1,5 +1,5 @@
 #!/bin/bash
-flumotion-manager -v -T tcp /etc/flumotion/managers/default/planet.xml
+sudo flumotion-manager -v -T tcp /etc/flumotion/managers/faron/planet.xml
 
 exit 0
 

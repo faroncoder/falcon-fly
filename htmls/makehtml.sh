@@ -322,29 +322,28 @@ WEBVTT
 	sudo chmod -R 775 $PWD
 
 
-function faceboxinsert() {
 
-echo $faceboxdoc |  perl -MHTML::Entities -pe 'decode_entities($_)' | sed 's/\\\$/$/g' > "$PWD/facebox.html"
-for f in "${orderfiles[@]}"; do
-NEWLINEINSERT="<li><a class=\"fancybox-media\" href=\".\/jsc\/media\/$f\"><\/a><\/li>"
-	sed -i "/MEDIAINSERTS/a $NEWLINEINSERT" "$PWD/fancybox.html"
-	mv $f "$PWD/jsc/media/"
-}
-
-
-
-	echo $videodynamicfront |  perl -MHTML::Entities -pe 'decode_entities($_)' | sed 's/\\\$/$/g' > "$PWD/dynamic.php"
-
+	echo $faceboxdoc |  perl -MHTML::Entities -pe 'decode_entities($_)' | sed 's/\\\$/$/g' > "$PWD/facebox.html"
 	for f in "${orderfiles[@]}"; do
-	NAME="$( rev <<< "$f" | cut -d "." -f2 | rev )"
-	printf "$captionfile" > "$PWD/jsc/cc/$NAME.vtt"
-
+	NEWLINEINSERT="<li><a class=\"fancybox-media\" href=\".\/jsc\/media\/$f\"><\/a><\/li>"
+	sed -i "/MEDIAINSERTS/a $NEWLINEINSERT" "$PWD/facebox.html"
 	mv $f "$PWD/jsc/media/"
-	printf "$videobackbone" > "$PWD/jsc/htmls/$NAME.html"
-	sed -i -e "s/FILENAMEME/$NAME/g" > "./jsc/htmls/$NAME.html"
-	sed -i -e "s/FILELOCA/$FILELOCA/g" "./jsc/htmls/$NAME.html"
-	sed -i -e "s/\/EXTTYPE/\/$EXTTYPE/g" "./jsc/htmls/$NAME.html"
-	sed -i -e "s/EXT/$EXT/g" "./jsc/htmls/$NAME.html"
+
+
+
+
+	# echo $videodynamicfront |  perl -MHTML::Entities -pe 'decode_entities($_)' | sed 's/\\\$/$/g' > "$PWD/dynamic.php"
+
+	# for f in "${orderfiles[@]}"; do
+	# NAME="$( rev <<< "$f" | cut -d "." -f2 | rev )"
+	# printf "$captionfile" > "$PWD/jsc/cc/$NAME.vtt"
+
+	# mv $f "$PWD/jsc/media/"
+	# printf "$videobackbone" > "$PWD/jsc/htmls/$NAME.html"
+	# sed -i -e "s/FILENAMEME/$NAME/g" > "./jsc/htmls/$NAME.html"
+	# sed -i -e "s/FILELOCA/$FILELOCA/g" "./jsc/htmls/$NAME.html"
+	# sed -i -e "s/\/EXTTYPE/\/$EXTTYPE/g" "./jsc/htmls/$NAME.html"
+	# sed -i -e "s/EXT/$EXT/g" "./jsc/htmls/$NAME.html"
 	done
 	/home/faron/bin/cssglop
 	sudo chown -R www-data:www-data $PWD

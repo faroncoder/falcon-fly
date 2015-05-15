@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ## function to collect all exisiting files in this directory only but one by one at a time
 #INPUTZ="$(  find $PWD -maxdepth 1 -type f  ! -name '*.mkv'  ! -name '*.sh'  ! -name '*.txt' | head -n1 )"
 
@@ -29,15 +30,15 @@
 # read grabcallsheet
 # echo $grabcallsheet
 
-INPUT="$( find . -maxdepth 1 -type f -name '*.mkv' | sort | head -n 1 )"
+INPUT="$( find $PWD -maxdepth 1 -type f -name '*.mkv' | sort | head -n 1 )"
 
 if [[ -z "$INPUT" ]]; then
 	echo "no more files!"
 	exit 0
 else
-	/usr/bin/avidemux2_cli "$INPUT" --rebuild-index  --audio-map  --video-map --output-format MATROSKA --save "output/$INPUT.mkv"
-#read respondAvidemux
-#echo $respondAvidemux
+	/usr/bin/avidemux2_cli --load $INPUT --reindex --autoindex --output-format MATROSKA --save $INPUT
+read respondAvidemux
+echo $respondAvidemux
 mv $INPUT completed/
 fi
 # ALLFILES=( * )
@@ -72,5 +73,5 @@ fi
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
 
-$0 < mkv-response.txt
+$0 < /home/faron/bin/mkvthis-respond.txt
 exit 0

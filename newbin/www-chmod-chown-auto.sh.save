@@ -1,7 +1,0 @@
-#!/bin/bash
-
-WWWD=/home/www/html
-find $WWWD 
-
-
-exit 0
