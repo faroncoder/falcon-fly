@@ -4,10 +4,11 @@ GITNAME="$( basename $PWD ).git"
 
 if [[ -d "$PWD/.git" ]]; then
 	CHECKGIT=$( cat .git/config | wc -l )
-	if [[ ! "$CHECKGIT" ==  13 ]]; then
+	if [[ "$CHECKGIT" = 13 ]]; then
 		echo "your git configuration is valid"
+		exit 0
 	else
-		GITNAME="$( basename $PWD )"
+		GITNAME="$( basename $PWD ).git"
 		echo "
 [core]
 	repositoryformatversion = 0

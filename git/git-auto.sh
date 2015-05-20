@@ -1,16 +1,16 @@
 #!/bin/bash
 
-GITLIST=( "$( find {/home/faron/.falcon/scripting/falcon-fly,/home/faron/.falcon/scripting/falcon-gits} -maxdepth 2 -type d -name '*.git' )" )
-LISTCOUNT= echo "${GITLIST[@]}" | wc -l
-TOTALCOUNT=0
+GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' | sed '/\/gits\/*/d' )" )
 
 	for f in "${GITLIST[@]}"; do
-	cd $( echo $f | sed 's/\/.git//g' )
+		DRIVE="$( cd ../$f )"
+	cd $( dirname $f )
 	echo  "Updating git"
 	git status;
 	git add --all;
 	git commit -m "auto-committing via script";
 	git push
+	git checkout
 	#git push -u "$( basename $PWD ).git";
 done
 
