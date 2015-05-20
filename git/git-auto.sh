@@ -12,8 +12,6 @@ TOTALCOUNT=0
 	git commit -m "auto-committing via script";
 	git push
 	#git push -u "$( basename $PWD ).git";
-
-
 done
 
 exit 0
