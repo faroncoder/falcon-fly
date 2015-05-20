@@ -206,8 +206,9 @@ videobackbone="
 		google.load(\"language\", \"1\");
 		</script>
 		<script src=\"https://code.jquery.com/jquery-1.11.0.min.js\" type=\"text/javascript\"></script>
-		<script src=\"../js/mediaelement-and-player.min.js\"></script>
-		<link rel=\"stylesheet\" href=\"../css/mediaelementplayer.min.css\" />
+		<!-- <script src=\"../js/mediaelement-and-player.min.js\"></script> -->
+		<script src=\"../js/jsengine.js\"></script>
+		<link rel=\"stylesheet\" href=\"../css/cssengine.css\" />
 		<style>
 		body {
 		background: black;
@@ -233,6 +234,53 @@ videobackbone="
 		</body>
 	</html>"
 	videodynamicfront="&lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge,chrome=1&quot;&gt; &lt;!-- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; --&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt; &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt; &lt;meta name=&quot;author&quot; content=&quot;faron&quot;&gt; &lt;title&gt;&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./jsc/css/cssengine.css&quot; /&gt; &lt;!--[if lt IE 9]&gt; &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js&quot;&gt;&lt;/script&gt; &lt;![endif]--&gt; &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt; &lt;script src=&quot;./jsc/js/jsengine.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt; &lt;style&gt; .imghold { min-height: 240px; height: 241px; } &lt;/style&gt; &lt;script type=&quot;text/javascript&quot;&gt; \\\$(document).ready(function(\\\$){ \\\$(&#39;body&#39;).css(&#39;background-color&#39;,&#39;#000&#39;); \\\$(&quot;.lazy&quot;).lazyload({ effect : &quot;fadeIn&quot; }); }); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;tvbox&quot; class=&quot;container&quot;&gt; &lt;div class=&quot;col-xs-12 col-sm-9 col-md-9 col-lg-4 &quot;&gt; &lt;?php if (\\\$handle = opendir(&#39;./jsc/media&#39;)) { while (false !== (\\\$entry = readdir(\\\$handle))) { \\\$files = array(); if (\\\$entry != &quot;.&quot; &amp;&amp; \\\$entry != &quot;..&quot; &amp;&amp; \\\$entry != &quot;.html&quot; &amp;&amp; \\\$entry != &quot;src&quot; &amp;&amp; \\\$entry != &quot;htmls&quot; &amp;&amp; \\\$entry != &quot;thumbs&quot; &amp;&amp; \\\$entry != is_dir(\\\$entry)) { \\\$name = pathinfo(\\\$entry)[&#39;filename&#39;]; echo &#39;&lt;div valign=&quot;middle&quot; align=&quot;center&quot; class=&quot;col-xs-4 col-sm-4 col-md-3 col-lg-3 imghold&quot;&gt;&lt;a class=&quot;lightbox&quot; rel=&quot;porn&quot; href=&quot;./jsc/htmls/&#39;.\\\$name.&#39;.html?lightbox[iframe]=true&amp;lightbox[width]=790&amp;lightbox[height]=550&amp;light[modal]=true&quot;&gt;&lt;img class=&quot;lazy view&quot; data-original=&quot;jsc/thumbs/&#39;.\\\$name.&#39;.png&quot; src=&quot;./jsc/thumbs/&#39;.\\\$name.&#39;.png&quot; style=&quot;width=22%; height=22%;&quot;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/div&gt;&#39;; } } closedir(\\\$handle); } ?&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- Javascript files --&gt; &lt;script type=&quot;text/javascript&quot;&gt; \\\$(document).ready(function() { \\\$(&#39;.lightbox&#39;).lightbox(); \\\$(&#39;.jquery-lightbox-background&#39;).css(&#39;background-color&#39;,&#39;#000&#39;); \\\$(&#39;html&#39;).css(&#39;background-color&#39;,&#39;#000&#39;); }); &lt;/script&gt; &lt;/body &lt;/html&gt;"
+
+glop1="
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
+    <title>BASHFILENAME</title>
+
+    <script src=\"https://www.google.com/jsapi\"></script>
+    <script type=\"text/javascript\">
+    google.load(\"language\", \"1\");
+    </script>
+
+
+    <script src=\"https://code.jquery.com/jquery-1.11.0.min.js\" type=\"text/javascript\"></script>
+    <script src=\"./jsc/js/jsengine.js\"></script>
+
+    <link rel=\"stylesheet\" href=\"./jsc/css/cssengine.css\" />
+<style>
+    body {
+        background: black;
+    }
+</style>
+
+</head>
+<body>
+
+<video width=\"640\" height=\"480\" id=\"LOCA\" controls=\"controls\">
+    <source src=\"FILELOCA/LOCA.EXTTYPE\" type=\"video/EXTTYPE\">
+    <track kind=\"subtitles\" src=\"../cc/LOCA.vtt\" srclang=\"en\"></track>
+    <p>Your browser leaves much to be desired.</p>
+</video>
+
+<script>
+\$('audio,video').mediaelementplayer({
+    // auto-select this language (instead of starting with \"None\")
+    startLanguage:'en',
+    // automatically translate into these languages
+    translations:['es','ar','zh','ru'],
+    // enable the dropdown list of languages
+    translationSelector: true
+});
+</script>
+
+</body>
+</html>
+"
 
 captionfile="
 WEBVTT
@@ -323,8 +371,10 @@ WEBVTT
 
 
 
-	echo $faceboxdoc |  perl -MHTML::Entities -pe 'decode_entities($_)' | sed 's/\\\$/$/g' > "$PWD/facebox.html"
+#	echo $faceboxdoc |  perl -MHTML::Entities -pe 'decode_entities($_)' | sed 's/\\\$/$/g' > "$PWD/facebox.html"
+echo $videobackbone > "$PWD/facebox.html"
 	for f in "${orderfiles[@]}"; do
+
 	NEWLINEINSERT="<li><a class=\"fancybox-media\" href=\".\/jsc\/media\/$f\"><\/a><\/li>"
 	sed -i "/MEDIAINSERTS/a $NEWLINEINSERT" "$PWD/facebox.html"
 	mv $f "$PWD/jsc/media/"
