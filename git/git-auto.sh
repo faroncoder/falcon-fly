@@ -7,8 +7,8 @@ for f in "${GITLIST[@]}"; do
 	cd $( echo $f | sed 's/\/.git//g' )
 	git status;
 	git add --all;
-	git commit -m "auto-committing via script";
-	git push
+	git commit -m "auto-committing via script" -a;
+	git push;
 	#git push -u "$( basename $PWD ).git";
 
 done
