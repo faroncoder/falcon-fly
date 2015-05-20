@@ -4,7 +4,7 @@ GITNAME="$( basename $PWD ).git"
 
 if [[ -d "$PWD/.git" ]]; then
 	CHECKGIT=$( cat .git/config | wc -l )
-	if [[ "$CHECKGIT" < 16 ]]; then
+	if [[ ! "$CHECKGIT" ==  13 ]]; then
 		echo "your git configuration is valid"
 	else
 		GITNAME="$( basename $PWD )"
@@ -15,11 +15,11 @@ if [[ -d "$PWD/.git" ]]; then
 	bare = false
 	logallrefupdates = true
 [branch \"master\"]
-	remote = $GITNAME
+	remote = origin
 	merge = refs/heads/master
 [remote \"origin\"]
+	url = git@github.com:faroncoder/$GITNAME
 	fetch = +refs/heads/*:refs/remotes/origin/*
-	url = git@github.com:faroncoder/$GITNAME.git
 [user]
 	name = faroncoder
 " > $PWD/.git/config
