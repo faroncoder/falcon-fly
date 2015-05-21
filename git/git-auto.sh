@@ -17,6 +17,6 @@ while read line; do
 	git push;
 	#git push -u "$( basename $PWD ).git";
 done < ~/x.txt
-rm ~/x.txt
+#rm ~/x.txt
 
 exit 0
