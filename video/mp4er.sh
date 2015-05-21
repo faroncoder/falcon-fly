@@ -56,7 +56,7 @@ function ffmpegengine() {
 			mv "$PATHDIR/$PREFILE.mp4" output/
 }
 
-FILEGRAB=$( find $PATHDIR -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
+FILEGRAB =$( find $PATHDIR -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
 
 if [[ ! -z "$FILEGRAB" ]]; then
 

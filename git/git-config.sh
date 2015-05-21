@@ -6,6 +6,7 @@ if [[ -d "$PWD/.git" ]]; then
 	CHECKGIT=$( cat .git/config | wc -l )
 	if [[ "$CHECKGIT" = 13 ]]; then
 		echo "your git configuration is valid"
+		git checkout
 		exit 0
 	else
 		GITNAME="$( basename $PWD ).git"
