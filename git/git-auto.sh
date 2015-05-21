@@ -6,7 +6,7 @@
 find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' > ~/x.txt
 	#for f in "${GITLIST[@]}"; do
 	#	DRIVE="$( dirname $f )"
-	sed -i -e '/\/gits\/d' ~/x.txt
+	sed -i -e '/\/home\/faron\/.falcon\/scripting\/gits/d' ~/x.txt
 while read line; do
 	DRIVE=$( dirname $line );
 	cd $DRIVE;
