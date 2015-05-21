@@ -53,8 +53,8 @@ function ffmpegengine() {
 			-metadata artist="$ARTISTFILE" \
 			-metadata comment="$COMMENTFILE" \
 			-f mp4 "$PREFILE.mp4" < /dev/null
-#			mv "$PATHDIR/$PREFILE.mkv" completed/
-#			mv "$PATHDIR/$PREFILE.mp4" output/
+			mv "$PREFILE.mkv" completed/
+			mv "$PREFILE.mp4" output/
 }
 
 
