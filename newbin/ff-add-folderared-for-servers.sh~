@@ -259,9 +259,12 @@ echo "
 	valid users = faron
 
 [falcon]
+	force group = faron
 	path = /home/faron/.falcon
 	valid users = faron
+	force user = faron
 	writeable = yes
+;	writeable = no
 ;	browseable = yes
 " > /etc/samba/smb.conf
 apt-get install -y nfs-kernel-server nfs-common cifs-utils libnss-winbind winbind
