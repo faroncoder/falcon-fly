@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
  #/home/faron/var/streamings/files/raw
 /home/faron/bin/file-name-cleaner
@@ -73,4 +74,4 @@ for fs in "${grabavi[@]}";
 #rm ffmpeg*
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

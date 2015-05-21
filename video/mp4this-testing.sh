@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 ## FILE & FOLDER ROUTINE CHECK
   if [[ ! -d "$PWD/completed" ]]; then
   	mkdir -p "$PWD/completed"
@@ -107,7 +108,7 @@ if [[ -z "$INDVI" ]]; then
 		FILEGRAB="$( find $PWD -maxdepth 1 -type f  ! -name '*.sh' ! -name 'mp4this' | sort | head -n 1 )"
 		if [[ -z "$FILEGRAB" ]]; then
 				echo "nope there is no file -- ending the encoding engine..."
-				exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 			else
 				INPUT=$( basename $FILEGRAB )
 				compileFfmpeg
@@ -115,7 +116,7 @@ if [[ -z "$INDVI" ]]; then
 	else
 		INPUT=$( basename $INDVI )
 		compileFfmpeg
-		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
 
@@ -134,4 +135,4 @@ fi
 
 $0  ## self-execute the script again for reloop
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

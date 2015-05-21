@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 if [[ -z "$1" ]]; then
 		PATHDIRHOME="$PWD"
@@ -24,7 +25,7 @@ if [[ -z "$PATHDIRHOME/jsc" ]]; then
 			Which pathdir ? "
 			read PATHDIRHOME
 			$0 $PATHDIRHOME
-			exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	else
 		if [[ -d "$PATHDIRHOME/jsc/js" ]]; then
 			echo "App structures match!"
@@ -70,5 +71,5 @@ fi
 #         	exit 1
 # fi
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

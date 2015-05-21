@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 		gitnewname=$( basename $PWD )
 		echo -n "Creating new branch $gitnewname.git.  Proceed? "
 		read comfirmgit
@@ -8,7 +9,7 @@
 if [ ! -f "$HOME/.ssh/git_rsa.pub" ]; then
 		ssh-keygen -t rsa -C "faronledger@gmail.com"
 		echo "save to ~/.ssh/git_rsa at command prompt"
-		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
 if [ "$comfirmgit" == "y" ]
@@ -23,4 +24,4 @@ if [ "$comfirmgit" == "y" ]
 			else
 				exit 1
 		fi
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

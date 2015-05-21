@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VALVE"
 
 #function populateoption {
@@ -177,4 +178,4 @@ printf "echo \$ONEFILE"
 
 
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

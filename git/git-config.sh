@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 GITNAME="$( basename $PWD ).git"
 
@@ -7,7 +8,7 @@ if [[ -d "$PWD/.git" ]]; then
 	if [[ "$CHECKGIT" = 13 ]]; then
 		echo "your git configuration is valid"
 		git checkout
-		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	else
 		GITNAME="$( basename $PWD ).git"
 		echo "
@@ -28,5 +29,5 @@ if [[ -d "$PWD/.git" ]]; then
 	fi
 fi
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

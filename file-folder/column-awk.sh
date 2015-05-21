@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 {
     width=25;

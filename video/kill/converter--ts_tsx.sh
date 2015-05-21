@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 > listing.txt
 ls -p *.mp4 >> listing.txt
@@ -24,5 +25,5 @@ fi
 
 
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

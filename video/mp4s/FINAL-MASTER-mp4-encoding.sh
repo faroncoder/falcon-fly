@@ -1,11 +1,12 @@
 #!/bin/bash
+startgreen=`date +%s`
 FILEGRAB="$(  find ./input -maxdepth 1 -type f  -name '*.mkv' | sort | head -n1 )"
 INPUT="$( basename $FILEGRAB )"
 
 if [ -z "$INPUT" ];
     then
         echo "Nope there is no file"
-        exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
     else
         echo "Yep there is a file"
 
@@ -60,4 +61,4 @@ fi
 
 ./$0
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

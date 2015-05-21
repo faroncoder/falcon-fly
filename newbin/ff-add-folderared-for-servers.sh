@@ -1,7 +1,8 @@
 #!/bin/bash
+startgreen=`date +%s`
 if [[ ! "$EUID" = 0 ]]; then
 		echo "su yourself in first, Faron"
-		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	fi
 echo "
 #
@@ -332,5 +333,5 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 				echo "/falcon for /etc/exports is already set"
 			fi
 fi
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

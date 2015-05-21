@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 FILES="$1"
 if [ -d "$FILES" ]
       then
@@ -10,4 +11,4 @@ if [ -d "$FILES" ]
             rm $FILES
             echo "$FILES trashed"
       fi
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

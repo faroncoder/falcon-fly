@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 YEAR="$( echo $GETDATE | awk '{print$6}' )"
 DAY="$( echo $GETDATE | awk '{print$3}' )"
@@ -26,7 +27,7 @@ if [ -z "$FILECHECK" ]
 	GETDATE="$( date )"
             echo "$NOW :: $fileonly :: no more file to encode ---> script terminated" >> $streamlog
             echo "$NOW :: $fileonly ---> exiting"
-            exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
       else
 	GETDATE="$( date )"        
 	    INPUT="$( basename $FILECHECK )"
@@ -41,4 +42,4 @@ if [ -z "$FILECHECK" ]
             echo "$NOW :: $fileonly :: $INPUT  <--- completed" >> $streamlog
 fi
 ./handbraking.sh
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

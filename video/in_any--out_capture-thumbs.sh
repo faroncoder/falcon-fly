@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 INPUT="$1"
 if [ -z $INPUT ]
@@ -55,5 +56,5 @@ ffmpeg \
 
 
 echo "thumb snapper is completed..."
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 sudo apt-get dist-upgrade
 sudo apt-get autoremove
@@ -6,5 +7,5 @@ sudo apt-get autoclean
 sudo apt-get clean
 sudo apt-get update
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

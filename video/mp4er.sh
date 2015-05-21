@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 export PATH
 PATHDIR="/home/faron/var/Streamings/files/engine/factory-mp4"
 cd $PATHDIR
@@ -67,7 +68,7 @@ if [[ ! -z "$INPUT" ]]; then
     	#INPUT="$PATHDIR/$PREFILE.mkv"
     	#PREFILE="$( rev <<< "$FILEGRAB" | cut -d"." -f2 | rev )"
     	if [[ -z "$PREFILE" ]]; then
-    		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
     	fi
     	#cp "/media/mkv/$PREFILE.mkv" $PATHDIR/
     	#touch "$PREFILE.dat"
@@ -104,4 +105,4 @@ fi
 
 $0
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

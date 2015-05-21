@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 ##POPULATING VARIABLES
 HOMEPATH="/home/faron/var/streamings/files"
 timestamp="$( date )"
@@ -75,5 +76,5 @@ flvcherk
 flverstart
 closelog
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 ## bin | video | flv-er

@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 GETDATE="$( date )"
 YEAR="$( echo $GETDATE | awk '{print$6}' )"
 DAY="$( echo $GETDATE | awk '{print$3}' )"
@@ -40,12 +41,12 @@ if [ -z "$1" ]
             done < listing.txt
         else
             echo "terminating..."
-            exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
     fi
 else
     INPUT="$1"
     tsizing
-    exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

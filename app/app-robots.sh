@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 appname="$1"
 if [ -z $1 ]
 	then
@@ -14,4 +15,4 @@ pathdir="/home/www/html/$appname"
 binpull="$HOME/.falcon/scripting/dat"
 #######
 cat $binpull/robots.txt > $pathdir/
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

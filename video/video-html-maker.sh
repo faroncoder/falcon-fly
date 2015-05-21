@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 glop1="
 <!DOCTYPE html>
@@ -56,4 +57,4 @@ echo "edited"
 echo "opening - check your default browser"
 chromium-browser http://f10/privs/raw/$BASHFILENAME.html < /dev/null
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

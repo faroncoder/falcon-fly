@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 filename="$1"
 if [ -z "$filename" ]
@@ -9,10 +10,10 @@ if [ -z "$filename" ]
 			NEWNAME="$( echo $filename | tr 'a-z' 'A-Z' )";
 			mv $filename $NEWNAME 2> /dev/null;
 		done
-		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
     else
     		SINGLEFILE="$( echo $filename | tr 'a-z' 'A-Z'  )";
     		mv $filename $SINGLEFILE 2> /dev/null
-    		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

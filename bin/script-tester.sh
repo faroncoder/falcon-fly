@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 FILE="$1"
 if [ -z "$FILE" ];
 	then
@@ -9,9 +10,10 @@ fi
 cd $PWD
 chmod /+x $FILE
 ./$FILE
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 \#!/bin/bash
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

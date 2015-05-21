@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 if [[ -d "$PWD/jsc/css" ]]; then
 	 	find -L $PWD/jsc/css -maxdepth 1 -type f -name '*.css' -exec basename {} \; >> files.list
@@ -11,8 +12,8 @@ if [[ -d "$PWD/jsc/css" ]]; then
         	rm files.list
         else
         	echo "We are not in a project folder.  Aborted"
-        	exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

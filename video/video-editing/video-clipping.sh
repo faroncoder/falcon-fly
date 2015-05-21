@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 CLIPNAME="$1"
 STARTTIME="$2"
 ENDTIME="$3"
@@ -120,4 +121,4 @@ if [ "$PUSHRESPOND" = "y" ]
         echo "$CLIPNAME still resides in this directory..."
 fi
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

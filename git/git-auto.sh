@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 time
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
@@ -19,4 +20,4 @@ while read line; do
 done < ~/x.txt
 #rm ~/x.txt
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

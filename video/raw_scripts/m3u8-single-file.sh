@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 INPUT="$1"
 if [ -z "$INPUT" ]
@@ -27,5 +28,5 @@ ffmpeg \
 -segment_list_flags +live \
 -segment_time 10 out%03d.ts < /dev/null
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

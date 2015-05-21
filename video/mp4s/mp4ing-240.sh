@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 cd /home/faron/var/streamings/files/mkv
 FILEGRAB="$( find . -maxdepth 1 -type f  -name '*.mkv' ! -name '*.sh' | sort | head -n1 )"
 
@@ -84,13 +85,13 @@ if [ -z "$1" ]
                 if [ -z "$FILEGRAB" ]
                     then
                         echo "nope there is no file -- ending the encoding engine..."
-                        exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
                 fi
       else
             FILEGRAB="$1"
             startffmpeg
-            exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

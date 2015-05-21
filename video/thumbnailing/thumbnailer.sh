@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 ## FILE & FOLDER ROUTINE CHECK
   if [[ ! -d "$PWD/thumbs" ]]; then
         mkdir -p "$PWD/thumbs"
@@ -20,7 +21,7 @@ for m in "${GETFILES[@]}"; do
 # 		FILEGRAB="$( find $PWD -maxdepth 1 -type f  -name '*.mp4' ! -name '*.sh' ! -name 'mp4this' | sort | head -n 1 )"
 # 		if [[ -z "$FILEGRAB" ]]; then
 # 				echo "nope there is no file -- ending the thumbnailing engine..."
-# 				exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 # 			else
 # 				INPUT=$( basename $FILEGRAB )
 # 				compileThumbs
@@ -28,10 +29,10 @@ for m in "${GETFILES[@]}"; do
 # 	else
 # 		INPUT=$( basename $INDVI )
 # 		compileThumbs
-# 		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 # fi
 
 
 #$0  ## self-execute the script again for reloop
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

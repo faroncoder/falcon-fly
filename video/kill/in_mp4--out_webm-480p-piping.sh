@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 #INPUT="$1"
 #INPUT="$( find $PWD -maxdepth 1 -type f -name '*.mkv' ! -name '*.sh'| sort  | head -n1 )"
@@ -67,4 +68,4 @@ ffmpeg \
 rm ffmpeg*
 #mv "$INPUT" mp4/
 ./in_mp4--out_webm-480-piping.sh
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 dom="$1"
 app="$2"
 if [ -z $1 ]
@@ -17,11 +18,11 @@ binpull="home/faron/bin/core/scripting/falcon-fly"
 if [ ! -d "/home/www/$dom" ]
 	then
 	echo "invalid domain.  exiting."
-	exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 cd $pathdir
 git remote add origin git@github.com:faroncoder/$app.git
 git add --all
 git push -u origin master
 cd /home/faron/bin/commands/vault/systemengine/scripting
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

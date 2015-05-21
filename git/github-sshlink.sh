@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 ## VARIABLES MANAGEMENT
 
 
@@ -89,7 +90,7 @@ function respondData {
 			echo "\\n" >> $RESPONSEFILE
 			echo "\\n" >> $RESPONSEFILE
 			./$SELFFILE < $RESPONSEFILE
-			exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	fi
 
 	beginSSHKEY
@@ -102,6 +103,6 @@ function respondData {
 
 
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 
 

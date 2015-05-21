@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 # By keeping options in alphabetical order, it's easy to add more.
 
 display_help() {
@@ -24,7 +25,7 @@ do
       -h | --help)
 			display_help  # Call your function
 			# no shifting needed here, we're done.
-			exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	;;
       -v | --verbose)
           #  It's better to assign a string, than a number like "verbose=1"

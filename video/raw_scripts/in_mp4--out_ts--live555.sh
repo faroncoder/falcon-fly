@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 FILEIN="$1"
 if [ -z "$FILEIN" ] 
@@ -29,5 +30,5 @@ ln \
 		MPEG2TransportStreamIndexer out.ts < /dev/null
 
 	fi
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

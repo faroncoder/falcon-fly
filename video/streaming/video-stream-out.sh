@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 
 GETFILE="$1"
 if [ -z "$1" ]
@@ -31,4 +32,4 @@ sdp=sap,\
 name=video\
 }"}' --sout-all --sout-keep
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

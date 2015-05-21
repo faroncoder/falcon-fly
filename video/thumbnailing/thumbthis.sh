@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 ## FILE & FOLDER ROUTINE CHECK
 
   if [ ! -d "$PWD/thumbs" ]; then
@@ -16,7 +17,7 @@ fi
 if [ -z "$INPUT" ];
 	then
     	echo "nope there is no file -- ending the encoding engine..."
- 		exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 for f in "${INPUT[@]}"; do
 		HEIGHTPNG="256"
@@ -27,4 +28,4 @@ for f in "${INPUT[@]}"; do
 		#ffmpeg -ss 00:01:00 -i $f -y -t 1 -vf "scale=trunc(oh*a/2)*2:$HEIGHTPNG" -f image2 -vframes 1 "thumbs/$f.png" < /dev/null ;
 	done
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

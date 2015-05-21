@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 typedest="$1"
 appname="$2"
 binpull="$HOME/.falcon/scripting/falcon-fly/app/libsafe"
@@ -29,7 +30,7 @@ if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 	echo "configuring $appname ..."
 	cp $binpull/html-full.txt $pathdir/public/index.html
 	echo "app created!  Current directory: $PWD and you may begin scripting..."
-	exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 
 fi
 if [ "$typedest"="h" ] || [ "$typedest"="H" ]
@@ -44,7 +45,7 @@ if [ "$typedest"="h" ] || [ "$typedest"="H" ]
 	cp $binpull/html-full.txt $pathdir/index.html
 	echo "now we are here and you may begin scripting..."
 
-	exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
 
@@ -59,4 +60,4 @@ fi
 
 
 
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

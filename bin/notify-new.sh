@@ -1,4 +1,5 @@
 #!/bin/bash
+startgreen=`date +%s`
 ## USER CONFIGURATION
 MSG="$1"
 PATHICON="$2"
@@ -6,7 +7,7 @@ PATHICON="$2"
 function notifyonfly {
 PING="$( echo $MSG )"
 DISPLAY=:0.0 /usr/bin/notify-send $ICON "$PING"
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 }
 
 function getmsg {
@@ -38,5 +39,5 @@ if [ -z "$MSG" ]
             getpath
             notifyonfly
 fi
-exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 ## USAGE: notify-new "Hello you the world" ~/lib/media/pic/self/sunfaron.png
