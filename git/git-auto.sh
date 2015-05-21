@@ -1,5 +1,5 @@
 #!/bin/bash
-
+date
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
 
@@ -18,5 +18,5 @@ while read line; do
 	#git push -u "$( basename $PWD ).git";
 done < ~/x.txt
 #rm ~/x.txt
-
+time
 exit 0

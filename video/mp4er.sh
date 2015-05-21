@@ -1,7 +1,8 @@
 #!/bin/bash
-
+export PATH
 PATHDIR="/home/faron/var/Streamings/files/engine/factory-mp4"
-
+cd $PATHDIR
+INPUT=$( find "$PATHDIR" -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
 
 function ffmpegengine() {
 		HEIGHTWT="360"
@@ -16,8 +17,6 @@ function ffmpegengine() {
 		CRF="25"
 		PRESET="ultrafast"
 		COMMENTFILE="Encoded by Faron the Falcon $( date )"
-		INPUT="$PATHDIR/$PREFILE.mkv"
-		PREFILE="$( rev <<< "$INPUT" | cut -d"." -f2 | rev )"
 		ffmpeg -i "$INPUT" -y \
 			-vcodec libx264 \
 			-preset "$PRESET" \
@@ -38,10 +37,11 @@ function ffmpegengine() {
 			-sc_threshold 40 \
 			-i_qfactor 0.71 \
 			-b_strategy 1 \
-			-flags +loop +global_header \
+			-flags +loop \
+			-flags +global_header \
 			-movflags +faststart \
 			-pix_fmt +yuv420p \
-			-acodec libfdk_aac \
+			-acodec libvo_aacenc \
 			-ab 128k \
 			-ar 44100 \
 			-ac 2 \
@@ -51,23 +51,21 @@ function ffmpegengine() {
 			-metadata container="$CONTAINTERFILE" \
 			-metadata artist="$ARTISTFILE" \
 			-metadata comment="$COMMENTFILE" \
-			-f mp4 "$PATHDIR/$PREFILE.mp4" < /dev/null
-			mv "$PATHDIR/$PREFILE.mkv" completed/
-			mv "$PATHDIR/$PREFILE.mp4" output/
+			-f mp4 "$PREFILE.mp4" < /dev/null
+#			mv "$PATHDIR/$PREFILE.mkv" completed/
+#			mv "$PATHDIR/$PREFILE.mp4" output/
 }
 
-FILEGRAB =$( find $PATHDIR -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
 
-if [[ ! -z "$FILEGRAB" ]]; then
+if [[ ! -z "$INPUT" ]]; then
 
-        PREFILE="$( rev <<< "$FILEGRAB" | cut -d "." -f2 | rev )"
-		INPUT="$PATHDIR/$PREFILE.mkv"
+        PREFILE="$( rev <<< $INPUT | cut -d "." -f2 | rev )"
         ffmpegengine
     else
     	#FILEGRAB="$( find /media/mkv -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )"
-    	FILEGRAB="nada.mkv"
-    	INPUT="$PATHDIR/$PREFILE.mkv"
-    	PREFILE="$( rev <<< "$FILEGRAB" | cut -d"." -f2 | rev )"
+    	#FILEGRAB="nada.mkv"
+    	#INPUT="$PATHDIR/$PREFILE.mkv"
+    	#PREFILE="$( rev <<< "$FILEGRAB" | cut -d"." -f2 | rev )"
     	if [[ -z "$PREFILE" ]]; then
     		exit 0
     	fi
@@ -76,6 +74,9 @@ if [[ ! -z "$FILEGRAB" ]]; then
 		#mv "$PREFILE.dat" /media/mkv/
     	#ffmpegengine
 fi
+
+
+
 
 
 
