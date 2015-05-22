@@ -13,7 +13,7 @@ function ffmpegengine() {
 		CONTAINTERFILE=""
 		ARTISTFILE=""
 		MAXRAT="896k"
-		BUFRAT="0"
+		BUFRAT="800k"
 		BITRAT="800k"
 		CRF="25"
 		PRESET="ultrafast"
