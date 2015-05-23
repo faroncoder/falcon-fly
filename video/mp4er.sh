@@ -17,7 +17,7 @@ function ffmpegengine() {
 		BITRAT="800k"
 		CRF="25"
 		PRESET="ultrafast"
-		COMMENTFILE="Encoded by Faron the Falcon $( date )"
+		COMMENTFILE="Falcon $( date ) - $0"
 		ffmpeg -i "$INPUT" -y \
 			-vcodec libx264 \
 			-preset "$PRESET" \
@@ -35,6 +35,8 @@ function ffmpegengine() {
 			-subq 6 \
 			-me_range 16 \
 			-keyint_min 25 \
+			-keyint_max 250 \
+			-qp 0 \
 			-sc_threshold 40 \
 			-i_qfactor 0.71 \
 			-b_strategy 1 \
@@ -42,7 +44,7 @@ function ffmpegengine() {
 			-flags +global_header \
 			-movflags +faststart \
 			-pix_fmt +yuv420p \
-			-acodec libvo_aacenc \
+			-acodecw libvo_aacenc \
 			-ab 128k \
 			-ar 44100 \
 			-ac 2 \
