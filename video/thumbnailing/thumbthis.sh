@@ -6,10 +6,10 @@ startgreen=`date +%s`
         mkdir -p $PWD/thumbs
 fi
 
-INPUT="$( find $PWD -maxdepth 1 -type f -name '*.mkv' -exec basename {} \;  )"
+INPUT="$( find $PWD -maxdepth 1 -type f -name '*.mp4' -exec basename {} \;  )"
 if [ -z "$1" ];
 	then
-		INPUT=( $( find $PWD -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; ) )
+		INPUT=( $( find $PWD -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ) )
 	else
 		INPUT="$1"
 fi
