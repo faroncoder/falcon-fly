@@ -15,8 +15,9 @@ while read line; do
 	git status;
 	git add --all;
 	git commit -m "auto-committing via script";
-	git push -u "$( basename $PWD ).git" master;
+	#git push -u "$( basename $PWD ).git" master;
 	#git push -u "$( basename $PWD ).git";
+	git push;
 done < ~/x.txt
 #rm ~/x.txt
 
