@@ -21,6 +21,6 @@ while read line; do
 done < ~/x.txt
 #rm ~/x.txt
 
-trap time
+trap 'time' 5
 
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
