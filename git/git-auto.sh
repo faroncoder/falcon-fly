@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
-ssh -vT git@github.com -i ~/.ssh/id_github
+
 
 find /home/faron/.falcon/scripting -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > ~/x.txt
 	#for f in "${GITLIST[@]}"; do
@@ -20,5 +20,7 @@ while read line; do
 	git push;
 done < ~/x.txt
 #rm ~/x.txt
+
+trap time
 
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
