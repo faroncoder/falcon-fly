@@ -1,3 +1,3 @@
 #!/bin/sh -e
 
-notify-new "$PWD" /home/faron/var/Pictures/self/sunfaron.png
+notify-send "$PWD" -i /home/www/faronintel/html/faronthefalcon.png
