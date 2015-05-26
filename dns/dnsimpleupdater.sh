@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 
 function sendrequest {
 curl  -H "X-DNSimple-Token: $ACCESSAPI" -H "Accept: application/json" -H "Content-Type: application/json" -X "PUT" -d "{ \"record\": { \"id\": \"$RECORD_ID\", \"name\": \"$NAME\", \"content\": \"$IP\" }}" --url "https://api.dnsimple.com/v1/domains/$DOMAIN_ID/records/$RECORD_ID"
@@ -127,4 +127,4 @@ DOMAIN_ID="faronhost.ca"
 RECORD_ID="3520797"
 NAME="rtsp"
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

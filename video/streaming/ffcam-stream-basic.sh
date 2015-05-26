@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 
  dvgrab -noavc -format dv2 -guid 1 - | cvlc - \
  --sout='#duplicate{dst=display,\
@@ -23,4 +23,4 @@ sdp=sap,\
 name=live\
 }"}' --sout-all --sout-keep
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

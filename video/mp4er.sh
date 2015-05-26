@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 export PATH
 PATHDIR="/home/faron/var/Streamings/files/engine/factory-mp4"
 cd $PATHDIR
@@ -59,18 +59,21 @@ function ffmpegengine() {
 			mv "$PREFILE.mp4" output/
 }
 
-
+## if we do have a file to process
 if [[ ! -z "$INPUT" ]]; then
-
+		## we grab filename of the file without extension
         PREFILE="$( rev <<< $INPUT | cut -d "." -f2 | rev )"
+        ## start ffmpeg
         ffmpegengine
     else
     	#FILEGRAB="$( find /media/mkv -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )"
     	#FILEGRAB="nada.mkv"
     	#INPUT="$PATHDIR/$PREFILE.mkv"
     	#PREFILE="$( rev <<< "$FILEGRAB" | cut -d"." -f2 | rev )"
+
+    	## If we do not have anything to process, we then exit (w/ log)
     	if [[ -z "$PREFILE" ]]; then
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+		stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
     	fi
     	#cp "/media/mkv/$PREFILE.mkv" $PATHDIR/
     	#touch "$PREFILE.dat"
@@ -107,4 +110,4 @@ fi
 
 $0
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

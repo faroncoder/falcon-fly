@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 #getfilesdir=( $( find . -maxdepth 1 -type d ! -type f | sed '/\./d' | sed '/\.\./d' | sort | cut -d "/" -f2 ) )
 getfileslist=($( find ./ -maxdepth 1 -type f ! -name '.*' -exec basename {} \; | sort | sed 's/ //g' ))
 getfilesdir=($( find ./ -maxdepth 1 -type d ! -name '.' ! -name '..' ! -name '.*' -exec basename {} \; | sort  | sed 's/ //g' ))
@@ -35,4 +35,4 @@ for lsfile in ${getfileslist[@]}
 # 	done
 # 	printf "\n"
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

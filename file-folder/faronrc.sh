@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 FARON_PATH="/usr/bin:/home/faron/bin:/home/local/bin"
 export PATH="$PATH:$FARON_PATH"
 LOG="$HOME/.falcon/logs/faronrc/logging.log"
@@ -34,5 +34,5 @@ init
 doCmd
 endCmd
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

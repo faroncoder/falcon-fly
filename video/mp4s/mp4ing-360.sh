@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 FILEGRAB="$( find ./ -maxdepth 1 -type f  -name '*.mkv' ! -name '*.sh' | sort | head -n1 )"
 
 YEAR="$( echo $GETDATE | awk '{print$6}' )"
@@ -27,7 +27,7 @@ if [ -z "$FILEGRAB" ]
     then
 
    echo "nope there is no file -- ending the encoding engine..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 
 
     else
@@ -82,4 +82,4 @@ ffmpeg -i "$INPUT" -y  \
 fi
 ./$0
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

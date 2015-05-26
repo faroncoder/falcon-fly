@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 function gitupdategits {
 BASELOC="$HOME/.falcon/scripting/falcon-gits"
 GIT="/home/faron/tmp/gits.list"
@@ -49,4 +49,4 @@ cd $BASELOC
 gitupdatemaster
 gitupdategits
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

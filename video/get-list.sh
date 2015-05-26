@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 TARGETPATH="$1"
 if [ -z "$TARGETPATH" ]
     then
@@ -22,4 +22,4 @@ if  [ "$TARGETPATH"=="mkv" -o "$TARGETPATH"=="mp4" -o "$TARGETPATH"=="webm"  ]
                 echo "$TARGETPATH listing completed"
         fi
 fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

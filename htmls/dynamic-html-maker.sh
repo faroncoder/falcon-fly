@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 
 echo -n "location of video htmls folder? "
 read VIDEOLOC
@@ -30,4 +30,4 @@ while read line;
     cp templatedynamic.txt "$NAMEVIDEO.php"
     sed -i -e "s/~_PATHa_~/$VIDEOLOC\/$NAMEFOLDER/g" "$NAMEVIDEO.php"
     sed -i -e "s/~_PATHb_~/$VIDEOLOC/g" "$NAMEVIDEO.php"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

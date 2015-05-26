@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 ## FILE & FOLDER ROUTINE CHECK
 if [[ ! -d "$PWD/completed" ]];
 	then
@@ -232,7 +232,7 @@ if [ -z "$2" ];
 if [ -z "$INPUT" ];
 		then
 			echo "nope there is no file -- ending the encoding engine..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 		else
 			PREFILE="$( rev <<< $INPUT | cut -d "." -f2 | rev )"
 	fi
@@ -244,5 +244,5 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
 
 $0 $HEIGHTWT  ## self-execute the script again for reloop
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

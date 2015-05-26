@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 
 file="$1"
 
@@ -14,4 +14,4 @@ fi
 
 nohup `$( dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -y -c:v libx264 -preset ultrafast -pix_fmt yuv420p -crf 25.0 -qp 0 -g 60 -c:a libfdk_aac -f mpeg "$HOME/$file.mpg" >/dev/null )` & sleep 3; ffplay $HOME/$file.mpg
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

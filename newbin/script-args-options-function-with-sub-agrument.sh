@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 # By keeping options in alphabetical order, it's easy to add more.
 
 display_help() {
@@ -16,7 +16,7 @@ do
       -h | --help)
 	  display_help  # Call your function
 	  # no shifting needed here, we're done.
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	  ;;
       -u | --user)
 	  username="$2"

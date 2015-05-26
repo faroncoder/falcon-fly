@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgreen=`date`
 BULK=( "$@" )
 NEWBULK=( $( echo ${BULK[@]} | sed "s/$1//g" ) )
 OPEN="sudo apt-cache search"
@@ -53,4 +53,4 @@ if [[ "$NEXTCOMM" == "y" ]];
 				sudo apt-get install $pull
 			done
 fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
