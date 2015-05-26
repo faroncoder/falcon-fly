@@ -1,6 +1,5 @@
 #!/bin/bash
 source /home/faron/.bash_scripts
-time
 startgreen=`date +%s`
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
@@ -25,11 +24,11 @@ done < ~/x.txt
 
 
 
-#stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 
 #echo `trap times $ EXIT` >> /home/faron/.falcon/logs/scripts.log
 #echo "$0 | `/usr/bin/time -f "\t%E real,\t%U user,\t%S sys" -a -o /home/faron/.falcon/logs/scripts.log $0`" exit 0
 
 
-ret=$?; printf "`times`" >> /home/faron/.falcon/logs/scripts.log; exit "$ret"; exit 0
+#ret=$?; printf "`times`" >> /home/faron/.falcon/logs/scripts.log; exit "$ret"; exit 0
 
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; time $0; exit 0
