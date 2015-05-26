@@ -1,5 +1,4 @@
 #!/bin/bash
-source /home/faron/.bash_scripts
 startgreen=`date +%s`
 ## USER CONFIGURATION
 MSG="$1"
@@ -40,6 +39,5 @@ if [ -z "$MSG" ]
             getpath
             notifyonfly
 fi
-#stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo " $0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-echo "$0 \n `trap time`" >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 ## USAGE: notify-new "Hello you the world" ~/lib/media/pic/self/sunfaron.png
