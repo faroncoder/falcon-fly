@@ -26,6 +26,6 @@ done < ~/x.txt
 
 
 #stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-trap times EXIT
+trap times EXIT >> /home/faron/.falcon/logs/scripts.log
 #echo "$0 | `/usr/bin/time -f "\t%E real,\t%U user,\t%S sys" -a -o /home/faron/.falcon/logs/scripts.log $0`" exit 0
 exit 0
