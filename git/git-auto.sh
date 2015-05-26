@@ -1,5 +1,6 @@
 #!/bin/bash
 source /home/faron/.bash_scripts
+time
 startgreen=`date +%s`
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
