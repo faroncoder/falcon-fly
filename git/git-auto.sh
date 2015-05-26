@@ -2,9 +2,9 @@
 startgreen=`date +%s`
 time
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
+ssh -T git@github.com -i ~/.ssh/id_github
 
-
-find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' > ~/x.txt
+find /home/faron/.falcon/scripting -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > ~/x.txt
 	#for f in "${GITLIST[@]}"; do
 	#	DRIVE="$( dirname $f )"
 	sed -i -e '/\/home\/faron\/.falcon\/scripting\/gits/d' ~/x.txt
