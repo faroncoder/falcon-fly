@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 package="$PWD/package.json"
 checkjson=$( find $PWD -maxdepth 1 -type f -name 'package.json' )
 if [ -z "$checkjson" ]; then
@@ -66,4 +66,4 @@ fi
 # #npm uninstall $npmdep
 # #npm install
 
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

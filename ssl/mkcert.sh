@@ -89,4 +89,4 @@ sudo chmod 0600 $KEYFILE
 echo "CERTIFICATE AND KEY CHMOD-ED FOR THE SERVER READ"
 sudo $OPENSSL x509 -subject -fingerprint -noout -in $CERTFILE || exit 2
 echo "CERTIFICATE AND KEY FINGERPRINTED AND SEALED FOR DOMAIN: $DOMAIN1"
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

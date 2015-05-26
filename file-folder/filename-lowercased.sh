@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 
 filename="$1"
 if [ -z "$filename" ]
@@ -10,11 +10,11 @@ if [ -z "$filename" ]
 			NEWNAME="$( echo $filename | tr 'A-Z' 'a-z' )";
 			mv $filename $NEWNAME;
 		done
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
     else
     		SINGLEFILE="$( echo $filename | tr 'A-Z' 'a-z' )";
     		mv $filename $SINGLEFILE
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

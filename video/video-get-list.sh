@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 TARGETPATH="$1"
 HEREPATH="$2"
 
@@ -38,4 +38,4 @@ if  [ "$TARGETPATH"="mkv" -o "$TARGETPATH"="mp4" -o "$TARGETPATH"="webm"  ]
 #	rm $LIST
 	echo "$HOSTHERE-$TARGETPATH.list is ready in $PWD"
 fi
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

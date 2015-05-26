@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 
 cmdthis="find  $DEPTH $TYPE $NAME $EXEC"
 LOCPA=""

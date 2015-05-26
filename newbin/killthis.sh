@@ -1,7 +1,7 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 
 mv $1 $HOME/.falcon/killed/
 
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

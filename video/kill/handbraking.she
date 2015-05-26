@@ -27,7 +27,7 @@ if [ -z "$FILECHECK" ]
 	GETDATE="$( date )"
             echo "$NOW :: $fileonly :: no more file to encode ---> script terminated" >> $streamlog
             echo "$NOW :: $fileonly ---> exiting"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
       else
 	GETDATE="$( date )"        
 	    INPUT="$( basename $FILECHECK )"
@@ -42,4 +42,4 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
             echo "$NOW :: $fileonly :: $INPUT  <--- completed" >> $streamlog
 fi
 ./handbraking.sh
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 		gitnewname=$( basename $PWD )
 		echo -n "Creating new branch $gitnewname.git.  Proceed? "
 		read comfirmgit
@@ -17,4 +17,4 @@ startgreen=`date`
 			else
 				exit 1
 		fi
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

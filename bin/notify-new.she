@@ -7,7 +7,7 @@ PATHICON="$2"
 function notifyonfly {
 PING="$( echo $MSG )"
 DISPLAY=:0.0 /usr/bin/notify-send $ICON "$PING"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 }
 
 function getmsg {
@@ -39,5 +39,5 @@ if [ -z "$MSG" ]
             getpath
             notifyonfly
 fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 ## USAGE: notify-new "Hello you the world" ~/lib/media/pic/self/sunfaron.png

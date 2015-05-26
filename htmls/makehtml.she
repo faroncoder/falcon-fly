@@ -420,4 +420,4 @@ echo $videobackbone > "$PWD/facebox.html"
 	# 	cd ./jsc/media
 	# 	/home/faron/bin/flv-tsx-er
 	# fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

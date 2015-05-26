@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 
 cd /home/faron/var/streamings/files/raw
 $HOME/.falcon/scripting/falcon-fly/bin/file-name-cleaner.sh
@@ -54,4 +54,4 @@ fi
 #rm ffmpeg*
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

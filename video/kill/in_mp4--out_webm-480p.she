@@ -54,4 +54,4 @@ ffmpeg \
 rm ffmpeg*
 mv "$INPUT" mp4/
 ./in_mp4--out_webm-480p.sh
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

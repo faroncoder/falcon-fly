@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 
 if [[ -z "$1" ]]; then
 		PATHDIRHOME="$PWD"
@@ -27,7 +27,7 @@ function glopperGo() {
 if [[ -z "$PATHDIRHOME/jsc" ]]; then
 		echo -n "You need to be inside working directory of the project (the  that holds 'JSC' folder (level 1).
 			Aborting."
-			stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+			stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 	else
 		if [[ -d "$PATHDIRHOME/jsc/js" ]]; then
 			echo "App structures match!"
@@ -79,5 +79,5 @@ fi
 #         	exit 1
 # fi
 
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

@@ -15,7 +15,7 @@ PATH="/sbin:/bin"
 PIDFILE=/var/run/$NAME.pid
 LOGFILE=home/faron/bin/core/scripting/falcon-fly/init.d/$NAME.log
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 
 start() {
   if [ -f $PIDFILE ] && kill -0 $(cat $PIDFILE); then

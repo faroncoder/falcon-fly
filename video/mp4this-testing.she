@@ -108,7 +108,7 @@ if [[ -z "$INDVI" ]]; then
 		FILEGRAB="$( find $PWD -maxdepth 1 -type f  ! -name '*.sh' ! -name 'mp4this' | sort | head -n 1 )"
 		if [[ -z "$FILEGRAB" ]]; then
 				echo "nope there is no file -- ending the encoding engine..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 			else
 				INPUT=$( basename $FILEGRAB )
 				compileFfmpeg
@@ -116,7 +116,7 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
 	else
 		INPUT=$( basename $INDVI )
 		compileFfmpeg
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 fi
 
 
@@ -135,4 +135,4 @@ fi
 
 $0  ## self-execute the script again for reloop
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

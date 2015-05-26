@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date`
+startgreen=`date +%s`
 BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VALVE"
 orderfiles=( $( find $BINPULL -type f ) )
 
@@ -33,4 +33,4 @@ for f in "${orderfiles[@]}";
 
 #rm mediaplayer.tar.gz
 
-stopred=`date`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
