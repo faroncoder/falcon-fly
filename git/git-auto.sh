@@ -1,8 +1,8 @@
 #!/bin/bash
 startgreen=`date +%s`
-time
+
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
-ssh -T git@github.com -i ~/.ssh/id_github
+ssh -vT git@github.com -i ~/.ssh/id_github
 
 find /home/faron/.falcon/scripting -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > ~/x.txt
 	#for f in "${GITLIST[@]}"; do
@@ -15,7 +15,7 @@ while read line; do
 	git status;
 	git add --all;
 	git commit -m "auto-committing via script";
-	git push;
+	git push -u "$( basename $PWD ).git" master;
 	#git push -u "$( basename $PWD ).git";
 done < ~/x.txt
 #rm ~/x.txt
