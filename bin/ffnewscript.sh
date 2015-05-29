@@ -1,6 +1,9 @@
 #!/bin/bash
-startgreen=`date +%s`
+stargreen=`date +%s000`;
+######## IGNORE ABOVE -- LOGGING PURPOSE ######
 newfile="$1"
+
+
 newbin="$HOME/.falcon/scripting/falcon-fly/newbin"
 if [ -z "$1" ]
 	then
@@ -10,12 +13,22 @@ fi
 proofreadfile="$( echo $newfile | tr '  ' ' ' | sed 's/.sh//g' ).sh"
 touch $newbin/$proofreadfile
 chmod +x $newbin/$proofreadfile
-echo "#!/bin/bash
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+echo "
+#!/bin/bash
+stargreen=\`date +%s000\`;
+######## IGNORE ABOVE -- LOGGING PURPOSE ######
 
-
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+######## IGNORE BELOW -- LOGGING PURPOSE ######
+stopred=\`date +%s000\`;
+faronruntime=\$(( \$stopred - \$startgreen ));
+echo \"\$0 | \$startgreen | \$stopred | \$faronruntime \" >> ~/.falcon/logs/scripts.log;
+exit 0
 " >> $newbin/$proofreadfile
 subl $newbin/$proofreadfile
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+######## IGNORE BELOW -- LOGGING PURPOSE ######
+stopred=`date +%s000`;
+faronruntime=$(( $stopred - $startgreen ));
+echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+exit 0
+

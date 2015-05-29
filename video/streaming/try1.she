@@ -1,2 +1,0 @@
-
-cvlc 8.mp4 --sout='#duplicate{dst=display,dst="transcode{vcodec=mp4v,acodec=ac3,ab=128,width=640,height=480,vb=1072,vt=3232,qmin=8,qmax=2}:rtp={mux=ts,dst=192.168.1.10:8003}:access{mux=ts,port=8004,sdp=sap,name=tvchannel}"}' --sout-all --sout-keep

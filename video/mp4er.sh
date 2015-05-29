@@ -18,6 +18,12 @@ function ffmpegengine() {
 		CRF="25"
 		PRESET="ultrafast"
 		COMMENTFILE="Falcon $( date ) - $0"
+		if [[ "$( hostname )" == "f10" ]]; then
+                        CODECAID="libfdk_aac"
+                else
+                        CODECAID="libvo_aacenc"
+                fi
+
 		ffmpeg -i "$INPUT" -y \
 			-vcodec libx264 \
 			-preset "$PRESET" \
@@ -43,7 +49,7 @@ function ffmpegengine() {
 			-flags +global_header \
 			-movflags +faststart \
 			-pix_fmt +yuv420p \
-			-acodec libfdk_aac \
+			-acodec "$CODECAID" \
 			-ab 128k \
 			-ar 44100 \
 			-ac 2 \
@@ -107,6 +113,6 @@ fi
 #ffmpegthumbnailer -i "output/$PREFILE.mp4" -w -c png -s 0 -o "thumbs/$INPUT.png"
 
 
-$0
+./$0
 
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
