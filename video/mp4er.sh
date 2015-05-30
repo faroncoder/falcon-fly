@@ -83,10 +83,13 @@ function ffmpegengine() {
 		-metadata artist="$ARTISTFILE" \
 		-metadata comment="$COMMENTFILE" \
 		-f $FILETYPE $PREFILE.$FILETYPE < /dev/null
+		#lets md5sum the file
+		md5sum "$PREFILE.$FILETYPE" > "$PREFILE.dat"
 		#Lets clean up - sending input file to 'completed' folder
 		mv "$PREFILE.mkv" completed/
 		## Sending new processed file to 'output' folder
-		mv "$PREFILE.$FILETYPE" output/
+		mv "$PREFILE.*" output/
+
 }
 
 ## Let's see if we have file to process by command 'find'
