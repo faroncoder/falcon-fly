@@ -30,7 +30,7 @@ for f in "${GETDAT[@]}"; do
 		#create blank file with same name - aka decoy-kill
 		touch $PREFILE.mp4
 		#sending decoy-kill file to server
-		scp $PREFILE.mp4 {faron@192.168.1.6,faron@192.168.1.2}:$PATHLINK/
+		scp $PREFILE.mp4 faron@{192.168.1.6,192.168.1.2}:$PATHLINK/
 		#remove decoy-kill and dat file to complete the process
 		rm $PREFILE.mp4 $f
 	else
