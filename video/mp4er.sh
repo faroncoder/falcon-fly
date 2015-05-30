@@ -1,5 +1,12 @@
 #!/bin/bash
-startgreen=`date +%s000`
+startgreen=`date +%s`
+function stopwatchtime() {
+	stopred=`date +%s`
+	faronruntime=$( echo `expr $startgreen - $stopred` )
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log
+	exit 0
+}
+#### IGNORE ABOVE -
 export PATH
 PATHDIR="/home/faron/var/Streamings/files/engine/factory-mp4"
 cd $PATHDIR
@@ -71,32 +78,14 @@ if [[ ! -z "$INPUT" ]]; then
         ## start ffmpeg
         ffmpegengine
     else
-    	#FILEGRAB="$( find /media/mkv -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )"
-    	#FILEGRAB="nada.mkv"
-    	#INPUT="$PATHDIR/$PREFILE.mkv"
-    	#PREFILE="$( rev <<< "$FILEGRAB" | cut -d"." -f2 | rev )"
-
-    	## If we do not have anything to process, we then exit (w/ log)
+    	## Let's check whether we have file or not; via sort/find by filename
     	if [[ -z "$PREFILE" ]]; then
-		stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+		## if there is no filename, let's exit via logger.
+		stopwatchtime
     	fi
-    	#cp "/media/mkv/$PREFILE.mkv" $PATHDIR/
-    	#touch "$PREFILE.dat"
-		#mv "$PREFILE.dat" /media/mkv/
-    	#ffmpegengine
 fi
 
-
-
-
-
-
-# else
-
-#     else
-# 		PREFILE="$( rev <<< "$FILEGRAB" | cut -d"." -f2 | rev )"
-
-#          	if [ -z "$( ls *.mkv )" ]; then
+# 		#          	if [ -z "$( ls *.mkv )" ]; then
 #                 INPUT="$PATHDIR/$PREFILE.mkv"
 #                 cp "/media/mkv/$PREFILE.mkv" $PATHDIR/
 
@@ -113,6 +102,7 @@ fi
 #ffmpegthumbnailer -i "output/$PREFILE.mp4" -w -c png -s 0 -o "thumbs/$INPUT.png"
 
 
+## script self-initation to loop.
 ./$0
-
-stopred=`date +%s`; faronruntime=`echo $(( $stopred - $startgreen ))`; echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopwatchtime
+### Faron's note:  I didn't use loop via array for this one. We all know that FFMPEG does take time to finish processing one file at a rate of movie's length time which it'll stands as an ETA for FMPEG to finish processing.  I.e. if mkv has a movie stream and it's movie time is 1hr and 30min; therefore it would take 1hr and 30min (more or less) for FFMPEG to finish processing it [ x264 is huge reason ].  So, if I did use array method to loop / process my files, at anytime I break the code via CTRL-C, script will stop processing the file, but it'll still move on to next movie to process.  It'll have to be stopped via CTRL-Z.  I prefer using CTRL-C since it is how I am able to track all of my scripts meanwhile CTRL-Z only kill the script but leaving with no footprints - thus harder for me to track (and it opens the door for bugs).  This method simply process the file at a time, and script will exit  everytime it finishes processing a file, however script will also self-execute so, it'd loop to next file leaving footprints which are trackable.
