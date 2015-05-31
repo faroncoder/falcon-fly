@@ -8,6 +8,7 @@ function stopwatchtime() {
 }
 ## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
 ## BEGIN
+export PATH="$PATH:/usr/bin:/bin:/faron/home/bin"
 PATHLINK="/home/faron/var/Streamings/files/engine/factory-mp4/output"
 cd $PATHLINK
 if [ ! -d "$PATHLINK/streamer" ]; then
@@ -17,7 +18,7 @@ fi
 
 
 scp "faron@192.168.1.6:$PATHLINK/{*.mp4,*.dat}" "$PATHLINK/"
-scp "faron@192.168.1.2:$PATHLINK/{*.mp4,*.dat}" "$PATHLINK/"
+#scp "faron@192.168.1.2:$PATHLINK/{*.mp4,*.dat}" "$PATHLINK/"
 GETDAT=( $( find -maxdepth 1 -type f -name '*.dat' -exec basename {} \; | sort ) )
 for f in "${GETDAT[@]}"; do
 	PREFILE="$( rev <<< $f | cut -d "." -f2 | rev )"
@@ -30,7 +31,7 @@ for f in "${GETDAT[@]}"; do
 		#create blank file with same name - aka decoy-kill
 		touch $PREFILE.mp4
 		#sending decoy-kill file to server
-		scp $PREFILE.mp4 faron@{192.168.1.6,192.168.1.2}:$PATHLINK/
+		scp "$PREFILE.mp4" "faron@{192.168.1.6,192.168.1.2}:$PATHLINK/"
 		#remove decoy-kill and dat file to complete the process
 		rm $PREFILE.mp4 $f
 	else
