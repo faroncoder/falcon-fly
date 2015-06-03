@@ -1,17 +1,13 @@
 #!/bin/bash
-startgreen=`date +%s`
+export PATH=$PATH
+MYHOME="/home/`whoami`"
+file=`uuid | sed 's/-//g'`
 
-file="$1"
+#nohup `dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -y -c:v libx264 $preset ultrafast -pix_fmt yuv420p -crf 25.0 -tune zerolatency -qp 0 -g 60 -b:v 800k -maxrate 1024k -bufsize 800k -flags +global_header -c:a libfdk_aac -b:a 128k -ar 44100 -ac 2 -f mpeg "$MYHOME/$file.mpg" < /dev/null & sleep 3; ffplay "$MYHOME/$file.mpg"` > firewire-recording.out 2> firewire-recording.err < /dev/null &
 
-if [[ -z "$file" ]]; then
-	file="$( uuid )"
-fi
+dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -y -vcodec libx264 -preset ultrafast -b:v 800k -maxrate 1024k -bufsize 800k -crf 25 -pix_fmt yuv420p -tune zerolatency -qp 0 -g 60 -flags +global_header -acodec libfdk_aac -b:a 128k -ar 44100 -ac 2 -f mpg "$MYHOME/$file.mpg" 1> dvrab.out 2> dvgrab.err < /dev/null;
 
-if [[ ! -z "nohup.out" ]]; then
-	rm nohup.out
-fi
+sleep 2; ffplay "$MYHOME/$file.mpeg"
 
 
-nohup `$( dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -y -c:v libx264 -preset ultrafast -pix_fmt yuv420p -crf 25.0 -tune zerolatency -qp 0 -g 60 -b:v 800k -maxrate 1024k -bufsize 800k -flags +global_header -c:a libfdk_aac -b:a 128k -ar 44100 -ac 2 -f mpeg "$HOME/$file.mpeg" >/dev/null )` & sleep 2 & ffplay $HOME/$file.mpeg
-
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultrafast -b:v 800k -maxrate 1024k -nobuffer -qp 0 -pix_fmt yuv420p -tune zerolatency -crf 24 -g 60 -flags +loop -flags +global_header -movflags +faststart -c:a ac3 -b:a 128k -ar 44100 -ac 2 -f asf - | ffplay - < /dev/null
