@@ -1,0 +1,98 @@
+#!/bin/bash
+startgreen=`date +%s`
+function stopwatchtime { stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0 }
+# Generates a self-signed certificate.
+# Edit dovecot-openssl.cnf before running this.
+if [[ ! "$EUID" = 0 ]]; then
+    echo "su yourself in first, Faron"
+    stopwatchtime
+else
+
+OPENSSL=${OPENSSL-openssl}
+SSLDIR=${SSLDIR-/etc/ssl}
+OPENSSLCONFIG=${OPENSSLCONFIG-/etc/ssl/cnfs/$DOMAINE.cnf}
+CNFS=/etc/ssl/cnfs
+CERTDIR=$SSLDIR/certs
+KEYDIR=$SSLDIR/private
+
+CERTFILE=$CERTDIR/$DOMAINE.pem
+KEYFILE=$KEYDIR/$DOMAINE.pem
+
+if [[ ! -d "$CNFS" ]]; then
+  mkdir -p /etc/ssl/cnfs
+  echo "CNFS folder in SSL was not presented and folder was just created."
+fi
+DOMAIN1="$1"
+if [[ ! "$DOMAIN1" ]]; then
+  echo -n "name of the subdomain/domain? "
+  read DOMAIN1
+fi
+DOMAINE=$( echo $DOMAIN1 | tr '*' 'A' | tr '.' '_' )
+
+find /etc/ssl -maxdepth 1 -type f -name "*$DOMAINE*" -exec rm {} \;
+
+echo "PARAMS FOR CERTIFICATE COMPLETED"
+sh -c "echo \"
+[ req ]
+default_bits = 2048
+#encrypt_key = yes
+distinguished_name = req_dn
+x509_extensions = v3_ca
+string_mask = utf8only
+prompt = no
+
+[ req_dn ]
+C=CA
+ST=ONTARIO
+L=TORONTO
+O=FARONINTEL
+OU=IT
+CN=\$DOMAIN1
+emailAddress=postmaster@\$DOMAIN1
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer
+subjectAltName=email:copy
+issuerAltName=issuer:copy
+
+[ v3_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid:always,issuer
+basicConstraints = CA:true
+#nsCertType = sslCA, emailCA
+subjectAltName=email:copy
+issuerAltName=issuer:copy
+
+[ cert_type ]
+nsCertType = server
+
+\" >> /etc/ssl/cnfs/$DOMAINE.cnf"
+echo "CNF CREATED FOR $DOMAIN1"
+echo "POPULATING PATH FOR CERTIFICATE: $DOMAIN1"
+echo -n "CERTS DIR = OK..."
+
+if [[ ! -d $KEYDIR ]]; then
+  mkdir -p $SSLDIR/private
+  echo "$SSLDIR/private directory doesn't exist but it was just created."
+fi
+echo -n "PRIVATE DIR = OK..."
+if [[ -f "$CERTFILE" ]]; then
+  echo "$CERTFILE already exists, won't overwrite"
+  exit 1
+fi
+echo -n "CERTS FILE = NEW..."
+if [[ -f "$KEYFILE" ]]; then
+  echo "$KEYFILE already exists, won't overwrite"
+  exit 1
+fi
+echo -n "KEY FILE = NEW..."
+echo "SUCCESS!"
+$OPENSSL req -new -x509 -nodes -config $OPENSSLCONFIG -out $CERTFILE -keyout $KEYFILE -days 365 || exit 2
+echo "CERTIFICATE AND KEY GENERATED AND INJECTED"
+chmod 0600 $KEYFILE
+echo "CERTIFICATE AND KEY CHMOD-ED FOR THE SERVER READ"
+$OPENSSL x509 -subject -fingerprint -noout -in $CERTFILE || exit 2
+echo "CERTIFICATE AND KEY FINGERPRINTED AND SEALED FOR DOMAIN: $DOMAIN1"
+fi #END OF CONDITIONAL ACTION  FROM LINE 15
+
+
+  stopwatchtime
