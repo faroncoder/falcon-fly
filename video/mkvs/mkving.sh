@@ -10,16 +10,16 @@ done
 
 ## function to collect all exisiting files in this directory only but one by one at a time
 
-grabavi=( /usr/bin/find  $PWD -maxdepth 1 -type f  -name '*.avi' ! -name '*.mkv'  ! -name '*.sh'  ! -name '*.txt' -exec /usr/bin/basename {} \;  )
+grabavi=( /usr/bin//find  $PWD -maxdepth 1 -type f  -name '*.avi' ! -name '*.mkv'  ! -name '*.sh'  ! -name '*.txt' -exec /usr/bin//basename {} \;  )
 
 for INPUTZ in "${grabavi[@]}";
 	do
-		INPUT="$( /usr/bin/basename $INPUTZ )";
-		PREFILE="$( /usr/bin/rev <<< "$INPUT" | /usr/bin/cut -d"." -f2 | /usr/bin/rev )";
-		/usr/bin/avidemux "$INPUT" --save
+		INPUT="$( /usr/bin//basename $INPUTZ )";
+		PREFILE="$( /usr/bin//rev <<< "$INPUT" | /usr/bin//cut -d"." -f2 | /usr/bin//rev )";
+		/usr/bin//avidemux "$INPUT" --save
 		read respondAvidemux
 		echo $respondAvidemux
-		/usr/bin/mkvmerge --output "mkv/$PREFILE.mkv" --language 0:eng --cues 0:all --default-track 0:no --compression 0:none --language 1:eng "$INPUT" --track-order 0:0,0:1  < /dev/null
+		/usr/bin//mkvmerge --output "mkv/$PREFILE.mkv" --language 0:eng --cues 0:all --default-track 0:no --compression 0:none --language 1:eng "$INPUT" --track-order 0:0,0:1  < /dev/null
 		mv $INPUT old/
 	done
 

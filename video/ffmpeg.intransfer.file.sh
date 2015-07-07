@@ -8,7 +8,7 @@ function stopwatchtime() {
 }
 ## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
 ## BEGIN
-export PATH="$PATH:/usr/bin:/bin:/faron/home/bin"
+export PATH="$PATH:/usr/bin/:/bin:/faron/home/bin"
 PATHLINK="/home/faron/var/Streamings/files/engine/factory-mp4/output"
 cd $PATHLINK
 if [ ! -d "$PATHLINK/streamer" ]; then

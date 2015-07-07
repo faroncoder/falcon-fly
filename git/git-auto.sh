@@ -26,7 +26,7 @@ done < ~/x.txt
 
 
 #echo `trap times $ EXIT` >> /home/faron/.falcon/logs/scripts.log
-#echo "$0 | `/usr/bin/time -f "\t%E real,\t%U user,\t%S sys" -a -o /home/faron/.falcon/logs/scripts.log $0`" exit 0
+#echo "$0 | `/usr/bin//time -f "\t%E real,\t%U user,\t%S sys" -a -o /home/faron/.falcon/logs/scripts.log $0`" exit 0
 
 
 #ret=$?; printf "`times`" >> /home/faron/.falcon/logs/scripts.log; exit "$ret"; exit 0

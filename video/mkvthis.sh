@@ -37,7 +37,7 @@ if [[ -z "$INPUT" ]]; then
 	echo "no more files!"
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 else
-	/usr/bin/avidemux2_cli --load $INPUT --reindex --autoindex --output-format MATROSKA --save $INPUT
+	/usr/bin//avidemux2_cli --load $INPUT --reindex --autoindex --output-format MATROSKA --save $INPUT
 read respondAvidemux
 echo $respondAvidemux
 mv $INPUT completed/
