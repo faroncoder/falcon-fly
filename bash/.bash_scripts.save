@@ -1,0 +1,98 @@
+
+function loadEnvironment() {
+	export PATH=$PATH:/home/faron/bin:/home/local/bin
+	export PATH=$PATH:/home/local/share/depot_tools
+
+#	JAVA_HOME="/home/local/share/java/jdk-1.8.0-openjdk-x86_64"
+	JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
+#	JAVA_HOME="/home/local/share/java/oracle-jdk1.8.0_40"
+	export PATH=$PATH:$JAVA_HOME/bin
+
+#	JRE_HOME="/usr/local/share/java/jre1.8.0_25"
+	JRE_HOME="/home/local/share/java/jre1.8.0_25"
+	export PATH=$PATH:$JRE_HOME/bin
+
+	ANT_HOME="/home/local/share/apache-ant"
+	export PATH=$PATH:$ANT_HOME/bin
+
+	STUDIO_SDK="/home/local/share/android-studio"
+	export PATH=$PATH:$STUDIO_SDK/bin
+	export PATH=$PATH:$STUDIO_SDK/platforms
+	export PATH=$PATH:$STUDIO_SDK/tools
+	export PATH=$PATH:$STUDIO_SDK/platform-tools
+
+	SDK="/home/local/share/sdk"
+	export PATH=$PATH:$SDK/bin
+
+	NDK="/home/local/share/ndk"
+	export PATH=$PATH:$NDK/bin
+
+#	CATALINA_HOME="/usr/share/tomcat8"
+#	export PATH=$PATH:$CATALINA_HOME
+
+#	PHP_HOME="/usr/share/php5"
+#	export PATH=$PATH:$PHP_HOME
+
+	NODE_FARON="/home/local/bin/node"
+	export PATH=$PATH:$NODE_FARON
+
+	NPM_FARON="/home/local/bin/npm"
+	export PATH=$PATH:$NPM_FARON
+
+#	SUBLIME="/home/local/lib/app/sublime_text"
+#	export PATH=$PATH:$SUBLIME
+
+## LOAD RUBY
+source /home/faron/.rvm/scripts/rvm
+
+GRABPATH="$( echo $PATH | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )"
+export PATH=`echo $PATH | sed 's/::/:/g'`
+
+}
+
+
+
+
+
+
+if [[ "$EUID" == 0 ]] ;
+	then
+QS		echo "Root environment - no SSH agent"
+		export PATH=$PATH:/home/local/bin
+	else
+		if [[ "$EUID" == 1004 ]] ;
+			then
+
+			loadEnvironment
+			SSH_ENV=$HOME/.ssh/environment
+			# start the ssh-agent
+			function start_agent {
+			    echo "Initializing new SSH agent..."
+			    # spawn ssh-agent
+			    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "$SSH_ENV"
+				echo "succeeded"
+	    		chmod 600 "$SSH_ENV"
+				. "$SSH_ENV" > /dev/null
+				/usr/bin/ssh-add
+			find /home/faron/.ssh -type f -name 'id_*' -exec /usr/bin/ssh-add {} \;
+				}
+
+			if [ -f "$SSH_ENV" ]; then
+				. "$SSH_ENV" > /dev/null
+				ps -ef | grep $SSH_AGENT_PID | grep ssh-agent$ > /dev/null ||
+			        start_agent;
+			else
+				start_agent;
+			fi
+		fi
+fi
+
+
+######### FARONIZED-MENU FUNCTION
+    function cd  {
+    builtin cd "$@"
+    RET=$?
+    ls
+    return $RET
+}
+

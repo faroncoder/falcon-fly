@@ -2,8 +2,8 @@
 startgreen=`date +%s`
 
 #cd /home/faron/var/streamings/files/raw
-#$HOME/.falcon/scripting/falcon-fly/bin/file-name-cleaner.sh
-/home/faron/bin/bin/file-name-cleaner
+#$HOME/.falcon/scripting/falcon-fly/.bin/file-name-cleaner.sh
+/home/faron/.bin/.bin/file-name-cleaner
 mv *.mkv mkv/
 
 ## function to collect all exisiting files in this directory only but one by one at a time

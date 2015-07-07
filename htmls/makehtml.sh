@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VALVE"
+BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VAULT"
 faceboxdoc="
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -396,7 +396,7 @@ echo $videobackbone > "$PWD/facebox.html"
 	# sed -i -e "s/\/EXTTYPE/\/$EXTTYPE/g" "./jsc/htmls/$NAME.html"
 	# sed -i -e "s/EXT/$EXT/g" "./jsc/htmls/$NAME.html"
 	done
-	/home/faron/bin/cssglop
+	/home/faron/.bin/cssglop
 	sudo chown -R www-data:www-data $PWD
 	sudo chmod -R 775 $PWD
 	# if [[ "$EXT"="ts" ]]; then
@@ -418,6 +418,6 @@ echo $videobackbone > "$PWD/facebox.html"
 	# if [ "$EXT"="flv" ]
 	# then
 	# 	cd ./jsc/media
-	# 	/home/faron/bin/flv-tsx-er
+	# 	/home/faron/.bin/flv-tsx-er
 	# fi
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

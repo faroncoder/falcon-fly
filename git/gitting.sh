@@ -13,7 +13,7 @@ if [ -z $2 ]
 	read app
 fi
 pathdir="/home/www/$dom/html/$app"
-binpull="home/faron/bin/core/scripting/falcon-fly"
+binpull="home/faron/.bin/core/scripting/falcon-fly"
 ##########################
 if [ ! -d "/home/www/$dom" ]
 	then
@@ -24,5 +24,5 @@ cd $pathdir
 git remote add origin git@github.com:faroncoder/$app.git
 git add --all
 git push -u origin master
-cd /home/faron/bin/commands/vault/systemengine/scripting
+cd /home/faron/.bin/commands/vault/systemengine/scripting
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

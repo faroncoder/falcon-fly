@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VALVE"
+BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VAULT"
 
 #function populateoption {
 	#find $BINPULL -type f ! -name '*old*' -exec basename {} \;
@@ -173,7 +173,7 @@ printf "echo \$ONEFILE"
 	# if [ "$EXT"="flv" ]
 	# then
 	# 	cd ./jsc/media
-	# 	/home/faron/bin/flv-tsx-er
+	# 	/home/faron/.bin/flv-tsx-er
 	# fi
 
 

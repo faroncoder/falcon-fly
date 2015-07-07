@@ -74,5 +74,5 @@ fi
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
 
-$0 < /home/faron/bin/mkvthis-respond.txt
+$0 < /home/faron/.bin/mkvthis-respond.txt
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

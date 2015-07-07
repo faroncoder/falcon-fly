@@ -1,4 +1,14 @@
-#/bin/bash
+#!/bin/bash
+startgreen=`date +%s`
+function stopwatchtime() {
+	stopred=`date +%s`
+	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+	exit 0
+}
+## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
+## BEGIN
+
 #PATHLOC=$1
 # if [ -z "$1" ]
 # 	then
@@ -14,14 +24,14 @@ if [ -z "$TYPE" ]
 	then
 	   echo -n "which type of file extension to numbericize its filename ? "
 	   read TYPE
-	   EXT=$( echo $TYPE | cut -d '.' -f2 )
+	   EXT=$( echo $TYPE | cut -d'.' -f2 )
 	 fi
 
 
 orderfiles=( $( find $PWD -type f -name "*.$EXT" ) )
 for line in "${orderfiles[@]}";
 	do
-		getname=$( echo $line | cut -d '.' -f1 )
+		getname=$( echo $line | cut -d'.' -f1 )
 		getnewname=$( seq -w 0 $( echo $MEXT ) | tail -n 1 )
 		mv $line "$getnewname.$EXT"
 		#rename 's/$( echo $getname )/$( echo $getnewname )/g' $line
@@ -32,8 +42,4 @@ for line in "${orderfiles[@]}";
 
 	done
 
-stopred=`date +%s`
-faronruntime="$(( $stopred - $startgreen ))"
-echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log
-exit 0
-
+stopwatchtime

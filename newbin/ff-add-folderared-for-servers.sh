@@ -158,16 +158,16 @@ echo "
 # This allows Unix users to be created on the domain controller via the SAMR
 # RPC pipe.  The example command creates a user account with a disabled Unix
 # password; please adapt to your needs
-; add user script = /usr/sbin/adduser --quiet --disabled-password --gecos \"\" %u
+; add user script = /usr/bin/adduser --quiet --disabled-password --gecos \"\" %u
 
 # This allows machine accounts to be created on the domain controller via the 
 # SAMR RPC pipe.  
 # The following assumes a \"machines\" group exists on the system
-; add machine script  = /usr/sbin/useradd -g machines -c \"%u machine account\" -d /var/lib/samba -s /bin/false %u
+; add machine script  = /usr/bin/useradd -g machines -c \"%u machine account\" -d /var/lib/samba -s /.bin/false %u
 
 # This allows Unix groups to be created on the domain controller via the SAMR
 # RPC pipe.  
-; add group script = /usr/sbin/addgroup --force-badname %g
+; add group script = /usr/bin/addgroup --force-badname %g
 
 ############ Misc ############
 

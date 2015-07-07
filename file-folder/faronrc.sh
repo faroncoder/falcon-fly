@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-FARON_PATH="/usr/bin:/home/faron/bin:/home/local/bin"
+FARON_PATH="/usr/.bin:/home/faron/.bin:/home/local/.bin"
 export PATH="$PATH:$FARON_PATH"
 LOG="$HOME/.falcon/logs/faronrc/logging.log"
 DTW=$( date )
