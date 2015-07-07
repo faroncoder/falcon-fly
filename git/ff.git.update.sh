@@ -36,8 +36,7 @@ do
 		git remote add origin
 		git fetch
 	fi
-	git remote set-url origin git@github.com:faroncoder/$( echo $p).git
-	git remote add origin git@github.com:faroncoder/$( echo $p).git
+	#git remote set-url origin git@github.com:faroncoder/$( echo $p).git
 	git pull
 	git status
 	git add --all
@@ -57,10 +56,10 @@ CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 		then
 		git config --global user.email faronledger@gmail.com
 	fi
-	git config --global push.default simple
-	git remote add origin
-	git fetch
-	git remote set-url origin git@github.com:faroncoder/falcon-fly.git
+	#git config --global push.default simple
+	#git remote add origin
+	#git fetch
+	#git remote set-url origin git@github.com:faroncoder/falcon-fly.git
 	git pull
 	git status
 	git add --all
