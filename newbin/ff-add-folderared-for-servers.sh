@@ -114,7 +114,7 @@ echo "
 # For Unix password sync to work on a Debian GNU/Linux system, the following
 # parameters must be set (thanks to Ian Kahan <<kahan@informatik.tu-muenchen.de> for
 # sending the correct chat script for the passwd program in Debian Sarge).
-	passwd program = /usr/bin/passwd %u
+	passwd program = /usr/bin//passwd %u
 	passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
 
 # This boolean controls whether PAM will be used for password changes

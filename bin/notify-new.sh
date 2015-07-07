@@ -6,7 +6,7 @@ PATHICON="$2"
 
 function notifyonfly() {
 PING="$( echo $MSG )"
-DISPLAY=:0.0 /usr/bin/notify-send $ICON "$PING"
+DISPLAY=:0.0 /usr/bin//notify-send $ICON "$PING"
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 }
 
