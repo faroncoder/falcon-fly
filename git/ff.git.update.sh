@@ -27,7 +27,7 @@ do
 
 	if [ ! -d "/home/faron/.falcon/scripting/falcon-gits/`echo $p`/.git" ];
 		then
-			echo "git init"
+			git init
 	fi
 	CHECKCONF=$( grep 'url' /home/faron/.falcon/scripting/falcon-gits/$( echo $p )/.git/config )
 	if [ -z "$CHECKCONF" ];
@@ -37,6 +37,7 @@ do
 		git fetch
 	fi
 	#git remote set-url origin git@github.com:faroncoder/$( echo $p).git
+	git fetch
 	git pull
 	git status
 	git add --all
@@ -58,7 +59,7 @@ CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 	fi
 	#git config --global push.default simple
 	#git remote add origin
-	#git fetch
+	git fetch
 	#git remote set-url origin git@github.com:faroncoder/falcon-fly.git
 	git pull
 	git status
