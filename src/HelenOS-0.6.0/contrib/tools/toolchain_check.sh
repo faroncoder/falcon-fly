@@ -1,4 +1,4 @@
-#!/.bin/sh
+#!/bin/sh
 
 [ -z "$CROSS_HELENOS_PREFIX" ] && CROSS_HELENOS_PREFIX="/usr/local/cross-helenos"
 

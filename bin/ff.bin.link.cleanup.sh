@@ -1,4 +1,4 @@
-#!/.bin/sh -e
+#!/bin/sh -e
 
  LOC="$1"
 if [ -z "$LOC" ]

@@ -1,4 +1,4 @@
-#!/.bin/sh
+#!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          <NAME>
 # Required-Start:    $local_fs $network $named $time $syslog

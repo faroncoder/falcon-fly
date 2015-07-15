@@ -1,0 +1,81 @@
+#!/bin/bash
+startgreen=`date +%s`
+stopwatchtime() { 	stopred=`date +%s`; faronruntime=$( echo "$(( $startgreen - $stopred ))" ); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+}
+#################### BEGIN
+LOCATION="/home/faron/.falcon/scripting/falcon-fly/newbin"
+
+display_help() {
+	echo "FALCON: Sorry - help hasn't been developed yet"
+	stopwatchtime
+}
+
+script_halt() {
+		echo "FALCON: invalid argument - aborting"
+		echo "ERROR: $error"
+}
+
+
+makeheader() {
+COPYFILEDONE="$( echo $copyfile | tr '  ' ' ' | sed 's/.sh//g' ).sh"
+echo "#!/bin/bash
+startgreen=\`date +%s\`; stopwatchtime() { stopred=\`date +%s\`; 	faronruntime=\$( echo \"\$(( \$startgreen - \$stopred ))\" ); echo \"\$0 | \$startgreen | \$stopred | \$faronruntime \" >> ~/.falcon/logs/scripts.log; exit 0 }
+#################### BEGIN" > "$LOCATION/$COPYFILEDONE"
+cat $oldfile | sed '\/bin\/bash/d' | sed '/stopred/d' | sed '/faronruntime/d' | sed '/stopwatchtime/d' | sed '/TALON/d' | sed 's/exit 0//g' >> "$LOCATION/$COPYFILEDONE"
+echo "################### END
+## TALON: $( basename $COPYFILEDONE )
+stopwatchtime
+" >> "$LOCATION/$COPYFILEDONE"
+chmod +x "$LOCATION/$COPYFILEDONE"
+echo "FALCON: $oldfile has been converted into $COPYFILEDONE as formatted"
+}
+
+
+while :
+do
+    case "$1" in
+      	-i | --in)
+			if [ -f "$2" ]; then
+		  		oldfile="$2"
+		  	else
+		  		error=1
+    			script_halt
+			fi
+		shift 2
+		;;
+      	-o | --out)
+			if [ -z "$2" ]
+				then
+			  		error=2
+	    			script_halt
+		  	else
+		  		copyfile="$2"
+		  		makeheader
+			fi
+		shift 2
+		;;
+		-d | --here)
+			export LOCATION=`echo $PWD`
+		shift
+		;;
+ 		-h | --help)
+			display_help
+		;;
+		-v | --verbose)
+			verbose="verbose"
+			shift
+		;;
+		--) # End of all options
+			shift
+			break
+		;;
+		-*)
+			echo "Error: Unknown option: $1" >&2
+		;;
+		*)  # No more options
+		;;
+	esac
+done
+################### END
+## TALON: ff.script.bash.new
+stopwatchtime

@@ -10,9 +10,21 @@ proofreadfile="$( echo $newfile | tr '  ' ' ' | sed 's/.sh//g' ).sh"
 touch $newbin/$proofreadfile
 chmod +x $newbin/$proofreadfile
 echo "#!/bin/bash
+startgreen=\`date +%s\`
+function stopwatchtime() {
+	stopred=\`date +%s\`
+	faronruntime=\$( echo \"\$(( \$startgreen - \$stopred ))\" );
+	echo \"\$0 | \$startgreen | \$stopred | \$faronruntime \" >> ~/.falcon/logs/scripts.log;
+	exit 0
+}
+#################### BEGIN
 
 
-exit 0
+
+################### END
+stopwatchtime
+## TALON: $newfile
+
 " >> $newbin/$proofreadfile
 subl $newbin/$proofreadfile
 
