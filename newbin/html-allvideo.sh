@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-function stopwatchtime() {
+stopwatchtime() {
   stopred=`date +%s`
   faronruntime=$( echo $(( $stopred - $startgreen )) )
   echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
