@@ -8,7 +8,7 @@ stopwatchtime() {
 }
 #### IGNORE ABOVE
 export PATH
-PATHDIR="/home/faron/var/Streamings/files/engine/factory-mp4"
+PATHDIR="$PWD"
 cd $PATHDIR
 INPUT="$1"
 ## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
@@ -90,20 +90,21 @@ function ffmpegengine() {
 		mkdir $PWD/completed -p
 		mv "$PREFILE.mkv" $PWD/completed/
 		## Sending new processed file to 'output' folder
-		mkdir $PWD/completed -p
-		mv "$PREFILE.*" output/
+		mkdir $PWD/output -p
+		mv "$PREFILE.*" $PWD/output/
 }
 
 ## Let's see if we have file to process by command 'find'
 
-if [[ ! -z "$1" ]]; then
-	INPUT="$1"
-else
-	INPUT=$( find "$PATHDIR" -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
-fi
+# if [[ ! -z "$1" ]]; then
+# 	INPUT="$1"
+# else
+# 	INPUT=$( find "$PATHDIR" -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
+# fi
 
 ## Supposedly INPUT returns as true (found a file)
 if [[ ! -z "$INPUT" ]]; then
+
 		## we grab filename of the file without extension
         PREFILE="$( rev <<< $INPUT | cut -d "." -f2 | rev )"
         ## start ffmpeg function
