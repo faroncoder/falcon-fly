@@ -34,6 +34,28 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 sudo apt-get install -y mysql-server 2> /dev/null
 sudo apt-get install -y mysql-client 2> /dev/null
 
+echo "
+<VIRTUALHOST *:80>
+    ServerAdmin webmaster@localhost
+    ServerName SKELETON
+    ServerAlias www.SKELETON
+    DocumentRoot /var/www/SKELETON
+    <DIRECTORY />
+        Options FollowSymLinks
+        AllowOverride None
+    </DIRECTORY>
+    <DIRECTORY /var/www/SKELETON/>
+        Options +FollowSymLinks
+        AllowOverride All
+    </DIRECTORY>
+
+    ErrorLog ${APACHE_LOG_DIR}/SKELETON/SKELETON_error.log
+    # Possible values include: debug, info, notice, warn, error, crit,
+    # alert, emerg.
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/SKELETON/SKELETON_access.log combined
+</VIRTUALHOST>" > /etc/apache2/sites-available/skeleton
+
 if [ ! -f /var/log/dbinstalled ];
 then
     echo "CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'USERPASSWORD'" | mysql -uroot -pROOTPASSWORD
@@ -60,7 +82,7 @@ sudo echo "memcache.hash_strategy=\"consistent\"" >> /etc/php5/conf.d/memcache.i
 # if /var/www is not a symlink then create the symlink and set up apache
 if [ ! -h /var/www ];
 then
-    rm -rf /var/www
+    mv /var/www  /var/old-www
     ln -fs /vagrant /var/www
     sudo a2enmod rewrite 2> /dev/null
     sed -i '/AllowOverride None/c AllowOverride All' /etc/apache2/sites-available/default

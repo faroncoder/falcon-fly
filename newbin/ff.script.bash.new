@@ -36,9 +36,6 @@ while :
 do
     case "$1" in
       	-i | --in)
-			if
-
-
 			if [ -f "$2" ]; then
 		  		oldfile="$2"
 		  		shift 2

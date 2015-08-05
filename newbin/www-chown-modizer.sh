@@ -1,7 +1,7 @@
 #!/bin/bash
 
-/.bin/chown -R www-data:www-data /home/faron/var/Scripts/htmls/projects
-/.bin/chmod -R 775 /home/faron/var/Scripts/htmls/projects
+/bin/chown -R www-data:www-data /home/www/html
+/bin/chmod -R 775 /home/www/html
 
 exit 0
 

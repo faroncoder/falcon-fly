@@ -1,6 +1,7 @@
 #!/bin/bash
-
-curl --url http://ip-api.com/json | jq .query
+curl http://myip.dnsomatic.com
+echo ""
 
 exit 0
+
 
