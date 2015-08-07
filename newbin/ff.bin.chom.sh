@@ -41,7 +41,7 @@ if [ ! $LOCP ];
 				echo $USER:$GROUP
 		fi
 	fi
-rm /tmp/a.dat
+sudo rm /tmp/a.dat
 #echo " $USER:$GROUP | $LOCP "
 
 while :

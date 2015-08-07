@@ -9,7 +9,7 @@ stopwatchtime() {
 #################### BEGIN
 
 
-WEBROOT="/var/www/"
+WEBROOT="/var/www/html"
 VHOSTDIR="/etc/apache2/sites-available/"
 EXTENSION=""
 RESTARTCMD="/usr/bin/sudo service apache2 reload"

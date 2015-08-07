@@ -1,5 +1,6 @@
 #!/bin/bash
-startgreen=`date +%s`
+source /home/faron/.bash_colors
+
 BULK=( "$@" )
 NEWBULK=( $( echo ${BULK[@]} | sed "s/$1//g" ) )
 OPEN="sudo apt-cache search"
@@ -9,9 +10,17 @@ for arg in "${NEWBULK[@]}";
 				parma="$parma | grep '$arg'"
 			done
 
-GETAPP=( `eval $OPEN $parma | sort | sed 's/^/|/g' ` )
-echo ${GETAPP[@]} | tr '|' '\n' | awk '{ gsub("-", "=", $2); print $0 }' | sed '1d'
+LOADAPP=( $( $OPEN $parma | sort | sed 's/^/|/g' ))
+GETPROCESSED=( $( echo "${LOADAPP[@]}" | sed 's/|/\n|/g' | awk '{ gsub("-", "=", $2); print $0 }' | sed '1d' ) )
+echo "${GETPROCESSED[@]}" | tr '|' '\n'
 
+# echo -e "$( echo -e \"${GETPROCESSED[@]}\" | sed 's/|/\n$BGreen /g' | sed 's/=/$Color_Off\ =\ /g' )" >> ~/tmp/apt-get.list
+# while read line;
+# 	do
+# 		echo -e $line
+# 	done < ~/tmp/apt-get.list
+
+#echo -e "${GETPROCESSED[@]}" | sed 's/|/$BGreen/g' | sed 's/=/$Color_Off\ =\ /g' )
 # while read -r -d ' - ';
 # 	do
 # 		apts+=("$elements")
@@ -40,8 +49,8 @@ echo ${GETAPP[@]} | tr '|' '\n' | awk '{ gsub("-", "=", $2); print $0 }' | sed '
 #TOTAL="$( `echo ${GETAPP[@]} | tr '|' '\n' | awk '{print $1}' | wc -l `)"
 #echo -e $GETLIST
 echo "-----"
-BULKED=`echo ${GETAPP[@]} | tr '|' '\n' | awk '{print $1}' `
-SORTED=`echo $BULKED | wc --words`
+BULKED=( `echo "${GETPROCESSED[@]}" | tr '|' '\n' | awk '{print $1}' ` )
+SORTED=$( echo "${BULKED[@]}" | wc --words )
 echo "Packages found: $SORTED"
 echo -n "Proceed to installation?  [y]es or [n]"
 read NEXTCOMM
@@ -53,4 +62,4 @@ if [[ "$NEXTCOMM" == "y" ]];
 				sudo apt-get install $pull
 			done
 fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+exit 0

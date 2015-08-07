@@ -33,7 +33,7 @@ echo "
 ## Browsing/Identification ###
 
 # Change this to the workgroup/NT-domain name your Samba server will part of
-	workgroup = falcon_nest
+	workgroup = FALCON_NEST
 
 # server string is the equivalent of the NT Description field
 	server string = %h server (Samba, Ubuntu)
@@ -76,7 +76,7 @@ echo "
 
 # If you want Samba to only log through syslog then set the following
 # parameter to 'yes'.
-#   syslog only = yes
+ syslog only = yes
 
 # We want Samba to log a minimum amount of information to syslog. Everything
 # should go to /var/log/samba/log.{smbd,nmbd} instead. If you want to log
@@ -212,7 +212,7 @@ echo "
 
 # File creation mask is set to 0700 for security reasons. If you want to
 # create files with group=rw permissions, set next parameter to 0775.
-;   create mask = 0700
+;   create mask = 0777
 
 # Directory creation mask is set to 0700 for security reasons. If you want to
 # create dirs. with group=rw permissions, set next parameter to 0775.
@@ -250,27 +250,33 @@ echo "
 [mkv]
 	path = /home/faron/var/Streamings/files/engine/factory-mp4/mkv
 	writeable = yes
-;	browseable = yes
+	browseable = yes
 	valid users = faron
+	create mask = 0777
+    directory mask = 0777
 
 [output]
 	path = /home/faron/var/Streamings/files/engine/factory-mp4/output
 	writeable = yes
-;	browseable = yes
+	browseable = yes
 	valid users = faron
+	create mask = 0777
+    directory mask = 0777
 
 [falcon]
 	path = /home/faron/.falcon
 	valid users = faron
 	writeable = yes
-;	browseable = yes
+	browseable = yes
+	create mask = 0777
+    directory mask = 0777
 " > /etc/samba/smb.conf
-apt-get install -y nfs-kernel-server nfs-common cifs-utils libnss-winbind winbind
+apt-get install -y nfs-kernel-server nfs-common libnss-winbind winbind
 
 		## Checking for WINS installation
 		## If not have it - install it.
 if [[ -z "$( grep 'wins' /etc/nsswitch.conf )" ]]; then
-		sed -i -e 's/\ dns\ /\ wins\ dns\ /g' /etc/nsswitch.conf
+		sed -i -e 's/ dns/ wins dns/g' /etc/nsswitch.conf
 		echo "etc/nsswitch.conf :: edited"
 	else
 		## dismissing as wins is already installed
@@ -283,21 +289,21 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			## if it is a client then reconfigure
 			if [[ ! "$( grep 'falcon' /etc/fstab )" ]]; then
 				echo "nope you dont have 'falcon' in fstab"
-				echo "//192.168.1.10/falcon /media/falcon  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0755,dir_mode=0755  0 0" >> /etc/fstab
+				echo "//192.168.1.10/falcon /media/falcon  none  nfs  0  0 " >> /etc/fstab
 				echo "now you have falcon"
 			else
 				echo "/falcon for /etc/fstab is already set"
 			fi
 			if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 				echo "nope you dont have 'output' in fstab"
-				echo "//192.168.1.10/output /media/output  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0755,dir_mode=0755  0 0" >> /etc/fstab
+				echo "//192.168.1.10/output /media/output  none  nfs  0  0 " >> /etc/fstab
 				echo "now you have output"
 			else
 				echo "/output for /etc/fstab is already set"
 			fi
 			if [[ ! "$( grep 'mkv' /etc/fstab )" ]]; then
 				echo "nope you dont have 'mkv' in fstab"
-				echo "//192.168.1.10/mkv /media/mkv  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0755,dir_mode=0755  0 0" >> /etc/fstab
+				echo "//192.168.1.10/mkv /media/mkv  none  nfs  0  0 " >> /etc/fstab
 				echo "/mkv for /etc/fstab is already set"
 			else
 				echo "/mkv for /etc/fstab is already set"
@@ -305,8 +311,8 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			if [[ ! -f "/home/faron/.smbcredentials" ]]; then
 			## adding credits for NFS
 				echo "adding creditals"
-				cp /home/faron/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
-				echo "creditals creation completed"
+				#cp /home/faron/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
+				#echo "creditals creation completed"
 			fi
 	else
 	## if it is server then configure it.

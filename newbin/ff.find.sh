@@ -68,3 +68,4 @@ do
 done
 
 sudo sh -c "find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST"
+exit 0
