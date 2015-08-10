@@ -1,34 +1,30 @@
 #!/bin/bash
 startgreen=`date +%s`
 stopwatchtime() {
-	stopred=`date +%s`
-	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
-	exit 0
-}
+	stopred=$( date +%s); faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+	}
 
 #################### BEGIN
 
-if [ ! "$EUID" = 0 ]; then
-    echo "su yourself in first, Faron"
-    stopwatchtime
-fi
+LIST="/aptlist.list"
+PATH="/home/faron/.falcon/apt"
+APTLIST="$PATH$LIST"
 
-APTLIST="/home/faron/.falcon/apt/aptlist.list"
-
-
-if [ "$1" != "" ]; then
-	echo $1 >> $APTLIST
+if [[ "$1" != "" ]]; then
+	sudo sh -c "echo \"$1\" >> $APTLIST"
 	echo "$1 added"
 	stopwatchtime
 else
-	GRAB=( "$( cat $APTLIST | uniq | sort )" )
+	sudo mv "$APTLIST" "$PATH/tmp.list"
+	GRAB=( echo "$( cat "$PATH/tmp.list" | sort | uniq | sort  | tr '\n' ' ' )" )
+		# sudo apt-get build-dep "${GRAB[@]}"
+		# sudo apt-get install -y "${GRAB[@]}"
 	for f in "${GRAB[@]}"; do
+		sudo sh -c "echo \"$f\" >> $APTLIST"
 		ff.apt.fetch $f
 	done
 fi
 
-fi
 ################### END
 
 

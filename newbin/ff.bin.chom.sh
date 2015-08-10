@@ -11,38 +11,38 @@ stopwatchtime() {
 #################### BEGIN
 USER=""
 GROUP=""
-LOCP="$3"
+LOCP="$1"
 
-if [ ! $LOCP ];
+if [ "$LOCP" = '' ];
 	then
 		LOCP="$PWD"
 		echo $PWD > /tmp/a.dat
-		FINDPATH="/home/www/html"
-		FINDPATH2="/var/www/html"
-		FIND=`grep "/www/" /tmp/a.dat`
-		FIND2=`grep "/etc/" /tmp/a.dat`
-		FIND3=`grep "/home/faron/" /tmp/a.dat`
+		FIND=`echo $LOCP | grep '/www/html'`
 		if [[ "$FIND" != "" ]];
 			then
 				USER="www-data"
 				GROUP="www-data"
 				echo $USER:$GROUP
 		fi
-		if [[ "$FIND2" != "" ]];
+		FIND=`echo $LOCP | grep '/etc'`
+		if [[ "$FIND" != "" ]];
 			then
 				USER="root"
 				GROUP="root"
 				echo $USER:$GROUP
 		fi
-		if [[ "$FIND3" != "" ]];
+		FIND=`echo $LOCP | grep '/home/faron'`
+		if [[ "$FIND" != "" ]];
 			then
 				USER="faron"
 				GROUP="faron"
 				echo $USER:$GROUP
 		fi
-	fi
-sudo rm /tmp/a.dat
-#echo " $USER:$GROUP | $LOCP "
+fi
+
+#if [ -f "/tmp/a.dat" ];
+#	sudo rm -f /tmp/a.dat
+#fi
 
 while :
 do
