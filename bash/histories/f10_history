@@ -1,0 +1,1165 @@
+ff.curl.post http://f10:1337/Room number  917
+ff.curl.post http://f10:1337/Room number  918
+ff.curl.post http://f10:1337/Room number  919
+ff.curl.post http://f10:1337/Room number  920
+ff.curl.post http://f10:1337/Room number  921
+ff.curl.post http://f10:1337/Room number  922
+ff.curl.post http://f10:1337/Room/77 tv 1
+falcon
+cd newbin/
+ff.curl.post http://f10:1337/Room/77 tv 0
+ff.curl.post http://f10:1337/Room/69 tv 1
+ff.curl.post http://f10:1337/Room/68 tv 1 | jq .
+ff.curl.post http://f10:1337/Room 67 tv 1
+exit
+falcon
+cd newbin/
+exit
+falcon
+cd newbin/
+ff.bin.load ff.curl.delete.sh
+bin
+falcon
+cd newbin/
+ff.bin.load ff.curl.update.sh 
+bin
+ff.curl.post http://f10:1337/Room 78
+ff.curl.delete http://f10:1337/Room 78
+ff.curl.delete http://f10:1337/Room 78 > &2>1
+ff.curl.delete http://f10:1337/Room 78 &2>1
+falcon
+cd newbin/
+chmod +x ff.curl*
+bin
+ff.curl.delete http://f10:1337/Room 78 &2>1
+curl -H "Content-Type: application/json" -X DELETE -d "{\"id\":\"78\"}" | jq .
+curl -H "Content-Type: application/json" -X DELETE -d "{\"id\":\"78\"}" http://f10:1337/Room | jq .
+ls
+ff.curl.delete 78
+ls
+ff.curl.update 
+subl ff.curl.update 
+subl ff.script.new 
+cd ..
+falcon
+find -type f -exec sed -i -e 's/function stopwatchtime/stopwatchtime/g' {} \;
+ls
+find -type f -exec basename {} \;
+find -type f ! -path '*/.git/*' -exec basename {} \;
+find -type f ! -path '*/.git/*' -name '*.sh' -exec basename {} \;
+GETALL=( `find -type f ! -path '*/.git/*' -name '*.sh' -exec basename {} \;` )
+echo ${GETALL[@]}
+for g in "${GETALL[@]}"; do sed -i -e 's/function stopwatchtime/stopwatchtime/g' $g; done
+GETALL=( `find -type f ! -path '*/.git/*' -name '*.sh' ` )
+echo ${GETALL[@]}
+for g in "${GETALL[@]}"; do sed -i -e 's/function stopwatchtime/stopwatchtime/g' "$PWD/$g"; done
+git-auto
+ff.git.auto
+ff.git.update 
+cat ~/.bin/ff.git.update 
+for g in "${GETALL[@]}"; do sed -i -e 's/stopwatchtime \{/stopwatchtime\(\){/g' "$PWD/$g"; done
+for g in "${GETALL[@]}"; do sed -i -e 's/stopwatchtime {/stopwatchtime\(\){/g' "$PWD/$g"; done
+ff.git.update 
+git add -a
+git add --all
+git commit
+git update
+git status
+exit
+sudo subl /etc/fstab
+sudo mount -a
+ls /media
+cd /media
+ls clips
+ls clips-raw/
+ls falcon/
+ls
+ls gtwy/
+sudo rm -r gtwy
+ls
+ls usb
+ls usb2/
+ls
+sudo rm -r usb
+ls
+sudo mkdir -p /opt/fog
+ls
+cd /opt
+ls fog
+ffloc
+cd share
+setup
+cd ..
+setup
+mkdir networking-install-os
+ls
+cd networking-install-os/
+wget http://sourceforge.net/projects/freeghost/files/latest/download?source=files
+wget http://downloads.sourceforge.net/project/freeghost/FOG/fog_1.2.0/fog_1.2.0.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Ffreeghost%2Ffiles%2F&ts=1437506298&use_mirror=iweb
+ff.apt.find fog
+ls
+mv fog_1.2.0.tar.gz\?r\=http%3A%2F%2Fsourceforge.net%2Fprojects%2Ffreeghost%2Ffiles%2F fog_1.2.0.tar.gz
+ls
+ls -al
+chmod +x fog_1.2.0.tar.gz 
+ls
+tar -zxvf fog_1.2.0.tar.gz 
+ls
+cd fog_1.2.0/
+ls
+cd bin
+./installfog.sh 
+fff
+cd ..
+cd settings/
+cd active/
+mv cloud_faronintel_ca.conf cloud_faronintel_ca.txt
+ls
+sudo service apache2 restart
+ls
+cat default_f10.txt 
+ls
+mv default_f10.txt default_f10.conf
+ls
+sudo service apache2 restart
+exit
+sails lift
+ls
+cd /tftpboot/
+cd falcon_boot/
+cd linux/
+cd ubuntu/
+ls
+fly
+cd backup/
+cd iso/
+cd install-via-network-i386/
+cd ubuntu/
+cd dists/
+cd utopic/
+ls main/
+sudo subl /etc/network/interfaces
+ff.network.restart 
+ifconfig
+ping google.com
+ls
+cd ..
+sudo su
+ff.apt.find vmware
+ff.apt.find vmware | grep 'open-vm'
+sudo apt-cache search vmware | grep 'open-vm'
+sudo apt-cache search vmware | grep 'open-vm' | awk '{ print $1 }'
+sudo apt-cache search vmware | grep 'open-vm' | awk '{ print $1 }' | tr '\n' ' ' 
+clear
+sudo apt-get build-dep `apt-cache search vmware | grep 'open-vm' | awk '{ print $1 }' | tr '\n' ' ' `
+sudo apt-get install `apt-cache search vmware | grep 'open-vm' | awk '{ print $1 }' | tr '\n' ' ' `
+openbox
+sudo reboot
+sudo su
+openbox
+vmware
+vmware-toolbox-cmd 
+vmwarectrl
+ffdesk
+ff.bin.filename.cleanup 
+ls
+sudo dpkg -i virtualbox4.34.3.2698988~ubuntu~raringamd641.deb 
+ls
+ff.network.restart 
+ff.apt.fetch libvirt-bin
+ifconfig
+sudo ifconfig virbr0 down
+ifconfig
+ff.network.restart 
+ifocnfig
+ifconfig
+ff.apt.fetch libvirt-bin
+sudo apt-get dist-upgrade
+ls
+sudo reboot
+sudo su
+ls
+sudo subl /etc/network/interfaces
+ff.network.restart 
+ifconfig
+ff.network.restart 
+ifconfig
+ff.network.restart 
+ifconfig
+ff.network.restart 
+ifconfig
+sudo ifconfig -virbr0 down
+sudo ifconfig virbr0 down
+ff.network.
+ff.network.restart 
+tail /var/log/syslog
+tail -n 30 /var/log/syslog
+tail -n 300 /var/log/syslog
+tail -n 60000 /var/log/syslog
+ff.network.restart 
+tail -n 60000 /var/log/syslog
+cat /var/log/dmesg
+ff.network.restart 
+netsh winsock reset catalog
+tail -n 60000 /var/log/syslog
+dpkg -l | grep dhcp
+sudo service dhcp-probe stop
+cd /etc/default/
+sudo subl dnsmasq 
+dnsdomainname
+ff.network.restart 
+tail -n 60000 /var/log/syslog
+ls
+cat xinetd 
+ls
+cat winbind 
+cat ufw 
+sudo subl ufw 
+sudo service ufw restart
+ls
+cat cacerts 
+sudo cat cacerts 
+ls
+cat libvirt-bin
+cat openvpn 
+ls
+cat networking 
+sudo nano networking 
+ff.network.restart 
+cat /var/log/syslog
+ff.network.restart 
+cat /var/log/syslog
+ff.network.restart 
+cat /var/log/syslog
+ff.video.record.firewire 
+ls
+cd
+netsh winsock reset catalog
+ff.apt.fetch netsh
+apt-cache search netsh
+apt-cache search netsh | awk '{ print $2 }'
+apt-cache search netsh | awk '{ print $1 }'
+GETPACK=( `apt-cache search netsh | awk '{ print $1 }' | tr '\n' ' '` )
+sudo apt-get build-dep ${GETPACK[@]}
+ff.network.re
+ff.network.restart 
+cat /var/log/syslog
+cd /etc/default/kdm.d/
+cd ..
+nano bridge-utils 
+sudo nano bridge-utils 
+sudo nano bind9 
+sudo nano dnsmasq 
+y
+sudo nano bind9 
+sudo nano bridge-utils 
+ff.network.restart 
+cat /var/log/syslog
+sudo reboot
+cat /var/log/syslog
+cd /usr/share
+cat dbus-1
+cd dbus-1
+cat interfaces/
+cat interfaces/cd ..
+ls
+cd system-services/
+ls
+cp ../system-services /etc/dbus-1/system.d/*
+sudo cp ../system-services /etc/dbus-1/system.d/*
+sudo cp -r ../system-services /etc/dbus-1/system.d/*
+ls
+cp -r /usr/share/dbus-1/services/ /etc/dbus-1/system.d/*
+ls
+cd /etc/dbus-1/system.d/
+ff.network.restart 
+tail -n 300 /var/log/syslog
+sudo find / -type d -name '*dbus-1*'
+cd /usr/share/dbus-1/
+ls
+cd services/
+cat org.gnome.evince.Daemon.service 
+ls | cat {}
+ls | cat {} \;
+cat `ls`
+ls
+cd /usr 
+cd /home/local
+ls
+cd /usr
+cd x86_64-w64-mingw32/
+ls include/
+ls
+li
+ls lib
+sudo find . -name '*system.d*' -type d
+sudo ModemManager --debug
+sudo killall -9 ModemManager 
+sudo ModemManager --debug
+sudo service ModemManager stop
+whereis ModemManager
+ModemManager --help
+ModemManager --log-level=warn
+cd share
+cd dbus-1/
+find -type f -name *anager*
+find -type f -name *anager* | grep 'odem'
+cp system-services/org.freedesktop.ModemManager1.service /etc/dbus-1/system.d/
+sudo cp system-services/org.freedesktop.ModemManager1.service /etc/dbus-1/system.d/
+ModemManager --log-level=warn
+ff.network.restart 
+ModemManager --log-level=warn
+ls
+cd system-services/
+cat *Modem*
+sudo cat *Modem* > /etc/dbus-1/system.d/
+ls *Modem* 
+cat org.freedesktop.ModemManager1.service 
+sudo sed -i -e 's/root/root,faron/g' cat org.freedesktop.ModemManager1.service 
+sudo sed -i -e 's/root/root,faron/g' org.freedesktop.ModemManager1.service 
+cat org.freedesktop.ModemManager1.service 
+sudo sed -i -e 's/faron,faron/faron/g' org.freedesktop.ModemManager1.service 
+cat org.freedesktop.ModemManager1.service 
+exix
+exit
+ls
+ff.network.restart 
+cat /var/log/syslog
+sudo apt-get remove --purge ModemManager
+ff.network.restart 
+cat /var/log/syslog
+ls
+cd ..
+ls
+cd share
+cd dbus-1/system-services/
+sudo reboot
+tail /var/log/syslog
+cat /etc/X11/xorg.conf
+cat /etc/X11/default-display-manager
+cat /etc/X11/default-display-manager.dpkg-tmp 
+ls
+cd /etc/modprobe.d/
+cd /etc/modprobe.d/ls
+cat blacklist.conf 
+cat /etc/X11/ls
+cd ..
+find -type f -name 'xorg'
+find -type f -name '*xorg*'
+sudoi find -type f -name '*xorg*'
+sudo find -type f -name '*xorg*'
+cat tcos/xorg.conf.tpl 
+ls
+sudo nano hosts.allow
+ff.network.restart 
+fff
+cd ../
+cd settings/
+cd active/
+mv cloud_faronintel_ca.txt cloud_faronintel_ca.conf
+ff.script.new 
+falcon
+cd newbin/
+ff.bin.load ff.apache2.restart.sh 
+ff.script.new
+ls
+ff.bin.load ff.reboot.sh 
+bin
+sudo ipconfig /flushdns
+ipconfig
+ls
+ff.apache2.restart 
+ping 192.168.122.1
+ff.reboot 
+sudo subl /etc/fstab
+sudo mount -a
+ls
+cd Vi
+cd Videos/
+cd 
+cd /home/faron/Videos/XXX/porns
+ls
+cd ..
+mv XXX xxx
+ls
+cd xxx/
+ls porns/
+ls xxx-rated/
+ls
+sudo mount -a
+ls
+sudo mount -a
+sudo nano /etc/fstab
+ff.network.res
+;d
+smt drea,ed anpit jo,///nit jedmpw ot tjat O jad fomger cprssed/  ;p;
+ffals
+ff.als
+fflsals
+ffclean
+ffcloud
+ls -al
+sudo chmod -R 777x data
+sudo chmod -R 0777 data
+sudo chmod -R +x data
+ls
+cd data
+cd faron
+cd files
+cd Videos/
+ls -al
+ls
+chown -R www-data:www-data xxx
+sudo chown -R www-data:www-data xxx
+ls
+ff.apache2.restart 
+ls
+cd xxx
+ls
+ls -al
+cd ..
+cd ~/.cloud
+ls Videos/
+sudo chown -R www-data:www-data xxx
+cd Videos/sudo chown -R www-data:www-data xxx
+ls
+cd Videos/
+sudo chown -R www-data:www-data xxx
+sudo chmod -R 777+x xxx
+sudo chmod -R 777 +x xxx
+sudo chmod -R 777 xxx
+sudo chmod -R +x xxx
+ls
+cd xxx
+ls -al
+ls
+cd ..
+ls
+cd ..
+ls
+ls -al
+ff.reboot 
+ffcloud
+cd
+cd .cloud
+ls -al
+cd .www
+ls
+ls -al
+cd ..
+sudo rm -r .www
+ls
+cd Videos/
+mv xxx ../
+fffstab
+ff.alias.new
+ff.alias.add 
+bashsr
+ls
+ffstab
+ls
+cd
+ls
+ls .cloud
+ls -al
+ls -al .cloud
+sudo chown www-data:www-data .cloud/*
+ffstab
+sudo subl `ffstab`
+iptables -L -nv
+sudo iptables -L -nv
+ifconfig
+ping 192.168.122.1
+ping 192.168.122.0
+ping 192.168.122.0 -b
+ping 192.168.11.0
+ping 192.168.11.1
+traceroute 192.168.11.1
+ff.apt.find traceroute
+ff.apt-fetch traceroute
+ff.apt.fetch traceroute
+ntp
+service status ntp
+service ntp status
+ping 192.168.1.10:123
+ifconfig
+ifconfig --help
+sudo subl /etc/network/interfaces
+sudo nano /etc/network/interfaces
+ff.network.restart 
+ifconfig
+sudo nano /etc/network/interfaces
+ping 192.168.11.1
+ping 192.168.11.2
+ping 192.168.11.0
+ff.network.scan 
+whois 192.168.11.2
+ff.reboot 
+top
+sudo kill 17295
+top
+ffdl
+cd app-repository
+ls sub*
+bin
+ffdl
+cd app-repository
+ff.xclip -f sublime_text3_license 
+ff.apt.fetch xclip
+ffdl
+cd app-repository
+cat subl-license.txt 
+cat ~/.bin/ff.xclip 
+sudo apt-get autoremove
+ls
+ff.xclip -f subl-license.txt 
+sudo reboot
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian lucid non-free"
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian raring non-free"
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+ff.apt.update
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian utopic non-free"
+sudo add-apt-repository remove "deb http://download.virtualbox.org/virtualbox/debian"
+sudo add-apt-repository -r "deb http://download.virtualbox.org/virtualbox/debian"
+cat /etc/apt/sources.list
+ff.apt.update
+ff.apt.find virtualbox
+ff.apt.fetch virtualbox-4.3
+ls
+ls VirtualBox\ VMs/
+cd ..
+rm npm-debug.log 
+sudo rm npm-debug.log 
+ls
+sudo reboot
+ffdl
+cd app-repository
+setup
+cd ..
+cd operationSystem/
+mv WINDOWS-7.ISO WINDOWS\ 7\ ALL\ IN\ ONE(PRE-ACTIVATED).ISO
+mv WINDOWS-7.ISO WINDOWS\ 7\ ALL\ IN\ ONE\(PRE-ACTIVATED\).ISO
+ls
+setup
+cd ..
+cd operationSystem/
+ls
+unrar Snow_Leopard_10.6.1-10.6.2_SSE2_SSE3_Intel_AMD_by_Hazard.rar 
+unrar -e Snow_Leopard_10.6.1-10.6.2_SSE2_SSE3_Intel_AMD_by_Hazard.rar 
+unrar e Snow_Leopard_10.6.1-10.6.2_SSE2_SSE3_Intel_AMD_by_Hazard.rar 
+ls
+rm Snow_Leopard_10.6.1-10.6.2_SSE2_SSE3_Intel_AMD_by_Hazard.
+rm Snow_Leopard_10.6.1-10.6.2_SSE2_SSE3_Intel_AMD_by_Hazard.rar 
+ls
+ff.bin.filename.cleanup 
+ls
+mv snowleopard10.6.110.6.2sse2sse3intelamdbyhazard.iso snowleopard-10.6.110.6.iso
+ls
+exit
+cat /proc/cpuinfo |grep -E "vmx|svm"
+cat /etc/network/interfaces
+ping ftwy
+ping gtwy
+ping f5
+ssh f5
+ssh faron@f5
+exit
+sudo reboot
+ffclips
+ff.video.record.firewire 
+ffopen
+cat /etc/networks
+ssh f6
+cat /etc/fstab
+sudo subl /etc/fstab
+ff.network.restart 
+ssh f6
+rm .ssh/known_hosts 
+ssh faron@192.168.1.6
+cat /var/log/syslog
+ping f6
+ssh f6
+ls
+dir
+ls
+virtualbox --help
+virtualbox --help | more
+virtualbox --startvm f5
+sudo virtualbox --startvm f5
+teamviewer > /dev/null
+mutt
+ls
+cd VirtualBox\ VMs/
+cd Virtual*
+ls -al
+ls
+fff
+cd .jsc
+cd privs/
+ls
+cd porn
+cd pornlib/
+cd jsc
+ls ~/.cloud/
+ls ~/.cloud/Videos/
+ls ~/.cloud/Videos/xxx/
+sudo ln -s ~/.cloud/Videos/xxx media
+ls
+ls media 
+ls
+rm media 
+sudo ln -s ~/.cloud/Videos/xxx ./media
+ls
+cd media
+cd ..
+cd final-fly/
+cd jsc
+ls media
+ls
+sudo rm media 
+ls
+sudo ln -s ~/.cloud/Videos/xxx ./media
+ls
+ls media
+ls
+cd ..
+cd .
+cd ..
+cd raw2/
+cd .. 
+cd raw
+ls jsc
+ls
+cd jsc
+sudo ln -s ~/.cloud/Videos/xxx ./media
+ls
+sudo rm streamer
+ls
+cd ..
+cd raw2
+ffclean
+ls
+cd jsc
+ls media
+sudo rm media
+sudo ln -s ~/.cloud/Videos/xxx ./media
+ls
+cd ..
+cd .
+cd ..
+ls
+ls -al
+cd try2
+cd jsc
+ls media
+sudo rm media 
+sudo ln -s ~/.cloud/Videos/xxx ./media
+ls
+ls media
+ls
+cat /etc/hosts
+ffcloud
+cd ~/.cloud
+cd Videos/
+ls -al
+cd ..
+ls -al
+cd .www/
+ls
+cd ..
+sudo rm -r .www/
+ls
+ls -al
+sudo chown www-data:www-data *
+ls -al
+cd ..
+ls
+ffcloud
+cd data/
+cd faron
+ls -al
+cd files
+cd Videos/
+ls xxx/
+sudo subl /etc/fstab
+ls
+sudo mv xxx XXX
+sudo mv xxx XXXls
+exit
+sudo mount -a
+ffcloud
+cd ~/.cloud
+cd Videos/
+sudo rename 's/xxx/XXX/g' xxx
+sudo rename 's/xxx/XXX/g' xxxls
+ls
+sudo umount xxx
+ls
+ls -al
+sudo rm -r xxx
+sudo mkdir XXX
+sudo mount -a
+sudo reboot
+ff.apt.find php | grep 'virtualbox'
+sudo apt-cache search php
+sudo apt-cache search php | grep 'virtual'
+virtualbox --v
+virtualbox --version
+virtualbox --version > /dev/null
+virtualbox --version < /dev/null
+virtualbox --version > /dev/null 2>&1
+virtualbox --version >/dev/null
+virtualbox --version >/dev/null 2>&1
+mp4
+cd ..
+cd mkv/
+ls
+ln -s ../completed
+ffl
+ffdl
+ls php
+lsd php*
+ls php*
+mv phpvirtualbox-4.3-3.zip ~/
+setup
+cd packs
+mv ~/phpvirtualbox-4.3-3.zip ./
+cp phpvirtualbox-4.3-3.zip ~/
+cd
+fff
+cd .jsc
+cd privs/
+ls -al
+ls
+cd ..
+ls
+mkdir admin
+cp privs/.htaccess admin/
+ls -al
+chown -R www-data:www-data admin/
+sudo chown -R www-data:www-data admin/
+cd admin/
+ls -al
+cp ~/phpvirtualbox-4.3-3.zip ./
+ls
+sudo su
+ff.apache2.restart 
+~ls
+ls
+cd  vm
+cd lib
+ls -al
+sudo chmod 777 ajax.php 
+ls
+fff
+cd .jsc
+cd privs
+cd final-fly/
+cd jsc
+ls media 
+rm media
+ls
+ln -s /media/clips/480
+ls
+mv 480 media
+ls
+ls media
+cd ..
+cat dynamic.
+cat dynamic.php 
+sudo chmod -R +x ../final-fly
+ls
+cd ..
+cd raw2/
+ls
+teamviewer
+fff
+cd .jsc
+cd admin
+sudo mv /home/www/
+sudo mv vm /home/www/
+fff
+cd /home/www
+cd settings/
+cd active/
+cp www_faronintel_ca.conf vm_faronintel.ca.conf
+ls
+cat vm_faronintel.ca.conf 
+fff
+cd ..
+cd settings/
+cd av
+cd active/
+sudo sed -i -e 's/www.faronintel/vm.faronintel/g' vm_faronintel.ca.conf 
+subl vm_faronintel.ca.conf 
+cd ..
+cd vm/
+cd ..
+sudo mkdir logs
+ls
+sudo mv vm vm-html
+ls
+sudo mkdir vm
+sudo mv vm-html vm/html
+ls
+ls vm
+ls
+sudo mkdir -p vm/logs/apache2
+ls
+ls vm
+ls vm 
+sudo su
+ff.apache2.restart 
+ls
+cd vm/
+ls html
+cat R
+cat tml/inde
+cat tml/index.html
+ls
+ff.apt.find parrot
+cat /etc/fstab
+setup
+cat ff-add-folderared-for-servers.sh 
+ff.network.scan 
+ls
+setup
+cd packs/
+ffdl
+cd app-repository
+find -type f -name '*panel*'
+cd ..
+find -type f -name '*panel*'
+setup
+cat zpanel.sh 
+ls
+scp zpanel.sh faron@zpanel:~/
+scp zpanel.sh faron@192.168.1.11:~/
+ls
+cp zpanel.sh ~/
+cd
+ffip
+ff.ip 
+setup
+fff
+cd ..
+cd settings/
+cd ..
+cp -r settings ~/
+ls
+cd settings/
+subl apache2.conf 
+subl httpd.conf 
+dpkg -l | grep 'rpc'
+sudo apt-get install -y rpcbind:i386
+sudo apt-get build-dep -y rpcbind:i386
+sudo apt-get upgrade
+sudo apt-get build-dep -y insserv:i386
+sudo apt-get install -y insserv:i386
+sudo apt-get install policykit-1
+sudo apt-get update
+ff.ip 
+ls
+grep 'media' -o -r *
+grep 'media' -H -r *
+grep 'media' -l -r *
+grep 'media' -l -r * | sort | uniq > ~/listing-medias.txt
+ls
+cat listing-medias.txt 
+exit
+find -type f -name '*.sh' -exec grep '/jsc'
+find -type f -name '*.sh' -exec grep '/jsc' \;
+find . -type f -name '*.sh' -exec grep 'jsc' \;
+find ~/ -type f -name '*.sh' | grep 'jsc' 
+grep -r 'jsc' *
+ls
+ffrep
+fff
+cd .jsc
+cd repository/
+cd libraries/
+cd lightbox-evolution/
+ff.apache2.restart 
+fff
+cd .jsc
+cd repository/
+cd libraries/
+cd ..
+cd libraries/
+cd lightbox-evolution/
+cd assets/
+cd ..
+cd examples/
+cd ..
+ls js
+ls js/lightbox/
+ls
+cd help/
+ls css/
+sudo chown -R www-data:www-data ../../lightbox-evolution
+sudo chmod +x ../../lightbox-evolution/
+sudo chmod -R 775 ../../lightbox-evolution/
+ff.apache2.restart 
+cd ..
+ls
+cd js
+cd lightbox/
+cd lightbox/clear
+clear
+exit
+fff
+cd .jsc
+cd cd repository/libraries/lightbox-evolution/
+cd repository/libraries/lightbox-evolution/
+ls
+cd help/
+cd css
+LS
+fff
+cd html
+ls
+cd /tmp
+ls
+ffopen
+ls
+ls
+falcon
+cd bin
+ff.script.new
+ls
+ls ../newbin/
+ls
+mkdir virtuals
+mv ../newbin/ff.vm.setup.sh virtuals/
+cd vr
+cd virtuals/
+ff.bin.load ff.vm.setup.sh 
+bin
+ff.vm.setup 
+setup
+cat grub-set-video.sh 
+ls
+ff.apt.fetch testdisk
+sudo reboot
+cd /home/www
+cd settings/
+cd ..
+sudo chmod 0575 www
+ls
+sudo chmod 0575 ../www
+ls
+ls -al
+ls
+ff.apt.fetch vagrant
+ff.script.new 
+ls
+falcon
+cd bin/
+cd virtuals/
+mv ff.vm.setup.sh ff.setup.vm.sh
+ls
+mkdir ../setup
+mv ff.setup.vm.sh ../setup/
+ls
+mv ../../newbin/ff.vm.* ./
+ls
+find -f
+find -type f
+find -type f -exec ff.bin.load {} \;
+ls
+variant init
+vagrant init
+ls -al
+rm Vagrantfile 
+ls
+ff.vm
+ff.script.new 
+ls ~/
+mkdir /home/faron/vm
+ls
+ff.network.scan 
+ssh f2
+rm ~/.ssh/known_hosts 
+ls
+rm ~/.ssh
+ssh f2
+cd html
+cd faronintel/
+cd html/
+ls -al
+ls
+sudo reboot
+ls
+sudo mount /home; cp -r -u html /home/www/faronintel/html;
+ls
+sudo cp -r -u html /home/www/faronintel/html;
+ls
+cd html/
+cd stg
+cd stream/
+ls
+ls -al
+cd ..
+ls -al
+cd .jsc
+cd repository/
+ls -al
+cd run/
+cd ..
+cd html-projects/
+cd old/
+cd ..
+ls
+exit
+ffhtml
+cd .jsc
+ls -al
+ls .privs
+ls
+cd repository/
+cd libraries/
+cd ..
+exit
+ls
+sudo su
+sudo rewboot
+~c zclear
+clear
+exit
+ls
+cd P
+cd Public/
+cd ..
+cd Scripts/
+sudos u
+sudo su
+ff.apt.fetch gocr
+ff.apt.fetch libtesseract3
+govr
+gocr  --help
+ls
+gocr  --help
+cd /tmp
+djpeg -png 1.png | gocr -
+djpeg -png 1.png | gocr - -verbose
+gocr 1.png 
+gocr 1.png -fast
+gocr 1.png -fast -color 2
+gocr 1.png -fast -color 
+gocr 1.png -fast -colors 2
+gocr 1.png -fast -colors 
+ff.apt.find ocr
+cd /tmp
+ls
+convert 1.png 1.jpg
+ls
+gocr 1.jpg -fast -colors 2
+gocr 1.jpg 
+ls
+cd ocr/
+cd ocrad-0.25/
+./configure
+make
+make install
+make clean
+bashsr
+ls
+ocrad --help
+ocrad -i 1.png
+cd /tmp
+ocrad -i 1.png
+ocrad -i 1.jpg
+convert 1.png 1.pbm
+ocrad -i 1.pbm
+ocrad -i 1.pbm -l
+exit
+ff.apt.find gttext
+ffloc
+cd share
+git clone git://git.gnome.org/ocrfeeder
+ls
+cd ocrfeeder/
+./autogen.sh 
+ff.apt.find python enchant
+./autogen.sh 
+ff.apt.find python sane
+ff.apt.fetch tesseract-ocr
+tesseract help
+tesseract --list-langs
+cd /tmp
+tesseract 1.png -psm 3
+tesseract 1.png stdout -psm 3
+tesseract 1.png stdout -psm 0
+tesseract 1.png stdout -psm 2
+tesseract 1.png stdout -psm 3
+tesseract 1.png stdout -psm 4
+tesseract 1.png stdout -psm 5
+tesseract 1.png stdout -psm 6
+tesseract 1.png stdout -psm 57
+tesseract 1.png stdout -psm 7
+tesseract 1.png stdout -psm 8
+tesseract 1.png stdout -psm 9
+tesseract 1.png stdout -psm 3
+ff.script.new 
+lx
+ls /home/faron/Scripts/
+falcon
+bin
+falcon
+cd newbin/
+ls
+ls | more
+ls
+ff.apt.find 211111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111112222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222211444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444
+ls
+falcon
+cd newbin/
+ff.bin.load ff.text.extract.sh 
+bin
+ls -al
+ls
+ff.text.extract  /tmp/1.png
+ls /tmp
+cat /tmp/tmp5974c1d7.tmp 
+ff.apt-find ocrfeeder
+ff.apt.find ocrfeeder
+cd /tmp
+ocrfeeder --help
+ocrfeeder -i 1.png
+ls
+ff.text.extract 2.png
+exit
+top
+sudo kill 11974
+top
+ls
+ff.text.extract 1.pbm
+ff.text.extract 1.jpg 1.pdf
+sudo su
+ssh f2
+cd /tmp
+ls
+cd /tmpo
+cd ~/sublet                              kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+\']
+]
+...................................
+ssh f2
+cd Documents/
+ff.text.extract phonecallto51station.pdf ~/output.txt
+ls
+cd ..
+cd /tmp
+cat /bin/rm
+ls
+cd /tmp
+cd ~/tmp
+ls /tmp
+l
+la
+lll
+ll
+l
+ls
+tar -xvfv captured_faron_bash_scripts.tar.gz 
+ls

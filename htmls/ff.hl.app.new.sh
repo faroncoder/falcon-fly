@@ -11,11 +11,15 @@ stopwatchtime() {
 #################### BEGIN
 
 #PATHDIR=/var/www/html/.jsc/projects
-APP="/var/www/html/.jsc/projects/`basename $1`"
-#APP="$1"
+APPNAME=`basename $1` >&2 /dev/null
+if [ -z "$APPNAME" ]; then
+echo -n "name of new project? "
+read APPNAME
+fi
 
-if [ ! -d "$APP" ];
-	then
+APP="/var/www/html/.jsc/projects/`basename $APPNAME`"
+
+if [ ! -d "$APP" ]; then
 	sudo mkdir -p $APP
 	ff.hl.jsc.init $APP
 	ff.hl.page.index $APP

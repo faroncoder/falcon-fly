@@ -27,8 +27,8 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
  				sudo cp $BIN $PATHDIRHOME
 				sudo tar -jxvf $PATHDIRHOME/$JSCFILE
 				sudo rm "$PATHDIRHOME/$JSCFILE"
-				/home/faron/.bin/ff.hl.cssglop
-				/home/faron/.bin/ff.hl.jsglop
+				/home/faron/.bin/ff.hl.css.glop
+				/home/faron/.bin/ff.hl.js.glop
 			fi
 		else
 			echo -n "FALCON: path of building site? "
@@ -49,8 +49,8 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
  				sudo cp $BIN $PATHDIRHOME
 				sudo tar -jxvf $PATHDIRHOME/$JSCFILE
 				sudo rm "$PATHDIRHOME/$JSCFILE"
-				/home/faron/.bin/ff.hl.cssglop
-				/home/faron/.bin/ff.hl.jsglop
+				/home/faron/.bin/ff.hl.css.glop
+				/home/faron/.bin/ff.hl.js.glop
 			fi
 				#mkdir -p $PATHDIRHOME
 				#cd $PATHDIRHOME
@@ -60,8 +60,8 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
  			# 		cp "$BIN/$JSCFILE" $PWD
 				# 	tar -jxvf $JSCFILE
 				# 	rm $JSCFILE
-				# 	/home/faron/.bin/cssglop
-				# 	/home/faron/.bin/jsglop
+				# 	/home/faron/.bin/css.glop
+				# 	/home/faron/.bin/js.glop
 				# else
 				# 	echo "FALCON: current pathdir is a building site.  Ready to proceed"
 				# fi
