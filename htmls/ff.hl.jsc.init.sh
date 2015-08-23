@@ -4,7 +4,7 @@ stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
   echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
-  exit 0
+  #exit 0
 }
 ######## IGNORE ABOVE -- LOGGING PURPOSE ########
 ######## use 'stopwatchtime' instead of 'exit 0' ########
@@ -21,6 +21,7 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 		read CHEK
 		if [[ "$CHEK" = "y" ]]; then
 			sudo touch $PATHDIRHOME/.falcon_fly
+			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME/.falcon_fly"
 			cd $PATHDIRHOME
 
 			if [ ! -d "$PATHDIRHOME/jsc" ]; then

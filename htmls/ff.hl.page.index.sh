@@ -4,7 +4,7 @@ stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
 	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
-	exit 0
+	#exit 0
 }
 
 
@@ -15,11 +15,12 @@ APP="/var/www/html/.jsc/projects/`basename $1`"
 if [ "$APP" = '' ]; then
 	echo "Aborting : no path for the project specificed. "
 	stopwatchtime
+	break
 fi
 
 if [ ! -d "$APP" ];
 	then
-	ff.hl.app.new $APP
+	`/home/faron/.bin/ff.hl.app.new $APP`
 fi
 
 if [ ! -f "$APP/index.html" ];

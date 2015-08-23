@@ -1163,3 +1163,840 @@ l
 ls
 tar -xvfv captured_faron_bash_scripts.tar.gz 
 ls
+cat .bashrc2
+nano .bashrc2
+mv .bashrc2 .falcon/bash/.bashrc
+ls -al .bash*
+rm .bashrc
+ln -s /home/faron/.falcon/bash/.bashrc
+bashsr
+echo -e "$Green Hello!"
+echo -e "$GreenHello!"
+echo -e "$Green Hello!"
+echo -e "$Green\ Hello!"
+echo -e "$Green$OUTPUT"
+OUTPUT="Hello you!"
+echo -e "$Green$OUTPUT"
+OUTPUT+="Hello you!"
+OUTPUT+="$Red OUTPUT+="Hello you!"!"
+OUTPUT+="$Red OUTPUT+="$Red OUTPUT+="Hello you!"!""
+OUTPUT=""
+OUTPUT="$Purple HELLO YOU"
+OUTPUT+="$Red OUTPUT="$Purple HELLO YOU"!"
+OUTPUT+="$Purple HELLO YOU"
+OUTPUT=""
+OUTPUT+="$Purple HELLO YOU"
+OUTPUT+="$Red OUTPUT+="$Purple HELLO YOU"!"
+OUTPUT=""
+OUTPUT+=""
+OUTPUT+="$PurpleHELLO YOU,"
+OUTPUT+="$Red Faron"
+echo $OUTPUT
+echo -e $OUTPUT
+OUTPUT+=""; OUTPUT+="$Purple HELLO YOU $reset"; OUTPUT+="$Red Farrrrron $Color_Off"
+echo -e $OUTPUT
+OUTPUT=""
+OUTPUT+=""; OUTPUT+="$Purple HELLO YOU $reset"; OUTPUT+="$Red Farrrrron $Color_Off"
+echo -e $OUTPUT
+OUTPUT=""
+OUTPUT+=""; OUTPUT+="$Purple HELLO YOU,"; OUTPUT+="$Red Farrrrron OUTPUT=""OUTPUT="" $Color_Off"
+echo -e $OUTPUT
+OUTPUT=""; OUTPUT+=""; OUTPUT+="$Purple HELLO YOU,"; OUTPUT+="$Red Farrrrron \!\!\!\! $Color_Off"
+echo -e $OUTPUT
+OUTPUT=""; OUTPUT+=""; OUTPUT+="$Purple HELLO YOU,"; OUTPUT+="$Red Farrrrron echo -e $OUTPUTecho -e $OUTPUT $Color_Off"
+echo -e $OUTPUT
+OUTPUT=""; OUTPUT+=""; OUTPUT+="$Purple HELLO YOU,"; OUTPUT+="$Red Farrrrron \\!\\!\\!\\! $Color_Off"
+echo -e $OUTPUT
+OUTPUT=""; OUTPUT+=""; OUTPUT+="$Purple HELLO YOU,"; OUTPUT+="$Red Farrrrron 'echo -e $OUTPUT' $Color_Off"
+echo -e $OUTPUT
+bashsr
+gedit ~/.bash_scripts
+bashsr
+ff6
+exit
+exit
+bashsr
+exit
+bashsr
+/usr/bin/ssh-agent -k | sed 's/^echo/#echo/' > $SSH_ENV
+/usr/bin/ssh-agent -k | sed 's/^echo/#echo/' 
+/usr/bin/ssh-agent -k 
+`eval ssh-agent -s`
+ssh-agent -s
+bashsr
+echo $( ps -ef | grep 'ssh-agent'  | sed '/grep/d' | awk '{ print $2 }' )
+echo $( ps -ef | grep 'ssh-agent' )
+pidof ssh-agent
+falcon
+ls
+cd newbin/
+ls
+ff.bin.load ff.cpu.kill.sh 
+cat ~/.bin/ff.cpu.kill 
+pidof ssh-agent
+ff.cpu.kill ssh-agent
+pidof ssh-agent
+bashsr
+ff.cpu.kill ssh-agent
+pidof ssh-agent
+`eval ssh-agent -s`
+pidof ssh-agent
+ff.cpu.kill ssh-agent
+pidof ssh-agent
+pidof ssh-agent | wc -l
+pidof ssh-agent | wc 
+pidof ssh-agent | wc -w
+ff.cpu.kill ssh-agent
+pidof ssh-agent | wc -w
+bashsr
+pidof ssh-agent | wc -w
+ff.cpu.kill ssh-agent
+pidof ssh-agent | wc -w
+ff.cpu.kill ssh-agent
+bashsr
+ff.cpu.kill ssh-agent
+pidof ssh-agent | wc -w
+ff.cpu.kill ssh-agent
+pidof ssh-agent | wc -w
+ff.cpu.kill ssh-agent
+pidof ssh-agent | wc -w
+ssh-agent
+pidof ssh-agent
+ff.cpu.kill ssh-agent
+pidof ssh-agent
+ssh-agent
+exit
+bashsr
+bashsr
+ssh-agent -s
+bashsr
+pidof ssh-agent
+kill -9 4311
+bashsr
+[A
+bashsr
+kill -9 `pidof ssh-agent`
+bashsr
+kill -9 `pidof ssh-agent`
+bashsr
+exit
+kill -9 `pidoff ssh-agent`
+kill -9 `pidof ssh-agent`
+exit
+exit
+ff.cpu.kill ssh-agent
+ssh-agent -s
+ff.cpu.kill ssh-agent
+ssh-agent -s
+exit
+ffcolors
+nano `ffcolors`
+ffals-edit
+nano ~/.bash_colors_help 
+bashsr
+ffcolors
+ls
+fflog
+ffals-edit
+cd /var/log
+ls -al
+sudo adduser faron syslog
+sudo adduser faron adm
+sudo adduser syslog adm
+sudo adduser adm syslog
+sudo chmod -R 775 /var/log/syslog*
+sudo su
+exit
+fcolors
+ffcolors
+ls
+cat 1
+cat 2
+history | grep '>1&2'
+history | grep 'top'
+top > &1> ~/update.txt &2> /dev/null
+ls
+rm 1
+rm 2
+ls
+top > &1> ~/update.txt &2> /dev/null
+ls
+top > ~/update.txt 1&2> /dev/null
+top >> ~/update.txt 1&2> /dev/null
+top >> ~/update.txt >2 /dev/null
+top > ~/update.txt &2> /dev/null
+ls
+cat 2
+cat update.txt 
+cat upate.txt 
+top > upate.txt
+top > upate.txt >> /dev/null
+top > ~/test.log &2> /dev/null
+cat ~/test.log 
+ls
+cat 2
+rm 2
+top --help
+top -help
+top -hv
+top -U faron
+top -U faron > update.log;; break
+top -U faron > update.log; break
+history | 'grep'
+history | grep 'top'
+ls
+rm upate.txt 
+rm update.log 
+test.log
+ls -al test.log 
+rm test.log
+ls
+cat test.desktop 
+rm test.desktop 
+ls
+rm f6profile 
+rm f6bashrc 
+rm -r bash
+rm capturedfaronbashscripts.tar.gz 
+rm copybashrc 
+cat CPU.txt 
+history | grep 'CPU'
+top -o %CPU > ~/test.log
+top -o '%CPU' && sleep 1
+top -o '%CPU' && sleep 1; exit;
+printf "top > ~/top.log q\r"
+top > ~/top.log q
+ls
+cat top.log 
+top q > ~/top.log
+cat top.log 
+man top
+top -b > ~/top.log
+top -bn1 > ~/top.log
+cat ~/top.log
+cat ~/top.log | wc -l
+top -bn1 | wc -l
+top -bn1 | awk '$1=="Mem:" {print $6" "$7}'
+top -bn1 -o "%CPU" | awk '$1=="Mem:" {print $6" "$7}'
+top -bn1 -o "%CPU" 
+top -bn1  
+top -bn1  | awk '{print $9 }'
+top -bn1  | awk '{print $9 $10 $1 }'
+top -bn1  | awk '{print $9" "$10" "$1 }'
+` top -bn1  | awk '{print $9" "$10" "$1 }' ` | sed '/0.0/d'
+` top -bn1  | awk '{print $9" "$10" "$1 }' ` | head -n -5 | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | head -n -5 | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | head -n '-5' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | tail -n '-5' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '5n' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/5n/' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/5n/g' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/stopped/,/id/,/buffers/,/cached/d' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/stopped/ /id/ /buffers/ /cached/d' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/stopped/id/buffers/cached/d' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/stopped/d,/buffers/d,/cached/d' | sed '/0.0/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '{/stopped/d,/buffers/d,/cached/d'
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '{/stopped/d,/buffers/d,/cached/d'}
+top -bn1  | awk '{print $9" "$10" "$1 }'  | sed '/{stopped,buffers,cached,id}/d'
+top -bn1  | awk '{print $9" "$10" "$1 }' 
+top -bn1  | awk 'NR5 {print $9" "$10" "$1 }' 
+top -bn1  | awk '5nr {print $9" "$10" "$1 }' 
+top -bn1  | awk '{print $9" "$10" "$1 }' | sed '/`grep '0.0' awk '{print $1}'`/d
+`
+`
+"
+'
+top -bn1  | awk '{print $9" "$10" "$1 }' 
+grep --help
+top -bn1  | grep -k '0.0'
+top -bn1  | grep -o '0.0'
+top -bn1  > test.log
+cat test.log
+cat test.log; cat test.log | sed '/root/d'
+top -bn1  | awk '{print $9" "$10" "$1 }' > test.log
+cat test.log | sort
+cat test.log | sort -n
+top -bn1  | n=0;inc=$(( $n + 1)); awk '{"`$inc`"print $9" "$10" "$1" }' > test.log
+top -bn1  | awk '{print $9" "$10" "$1 }' > test.log
+cat test.log 
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR==5,NR==*'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR==5'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>==5,NR<==6'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>==5 && NR<==6'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>==5 && NR<==6 {print}'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=5 && NR<=6 {print}'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR<=6 && NR>=6 {print}'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=6 {print}'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=7 {print}'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=7 {print}' | grep '0.0'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=6 {print}' | grep '0.0'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=6 {print}'
+exit
+exit
+ffdl
+ls
+cd
+ls
+ff6
+top
+exit
+ff6
+nano ~/.bash_scripts
+bashsr
+ff6
+ssh faron@f6
+ls
+rm ~/.ssh/known_hosts
+ssh faron@f6
+ports | grep '41058'
+exit
+cat ~/.bash_scripts
+echo "######### FARONIZED-MENU FUNCTION ~/.bash_scripts
+    function cd  {
+    builtin cd "$@"
+    RET=$?
+    ls
+    return $RET
+}
+" >> ~/.bash_scripts
+cat ~/.bash_scripts
+nano ~/.bash_scripts
+bashsr
+ls
+falcon
+Videos/
+cd Videos/
+nano ~/.bash_scripts
+bashsr
+falcon
+fly
+ls
+fly
+ls bash
+falcon
+mv ~/.falcon/bash ./
+fly
+ln -s scripting/falcon-fly/bash
+ls
+exit
+ls
+ff.git.update
+ls
+ff.find -f -s '*~'
+ff.find -f -s '*.*~'
+falcon
+ff.find -f -s '*.*~'
+ff.find -f -s '*.*~' -e ffclean
+ff.find -f -s '*.*~' -e "cd" -c "ffclean"
+ff.find -f -s '*.*~' -e dirname
+ff.find -f -s '*.*~' -e dirname | uniq | sort
+ff.find -f -s '*.*~' -e dirname | uniq | sort | cd
+ff.find -f -s '*.*~' -e dirname
+ff.find -f -s '*.*~' -e dirname | uniq | sort | cd
+ff.find -f -s '*.*~' -e dirname | uniq | sort 
+GETFF=( `ff.find -f -s '*.*~' -e dirname | uniq | sort ` ); for d in "${GETFF[@]}"; do cd $d > /dev/null; ffclean; done
+ff.find -f -s '*.*~' | uniq | sort ` 
+ff.find -f -s '*.*~' | uniq | sort 
+ff.find -f -s '*.*~' | uniq | sort
+ff.find -f -s '*.*~' -e dirname | uniq | sort
+ff.find -f -s '*.*~' -e dirname | uniq | sort 
+ls
+falcon
+ff.find -f -s '*.*~' -e dirname | uniq | sort
+cd newbin/
+ffclean
+ls
+ff.git.update
+ls
+cd
+rm confallfilesfrometc.txt 
+rm discardme 
+rm f10_backup.tar.bz2 
+rm video.txt 
+rm *.log
+ls
+rm CPU.txt 
+rm update.txt 
+rm vlc-log.txt 
+setup
+ffdl
+cd app-repository
+cp sublime-3088.tar.gz ~/
+cd
+ffloc
+cd share/
+mv ~/sublime-3088.tar.gz ./
+tar -zxvf sublime-3088.tar.gz 
+tar -jxvf sublime-3088.tar.gz 
+ls
+rm -r sublime-3088.tar.gz 
+cd sublime_text/
+ls Packages/
+ls
+setup
+./sublime_desktop_creator.sh 
+nano ./sublime_desktop_creator.sh 
+./sublime_desktop_creator.sh 
+nano ./sublime_desktop_creator.sh 
+./sublime_desktop_creator.sh 
+bashsr
+subl
+nano ./sublime_desktop_creator.sh 
+setup
+nano ./sublime_desktop_creator.sh 
+./sublime_desktop_creator.sh 
+nano ./sublime_desktop_creator.sh 
+./sublime_desktop_creator.sh 
+ffloc
+cd share
+cd sublime_text/
+ln -s Icon/48x48/sublime-text.png 
+ls
+subl
+cd ~/.config
+cd sublime-text-3/
+cd Packages/
+ls -al
+cd User
+ffclean
+ls
+cd ..
+cd My\ Snippets
+ls -al
+ls
+exit
+sudo reboot
+top
+ffloc
+cd ..
+sudo mkdir usr
+ls
+sudo cp r /usr/lib usr/
+ff.script.new 
+op -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=6 {print}'
+top -bn1  | awk '{print $9" "$10" "$1 }' | awk 'NR>=6 {print}'
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=6 {print}'
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}'
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 50
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 20
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 18
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 20
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 21
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 22
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23
+jq
+jq `top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23`
+jq .`top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23`
+jq .[] `top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23`
+jq ' .[] | `top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23`
+'
+jq ' .[] | `top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23`'
+top 
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23
+sudo cp -r /usr/lib ./usr/
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | wc -l
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | $(( `wc -l` ))
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | THIS < `wc -l`
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | `wc -l`
+top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | wc -l
+$( top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | wc -l )
+THIS=$[[ $( top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | wc -l ) - 1 ]];
+THIS=$(( $( top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23 | wc -l ) - 1 ));
+echo $THIS
+cd usr
+cd lib
+ff.find -f | wc -l
+ff.find -w /usr/lib -f | wc -l
+ffmd5 lib
+ffmd5 ./
+ls
+cd ..
+ffmd5 lib
+md5sum lib
+ls
+cd /usr
+sudo mv lib lib_a
+sudo ln -s /home/usr/lib
+ln -s /home/usr/lib
+sudo su
+ls
+su
+sudo ln /home/usr/lib ./usr/lib
+exit
+exit
+`top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=7 {print}' | head -n 23` | jq .[]
+webapp-container http://www.faronintel.ca
+s
+ls
+ls -al
+exit
+ssh faron@f6
+ff.apt.find GNOME
+echo $PATTH
+echo $PATH
+bin
+source ~/.bash_aliases
+bin
+ls
+ls -al
+cd 
+ls -als
+clear
+ls -als .bash*
+cat .bashrc
+ls
+ls -als
+ls -als .bash*
+cat .bashrc.save
+ls
+cat .bashrc~
+cat .bashrc
+`bin`
+bin
+source ~/.bash_scripts
+ff.apt.find gnome
+ff.apt.find gnome | grep 'GNOME'
+source ~/.bashrc
+fly
+cd bash
+ssh faron@f6
+ls
+cd 
+exit
+ls .profile
+ln -s /home/faron/.falcon/bash/.profile
+ls -als .profile
+ls -als .bashrc
+source ~/.profile
+bin
+echo $PATH
+ls
+exit
+falcon
+cd newbin/
+chmod +x *
+cd ..
+mv .bin bin_old; ff.find -f -s "ff." -e ln -s {} \; 
+mkdir ~/.bin
+ls -al
+cd
+ls -al
+ls -al .bi*
+ls
+biin
+bin
+rm *
+ls
+ff.find -w ~/.falcon/scripting/falcon-fly
+find ~/.falcon/scripting/falcon-fly -type f -name '*find*'
+find ~/.falcon/scripting/falcon-fly -type f -name '*find.sh'
+find ~/.falcon/scripting/falcon-fly -type f -name 'ff.find.sh'
+find ~/.falcon/scripting/falcon-fly -type f -name 'ff.find.sh' -exec cat {} \;
+find ~/.falcon/scripting/falcon-fly/bin  -type f -name 'ff.find.sh' -exec cat {} \;
+find ~/.falcon/scripting/falcon-fly -type f -name 'ff.find.sh' 
+find ~/.falcon/scripting/falcon-fly/bin  -type f -name 'ff.find.sh' 
+find ~/.falcon/scripting/falcon-fly/bin  -type f -name 'ff.find.sh'  -exec ln -s {}\;
+find ~/.falcon/scripting/falcon-fly/bin  -type f -name 'ff.find.sh'  -exec ln -s {} \;
+ls
+mv ff.find.sh ff.find
+ff.find -w ~/.falcon/scripting/falcon-fly/ -f -s "ff.*"
+ff.find -w ~/.falcon/scripting/falcon-fly/ -f -s "ff.*" -e ln {} \;
+ls
+ff.find -w ~/.falcon/scripting/falcon-fly/ 
+ff.find -w ~/.falcon/scripting/falcon-fly/ -d -s ".git"
+ls
+source ~/.ssh/environment 
+ff.find -w .ssh -f -s 'id_'  -c " ! -name '*.pub'
+"
+ff.find -w .ssh -f -s 'id_'  -c " ! -name '*.pub'" -e "ssh-add {} \;"
+ff.find -w .ssh -f -s 'id_'  -c " ! -name '*.pub'" -c "-exec /usr/bin/ssh-add {}" 
+ff.find -w .ssh -f -s 'id_'  -c " ! -name '*.pub'" -c "-exec /usr/bin/ssh-add {}" \;
+ff.find -w .ssh -f -s 'id_'  -c " ! -name '*.pub'" -c "-exec /usr/bin/ssh-add {} \;"
+source ~/.ssh/environment 
+ff.find -w .ssh -f -s 'id_'  -c " ! -name '*.pub'" -c "-exec /usr/bin/ssh-add {} \;"
+ls
+ff.apt.fetch ubuntu-desktop
+source ~/.bash_scripts
+source .profile
+ff.apt.fetch ubuntu-desktop
+sudo apt-get build-dep ubuntu-desktop
+sudo apt-get build-dep ubuntu-desktop --reinstall
+sudo apt-get install ubuntu-desktop --reinstall
+ls
+bin
+ls -al
+ff.find -w `falcon \r'
+'
+`
+ff.find -w ` falcon \r `
+falcon
+ff.find -f | wc -l
+ff.find -f -m 1 -w ~/.bin
+ff.find --help
+cat ff.find
+bin
+find -maxdepth 1 -f
+find -maxdepth 1 -type f
+find -maxdepth 1 -type f | wc -l
+falcon
+find -type f -name 'ff.*.sh' | wc -l
+bin; rm *; find -type f -name 'ff.*.sh' -e "ln -s"
+bin; rm *; find -type f -name 'ff.*.sh' -exec ln -s {} \;
+ls
+ls -al
+find -type f -name 'ff.*.sh' -exec ln -s {} \;
+ls
+find ~/.falcon/scripting/falcon-fly  -type f -name 'ff.*.sh' -exec ln -s {} \;
+ls -al
+ls
+ff.bin.extension.remove.sh .sh
+ls
+ff.network.restart 
+cat ff.network.restart 
+ff.cpu.watch ssh-agent
+ff.cpu.watch 
+cat ff.cpu.watch
+ls
+ff.bin.login.kill 
+nano ff.bin.login.kill 
+ls
+ff.apache2.restart 
+f6
+ff6
+setup
+cd packs
+cd flumotion/
+ff.find -s twisted
+ff.find -s python-twisted
+ff.find -s python-twisted -c "! -name '*amd*' " -e 'sudo dpkg -i'
+ls
+setup
+ff6
+nano ~/.bash_scripts
+bashsr
+ssh-add
+sudo ssh-add
+ff.apt.fetch openssh
+ff.apt.find openssh
+ff.apt.fetch openssh-*
+bashsr
+ff.reboot 
+ff.apt.find flgz
+apt-get search raedon
+apt-cache search raedon
+apt-cache search fglrx
+ff.apt.find fglrx
+ff.reboot 
+cd /boot
+cd grub
+cat grub.cfg 
+ls
+cd grb
+cd ..
+cd /etc/default/
+sudo nano grub
+cat grub
+cat grub | more
+ff.reboot
+ff.apt.fetch xorg
+ff.apt.update
+cd /src
+cd srv
+ls
+cd /
+ls srv
+cd 
+cd home
+ls
+cd ..
+cd faron
+cd ..
+cd 3-less-old-faron/
+cd ..
+cd 2-old-faron/
+ls -al
+ls
+cd vaar
+cd car
+cd var
+ls
+ls -al
+cd ..
+rm -r var
+ls
+ls Mail
+rm -r Mail
+ls bin
+cd bin
+ff.find -f
+ls
+cd ..
+tar --help
+ls
+tar -C $PWD -jxvf ../f10_barebone_system.tar.bz2 
+ls
+cp --help
+cp --help | more
+cp -r usr /
+sudo cp -r usr /
+sudo reboot
+                                                           sudo chown -R faron:faron ~/.ssh
+chmod -R 0700 ~/.ssh
+bashsr
+sudo su
+ff apt-get install libsystemd
+apt-cache search libsystemd
+ff.apt.fetch `apt-cache search libsystemd | awk '{ print $1  }' | tr '\n' ' '`
+apt-cache search 'gnome3'
+sudo apt-get install gnome3
+apt-cache search 'desktop' | grep 'gnome'
+ff.apt.fetch "ubuntu-gnome-default-settings ubuntu-gnome-desktop"
+ff.apt.fetch vlc
+apt-get update
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo reboot
+ff.apt.fetch amdcccle
+ff.apt-getch fglrx-updates
+ff.apt-fetch fglrx-updates
+ff.apt.fetch fglrx-updates
+setup
+bashsr
+ls
+ffplay video3.mov 
+ls
+mp4
+cd batch/
+ffplay 99.mp4 
+setup
+cat gnome.sh 
+ls
+sudo apt-get remove --purge apparmor
+ls
+./setup_java_jre.sh 
+cat ffmpeg.sh 
+cp ffmpeg.sh install-video-stuff.sh
+nano install-video-stuff.sh 
+ld
+ls
+./install-video-stuff.sh 
+nano install-video-stuff.sh 
+./install-video-stuff.sh 
+sudo su
+ls
+ff.apt.fetch apache2-dev
+sudo rm /var/lib/dpkg/lock
+sudo dpkg --configure -a
+ff.apt.fetch apache2-dev
+sudo reboot
+SETUP
+setup
+./install-video-stuff.sh 
+gksu amdcccle 
+ff.apt.update
+subl
+ffloc
+cat /etc/fstab
+sudo su
+exit
+which node
+whereis node
+node
+ls
+npm
+npm list config
+npm update -g
+setup
+nano npm-node-install.sh 
+./npm-node-install.sh 
+cd
+ls tmp
+setup
+nano npm-node-install.sh 
+./npm-node-install.sh 
+ls /home/local/include/
+ls node*
+ls
+ls /home/local/include | ls -f
+ls
+ls /usr/include/node | wc -l
+ls /home/local/include/node | wc -l
+ls /home/local/include/node
+ls /usr/include/node
+sudo su
+npm
+npm update -g
+npm install yo
+npm
+npm update
+ffnode
+ls
+fly
+cd script
+cd scripts/
+cd Scripts/
+cd node/
+cd lab-node/
+cd easyrtc/
+npm install 
+cd /usr/include/
+ls * | grep 'node'
+ls
+rm node
+sudo rm node
+sudo mv old_node node
+exit
+bashsr
+ffnode
+cd Scripts/node/
+cd node_modules/
+cd ..
+cd projects-node/
+cd app-REST-sample
+npm install
+ff.reboot 
+ls
+ffnode
+cd Scripts/node/
+cd lab-node/
+cd ../
+cd projects-node/
+cd app-REST-sample
+falcon
+cd ..
+grep -r '/var/log' *
+npm install
+subl GIT-copy-falcon-fly-delete-me/init.d/iwatch-apache.sh
+ffloc
+cd share
+cd sublime_text/
+sudo cp sublime_text.desktop /usr/share/applications/
+cat /usr/share/applications/sublime_text.desktop 
+sudo vi /usr/share/applications/sublime_text.desktop 
+cat /usr/share/applications/sublime_text.desktop 
+ls
+cp sublime_text.desktop ~/.local/share/applications/
+ls
+chmod +x sublime_text.desktop 
+ls
+ln -s sublime_text /usr/bin/subl
+sudo ln -s sublime_text /usr/bin/subl
+sudo ln -s sublime_text /usr/sbin/subl
+sudo npm install
+sudo su
+ls
+cd ..
+ls
+cp -r -u ~/.local/share/* /home/local/share
+ls
+cd ~/.local
+cd share
+ls /home/local/share
+ls
+find -f
+find -type f
+find -type f | wc -l
+find /home/local/share -type f | wc -l
+ls
+cd ..
+ls -al

@@ -7,10 +7,12 @@ stopwatchtime() {
 	exit 0
 }
 #### IGNORE ABOVE
-export PATH
-PATHDIR="/home/faron/var/Streamings/files/engine/factory-mp4"
+export PATH=$PATH
+PATHDIR="$PWD"
 cd $PATHDIR
 INPUT="$1"
+PREFILE=$( rev <<< $INPUT | cut -d"." -f2 | rev )
+EFXI="$( rev <<< $INPUT | cut -d"." -f1 | rev )"
 ## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
 CODECVID="libx264"
 ## 1 = ultrafast | 2 = fast | 3 = medium | 4 = veryslow
@@ -19,15 +21,15 @@ PRESET="1"
 FORCINGHIGHPROFILE=""
 CRF="25"
 ## Video resolution.  360 for 360p; 480 for 480p; 720 for 720p, etc
-HEIGHTWT="360"
+HEIGHTWT="480"
 ## This provokes the VBV method in ffmpeg
 ## BEGING of VBV
-MAXRAT="896k"
-BUFRAT="800k"
-BITRAT="800k"
+MAXRAT="1200k"
+BUFRAT="900k"
+BITRAT="900k"
 ## END OF VBV
 ## Let's define variables for ffmpeg
-TITLEFILE=" -faronized-"
+TITLEFILE=" "
 YEARFILE=""
 ALBUMFILE=""
 CONTAINTERFILE=""
@@ -64,48 +66,53 @@ function ffmpegengine() {
 	        			FORCEPROFILE="-profile high"
 	        fi
 	        CODECVCOMMANDS=" -vcodec $CODECVID -preset $PRESETx264 -crf $CRF $FORCEPROFILE"
-	        FILETYPE="mp4"
+	        FILETYPE="mkv"
 	fi
 	COMMENTFILE="Falcon $( date ) - $0"
-	ffmpeg -i $INPUT -y $CODECVCOMMANDS \
-		-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
-		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
-		-flags +loop -flags +global_header -movflags +faststart  \
-		-pix_fmt +yuv420p -g 250 -coder 1 -cmp chroma \
-		-partitions +parti4x4+partp8x8+partb8x8 \
-		-me_method hex -subq 6 -me_range 16 -keyint_min 25 -sc_threshold 40 \
-		-i_qfactor 0.71 -b_strategy 1 \
-		-acodec "$CODECAID" -b:a 128k -ar 44100 -ac 2 \
-		-metadata title="$TITLEFILE" \
-		-metadata album="$ALBUMFILE" \
-		-metadata year="$YEARFILE" \
-		-metadata container="$CONTAINTERFILE" \
-		-metadata artist="$ARTISTFILE" \
-		-metadata comment="$COMMENTFILE" \
-		-f $FILETYPE $PREFILE.$FILETYPE < /dev/null
+	ffmpeg -fflags genpts -i $INPUT -flags +global_header -map 0:0 -codec copy "copy_$INPUT" < /dev/null
+	# /usr/bin/avidemux2_cli --load $INPUT --save-raw-audio --save-raw-video --save-uncompressed-audio --save-uncompressed-video --save-unpacked-vop --force-unpack --audio-map --autoindex --rebuild-index --force-smart --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_mastercopy.mkv" --quit
+	# ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y $CODECVCOMMANDS \
+	# 	-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
+	# 	-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
+	# 	-flags +loop -flags +global_header -movflags +faststart  \
+	# 	-pix_fmt +yuv420p -g 60 -coder 1 -cmp chroma \
+	# 	-partitions +parti4x4+partp8x8+partb8x8 \
+	# 	-me_method hex -subq 6 -me_range 16 -keyint_min 25 -sc_threshold 40 \
+	# 	-i_qfactor 0.71 -b_strategy 1 \
+	# 	-acodec "$CODECAID" -b:a 128k -ar 44100 -ac 2 \
+	# 	-metadata title="$TITLEFILE" \
+	# 	-metadata album="$ALBUMFILE" \
+	# 	-metadata year="$YEARFILE" \
+	# 	-metadata container="$CONTAINTERFILE" \
+	# 	-metadata artist="$ARTISTFILE" \
+	# 	-metadata comment="$COMMENTFILE" \
+	# 	-f $FILETYPE "$PREFILE.$FILETYPE" < /dev/null
 		#lets md5sum the file
-		md5sum "$PREFILE.$FILETYPE" > "$PREFILE.dat"
+		#md5sum "$PREFILE.$FILETYPE" > "$PREFILE.dat"
 		#Lets clean up - sending input file to 'completed' folder
 
-		mkdir $PWD/completed -p
-		mv "$PREFILE.mkv" $PWD/completed/
+		#mkdir $PWD/completed -p
+		#mv $INPUT "`basename $INPUT | cut -d"." -f1`_orig_but_discard_me.`basename $INPUT | rev | cut -d"." -f1 | rev`"
+
+		#rev <<< $INPUT | cut -d"." -f2 | rev
 		## Sending new processed file to 'output' folder
-		mkdir $PWD/completed -p
-		mv "$PREFILE.*" output/
+		#mkdir $PWD/output -p
+		#mv "$PREFILE.*" $PWD/output/
 }
 
 ## Let's see if we have file to process by command 'find'
 
-if [[ ! -z "$1" ]]; then
-	INPUT="$1"
-else
-	INPUT=$( find "$PATHDIR" -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
-fi
+# if [[ ! -z "$1" ]]; then
+# 	INPUT="$1"
+# else
+# 	INPUT=$( find "$PATHDIR" -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
+# fi
 
 ## Supposedly INPUT returns as true (found a file)
 if [[ ! -z "$INPUT" ]]; then
+
 		## we grab filename of the file without extension
-        PREFILE="$( rev <<< $INPUT | cut -d "." -f2 | rev )"
+        #PREFILE="$( rev <<< $INPUT | cut -d"." -f2 | rev )"
         ## start ffmpeg function
         ffmpegengine
     ## if INPUT returns as false ( found a file )

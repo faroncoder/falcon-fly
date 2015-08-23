@@ -1,6 +1,14 @@
 #!/bin/bash
+if [ "$EUID" = 0 ]; then
+
+service networking restart
+service network-manager restart
+
+else
+
 sudo service networking restart
 sudo service network-manager restart
 
-exit 0
+fi
 
+exit 0

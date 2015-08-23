@@ -9,19 +9,19 @@ stopwatchtime() {
 
 if [ "$1" != "" ]; then
 #################### BEGIN
+THIS=$(( $( top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=6 {print}' | head -n 23 | wc -l ) - 1 ));
 
-sudo kill -8 `whoami`
 ## place your script here
 
 
 ################### END
 elif [ "$1" = "" ];
 	then
-  echo "usage: ff.bin.login.kill "
+  echo "usage: ff.cpu.watch "
   echo "example:    "
 fi
 
 stopwatchtime
-## TALON: ff.bin.login.kill
+## TALON: ff.cpu.watch
 
 

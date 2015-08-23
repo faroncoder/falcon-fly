@@ -1858,3 +1858,166 @@ umask
 umask -S
 ls -al
 exit
+mv f10_root_history .bash_history
+ls
+ls -al
+rm .bash_aliases 
+rm .bash_colors
+rm .bashrc; ln -s .falcon/bash/.bashrc
+rm .profile; ln -s .falcon/bash/.profile
+ls -al
+ls
+ln- s ~/.falcon/bash/.bash_colors
+ln -s ~/.falcon/bash/.bash_colors
+ls -al
+bashsr
+cd
+ln -s ~/.falcon/bash/.bash_colors
+ls
+ls -al
+ln -s ~/.falcon/bash/.bash_aliases 
+ln -s ~/.falcon/bash/.bash_scripts
+ls
+bashsr
+cd
+ls
+ls -al
+bin
+ls
+ff.ip
+apt-get install mongo mongod mongodb
+ff.apt.build mongo
+ff.apt.build mongod
+ff.apt.build mongodb
+ls
+ff.apt.build nodejs
+cd /usr/bin
+ls node*
+ln -s /home/local/bin/node
+ln -s /home/local/bin/npm
+ln -s node nodejs
+ls
+ls nod*
+cd ..
+cd lib
+ls node*
+ln -s /home/local/lib/node_modules
+ls
+exit
+cd /usr
+cd include/
+ls node*
+ff.find -d -s 'node'
+ff.find -d
+ff.find -c "-type d ! -type f"
+ls
+cd node
+ff.find -c "-type d ! -type f"
+ff.find -c "-type d ! -type f" | wc -l
+ff.find -c "-type f"
+ff.find -c "-type f" | wc -l
+mv ../node ../old_node
+ls
+cd ..
+ls node*
+find -type d
+ls | grep 'node'
+ln -s /home/local/include/node
+ls | grep 'node'
+exit
+ls -al
+cd
+ls
+ls -al
+cd .config
+mkdir .config
+ls
+ls -al
+cd .config/
+ln -s /home/faron/.config/sublime-text-3
+ls
+mkdir ln -s /home/faron/.local
+ln -s /home/faron/.local
+ls
+ls -al
+rm .local
+ls
+cd ..
+ls
+rm -r .config
+ln -s /home/faron/.config
+ln -s /home/faron/.local
+ls -al
+ls
+exit
+ls
+ffnode
+cd app-REST-sample1/
+npm init
+npm install
+ls | tree -f
+ff.apt.fetch tree
+ls | tree -f
+ls | tree 
+ls
+node app
+exit
+umask 0002
+ls
+chown faron:faron *
+ls -al
+chmod 775 *
+ls
+ls -al
+ff.find -f -s 'color.js'
+find -L -type f
+ls
+ls ../node_modules
+ls ../node_modules | wc -l
+find -type f 
+find -type f | wc -l
+ls
+ls -al 
+bin
+cat ~/.bin/ff.bin.folder.transfer
+cat /home/faron/.bin/ff.bin.folder.transfer
+ls
+cd /usr/lib
+find -type d | grep 'node'
+find -type d | grep 'node_modules'
+/usr/local/lib
+ls /usr/local/lib/node_modules
+ls -al
+cd ../local/
+cd lib
+cd node_modules
+cd ..
+find node_modeules -type d ! -type f
+find node_modules -type d ! -type f
+find node_modules -maxdepth 1 -type d ! -type f
+find node_modules -maxdepth 1 -type d ! -type f | wc -l
+find node_modules_old -maxdepth 1 -type d ! -type f | wc -l
+find ! -L node_modules -maxdepth 1 -type d ! -type f | wc -l
+find -L node_modules -maxdepth 1 -type d ! -type f | wc -l
+mv node_modules/* node_modules_old/
+cp -r -u node_modules/* node_modules_old/
+mv node_modules node_dis
+umount /usr/local/lib/node_modules
+nano /etc/fstab
+mount -a
+ls
+mv node_modules node_dying
+exit
+ffloc
+rm -r manual
+ls
+ls conf
+cd /tmp
+cd httpd-2.4.12/
+make clean
+exit
+ls
+exit
+testdisk /dev/sdb
+testdisk
+exit

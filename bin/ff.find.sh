@@ -1,8 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
 
-#cmdthis="find $DEPTH $TYPE $NAME $EXEC"
-
 while :
 do
     case "$1" in
@@ -67,4 +65,12 @@ do
     esac
 done
 
-sudo sh -c "find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST"
+
+if [ "$EUID" = 1004 ] || [ "$EUID" == 1000 ]; then
+	sudo sh -c find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST
+fi
+if [ "$EUID" = 0 ]; then
+	sh -c find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST
+
+fi
+
