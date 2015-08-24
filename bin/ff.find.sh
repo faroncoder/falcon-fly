@@ -5,38 +5,48 @@ while :
 do
     case "$1" in
     -f | --file)
-		  	TYPEFILE=" -type f ! -type d "
+		  	TYPEFILE=" -type f"
 		  	FILE=$( echo $TYPEFILE )
 		  	shift
 		  	;;
     -d | --dir)
-			TYPEDIR=" -type d ! -type f"
+			TYPEDIR=" -type d"
 		  	DIR=$( echo $TYPEDIR )
 			shift
 			;;
-    -l | --max)
+    -l | --level)
 		  	DEPTHVAR=" -maxdepth $2"
-		  	DEPTH=$(echo $DEPTHVAR )
+		  	LEVEL=$(echo $DEPTHVAR )
 		  	shift 2
 		;;
     -n | --name)
-		  	NAMEVAR=" -name \"$2\""
+			NAMESOVAR=$( echo $2 | sed 's/"/\"/g' )
+			NAMESOVAR=$( echo NAMESOVAR | sed "s/'/\"/g" )
+			NAMESOVAR=$( echo NAMESOVAR | sed 's/|/\{}/g' )
+		  	NAMEVAR=" -name $NAMESOVAR"
 		  	NAME=$(echo $NAMEFAR )
 		  	shift 2
 		;;
     -s | --search)
-			SEARCHVAR=" -name \"*$2*\""
-			SEARCH=$( echo $SEARCHVAR )
+			SNAMESOVAR1=$( echo $2 | sed 's/"/\"/g' )
+			SNAMESOVAR1=$( echo SNAMESOVAR1 | sed "s/'/\"/g" )
+#			NAMESOVAR1=$( echo NAMESOVAR1 | sed 's/|/\{}/g' )
+		  	SNAMESVAR1=" -name $SNAMESOVAR1"
+		  	SNAME=$(echo $SNAMESVAR1 )
+#			SEARCHVAR=" -name \"*$2*\""
+#			SEARCH=$( echo $SEARCHVAR )
 			shift 2
 		;;
     -e | --exec )
 			ISOVAR=$( echo $2 | sed 's/"/\"/g' )
-			EXECVAR="$ISOVAR \{} \;"
-			EXEC="-exec `echo $EXECVAR`"
+			ISOVAR=$( echo ISOVAR | sed "s/'/\"/g" )
+			ISOVAR=$( echo ISOVAR | sed 's/|/\{}/g' )
+			EXECVAR=" -exec $ISOVAR \;"
+			EXEC=" -exec \"$EXECVAR\""
 			shift 2
 		;;
-    -p | --path)
-			PATHVAR="-path '*/$2*'"
+    -x | --enclude-dir)
+			PATHVAR=" -path \"*/$2/*\""
 			PATHFOLDER=$( echo $PATHVAR )
 			shift 2
 		;;
@@ -46,10 +56,12 @@ do
 			shift 2
 		;;
 	-c | --cust)
-			CUSTVAR=$( echo $2 | tr '"' '\"' )
+			CUSTVAR=$( echo $2 | sed 's/"/\"/g' )
 			CUST=$( echo $CUSTVAR )
 			shift 2
 		;;
+	-g | --grep)
+			GREPVAR=$(  )
 
        --) # End of all options
 	 	shift
@@ -64,10 +76,10 @@ do
 	  ;;
     esac
 done
-
+CMDLINE=$( `find $LOCPA $LEVEL $DIR $FILE $NAME $SEARCH $PATHFOLDER $EXEC $CUST` )
 
 if [ "$EUID" = 1004 ] || [ "$EUID" == 1000 ]; then
-	sudo sh -c find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST
+	find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $PATHFOLDER $EXEC $CUST
 fi
 if [ "$EUID" = 0 ]; then
 	sh -c find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST
