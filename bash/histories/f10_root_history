@@ -2021,3 +2021,672 @@ exit
 testdisk /dev/sdb
 testdisk
 exit
+ls
+make clean
+./configure
+make
+ls
+make clean
+./configure --prefix=/home/local
+ff.apt.fetch make
+ff.apt.fetch cmake
+ff.apt.fetch pkg-config
+ls
+./install.sh
+make clean
+./configure
+ls
+cat install.sh.in 
+./install.sh.in 
+./install.sh
+LS
+ls
+exit
+bin
+ff.ssl.new 
+cd /etc/ssl
+mkdir cnfs
+ff.ssl.new 
+bashsr
+exit
+ff.ssl.new 
+exit
+mv /usr/bin/do-release-upgrade /usr/bin/do-release-upgrade_disable
+chmod -x /usr/bin/do-release-upgrade_disable 
+exit
+cd /etc/apache2
+rm mime.types 
+ls
+cat apache2.conf.dpkg-new 
+sed -i -e  '/vim:/d' apache2.conf.dpkg-new 
+cat apache2.conf.dpkg-new 
+ls
+rm apache2.conf
+ln -s apache2.conf.dpkg-new apache2.conf
+ff.apache2.restart 
+setup
+./mod_flvx_streaming.sh 
+ls
+cp h264.tar.gz /tmp
+cd /tm
+cd /tmp/
+tar -zxvf h
+tar -zxvf h264.tar.gz 
+cd mod_h264_streaming-2.2.7/
+make clean
+./configure
+make
+make install
+ls
+cd ..
+rm -r mod_h264_streaming-2.2.7/
+rm h264.tar.gz 
+ls
+ls -al
+ls
+cd ..
+bashsr
+cd /
+rm systemd-218-2-x86_64.pkg.tar.xz 
+ls
+rm npm-debug.log 
+ls
+cd plugins/
+xpt
+.xpt
+which mplayerplug-in
+cd /var/www
+cd settings/
+cd active/
+chmod -x *
+ls
+ping www.faronintel.ca
+ls
+sudo service apache2 restart
+cd /usr/lib/apache2/modules/
+ls /home/local/lib
+cd apac
+ls
+ls /home/local/x_apache2/conf/extra/
+ls
+ls ..
+cd ..
+ls modules/
+ls
+rm -r suexec*
+ls
+tar -jcvf apache2_mods.tar.bz2 modules/
+ls
+a2dismod netcgi
+a2dismod netcgi-apache
+a2dismod netcgi-apache2
+ls
+mv apache2_mods.tar.bz2 /home/faron/.falcon/backup/
+ls
+cd ..
+cd /usr/share/
+cd apache2/
+cd /etc
+nano hosts.allow 
+ff.apache2.restart 
+cd /etc/apache2/
+cd conf-enabled/
+cat other-vhosts-access-log.conf 
+sed -i -e '/vim:/d' *
+cd ..
+sed -i -e '/vim:/d' *
+ls
+cd sites-available/
+mv * /home/www/settings/inactive/
+ls
+cd ..
+cd sites-enabled/
+cd ..
+rm -r sites-*
+cd mods-enabled/
+rm netcgi_apache.load 
+ff.apache2.restart 
+rm parser3.load 
+ff.apache2.restart 
+rm webauth.*
+ls
+ff.apache2.restart 
+rm webauthldap.*
+ff.apache2.restart 
+ls
+cd ../
+ls -al
+cat apache2.conf
+mv apache2.conf apache2.old
+ln -s /var/www/settings/apache2.conf 
+ff.apache2.restart 
+cd /etc/default
+cat bridge-utils 
+sudo nano bridge-utils 
+cat apache2 
+nano apache2 
+ls
+cat alsa 
+ls
+cat acpid 
+ls
+cat anacron 
+ls
+cat apport 
+apport-cli
+ls
+cat avahi-daemon 
+ls
+cat bind9 
+sed -i -e 's/no/yes/g' bind9 
+cat bind9 
+ls
+cat brltty 
+ls
+cat bsdmainutils 
+ls
+cat cacerts 
+ls
+cat console-setup 
+ls
+cat crda
+ls
+cat cr
+cat cron
+cat dbus
+ls
+cat devpts 
+ls
+cat dlocate 
+ls
+cat ebtables 
+ls
+cat freeradius 
+freeradius 
+ls
+cat halt
+cat im-config 
+ls
+cat irqbalance 
+ls
+cat keyboard 
+ls
+cat libvirt-bin 
+sudo nano libvirt-bin 
+ls
+cat locale 
+ls
+cat memcached 
+ls
+cat networking 
+ls
+cat nss
+ls
+cat ntfs-3g 
+ls
+cat ntpdate 
+nano ntpdate 
+ls
+cat pulseaudio 
+nano /etc/init/pulseaudio.conf 
+ls
+cat qemu-kvm 
+ls
+cat rcS 
+nano  rcS 
+ls
+rsync 
+nano rsync 
+ls
+nano saned
+nano saslauthd 
+cat shibd 
+cat
+ls
+cat spamassassin 
+ls
+nano speech-dispatcher 
+cat ssh
+ls
+cat tomcat6 
+ls
+cat ufw 
+nano ufw
+ls
+cat useradd 
+ls
+cat whoopsie 
+ls
+cat winbind 
+ls
+service apache2 restart
+ff.apt.fetch 
+ls
+cd ..
+cd init
+cat ufw.conf 
+naon ufw.conf 
+nano ufw.conf 
+ls
+ls -al
+ls
+more
+ls | more
+ff.apt.find nvidia
+ff.apt.find "nvidia boot"
+ff.apt.find nvidia
+ff.apt.find nvidia | more
+ff.apt.fetch libcg*
+ls
+ff.reboot
+cat php5-fpm.log 
+ls
+tail syslog
+iptables
+iptables -l
+iptables -L
+ufw
+ufw disable
+ls
+cd journal/
+cd remote/
+ls
+cd ..
+cd samba/
+tail log.
+tail log.192.168.1.1 
+ls
+cd ..
+cat udev 
+ls
+cat Xorg.0.log
+ls
+cat kern.log
+ls
+cat auth.log
+ls
+cat boot
+cat boot.log 
+ls
+ccd apport.log
+cat apport.log
+ff.apt.fetch gnome-settings-daemon
+ls
+sudo apt-get remove --purge shibboleth
+apt-get install liquidsoap
+ls
+sudo apt-get remove --purge freeradius
+ls
+cd hp
+ls
+cd tmp/
+ls
+cd ../..
+cat memcached.log 
+cd libvirt/
+cat libvirtd.log 
+ls
+cd qemu/
+ls
+cd ..
+cat mysql.err 
+cat mysql.log
+sudo apt-get remove --purge postgresql
+ff.reboot 
+dpkg -i python-twisted-web_11.1.0-1_all.deb 
+dpkg -i python-twisted-core_11.1.0-1ubuntu2_all.deb 
+dpkg -i python-twisted-bin_11.1.0-1ubuntu2_
+dpkg -i python-twisted-bin_11.1.0-1ubuntu2_amd64.deb 
+apt-mark python-twisted* manual
+apt-mark python-twisted-* manual
+apt-mark python-twisted-bin_11.1.0-1ubuntu2_hold
+apt-mark python-twisted-bin_11.1.0-1ubuntu2_amd64.deb hold
+apt-mark manual python-twisted*
+apt-mark manual *twisted*
+ls
+dpkg -i `ls python-twist* | sed '/i386/d' `
+apt-mark python-twisted* manual
+apt-get mark python-twisted* manual
+apt-mark hold python-twisted*
+aptitude
+ff.apt.update
+ls
+cd flumotion/
+cd ..
+sudo apt-mark hold *twisted*
+ls
+dpkg -i python-twisted-bin_11.1.0-1ubuntu2_amd64.deb 
+dpkg -i python-twisted-core_11.1.0-1ubuntu2_all.deb 
+dpkg -i python-twisted-web_11.1.0-1_all.deb 
+dpkg --help
+echo "python-twisted-bin hold" | dpkg --set-selections
+echo "python-twisted-core hold" | dpkg --set-selections
+echo "python-twisted-web hold" | dpkg --set-selections
+ff.apt.update
+apt-get install --reinstall flumotion
+cd /var/log
+grep -r 'flumotion'
+grep -r 'flumotion' *
+clear
+apt-cache search apache2
+exit
+ff.flu.1
+ff.flu.3 
+ls -al ~/.config
+ls
+rm ~/.config
+cp -r .config /root
+ls
+cd
+ls -al
+cd .config/
+ls old
+rm -r old
+ls
+cd backintime/
+ls
+ls -al
+rm -r ../backintime/
+ls
+cd ..
+exit
+ls
+bashs
+r
+bashsr
+bin
+ls
+ff.flu.3 
+exit
+ff.flu.2 
+cd /media
+ls -al
+cd ..
+cd /dev
+cd usb/
+ls
+ffopen
+ff.apt.find mtp
+exit
+service dns-clean status
+dnsmasq 
+ports
+ports | grep ':53'
+sudo reboot
+subl rndc.key 
+ls
+subl named.conf.options 
+ls
+subl named.conf
+subl named.conf.options 
+service bind9 restart
+ls
+cat rndc.key 
+cat bind.keys 
+ls
+cat named.conf.options 
+service bind9 restart
+ports
+ls
+cat db.root 
+ls
+cat db.local 
+subl db.local 
+subl db.192
+ls
+subl named.conf
+subl named.conf.default-zones 
+service bind9 restart
+ping 127.0.0.1
+ls
+cat /var/log/syslog | grep 'bind9'
+cat /var/log/syslog | grep 'named'
+cat /var/log/syslog | grep 'named' | tail -n 100
+ls
+subl zones.rfc1918 
+service bind9 restart
+dig f10
+dig f10 -all
+dig f10 all
+ls
+cat db.local 
+ls
+cat db.192 
+sed -i -e '/localhost/d' db.192 
+cat db.192 
+ls
+cat db.local
+ls
+cat db.root 
+ls
+cat db.0
+ls
+cp db.local db.f10
+ls
+subl db.f10
+subl named.conf.options 
+subl named.conf.local 
+subl named.conf
+subl named.conf.default-zones 
+service bind9 restart
+ls
+dig 
+dig f10
+dig localhost
+dig f10
+dig faron.ca
+ls
+nslookup
+nslookup --help
+man nslookup
+nslookup - f10
+nslookup -f10
+man nslookup
+brctl show
+brctl stp virbr0 off
+brctl show
+brctl delbr virbr0
+ifconfig virbr0 down
+brctl delbr virbr0
+brctl show
+exit
+subl hosts.allow 
+subl hosts.deny 
+ls
+subl hostname
+cat networks 
+nano networks
+ff.network.restart 
+ping gtwy
+ping f10
+ifconfig
+ifconfig eth0 up
+ls
+ifconfig
+ifconfig eth0 192.168.1.10
+ifconfig
+ping gtwy
+ff.network.restart 
+ls
+ls network*
+cd network/if-up.d/
+ls -al
+cat ../../wpa_supplicant/ifupdown.sh 
+ls
+cat avahi-daemon 
+echo $ADDRFAM
+echo $IFS
+ls
+cat openssh-server 
+inet
+ls
+cd ..
+cd if-up.d/
+cat upstart 
+initctl list-env
+initctl emit
+initctl usage
+initctl show-config
+kvm
+avahi
+avahi-resolve
+avahi-browse
+avahi-set-host-name 
+avahi-set-host-name f10
+ls
+cat bind9 
+ls
+ethtool 
+cat ethtool 
+ls
+cd ..
+ls if-*
+resolvconf 
+resolvip
+resolveip 
+resolveip f10
+resolveip gtwy
+nano /etc/hosts
+resolveip gtwy
+resolveip 192.168.1.1
+ls
+subl /etc/hosts
+resolveip gtwy
+resolveip f2
+resolvertest 
+dpkg -l | grep 'hibboleth'
+dpkg -r shibboleth-sp2-common
+dpkg -r shibboleth-sp2-utils
+dpkg -r libapache2-mod-shib2
+dpkg -r shibboleth-sp2-utils
+dpkg -r shibboleth-sp2-common
+dpkg -r shibboleth-sp2-utils
+sudo apt-get remove --purge shibboleth*
+dpkg -l | grep 'hibboleth'
+resolvertest 
+ls
+resolve_stack_dump 
+ls
+resolveip
+resolveip f2
+resolveip f10
+resolveip lo
+resolveip localhost
+nano /etc/hosts.allow 
+nano /etc/hosts.deny 
+resolveip f10
+resolveip faron.ca
+resolveip f10.faron.ca
+hostname
+hostname -yp
+hostname -y
+hostname -A
+hostname -b
+hostname -i
+hostname -I
+hostname -yp
+hostname --yp
+hostname --nis
+cd /etc
+grep -r 'faronintel.ca' *
+cat sysctl.conf 
+sudo nano /etc/sysctl.conf 
+hostname --yp
+ff.network.restart 
+hostname --yp
+nano /etc/hosts
+hostname -f
+hostname -y
+ypdomainname 
+ypserv 
+ypserv --help
+yplan 
+yplan  --help
+ls
+find -type f -name '*yp*'
+find -type f -name 'yp*'
+ls
+host
+host -v
+host -l
+host -l f10
+host -C f10
+reboot
+resolvconf -u
+echo $IFACE
+resolveip 
+resolveip f10
+ff2
+ff6
+ff.network.scan 
+ifconfig
+cat /etc/network
+cat /etc/networks
+ls
+ping 192.168.1.1
+ifconfig
+ifconfig eth0 192.168.1.10
+ping 192.168.1.10
+ping 192.168.1.1
+ping gtwy
+ifup
+ifup --help
+ifup -X virbr0
+ifup --exclude virbr0
+ifup virbr0 --exclude
+ifup --exclude virbr0
+ifup -a --exclude virbr0
+ifup eth0
+ifdown eth0
+ifdown virbr0
+ifconfig
+ifconfig virbr0 down
+ifup -a --exclude virbr)
+ifup -a --exclude virbr0
+ifconfig
+ifconfig eth0 down
+ifup -a 
+ifnames
+ifquery 
+ifquery --help
+ifquery --state eth0
+ifquery --state lo
+ifconfig eth0 up
+ifquery --state eth0
+ifconfig
+link
+link --help
+ls
+nano host.conf
+cat hosts
+ls
+kvm-ok
+kvm-spice 
+cat /etc/network
+cat /etc/networks
+ls /etc/networks/ 
+cd /etc
+cd network/
+cat interfaces
+nano interfaces
+ff.network.restart 
+ifconfig
+ifconfig eth0 up
+ls
+ifconfig
+ping gtwy
+reboot
+nano networks
+man network
+ls
+nano /etc/default/grub
+update-grub
+disk
+cat /etc/fstab
+ls /
+cd home
+cd /
+ls
+sudo umount home
+umount home
+reboot

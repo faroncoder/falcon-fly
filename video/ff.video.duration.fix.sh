@@ -16,6 +16,7 @@ EXT="$( rev <<< $INPUT | cut -d "." -f1 | rev )"
 #ffmpeg -fflags genpts -i "$INPUT" -flags +global_header -map 0:0 -codec copy "$PREFILE.fixed.$EXT" < /dev/null
 ffmpeg -fflags genpts -i "$INPUT" -flags +global_header -map 0:0 -codec:v copy -codec:a copy "$PREFILE.fixed.$EXT" > /dev/null
 
+trash-put $INPUT
 #mv $INPUT $PREFILE_delete_me.$EXT
 
 ######## IGNORE BELOW -- LOGGING PURPOSE ######

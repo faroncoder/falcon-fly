@@ -11,7 +11,7 @@ stopwatchtime() {
 #################### BEGIN
 USER=""
 GROUP=""
-LOCP="$1"
+LOCP="$PWD"
 
 if [ "$LOCP" = '' ];
 	then

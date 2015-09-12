@@ -9,37 +9,36 @@ stopwatchtime() {
 ## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
 ## BEGIN
 
-#PATHLOC=$1
-# if [ -z "$1" ]
-# 	then
-# 				PATHLOC="$PWD"
-# 	fi
-#PREFILE="$( echo "$file" | cut -d "." -f1 )";
-#ADUP=$( find $PATHLOC -maxdepth 1 -type d | sort | tail -1 )
-#NAD=$( basename $ADUP )
-#DUH="$( echo $NAD )"
+
+
+#orderfiles=( $( find $PWD -type f -name "*.$EXT" ) )
+#orderfiles=( "$CMDGET" )
+
+		if [ "$1" != '' ]; then
+			TRIMUP=`rev <<< $1 | cut -d"." -f1 | rev`
+			if [ ! -d "$PWD/$TRIMUP" ]; then
+				mkdir $TRIMUP -p
+			fi
+				orderfiles=( `find -type f -name "*.$TRIMUP" ! -path "$PWD/$TRIMUP/*"` )
+		else
+				orderfiles=( `find -type f ! -path "$PWD/seralized/*" ` )
+		fi
+
 MEXT="0"
-TYPE="$1"
-if [ -z "$TYPE" ]
-	then
-	   echo -n "which type of file extension to numbericize its filename ? "
-	   read TYPE
-	   EXT=$( echo $TYPE | cut -d'.' -f2 )
-	 fi
 
-
-orderfiles=( $( find $PWD -type f -name "*.$EXT" ) )
-for line in "${orderfiles[@]}";
+for j in "${orderfiles[@]}";
 	do
-		getname=$( echo $line | cut -d'.' -f1 )
-		getnewname=$( seq -w 0 $( echo $MEXT ) | tail -n 1 )
-		mv $line "$getnewname.$EXT"
-		#rename 's/$( echo $getname )/$( echo $getnewname )/g' $line
+		PREFILE=`rev <<< $j | cut -d"." -f2 | rev `
+		GETEXT=`rev <<< $j | cut -d"." -f1 | rev`
+		GETNEWNAME=`seq -w 0 $( echo $MEXT ) | tail -n 1 `
+		#cp $line seralized/"$GETNEWNAME.$GETEXT"
+		mv $j "$PWD/$TRIMUP/$GETNEWNAME.$GETEXT"
+		#rm $line
+		#rename 's/$( echo $GETNAME )/$( echo $GETNEWNAME )/g' $line
 		MEXT=`expr $MEXT + 1`
-
+		#rm $line
 		#find -name "$FILE*" -type f -exec mv {} $FILEASS
 		#mv $line $FILEASS.$FILE
-
 	done
 
 stopwatchtime

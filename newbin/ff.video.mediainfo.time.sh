@@ -17,14 +17,16 @@ spawningMedia() {
 	#CATCHTIME=`cat /tmp/catchme.txt | grep 'Duration' | head -n 1 | cut -d":" -f2 `
 	CATCHTIME=`echo $GETALLFILEINFO | grep 'Duration' | head -n 1 | cut -d":" -f2`
 		if [ -z "$CATCHTIME" ]; then
-			CATCHNAME='';
-			CATCHTIME='';
-			CATCHMD5ALL='';
-			CATCHMD5='';
+			echo "Right - you were supposed to have an arguement here."
+		#	CATCHNAME='';
+		#	CATCHTIME='';
+		#	CATCHMD5ALL='';
+		#	CATCHMD5='';
 		else
 			#echo -e "{\"MediaFile\":\"$CATCHNAME\",\"MediaTime\":\"$CATCHTIME\",\"MediaMd5sum\":\"$CATCHMD5\"}" >> /tmp/finalread.txt;
 			LISTING=\""MediaFile":"$CATCHNAME","MediaTime":"$CATCHTIME","MediaMd5sum":"$CATCHMD5\""
-			fm.insert faron mediacontrol "`echo $LISTING`"
+			echo  "$LISTING"
+			#fm.insert faron mediacontrol "`echo $LISTING`"
 			#fiLISTING=$( cat $LISTING | sed 's/ //g' )
 		fi
 }
