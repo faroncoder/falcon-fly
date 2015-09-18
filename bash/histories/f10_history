@@ -2463,3 +2463,8 @@ bin
 cat ff.git.new 
 ssh -T git@github.com
 falcon
+ff.git.update
+git pull
+git config --global push.default matching
+git config --global push.default simple
+git pull

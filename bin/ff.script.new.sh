@@ -26,7 +26,7 @@ XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB |
 
 
 ################### END
-#elif [ \"\$1\" = \"\" ];
+#elif [ \"\$1\" = '' ];
 #	then
 #  echo \"usage: $newfile \"
 #  echo \"example:    \"
@@ -37,6 +37,20 @@ XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB |
 XeF
 
 " >> $newbin/$proofreadfile
+<<<<<<< HEAD
 gedit $newbin/$proofreadfile
+=======
+
+##DETERMINING WHICH APP TO OPEN THE SCRIPT DEPENEDING ON WHICH SERVERS
+
+SRVNAME=`hostname --short`
+
+if [ "$SRVNAME" != 'f10' ]; then
+	nano $newbin/$proofreadfile
+
+else
+	gedit $newbin/$proofreadfile
+fi
+>>>>>>> 565fe9fb368c95cec4c83016206e21fad0b1a331
 
 exit 0
