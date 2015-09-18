@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VAULT"
+BINPULL="$HOME/.falcon/scripts/falcon-fly/htmls/VAULT"
 orderfiles=( $( find $BINPULL -type f ) )
 
 function populateoption {

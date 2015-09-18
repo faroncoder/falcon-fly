@@ -11,7 +11,7 @@ do
     case "$1" in
       -f | --file)
 		if [[ -f "$2" ]]; then
-			xclip -sel clip < $2   # You may want to check validity of $2
+			xclip -in -sel clipboard $2   # You may want to check validity of $2
 			echo "parsed to memory!  CTRL-X to paste."
 	  		shift 2
 	  	else

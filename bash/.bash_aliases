@@ -1,4 +1,4 @@
-alias	falcon=" cd ~/.falcon/scripting/falcon-fly "
+alias	falcon=" cd ~/.falcon/scripts/falcon-fly "
 alias 	ff.clean=" ff.bin.files.backup.delete "
 alias 	ff.cloud=" cd /home/www/cloud/html "
 alias 	ff.code=" cd ~/.falcon/scripts "

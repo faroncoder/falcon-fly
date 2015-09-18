@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VAULT"
+BINPULL="$HOME/.falcon/scripts/falcon-fly/htmls/VAULT"
 
 #function populateoption {
 	#find $BINPULL -type f ! -name '*old*' -exec basename {} \;

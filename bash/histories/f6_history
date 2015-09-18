@@ -368,7 +368,7 @@ mp4
 cd ..
 mp4er
 rm ~/bin/mp4er
-ln -s ~/.falcon/scripting/falcon-fly/video/mp4er.sh
+ln -s ~/.falcon/scripts/falcon-fly/video/mp4er.sh
 ls
 mv mp4er.sh ~/bin
 bin

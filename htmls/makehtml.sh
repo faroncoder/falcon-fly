@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VAULT"
+BINPULL="$HOME/.falcon/scripts/falcon-fly/htmls/VAULT"
 faceboxdoc="
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
