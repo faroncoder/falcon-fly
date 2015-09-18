@@ -10,29 +10,18 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $Xe
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-CMD=( 
-"apt-get build-dep $1"
-"apt-get install $1"
-)
+echo "can you see me?"
 
-for command in "${CMD[@]}"; 
-do
-	if [[ "$EUID" != 0 ]]; then
-		sudo $command
-	else
-		$command
-	fi
-done
 
 ################### END
 #elif [ "$1" = "" ];
 #	then
-#  echo "usage: ff.apt.fetch "
+#  echo "usage: testing.sh "
 #  echo "example:    "
 #fi
 
 
-## TALON: ff.apt.fetch
+## TALON: testing.sh
 XeF
 
 

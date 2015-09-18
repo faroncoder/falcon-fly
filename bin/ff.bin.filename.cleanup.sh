@@ -16,6 +16,7 @@ cd $PWD
 		rename "s/_//g" *
 		rename "s/\!//g" *
 		rename "s/-//g" *
+		rename "s/\"//g" *
 filelisting=( $( find . -maxdepth 1 -type f ! -type d ! -name '*.txt' ! -name '*.sh' ! -name '*.dat' ! -name '*.list' -exec basename {} \; ) )
 for x in "${filelisting[@]}"
 	do

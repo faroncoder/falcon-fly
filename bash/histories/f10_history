@@ -1,1553 +1,3 @@
-ls
-ls -al
-ls
-cd ..
-bashsr
-grep 'chmod' ~/.bashrc
-grep 'chmod' ~/.bash*
-grep '0700' ~/.bash_scripts 
-sed -i -e 's/0700/700/g' ~/.bash_scripts 
-bashsrc
-bashrc
-bashsr
-ls -al
-ls -al .ssh
-exit
-sed -i -e '/chmod/d' ~/.bash_scripts 
-bashsr
-sudo reboot
-ff.apt.find libgnome*
-ff.apt.find gnome*
-ff.apt.find gnome
-ff.apt.fetch libgnome*
-ff.reboot
-sudo amdcccle 
-sudo reboot
-node
-npm
-npm list
-ls
-npm -g list
-ls
-cd clips
-cd ..
-ls
-cd tmp
-ln -s ../clips
-ls
-ls -al
-ls
-sudo adduser faron pulse
-cat /etc/passwd
-ls
-cd /tmp
-ls
-cd cli
-cd clips
-ls
-ls -al
-rm clips
-sudo rm clips
-sudo ln -s /home/faron/Streamings/files/engine/factory-mp4/output/batch
-ls
-flu.1
-top
-sudo kill -9 ~
-sudo kill -9 2356
-ls
-cd /etc
-sudo rm -r apparmor*
-ls
-ls *-
-cat group-
-ls
-ff.apt.fetch mplayerplug
-ff.apt.fetch mplayerplugin
-ff.apt.fetch mplayerplug-in
-ls
-cat fuse.conf 
-sudo ucat fuse.conf 
-sudo cat fuse.conf 
-sudo nano $ cd /etc/default/
-cd /etc/default/
-sudo nano grub 
-sudo reboot
-ff.flu.1
-ff.flu.2
-ff.flu.3
-ff.apt.fetch unity-gnome
-ff.apt.find unity-gnome
-ff.apt.find "*gnome*ubuntu*"
-ff.apt.find *gnome*ubuntu
-ff.apt.find gnome*ubuntu
-ff.apt.find ubuntu*gnome
-ff.apt.find unity | grep 'gnome'
-ff.apt.find unity | grep 'desktop'
-ff.apt.find gnome | grep 'desktop'
-ff.apt.find gnome | grep 'desktop' | grep 'desktop'
-sudo apt-get install libgnome-desktop*
-sudo apt-get autoremove
-ff.apt.fetch live-image-gnome-desktop
-live-build 
-ls
-live-build ls
-sudo reboot
-cat /etc/default/grub
-sudo update-grub
-sudo nano /etc/default/grub
-ff.apt.find gnome | grep 'settings'
-ff.apt.fetch ubuntu-gnome-default-settings xsettingsd gnome-settings-daemon gnome-settings-daemon-dev gnome-settings-schemas
-sudo apt-get build-dep "ubuntu-gnome-default-settings xsettingsd gnome-settings-daemon gnome-settings-daemon-dev gnome-settings-schemas"
-ls
-sudo apt-get build-dep ubuntu-gnome-default-settings xsettingsd gnome-settings-daemon gnome-settings-daemon-dev gnome-settings-schemas
-top
-qq
-sudo apt-get update
-clear
-ff.flu.1 && ff.flu.2 && ff.flu.3
-cd /var
-cd log
-cd cups
-ls -al
-ls
-cd
-pidof flumotion
-ff.apt.fetch ubuntu-desktop
-sudo reboot
-ff.apt.fetch ubuntu-desktop
-ifconfig
-ifconfig virbr0 down
-sdo ifconfig virbr0 down
-sudo ifconfig virbr0 down
-ping gtwy
-ping f10
-sudo ifconfig virbr0 down
-ff.apt.fetch ubuntu-desktop
-ff.network.restart 
-apt-cache search ubuntu
-sudo apt-get install -y ubuntustudio-desktop 
-tail -n 100 /var/log/syslog
-sud apt-get remove NetworkManager
-sud apt-get remove networkmanager
-sudo apt-get remove networkmanager
-ff.ip
-sudo apt-get remove iptables
-sudo apt-get update
-cd /etc
-sudo nano networks
-ls
-sudo su
-ff.apt.fetch ubuntu-desktop
-sudo apt-get update
-ff.apt.find "gnome desktop"
-ff.apt.find "gnome" | grep "desktop"
-ff.apt.find "gnome" | grep "desktop" | more
-ff.apt.fetch "ubuntu-gnome-default-settings ubuntu-gnome-desktop"
-sudo reboot
-sudo shutdown now
-ff.apt.fetch systemd
-ff.apt.fetch ubuntu-gnome
-ff.apt.fetch ubuntu-gnome-desktop
-ff.apt.update
-ff.reboot 
-ff.apt.update
-ifconfig
-sudo ifconfig 192.168.1.10 eth0
-ifconfig 192.168.1.10 eth0
-ifconfig eth0 192.168.1.10 
-sudo ifconfig eth0 192.168.1.10 
-ifconfig
-sudo dpkg --configure -a
-ff.apt.update
-ping gtwy
-iptables
-sudo iptables -l
-sudo iptables --list
-ufw
-ufw --version
-sudo service ufw status
-sudo ufw -list
-sudo ufw status
-cat /etc/networks
-sudo nano /etc/networks
-ff.reboot
-ff.apt.update
-ff.apt.find libsystemd
-ff.apt.update
-ff.reboot
-ff.apt.find systemd | grep 'unit'
-ff.apt.fetch click-systemd dh-systemd
-ff.apt.find systemd | grep 'unit'
-ff.apt.fetch systemd-cron
-ff.apt.fetch ubuntu-standard
-sudo dpkg --configure -a
-ff.apt.update
-ff.apt.fetch ubuntu-gnome-desktop
-ff.apt.update
-ff.apt.fetch gdm
-sudo dpkg-reconfigure gdm
-sudo reboot
-ff.reboot
-bin
-vzl on
-falcon
-find -type f -name '*backup*'
-cd file-folder/
-nano backup.sh 
-ff.bin.load backup.sh 
-bin
-apache2
-cd /etc
-cd apache2/
-mv apache2.conf apache2-old.txt
-sudo mv apache2.conf apache2-old.txt
-ls
-sudo ln -s /home/www/settings/apache2.conf 
-sudo nano /etc/fstab
-sudo mount -a
-ls /var/www
-ls
-sudo service apache2 restart
-ff.apt.fetch php5
-sudo a2enmod php5
-ff.apt.find "php apache2"
-ff.apt.fetch "libapache2-mod-auth-memcookie libapache2-mod-authn-yubikey  libapache2-mod-auth-tkt libapache2-mod-php libapache2-mod-watchcat libapache2-mod-xsendfile php5-cgi php5-fpm
-"
-setup
-./mod_flvx_streaming.sh 
-ls
-cp h264.tar.gz /tmp/
-cd /tmp
-tar -zxvf h264.tar.gz 
-cd mod_h264_streaming-2.2.7/
-ff.apt.fetch "libapache2-mod-auth-memcookie libapache2-mod-authn-yubikey  libapache2-mod-auth-tkt libapache2-mod-php5 libapache2-mod-watchcat libapache2-mod-xsendfile php5-cgi php5-fpm"
-ff.apt.fetch mpv mplayer mplayer2
-./configure; make; sudo make install; ff.apt.update
-ls
-cd ..
-rm h264.tar.gz 
-ls
-ff.apt.fetch trash-cli
-setup
-./setup_java_jre.sh 
-sudo nano /etc/fstab
-sudo mount -a
-ff.apt.fetch trash-cli
-./setup_java_jre.sh 
-ls
-sudo a2enmod ssl
-ff.apache2.restart 
-bin
-sudo a2enmod ssl
-sudo a2enmod action rewrite expires
-sudo a2enmod actions rewrite expires
-ff.apache2.restart 
-cd /etc/apache2/mods-available/
-sudo xml2enc status socache-memcache proxy* php5  negotiation mime  mime_magic defalte cgi cgid cache cache_disk buffer
-sudo status socache-memcache proxy* php5  negotiation mime  mime_magic defalte cgi cgid cache cache_disk buffer
-sudo status proxy* php5  negotiation mime  mime_magic defalte cgi cgid cache cache_disk buffer
-sudo su
-setup
-ff.apt.fetch flumotion
-exit
-ff.apt.fetch "trash-cli chromium-browser"
-sudo su
-exit
-sudo su
-exit
-sudo nano /etc/default/grub
-ff.apt.fetch flumotion
-setup
-nano npm-node-install.sh 
-ff.apt.fetch vlc
-sudo adduser faron www-data
-exit
-ls
-mp4
-ls
-cd batch
-cd ..
-HERE=$PWD
-cd media
-cd /media
-sudo mkdir clips
-ls
-echo $HERE >> /etc/fstab
-sudo echo $HERE >> /etc/fstab
-sudo sh -c "echo \"$HERE\" >> /etc/fstab
-"
-sudo nano /etc/fstab
-sudo mount -a
-ls
-cd clips/
-cd batch/
-ls
-vlc 14.mp4 
-ls
-exit
-ff.apt.fetch flumotion
-sudo apt-get build-dep nodejs
-./npm-node-install.sh 
-exit
-bashsr
-ff.apt.fetch flumotion
-setup
-ls /etc/flumotion/
-sudo adduser faron flumotion
-cd /etc/flumotion/
-sudo su
-exit
-sudo service flumotion restart
-setup
-cd packs
-cd flumotion/flumotion/
-cd ..
-ls
-sudo dpkg -i python-twisted-bin_11.1.0-1ubuntu2_amd64.deb 
-sudo apt-mark manual python-twisted-bin_11.1.0-1ubuntu2_amd64.deb 
-sudo apt-mark manual python-twisted-bin
-sudo apt-mark hold python-twisted-bin
-sudo apt-mark manual python-twisted-web
-sudo apt-mark hold python-twisted-web
-ls
-sudo dpkg -i python-twisted-web_11.1.0-1_all.deb 
-sudo apt-mark manual python-twisted-web
-sudo apt-mark hold python-twisted-web
-sudo dpkg -i python-twisted-core_11.1.0-1ubuntu2_all.deb 
-sudo apt-mark manual python-twisted-core
-sudo apt-mark hold python-twisted-core
-ff.apt.update
-cd /tmp
-sudo ln -s /media/clips/batch
-ls
-ff.ip
-sudo service apache2 restart
-ff.network.restart 
-ff.reboot 
-ff.flu.2
-ff.flu.1
-ff.flu.3
-sudo su
-mp4
-cd batch/
-HERE=$PWD
-cd /media
-ls clips
-ls
-cd /tmp
-sudo ln -s /media/clips/batch
-ls
-fff
-cd .jsc
-cd .privs
-ls -al
-sudo chown -R www-data:www-data $PWD
-sudo chmod -R 0775 $PWD
-ls
-ls -al
-cat .htaccess 
-ls
-cat links.
-cat links.html 
-cd /home/www
-cd logs
-ls
-ls -al
-cat ssl-error.log 
-sudo ff.ssl.new 
-sudo su
-ff.reboot
-ff.flu.1
-ff.flu.2
-ff.flu.3 
-mp4
-ls
-cd batch/
-mpv 121.mp4 
-ff.apt.fetch amdcccl
-ff.apt.fetch amdcccle
-ff.apt.fetch fglrx
-sudo amdccle
-sudo amdcccle 
-sudo reboot
-sudo amdcccle 
-clear
-setup
-cat install-video-*
-ls
-./install-video-*
-setup
-./install-video-*
-setup
-clear
-ls
-cd packs
-ffdl
-cd app*
-sudo dpkg -i teamviewer*386*
-sudo apt-get install -f
-bashsr
-teamviewer
-ld
-ls
-ff.apt.update
-ls
-setup
-sudo amdcccle 
-npm --version
-where npm
-whereis npm
-ffloc
-cd share
-ls
-npm
-find -type f -name 'npmrc'
-npm list
-npm list -g
-./install-video-stuff.sh 
-exit
-sudo reboot
-sudo service apache2 status
-ff.apache2.restart 
-ports
-ls
-cd /home/www
-cd logs
-cat error.log 
-ls
-cd apache2/
-cat error.log 
-ls
-cd ..
-cat faronintel-ssl-error.log 
-ls
-cd ..
-mv links.php html/
-ls
-cd ..
-ls -al
-trash-list
-trash-clean
-trash-empty
-ls
-ls cloud
-ls
-ls /
-cd cloud
-find libx32 -type f | wc -l
-find /libx32 -type f | wc -l
-ls
-cd ..
-ls -al
-sudo rm f10-backup.tar.gz 
-ls
-cd home
-sudo rm f10_barebone_system.tar.bz2 
-ls
-cd data
-cd ..
-ff.apt.fetch mongo
-ff.apt.fetch mongod
-ff.apt.fetch mongodb
-npm install -g mongo
-sudo npm install -g mongo
-ls
-mongo
-cd /
-ls -al
-ls
-sudo mkdir data
-sudo sh -c "echo \"/home/data  /data  none  bind  0  0\" >> /etc/fstab"
-cat /etc/fstab
-sudo mount -a
-ls
-ls data
-ls
-mongod --dbpath=/data
-sudo mongod --dbpath=/data
-ls
-mongo
-ls
-cd data
-sudo rm mongod.lock 
-cd ..
-mongod --dbpath=/data
-sudo chown faron:faron /data/*
-sudo chmod 0775 /data/*
-ls /data -al
-chown faron:faron /data
-sudo chown faron:faron /data
-ls -al /data
-ls
-mongod --dbpath=/data
-cd home
-ls data
-ls
-sudo rm -r data
-ls
-mkdir data
-sudo mkdir data
-ls
-cd /
-ls data
-mongod --dbpath=/data
-ls
-cd home
-ls -al data
-sudo reboot
-netstat -an
-cd /home/www
-cd settings/
-ls /etc/apache2/
-ls /etc/apache2/ -al
-ls
-cd active/
-subl f10_faron_ca.conf 
-subl www_faronintel_ca.conf 
-ls
-mv f10_faron_ca.conf f10_faron_ca.txt
-ls
-ff.apache2.restart 
-cat /var/log/apache2/error.log
-cat /var/log/apache2/error.log.1 
-ls
-cd /etc/apache2/
-cat ports.conf 
-sudo nano ports.conf 
-ff.apache2.restart 
-sudo a2enmod authz_core
-sudo a2enmod auth*
-ff.apache2.restart 
-ff.apt.find "apache2 memcache"
-ff.apache2.restart 
-a2enmod buffer
-sudo a2enmod buffer
-ff.apache2.restart 
-ff.apt.find libevent
-ff.apt.fetch libevent-*
-sudo apt-get install -f
-ls
-ff.apt.fetch memcached
-ff.apt.fetch libmemcache
-sudo apt-cache search libmemcache
-ff.apt.find libmemcache
-sudo apt-get update
-ff.apache2.restart 
-ff.apt.find memcookie
-ff.apache2.restart 
-sudo a2dismod auth_mem*
-ff.apache2.restart 
-cd mods-enabled/
-sudo rm gnutls.*
-ls
-ff.apache2.restart 
-sudo reboot
-ls
-apachctl
-apachectl
-apachectl start
-sudo su
-ff.apt.upstart
-ff.apt.install upstart
-ff.apt.get upstart
-bin
-ff.apt.fetch upstart
-ff.apt.update
-ff.reboot 
-sudo amdcccle 
-mp4
-cd batch/
-ffopen
-ff.apt.find alsa
-ff.apt.find "sound driver"
-ff.apt.find "alsa"
-xkill
-sudo reboot
-pulseaudio -k; pulseaudio -vvvv
-sudo su
-ls
-pulseaudio -k; pulseaudio -vvvv
-sudo su; cat /etc/passwd
-ls
-chmod -R 0700 .ssh
-sudo chmod -R 0700 .ssh
-exit
-sudo su
-sudo ln -s /home/cloud/faron .cloud
-ls -al
-ls -al | more
-chown -R faron:faron .w3m
-sudo chown -R faron:faron .w3m
-ls -al
-exit
-mp4
-cd batch/
-ffopen
-cd ..
-cd mkv/
-cd completed
-cd packs/
-ls thumbs/
-ls
-cd thumbs/
-ffopen
-mongo
-mongodb
-ff.apt.fetch mongodb-client
-ff.apt.fetch mongo-client
-ff.apt.find "mongodb client"
-ff.apt.fetch mongodb-clients
-cd /
-ls data
-cat /etc/fstab
-sudo mount -a
-ls
-ls data
-cd data
-ls
-ls -al
-cd /home
-ls -al data
-ls
-cd /
-ff.apt.fetch libmongo-client-dev
-ff.apt.fetch libmongo-client-doc
-ff.apt.fetch libmongodb-java
-ff.apt.fetch libmongodb-perl libmongodbx-class-perl mongodb php5-mongo
-mongodb
-mongo
-ls
-fm.collections 
-fm.dbs
-fm.insert 
-fm.insert faron 'name:"faron",country:"canada"'
-fm.insert faron '"name":"faron","country":"canada"'
-fm.insert faron '"name":"faron"; "country":"canada"; '
-fm.insert faron "name":"faron"; "country":"canada"
-mongo
-cat /etc/passwd
-sudo adduser faron mongodb
-exit
-sudo su
-exit
-sudo service mongodb restart
-jq .
-ff.apt.fetch jq
-jq .
-bashsr
-exit
-ff.apt.fetch nodejs
-ff.apt.fetch npm
-exit
-npm --version
-npm list
-GETALL=( `find -type f -name '*.mkv' ` )
-which npm
-ffloc
-cd bin
-mv npm npm_disabled
-ls
-ls node
-mv node node_disabled
-ls
-bashsr
-ffscr-edit
-bashsr
-echo $PATH
-ffscr-edit
-bashsr
-ls
-which npm
-npm
-npm --v
-npm -
-npm -v
-npm --help
-npm config list
-node
-ff.apt.fetch node
-sudo chmod -R 775 ~/.config/sublime-text-3/Cache
-echo "${GETALL[@]}"
-for f in "${GETALL[@]}"; do sudo mv $f /home/falcon/mkv/ ; done
-ls
-sudo find /home/falcon/mkv -type f | wc -l
-ls
-cd ../falcon/mkv/
-ls -al
-ls
-ls -al
-ls
-cat ~/.bin/ff.files.grouper 
-ff.files.grouper
-ls -al
-sudo chown -R 775 *
-ls -al
-chown -R faron:faron *
-sudo chown -R faron:faron *
-ls -al
-sudo chmod -R 0775 ../mkv
-ls -al
-ff.files.grouper
-ls
-cd /usr/bin
-cd ..
-cd sbin
-sudo ln -s /home/faron/.bin/ff.files.grouper
-cd /home/falcon/mkv
-sudo ff.files.grouper 
-ls
-ls -al
-ls
-fdupes -r $PWD
-ff.apt.fetch fdupes
-fdupes -r $PWD
-ff.apt.fetch scandisk
-ff.apt.fetch testdisk
-sudo dkpg --configure -a
-sudo dpkg --configure -a
-exit
-sudo su
-exit
-ff.apt.fetch testdisk
-sudo su
-sudo testdisk
-cd ../
-cd falcon
-ls
-sudo fdupes -R $PWD
-clear
-setp
-setup
-cd app-*
-cd ..
-cd aop-*
-cd app-re*
-sudo add-key owncloud*asc
-sudo apt-add-key cloud*asc
-sudo apt-key add cloud*asc
-sudo apt-key add own*asc
-cp own*gz /tmp
-cp owncloud*bz2 /tmp
-cd /tmp
-tar -jxvf owncloud*
-ls
-sudo mv owncloud /home/www/
-cd /home/www
-cd settings
-cd inactive
-cp cloud_* ../active/
-cd ..
-cd active
-cd ..
-mv owncloud cloud
-ls
-ff.apache.restart
-ff.apache*
-bin
-ff.apache2.restart
-cd /home/www
-mkdir jhtml
-mv cloud jhtml/html
-ls 
-mv jhtml cloud
-ls
-cd cloud
-mkdir logs
-mkdir logs/apache2
-ff.apache2.restart
-cat ../settings/active/cloud*
-sed -i -e 's/VirtualD/#VirtualD/g' ../settings/active/cloud*
-sed -i -e 's/VirtualS/#VirtualS/g' ../settings/active/cloud*
-ff.apache2.restart
-sudi su
-sudo su
-telnet gtwy
-ls
-cd faron/
-cd ..
-ls
-sudo fdupes -R $PWD
-fdupes --help
-ls
-ls -al
-ls
-mv mkv faron/
-sudo mv mkv faron/
-ls
-cd faron
-sudo su
-exit
-sudo subl
-ff.network.restart 
-ifconfig
-sudo ifconfing eth0 up
-sudo ifconfig eth0 up
-ifconfig
-ff.apache2.restart 
-ff.apt.fetch libapache2-mod-ssl
-ff.apt.find "apache2 ssl"
-ff.apt.fetch libapache2-mod-authn-webid
-ff.ip
-hostname
-host --long
-hostname --long
-ls
-ifconfig
-ff.network.restart 
-ls
-top
-ff.apt.find "mod ssl
-"
-ff.apt.find "mod ssl"
-ff.apt.find "apache2 ssl"
-ff.apt.fetch libapache2-mod-ssl
-ff.apt.fetch libapache2-mod-gnutls
-ff.apt.fetch libapache2-mod-nss
-ff.apt.fetch libweb-id-perl
-fdupes -R $PWD --noprompt --delete
-ls
-n=1
-echo "(( n++ ))"
-echo (( n++ ))
-echo $(( n++ ))
-bashsr
-sudo su
-bin
-ff.script.new 
-bashsr
-falcon
-cd newbin/
-ls
-ff.bin.load ff.files.numberizer.sh 
-ls
-bashsr
-falcon
-cp -R video  testing
-ls
-ls -al testing/
-ls
-cd testing/
-find -type f | wc -l
-ls
-cd ..
-mv testing /tmp
-cd /tmp
-cd testing/
-ff.files.numberizer 
-ls
-ff.files.numberizer 
-ls
-ff.files.numberizer 
-ls
-ff.files.numberizer 
-ls
-ls -al
-cd ..
-THISNAME="$( rev <<< "test.mkv" | cut -d "." -f2 | rev )"
-echo $THISNAME 
-EXT="$( rev <<< "test.mkv" | cut -d "." -f1 | rev )"
-echo $EXT
-ls
-cd testing/
-cd ..
-rm -r testing/
-rm -r testing
-sudo rm -r testing
-falcon
-cp -R video /tmp/testing
-cd/tmp
-cd /mpt
-cd /tmp
-ls testing | wc -l
-cd testing/
-find -type f | wc -l
-ls
-ff.files.numberizer 
-ls
-ff.files.numberizer 
-ls
-ff.files.numberizer 
-ls
-cd packfilesup/
-ls -al
-d ..
-cd ..
-ff.files.numberizer 
-ls
-ls -al
-ls packfilesup/
-ls -al
-subl ~/.ls
-ls
-cat ~/.bin/ff.files.grouper 
-subl ~/.bin/ff.files.grouper 
-ls
-cd ..
-rm -r testing
-sudo rm -r testing
-falcon
-cp -r video /tmp/testing
-cd /tmp/testing/
-ff.files.grouper 
-ls
-ff.files.grouper 
-ls
-ff.files.grouper 
-ls
-ls seralized/
-ls -al
-ls
-cd seralized/
-ls -al
-ls
-cd ..
-sudo rm -r ../testing/
-falcon
-cp -r video /tmp/testing1
-cd /tmp
-cd testing1/
-ls
-ff.files.grouper 
-ls
-ls seralized/
-ls -al | wc -l
-ls
-cd ..
-cd testing1/
-rm -r seralized/
-sudo rm -r seralized/
-ls
-ff.files.grouper 
-ls
-ls seralized/
-ls
-cd ..
-ffclips
-ls *.mpg
-ls
-find -type f -exec cp {} /tmp/
-find -type f -exec cp {} /tmp/ \;
-cd /tmp
-ls
-rm *.jpg
-ls
-find -maxdepth 1 -type f
-mkdir PATCH; find -maxdepth 1 -type f -exec mv {} PATCH/ \;
-ls
-cd PATCH/
-cd /tmp
-top
-sudo kill 5055
-sudo kill 2933
-cd PATCH/
-cd seralized/
-ls
-cd ..
-sudo rm -r PATCH
-ls
-cd testing1/
-ls -al
-find -type f
-ff.files.grouper 
-ls
-cd ..
-rm -r testing1/
-sudo rm -r testing1
-ls
-trash-empty
-cd /home
-cd falcon
-cd /usr/bin
-sudo mv do-release-upgrade do-release-upgrade_DISABLED
-cd /tmp
-cd /home/falcon
-ls
-exit
-exit
-exit
-it
-exit
-exit
-ls -al
-cd ..
-exit
-exit
-sudo su
-ff.apt.fetch libvdpau
-ff.apt.find "libvdpau"
-cd /home/falcon
-cd faron
-cd Streamings/
-cd files
-cd engine/
-cd factory-mkv/
-fdupes -R $PWD --noprompt --delete
-ls
-cd ..
-ls faron
-ls
-cd faron
-ls
-ls -al
-cd ..
-ls faron
-sudo rm -r faron
-ls
-ls -al
-ls
-cd mkv
-cd ..
-cd factory-mkv/
-ff.bin.filename.cleanup 
-ls
-ff.bin.filename.lowercase 
-ls
-cd ..
-ls mkv
-cd ..
-cd faron/
-ls -al seralized/
-ls
-chown -R faron:faron seralized
-sudo chown -R faron:faron seralized
-ls
-cd ../falcon
-ls
-cd faron
-cd factory-mkv/
-ls -al
-sudo chown -R faron:faron *
-ls
-ff.files.grouper 
-exit
-fdupes -R $PWD --delete --noprompt
-exit
-sudo su
-sudo su
-cd ..
-cd falcon
-cd faron/
-ff.files.grouper 
-ls
-cd factory-mkv/
-fdupes -R $PWD --delete --noprompt
-ls
-mediainfo *
-cd ../falcon
-ls
-cd ..
-ls
-cd mkv
-ls -al | wc -l
-ff.apt.fetch mediainfo
-fdupes -R $PWD --delete --noprompt
-cd ..
-cd factory-mkv/
-ls
-cd ..
-cd mkv
-cp 83.mkv tester.mkv
-ff.video.duration.fix tester.mkv
-cd ..
-cd factory-mkv/
-ff.video.duration.fix 6.mkv
-subl ~/.bin/ff.video.duration.fix 6.mkv
-ff.video.duration.fix 50.mkv 
-ff.video.duration.fix 51.mkv 
-ff.video.duration.fix 81.mkv 
-ff.video.duration.fix 83.mkv 
-ff.video.duration.fix 102origbutdiscardmeorigbutdiscardme.mkv 
-ff.video.duration.fix 124.mkv 
-ff.video.duration.fix 276origbutdiscardmemastercopy.mkv 
-ff.video.duration.fix awefagcamp2origbutdiscardme.mkv 
-ls
-bashsr
-cd ../falcon
-cd faron
-cd seralized/
-ff.video.duration.fix 154.mkv
-ff.video.duration.fix 290.mkv 
-ff.video.duration.fix 288.mkv 
-ff.video.duration.fix 27.mkv 
-trash-list
-trash-restore 27.mkv
-trash-put 27.mkv ~/
-ls
-trash-list
-cd ~/.local/share/Trash
-cd files/
-cp 27.mkv /home/falcon/
-sudo cp 27.mkv /home/falcon/
-ls
-cd Streamings.2/
-cd files/
-cd engine/
-cd factory-mkv/
-cd masters/
-ls -al
-cd ../
-cd ..
-sudo trash-empty
-cd
-cd ../falcon
-cd faron/
-cd factory-mkv/
-fdupes -R $PWD --delete --noprompt
-cd ..
-cd seralized/
-rename 's/.fixed//g' *
-ls
-mp4
-cd batch/
-cd ../
-cd /home/falcon
-mv 27.mkv faron/seralized/
-sudo mv 27.mkv faron/seralized/
-cd faron/
-cd seralized/
-ff.video.duration.fix 50.mkv
-ls
-cd /home/www
-cd settings/
-cd inactive/
-cat www_faronhost_ca.conf 
-cd ../
-cd falcon/
-cd faron/
-ls
-cd seralized/
-chmod -R +x *
-ls
-sudo rename 's/.fixed//g' *
-ls -al
-ls -al | wc -l
-dpkg -l
-dpkg -l | grep 'http'
-dpkg -l | grep 'server'
-ff.apt.fetch ssl
-dpkg -l | grep 'nano'
-dpkg -l | grep 'server'
-dpkg -l | grep 'http server'
-dpkg -l | grep 'http'
-dpkg -l | grep 'web'
-ff.find -f -s 'server'
-ls
-ff.apt.fetch openssl
-ff.apt.fetch certs-ca
-ff.apt.find certs
-ls
-rm testdisk.log 
-ls
-cd /etc/network/
-cd ..
-nano networks
-ls
-sudo rm -r *.save
-ls
-fdupes -R $PWD --delete --noprompt
-ls
-cd ..
-cd /home/www
-cd logs
-ls -al
-cat error.log 
-sudo a2dismod log_sql
-ff.apache2.restart 
-ls
-cd /etc/apache2/
-cd mods-enabled/
-sudo rm *tkt*
-ls
-sudo rm *yubikey*
-sudo rm *log*sql*
-ls
-sudo a2enmod xml2html
-ls
-ls ../mods-available/
-sudo a2enmod xml2enc
-sudo a2enmod vhost_alias 
-sudo a2enmod usertrack
-sudo a2enmod status
-sudo a2enmod sochace_memcache
-sudo a2enmod socache_memcache
-sudo a2enmod setenvif
-sudo a2enmod session*
-sudo a2enmod reqtimeout
-sudo a2enmod remoteip
-sudo a2enmod proxy*
-sudo a2enmod php5
-sudo a2enmod mpm_prefork
-sudo a2enmod mime
-sudo a2enmod mime_magic
-sudo a2enmod negotiation
-sudo a2enmod lua
-sudo a2enmod macro
-sudo a2enmod info include
-sudo a2enmod headers filter file_cache
-sudo a2enmod ext_filter expires env echo dump_io dir
-sudo a2enmod deflate dav_lock dav_fs data
-sudo a2enmod cgi cgid cache_socache cache cache_disk
-sudo a2enmod buffer autoindex
-sudo a2enmod asis allowmethods alias actions
-sudo a2enmod gnutls
-ff.apache2.restart 
-sudo a2enmod auth_basic auth_digest
-sudo a2enmod reflector
-ff.apache2.restart 
-ff.apt.fetch "libapache2-mod-php5"
-ff.apt.fetch mysql-5.5-client
-ff.apt.fetch mysql-client-core-5.5
-ff.apt.fetch mysql-client
-ff.apt.fetch mysql-server-core-5.5
-ff.apt.fetch mysql-server
-ff.apt.fetch mysql-common
-ff.apt.fetch libmysql*
-sudo dpkg --configure -a
-ff.apt.fetch phpmyadmin
-ff.apache2.restart 
-cd /home/www
-cd cloud/hmt
-cd cloud/html/
-ff.files.grouper 
-chown -R www-data:www-data ../html
-sudo chown -R www-data:www-data ../html
-ls
-sudo chmod -R 0700 config
-ls
-ff.apache2.restart 
-ff.apt.fetch sqlite3
-ff.apt.find "ssl"
-ff.apt.find mysql
-exit
-ls
-ls -al
-ff.apt.find sqlite
-xkill
-ff.apt.fetch sqlite-doc libsqlite3*
-sudo su
-ff.apt.fetch incron
-ff.apt.fetch iwatch
-ff.apt.fetch inotify-utils
-ff.apt.fetch inotify
-ff.apt.fetch "libnotify-cil-dev libnotify-cil-doc libnotify-bin libinotifytools0-dev"
-ff.apt.fetch "inotify-tools inotify-hookable inoticoming inotail inosync ipwatchd-gnotify libev4 libev-dev"
-ff.apt.find notify
-ff.apt.fetch "inotify-tools inotify-hookable inoticoming inotail inosync ipwatchd-gnotify libev4 libev-dev"
-ff.apt.fetch "libnotify-cil-dev "
-3
-node
-ls
-which node
-sudo node
-ls /usr/sbin/node
-ls /usr/sbin/node -al
-nodejs
-node
-which node
-sudo mv /usr/sbin/node /usr/sbin/node_DISABLED
-ls
-cd /usr/bin
-nodejs
-ls -al
-ls -al node
-ls node*
-sudo ln -s nodejs node
-ls
-node
-bashsr
-node
-npm
-ff.apt.find npm
-ff.apt.fetch "node-read-package-json node-slide node-tar npm2deb npm "
-sudo npm list
-ff.apt.update
-ff.apache2.restart 
-cd /home/www
-cd settings/
-cd active/
-nano cloud_faron_ca.conf 
-ff.apache2.restart 
-ls
-subl f10_faron_ca.txt 
-sudo a2disconf serve-cgi
-sudo a2disconf cig
-sudo a2disconf cgi
-sudo a2disconf serve-cgi-bin
-ls
-cd ..
-cd settings/
-cd active/
-mv f10_faron_ca.txt f10_faron_ca.conf
-ls
-ff.apache2.restart 
-ff.apache2.restart 
-nano /etc/hosts
-sudo mv ~/hosts /etc/
-ff.network.restart 
-ifconfig
-sudo ifconfig eth0 up
-ifconfig
-ls
-node
-ff.apt.fetch zsh
-ping gtwy
-ifconfig eth0 down
-sudo ifconfig eth0 down
-sudo ifconfig eth0 up
-ff.apt.update
-iptables -l
-sudo iptables -l
-sudo iptables --list
-sudo service ufw status
-sudo service ufw disable
-sudo service ufw stop
-sudo ufw disable
-ls
-cat hostname
-cat network/interfaces
-ff.apt.fetch npm
-sudo apt-get remove --purge npm
-sudo apt-get autoclean
-sudo apt-get autoremove
-sudo apt-get install -y "libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy
-  node-async node-combined-stream node-cookie-jar node-delayed-stream
-  node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini
-  node-json-stringify-safe node-lockfile node-mime node-mute-stream
-  node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read
-  node-request node-retry node-sha node-tunnel-agent node-underscore
-  node-which nodejs-dev"
-sudo apt-get install -y "libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy  node-async node-combined-stream node-cookie-jar node-delayed-stream node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-devlibjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy node-async node-combined-stream node-cookie-jar node-delayed-stream   node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream  node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-dev"
-sudo apt-get install -y libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy  node-async node-combined-stream node-cookie-jar node-delayed-stream node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-devlibjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy node-async node-combined-stream node-cookie-jar node-delayed-stream   node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream  node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-dev
-sudo apt-get install -y libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy  node-async node-combined-stream node-cookie-jar node-delayed-stream node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-dev libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy node-async node-combined-stream node-cookie-jar node-delayed-stream   node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream  node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-dev
-sudo apt-get install libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy  node-async node-combined-stream node-cookie-jar node-delayed-stream node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-dev libjs-node-uuid node-abbrev node-ansi node-ansi-color-table node-archy node-async node-combined-stream node-cookie-jar node-delayed-stream   node-forever-agent node-form-data node-fstream-ignore node-gyp node-ini node-json-stringify-safe node-lockfile node-mime node-mute-stream  node-node-uuid node-nopt node-npmlog node-osenv node-qs node-read node-request node-retry node-sha node-tunnel-agent node-underscore node-which nodejs-dev
-exit
-ls
-mp4
-cd /home/falcon
-ls
-cd faron/
-ls -al
-cd seralized/
-s
-ls
-cd ..
-mv apache2-old.txt inactive/
-ls
-ls -al
-cat aptget.list 
-rm aptget.list 
-ls
-ffopen
-s
-ls
-ff.apt.fetch "libvdpau nvidia"
-exit
-exit
-subl ~/.bin/ff.files.grouper 
-ls
-bashsr
-ls
-fdupes -R $PWD --delete --noprompt
-ls
-ls -al
-ls -al | wc -l
-ls
-cd ..
-ls
-cd ..
-mv faron mkvs
-sudo mv faron mkvs
-ls
-cd 
-ff.files.grouper mp4
-exit
-ff.files.grouper mp4
-find -type f -name '*.mp4'
-cd Videos/
-find -type f -name '*.mp4'
-ff.files.grouper 
-bashsr
-cd Videos/
-ff.files.grouper 
-ls
-ls -al
-ffopen
-ls
-cd xxx/
-cd xxx-rated/
-ff.bin.filename.cleanup 
-ls
-cd ..
-ls
-ls -al
-cd .
-ls
-cd ..
-ls
-ls xxx/
-ls xxx/ -al
-sudo mv xxx/xxx-rated/dsc04242.jpg ./
-ls
-mv dsc04242.jpg ../
-ls
-ls -al
-cd seralized/
-ff.bin.filename.lowercase 
-ls
-mkdir jpgs
-ln -s jpgs seralized
-ls
-ls -al
-ls
-ls
-ff.files.grouper jpg
-la
-ls
-ls 
-ls jpgs/
-ls
-mkdir mp4s
-mkdir 3gps
-mkdir movs
-mkdir vobs
-mkdir jpegs
-ls
-ls seralized
-ls
-ls -al
-ls
-rm seralized
-ls
-ff.files.grouper jpg
-ls
-ls jpgs/
-ls jpegs/
-ls
-ff.files.grouper "*.mp4"
-ls
-bashsr
-exit
-bashsr
-cd Videos/
-ls
-cd LLL
-ls
-ls -al
-cd ..
-ls
-ls -al seralized/
-cd seralized/
-ls
-ls seralized/
-rm -r seralized/
-ls
-ff.files.grouper *.vob
-ff.files.grouper "*.vob"
-ls
-ff.files.grouper vob
-ff.files.grouper .vob
-chown -R faron:faron ../../Videos
-chmod +R 0755 ../../Videos/
-chmod +R 0755 ../../Videos
-chmod +R 0755 "../../Videos"
-chmod -r  0755 "../../Videos"
-chown 0755by bathroom
-chown 0755 ../../Videos
-sudo chown 0755 ../../Videos
-ls
-ls vobs/
-placing order
-ls
-ff.files.grouper '*.mp4'
-bashsr
-ls
-are u toking
-ls
-ls seralized/
-ls seralized -al
-ls
-cd music
-ls
-cd /Music
-ls
-cd cli
-cd clips
-ls
-cat clips 
-ls
-mv dsc04242.jpg Videos/
-ls
-cd Pictures/
-ls
-ff.apache2-restart
-ff.apache2.restart
-ls
-ls -al
-exit
-ff.reboot
-ff.files.grouper *.mp4
-subl ~/.bin/ff.files.grouper 
-ls
-cd Videos/
-ls
-ls -al
-cd ..
-cd Videos/
-sudo chown -R faron:faron ../Videos
-chmod -R 0775
-chmod -R 0775 $PWD
-ls
-ls -al
-ls seralized/
-ls
-cd seralized/
-ls
-ls seralized/
-rm -r seralized/
-ls
-ls vobs/
-ls mp4s/
-ls movs/
-ls jpgs/
-ls jpegs/
-ls 3gps/
-find -type d
-find -type d -exec rmdir \;
-ls
-rm -r 3gps jpegs jpgs movs mp4s vobs
-ls
-ff.files.grouper .mp4
-ff.files.grouper mp4
-ls
-ls seralized/
-ff.files.grouper "*.mp4"
-ls
-TRIMUP=`rev <<< 33.jpg | cut -d"." -f2 | rev`
-echo $TRIMUP 
-TRIMUP=`rev <<< $1 | cut -d"." -f1 | rev`
-echo $TRIMUP 
-TRIMUP=`rev <<< 37.mp4 | cut -d"." -f1 | rev`
-echo $TRIMUP 
-ls
-ls seralized/
-cd ..
-ls -al seralized/
-cp *.jpg seralized/
-ls
-cd seralized/
-ls
-ls seralized/
-cp *.jpg seralized/
-ls
-cd seralized/
-bashsr
-cd Videos/
-cd seralized/
-ff.files.grouper .jpg
-ls
-ls seralized/
-ls
-cd ..
 rm -r seralized/
 mkdir test
 cp *.jpg test/
@@ -3346,3 +1796,670 @@ ls
 bin
 cat ff.git.update 
 bashsr
+rm ~/.bash_history && ln -s ~/.falcon/bash/histories/f10_history ~/.bash_history
+ls
+bashsr
+fly
+falcon
+sed -i -e 's/\/scripting\/falcon-fly/\/scripts\/falcon-fly/g' ~/.falcon/bash/*
+bashsr
+fly
+falcon
+sed -i -e 's/\/scripting\/falcon-fly/\/scripts\/falcon-fly/g' ~/.falcon/bash/.*
+bashsr
+falcon
+sed -i -e 's/\/scripting\/falcon-fly/\/scripts\/falcon-fly/g' ~/.falcon/bash/.bash_aliases
+bashsr
+falcon
+mv ff.video.movflags.repair.sh video/video-movflags-repairs.sh
+ls
+find -type f -name 'ff.*'
+ls
+cd ~/; find ~/.falcon/scripts -type f -name 'ff.*'
+mkdir ~/.bin; cd .bin; find ~/.falcon/scripts -type f -name 'ff.*'
+find ~/.falcon/scripts -type f -name 'ff.*' -exec ln -s {} \;
+ls
+bashsr
+ff.apt.fetch yokadi
+exit
+ff.edit.bashrc
+ff.edit.script
+ff.edit.scripts
+exit
+ff.apt.fetch yokadi
+bin
+ls
+ff.bin.extension.remove.sh sh
+ls
+gedit ff.bin.extension.remove
+ff.bin.extension.remove.sh sh
+ff.bin.extension.remove sh
+gedit ~/.falcon/logs/scripts.log 
+gedit ff.xclip 
+ls
+ff.xclip -f ff.xclip~
+ff.clean
+ls -al
+ls
+ff.apt.fetch yokadi
+sudo apt-get build-dep gpart
+sudo apt-get install gpart
+sudo apt-get install gparted
+sudo apt-get install git
+sudo amdcccle 
+ls
+ls -al
+mkdir .falcon
+cd .falcon
+ls
+mkdir system/bash -p
+ls
+cd system/
+ls
+cd bash/
+mkdir histories
+mv ~/.bash_history histories/f10_non-root_history && ln -s /home/faron/.falcon/system/bash/histories/f10_non-root_history /home/faron/.bash_history
+ls -al
+cd
+ls -al
+git clone git@github:faroncoder/falcon-fly.git
+gtwy
+ping gtwy
+ping f6
+ping f7
+hostname --long
+sudo apt-cache search yp
+sudo apt-cache search ypser
+sudo apt-cache search ypse
+sudo apt-cache search "hostname yp"
+ls
+rm examples.desktop 
+ls
+ls -al
+ls
+cd .falcon
+ls
+mkdir scripts
+ls
+mkdir code
+ls
+cd scripts/
+mkdir falcon-fly
+ls
+cd falcon-fly/
+git clone git@github.com:faroncoder/falcon-fly.git
+sudo apt-get build-dep xclip; sudo apt-get install xclip
+ls
+cd ~
+ls
+mkdir .ssh
+ls -al
+cd .ssh
+ls 
+cd ..
+chown -R faron:faron; chmod -R 0700 .ssh
+chown -R faron:faron .ssh; chmod -R 0700 .ssh
+ssh-keygen
+chmod -r 0777 .ssh
+chmod -R 0777 .ssh
+ssh-keygen
+ssh-keygen -T 2046
+ssh-keygen --help
+ssh-keygen -t rsa -C faronledger@gmail.com
+cd .ssh
+ls
+xclip -sel -clip id_github.pub 
+xclip --help
+man xclip
+ls
+xclip -in id_github.pub -sel primary
+xclip -verbose
+xclip -verbose -in -sel id_github.pub 
+xclip -verbose -in -out -sel id_github.pub 
+xclip -verbose -out -sel id_github.pub 
+xclip -verbose -in -sel id_github.pub 
+xclip -verbose -in -selection clipboard id_github.pub 
+xclip -in -selection clipboard id_github.pub 
+cd ~/.falcon/system/bash; git clone git@github.com:faroncoder/falcon-fly.git
+cd ..
+ls
+mkdir logs
+bashsr
+exit
+ff.script.new 
+falcon
+find -type f -exec sed 's/\/scripting\/falcon-fly/\/scripts\/falcon-fly/g' {} \;
+find -type f -exec sed -i -e 's/\/scripting\/falcon-fly/\/scripts\/falcon-fly/g' {} \;
+ls
+bashsr
+ls
+cat .bash_history | wc -l
+cat .bash_history | grep 'apt-get'
+grep -r 'apt-get' ~/.falcon/bash/histories
+grep -r 'apt-get' ~/.falcon/bash/histories --text
+grep -r 'apt-get' ~/.falcon/bash/histories --text >> ~/apt-get.listi
+cat apt-get.listi 
+cat apt-get.listi | cut -d":" -f2
+cat apt-get.listi | cut -d":" -f2 >> apt-get.list
+ls
+cat apt-get.list
+ls
+cat apt-get.listi | grep 'remove'
+cat apt-get.listi | grep 'remove' --text
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge//g'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d' | sort | uniq -d
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d' | sort | uniq
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d'
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d' | uniq
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d' | sort
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d' | sort | uniq -c
+cat apt-get.listi | grep 'remove' --text | cut -d":" -f2 | sed 's/sudo apt-get remove --purge //g' | sed 's/sudo apt-get remove //g' | sed 's/apt-get remove --purge //g' | sed 's/apt-get remove //g' | sed '/apt-get autoremove/d' | sort | uniq 
+ls
+rm apt-get.list*
+ls
+ff.apt.fetch "tree ncdu"
+cat ~/.bin/ff.apt.fetch 
+sed 's/ -y//g'  ~/.bin/ff.apt.fetch 
+sed -i -e 's/ -y//g'  ~/.bin/ff.apt.fetch 
+bashsr
+ff.apt.fetch fdupes
+ls
+tree -L 1
+find ~/. -type d
+find ~/. -maxdepth 1 -type d
+find ~/ -maxdepth 1 -type d
+find ~/ -maxdepth 1 -type d ! -name '.*'
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty
+touch /Videos/me-hahaha.txt
+touch ~/Videos/me-hahaha.txt
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rmdir {} \;
+ls
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm {} \;
+ls
+ff.script.new
+gedit ~/.bin/ff.script.new 
+falcon
+cd newbin/
+cat ff.bin.emptydir.remove.sh 
+ls
+ff.script.new testing.sh
+ls
+./testing.sh
+ls
+./testing.sh
+exit
+ssh faron@f7
+falcon
+exit
+falcon
+cd newbin/
+gedit ../bin/ff.script.new.sh 
+bashsr
+ls
+cd ../
+cd faron
+ff.script.new
+falcon
+cd newbin/
+./testing1.sh
+cd ../bin
+gedit ff.script.new.sh
+ls
+ff.clean
+ls
+cd ../newbin/
+ff.clean
+ls
+rm testing*
+ls
+ff.script.new
+ls
+ff.clean
+./testing.sh 
+ls
+bin
+ls -al
+cat ff.apt.fetch 
+rm ff.apt.fetch
+falcon
+cd apt/
+rm ff.apt.fetch.sh 
+ff.script.new
+mv ../newbin/ff.apt.fetch.sh ./
+ls
+ff.bin.load ff.apt.fetch.sh 
+bin
+cat ff.apt.fetch 
+ls
+ff.apt.fetch vlc
+ls
+bashsr
+ff.apt.fetch mpv
+exit
+ff.apt.fetch mpv
+exit
+bashsr
+ff.apt.fetch mpv
+falcon
+cd apt
+gedit ff.apt.fetch.sh
+xit
+exit
+ff.apt.fetch mpv
+s
+exit
+ff.apt.fetch mpv
+exit
+ff.apt.fetch smplayer
+sudo su
+exit
+ff.apt.fetch chromium-browser
+os
+ls
+ls Desktop/
+ls
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm {} \;
+ls
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm -r {} \; 2>/dev/null
+ls
+find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm -r {} \; 2>/dev/null
+ls
+gedit ~/.falcon/bash/.bash_scripts
+bashsr
+ls
+mkdir emptydir
+ls
+cd Videos/
+cd ..
+ls -al
+ls
+trash-list
+trash-empty
+ls
+ls /root
+sudo su
+ls
+gedit ~/.falcon/bash/.bash_scripts
+bashsr
+ls
+mkdir .testing
+ls
+ls -al
+cd Videos/
+cd ..
+ls -al
+cd /
+ls
+fly
+cd bash/
+mv bash.tar.gz histories/
+ls
+ls -al
+ff.clean
+ls
+ls -al
+rm .*.save
+ls
+ls -al
+nano .bash_scripts 
+bashsr
+ls
+ls -al
+cd .testing/
+ls -al
+cd ..
+ls
+ls -al
+tree
+tree -a
+ls
+cd /
+ls -al
+ls /usr/local
+ff.fstab
+ls -al
+sudo blkid
+gparted
+sudo umount /dev/sdb
+ls
+sudo gparted 
+nano /etc/fstab
+sudo mv ~/fstab /etc/
+sudo su
+ls
+cd ..
+ls opt
+cp -r opt/faron /home/
+ls opt/faron/*
+sudo su
+ls
+ff.fstab
+exit
+ff.apt.fetch mongo
+ff.apt.fetch mongod
+ff.apt.fetch mongodb
+sudo apt-get build-dep nodejs
+ff6
+ls
+ls Downloads/
+cd Downloads/
+scp node-v4.1.0-linux-x86.tar.gz faron@f7:~/
+ssh faron@f7
+exit
+ls
+node
+sudo apt-get build-dep nodejs
+ssh faron@f6
+scp -r faron@f6:~/.falcon/bash ./
+ls
+ls -al
+cd bash
+ls -al
+ls histories
+ls
+sudo adduser falcon
+ls
+cd ../
+cd ..
+cd falcon/
+ls -l
+ls -al
+rm -r *
+ls
+sudo rm *
+ls
+ls -al
+fly
+cd bash
+scp faron@f6:$PWD/.profile ./
+bashsr
+ls -al
+source .profile
+ff.edit.bashrc
+ff.edit.script
+ff.edit.scripts
+ls
+sudo su
+fly
+cd bash
+su falcon
+exit
+gedit .bash_scripts 
+exit
+sudo su
+ls
+ls media
+ncdu
+ls
+ls -al
+sudo su
+exit
+ncdu
+cd media/torrents/
+cd Twinks\ Collection\ 1/
+find -type f ! -name '*.part'
+cd ..
+ls
+cd ..
+mkdir torrents-tbp
+cd ..
+cd media
+cd torrents
+cd Twinks\ Collection\ 1/
+find -type f ! -name '*.part' -exec mv {} /home/faron/media/torrents-tbp/ \;
+ls
+cd ..
+ls
+cd ..
+ls
+cd torrents-tbp/
+ls -al 
+ls -al
+ff.bin.filename.cleanup 
+ls
+mpv raw2.wmv
+mpv krysperezkylermoss.avi 
+ls
+mpv cumintomyassbengeorge.avi 
+ls
+cd ../torrents
+cd Twinks\ Collection\ 1/
+find -type f ! -name '*.part' -exec mv {} /home/faron/media/torrents-tbp/ \;
+ff.alias.add 
+bashsr
+fly
+cd bash
+gedit .bash_aliases 
+bashsr
+ff.tdl
+cd Porn/
+cd ..
+cd Scenes\ 421\ to\ 531/
+cd ..
+cd Twinks\ Collection\ 1/
+ls
+exit
+ff.tdl
+find -type f ! -name '*.part' -exec mv {} /home/faron/media/torrents-tbp/ \;
+ls
+ff.tbp
+ff.tp
+ff.edit.alias
+bashsr
+ff.tp
+ff.edit.alias
+bashsr
+ff.tp
+ls | wc -l
+tre
+tree
+.s
+ls
+exit
+yokadi --help
+man yokadi
+yokadi
+bashsr
+yokadi t_list
+telnet gtwy
+bashsr
+ssh faron@f7
+exit
+ff7
+ff6
+ff.tdl
+find -type f ! -name '*.part' | wc -l
+ff6
+scp -r ~/.falcon/bash faron@f6:~/
+ff6
+hostname
+hostname --short
+falcon
+cd bin
+cat ff.find.sh 
+cat ff.find.sh d
+ff.tdl
+find -type f ! -name '*.part' | wc -l
+CMD="sudo apt-get install ffmpeg"
+eval $CMD | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a'; break; done </dev/null
+eval $CMD | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a' </dev/null; done
+exit
+CHECK=$( eval $CMD | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a'; done )
+trap --help
+man trap
+CHECK=$( eval $CMD | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a'; done; trap 2 )
+CHECK=$( eval $CMD && trap 2 | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a'; done; )
+exit
+CMD="sudo apt-get install ffmpeg"
+CHECK=$( eval $CMD && trap 2 | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a'; done; )
+eval $CMD; trap 2 | while : ; do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a'; done
+CHECK=$( trap `eval $CMD` 2 ); do awk '/Suggested packages:/{a=1}/The following/{print;a=0}a' $CHECK
+CHECK=$( trap `eval $CMD` 2 ); awk '/Suggested packages:/{a=1}/The following/{print;a=0}a' $CHECK
+man signal
+CHECK=$( trap `sudo apt-get install cmake` 3 )
+trap `sudo apt-get install cmake` 3
+trap `sudo apt-get install cmake` 2
+eval $CMD | trap exit INT 
+eval $CMD > listing.list | trap exit INT 
+ls 
+cat listing.list 
+ff.apt.fetch cmake
+CMD=`sudo apt-get install cmake`
+exit
+CMD=$( sudo apt-get install cmake )
+eval `sudo apt-get install cmake` > listing.list | trap exit INT 
+$CMD > listing.list | trap exit INT 
+ls -al
+ls
+cat listing.list 
+$CMD > listing.list && trap exit INT 
+cat listing.list 
+CMD="sudo apt-get install cmake"
+CHECK=$( eval $CMD > echolist.list | trap exit INT )
+exit
+CMD="sudo apt-get install cmake"
+CHECK=$( eval $CMD > echolist.list | trap exit INT )
+echo $CHECK
+ls
+cat echolist.list 
+exit
+flumoition --version
+CMD="sudo apt-get install flumotion"
+CHECK=$( eval $CMD > echolist.list | trap exit INT )
+cat echolist.list 
+sudo dpkg --configure -a
+CHECK=$( eval $CMD > echolist.list; trap exit INT; trap exit INT )
+cat echolist.list 
+falcon
+grep -r 'gtwy' *
+grep -r '192.168.1.1'
+grep -r 'telnet'
+ls
+grep -r 'expect' *
+ls
+cd newbin/
+chmod +x falcon-soar.sh
+ff.clean
+./falcon-soar.sh 
+cd
+rm *.list
+cd media/
+cd torrents
+find -type f ! -name '*.part'
+find -type f ! -name '*.part' -exec mv {} ../torrents-tbp/ \;
+ls
+cd ..
+cd torrents
+ls -al
+cd Scenes\ 421\ to\ 531/
+ls -al
+ls 
+la -al
+exit
+cd ../torrents-tbp/
+ff.bin.filename.cleanup 
+falcon
+cd bin
+nano ff.bin.filename.cleanup.sh 
+ff.tp
+ff.bin.filename.cleanup 
+rename 's/bottom//g' *
+rename 's/top//g' *
+rename 's/straight//g' *
+rename 's/bi//g' *
+rename 's/gay//g' *
+rename 's/and/_/g' *
+ff.apt.fetch WMV3
+ff.apt.find wmv3
+ff.apt.find "decoder"
+ff.apt.find "decoder wmv"
+ff.apt.find flumotion
+echo "DNS:faron.ca,URI:http://media.faron.ca,email:faronledger@gmail.com,`ff.ip`"
+echo "DNS:faron.ca,URI:http://media.faron.ca,email:faronledger@gmail.com,IP:`ff.ip`"
+sudo apt-get build-dep flumotion
+sudo apt-get build-dep flumotion --reinstall
+sudo apt-get install flumotion --reinstall
+ls
+bin
+ff.flu.2 
+sudo su
+falcon
+scp -r faron@f6:$PWD ../../code/
+ls
+cp -r -u ../../code/falcon-fly $PWD
+cd newbin/
+scp -r faron@f7:$PWD ../../code/
+cp -r -u ../../code/falcon-fly $PWD
+ls
+cd ..
+ls falcon-fly/
+cd ..
+cd falcon-fly/
+cp -r -u ../../code/falcon-fly $PWD
+rm -r falcon-fly/
+ls
+find -type f -name '*task*'
+cd /tmp
+cd ..
+falcon
+find -type f -name '*task*'
+scp -r faron@f6:$PWD ../../code/f6
+cd ../code
+cd ..
+cd code/
+cp -r f6 f10
+cp -r -u f6 f10
+cp -r -u f7 f10
+find -type f | wc -l
+find ../scripts/falcon-fly -type f | wc -l
+find ../scripts/falcon-fly -type f -name '*~'
+find ../scripts/falcon-fly -type f -name '*~' -exec rm {} \;
+ls
+fdupes -r $PWD --delete --no-prompt
+fdupes -r $PWD --delete --noprompt
+ls
+find -type f | wc -l
+ls
+find -type d -empty
+find -type d -empty -exec rm {} \;
+find -type d -empty -exec rm -r {} \;
+ls
+find -type d -empty
+find -type d -name '.git'
+find -type d -name '.git' -exec find {} -d
+find -type d -name '.git' -exec find {} -d \;
+ls
+falcon
+mv bash old
+mkdir bash
+mv old bash/
+ls
+cd bash
+cp ~/.falcon/bash ./
+ls
+ls -al
+ln -s scripts/falcon-fly/bash
+ls -al
+cd
+ls -al
+ls
+cd Straight\ Fellas\ SiteRip/
+cd .ssh
+cd ~/.ssh
+scp id_github* f6@faron:~/.ssh/
+scp id_github* f6:$PWD/
+scp id_github* f7:$PWD/
+ls
+scp * faron@f6:$PWD/
+ff6
+bin
+cat ff.git.new 
+ssh -T git@github.com
+falcon

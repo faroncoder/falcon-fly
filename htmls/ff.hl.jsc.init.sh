@@ -14,7 +14,7 @@ if [ "$PATHDIRHOME" = '' ]; then
 				PATHDIRHOME="$PWD"
 			fi
 JSCFILE="jsc-build.tar.bz2"
-BIN="/home/faron/.falcon/scripting/falcon-fly/htmls/VAULT/$JSCFILE"
+BIN="/home/faron/.falcon/scripts/falcon-fly/htmls/VAULT/$JSCFILE"
 
 if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "

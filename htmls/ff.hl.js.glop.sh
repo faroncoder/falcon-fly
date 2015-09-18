@@ -10,7 +10,7 @@ stopwatchtime(){
 ######## use 'stopwatchtime' instead of 'exit 0' ########
 
 if [[ -z "$1" ]]; then
-		#PATHDIRHOME="/home/faron/.falcon/scripting/falcon-fly/htmls/VAULT/lab/mediaelement"
+		#PATHDIRHOME="/home/faron/.falcon/scripts/falcon-fly/htmls/VAULT/lab/mediaelement"
 		PATHDIRHOME="$PWD"
 	else
 		PATHDIRHOME="$1"
@@ -18,11 +18,11 @@ fi
 cd $PATHDIRHOME
 # function getBootstrap() {
 # 	if [ ! -d "$PATHDIRHOME/jsc/js/custom" ]; then
-# 				tar -jxvf /home/faron/.falcon/scripting/falcon-fly/htmls/VAULT/jsc-build.tar.gz
+# 				tar -jxvf /home/faron/.falcon/scripts/falcon-fly/htmls/VAULT/jsc-build.tar.gz
 # #				mkdir -p $PATHDIRHOME/jsc/{js,css}
 # #				mkdir -p jsc/js/custom
 # #				mkdir -p jsc/css/custom
-# 				cp "/home/faron/.falcon/scripting/falcon-fly/htmls/VAULT/bootstrap.min.js.txt" "$PATHDIRHOME/jsc/js/custom/bootstrap.min.js"
+# 				cp "/home/faron/.falcon/scripts/falcon-fly/htmls/VAULT/bootstrap.min.js.txt" "$PATHDIRHOME/jsc/js/custom/bootstrap.min.js"
 # 				cd $PATHDIRHOME/jsc/js
 # 				ln -s custom/bootstrap.min.js
 # 	fi

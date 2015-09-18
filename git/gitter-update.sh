@@ -32,7 +32,7 @@ ffrm gits.list
 }
 
 function gitupdatemaster {
-BASELOC="$HOME/.falcon/scripting/falcon-fly"
+BASELOC="$HOME/.falcon/scripts/falcon-fly"
 cd $BASELOC
                               echo "updating GIT for $line..."
                               #git fetch

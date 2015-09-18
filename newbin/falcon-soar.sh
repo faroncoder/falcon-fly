@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+#!/bin/bash
+startgreen=`date +%s`
+stopwatchtime() {
+	stopred=`date +%s`
+	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+	exit 0
+}
+
+# if [ "$1" != "" ]; then
+#################### BEGIN
+
+loadfunction1() {
+
+	echo '';
+
+}
+
+gethtml() {
+	> /tmp/test.html
+	echo "<!DOCTYPE html>
 <html lang=\"en\">
     <head>
         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
@@ -28,4 +48,39 @@
         }); //end ready
         </script>
     </body>
-</html>
+</html>" >> /tmp/test.html
+}
+
+getjava() { 
+	echo "oh no....not this time, my dear"
+}
+
+
+echo "Select session type:"
+SELECT=""
+while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
+    IFS= read -s -n 1 SELECT
+ 	echo "Debug/$SELECT/${#SELECT}"
+ 	case "$SELECT" in
+ 		h) gethtml ;;
+		j) getjava ;;
+		x) echo "exiting"; break; ;;
+	esac
+
+    [[ "$SELECT" == $"" ]] && echo "enter" # do foo
+    [[ "$SELECT" == $" " ]] && echo "space" # do bar
+done
+
+
+
+################### END
+# elif [ "$1" = "" ];
+# 	then
+#   echo "usage: keystroke-capture "
+#   echo "example:    "
+# fi
+
+
+## TALON: keystroke-capture
+
+

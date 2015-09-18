@@ -9,15 +9,34 @@
 umask 002
 
 # if running bash
-
-
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -z "~/.bashrc" ]; then
-	ln -s /home/faron/.falcon/bash/.bashrc ~/.bashrc
-    fi
-	source ~/.bashrc
+	if [ ! -d $HOME/.falcon ]; then
+		ln -s /home/$USER/.falcon ~/.falcon
+	fi
+	if [ ! -d /home/$USER/.ssh ]; then
+		mkdir ~/.ssh
+	fi
+	DIRS=( .bin .ssh  )
+	for checkbin in "${DIRS[@]}"; do
+		if [ "$EUID" != 0 ]; then
+			if [ ! -d /root/$checkbin ]; then
+				mkdir /root/$checkbin -p 2>/dev/null
+			fi
+		else
+			if [ ! -d /home/$USER/$checkbin ]; then
+				mkdir /home/$USER/$checkbin -p 2>/dev/null
 
+			fi
+		fi
+	done
+	LOADER=( `find /home/faron/.falcon/bash -maxdepth 1 -type f ! -type d -exec basename {} \; ` )
+	for inject in "${LOADER[@]}";
+		do
+			if [ ! -f /home/$USER/$inject ]; then
+				ln -s /home/faron/.falcon/bash/$inject ~/$inject 2>/dev/null
+			fi
+		done
+		source ~/.bashrc
 fi
 
 

@@ -46,7 +46,7 @@ do
 done
 
 echo "FALCON: Updating falcon-fly"
-cd /home/faron/.falcon/scripting/falcon-fly
+cd /home/faron/.falcon/scripts/falcon-fly
 CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 	CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
 	if [ -z "$CHECKNAME" ];

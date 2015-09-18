@@ -368,7 +368,7 @@ mp4
 cd ..
 mp4er
 rm ~/bin/mp4er
-ln -s ~/.falcon/scripting/falcon-fly/video/mp4er.sh
+ln -s ~/.falcon/scripts/falcon-fly/video/mp4er.sh
 ls
 mv mp4er.sh ~/bin
 bin
@@ -519,89 +519,4 @@ mp4
 cd ..
 mp4er
 sudo reboot
-exit
-scp -r faron@f10:~/.falcon ./
-ls
-ls -al
-mkdir .bin
-ls
-mv .bin ../
-ls
-cd .bin
-ls
-find ../.falcon/scripts/falcon-fly -name 'ff.*'
-find ../.falcon/scripts/falcon-fly -name 'ff.*' -exec ln -s {} \;
-ls
-./ff.bin.extension.remove.sh sh
-ls
-cd ..
-ls
-ls -al
-rm .profile
-rm .bashrc
-touch ~/.falcon/bash/histories/f6_history ; touch ~/.falcon/bash/histories/f6_history_root; rm ~/.bash_history && ln -s ~/.falcon/bash/histories/f6_history ~/.bash_history;
-ls
-ls -al
-ln -s ~/.falcon/bash/.profile 
-source .profile 
-ls
-ls -al
-cd .falcon/bash
-ls
-ls -al
-nano .profile 
-ls
-cd 
-ls 
-ls -al
-source .profile 
-ls -al
-source .profile 
-ls
-ls -al
-cd .falcon/bash/
-nano .bashrc
-source .profile 
-nano .profile 
-ls
-cd
-ls -al
-rm .bashrc
-ls
-ls -al
-source .profile 
-ls -al
-ls
-nano .profile 
-ls al
-ls-al
-ls a-
-ls -al
-ls
-cd
-whoami
-cd
-ls
-ls -al
-ln -s /home/faron/.falcon/bash/.profile
-ls -al
-exit
-sudo su
-ls
-sudo su
-ls
-exit
-ls -al
-sudo su
-ls
-fly
-cd bash
-ls
-nano .profile
-ls
-source ~/.profile
-ls
-cd
-ls
-ls -al
 exit

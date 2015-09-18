@@ -1,3 +1,721 @@
+rm .bash_history; ln -s /home/faron/.falcon/bash/histories/f10_root_history .bash_history;
+ls -al
+rm .bash_history; ln -s /home/faron/.falcon/bash/histories/f10_root_history .bash_history
+ls -al
+bashsr
+ln -s /home/faron/.falcon/bash/.bash_scripts .bash_scripts;
+bashsr
+ls -al
+bashsr
+cd
+ls
+cd
+ls
+sed -i -e '/bashsr/d' .bash_aliases 
+exit
+ls
+exit
+cd /media
+ls
+ls -al
+usb
+lsusb
+cd /dev/usb5
+falcon
+cd ..
+ls
+exit
+echo "/home/www  /var/www   none  bind  0  0" >> /etc/fstab
+exit
+fdisk -l
+ls
+sudo apt-get install -y gdm
+sudo apt-get install -y --reinstall gdm
+sudo aptitude
+exit
+doveconf -n > /etc/dovecot/dovecot-new.conf
+subl /etc/postfix/main.cf 
+cd /usr/sbin/
+ln -s /home/local/share/sublime_text/sublime_text subl
+exit
+ls
+cd
+cd /etc/postfix
+ls
+nano main.cf 
+apt-get install openssl
+cd /etc/ssl
+ls
+mkdir confs
+mkdir CA
+echo '01' > serial
+touch index.txt
+cat openssl.cnf 
+ls
+mv openssl.cnf original-openssl-cnf.txt
+touch openssl.cnf
+echo "dir = ." >> openssl.cnf 
+subl openssl.cnf 
+openssl req -new -x509 -extensions v3_ca -keyout private/mail_faron_ca.pem -out CA/mail_faron_ca_cert.pem -days 3650 -config ./openssl.cnf 
+openssl req -new -nodes -out req.pem -config ./openssl.cnf 
+ls
+openssl req -in req.pem -text -verify -noout 
+ls
+ls CA
+ls
+ls private/
+ls
+cd /etc/ssl
+ls
+ls confs/
+cp certs/
+ls certs/
+openssl req -new -x509 -extensions v3_ca -keyout private/mail_faron_ca_key.pem -out CA/mail_faron_ca_cert.pem -days 3650 -config ./openssl.cnf 
+openssl req -new -nodes -out certs/mail_faron_ca_req.pem -config ./openssl.cnf 
+openssl ca -out CA/mail_faron_ca_cert.pem -config ./openssl.cnf -infiles certs/mail_faron_ca_req.pem 
+openssl req -new -x509 -extensions v3_ca -keyout private/mail_faron_ca_key.pem -out CA/mail_faron_ca_cert.pem -days 3650 -config ./openssl.cnf 
+openssl req -new -nodes -out certs/mail_faron_ca_req.pem -config ./openssl.cnf 
+openssl ca -out CA/mail_faron_ca_cert.pem -config ./openssl.cnf  -infiles certs/mail_faron_ca_req.pem 
+open req -in certs/mail_faron_ca_req.pem -text -verify -noout
+openssl req -in certs/mail_faron_ca_req.pem -text -verify -noout
+ls
+mv original-openssl-cnf.txt confs/
+mv openssl.cnf confs/
+ls
+ls CA/
+mkdir -p local_certs
+mkdir -p keys
+mkdir -p reqs
+ls -al
+ls CA/
+rm CA/*
+rm certs/mail_faron_ca_req.pem 
+ls keys
+ls private/
+rm private/mail_faron_ca*
+ls private/
+ls -al
+rm req.pem key.pem
+cat serial 
+mv serial confs/
+cat index.txt 
+ls
+mv index.txt local_certs/
+ls c
+mv confs/serial local_certs/
+ls
+mv private local_certs/
+mv 
+ls
+ls CA/
+rm -r CA
+ls
+ls keys local_certs/
+mv  keys local_certs/
+mv reqs local_certs/
+ls
+mkdir private
+ls
+cd local_certs/
+ls
+ls private/
+mv private/ssl-cert-snakeoil.key ../private/
+ls
+ls reqs/
+ls private/
+ls keys/
+rm -r private/
+ls
+openssl req -new -x509 -extensions v3_ca -keyout keys/mail_faron_ca_key.pem -out mail_faron_ca_cert.pem -days 365 -config ../confs/openssl.cnf
+ls
+openssl req -new -nodes -out reqs/mail_faron_ca_req.pem -config ../confs/openssl.cnf 
+openssl req -in reqs/mail_faron_ca_req.pem -text -verify -noout
+ls
+openssl ca -out mail_faron_ca_cert.pem -config ../confs/openssl.cnf -infiles reqs/mail_faron_ca_req.pem 
+openssl ca -out mail_faron_ca_cert.pem -config /etc/ssl/confs/openssl.cnf -infiles reqs/mail_faron_ca_req.pem 
+cd ..
+ls
+openssl req -new -x509 -extensions v3_ca -keyout local_certs/keys/mail_faron_ca_key.pem -out local_certs/mail_faron_ca_cert.pem -days 365 -config ./confs/openssl.cnf
+openssl req -new -x509 -extensions v3_ca -keyout ./local_certs/keys/mail_faron_ca_key.pem -out ./local_certs/mail_faron_ca_cert.pem -days 365 -config ./confs/openssl.cnf
+openssl x509 -in ./local_certs/mail_faron_ca_cert.pem -noout -text
+cat /usr/lib/ssl/openssl.cnf 
+ls -al /usr/lib/ssl/openssl.cnf 
+cd /usr/lib/ssl
+ls
+ls misc
+ls
+ls certs
+ls
+ln -s /etc/ssl/local_certs
+ln -s /etc/ssl/confs/
+ls
+ls confs
+rm openssl.cnf 
+ls
+ln -s /etc/ssl/confs/openssl.cnf 
+ls
+openssl req -new -x509 -extensions v3_ca -keyout ./local_certs/keys/mail_faron_ca_key.pem -out ./local_certs/mail_faron_ca_cert.pem -days 365 -config ./openssl.cnf
+openssl req -new -nodes -out local_certs/mail_faron_ca_req.pem -config ./openssl.cnf 
+openssl req -in local_certs/mail_faron_ca_req.pem -ext -verify -noout
+openssl req -in ./local_certs/mail_faron_ca_req.pem -text -verify -noout
+openssl ca -out ./local_certs/mail_faron_ca_cert.pem -config ./openssl.cnf -infiles ./local_certs/reqs/mail_faron_ca_req.pem 
+ls
+rm key.pem 
+ln -s /etc/ssl/CA
+ls
+mkdir /etc/ssl/CA
+ls local_certs
+rm local_certs/key.pem 
+mv local_certs/mail_faron_ca_cert.pem CA/
+ls
+ls CA
+ls
+ls certs
+ls
+ls local_certs
+ls
+cd local_certs
+ls
+rm mail_faron_ca_req.pem 
+ls reqs/
+mv reqs ../
+ls
+mv index.txt ../CA/
+mv serial ../CA/
+ls
+ls keys/
+mv keys/mail_faron_ca_key.pem ../private
+ls
+rm -r keys/
+ls
+cd ..
+ls
+ls private
+openssl req -new -x509 -extensions v3_ca -keyout ./private/mail_faron_ca_key.pem -out ./CA/mail_faron_ca_cert.pem -days 365 -config ./openssl.cnf
+openssl req -new -nodes -out ./mail_faron_ca_req.pem -config ./openssl.cnf 
+openssl ca -out ./CA/mail_faron_ca_cert.pem -config ./openssl.cnf -infiles ./mail_faron_ca_req.pem
+ld
+ls
+ls -al
+rm private/mail_faron_ca_key.pem 
+mv key.pem private/mail_faron_ca_key.pem
+openssl req -new -x509 -extensions v3_ca -keyout private/mail_faron_ca_key.pem -out CA/mail_faron_ca_cert.pem -days 3650 -config ./openssl.cnf
+openssl req -new -nodes -out mail_faron_ca_req.pem -config ./openssl.cnf 
+ls
+openssl ca -out cert.pem -config ./openssl.cnf -infiles req.pem openssl ca -out cert.pem -config ./openssl.cnf -infiles req.pem ls
+ls
+mv local_certs newcerts
+ls
+ls confs/
+ln -s confs/openssl.cnf 
+ls
+ls certs/
+ls
+ls reqs/
+rm -r reqs/
+ls
+openssl req -new -x509 -extensions v3_ca -keyout private/mail_faron_ca_key.pem -out newcerts/mail_faron_ca_cert.pem -days 365 -config ./openssl.cnf 
+cd /etc/ssl
+ls
+openssl req -new -nodes -out newcerts/mail_faron_ca_req.pem -config ./openssl.cnf 
+open ca -out newcerts/mail_faron_ca_certification.pem -config ./openssl.cnf -infiles newcerts/mail_faron_ca_req.pem 
+openssl ca -out newcerts/mail_faron_ca_certification.pem -config ./openssl.cnf -infiles newcerts/mail_faron_ca_req.pem 
+openssl x509 -in newcerts/mail_faron_ca_certification.pem -noout -text -purpose | more
+mv newcerts/mail_faron_ca_certification.pem newcerts/tmp.pem
+openssl x509 -in newcerts/tmp.pem -out newcerts/mail_faron_ca_certification.pem
+cat private/mail_faron_ca_key.pem newcerts/mail_faron_ca_certification.pem >mail_faron_ca_key_and_cert.pem
+ls
+rm key.pem 
+ls
+mkdir cert_packs
+mv mail_faron_ca_key_and_cert.pem cert_packs/
+ls
+stunnel -p /etc/ssl/cert_packs/mail_faron_ca_key_and_cert.pem 
+sudo apt-get install -y stunnel
+stunnel -p /etc/ssl/cert_packs/mail_faron_ca_key_and_cert.pem 
+exit
+cd /var
+ls
+cd spool/
+ls
+cd postfix/
+ls
+mkdir var
+mkdir var/run
+mkdir var/run/saslauthd
+chown -R root.sasl /var/spool/postfix/var/run/saslauthd
+sudo service saslauthd restart
+ps -ef | grep saslauthd
+ls -1h /var/spool/postfix/var/run/saslauthd
+cd /etc/postfix
+ls
+ls sasl/
+touch sasl/smtpd.conf
+echo "pwcheck_method: saslauthd" >> sasl/smtpd.conf 
+subl /etc/postfix/main.cf 
+postfix reload
+sudo service postfix restart
+perl -MMIME::Base64 -e 'print encode_base64("faron\0faron\0Gnothi7411");'
+exit
+postconf 
+postconf > /etc/postfix/main.cf
+sudo service postfix reload
+sudo service postfix restart
+sudo service dovecot restart
+sudo service postfix restart
+sudo reboot
+postfix set-permission
+postfix set-permissions
+postconf
+telnet mail.faron.ca 25
+exit
+ufw app list
+sudo service ufw restart
+ufw allow in http
+ufw allow https in
+ufw allow 443 in
+ufw allow smtp in
+ufw allow in smtp
+ufw allow in https
+ufw allow in ftp
+ufw allow in ssh
+ufw allow in 53
+ufw allow proto tcp from 127.0.0.0/8 to 192.168.1.0
+ufw allow proto tcp from 127.0.0.0/8 to 192.168.1.0/24
+ufw app list
+ufw list --help
+ufw enable
+ufw status
+service networking restart
+ufw show REPORT
+ufw show firewall report
+ufw app info
+ufw list
+ufw app list
+ufw allow Apache Full
+ufw app allow Apache
+ufw app info Apache
+ufw update Apache
+ufw app list
+ufw app allow OpenSSH
+app info Apache Full
+ufw app info Apache Full
+man ufw
+ipkg-opt install
+sudo apt-cache search ipkg-opt
+apt-cache search ipkg-opt
+exit
+exit
+cd
+system-config-samba
+gusk system-config-samba
+smbclient 
+smbclient 192.168.1.0/24
+smbclient 192.168.1.0/24 -L
+smbclient -I 192.168.1.10
+smbclient -I 192.168.1.0
+smbclient -I 192.168.1.0/24
+smbclient -I 192.168.1.0/24 --list
+service smbd restart
+service smbd status
+service smbd reload
+smbclient -I 192.168.1.0/24 --list
+smbclient -I 192.168.1.0/24 
+smbclient 
+cat /var/log/syslog
+gksu system-config-samba
+ls
+telnet gtwy
+a2enmod expires
+a2enmod headers
+.bin
+bin
+ls -al
+source .bash_aliases 
+bin
+ls
+./ssl-mkcert-for-app 
+ls /etc/ssl
+ls /etc/ssl/confs/
+sudo mv /etc/ssl/confs /etc/ssl/cnfs
+./ssl-mkcert-for-app 
+sudo service apache2 restart
+apt-cache search php5
+apt-get install ph5-apache
+sudo apt-get install -y php5-mcrypt php5-memcached php5-memcache php-auth php5-geoip php5-oauth php5-pecl-http php5-pecl-http-dev php5-sasl php5-ssh2 php5-fpm php5-sqlite php5-pgsql php5-mysql php5-json php5-dev php5-common php5-cli php5-cgi libapache2-mod-php5 php5
+sudo apt-get install -y php5-curl
+ls
+sudo service apache2 restart
+sudo service networking restart
+sudo service network-manager restart
+exit
+echo "root" > /etc/incron.allow 
+echo "faron" >> /etc/incron.allow 
+subl incron.conf
+ls
+cat incronjobupdater.sh 
+man incron
+incron --help
+apt-get install -y incrond
+apt-cache search incron
+grep -r 'incron' *
+incrontab -f
+setup
+ls
+cd ..
+ls
+exit
+incrontab -u faron -f /home/faron/.falcon/configs/incron.txt 
+service incron restart
+incrontab -l
+incrontab -u faron -l
+incrontab --config=incron.txt
+incrontab --config=$PWD/incron.txt -u root
+ls
+exit
+cd logs
+ls
+cd ..
+cd traffic/
+ls -al
+cat webmon_recent_domains 
+ls
+cat webmon_recent_searches 
+ls -al *
+ls
+cd ..
+ls
+cat conf-allfiles-from-etc.txt 
+ls
+ls traffic/
+ls logs
+cd traffic/
+cat webmon_recent_domains 
+ls
+exit
+openssl genrsa -out /etc/ssl/private/kdckey.pem 2048
+openssl req -new -out /etc/ssl/newcerts/kdc.req -key /etc/ssl/private/kdckey.pem 
+ls /usr/lib/ssl
+ls CA
+cd /usr/lib
+cd ssl
+ls
+ls CA
+rm CA/*old
+ls CA
+ls
+ls rename 's/confs/cnfs/g' confs
+ls
+rm confs
+cd /etc/ssl/
+ls
+cd /usr/lib/ssl/
+ls
+ln -s /etc/ssl/cnfs/
+ls
+openssl genrsa -out /usr/lib/ssl/private/kdckey.pem 2048
+openssl req -new -out /usr/lib/ssl/requests/.req -key kdckey.pem
+cat /usr/lib/ssl/openssl.cnf 
+cd /usr/lib/ssl/
+ls
+ct openssl.cnf 
+cat openssl.cnf 
+rm openssl.cnf 
+ls private
+ls
+ls cnfs
+ln -s cnfs/openssl.cnf 
+ls
+openssl req -new -out /usr/lib/ssl/requests/.req -key kdckey.pem
+openssl req -new -out /usr/lib/ssl/requests/kdc.req -key /usr/lib/ssl/private/kdckey.pem
+ls CA
+ls
+env REALM=FARON.CA openssl x509 -req -in /usr/lib/ssl/requests/kdc.req -CAkey /usr/lib/ssl/private/key.pem -CA /usr/lib/ssl/CA/cacert.pem -out /usr/lib/ssl/newcerts/kdc.pem -days 365 -extfile /etc/extensions.kdc -extensions kdc_cert -CAcreateserial
+env REALM=FARON.CA openssl x509 -req -in /usr/lib/ssl/requests/kdc.req -CAkey /usr/lib/ssl/private/key.pem -CA /usr/lib/ssl/CA/.pem -out /usr/lib/ssl/newcerts/kdc.pem -days 365 -extfile /etc/extensions.kdc -extensions kdc_cert -CAcreateserial
+openssl req -new -x509 -key private/cacert-key.pem -out CA/cacert.pem -days 1095
+openssl req -new -key private/cacert-key.pem -out CA/ca-cert.csr
+openssl genrsa -out ./private/rootCA.key 2048
+openssl req -x509 -new -nodes -key ./private/rootCA.key -days 3650 -out ./newcerts/rootCA.pem
+ls
+ls newcerts
+mv newcerts/mail_faron_ca_req.pem requests/
+ls
+ls requests
+ls newcerts
+rm newcerts/tmp.pem
+ls
+openssl genrsa -out ./private/server.key 2048
+openssl req -new -key private/server.key -out ./newcerts/server.csr
+cd /usr/lib/ssl
+ls ca
+ls CA
+cd CA
+ca index.txt
+cat index.txt
+ls
+cat index.txt.attr 
+cat serial
+cd ..
+mv /etc/ssl/CA/* ./CA/
+ls
+cp -r -u /etc/ssl/CA/* ./CA/
+ls
+find -type f -name '*.crt'
+find . -type f -name '*.crt'
+find -L . -type f -name '*.crt'
+find -L . -type f -name '*.csr'
+ls requests
+openssl req -x509 -new -nodes -key ./private/rootCA.key -days 3650 -out ./CA/rootCA.pem
+openssl genrsa -out ./private/server.key 2048
+opensll req -new -key ./private/server.key -out ./newcerts/server.csr
+openssl req -new -key ./private/server.key -out ./newcerts/server.csr
+openssl x509 -req -in ./newcerts/server.csr -CA ./CA/rootCA.pem -CAkey ./private/rootCA.key -CAcreateserial -out ./newcerts/server.crt -days 730
+openssl req -new -out ./requests/kdc.req -key ./private/kdckey.pem 
+find -L -type f -name '.pem'
+ls
+find -L . -type f -name '.pem'
+find -L . -type f -name '*.pem'
+env REALM=FARON.CA openssl x509 -req -in ./requests/kdc.req -CAkey ./private/rootCA.key -out ./newcerts/kdc.pem -days 365 -extfile /etc/extensions.kdc -extensions kdc_cert -CAcreateserial
+ls ./private
+env REALM=FARON.CA openssl x509 -req -in ./requests/kdc.req -CAkey ./private/server.key -CA ./CA/rootCA.pem -out ./newcerts/kdc.pem -days 365 -extfile /etc/extensions.kdc -extensions kdc_cert -CAcreateserial
+env REALM=FARON.CA openssl x509 -req -in ./requests/kdc.req -CAkey ./private/rootCA.key -CA ./CA/rootCA.pem -out ./newcerts/kdc.pem -days 365 -extfile /etc/extensions.kdc -extensions kdc_cert -CAcreateserial
+ls
+ls newcerts
+ls ./private
+ls
+cd /etc/ssl/cnfs/kdc-clients-extension.conf
+sudo touch /etc/ssl/cnfs/kdc-clients-extension.conf
+ls
+ls cnfs
+nano  cnfs/kdc-clients-extension.conf 
+ls
+openssl genrsa -out ./private/kdc-client-key.pem 2048
+openssl req -new -key ./private/kdc-client-key.pem -out ./requests/kdc-client.req
+dls
+ls newcerts
+ls CA
+ls private
+ls
+ls newcerts
+ls
+ls requests
+ls
+cd certs
+ls CA
+cd ..
+ls CA
+ls newcerts
+ls /etc
+cd etc
+cat /etc/hdparm.conf 
+ls
+klist -k
+cat /etc/krb5.keytab
+sudo touch /etc/krb5.keytab
+klist -k
+klist
+ktadd -k /etc/krb5.keytab f10/faron.ca
+ktadd
+sudo apt-cahce search ktadd
+sudo apt-cache search ktadd
+sudo apt-cache search krb
+apt-get install -y krb5-user krb5 sync-tools krb5-pkinit
+kadmin add_principal
+kadmin modify_principal
+kadmin --help
+kadmin -ktadd principal
+hostname
+kadmin ktremove kadmin/admin all
+kadmin ktadd host/f10@FARON.CA
+ls
+cd /etc
+ls
+kadmin ktadd host/f10@FARON.CA
+kadmin ktadd -k host/f10@FARON.CA
+kadmin add_principal
+mkdir krb5
+cd krb5
+ls
+kadmin -r FARON.CA
+which krb5
+whichis krb5
+whereis krb5
+cat /etc/krb5.keytab 
+ls
+mv ../krb5* krb5/
+ls
+cd ..
+ls
+ls krb5* ./krb5/
+sudo mv krb5* ./krb5/
+ls
+cd krb5/
+ls
+ls krb5kdc/
+cat krb5kdc/kadm5.acl 
+ls
+cat krb5.keytab 
+cat krb5
+cat krb5.conf 
+ls
+cat ../
+krb65
+krb5
+kadmin
+ls
+ln -s krb5.conf ../
+kadmin
+cd ..
+rm krb5.conf 
+ln -s ./krb5/krb5.conf 
+kadmin
+ls
+cd /var/log
+ls
+find . -type f -name '*krb*'
+ls
+cd /etc
+ls
+cat /var/log/syslog
+kadmin 
+kdc
+krb5_newrealm
+ls
+ls krb*
+ln -s ./krb5/krb5kdc
+ls /var/lib/krb5kdc/
+rm  /var/lib/krb5kdc/*
+krb5_newrealm
+aptitude install krb5-kdc krb5-admin-server
+touch /var/log/krb5kdc.log
+touch /var/log/kadmin.log
+touch /var/log/krb5lib.log
+service krb5 restart
+service kerberos restart
+service krb5-admin-server restart
+service krb5-kdc restart
+kdb5_util create -s
+kadmin.local
+sudo subl /etc/default/krb5-kdc start
+sudo subl /etc/default/krb5-kdc
+sudo subl /etc/default/krb5-kdc start
+/etc/default/krb5-kdc start
+sudo /etc/default/krb5-kdc start
+/etc/init.d/krb5-kdc start
+kinit root/admin
+klist -f
+subl /etc/krb5kdc/kadm5.acl 
+kinit root/admin
+/etc/init.d/krb5-kdc restart
+kinit root/admin
+subl /etc/krb5/krb5.conf 
+sudo /etc/default/krb5-kdc restart
+/etc/init.d/krb5-kdc restart
+cat /var/log/krb5kdc.log 
+cat /var/log/krb5lib.log 
+cat /var/log/kadmin.log 
+cd /etc
+ls
+ls krb5.conf 
+ls krb5.conf -al
+cat krb5.conf 
+rm krb5.conf 
+ls
+touch krb5.conf
+subl krb5.conf 
+sudo service krb5-admin-server restart
+kdb5_util create -s
+kadmin.local
+sudo service krb5-admin-server restart
+sudo service krb5-kdc restart
+kinit root/admin
+subl krb5.conf
+DOMAIN=faron.ca
+echo $DOMAIN
+echo ${DOMAIN}
+sudo service krb5-kdc restart
+sudo service krb5-admin-server restart
+kinit faron/admin
+kdb5_util create -s
+kdb5_util create -s faron/admin FARON.CA
+kadmin kttab
+kadmin 
+kadmin FARON.CA
+service krb5-admin-server restart
+service krb5-kdc restart
+kadmin
+service krb5-kdc restart
+service krb5-admin-server restart
+kadmind
+ls
+cd /etc/
+cd krb5
+ls
+cd ..
+ls krb*
+ls krb5kdc
+ls krb5kdc/kdc.conf 
+cat krb5kdc/kdc.conf 
+ls
+ls krb5kdc/kdc.conf 
+ls krb5kdc
+cat krb5kdc/kadm5.acl 
+cat krb5kdc/principal
+ls
+rm krb5
+cd krb5
+ls
+cat krb5
+cat krb5.conf 
+ls
+cat krb5.keytab 
+cd krb5kdc/
+ls
+cat kadm5.acl 
+ls
+cat kdc.conf 
+ls
+rm ../../kdc.conf 
+ls /etc
+ls /etc/krb*
+cat kdc.conf 
+ls
+cd ..
+ls
+mkdir /tmp/tempkrb; mv krb5.conf /tmp/tempkrb/
+ls
+mv krb5.keytab /tmp/tempkrb/
+ls
+mv krb5kdc/../
+ls
+mv krb5kdc ../
+cp -r -u krb5kdc ../
+ls
+cd ..
+ls
+ls krb5.keytab 
+cat krb5.keytab 
+cat krb5kdc/krb5.keytab 
+cat krb5kdc/ls
+mv krb5.keytab /tmp/tempkrb/
+ls
+ls krb*
+mv krb5kdc /tmp/tempkrb/
+ls
+ls krb5
+mv krb5/krb5kdc ./
+ls
+sudo service krb5-admin-server restart
+sudo service krb5-kdc restart
+cat /var/lib/krb5kdc/
+cat /var/log/krb5kdc.log 
+cat /var/log/krb5lib.log 
+cat /var/log/krb5kdc.log 
+apt-get remove --purge heimda
+dpkg -l 'krb5'
+dpkg -l 'krb'
+dpkg -l 'krb
+'
 dpkg -l | grep 'krb'
 dpkg -l | grep 'krb' | grep 'heimdal'
 sudo apt-get remove --purge libkrb5-26-heimdal
@@ -1972,76 +2690,3 @@ ls
 sudo umount home
 umount home
 reboot
-ls
-ff.apt.fetch tree
-ls
-cd
-ls -al
-rm *
-ls
-ls -al
-rm .*
-ls
-ls -al
-ln -s /home/faron/.falcon
-find ~/.falcon/bash -maxdepth 1 -type f
-find ~/.falcon/bash -maxdepth 1 -type f ! -name '.*save' ! -name '.*bak' ! -name '.*gz'
-find ~/.falcon/bash -maxdepth 1 -type f ! -name '.*save' ! -name '.*bak' ! -name '.*.gz'
-find ~/.falcon/bash -maxdepth 1 -type f ! -name '.*save' ! -name '.*bak' ! -name '.gz'
-find ~/.falcon/bash -maxdepth 1 -type f ! -name '.*save' ! -name '.*bak' ! -name '*.gz'
-find ~/.falcon/bash -maxdepth 1 -type f ! -name '.*save' ! -name '.*bak' ! -name '*.gz' -exec ln -s {} \;
-ls
-ls -al
-ln -s ~/.falcon/bash/histories/f10_root_history 
-ls -al
-mv f10_root_history .bash_history
-ls
-ls -al
-exit
-ls
-exit
-ls
-cd
-ls
-ls -al
-mkdir .test
-ls
-ls -al
-ls /
-tree /
-tree / -L 1
-tree / -L 2
-exit
-fdisk
-fdisk -l
-gparted
-blkid
-blkid | tail -n 1
-blkid | tail -n 1 | cut -d":" -f 2 | sed 's/"//g'
-blkid | tail -n 1 | cut -d":" -f 2 | sed 's/"//g' | sed 's/TYPE=//g'
-blkid | tail -n 1 | cut -d":" -f 2 | sed 's/"//g' | sed 's/TYPE=//g' >> /etc/fstab
-nano /etc/fstab
-ls home
-cd ..
-ls
-mv /opt/* /home/
-ls
-ls opt
-exit
-ls opt
-ls opt/faron/
-ls opt/faron/ -al
-ls
-cp -r opt/faron/.gvfs /home/faron/
-ls
-rm -r /opt/*
-exit
-ls -al
-exit
-ls -al
-cd
-ls
-ls -al
-rm .profile
-ln -s /home/faron/.falcon/bash/.profile
-ls -al
