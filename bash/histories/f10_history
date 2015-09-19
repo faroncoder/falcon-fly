@@ -1831,11 +1831,11 @@ bin
 ls
 ff.bin.extension.remove.sh sh
 ls
-gedit ff.bin.extension.remove
+subl ff.bin.extension.remove
 ff.bin.extension.remove.sh sh
 ff.bin.extension.remove sh
-gedit ~/.falcon/logs/scripts.log 
-gedit ff.xclip 
+subl ~/.falcon/logs/scripts.log 
+subl ff.xclip 
 ls
 ff.xclip -f ff.xclip~
 ff.clean
@@ -1984,7 +1984,7 @@ ls
 find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm {} \;
 ls
 ff.script.new
-gedit ~/.bin/ff.script.new 
+subl ~/.bin/ff.script.new 
 falcon
 cd newbin/
 cat ff.bin.emptydir.remove.sh 
@@ -2000,7 +2000,7 @@ falcon
 exit
 falcon
 cd newbin/
-gedit ../bin/ff.script.new.sh 
+subl ../bin/ff.script.new.sh 
 bashsr
 ls
 cd ../
@@ -2010,7 +2010,7 @@ falcon
 cd newbin/
 ./testing1.sh
 cd ../bin
-gedit ff.script.new.sh
+subl ff.script.new.sh
 ls
 ff.clean
 ls
@@ -2049,7 +2049,7 @@ bashsr
 ff.apt.fetch mpv
 falcon
 cd apt
-gedit ff.apt.fetch.sh
+subl ff.apt.fetch.sh
 xit
 exit
 ff.apt.fetch mpv
@@ -2071,7 +2071,7 @@ find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm -r {} \; 2>/dev/null
 ls
 find ~/ -maxdepth 1 -type d ! -name '.*' -empty -exec rm -r {} \; 2>/dev/null
 ls
-gedit ~/.falcon/bash/.bash_scripts
+subl ~/.falcon/bash/.bash_scripts
 bashsr
 ls
 mkdir emptydir
@@ -2086,7 +2086,7 @@ ls
 ls /root
 sudo su
 ls
-gedit ~/.falcon/bash/.bash_scripts
+subl ~/.falcon/bash/.bash_scripts
 bashsr
 ls
 mkdir .testing
@@ -2191,7 +2191,7 @@ fly
 cd bash
 su falcon
 exit
-gedit .bash_scripts 
+subl .bash_scripts 
 exit
 sudo su
 ls
@@ -2236,7 +2236,7 @@ ff.alias.add
 bashsr
 fly
 cd bash
-gedit .bash_aliases 
+subl .bash_aliases 
 bashsr
 ff.tdl
 cd Porn/
@@ -2468,3 +2468,345 @@ git pull
 git config --global push.default matching
 git config --global push.default simple
 git pull
+git commit -a
+git push
+git fetch
+ls
+find -type f -name '*task*'
+newbin/./ff.task.add.sh test peeboooo
+ls
+bashsr
+ff6
+exit
+sudo adduser faron flumotion
+sudo chmod -R 0775 /etc/flumotion
+cd /etc/flumotion/
+cd workers/
+subl default.xml 
+ls
+ls -al
+cd ..
+cd managers/
+cd default/
+subl planet.xml 
+sudo su
+ff.flu.1
+ports
+sudo kill 32012 -9
+ports
+exit
+ff.flu.2
+ls
+ffdl
+ff.dl
+setup
+falcon
+fly
+cd setup/
+cd packs/
+rename 's/python-//g' *
+ls
+rename 's/_11.1.0.1ubuntu2/g' *
+rename 's/_11.1.0.1ubuntu2//g' *
+ls
+rename 's/_11.1.0-1//g' *
+ls
+cp twisted-core_all.deb twisted-core_i386.deb
+ls
+cp twisted-bin_amd64.deb twisted-bin_i386.deb
+ls
+cp twisted-web_all.deb twisted-web_i386.deb
+ls
+rename 's/all/amd64/g' *
+ls
+ls *64*
+find -type f
+find -type f -name '*64*'
+find -type f -name '*64*' -exec sudo dpkg -i {} \; -exec sudo apt-mark manual {} \; sudo apt-mark hold {} \;
+find -type f -name '*64*' -exec sudo dpkg -i {} \; -exec sudo apt-mark manual {} \; -exec sudo apt-mark hold {} \;
+sudo apt-mark hold python-twisted-web
+sudo apt-mark hold python-twisted-core
+sudo apt-mark hold python-twisted-bin
+sudo apt-mark manual python-twisted-bin
+sudo apt-mark manual python-twisted-core
+sudo apt-mark manual python-twisted-web
+cd /tmp
+ln -s /home/faron/media/torrents-tbp
+ls
+ff.flu.3
+htpasswd -nd faron
+perl -e "print crypt('password','sa');"
+openssl passwd -crypt myPassword
+mkpasswd
+ff.apt.fetch mkpasswd
+fl
+fly
+falcon
+git pull
+git fetch
+git checkout
+ls
+python -c 'import crypt; print crypt.crypt("password","Fx")'
+echo "select encrypt('password');" | mysql
+ff.apt.fetch mysql-client-core-5.6
+bin
+cat ff.apt.fetch 
+nano ~/.bin/ff.apt.fet
+nano ~/.bin/ff.apt.fetch 
+bashsr
+ff.apt.fetch mysql-client-core-5.6
+sudo apt-mark python-twisted* hold
+sudo apt-mark hold python-twisted* 
+ff.apt.update
+sudo apt-mark manual python-twisted* 
+ff.apt.update
+sudo apt-get install -f
+ls
+ff.flu.1
+ff.flu.2
+python -c 'import crypt; print crypt.crypt("great","Fx")'
+ls
+cd /tmp
+source sources.sh
+ls
+touch sources.sh
+nano sources.sh
+mv sources.sh sources
+ls
+touch testing.sh
+nano testing.sh 
+cat sources 
+cat testing.sh 
+chmod +x testing.sh 
+./testing.sh 
+nano sources1
+nano testing.sh 
+./testing.sh 
+ls
+bin
+nano ff.flu.3
+ff.flu.2
+port | grep '8669'
+ports | grep '8669'
+sudo kill 575 -9
+ports | grep '8669'
+sudo kill 575 
+ports | grep '8669'
+ff.flu.3 
+sudo su
+ls
+mkdir
+cd /tmp
+mkdir test
+ls -al
+cd test
+ls
+mkdir
+ls -al
+cd ..
+chown -R root:root $PWD
+sudo chown -R root:root $PWD
+rm -r *
+ls -al
+chmod -R 0777 $PWD
+sudo chmod -R 0777 $PWD
+ls -al
+ff.flu.3 
+htpasswd -nbd faron great
+cd /etc/flumotion/
+cd managers/
+cd default/
+ff.flu.1
+ff.flu.2
+cat ~/.bin/ff.flu.1
+cat ~/.bin/ff.flu.2
+ff.flu.2
+sudo subl planet.xml 
+ff.flu.3 
+nano ~/.bin/ff.flu.1
+nano ~/.bin/ff.flu.2
+nano ~/.bin/ff.flu.3
+ff.flu.1
+ls -al
+cd ..
+ls .flumotion/
+tree .flumotion/
+ls -al
+ls -al .flumotion/
+sudo chown -R faron:faron .flumotion/
+ls -al .flumotion/
+cd ..
+cd faron
+ln -s /tmp
+ls -al
+cd .flumotion/
+cat registry.xml 
+ls
+cd ..
+rm -r .flumotion/*
+ff.flu.3
+ff.flu.2
+ff.flu.1
+nudu
+ncdu
+zsh
+ff.apt.fetch zsh
+fly
+cd scripts/
+mkdir apt-get
+ff.apt.fetch zsh
+sudo apt-get download zsh
+ls
+sudo dpkg -i zsh_5.0.7-5ubuntu1_amd64.deb 
+sudo apt-get download zsh-common
+sudo dpkg -i zsh-common_5.0.7-5ubuntu1_all.deb 
+sudo apt-get remove --purge python-twisted*
+sudo apt-get -f install
+sudo apt-get download python-twisted-*
+ls -al
+ls
+sudo dpkg -r python-twisted
+sudo dpkg -r python-twisted-bin
+sudo dpkg -r python-twisted-bin-dbg
+python-twisted-conch
+sudo dpkg -r python-twisted-conch
+sudo dpkg -r python-twisted-libravatar
+sudo dpkg -r python-twisted-lore
+ls -al
+ls
+find -maxdepth 1 -type f -name 'python-twisted*'
+find -maxdepth 1 -type f -name 'python-twisted*' -exec basename {} \;
+find -maxdepth 1 -type f -name 'python-twisted*' -exec basename {} \; | sed 's/_14.02-1ubuntu1_all.deb//g'
+find -maxdepth 1 -type f -name 'python-twisted*' -exec basename {} \; | cut -d"_" -f1
+find -maxdepth 1 -type f -name 'python-twisted*' -exec basename {} \; | cut -d"_" -f1 | tr '\n' ' '
+clear
+APTG=( ` find -maxdepth 1 -type f -name 'python-twisted*' -exec basename {} \; | cut -d"_" -f1 | tr '\n' ' ' ` )
+for p in "${APTG[@]}"; do sudo dpkg -r $p 2>/dev/null done; ;
+for p in "${APTG[@]}"; do sudo dpkg -r $p 2>/dev/null ; done
+ff.apt.update
+ls
+sudo apt-mark manual python-twisted-bin
+sudo apt-mark manual python-twisted-core
+sudo apt-mark manual python-twisted-web
+sudo apt-mark hold python-twisted-web
+sudo apt-mark hold python-twisted-core
+sudo apt-mark hold python-twisted-bin
+ff.apt.update
+zsh
+sudo amdcccle
+ff.apt.fetch icron
+ff.apt.fetch incron
+ff.apt.find inotify
+ff.apt.fetch libinotifytools0-dev libinotifytools0 liblinux-inotify2-perl python3-inotifyx python-pyinotify inotify-hookable inotify-tools iwatch inoticoming inotail 
+fly
+cd scripts/
+cd apt-get/
+cat appsCurrent.list 
+ls
+falcon
+cd git/
+cd ..
+bin
+ls
+falcon
+cd file-folder/
+cat file-snippetsaver.sh 
+ls
+cd ..
+grep 'incron' -r *
+grep 'incron' -r * --text
+find -type f -name '*incron*'
+ls
+incron
+incrond
+incron
+incrontab 
+incrontab -e
+cd /etc
+find type -f -name '*.allow'
+find type f -name '*.allow'
+find -type f -name '*.allow'
+sudo sh -C "echo \"faron\" >> /etc/incron.allow"
+sudo sh -C 'echo "faron" >> /etc/incron.allow'
+sudo sh -c 'echo "faron" >> /etc/incron.allow'
+sudo sh -c 'echo "root" >> /etc/incron.allow'
+service incron restart
+incrontab
+man incron
+incrontab --help
+man incrontab
+incrontab -e
+exit
+xkill
+top
+sudo kill 3520 3199 5202 3724 46755 3422 3627 4574 4783 4972
+top
+exit
+bashsr
+fly
+cd setup/
+cd packs/
+mv ~/veracrypt-1.14-setup-gui-x64 ./
+ls
+cd ..
+ls
+cd ..
+cd
+cd Downloads/
+mpv indieboyzpumped.avi 
+ls
+sudo apt-get build-dep ffmpeg
+ls
+setup
+ff.edit.alias
+setup
+bashsr
+setup
+ls -al
+mkdir confgs
+ls
+touch confgs/sublime.txt
+nano confgs/sublime.txt 
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+ff.apt.update; ff.apt.fetch sublime-text
+ls
+where subl
+whereis subl
+subl
+ls
+cd confgs/
+cat sublime.txt 
+sudo apt-get download sublime-text
+sudo apt-get download sublime-text-installer
+ls
+mv sublime-text-installer_3083-1~webupd8~0_all.deb ../packs/
+ls
+sudo apt-get download flumotion
+ls
+mv flumotion_0.10.0-3ubuntu1_amd64.deb ../packs/
+ls
+cd ../packs/
+fubl
+subl
+sudo subl
+exit
+cd ~/.config/sublime-text-3/
+cd Packages/
+git clone https://github.com/alsfurlan/ng-snippets.git
+ls
+sudo amdcccle
+ff.apt.fetch jade
+ff.apt.fetch handlebars
+ff.apt.find handlebars
+sudo dpkg -r vim-syntastic
+ff.apt.update
+git clone https://github.com/justinmahar/SublimeCSAutocompletePlus.git
+falcon
+find -type f -exec sed -i -e 's/gedit/subl/g' {} \;
+ls
+bin
+ff.script.new
+subl ~/.bin/ff.script.new
+ff.script.new
+ls
+falcon

@@ -6,27 +6,10 @@ XeB=`date +%s`
 function XeF {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> ~/.falcon/logs/scripts.log; exit 0 
 }
-<<<<<<< HEAD
 
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-CMD=( 
-"apt-get build-dep $1"
-"apt-get install $1"
-)
-
-for command in "${CMD[@]}"; 
-do
-	if [[ "$EUID" != 0 ]]; then
-		sudo $command
-	else
-		$command
-	fi
-done
-
-=======
-#################### BEGIN
 STRINGCOL=''
 while :
 	do
@@ -58,7 +41,7 @@ for appget in "${PACKS[@]}";
 
 	done
 done
->>>>>>> 565fe9fb368c95cec4c83016206e21fad0b1a331
+
 ################### END
 #elif [ "$1" = "" ];
 #	then
@@ -69,5 +52,3 @@ done
 
 ## TALON: ff.apt.fetch
 XeF
-
-

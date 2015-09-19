@@ -14,7 +14,7 @@ if [ \"\$( echo \$PATH | grep '/home/faron/.bin/' )\" = '' ]; then
 fi
 XeB=\`date +%s\`
 function XeF {
-XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB | \$XeE | \$XeT \" >> ~/.falcon/logs/scripts.log; exit 0 
+XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB | \$XeE | \$XeT \" >> ~/.falcon/logs/scripts.log; exit 0
 }
 
 #if [ \"\$1\" != \"\" ]; then
@@ -37,20 +37,14 @@ XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB |
 XeF
 
 " >> $newbin/$proofreadfile
-<<<<<<< HEAD
-gedit $newbin/$proofreadfile
-=======
 
 ##DETERMINING WHICH APP TO OPEN THE SCRIPT DEPENEDING ON WHICH SERVERS
-
 SRVNAME=`hostname --short`
 
 if [ "$SRVNAME" != 'f10' ]; then
 	nano $newbin/$proofreadfile
-
 else
-	gedit $newbin/$proofreadfile
+	subl $newbin/$proofreadfile
 fi
->>>>>>> 565fe9fb368c95cec4c83016206e21fad0b1a331
 
 exit 0

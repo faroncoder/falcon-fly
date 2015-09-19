@@ -4,13 +4,12 @@ if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
 fi
 XeB=`date +%s`
 function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> ~/.falcon/logs/scripts.log; exit 0 
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> ~/.falcon/logs/scripts.log; exit 0
 }
 
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-echo "can you see me?"
 
 
 ################### END
@@ -22,6 +21,64 @@ echo "can you see me?"
 
 
 ## TALON: testing.sh
+XeF
+
+
+#!/bin/bash
+if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
+	export PATH=$PATH:/home/faron/.bin:/usr/local/bin
+fi
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> ~/.falcon/logs/scripts.log; exit 0
+}
+
+#if [ "$1" != "" ]; then
+#################### BEGIN
+
+## FUNCTIONS
+
+## SCRIPTING
+
+
+################### END
+#elif [ "$1" = '' ];
+#	then
+#  echo "usage: testing "
+#  echo "example:    "
+#fi
+
+
+## TALON: testing
+XeF
+
+
+#!/bin/bash
+if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
+	export PATH=$PATH:/home/faron/.bin:/usr/local/bin
+fi
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> ~/.falcon/logs/scripts.log; exit 0
+}
+
+#if [ "$1" != "" ]; then
+#################### BEGIN
+
+## FUNCTIONS
+
+## SCRIPTING
+
+
+################### END
+#elif [ "$1" = '' ];
+#	then
+#  echo "usage: testing "
+#  echo "example:    "
+#fi
+
+
+## TALON: testing
 XeF
 
 
