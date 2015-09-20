@@ -3206,3 +3206,15 @@ falcon
 git pull
 git fetch
 git status
+ff.git.update
+git pull
+git commit -a
+git pull
+ff.git.update
+git push
+git pull
+git push
+git merge
+exit
+exit
+ssh -T git@github.com
