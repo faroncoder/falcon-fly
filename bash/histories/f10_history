@@ -2810,3 +2810,394 @@ subl ~/.bin/ff.script.new
 ff.script.new
 ls
 falcon
+ff.git.update 
+ls
+sudo subl
+falcon
+cd newbin/
+subl falcon-soar.sh 
+bin
+falcon
+find -type f -name '*saver*'
+cd file-folder/
+mv file-snippetsaver.sh ff.files.snippetsaver.sh
+ff.bin.load ff.files.snippetsaver.sh 
+bin
+incrontab -e
+sudo service incrond restart
+sudo service incron restart
+sudo systemctl restart incron
+sudo journalctl -xn
+ls
+ff.code
+ff.scripts
+ff.script
+cd sublime/
+ls User/
+find
+ls mysnippets/
+ls
+cd User/
+cat MySnippets.sublime-settings 
+ls
+cd ..
+cd mysnippets
+ls ../User/
+ff.apt.fetch yasm
+bin
+subl ff.apt.fetch 
+ff.apt.fetch yasm
+ff.apt.fetch libx264-dev
+ff.apt.fetch cmake mercurial
+ff.apt.fetch libmp3lame-dev nasm
+ff.loc
+cd /usr/local
+cd src
+wget -O fdk-aac.tar.gz https://github.com/mstorsjo/fdk-aac/tarball/master
+sudo wget -O fdk-aac.tar.gz https://github.com/mstorsjo/fdk-aac/tarball/master
+ls
+sudo chmod -R 0775 $PWD
+ls
+tar -zxvf fdk-aac.tar.gz 
+sudo tar -zxvf fdk-aac.tar.gz 
+ls
+cd mstorsjo-fdk-aac-2585f10/
+sudo chown -R faron:faron $PWD
+autoreconf -fiv
+sudo ./configure --prefix="/usr/local" --disable-shared
+ls
+cd ..
+hg clone https://bitbucket.org/multicoreware/x265
+sudo hg clone https://bitbucket.org/multicoreware/x265
+ls
+cd x265/
+PATH="$HOME/.bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/usr/local" -DENABLE_SHARED:bool=off
+PATH="$HOME/.bin:$PATH" sudo cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/usr/local" -DENABLE_SHARED:bool=off
+sudo su
+ff.tp
+falcon
+cd vi
+cd video/
+cd streaming/
+bin
+ff.video.record.firewire 
+ls
+ff.apt.fetch uuid
+ff.video.record.firewire 
+ls
+cd
+ls
+cat ~/.bin/ff.video.record.firewire 
+dvgrab
+ff.apt.fetch dvgrab
+ls
+ff.video.record.firewire 
+cd usr/local/src
+cd /usr/local/src
+cd mstorsjo-fdk-aac-2585f10/
+./configure --prefix="/usr"
+sudo ./configure --prefix="/usr"
+sudo chown -R faron:faron ~/.yokadi*
+exit
+mpv `find -type f`
+sudo make
+sudo make install
+ls
+cd ..
+rm -r mstorsjo-fdk-aac-2585f10/
+sudo rm -r mstorsjo-fdk-aac-2585f10/
+ls
+rm *
+sudo rm *
+ls
+rm -r x265/
+sudo rm -r x265/
+ls
+xkill
+ff.video.record.firewire 
+subl ~/.bin/ff.video.record.firewire 
+ff.video.record.firewire 
+ls
+rm c24ad3a05ed911e5935c001e90304301.avi 
+ff.video.record.firewire 
+dpkg -l | grep apache
+ssh-keygen --help
+`ssh-agent -s`
+ssh-agent
+pidof ssh-agent
+sudo kill 3123 10006
+ls
+cd .ssh
+ls
+ssh-add -i ~/.ssh/id_github.pub 
+ssh-add ~/.ssh/id_github.pub 
+scp -r ~/.falcon/scripts/falcon-fly faron@f7:~/.falcon/scripts/
+ls
+falcon
+ls bash
+ls bash -al
+ls
+cd /usr/local
+cd src
+sudo chmod -R 0775 ../
+ls
+wget http://h264.code-shop.com/download/apache_mod_h264_streaming-2.2.7.tar.gz
+tar -zxvf apache_mod_h264_streaming-2.2.7.tar.gz
+ls -al
+sudo adduser faron root
+wget http://h264.code-shop.com/download/apache_mod_h264_streaming-2.2.7.tar.gz
+sudo wget http://h264.code-shop.com/download/apache_mod_h264_streaming-2.2.7.tar.gz
+ls
+sudo tar -zxvf apache_mod_h264_streaming-2.2.7.tar.gz 
+cd mod_h264_streaming-2.2.7/
+./configure --prefix="/usr"
+ff.apt.fetch apache2-dev
+./configure --prefix="/usr"
+make
+cat /etc/sysctl.conf 
+subl
+sudo sh -c "echo \"net.ipv6.conf.all.disable_ipv6 = 1 \
+net.ipv6.conf.default.disable_ipv6 = 1 \
+net.ipv6.conf.lo.disable_ipv6 = 1\" >> /etc/sysctl.conf"
+cat /etc/sysctl.conf 
+sudo nano  /etc/sysctl.conf 
+sudo make install
+ls
+cd ..
+ls
+mv apache_mod_h264_streaming-2.2.7.tar.gz ~/
+sudo mv apache_mod_h264_streaming-2.2.7.tar.gz ~/
+setup
+sudo mv ~/apache_mod_h264_streaming-2.2.7.tar.gz packs/
+ls
+sudo amdcccle
+ff.apt.find utorrent
+cat /etc/hosts
+ls
+cd Straight\ Fellas\ SiteRip/
+ff7
+ff6
+sudo nano /etc/sysctl.conf
+sudo reboot
+telnet gtwy
+ifconfig
+sudo ifconfig eth0 192.168.1.10
+ifconfig
+sudo amdcccle
+sudo ifconfig eth0 192.168.1.10
+reboot
+sudo reboot
+ipconfig
+ifconfig
+sudo nano /etc/network/interfaces
+ifconfig eth0 down
+sudo ifconfig eth0 down
+sudo ifconfig eth0 up
+sudo ifconfig
+sudo ifconfig eth0 192.168.1.10
+sudo ifconfig 
+sudo nano /etc/sysctl.conf
+sudo ifconfig 
+sudo ifconfig eth0  192.168.1.10
+sudo ifconfig 
+telnet gtwy
+cat /etc/hosts
+sudo nano /etc/hosts
+sudo reboot
+sudo nano /etc/networks
+ifconfig
+ifconfig eth0 192.168.1.10 up
+sudo ifconfig eth0 192.168.1.10 up
+ifconfig
+ping gtwy
+ping f6
+ifconfig
+cat /etc/network/interfaces
+sudo sed -i -e '/eth0/d'
+sudo sed -i -e '/eth0/d' /etc/network/interfaces
+sudo su
+cat /etc/network/interfaces
+sudo ifconfig {eth lo} down
+sudo ifconfig {eth,lo} down
+sudo ifconfig {eth0,lo} down
+ifconfig
+sudo ifconfig lo down
+sudo ifconfig eth0 down
+sudo ifconfig eth0 up
+sudo ifconfig lo up
+ifconfig
+ping gtwy
+ping 192.168.1.1
+sudo sh -c "echo \"192.168.1.1   gtwy.faron.ca  gtwy\" >> /etc/hosts"
+cat /etc/hosts
+ff.network.restart 
+bin
+cat ff.network.restart 
+subl ff.network.restart 
+cat /etc/hosts
+cat /etc/network/interfaces
+ff.network.restart 
+cat /etc/network/interfaces | awk '{print $2}' | uniq | sort | tr "\n" " "
+cat /etc/network/interfaces
+sed -i -e 's/interfaces(5)/d' /etc/network/interfaces
+sudo sed -i -e '/interfaces(5)/d' /etc/network/interfaces
+ff.network.restart 
+ls
+subl ff.apt.fetch
+ff.network.restart 
+cat /etc/network/interfaces
+cat /etc/network/interfaces | awk '{print $2}' 
+cat /etc/network/interfaces | awk '{print $2}' | uniq | sort
+cat /etc/network/interfaces | awk '{print $2}' | uniq | sort | tr '\n' ' '
+ff.network.restart 
+ping f6
+ifconfig
+cat /etc/hosts
+hostname -ip
+hostname -i
+sudo nano /etc/hosts
+ff.network.restart 
+ifconfig
+ping gtwy
+ping 192.168.1.1
+gtwy
+ping gtwy
+ff7
+exit
+ff6
+ff7
+ping 192.168.1.1
+ifconfig
+ifconfig eth0 192.168.1.100
+sudo ifconfig eth0 192.168.1.10
+ifconfig eth0 192.168.1.100
+ifconfig
+ping 192.168.1.1
+ping gtwy
+sudo nano /etc/networks
+ff6
+ping 192.168.1.6
+ping 192.168.1.1
+ping 192.168.1.7
+ping 192.168.1.6
+ff7
+scp faron@f7:~/fly.sha2 ./
+ls
+falcon
+mv ~/fly.sha2 ./
+ls
+sha256sum -c fly.sha2 
+sha256sum -c fly.sha2 1>/dev/null 
+sha256sum -c fly.sha2 1>/dev/null 2>1
+sha256sum -c fly.sha2 1>/dev/null && 2>1
+find -type f ! -path '*/.git/*'
+find -type f ! -path '*/.git/*' -exec sha256sum {} >> fly2.sha
+find -type f ! -path '*/.git/*' -exec sha256sum {} >> fly2.sha \;
+ls
+cat fly.sha2 
+ls
+cat fly2.sha >> fly.sha2 
+rm fly2.sha
+cat fly.sha2 | sort | uniq -u
+sed -i -e '/.save/d' fly.sha2 
+sed -i -e '/.~/d' fly.sha2 
+cat fly.sha2 | sort | uniq -u
+sed -i -e '/_bak/d' fly.sha2 
+cat fly.sha2 | sort | uniq -u
+sed -i -e '/fly.sha2/d' fly.sha2 
+cat fly.sha2 | sort | uniq -u
+ls
+cat 1
+rm 1
+ls
+sed -i -e '/.\/1/d' fly.sha2 
+cat fly.sha2 | sort | uniq -u
+ls
+rm fly.sha2 
+scp faron@f7:~/check* ~/
+cd
+ls
+cat check.sha2 
+sha256sum -c check.sha2 
+cd /etc/ssh/
+ff.apt.fetch openssh
+ff.apt.find openssh
+ff.apt.fetch ssh  openssh-*
+ld
+ls
+cd
+sha256sum -c check.sha2 
+bashsr
+ssh-keygen -t rsa 
+ls
+cd .ssh
+chmod -x *
+ls
+chmod 0770 $PWD
+ssh-keygen -t rsa 
+ls
+ssh-copy-id -i id_network f7
+ssh f7
+ls
+ls -al $PWD
+chmod 0755 id_github.pub
+ls -al
+chmod -x id_github.pub 
+ls
+ls -al
+ls
+ff7
+pidof
+pidof ssh-agent
+subl ~/.bash_scripts 
+pidof ssh-agent | wc -w
+ssh-agent -s
+pidof ssh-agent | wc -w
+ssh-agent
+pidof ssh-agent | wc -w
+ssh-agent --help
+man ssh-agent
+eval ssh-agent -c
+eval ssh-agent -s
+echo $SSH_AUTH_SOCK 
+echo $SSH_ENV 
+echo $SSH_AGENT_PID
+ssh-agent
+echo $SSH_AGENT_PID
+pidof ssh-agent
+ff.cpu.kill ssh-agent
+pidof ssh-agent
+ssh-agent
+pidof ssh-agent
+ff.cpu.kill ssh-agent
+pidof ssh-agent
+ssh-agent
+pidof ssh-agent
+GETAGENTS=( `pidof ssh-agent` )
+echo ${GETAGENTS[@]}
+for checkin in "${GETAGENTS[@]}"; do echo $checkin; done
+sudo kill ssh-agent
+sudo kill `pidof ssh-agent` -9
+bin
+cat ff.cpu.kill
+ff7
+bashsr
+ssh-engine
+bashsr
+ff7
+grep 'git' ~/.bash_history
+bashsr
+ff7
+bashsr
+exit
+falcon
+cd bash
+ls -al
+scp faron@f7:$PWD/.bash_scripts ./
+cd ..
+cd bin/
+cd ..
+cd newbin/
+scp faron@f7:$PWD/ff.cpu.kill ./
+scp faron@f7:$PWD/ff.cpu.kill.sh ./
+bashsr

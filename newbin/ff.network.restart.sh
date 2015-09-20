@@ -1,24 +1,14 @@
 #!/bin/bash
-SUDO=''
-if [ "$EUID" != 0 ]; then
-	SUDO='sudo'
+GETME=( `cat /etc/network/interfaces | awk '{print $2}' | uniq | tr '\n' ' '` )
+if [[ "$EUID" != 0 ]]; then
+	SUDO="sudo"
 fi
-GETME=( lo eth0 eth1 )
-
-restarterPool(){
-
-	$SUDO ifconfig $i up;
-	$SUDO ifconfig $i down;
-	$SUDO service network-manager restart;
-	$SUDO service networking restart;
-}
-
-
-for i in "${GETME[@]}";
+for appget in "${GETME[@]}";
 	do
-		restarterPool
+		$SUDO ifconfig $appget down
+		$SUDO ifconfig $appget up
 	done
-
-
+$SUDO service networking restart
+$SUOD service network-manager restart
 
 exit 0

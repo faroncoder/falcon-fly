@@ -1,26 +1,17 @@
+ssh-check() {
+	ff.cpu.kill ssh-agent
+	ssh-engine
+}
+
 ssh-engine() {
-	SSH_ENV="~/.ssh/environment"
 	echo "Initializing SSH agent..."
 	chmod -R 0700 ~/.ssh
-
-CKRESULT=$( pidof ssh-agent | wc -w )
-if [ "$CKRESULT" = 0 ]; then
-	`eval ssh-agent -s`
-	find "$HOME/.ssh" -type f -name "id_*" ! -name "*.pub" -exec /usr/bin/ssh-add {} \;  2> /dev/null
-	echo "SSH environment succeed"
-fi
-
-if [ "$CKRESULT" -gt 1 ]; then
-	ff.cpu.kill "ssh-agent"
-	`eval ssh-agent -s`
-	find "$HOME/.ssh" -type f -name "id_*" ! -name "*.pub" -exec /usr/bin/ssh-add {} \; 2> /dev/null
-	echo "SSH environment updated"
-fi
-if [ "$CKRESULT" = 1 ]; then
-	find "$HOME/.ssh" -type f -name "id_*" ! -name "*.pub" -exec /usr/bin/ssh-add {} \; 2> /dev/null
-	echo "SSH environment hooked in"
-fi
+	echo "privizating ~/.ssh : done"
+	ssh-agent; eval $( ssh-agent -s );
+	eval $( ssh-agent -s )
+	find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec /usr/bin/ssh-add {} \;
 }
+
 loadScripts() {
 	if [ ! "$( shopt -oq posix )" ]; then
 		#if ! shopt -oq posix; then
@@ -34,7 +25,7 @@ loadScripts() {
 	. ~/.bash_todo
 	alias rm="trash-put"
 	fi
-	
+	ssh-check	
 #fi
 
 
@@ -55,23 +46,23 @@ export PATH="$PATH:$JAVA_HOME/bin:$JRE_HOME/bin"
 CLEANUP=`echo $PATH | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g'`
 export PATH="`echo $CLEANUP`"
 loadScripts
-ssh-engine
 }
 
 
-if [ "$EUID" = 0 ]; then
-	if [ ! "$( kill -9 $( pidof ssh-agent ) )" ]; then
-		SSH_AGENT_PID=""
-	fi
-	if [ -f "$SSH_ENV" ]; then
-		rm $SSH_ENV
-	fi
-	loadEnvironment
-fi
+# if [ "$EUID" != 0 ]; then
 
-if [ "$EUID" = 1000 ] || [ "$EUID" = 1004 ]; then
+# 	if [ ! "$( kill -9 $( pidof ssh-agent ) )" ]; then
+# 		SSH_AGENT_PID=""
+# 	fi
+# 	if [ -f "$SSH_ENV" ]; then
+# 		rm $SSH_ENV
+# 	fi
+# 	loadEnvironment
+# fi
+
+#if [ "$EUID" = 1000 ] || [ "$EUID" = 1004 ]; then
 	loadEnvironment	
-fi
+#fi
 
 ######### FARONIZED-MENU FUNCTION 
     function cd  {
