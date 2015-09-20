@@ -3201,3 +3201,8 @@ cd newbin/
 scp faron@f7:$PWD/ff.cpu.kill ./
 scp faron@f7:$PWD/ff.cpu.kill.sh ./
 bashsr
+ff.git.update
+falcon
+git pull
+git fetch
+git status
