@@ -1,31 +1,38 @@
 #!/bin/bash
-CHECKAF="$1"
-if [ -z "$1" ]; then
-	echo -n "which service to pidof for?  "
-	read CHECKAF
+if [[ ! $1 ]]; then
+	echo -n "which service? "
+	read PIDWHO
 fi
+PIDWHO=$1
+CALU=( `pidof $PIDWHO` )
+clearPIDS() {
+ 	PIDGET=''
+ 	PIDALL=''
+}
+checkPIDS() {
+ 	PIDGET=( `pidof $PIDWHO | wc -w` )
+ 	PIDALL="${CALU[@]}"
+}
+printPID() {
+	checkPIDS
+ 	echo "Service $PIDWHO: $PIDGET"
+ 	#clearPIDS
+# 	exit 0
+}
 
-CHECKGET=( `pidof $CHECKAF` )
+## STARTING THE CHECK
+checkPIDS
 
-# if [ -z "$CHECKGET" ]; then
-#	RESULT=0
-# else
-#	RESULT="$( echo $CHECKGET | wc -w )"
-# fi
-#	echo $RESULT
-RESULT=`echo ${CHECKGET[@]} | wc -w`
-
-if [ "$RESULT" -gt 1 ]
-	then
-#	sudo ff.cpu.kill "ssh-agent"
-#	echo $RESULT
-	for p in "${CHECKGET[@]}"
-		do
-			kill -9 $p
-		done
-	else
-		echo "Not killing"
+if [[ "$PIDGET" -gt 1 ]]; then
+	echo "Halting: ${CALU[@]}"
+	kill ${CALU[@]}
+	printPID
 fi
-
+if [ "$PIDGET" = 1 ]; then
+ 	printPID
+fi
+#if [ "$PIDGET" = 0 ] || [ "$PIDGET" = '' ]; then
+ #	echo "No service on $PIDWHO"
+#fi
 exit 0
 

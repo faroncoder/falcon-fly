@@ -10,9 +10,9 @@ stopwatchtime() {
 # if [ "$1" != "" ]; then
 #################### BEGIN
 
-loadfunction1() {
+$1()) {
 
-	echo '';
+
 
 }
 
@@ -42,7 +42,7 @@ gethtml() {
         <script src=\"./jsc/js/appengine.js\" type=\"text/javascript\"></script>
         <script type=\"text/javascript\">
         \$(document).ready(function() {
-	
+
 	/* SED-CUSTOM-JS */
 
         }); //end ready
@@ -51,7 +51,7 @@ gethtml() {
 </html>" >> /tmp/test.html
 }
 
-getjava() { 
+getjava() {
 	echo "oh no....not this time, my dear"
 }
 
