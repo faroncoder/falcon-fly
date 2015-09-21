@@ -3248,3 +3248,5 @@ subl ff.git.update
 grep 'git' ~/.bash_history 
 ff6
 sudo amdcccle
+ff.git.update
+ls
