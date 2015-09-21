@@ -9,7 +9,7 @@ stopwatchtime(){
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
-GETALLGIT=( $( find "/home/faron/" -type d -name '.git' -exec dirname {} \; ) )
+GETALLGIT=( $( find /home/faron/.falcon -type d -name '.git' -exec dirname {} \; | tr '\n' ' ' ) )
 
 #CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 #CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
