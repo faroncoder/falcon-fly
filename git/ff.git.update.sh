@@ -9,35 +9,35 @@ stopwatchtime(){
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
-GETALLGIT=( $( find "/home/faron/.falcon/scripting/falcon-gits" -maxdepth 1 -type d  -exec basename {} \; | sed '/.git/d' ) )
+GETALLGIT=( $( find "/home/faron/" -type d -name '.git' -exec dirname {} \; ) )
+
+CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
+CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
+
 for p in "${GETALLGIT[@]}";
 do
+	git config --global push.default matching
+	git config --global push.default simple
 	echo "FALCON: Updating $p"
-	cd /home/faron/.falcon/scripting/falcon-gits/$( echo $p )
-	CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
-	CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
-	if [ -z "$CHECKNAME" ];
-		then
+	cd $p 2>/dev/null
+	if [ ! "$CHECKNAME" ]; then
 		git config --global user.name "faroncoder"
 	fi
-	if [ -z "$CHECKEMAIL" ];
-		then
+	if [ ! "$CHECKEMAIL" ]; then
 		git config --global user.email faronledger@gmail.com
 	fi
 
-	if [ ! -d "/home/faron/.falcon/scripting/falcon-gits/`echo $p`/.git" ];
-		then
-			git init
-	fi
-	CHECKCONF=$( grep 'url' /home/faron/.falcon/scripting/falcon-gits/$( echo $p )/.git/config )
-	if [ -z "$CHECKCONF" ];
-		then
-		git config --global push.default simple
-		git remote add origin
-		git fetch
-	fi
-	#git remote set-url origin git@github.com:faroncoder/$( echo $p).git
-	git fetch
+	# if [ ! -d "/home/faron/.falcon/scripting/falcon-gits/`echo $p`/.git" ]; then
+	# 		git init
+	# fi
+	# CHECKCONF=$( grep 'url' /home/faron/.falcon/scripting/falcon-gits/$( echo $p )/.git/config )
+	# if [ -z "$CHECKCONF" ];
+		# then
+		#git config --global push.default simple
+		
+	#fi
+	git remote set-url origin git@github.com:faroncoder/$p.git
+	git fetch						
 	git pull
 	git status
 	git add --all
@@ -45,29 +45,29 @@ do
 	git push
 done
 
-echo "FALCON: Updating falcon-fly"
-cd /home/faron/.falcon/scripts/falcon-fly
-CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
-	CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
-	if [ -z "$CHECKNAME" ];
-		then
-		git config --global user.name "faroncoder"
-	fi
-	if [ -z "$CHECKEMAIL" ];
-		then
-		git config --global user.email faronledger@gmail.com
-	fi
-	#git config --global push.default simple
-	#git remote add origin
-	git fetch
-	#git remote set-url origin git@github.com:faroncoder/falcon-fly.git
-	git pull
-	git status
-	git add --all
-	git commit -m "auto-committer"
-	git push
+# echo "FALCON: Updating falcon-fly"
+# cd /home/faron/.falcon/scripts/falcon-fly
+# CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
+# 	CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
+# 	if [ -z "$CHECKNAME" ];
+# 		then
+# 		git config --global user.name "faroncoder"
+# 	fi
+# 	if [ -z "$CHECKEMAIL" ];
+# 		then
+# 		git config --global user.email faronledger@gmail.com
+# 	fi
+# 	#git config --global push.default simple
+# 	#git remote add origin
+# 	git fetch
+# 	#git remote set-url origin git@github.com:faroncoder/falcon-fly.git
+# 	git pull
+# 	git status
+# 	git add --all
+# 	git commit -m "auto-committer"
+# 	git push
 
-# find "/home/faron/.falcon/scripting" -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > /tmp/x.txt
+# # find "/home/faron/.falcon/scripting" -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > /tmp/x.txt
 # 	#for f in "${GITLIST[@]}"; do
 # 	#	DRIVE="$( dirname $f )"
 # 	sed -i -e '/\/home\/faron\/.falcon\/scripting\/gits/d' /tmp/x.txt
