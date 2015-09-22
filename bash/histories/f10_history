@@ -3901,3 +3901,11 @@ git --help
 git commit help
 falcon
 git status
+git commit -a -m "updating"
+git pull
+git push
+git pull
+ls
+git status
+git add -A
+git push
