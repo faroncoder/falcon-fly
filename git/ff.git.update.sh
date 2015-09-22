@@ -9,7 +9,9 @@ stopwatchtime(){
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
-GETALLGIT=( $( find /home/faron/.falcon -type d -name '.git' -exec dirname {} \; | tr '\n' ' ' ) )
+GETALLGIT=( $( find ~/.falcon -type d -name '.git' -exec dirname {} \; | tr '\n' ' ' ) )
+
+	
 
 #CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 #CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
@@ -17,12 +19,12 @@ GETALLGIT=( $( find /home/faron/.falcon -type d -name '.git' -exec dirname {} \;
 for p in "${GETALLGIT[@]}";
 do
 	cd $p 2>/dev/null
-	git config --global push.default matching
-	git config --global push.default simple
+	THISGIT="$( basename $p ).git"
 	#git config --global user.name "faroncoder"
 	#git config --global user.email "faronledger@gmail.com"
-	echo "FALCON: Updating $p"
-
+	sleep 1
+	echo "FALCON: Updating $THISGIT"
+	sleep1 
 	# if [ ! "$CHECKNAME" ]; then
 	# 	git config --global user.name "faroncoder"
 	# fi

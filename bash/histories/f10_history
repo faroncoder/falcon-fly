@@ -3911,3 +3911,14 @@ git add -A
 git push
 git commit -a -m "updating"
 git push
+ff.git.update
+subl ~/.bin/ff.git.update
+cd; find ~/.falcon -type d -name '.git'
+cd; find ~/.falcon -type d -name '.git' -exec dirname {} \;
+cd; find ~/.falcon -type d -name '.git' -exec basename {} \;
+cd; find ~/.falcon -type d -name '.git' -exec dirname {} \;
+basename $( find ~/.falcon -type d -name '.git' -exec dirname {} \; )
+echo "$( basename $( find ~/.falcon -type d -name '.git' -exec dirname {} \; ).git ).git"
+echo "$( basename $( find ~/.falcon -type d -name '.git' -exec dirname {} \; ) ).git"
+find ~/.falcon -type d -name '.git' -exec dirname {} \; 
+falcon
