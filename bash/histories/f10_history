@@ -3886,3 +3886,18 @@ cd ..
 git push
 git push $PWD.git
 git push $( basename $PWD ).git
+ff.git.update
+ls
+cd .git
+cat config 
+subl config 
+cd ..
+git pull
+git status
+git commit -a
+git commit -a -c "updating"
+git commit -C "updating"
+git --help
+git commit help
+falcon
+git status
