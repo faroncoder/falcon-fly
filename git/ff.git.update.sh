@@ -19,8 +19,8 @@ do
 	cd $p 2>/dev/null
 	git config --global push.default matching
 	git config --global push.default simple
-	git config --global user.name "faroncoder"
-	git config --global user.email faronledger@gmail.com
+	#git config --global user.name "faroncoder"
+	#git config --global user.email "faronledger@gmail.com"
 	echo "FALCON: Updating $p"
 
 	# if [ ! "$CHECKNAME" ]; then
@@ -39,7 +39,7 @@ do
 		#git config --global push.default simple
 		
 	#fi
-	git remote set-url origin git@github.com:faroncoder/$p.git
+	git remote set-url origin "git@github.com:faroncoder/$p.git"
 	git fetch						
 	git pull
 	git status
