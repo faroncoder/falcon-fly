@@ -24,7 +24,7 @@ do
 	#git config --global user.email "faronledger@gmail.com"
 	sleep 1
 	echo "FALCON: Updating $THISGIT"
-	sleep1 
+	sleep 1 
 	# if [ ! "$CHECKNAME" ]; then
 	# 	git config --global user.name "faroncoder"
 	# fi
@@ -41,7 +41,7 @@ do
 		#git config --global push.default simple
 		
 	#fi
-	git remote set-url origin "git@github.com:faroncoder/$p.git"
+	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	git fetch						
 	git pull
 	git status

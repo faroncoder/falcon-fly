@@ -3922,3 +3922,4 @@ echo "$( basename $( find ~/.falcon -type d -name '.git' -exec dirname {} \; ).g
 echo "$( basename $( find ~/.falcon -type d -name '.git' -exec dirname {} \; ) ).git"
 find ~/.falcon -type d -name '.git' -exec dirname {} \; 
 falcon
+ff.git.update
