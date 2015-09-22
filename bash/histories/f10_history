@@ -3909,3 +3909,5 @@ ls
 git status
 git add -A
 git push
+git commit -a -m "updating"
+git push
