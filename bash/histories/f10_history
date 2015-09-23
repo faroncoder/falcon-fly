@@ -3939,3 +3939,629 @@ git update -ref
 git update-ref
 git update-ref --no-deref
 ls
+ff.git.update
+git commit --help
+git push --help
+git push --prune
+bashsr
+falcon
+git push --prune
+cd .git
+subl config
+cd ..
+ls projects/
+ff.cond
+ff.code
+ff.edit.alias
+eval ff.edit.alias
+eval ~/.bash_aliases 
+subl ~/.bash_aliases 
+bashsr
+ff.edit.profile
+ff6
+bashsr
+ff.edit.profile
+bashsr
+subl ~/.bin/ff.cpu.kill
+bashsr
+ff.edit.profile
+ff.edit.alias
+FALONGIT="https://github.com/faroncoder/falcon-fly/commits/master?author=faroncoder
+"
+$FALCONGIT
+curl $FALCONGIT
+curl --url "$FALCONGIT"
+curl -i ttp://git.io -F "url=https://github.com/faroncoder"
+curl -i ttp://git.io -F url="https://github.com/faroncoder"
+curl -i ttp://git.io -i url="https://github.com/faroncoder"
+curl -i ttp://git.io -i url=https://github.com/faroncoder
+curl -i ttp://git.io -i --url https://github.com/faroncoder
+curl -i ttp://git.io -i --url https://github.com/faroncoder > ~/curl-1.txt
+ls
+cat curl-1.txt 
+subl curl-1.txt
+ff.script.new
+falcon
+grep -r 'awk' * --text
+ff.alias.add
+source .bashrc
+ff.als
+ffalsls
+fflsals
+ff.edit.alias
+subl ~/.bash_aliases 
+source ~/bash_aliases
+source ~/.bash_aliases 
+ff.edit.profile
+ln -s /home/faron/.falcon/bash/inject 
+ls -al
+cd ~/.falcon/bash
+ls -al
+rm inject 
+sudo rm inject 
+ls -al
+ln -s /faron
+ls -al
+rm faron
+ls
+ls -al
+cp old
+cp old /dev/null 2>&1
+cp old 2>&1 /dev/null
+cp old 2> /dev/null
+cp old /dev/null 2> 
+cp old 2> /dev/null 
+cp old 2&1> /dev/null 
+cp old 2> /dev/null 
+cp old 2>&1 /dev/null 
+cp old 2>1 /dev/null 
+cp bullshit stdout >&1
+cp bullshit stderr >&2
+ls
+rm 1
+ls
+git clone https://gist.github.com/344361751c0110419b0f.git
+ls
+cd 344361751c0110419b0f/
+mv out-vs-err.sh ../
+rm $PWD
+ls
+cd ..
+ls
+cd
+falcon
+rm inject 
+ff.dl
+ff.clips
+ff.vid
+ff.tl
+ff.td
+ff.tdl
+ls
+ff.tl
+ff.tp
+ls -al
+ls
+cd
+ls
+trash-list
+trash-list | grep 'out*'
+trash-list | grep 'out-vs-err'
+cd /
+cd tmp
+ff.dl
+cd ..
+git clone https://gist.github.com/344361751c0110419b0f.git
+ls
+cd 344361751c0110419b0f/
+sha256sum out-vs-err.sh 
+eval sha256sum out-vs-err.sh 
+eval sha256sum out-vs-err.sh | awk '{ print $1 }'
+find ~/ -type f -exec sha256sum {} \; | awk '{ print $1 }'
+find ~/ -type f -exec sha256sum {} \; | awk '{ print $1 }' | grep '` sha256sum out-vs-err.sh | awk '{ print $1 }'`'
+find ~/ -type f -exec sha256sum {} \; | awk '{ print $1 }' | grep '` sha256sum out-vs-err.sh | awk \'{ print $1 }\'`'
+ls
+cd 344361751c0110419b0f/
+ls
+chmod +x out-vs-err.sh 
+ls
+./out-vs-err.sh 
+find ~/ -type f -exec sha256sum {} \; | awk '{ print $1 }' | grep '` sha256sum out-vs-err.sh | awk \"{ print $1 }\"`'
+ls
+mv out-vs-err.sh 1.sh
+ls
+./1.sh 
+./1.sh 2>&1 >/dev/null
+./1.sh >/dev/null 2>&1
+cp bs
+cp bs; echo stderr
+./1.sh >/dev/null 2>&1
+./1.sh 2>&1 >/dev/null
+cp bs >/dev/null 2>&1
+cp bs 2>&1 >/dev/null
+cp bs >/dev/null 2>&1
+ls
+cd ..
+rm -r 344361751c0110419b0f/
+ls
+safe-rm
+/bin/rm --help
+echo *falcon/[0-9]*{bar,baz}*
+ls
+fly
+touch 1baz
+ls
+cd 
+echo *falcon/[0-9]*{bar,baz}*
+echo *.falcon/[0-9]*{bar,baz}*
+ls *.falcon/[0-9]*{bar,baz}*
+ls *falcon/[0-9]*{bar,baz}*
+ls .falcon/[0-9]*{bar,baz}*
+ls .falcon/[0-9]{bar,baz}*
+ls .falcon *[0-9]*baz*
+ls .falcon/*[0-9]*baz*
+ls .falcon/*[0-9]*baz*[0-9]
+ls .falcon/*[0-9]*baz*[0-9]*
+ls .falcon/*[0-9][A-Za-z][0-9]*
+ls .falcon/*[0-9][A-Za-z]*
+ff.ip 
+ff.edit.alias
+ls
+cd /tmp
+source test
+ls -al
+ls
+cat test 
+source test
+ls
+ls -al
+chmod +x test
+ls -al
+source test 
+mv test ~/
+cd
+source test
+ls
+mv test exp
+ls
+source exp
+ls
+rm ff.edit.alias\=\"\ LNCH\=\\\"nano\\\"\;\ if\ \[\[\ \\\"\$\(\ hostname 
+ls
+chmod +x runtest 
+source .bash_aliases 
+ps -aux
+ps -aux | grep bash
+ps -aux | grep pts
+df -h
+cd ~/.bash
+fly
+rm 1baz 
+cd bash
+mv out-vs-err.sh ~/2out-vs-err.sh
+ls
+touch configs
+ls
+subl configs 
+eval ~
+eval ~/
+`cd`
+ls
+`eval cd ~/`
+exit
+eval ~/
+eval ~/ | cut -d":" -f 2
+eval ~/ /dev/null 2>1 
+eval ~/ /dev/null 2> 
+stdout
+echo stdout
+echo stderr
+eval stderr
+ls
+cat 2out-vs-err.sh 
+eval $( cd ~/ ) >/dev/null 2>&1 | cut -d":" -f 2
+eval $( cd ~/ ) >/dev/null 2>&1 
+exit
+cd
+eval "cd; printf $PWD"
+ls
+fly
+cd bash
+source configs 
+echo $MYHOME
+source configs 
+echo $MYHOME
+printf $MYHOME
+telnet 192.168.1.1 23
+falcon
+grep -r 'expect' *
+fly
+cd bash
+ls -al
+falcon
+cd bash/
+cd ..
+cd bin
+cat file-hidden-converter-to-visible.sh 
+ff.script.new
+ls -als
+ls -lAs
+ls
+ls -A
+ls
+ls -al
+cd
+ls -A
+ls .*
+printf -maxdepth 1 .*
+'
+
+/
+/\'
+ls
+falcon
+cd newbin/
+mv ff.files.visibilize.sh drft.files.visibilize.sh 
+ls
+cat github-sshlink.sh 
+-ls
+cd 
+find -L $PWD -type f
+find -L $PWD -maxdepth 1
+find -L $PWD -maxdepth 1 -type f
+ls
+ls -al
+find -L ~/ -exec ls -al {} \;
+find -L ~/ -maxdepth 1 -exec ls -al {} \; | grep 'lrwxrwxrwx'
+find -L ~/ -maxdepth 1 -type d -exec ls -al {} \; | grep 'lrwxrwxrwx'
+find -L -maxdepth 1 -type d -exec ls -al {} \; | grep 'lrwxrwxrwx'
+ls
+ls -al tmp
+find -L -maxdepth 1 -type d -exec ls -al {} \; | awk '{print $1 $9*}'
+find -L -maxdepth 1 -type d -exec ls -al {} \; | awk '{print $1 $9}'
+find -L -maxdepth 1 -type d -exec ls -al {} \; | awk '{print $1"|"$9}'
+bin
+ff.clean
+ls
+cd ..
+find -L -maxdepth 1 -type d -exec ls -al {} \; | awk '{print $1"|"$9 }'
+tree -L
+tree -l
+tree --help
+ls -lrt
+ls -lrt | grep ^l
+find . -type l
+ls
+find . -maxdepth 1 -type l
+find ~/.profile -type l
+ls
+find ~/Videos -type l
+tree -d Video
+tree -d Videos
+tree -d Videos -L
+tree -d Videos -L 1
+tree -d Videos -L 0
+tree -d Videos -L 1
+cd ..
+sudo mkdir -p exprtm
+ls
+sudo chown -R faron:faron exprtm
+ls exprtm/
+ls -al exprtm/
+ls
+cd exprtm/
+ls
+ln -s /home/exprtm/.profile
+ls
+ls -al
+rm .profile 
+ln -s /home/faron/.falcon/scripts/falcon-fly/bash/.profile
+ls -al
+ff.open
+ls
+ls -al
+source .profile
+ls -al
+ls
+ls -al
+exit
+cd ../
+cd exprtm/
+ls -al
+source .profile
+ff.edit.profile
+ls
+cd
+subl .profile
+cd ../exprtm/
+ls
+ls -al
+source .profile 
+ls -al
+falcon
+cd bash/
+ls
+ls -al
+cat configs 
+ls
+cd
+cd ../
+cd exprtm/
+ls
+ls -al
+source .profile
+ls -al
+ls
+ls -al
+source .profile 
+ls
+ls -al
+source .profile 
+ls
+ls -al
+rm .*
+ls
+ls -al
+ln -s /home/faron/.falcon/scripts/falcon-fly/bash/.profile 
+ls -al
+source .profile
+find $PATHFALCON/scripts/falcon-fly/bash -maxdepth 1 -type f -exec basename {} \;
+ls
+ls -al
+ln -s /home/faron/.falcon
+ls -al
+find $PATHFALCON/scripts/falcon-fly/bash -maxdepth 1 -type f -exec basename {} \;
+find $PATHFALCON/scripts/falcon-fly/bash -maxdepth 1 -type f ! -name 'configs' -exec basename {} \;
+source .profile
+ls -al
+cd .falcon
+cd ..
+ls
+ls -al
+mv .profile hold
+ls -al
+rm .*
+ls
+mv hold .profile
+ls
+ls -al
+source .profile 
+ls -al
+source .profile 
+ls
+ls -al
+source .profile 
+ls -al
+find -L $PATHFARON -maxdepth 1 -wholename \"$result\"
+ls
+ls -al
+ls
+find -L $PATHFARON -maxdepth 1
+ls -al
+find -L $PATHFARON -maxdepth 1 -type d
+ls ..
+find $PATHFARON -maxdepth 1 -type d
+find . -L
+find . type -L
+find . type -l
+find . -type l
+find . -type l -type d
+find . -type l -type f
+find . -type l 
+find . -type l -name '.profile'
+find . -type l -name '.profile' -exec ls -al {} \;
+find . -type l -name '.profile' -exec ls -al {} \; | awk '{print $1}'
+find . -type l -name '.profile' -exec ls -al {} \; | awk '{print $1}' | l[r|w|x][r|w|x][r|w|x]
+find . -type l -name '.profile' -exec ls -al {} \; | awk '{print $1}' | l*[r|w|x]*[r|w|x]*[r|w|x]*
+find . -type l -name '.profile' -exec ls -al {} \; | awk '{print $1}' 
+find . -type l -name '.profile' -exec ls -al {} \; -exec awk '{print $1}' \;
+ls
+ls -al
+source .profile 
+ls -al
+ls
+source .profile 
+ls
+ls -al
+source .profile 
+ls
+ls -al
+source .profile 
+ls
+ls -al
+ls
+ls -al
+rm .bin
+rm .falcon
+rm .ssh
+ls
+ls -al
+source .profile
+ls -al
+ls
+mv .profile profile
+ls
+rm .*
+ls -al
+mv profile .profile
+source .profile
+ls -al
+cd .bin
+cd ..
+cd .falcon
+ls
+cd ..
+ls
+ls -al
+ls
+source .profile
+ls
+ls -al
+cd .ssh/
+ls -al
+ls
+ls -al
+cd ..
+ls -al
+source .profile 
+ls -al
+cat .faronrc 
+./.faronrc
+ff.apt.fetch expect
+source .profile 
+cat .faronrc 
+./.faronrc 
+spawn
+which expect
+expect
+which send
+which spawn
+cat .faronrc
+rm -r .ssh
+source profile
+source .profile
+[A
+source .profile
+ls
+ls -al
+rm -r .ssh
+rename 's/.//g' .profile 
+ls -al
+mv .profile profile
+ls
+rm *
+ls
+ls -al
+rm .*
+ls
+ln -s /home/faron/.falcon/scripts/falcon-fly/bash/.profile
+ls -al
+source .profile
+ls -al
+source .profile
+ls
+source .profile
+ls
+source .profile
+ls
+ls -al
+ls .bin
+l
+ls
+ff.rm
+ls
+computer mistaken
+ls
+source .profile
+ls -al
+source .profile 
+cd
+cat .profile 
+source .profile
+cd ..
+cd exprtm/
+source .profile
+ls -al
+exit
+ls
+source .profile
+cd /home/exprtm/.
+ls
+source .profile
+cp .profile test
+cat test 
+ls
+./test
+echo $HOME
+./test
+source .profile
+cd
+source .profile
+echo $PWD | cut -d"/" -f 2
+echo $PWD | cut -d"/" -f 3
+source .profile
+cd 
+source .profile
+cd /home/exprtm/
+source .profile
+exit
+ff6
+npm search html cleaner
+which node
+whereis node
+which node
+ls /usr/bin/*
+npm search
+setup
+cd packs
+cp node-v4.1.0-linux-x64.tar.gz ~/
+cd
+tar -zxvf node-v4.1.0-linux-x64.tar.gz 
+cd node-v4.1.0-linux-x64/
+find /usr -type f -name 'node*'
+ls
+rm CHANGELOG.md 
+rm README.md 
+rm LICENSE 
+ls
+sudo cp -r -u * /usr/
+exsit
+exit
+falcon
+bin
+$SEDIT ff.cpu.kill
+subl ff.cpu.kill
+ls
+node
+npm install npm -g
+sudo npm install npm -g
+npm search html checker
+        node
+npm update -g npm
+ls /home
+cd root
+ls
+cd /home/root
+cd usr
+ls
+ls -al
+mkdir /home/root/usr/lib/node_modules; mv /usr/lib/node_modules/* /home/root/usr/lib/node_modules/
+ls;  
+mkdir lib
+sudo mkdir lib
+ls
+cd lib
+sudo mkdir node_modules
+ls
+sudo su
+exit
+ls
+cd /usr
+cd lib
+cd node_modules/
+subl 
+exit
+sudo su
+ls
+npm
+which npm
+ls
+cd ..
+cd bin
+ls npm*
+ls npm* --all
+ls npm* -ls
+ls
+npm
+which npm
+source .bashrc
+source ~/.bashrc
+ls
+sudo apt-get build-dep nodejs-dev
+which npm
+cd
+ls -al
+subl .profile
+falcon
+git fetch
+git pull

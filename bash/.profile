@@ -10,33 +10,17 @@ umask 002
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-	if [ ! -d $HOME/.falcon ]; then
-		ln -s /home/$USER/.falcon ~/.falcon
+	if [[ "$EUID" != 0 ]]; then
+		LOC="/home"
+	else
+		LOC=""
 	fi
-	if [ ! -d /home/$USER/.ssh ]; then
-		mkdir ~/.ssh
+	if [ "$HOME" != "$LOC/$( echo $PWD | cut -d"/" -f 3 )" ]; then
+		echo "BOOL is set for false matching"
+	else 
+		echo "BOOL matches!"
 	fi
-	DIRS=( .bin .ssh  )
-	for checkbin in "${DIRS[@]}"; do
-		if [ "$EUID" != 0 ]; then
-			if [ ! -d /root/$checkbin ]; then
-				mkdir /root/$checkbin -p 2>/dev/null
-			fi
-		else
-			if [ ! -d /home/$USER/$checkbin ]; then
-				mkdir /home/$USER/$checkbin -p 2>/dev/null
-
-			fi
-		fi
-	done
-	LOADER=( `find /home/faron/.falcon/bash -maxdepth 1 -type f ! -type d -exec basename {} \; ` )
-	for inject in "${LOADER[@]}";
-		do
-			if [ ! -f /home/$USER/$inject ]; then
-				ln -s /home/faron/.falcon/bash/$inject ~/$inject 2>/dev/null
-			fi
-		done
-		source ~/.bashrc
+	#	source ~/.bashrc
 fi
 
 

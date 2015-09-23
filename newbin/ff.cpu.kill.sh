@@ -4,6 +4,8 @@ if [[ ! $1 ]]; then
 	read PIDWHO
 fi
 PIDWHO=$1
+
+
 CALU=( `pidof $PIDWHO` )
 clearPIDS() {
  	PIDGET=''
@@ -25,7 +27,7 @@ checkPIDS
 
 if [[ "$PIDGET" -gt 1 ]]; then
 	echo "Halting: ${CALU[@]}"
-	kill ${CALU[@]}
+	sudo kill ${CALU[@]}
 	printPID
 fi
 if [ "$PIDGET" = 1 ]; then
