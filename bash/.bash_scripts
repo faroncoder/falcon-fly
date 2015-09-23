@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-# if [ "$EUID" != 0 ]; then
-# 	if [ ! "$( kill -9 $( pidof ssh-agent ) )" ]; then
-# 		SSH_AGENT_PID=""
-# 	fi
-# 	if [ -f "$SSH_ENV" ]; then
-# 		rm $SSH_ENV
-# 	fi
-# 	loadEnvironment
-# fi
-##	if [ "$EUID" = 1004 ] || [ "$EUID" == 1000 ]; then
-##	fi
-=======
-ssh-check() {
-	ff.cpu.kill ssh-agent
-	ssh-engine
-}
-
-ssh-engine() {
-	echo "Initializing SSH agent..."
-	chmod -R 0700 ~/.ssh
-	echo "privizating ~/.ssh : done"
-	ssh-agent; eval $( ssh-agent -s );
-	eval $( ssh-agent -s )
-	find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec /usr/bin/ssh-add {} \;
-}
->>>>>>> 4748ad32a0b930be846831c0cf2125fd5f744ff3
-
 loadScripts() {
 		if ! shopt -oq posix; then
 				if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -35,17 +7,6 @@ loadScripts() {
 				fi
 				alias rm="trash-put"
 		fi
-<<<<<<< HEAD
-=======
-	. ~/.bash_aliases
-	. ~/.bash_colors
-	. ~/.bash_todo
-	alias rm="trash-put"
-	fi
-	ssh-check	
-#fi
-
->>>>>>> 4748ad32a0b930be846831c0cf2125fd5f744ff3
 
 }
 
@@ -54,7 +15,6 @@ loadScripts
 DEFAULT="/home/faron/.bin:/usr/local/bin"
 JAVA_HOME="/usr/local/jvm/jdk1.8.0_60"
 JRE_HOME="/usr/local/jvm/jre1.8.0_60"
-<<<<<<< HEAD
 CLEANBINS="$PATH:$DEFAULT:$JAVA_HOME/bin:$JRE_HOME/bin"
 CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
 export PATH=$CLEANUP
@@ -89,18 +49,17 @@ loadScripts
 # fi
 
 #if [ "$EUID" = 1000 ] || [ "$EUID" = 1004 ]; then
-	loadEnvironment	
+	loadEnvironment
 #fi
 
-######### FARONIZED-MENU FUNCTION 
+######### FARONIZED-MENU FUNCTION
     function cd  {
     builtin cd "$@"
     RET=$?
-    if [ "$PWD" != "/" ]; then 
+    if [ "$PWD" != "/" ]; then
 	find ~/ -maxdepth 1 -type d -empty -exec rm -r {} \; 2>/dev/null
     fi
     ls
     return $RET
->>>>>>> 4748ad32a0b930be846831c0cf2125fd5f744ff3
 }
 
