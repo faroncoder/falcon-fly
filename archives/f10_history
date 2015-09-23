@@ -2931,6 +2931,7 @@ cd .ssh
 ls
 ssh-add -i ~/.ssh/id_github.pub 
 ssh-add ~/.ssh/id_github.pub 
+<<<<<<< HEAD:archives/f10_history
 scp -r ~/.falcon/scripts/falcon-fly faron@f7:~/.falcon/scripts/
 ls
 falcon
@@ -4808,3 +4809,5 @@ ls ..
 fly
 mkdir archives
 cd bash
+=======
+>>>>>>> 4748ad32a0b930be846831c0cf2125fd5f744ff3:bash/histories/f10_history
