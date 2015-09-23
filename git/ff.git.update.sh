@@ -43,10 +43,9 @@ do
 	#fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	git fetch						
-	git pull
 	git status
 	git add --all
-	git commit -m "auto-committer"
+	git commit -a -m "auto-$( hostname )-$( date )"
 	git push
 done
 

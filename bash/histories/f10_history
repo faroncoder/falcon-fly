@@ -3923,3 +3923,8 @@ echo "$( basename $( find ~/.falcon -type d -name '.git' -exec dirname {} \; ) )
 find ~/.falcon -type d -name '.git' -exec dirname {} \; 
 falcon
 ff.git.update
+git add
+git add .
+git status
+ls
+git status
