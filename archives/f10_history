@@ -4565,3 +4565,246 @@ subl .profile
 falcon
 git fetch
 git pull
+git stash
+git instaweb
+git instaweb --httpd apache2
+bin
+subl ff.cpu.kill
+subl ../.bash_scripts 
+ff.mongo.insert 
+ff.apt.fetch mongo
+dpkg --configure -a
+sudo dpkg --configure -a
+exit
+ff.apt.find vdpau
+falcon
+cd bin
+chmod +x ff.pidof.check.sh 
+rm ~/.bin/ff.bin.load 
+ls
+mv ff.bin.load.sh ff.load.sh
+./ff.load.sh ff.load.sh 
+source .bashrc
+source ~/.bashrc
+ls
+ff.load ff.pidof.check.sh 
+source ~/.bash_scripts 
+ff.pidof.check ssh-agentr
+ff.pidof.check ssh-agent
+ff.pidof.check
+ls
+ff.load ff.pidof.check.sh 
+bin
+ff.pidof.check ssh-agent
+source .bashrc
+source ~/.bashrc
+ff.pidof.check
+ff.pidof.check ssh-agent
+job 13204
+ls
+ff.pidof.check ssh-agent
+subl ../.bash_scripts 
+fly
+cd bash
+ls -al
+cd
+ls -al
+cat runtest
+ffdevn
+ls
+rm -r node*
+ls
+rm npm-debug.log 
+ls
+cat curl-1.txt 
+ls
+cd Downloads/
+mkdir -p ~/.falcon/setup/windows; mv Shockwave_Installer_Full.exe ~/.falcon/setup/windows/
+ls
+ff.bin.filename.cleanup 
+ls
+rename 's/.user.js/_user_js/g' youtubelinktitle.user.js 
+ls
+rename 's/.user.js/_user_js/g' redirectuserscripts.orgtouserscriptsmirror.org.user.js 
+ls
+cd ..
+cat runtest 
+ls
+rm runtest 
+cat exp 
+ls
+rm exp 
+ls
+cd defaultsnippets/
+cd
+ls -al
+cd tmp
+ls -al
+ls
+cd ~/.local/share/Trash/files/
+grep -r 'ln -s' *
+grep -r 'ln -s' * --text
+s
+ls
+ff.profile.edit
+ff.edit.profiel
+ff.edit.profile
+which ff.edit.alias
+bashsr
+ls
+source .bash_ssh
+source ~/.bash_ssh
+bashsr
+find ~/.falcon/bash -type -f 
+find ~/.falcon/bash -type f 
+find ~/.falcon/bash -type f -name '.*'
+fly
+cd bash
+find -L ~/.falcon/bash -type f -name '.*'
+find -L ~/.falcon/bash -maxdepth 1 -type f -name '.*'
+source ~/.falcon/bash/.bash_functions 
+searchFiles
+cd
+searchFiles
+echo "$( find -L ~/$jasdf -maxdepth 1 -type l )"
+find -L ~/$jasdf -maxdepth 1 -type l 
+find -L ~/.profile -maxdepth 1 -type l 
+find -L ~/ -maxdepth 1 -type l -name '.bashrc'
+find ~/ -maxdepth 1 -type l -name '.bashrc'
+ls
+ls -al
+find ~/ -maxdepth 1 -type l -name '.bashrc'
+searchFiles
+find --help
+falcon
+cd bash
+source .bash_functions 
+cd
+searchFiles
+source ~/.falcon/bash/.bash_functions 
+searchFiles
+source ~/.falcon/bash/.bash_functions 
+searchFiles
+source ~/.falcon/bash/.bash_functions 
+sudo su
+ls
+cd .ssh
+cat id_github
+ls
+cat id_github.pub 
+cat id_github
+ssh -T git@github.com
+ssh -T git@github.com > /tmp/result_ssh 2>&1
+ls
+ls -al
+ls /tmp
+cat /tmp/result_ssh 
+ls
+ssh -T git@github.com > /tmp/result_ssh 2>&1
+if [[ "$CHECK" = 'successfully authenicated' ]]; then echo `eval $CHECK /dev/null 2>&1` fi;  ;
+if [[ "$CHECK" = 'successfully authenicated' ]]; then echo `eval $CHECK /dev/null 2>&1`; fi
+echo $CHECK
+if [[ "$CHECK" = "successfully authenicated" ]]; then echo $CHECK; fi
+cat /tmp/ssh-
+cat /tmp/ssh-results
+cat /tmp/ssh-result
+ssh -T git@github.com > /tmp/result_ssh 2>&1
+grep 'successfully authenticated' /tmp/result_ssh
+if [[ -z ! "$CHECK" ]]; then echo "Your SSH to github.com is set!" fi
+if [[ ! -z "$CHECK" ]]; then echo "Your SSH to github.com is set!" fi; ;
+if [[ ! -z "$CHECK" ]]; then echo "Your SSH to github.com is set!"; fi
+CHECK="$( grep 'successfully authenticated' /tmp/result_ssh )"
+ssh -T git@github > ~/tmp/testtest
+ls
+cd ..
+sudo mv .ssh ../ssh
+ls
+ls -al
+ls
+exi
+exit
+ls
+source ~/.falcon/bash/.bash_functions 
+ls
+falcon
+ls
+source ~/.falcon/bash/.bash_functions 
+LS
+ls -al
+cd
+source ~/.falcon/bash/.bash_functions 
+ls
+ls -al
+source ~/.falcon/bash/.bash_functions 
+getBashFiles
+ssh -T git@github.com
+ls
+cd .ssh
+ls -al
+ls
+ls -al
+chmod -R 0700 *
+ssh-engine
+getBashFiles
+source ~/.falcon/bash/.bash_functions 
+getBashFiles
+cd ..
+mv ssh faron/.falcon/setup/confgs/
+sudo mv ssh faron/.falcon/setup/confgs/
+ls
+cd
+cd .falcon/
+cd setup/
+ls confgs/
+mv confgs ../config
+ls
+cd ..
+cd cd config/
+cd config/
+cd ssh/
+ls
+ls ~/.ssh
+rm id_rsa*
+ls
+rm id_network*
+ls
+rm known_hosts 
+ls
+exit
+ls
+ls -al
+source .bash_functions 
+getBashFiles
+ls ~/.ssh
+getBashFiles
+ssh -T git@github.com
+ls
+su falcon
+sudo adduser falcon sudo
+ls
+cd ~/.falcon/
+cd bash
+su falcon
+which source
+echo $PATH
+export PATH=$PATH
+source
+source .profile
+source ~/.bashrc
+find ~/ -maxdepth 1 -type l ! -name '.profile' -name '.bash_*'  ! -name '.bash_history' ! -name '.bash_logout' -exec echo {} \;
+source ~/.bashrc
+grep -r 'source' *
+ff.clean
+ls -al
+chmod +x .bash_ssh 
+sudo chmod +x .bash_ssh 
+ls
+ls -al
+chmod +x bash_setup 
+ls -al
+grep -r 'source' *
+ls
+ls ..
+fly
+mkdir archives
+cd bash

@@ -10,17 +10,14 @@ umask 002
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-	if [[ "$EUID" != 0 ]]; then
-		LOC="/home"
-	else
-		LOC=""
-	fi
-	if [ "$HOME" != "$LOC/$( echo $PWD | cut -d"/" -f 3 )" ]; then
-		echo "BOOL is set for false matching"
-	else 
-		echo "BOOL matches!"
-	fi
-	#	source ~/.bashrc
+	find /home/faron/.falcon/scripts/falcon-fly/bash -maxdepth 1 ! -name '.profile' -name '.bash_*'  ! -name '.bash_history' ! -name '.bash_logout' -exec ln -s {} \; > /dev/null 2>&1
+	#GETALL=( $( find ~/ -maxdepth 1 -type l -name '.*' ! -name '.bash_history' ! -name '.*help*' ! -name '.bash_logout' ! -name '.profile' ) )
+	#for z in "${GETALL[@]}"; do
+		source $z
+#	done
+
+	#ssh-check
+	source ~/.bashrc
 fi
 
 
