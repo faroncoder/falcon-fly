@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
+  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/fly/logs/scripts.log
   #exit 0
 }
 ######## IGNORE ABOVE -- LOGGING PURPOSE ########
@@ -14,7 +14,7 @@ if [ "$PATHDIRHOME" = '' ]; then
 				PATHDIRHOME="$PWD"
 			fi
 JSCFILE="jsc-build.tar.bz2"
-BIN="/home/faron/.falcon/scripts/falcon-fly/htmls/VAULT/$JSCFILE"
+BIN="/home/fly/scripts/falcon-fly/htmls/VAULT/$JSCFILE"
 
 if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "

@@ -19,8 +19,8 @@ function getBootstrap() {
 	if [[ ! -d "$PATHDIRHOME/jsc/css/custom" ]]; then
 				cd $PATHDIRHOME
 				mkdir -p $PATHDIRHOME/jsc/css/custom
-				cp /home/faron/.falcon/scripts/falcon-fly/data/VAULT/bootstrap.min.css.txt $PATHDIRHOME/jsc/css/custom/bootstrap.min.css
-				cp /home/faron/.falcon/scripts/falcon-fly/data/VAULT/bootstrap-responsive.min.css.txt $PATHDIRHOME/jsc/css/custom/bootstrap-responsive.min.css
+				cp /home/fly/scripts/falcon-fly/data/VAULT/bootstrap.min.css.txt $PATHDIRHOME/jsc/css/custom/bootstrap.min.css
+				cp /home/fly/scripts/falcon-fly/data/VAULT/bootstrap-responsive.min.css.txt $PATHDIRHOME/jsc/css/custom/bootstrap-responsive.min.css
 				cd $PATHDIRHOME/jsc/css
 				ln -s custom/bootstrap.min.css
 				ln -s custom/bootstrap-responsive.min.css

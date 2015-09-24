@@ -24,7 +24,7 @@ if [[ "$( hostname )" == "f10" ]]; then
 			# if not have it - install it.
 	 		echo "/home/faron/var/Streamings/files/factory-mp4/output  192.168.1.10/24(rw,sync,no_subtree_check)
 			/home/faron/var/Streamings/files/factory-mp4/mkv  192.168.1.10/24(rw,sync,no_subtree_check)
-			/home/faron/.falcon 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+			/home/fly 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 		else
 			echo "all of export folders of your preference is already set"
 		fi
@@ -44,7 +44,7 @@ if [[ "$( hostname )" == "f10" ]]; then
 		fi
 		if [[ -z "$( grep '.falcon' /etc/exports )" ]]; then
 			echo "nope you dont have falcon"
-			echo "/home/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+			echo "/home/fly  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 			echo "now you have falcon"
 		else
 			echo "/falcon for /etc/exports is already set"
@@ -53,7 +53,7 @@ else
 	## if it is a client then reconfigure
 	if [[ ! "$( grep 'falcon' /etc/fstab )" ]]; then
 		echo "nope you dont have 'falcon' in fstab"
-		echo "//192.168.1.10/falcon /home/faron/.falcon  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
+		echo "//192.168.1.10/falcon /home/fly  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
 		echo "/falcon for /etc/fstab configured"
 	else
 		echo "/falcon for /etc/fstab is already set"
@@ -76,7 +76,7 @@ else
 	if [[ ! -f "/home/faron/.smbcredentials" ]]; then
 	## adding credits for NFS
 		echo "adding creditals"
-		cp /home/faron/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
+		cp /home/fly/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
 		echo "creditals creation completed"
 	else
 		echo "creditals already is in the system"

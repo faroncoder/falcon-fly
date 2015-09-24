@@ -3,11 +3,11 @@ startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
+  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/fly/logs/scripts.log
   exit 0
 }
 
-#GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
+#GITLIST=( "$(find /home/fly/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
 GETALLGIT=( $( find ~/.falcon -type d -name '.git' -exec dirname {} \; | tr '\n' ' ' ) )
 
@@ -33,10 +33,10 @@ do
 	# 	git config --global user.email faronledger@gmail.com
 	# fi
 
-	# if [ ! -d "/home/faron/.falcon/scripting/falcon-gits/`echo $p`/.git" ]; then
+	# if [ ! -d "/home/fly/scripting/falcon-gits/`echo $p`/.git" ]; then
 	# 		git init
 	# fi
-	# CHECKCONF=$( grep 'url' /home/faron/.falcon/scripting/falcon-gits/$( echo $p )/.git/config )
+	# CHECKCONF=$( grep 'url' /home/fly/scripting/falcon-gits/$( echo $p )/.git/config )
 	# if [ -z "$CHECKCONF" ];
 		# then
 		#git config --global push.default simple
@@ -51,7 +51,7 @@ do
 done
 
 # echo "FALCON: Updating falcon-fly"
-# cd /home/faron/.falcon/scripts/falcon-fly
+# cd /home/fly/scripts/falcon-fly
 # CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 # 	CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
 # 	if [ -z "$CHECKNAME" ];
@@ -72,7 +72,7 @@ done
 # 	git commit -m "auto-committer"
 # 	git push
 
-# # find "/home/faron/.falcon/scripting" -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > /tmp/x.txt
+# # find "/home/fly/scripting" -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > /tmp/x.txt
 # 	#for f in "${GITLIST[@]}"; do
 # 	#	DRIVE="$( dirname $f )"
 # 	sed -i -e '/\/home\/faron\/.falcon\/scripting\/gits/d' /tmp/x.txt

@@ -14,7 +14,7 @@ if [ ! "$EUID" = 0 ]; then
     stopwatchtime
 fi
 
-APTLIST="/home/faron/.falcon/apt/aptlist.list"
+APTLIST="/home/fly/apt/aptlist.list"
 
 
 

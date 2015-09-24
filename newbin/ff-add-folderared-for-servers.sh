@@ -264,7 +264,7 @@ echo "
     directory mask = 0777
 
 [falcon]
-	path = /home/faron/.falcon
+	path = /home/fly
 	valid users = faron
 	writeable = yes
 	browseable = yes
@@ -311,7 +311,7 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			if [[ ! -f "/home/faron/.smbcredentials" ]]; then
 			## adding credits for NFS
 				echo "adding creditals"
-				#cp /home/faron/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
+				#cp /home/fly/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
 				#echo "creditals creation completed"
 			fi
 	else
@@ -333,7 +333,7 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			fi
 			if [[ ! "$( grep '.falcon' /etc/exports )" ]]; then
 				echo "nope you dont have falcon"
-				echo "/home/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "/home/fly  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 				echo "now you have falcon"
 			else
 				echo "/falcon for /etc/exports is already set"

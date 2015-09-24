@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 typedest="$1"
 appname="$2"
-binpull="$HOME/.falcon/scripts/falcon-fly/app/libsafe"
+binpull="/home/fly/scripts/falcon-fly/app/libsafe"
 if [ -z $1 ]
 	then
 	echo -n "HTML or Node? "

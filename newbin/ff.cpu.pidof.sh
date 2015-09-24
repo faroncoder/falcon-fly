@@ -1,28 +1,23 @@
 #!/bin/bash
-CHECKAF="$1"
-if [ -z "$1" ]; then
+PIDWHO="$1"
+if [ -z "$PIDWHO" ]; then
 	echo -n "which service to pidof for?  "
-	read CHECKAF
+	read PIDWHO
 fi
+CHECKGET=( `pidof $PIDWHO` )
+NODCALL=`echo ${CHECKGET[@]} | wc -w `
+clearPIDS() {
+ 	PIDGET=''
+ 	PIDALL=''
+ }
+checkPIDS() {
+ 	clearPIDS
+ 	PIDGET="$NODCALL"
+ 	PIDALL="${CHECKGET[@]}"
+ 	echo "Current: $PIDWHO $PIDGET  ${CHECKGET[@]}"
+}
 
-CHECKGET=( `eval pidof $CHECKAF` )
+checkPIDS
 
-if [ -z "$CHECKGET" ]; then
-	RESULT=0
-else
-	RESULT=1
-fi
-
-if [[ "$RESULT" == 0 ]]; then
-		## no action
-		echo "" > /dev/null
-	fi
-
-if [[ "$RESULT" == 1 ]]; then
-		#echo "FALCON:  $CHECKAF pid is running => $(
-		PIDOF_GET=`echo ${CHECKGET[@]}`
-		#for k in "${CHECKGET[@]}"; do printf $k; done
-		#)"
-	fi
 exit 0
 

@@ -3,7 +3,7 @@ startgreen=`date +%s`
 ##POPULATING VARIABLES
 HOMEPATH="/home/faron/var/streamings/files"
 timestamp="$( date )"
-LOG="$HOME/.falcon/logs/media-encoding.log"
+LOG="/home/fly/logs/media-encoding.log"
 HEIGHTWT="$1"
 ## collecting files into array but in order of size and if they are mkv files
 

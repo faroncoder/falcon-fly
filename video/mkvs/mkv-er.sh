@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 
 #cd /home/faron/var/streamings/files/raw
-#$HOME/.falcon/scripts/falcon-fly/.bin/file-name-cleaner.sh
+#/home/fly/scripts/falcon-fly/.bin/file-name-cleaner.sh
 /home/faron/.bin/.bin/file-name-cleaner
 mv *.mkv mkv/
 

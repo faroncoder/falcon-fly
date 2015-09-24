@@ -7,7 +7,7 @@ stopwatchtime() {
 	exit 0
 }
 #################### BEGIN
-cd /home/faron/.falcon/vm  2> /dev/null
+cd /home/fly/vm  2> /dev/null
 
 
 
