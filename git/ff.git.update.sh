@@ -9,23 +9,23 @@ stopwatchtime(){
 
 #GITLIST=( "$(find /home/fly/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
-GETALLGIT=( $( find ~/.falcon -type d -name '.git' -exec dirname {} \; | tr '\n' ' ' ) )
+GETALLGIT=( $( find /home/fly/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
-	
+
 
 #CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 #CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
 
 for p in "${GETALLGIT[@]}";
 do
-	cd $p 2>/dev/null
+	cd $p 2> /dev/null
 	THISGIT="$( basename $p ).git"
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	#git config --global user.name "faroncoder"
 	#git config --global user.email "faronledger@gmail.com"
 	sleep 1
 	echo "FALCON: Updating $THISGIT"
-	sleep 1 
+	sleep 1
 	# if [ ! "$CHECKNAME" ]; then
 	# 	git config --global user.name "faroncoder"
 	# fi
@@ -40,10 +40,11 @@ do
 	# if [ -z "$CHECKCONF" ];
 		# then
 		#git config --global push.default simple
-		
+
 	#fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
-	git fetch						
+	git fetch
+	git pull
 	git status
 	git add --all
 	git commit -a -m "auto-$( hostname )-$( date )"

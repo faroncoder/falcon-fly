@@ -9,16 +9,10 @@
 umask 002
 
 # if running bash
-
-
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -z "~/.bashrc" ]; then
-	ln -s /home/faron/.falcon/bash/.bashrc ~/.bashrc
-    fi
-	source ~/.bashrc
-
+	source $HOME/.bashrc
 fi
+
 
 
 

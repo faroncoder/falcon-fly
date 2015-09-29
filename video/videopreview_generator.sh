@@ -41,7 +41,7 @@ if [ "$NB_FRAMES" = "N/A" ]; then
     # as a fallback we'll use ffmpeg. This command basically copies this
     # video to /dev/null and it counts frames in the process.
     # It's slower (few seconds usually) than ffprobe but works everytime.
-    NB_FRAMES=`ffmpeg -nostats -i "$MOVIE" -vcodec copy -f rawvideo -y /dev/null 2>&1 | grep frame | awk '{split($0,a,"fps")}END{print a[1]}' | sed 's/.*= *//'`
+    NB_FRAMES=`ffmpeg -nostats -i "$MOVIE" -vcodec copy -f rawvideo -y 2> /dev/null | grep frame | awk '{split($0,a,"fps")}END{print a[1]}' | sed 's/.*= *//'`
 fi
 
 # calculate offset between two screenshots, drop the floating point part
