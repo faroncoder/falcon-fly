@@ -20,6 +20,9 @@ for p in "${GETALLGIT[@]}";
 do
 	cd $p 2> /dev/null
 	THISGIT="$( basename $p ).git"
+	if [[ "$THISGIT" = "scripts" ]]; then
+		THISGIT="falcon-fly.git"
+	fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	#git config --global user.name "faroncoder"
 	#git config --global user.email "faronledger@gmail.com"
