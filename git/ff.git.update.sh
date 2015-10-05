@@ -19,8 +19,8 @@ GETALLGIT=( $( find /home/fly/scripts -type d -name '.git' -exec dirname {} \;  
 for p in "${GETALLGIT[@]}";
 do
 	cd $p 2> /dev/null
-	THISGIT="$( basename $p ).git"
-	if [[ "$THISGIT" = "scripts" ]]; then
+	THISGIT="$( basename $PWD ).git"
+	if [[ "$THISGIT" = 'scripts.git' ]]; then
 		THISGIT="falcon-fly.git"
 	fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
