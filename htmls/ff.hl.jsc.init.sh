@@ -14,7 +14,7 @@ if [ "$PATHDIRHOME" = '' ]; then
 				PATHDIRHOME="$PWD"
 			fi
 JSCFILE="jsc-build.tar.bz2"
-BIN="/home/fly/scripts/falcon-fly/htmls/VAULT/$JSCFILE"
+BIN="/home/fly/scripts/htmls/VAULT/$JSCFILE"
 
 if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "
@@ -80,7 +80,7 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 # 		if [ -z "$PATHDIRHOME" ]; then
 # 			echo -n "Name of project? "
 # 			read PROJECTNAME
-# 			PATHDIRHOME="/home/www/html/privs/$PROJECTNAME"
+# 			PATHDIRHOME="/home/srv/htdocs/privs/$PROJECTNAME"
 # 			mkdir -p $PATHDIRHOME
 # 			touch $PATHDIRHOME/.falcon_fly
 # 			if [ -f "$PATHDIRHOME/.falcon_fly" ]; then

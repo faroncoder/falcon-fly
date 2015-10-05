@@ -23,7 +23,7 @@ if [ "$typedest"=="h" ] || [ "$typedest"=="H" ]
 	pathdir="/home/faron/var/Scripts/htmls/projects/$appname"
 fi
 
-binpull="/home/fly/scripts/falcon-fly/app/libsafe"
+binpull="/home/fly/scripts/app/libsafe"
 	cd $pathdir
 	cp $binpull/jsc-build.tar.bz2 ./
 	echo "unpacking jsc build"

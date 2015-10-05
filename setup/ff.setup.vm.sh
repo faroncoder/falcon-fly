@@ -44,8 +44,8 @@ sudo sh -c "echo \"
         Options FollowSymLinks
         AllowOverride None
     </DIRECTORY>
-    <DIRECTORY /var/www/SKELETON/>
-        Options +FollowSymLinks
+    <DIRECTORY /srv/www/SKELETON/>
+        Options +Indexes +FollowSymLinks
         AllowOverride All
     </DIRECTORY>
 
@@ -75,9 +75,12 @@ sudo apt-get install -y php5 php-pear php5-dev php5-gd php5-curl php5-mcrypt 2> 
 
 yes | sudo pecl install memcache 2> /dev/null
 
-sudo touch /etc/php5/conf.d/memcache.ini
-sudo echo "extension=memcache.so" >> /etc/php5/conf.d/memcache.ini
-sudo echo "memcache.hash_strategy=\"consistent\"" >> /etc/php5/conf.d/memcache.ini
+sudo touch /etc/php5/cli/conf.d/memcache.ini
+sudo touch /etc/php5/apache2/conf.d/memcache.ini
+sudo sh -c "echo \"extension=memcache.so\" >> /etc/php5/apache2/conf.d/memcache.ini"
+sudo sh -c "echo \"extension=memcache.so\" >> /etc/php5/cli/conf.d/memcache.ini"
+sudo sh -c "echo \"memcache.hash_strategy=\"consistent\"\" >> /etc/php5/cli/conf.d/memcache.ini"
+sudo sh -c "echo \"memcache.hash_strategy=\"consistent\"\" >> /etc/php5/apache2/conf.d/memcache.ini"
 
 # if /var/www is not a symlink then create the symlink and set up apache
 if [ ! -h /var/www ];

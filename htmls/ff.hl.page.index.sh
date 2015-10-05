@@ -10,8 +10,8 @@ stopwatchtime() {
 
 #################### BEGIN
 
-#PATHDIR=/var/www/html/.jsc/projects
-APP="/var/www/html/.jsc/projects/`basename $1`"
+#PATHDIR=/srv/www/htdocs/.jsc/projects
+APP="/srv/www/htdocs/.jsc/projects/`basename $1`"
 if [ "$APP" = '' ]; then
 	echo "Aborting : no path for the project specificed. "
 	stopwatchtime
@@ -25,7 +25,7 @@ fi
 
 if [ ! -f "$APP/index.html" ];
 	then
-	sudo cp "/home/fly/scripts/falcon-fly/htmls/VAULT/html-full.txt" "$APP/index.html"
+	sudo cp "/home/fly/scripts/htmls/VAULT/html-full.txt" "$APP/index.html"
 	echo "index.html created in $APP"
 	else
 	echo "index.html exists ($APP/index.html)."

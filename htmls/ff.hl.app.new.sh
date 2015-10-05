@@ -10,7 +10,7 @@ stopwatchtime() {
 
 #################### BEGIN
 
-#PATHDIR=/var/www/html/.jsc/projects
+#PATHDIR=/srv/www/htdocs/.jsc/projects
 APPNAME="$1"
 if [ -z "$APPNAME" ]; then
 echo -n "name of new project? "
@@ -19,7 +19,7 @@ APPNAME=`basename $APPNAME`
 fi
 
 
-APPLOC="/var/www/html/.jsc/projects/$APPNAME"
+APPLOC="/srv/www/htdocs/.jsc/projects/$APPNAME"
 
 if [ ! -d "$APPLOC" ]; then
 	echo "create $APPNAME?"
