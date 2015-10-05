@@ -11,7 +11,7 @@ ssh-engine() {
 }
 
 ssh-check() {
-	/home/faron/.bin/./ff.cpu.pidof ssh-agent
+	ff.cpu.pidof ssh-agent
 	# GETRESULT="$( /home/faron/.bin/./ff.cpu.pidof ssh-agent | cut -d\":\" -f2 )"
 }
 
