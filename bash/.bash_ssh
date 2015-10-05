@@ -7,7 +7,7 @@ ssh-engine() {
 	echo "privizating $HOME/.ssh : done"
 	ssh-agent;
 	eval $( ssh-agent -s );
-	find -L "$HOME/.ssh" -type f ! -type d -name 'id_*' ! -name '*.pub' -exec /usr/bin/ssh-add {} \;
+	find -L "$HOME/.ssh" -type f ! -type d -name 'id_*' ! -name '*.pub' -exec /usr/bin/ssh-add {} \; 2> /dev/null
 }
 
 ssh-check() {
