@@ -1,11 +1,12 @@
+#!/bin/bash
 ################
 ####LISTING ALL TODO TASKS
 
-function fftasklist {
+ff.task.list() {
     yokadi t_list
 }
 
-function ffnewtask {
+ff.task.new() {
 COLLECTPROJ="$1"
 TASKDESP="$2"
 
@@ -44,24 +45,24 @@ fftasklist
 
 fftasklist
 
-function ffnewals {
+function ff.new.alias1 {
         echo -n "alias name? "
         read ALSIANAME
         echo -n "command for $ALSIANAME? "
         read ALSCOMM
        echo "alias $ALSIANAME=\"   $ALSCOMM\"
-       " >> /home/faron/bin/core/data/bash/bash_aliases.list
+       " >> /home/faron/.falcon/scripts/bash/.bash_aliases
         echo "alias added: $ALSIANAME"
         clear
         bashsr
 }
 
-function fflsals {
+function ff.list.alias {
     GETLISTINGALS="$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )"
     echo "$GETLISTINGALS"
 }
 
-function ffalsdel {
+function ff.remove.alias {
     fflsals
     echo -n "which alias to remove? "
     read FINDALIASDEL
@@ -69,8 +70,9 @@ function ffalsdel {
         then
             echo "alias not found"
         else
-            sed -i -e "/$FINDALIASDEL/d" /home/faron/bin/core/data/bash/bash_aliases.list
+            sed -i -e "/$FINDALIASDEL/d" /home/faron/.falcon/scripts/bash/.bash_aliases
         fi
     clear
     bashsr
 }
+
