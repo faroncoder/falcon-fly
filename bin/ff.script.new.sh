@@ -1,6 +1,6 @@
 #!/bin/bash
 newfile="$1"
-newbin="/home/fly/scripts/newbin"
+newbin="~/.falcon/scripts/newbin"
 if [ -z "$1" ]; then
 	echo -n "name of new file? "
 	read newfile

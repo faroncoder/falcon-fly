@@ -24,7 +24,7 @@ fi
 
 if [ ! -f "$APP/index.html" ];
 	then
-	sudo cp "/home/fly/scripts/htmls/VAULT/css-full.txt" "$APP/.jsc/css/style-BASE.css"
+	sudo cp "~/.falcon/scripts/htmls/VAULT/css-full.txt" "$APP/.jsc/css/style-BASE.css"
 	ff.hl.css.glop $$APP
 	echo "$APP: style-BASE loaded."
 	else

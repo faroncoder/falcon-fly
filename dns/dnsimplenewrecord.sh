@@ -5,8 +5,8 @@ function newrecord {
 curl  -H "X-DNSimple-Token: $ACCESSAPI" -H "Accept: application/json" -H "Content-Type: application/json" -X "POST" -d "{ \"record\": { \"name\": \"$NAME\", \"record_type\": \"$RECORD_TYPE\", \"content\": \"$IP\" }}" --url "https://api.dnsimple.com/v1/domains/$DOMAIN_ID/records/$RECORD_ID"
 }
 
-LOGIN="$( cat /home/fly/data/private/dnsimple.txt | head -n1 )"
-TOKEN="$( cat /home/fly/data/private/dnsimple.txt | tail -n1 )"
+LOGIN="$( cat ~/.falcon/data/private/dnsimple.txt | head -n1 )"
+TOKEN="$( cat ~/.falcon/data/private/dnsimple.txt | tail -n1 )"
 ACCESSAPI="$LOGIN:$TOKEN"
 IP="$( curl http://icanhazip.com )"
 

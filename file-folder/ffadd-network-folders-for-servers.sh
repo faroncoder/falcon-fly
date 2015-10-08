@@ -21,7 +21,7 @@ if [[ ! "$EUID" = 0 ]]; then
 				# if not have it - install it.
 		 		echo "/home/faron/var/Streamings/files/factory-mp4/output  192.168.1.10/24(rw,sync,no_subtree_check)
 				/home/faron/var/Streamings/files/factory-mp4/mkv  192.168.1.10/24(rw,sync,no_subtree_check)
-				/home/fly 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				~/.falcon 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 			else
 				echo "all of export folders of your preference is already set"
 			fi
@@ -39,18 +39,18 @@ if [[ ! "$EUID" = 0 ]]; then
 			else
 				echo "/mkv for /etc/exports is already set"
 			fi
-			if [[ ! "$( grep '.falcon' /etc/exports )" ]]; then
-				echo "nope you dont have falcon"
-				echo "/home/fly  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
-				echo "now you have falcon"
+			if [[ ! "$( grep '~/.falcon' /etc/exports )" ]]; then
+				echo "nope you dont have~/.falcon"
+				echo "~/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "now you have~/.falcon"
 			else
-				echo "/falcon for /etc/exports is already set"
+				echo "~/.falcon for /etc/exports is already set"
 			fi
 				
 		else
 			## if it is a client then reconfigure
-			if [[ -z "$( grep 'falcon' /etc/fstab )" ]]; then
-				echo "//192.168.1.10/falcon /home/fly  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
+			if [[ -z "$( grep ~/.falcon' /etc/fstab )" ]]; then
+				echo "//192.168.1.10~/.falcon ~/.falcon  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
 			fi
 			if [[ -z "$( grep 'output' /etc/fstab )" ]]; then
 				echo "//192.168.1.10/output /home/faron/var/Streamings/files/engine/factory-mp4/output  cifs  credentials=/home/faron/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
@@ -60,7 +60,7 @@ if [[ ! "$EUID" = 0 ]]; then
 			fi
 			if [[ ! -f "/home/faron/.smbcredentials" ]]; then
 			## adding credits for NFS
-			cp /home/fly/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
+			cp ~/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
 			fi
 		fi
 fi

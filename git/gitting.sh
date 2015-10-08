@@ -13,7 +13,7 @@ if [ -z $2 ]
 	read app
 fi
 pathdir="/home/www/$dom/html/$app"
-binpull="home/faron/.bin/core/scripts/falcon-fly"
+binpull="home/faron/.bin/core/scripts~/.falcon-fly"
 ##########################
 if [ ! -d "/home/www/$dom" ]
 	then

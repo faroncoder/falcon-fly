@@ -4,7 +4,7 @@ startgreen=`date +%s`
 COLELCT=( `find -L /home/faron/.config/sublime-text-3/Packages/User -maxdepth 1 -type f -name '*-snippet' -exec basename {} \;` )
 if [  "$COLELCT" != '' ]; then
 	for snippet in "${COLELCT[@]}"; do
-		mv "/home/faron/.config/sublime-text-3/Packages/User/$snippet" "/home/fly/code/sublime/mysnippets/$snippet" 2> /dev/null
+		mv "/home/faron/.config/sublime-text-3/Packages/User/$snippet" "~/.falcon/code/sublime/mysnippets/$snippet" 2> /dev/null
 		#DISPLAY=:0.0
 		/usr/bin/notify-send "Snippet found and special archived"
 	done

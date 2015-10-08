@@ -7,7 +7,7 @@ stopwatchtime() {
 #################### BEGIN
 
 LIST="/aptlist.list"
-PATH="/home/fly/apt"
+PATH="~/.falcon/apt"
 APTLIST="$PATH$LIST"
 
 if [[ "$1" != "" ]]; then

@@ -33,10 +33,10 @@ for appget in "${PACKS[@]}";
 		do
 		if [[ "$EUID" != 0 ]]; then
 			sudo $command
-			echo $appget >> /home/fly/setup/apt-get/appsCurrent.list
+			echo $appget >> ~/.falcon/setup/apt-get/appsCurrent.list
 		else
 			$command
-			echo $appget >> /home/fly/setup/apt-get/appsCurrent.list
+			echo $appget >> ~/.falcon/setup/apt-get/appsCurrent.list
 		fi
 
 	done
