@@ -10,40 +10,41 @@ ff.task.new() {
 COLLECTPROJ="$1"
 TASKDESP="$2"
 
-if [ -z "$1" ]
+if [ ! "$COLLECTPROJ" ]
     then
         echo -n "which project? "
         read COLLECTPROJ
     fi
 
-if [ -z "$2" ]
+if [ ! "$2" ]
     then
         echo -n "task? "
         read TASKDESP
     fi
 
  if [ "$COLLECTPROJ"="falcon" ]
-    then
-        TASKPROJ="$( printf \"2\" )"
-    fi
+   then
+      TASKPROJ="$( printf \"2\" )"
+ fi
 
 if [ "$COLLECTPROJ"="falcon" ]
-    then
-        TASKPROJ="$( printf \"1\" )"
-    fi
-# if [ -z "$3" ]
-#     then
-#         echo "assign to which project? "
-#         read TASKPROJ
-#     fi
+  then
+ 	TASKPROJ="$( printf \"1\" )"
+ fi
+ if [ ! "$3" ]
+     then
+         echo "assign to which project? "
+         read TASKPROJ
+     fi
 
 yokadi t_add $COLLECTPROJ $TASKDESP
 
-fftasklist
+
 
 }
 
-fftasklist
+ff.task.list
+
 
 function ff.new.alias1 {
         echo -n "alias name? "
@@ -51,7 +52,7 @@ function ff.new.alias1 {
         echo -n "command for $ALSIANAME? "
         read ALSCOMM
        echo "alias $ALSIANAME=\"   $ALSCOMM\"
-       " >> /home/faron/.falcon/scripts/bash/.bash_aliases
+       " >> ~/.falcon/scripts/bash/.bash_aliases
         echo "alias added: $ALSIANAME"
         clear
         bashsr
