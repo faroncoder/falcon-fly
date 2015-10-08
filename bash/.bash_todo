@@ -39,11 +39,11 @@ if [ "$COLLECTPROJ"="falcon" ]
 
 yokadi t_add $COLLECTPROJ $TASKDESP
 
-fftasklist
+
 
 }
 
-fftasklist
+ff.task.list
 
 function ff.new.alias1 {
         echo -n "alias name? "
@@ -58,7 +58,7 @@ function ff.new.alias1 {
 }
 
 function ff.list.alias {
-    GETLISTINGALS="$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )"
+    GETLISTINGALS=$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )
     echo "$GETLISTINGALS"
 }
 

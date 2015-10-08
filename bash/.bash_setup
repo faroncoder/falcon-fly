@@ -1,20 +1,21 @@
+#!/bin/bash
 #################################################
 ####  execute this in command line: ###################
 ####  source /home/faron/.falcon/scripts/bash/bash_setup #
-export PATH=$PATH:/bin:/usr/bin
+export PATH=$PATH:/bin:/usr/bin:$HOME/.bin
 	cd ~/ > 2> /dev/null
-	find /home/faron/.falcon/scripts/falcon-fly/bash -maxdepth 1 -type f -name '.*' -exec ln -s {} \; > 2> /dev/null
-	ln -s /home/faron/.falcon
-	ln -s /home/faron/.bin
+	find /home/fly/scripts/bash -maxdepth 1 -type f -name '.*' ! -name '*.pub' -exec ln -s {} \; 2> /dev/null
+	ln -s /home/fly ~/.falcon
+	ln -s /home/fly/.bin ~/.bin
 	ln -s /tmp ~/tmp
-	LOADBINS=( .ssh  )
-	for asdf in "${LOADBINS[@]}"; do
-			mkdir -p "/home/faron/$asdf" > 2> /dev/null
-			echo "$asdf created $( date )" > 2> /dev/null
-	done
-	touch ~/.falcon/archives/$( hostname --short )_$USER_bash_history; rm ~/.bash_history && ln -s ~/.falcon/archives/$( hostname --short )_$USER_bash_history ~/.bash_history
-	cp ~/.falcon/config/ssh/id_github* ~/.ssh/
-	ssh-keygen -t rsa
+	LOADBINS=( $HOME/.ssh/*  )
+#	for asdf in "${LOADBINS[@]}"; do
+#			mkdir -p "/home/faron/$asdf" 2> /dev/null
+#			echo "$asdf created $( date )" 2> /dev/null
+#	done
+	touch "~/.falcon/archives/$( `hostname --short` )_$USER_bash_history"; rm ~/.bash_history && ln -s "~/.falcon/archives/$( `hostname --short` )_$USER_bash_history" "~/.bash_history"
+	cp -r /home/fly/.ssh ~/
+#	ssh-keygen -t rsa
 	ssh-check
 
 	cd ~/ > 2> /dev/null
