@@ -4,6 +4,7 @@ if ! shopt -oq posix; then
 	elif [ -f /etc/bash_completions ]; then
 		. /etc/bash_completion
 	fi
+<<<<<<< HEAD
 fi
 
 	export PATH=$PATH:$HOME/.bin
@@ -12,6 +13,15 @@ fi
 	CLEANBINS=$( echo $PATH )
 	CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
 	export PATH=$CLEANUP
+=======
+	DEFAULT="$HOME/.bin"
+	export PATH=$PATH:$DEFAULT
+	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
+	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
+	#C:EANBINS="$PATH:$DEFAULT:$JAVA_HOME/bin:$JRE_HOME/bin"
+	CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
+	#export PATH=$CLEANUP
+>>>>>>> 138dc5262e577e55adafaac74ac69a14e74c7457
 	alias rm="trash-put"
 
 case $- in

@@ -2,6 +2,7 @@ ssh-engine() {
 	echo "Initializing SSH agent..."
 	chmod -R 0700 $HOME/.ssh
 	echo "privizating $HOME/.ssh : done"
+<<<<<<< HEAD
 	ssh-agent;
 	eval $( ssh-agent -s ) > $HOME/.ssh/environment
 	find -L $HOME/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
@@ -20,6 +21,18 @@ ssh-check() {
 
 	#GETRESULT=$( `ff.cpu.pidof ssh-agent | cut -d":" -f2` )
 	#echo -e $GETRESULT
+=======
+	ssh-agent -s
+	eval $( ssh-agent -s );
+	/usr/bin/find -L $HOME/.ssh -type f -name 'id_*' ! -name '*.pub' -exec /usr/bin/ssh-add {} \;
+}
+
+ssh-check() {
+	/home/faron/.bin/ff.cpu.pidof ssh-agent
+	GETRESULT=$( `ff.cpu.pidof ssh-agent | cut -d":" -f2` )
+	ssh-engine
+	echo -e $GETRESULT
+>>>>>>> 138dc5262e577e55adafaac74ac69a14e74c7457
 }
 
 ssh-check
