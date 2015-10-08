@@ -14,7 +14,7 @@ if [ "$PATHDIRHOME" = '' ]; then
 				PATHDIRHOME="$PWD"
 			fi
 JSCFILE="jsc-build.tar.bz2"
-BIN="/home/fly/scripts/htmls/VAULT/$JSCFILE"
+BIN="/home/faron/.falcon/scripts/htmls/VAULT"
 
 if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "
@@ -23,11 +23,14 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 			sudo touch $PATHDIRHOME/.falcon_fly
 			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME/.falcon_fly"
 			cd $PATHDIRHOME
+			CHECKLOC=$( echo $PATHDIRHOME | cut -d"/" -f 1 )
+			echo $CHECKLOC
 
 			if [ ! -d "$PATHDIRHOME/jsc" ]; then
+#			if [ ! -d "$PATHDIRHOME/jsc" ]; then
+
  				sudo cp $BIN $PATHDIRHOME
-				sudo tar -jxvf $PATHDIRHOME/$JSCFILE
-				sudo rm "$PATHDIRHOME/$JSCFILE"
+				sudo tar -jxvf $BIN/$JSCFILE
 				/home/faron/.bin/ff.hl.css.glop
 				/home/faron/.bin/ff.hl.js.glop
 			fi
