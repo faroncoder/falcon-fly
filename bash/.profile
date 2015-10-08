@@ -10,7 +10,7 @@ umask 002
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-	source $HOME/.bashrc
+	source $HOME/.bashrc 2> /dev/null
 fi
 
 
