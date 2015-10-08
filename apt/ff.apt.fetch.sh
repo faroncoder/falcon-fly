@@ -28,7 +28,7 @@ done
 PACKS=( $STRINGCOL )
 for appget in "${PACKS[@]}";
 	do
-	CMD=( "apt-get build-dep $appget" "apt-get install $appget" )
+	CMD=( "apt-get build-dep -y --force-yes $appget" "apt-get install -y --force-yes $appget" )
 	for command in "${CMD[@]}";
 		do
 		if [[ "$EUID" != 0 ]]; then
