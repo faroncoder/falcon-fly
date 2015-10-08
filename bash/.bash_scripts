@@ -1,23 +1,22 @@
-#!/bin/bash
-
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
 	elif [ -f /etc/bash_completions ]; then
 		. /etc/bash_completion
 	fi
-	DEFAULT="~/.bin"
-	export PATH=$PATH:$DEFAULT
+fi
+
+	export PATH=$PATH:$HOME/.bin
 	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
 	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
-	#C:EANBINS="$PATH:$DEFAULT:$JAVA_HOME/bin:$JRE_HOME/bin"
-	#CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
-	#export PATH=$CLEANUP
+	CLEANBINS=$( echo $PATH )
+	CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
+	export PATH=$CLEANUP
 	alias rm="trash-put"
 
 case $- in
 	*i*) ;;
-   	*) return;;
+	*) return;;
 esac
 	HISTCONTROL=ignoreboth
 	shopt -s histappend
@@ -41,25 +40,25 @@ esac
  	last_command=$? ##   Must come first!
 	PS1=""
 	if [[ "$last_command" == 0 ]]; then
-			PS1+="$Green_SHELL$checkmark_SHELL $USER "
+			PS1+="$Green_SHELL$checkmark_SHELL"
 		else
-			PS1+="$Red_SHELL$fancyX_SHELL $USER "
+			PS1+="$Red_SHELL$fancyX_SHELL"
 	fi
 	if [[ "$EUID" == 0 ]]; then
-		PS1+="$BRed_SHELL \\h "
+		PS1+="$BRed_SHELL \\h $USER "
 	else
-		PS1+="$BBlue_SHELL \\h "
+		PS1+="$BBlue_SHELL \\h $BYellow_SHELL  $USER "
 	fi
 	PS1+="$IPurple_SHELL\\w $reset_SHELL $ "
 	LS_COLORS='di=1;35'
 	export LS_COLORS
-fi
+
 
 ######### FARONIZED-MENU FUNCTION
     cd()  {
 	builtin cd "$@"
     	RET="$?"
- 	find -L . -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
+ 	find . -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
     	ls
     	return $RET
 }
