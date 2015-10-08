@@ -5,7 +5,7 @@ FIL2=`echo $FIL1 | sed 's/.sh//g' `
 BINHOME="~/.bin"
 WHICHUSER=$( echo $PWD | cut -d"/" -f 3 )
 if [[ $WHICHUSER = 'fly' ]]; then
-	BINHOME="/home/fly/bin"
+	BINHOME="~/.falcon/bin"
 	echo "Hello fly!"
 fi
 find -L $BINHOME -maxdepth 1 -name "*$FIL2*" -exec echo {} \;

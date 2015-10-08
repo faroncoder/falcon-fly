@@ -263,8 +263,8 @@ echo "
 	create mask = 0777
     directory mask = 0777
 
-[falcon]
-	path = /home/fly
+~/.falcon]
+	path = ~/.falcon
 	valid users = faron
 	writeable = yes
 	browseable = yes
@@ -287,12 +287,12 @@ fi
 if [[ ! "$( hostname )" = "f10" ]]; then
 	
 			## if it is a client then reconfigure
-			if [[ ! "$( grep 'falcon' /etc/fstab )" ]]; then
-				echo "nope you dont have 'falcon' in fstab"
-				echo "//192.168.1.10/falcon /media/falcon  none  nfs  0  0 " >> /etc/fstab
-				echo "now you have falcon"
+			if [[ ! "$( grep ~/.falcon' /etc/fstab )" ]]; then
+				echo "nope you dont have ~/.falcon' in fstab"
+				echo "//192.168.1.10~/.falcon /media~/.falcon  none  nfs  0  0 " >> /etc/fstab
+				echo "now you have~/.falcon"
 			else
-				echo "/falcon for /etc/fstab is already set"
+				echo "~/.falcon for /etc/fstab is already set"
 			fi
 			if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 				echo "nope you dont have 'output' in fstab"
@@ -311,7 +311,7 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			if [[ ! -f "/home/faron/.smbcredentials" ]]; then
 			## adding credits for NFS
 				echo "adding creditals"
-				#cp /home/fly/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
+				#cp ~/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
 				#echo "creditals creation completed"
 			fi
 	else
@@ -331,12 +331,12 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			else
 				echo "/mkv for /etc/exports is already set"
 			fi
-			if [[ ! "$( grep '.falcon' /etc/exports )" ]]; then
-				echo "nope you dont have falcon"
-				echo "/home/fly  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
-				echo "now you have falcon"
+			if [[ ! "$( grep '~/.falcon' /etc/exports )" ]]; then
+				echo "nope you dont have~/.falcon"
+				echo "~/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "now you have~/.falcon"
 			else
-				echo "/falcon for /etc/exports is already set"
+				echo "~/.falcon for /etc/exports is already set"
 			fi
 fi
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

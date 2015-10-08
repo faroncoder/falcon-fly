@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/fly/logs/scripts.log
+  echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log
   exit 0
 }
 # Generates a self-signed certificate.

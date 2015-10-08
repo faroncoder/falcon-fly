@@ -6,7 +6,7 @@ startgreen=`date +%s`
       read aliascomm
 
 queryalias="alias $aliasesname=\" $aliascomm \""
-echo $queryalias >> /home/fly/bash/.bash_aliases
+echo $queryalias >> ~/.falcon/bash/.bash_aliases
 
 echo "alias added..."
 

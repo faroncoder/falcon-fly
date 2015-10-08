@@ -24,16 +24,16 @@ else
 	fi
 fi
 cd $PATHHOME
-SPAWNFILES=( "$( find -L /home/fly/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec basename {} \; )" )
+SPAWNFILES=( "$( find -L ~/.falcon/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec basename {} \; )" )
 
 echo "FALCON: refreshing skel files"
 for b in "${SPAWNFILES[@]}"; do
 	rm "$PATHHOME/$b"
-	ln -s "/home/fly/bash/$b"
+	ln -s "~/.falcon/bash/$b"
 done
 echo "FALCON: task completed"
 
-# find -L /home/fly/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec ln -s {} \;
+# find -L ~/.falcon/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec ln -s {} \;
 # echo "FALCON: clean skel files injected"
 source $PATHHOME/.bashrc
 ## END

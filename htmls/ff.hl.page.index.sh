@@ -25,7 +25,7 @@ fi
 
 if [ ! -f "$APP/index.html" ];
 	then
-	sudo cp "/home/fly/scripts/htmls/VAULT/html-full.txt" "$APP/index.html"
+	sudo cp "~/.falcon/scripts/htmls/VAULT/html-full.txt" "$APP/index.html"
 	echo "index.html created in $APP"
 	else
 	echo "index.html exists ($APP/index.html)."

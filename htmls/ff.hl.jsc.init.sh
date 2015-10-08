@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/fly/logs/scripts.log
+  echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log
   #exit 0
 }
 ######## IGNORE ABOVE -- LOGGING PURPOSE ########
@@ -14,14 +14,14 @@ if [ "$PATHDIRHOME" = '' ]; then
 				PATHDIRHOME="$PWD"
 			fi
 JSCFILE="jsc-build.tar.bz2"
-BIN="/home/faron/.falcon/scripts/htmls/VAULT"
+BIN="~/.falcon/scripts/htmls/VAULT"
 
-if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
+if [ ! -f "$PATHDIRHOME/~/.falcon_fly" ]; then
 		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "
 		read CHEK
 		if [[ "$CHEK" = "y" ]]; then
-			sudo touch $PATHDIRHOME/.falcon_fly
-			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME/.falcon_fly"
+			sudo touch $PATHDIRHOME/~/.falcon_fly
+			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME/~/.falcon_fly"
 			cd $PATHDIRHOME
 			CHECKLOC=$( echo $PATHDIRHOME | cut -d"/" -f 1 )
 			echo $CHECKLOC
@@ -42,7 +42,7 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 				else
 					$0 $PATHDIRHOME
 					stopwatchtime
-			#	if [ -f "$PATHDIRHOME/.falcon_fly" ]; then
+			#	if [ -f "$PATHDIRHOME/~/.falcon_fly" ]; then
 			#		cd $PATHDIRHOME
 			#		echo "FALCON: current pathdir is a building site.  Ready to proceed"
 			fi
@@ -58,7 +58,7 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 			fi
 				#mkdir -p $PATHDIRHOME
 				#cd $PATHDIRHOME
-				#touch $PATHDIRHOME/.falcon_fly
+				#touch $PATHDIRHOME/~/.falcon_fly
 				#echo "FALCON: initalizing pathdir as building site. Ready to proceed."
 				# if [ ! -d jsc ]; then
  			# 		cp "$BIN/$JSCFILE" $PWD
@@ -85,27 +85,27 @@ if [ ! -f "$PATHDIRHOME/.falcon_fly" ]; then
 # 			read PROJECTNAME
 # 			PATHDIRHOME="/home/srv/htdocs/privs/$PROJECTNAME"
 # 			mkdir -p $PATHDIRHOME
-# 			touch $PATHDIRHOME/.falcon_fly
-# 			if [ -f "$PATHDIRHOME/.falcon_fly" ]; then
+# 			touch $PATHDIRHOME/~/.falcon_fly
+# 			if [ -f "$PATHDIRHOME/~/.falcon_fly" ]; then
 # 				echo "FALCON: project initalized and ready to build"
 # 			fi
 # 		else
 # 		    if [ -d "$PATHDIRHOME" ]; then
-# 		    	if [ -f "$PATHDIRHOME/.falcon_fly" ]; then
+# 		    	if [ -f "$PATHDIRHOME/~/.falcon_fly" ]; then
 # 		    		echo "FALCON: target path found and building site already enabled"
 # 		    	else
-# 		    		touch "$PATHDIRHOME/.falcon_fly"
+# 		    		touch "$PATHDIRHOME/~/.falcon_fly"
 # 		    		echo "FALCON: project initalized and ready to build"
 # 				fi
 # 			else
 # 			 	mkdir -p "$PATHDIRHOME"
-# 			 	touch "$PATHDIRHOME/.falcon_fly"
+# 			 	touch "$PATHDIRHOME/~/.falcon_fly"
 # 		    	echo "FALCON: project initalized and ready to build"
 # 			fi
 # 		fi
 # else
 # 		PATHDIRHOME="$PWD"
-# 		if [ -f "$PATHDIRHOME/.falcon_fly"]; then
+# 		if [ -f "$PATHDIRHOME/~/.falcon_fly"]; then
 # 			echo "FALCON: project ready to build"
 # 		fi
 # fi

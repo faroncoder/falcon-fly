@@ -1,7 +1,7 @@
 #!/bin/bash
 startgreen=`date +%s`
 function gitupdategits {
-BASELOC="/home/fly/scripting/falcon-gits"
+BASELOC="~/.falcon/scripting~/.falcon-gits"
 GIT="/home/faron/tmp/gits.list"
 cd $BASELOC
 > $GIT
@@ -32,7 +32,7 @@ ffrm gits.list
 }
 
 function gitupdatemaster {
-BASELOC="/home/fly/scripts"
+BASELOC="~/.falcon/scripts"
 cd $BASELOC
                               echo "updating GIT for $line..."
                               #git fetch

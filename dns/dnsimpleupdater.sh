@@ -7,8 +7,8 @@ echo ""
 echo ""
 }
 
-LOGIN="$( cat /home/fly/data/private/dnsimple.txt | head -n1 )"
-TOKEN="$( cat /home/fly/data/private/dnsimple.txt | tail -n1 )"
+LOGIN="$( cat ~/.falcon/data/private/dnsimple.txt | head -n1 )"
+TOKEN="$( cat ~/.falcon/data/private/dnsimple.txt | tail -n1 )"
 ACCESSAPI="$LOGIN:$TOKEN"
 IP="$( curl http://icanhazip.com )"
 
