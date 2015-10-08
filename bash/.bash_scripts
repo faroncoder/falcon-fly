@@ -1,17 +1,15 @@
-#!/bin/bash
-
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
 	elif [ -f /etc/bash_completions ]; then
 		. /etc/bash_completion
 	fi
-	DEFAULT="/home/faron/.bin"
+	DEFAULT="$HOME/.bin"
 	export PATH=$PATH:$DEFAULT
 	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
 	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
 	#C:EANBINS="$PATH:$DEFAULT:$JAVA_HOME/bin:$JRE_HOME/bin"
-	#CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
+	CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
 	#export PATH=$CLEANUP
 	alias rm="trash-put"
 

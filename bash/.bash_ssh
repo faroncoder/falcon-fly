@@ -1,17 +1,14 @@
-#!/bin/bash
-export PATH=$PATH:$HOME/.bin
-
 ssh-engine() {
 	echo "Initializing SSH agent..."
 	chmod -R 0700 $HOME/.ssh
 	echo "privizating $HOME/.ssh : done"
 	ssh-agent -s
 	eval $( ssh-agent -s );
-	find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
+	/usr/bin/find -L $HOME/.ssh -type f -name 'id_*' ! -name '*.pub' -exec /usr/bin/ssh-add {} \;
 }
 
 ssh-check() {
-	ff.cpu.pidof ssh-agent
+	/home/faron/.bin/ff.cpu.pidof ssh-agent
 	GETRESULT=$( `ff.cpu.pidof ssh-agent | cut -d":" -f2` )
 	ssh-engine
 	echo -e $GETRESULT
