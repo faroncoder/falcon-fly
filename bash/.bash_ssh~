@@ -13,7 +13,6 @@ ssh-engine() {
 ssh-check() {
 	ff.cpu.pidof ssh-agent
 	GETRESULT=$( `ff.cpu.pidof ssh-agent | cut -d":" -f2` )
-	ssh-engine
 	echo -e $GETRESULT
 }
 

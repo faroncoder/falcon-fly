@@ -44,7 +44,10 @@ yokadi t_add $COLLECTPROJ $TASKDESP
 }
 
 ff.task.list
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04f3b3315b3e71d94244aa92ea7a1b8186faf72f
 
 function ff.new.alias1 {
         echo -n "alias name? "
@@ -59,7 +62,7 @@ function ff.new.alias1 {
 }
 
 function ff.list.alias {
-    GETLISTINGALS="$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )"
+    GETLISTINGALS=$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )
     echo "$GETLISTINGALS"
 }
 

@@ -18,7 +18,7 @@ export PATH=$PATH:/bin:/usr/bin:$HOME/.bin
 #	ssh-keygen -t rsa
 	ssh-check
 
-	cd ~/ 2> /dev/null
+	cd ~/ > 2> /dev/null
 	source ~/.profile
 
 
