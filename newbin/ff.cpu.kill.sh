@@ -1,6 +1,6 @@
 #!/bin/bash
 PIDWHO="$1"
-if [ -z "$PIDWHO" ]; then
+if [ ! "$PIDWHO" ]; then
 	echo -n "which service to pidof for?  "
 	read PIDWHO
 fi
@@ -21,14 +21,15 @@ checkPIDS
 
 
 
-if [ "$PIDWHO" = 'ssh-agent' ]; then
+if [[ "$PIDWHO" = 'ssh-agent' ]]; then
 	if [[ "$PIDGET" -gt 3 ]]; then
 		FIRECMD=1
 	fi
+	if [[ "$FIRECMD" = 1 ]]; then
+		sudo kill `echo ${PIDGET[@]}` 
+
+	fi
 fi
-if [[ $FIRECMD = 1 ]]; then
-	sudo kill ${PIDALL[@]}
-fi
-clearPIDS
-exit 0
+
+
 

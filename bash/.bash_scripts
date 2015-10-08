@@ -7,7 +7,7 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 	DEFAULT="/home/faron/.bin"
-	export PATH="$PATH:$DEFAULT"
+	export PATH=$PATH:$DEFAULT
 	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
 	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
 	#C:EANBINS="$PATH:$DEFAULT:$JAVA_HOME/bin:$JRE_HOME/bin"
@@ -41,14 +41,14 @@ esac
  	last_command=$? ##   Must come first!
 	PS1=""
 	if [[ "$last_command" == 0 ]]; then
-			PS1+="$Green_SHELL$checkmark_SHELL "
+			PS1+="$Green_SHELL$checkmark_SHELL $USER "
 		else
-			PS1+="$Red_SHELL$fancyX_SHELL "
+			PS1+="$Red_SHELL$fancyX_SHELL $USER "
 	fi
 	if [[ "$EUID" == 0 ]]; then
-		PS1+="$BRed_SHELL\\h "
+		PS1+="$BRed_SHELL \\h "
 	else
-		PS1+="$BBlue_SHELL\\h "
+		PS1+="$BBlue_SHELL \\h "
 	fi
 	PS1+="$IPurple_SHELL\\w $reset_SHELL $ "
 	LS_COLORS='di=1;35'
