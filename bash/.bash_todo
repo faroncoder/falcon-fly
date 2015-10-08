@@ -1,7 +1,4 @@
 #!/bin/bash
-################
-####LISTING ALL TODO TASKS
-
 ff.task.list() {
     yokadi t_list
 }
@@ -22,32 +19,19 @@ if [ ! "$2" ]
         read TASKDESP
     fi
 
- if [ "$COLLECTPROJ"="falcon" ]
-   then
-      TASKPROJ="$( printf \"2\" )"
- fi
-
-if [ "$COLLECTPROJ"="falcon" ]
-  then
+ if [[ "$COLLECTPROJ" = "falcon" ]];  then
+      TASKPROJ=$( printf \"2\" )
+ else
  	TASKPROJ="$( printf \"1\" )"
  fi
  if [ ! "$3" ]
      then
          echo "assign to which project? "
          read TASKPROJ
-     fi
-
-yokadi t_add $COLLECTPROJ $TASKDESP
-
-
+          yokadi t_add $COLLECTPROJ $TASKDESP
+fi
 
 }
-
-ff.task.list
-<<<<<<< HEAD
-
-=======
->>>>>>> 04f3b3315b3e71d94244aa92ea7a1b8186faf72f
 
 function ff.new.alias1 {
         echo -n "alias name? "
@@ -67,7 +51,7 @@ function ff.list.alias {
 }
 
 function ff.remove.alias {
-    fflsals
+
     echo -n "which alias to remove? "
     read FINDALIASDEL
     if [ -z "$FINDALIASDEL" ]
@@ -80,3 +64,4 @@ function ff.remove.alias {
     bashsr
 }
 
+ff.task.list
