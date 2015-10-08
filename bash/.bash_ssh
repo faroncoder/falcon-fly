@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=$PATH:$HOME/.bin
+export PATH=$PATH:~/.bin
 
 ssh-engine() {
 	echo "Initializing SSH agent..."
@@ -13,7 +13,7 @@ ssh-engine() {
 ssh-check() {
 	ff.cpu.pidof ssh-agent
 	GETRESULT=$( `ff.cpu.pidof ssh-agent | cut -d":" -f2` )
-	ssh-engine
 	echo -e $GETRESULT
 }
 
+ssh-check

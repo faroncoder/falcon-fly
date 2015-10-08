@@ -24,11 +24,10 @@ if [ ! "$2" ]
  else
  	TASKPROJ="$( printf \"1\" )"
  fi
- if [ ! "$3" ]
-     then
+ if [ ! "$3" ]; then
          echo "assign to which project? "
          read TASKPROJ
-          yokadi t_add $COLLECTPROJ $TASKDESP
+          yokadi t_add $COLLECTPROJ $TASKDESP 1> /dev/null
 fi
 
 }

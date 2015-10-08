@@ -6,7 +6,7 @@ if ! shopt -oq posix; then
 	elif [ -f /etc/bash_completions ]; then
 		. /etc/bash_completion
 	fi
-	DEFAULT="/home/faron/.bin"
+	DEFAULT="~/.bin"
 	export PATH=$PATH:$DEFAULT
 	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
 	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
