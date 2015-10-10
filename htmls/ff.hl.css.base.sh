@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
 	exit 0
 }
 
@@ -24,7 +24,7 @@ fi
 
 if [ ! -f "$APP/index.html" ];
 	then
-	sudo cp "~/.falcon/scripts/htmls/VAULT/css-full.txt" "$APP/.jsc/css/style-BASE.css"
+	sudo cp "/home/faron/.falcon/scripts/htmls/VAULT/css-full.txt" "$APP/.jsc/css/style-BASE.css"
 	ff.hl.css.glop $$APP
 	echo "$APP: style-BASE loaded."
 	else

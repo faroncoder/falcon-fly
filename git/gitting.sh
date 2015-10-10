@@ -13,16 +13,16 @@ if [ -z $2 ]
 	read app
 fi
 pathdir="/home/www/$dom/html/$app"
-binpull="home/faron/.bin/core/scripts~/.falcon-fly"
+binpull="home/faron/.bin/core/scripts/home/faron/.falcon-fly"
 ##########################
 if [ ! -d "/home/www/$dom" ]
 	then
 	echo "invalid domain.  exiting."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 fi
 cd $pathdir
 git remote add origin git@github.com:faroncoder/$app.git
 git add --all
 git push -u origin master
 cd /home/faron/.bin/commands/vault/systemengine/scripting
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

@@ -1,6 +1,6 @@
 #!/bin/bash
 newfile="$1"
-newbin="~/.falcon/scripts/newbin"
+newbin="/home/faron/.falcon/scripts/newbin"
 if [ -z "$1" ]; then
 	echo -n "name of new file? "
 	read newfile
@@ -10,11 +10,11 @@ touch $newbin/$proofreadfile
 chmod +x $newbin/$proofreadfile
 echo "#!/bin/bash
 if [ \"\$( echo \$PATH | grep '/home/faron/.bin/' )\" = '' ]; then
-	export PATH=\$PATH:/home/faron/.bin:/usr/local/bin
+	export PATH=\$PATH:/home/faron/.bin
 fi
 XeB=\`date +%s\`
 function XeF {
-XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB | \$XeE | \$XeT \" >> ~/.falcon/logs/scripts.log; exit 0
+XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); echo \"\$0 | \$XeB | \$XeE | \$XeT \" >> /home/faron/.falcon/logs/scripts.log; exit 0
 }
 
 #if [ \"\$1\" != \"\" ]; then

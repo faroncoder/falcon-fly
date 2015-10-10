@@ -14,15 +14,15 @@ DATGET="$( /bin/ls /home/faron/var/Streamings/files/engine/factory-mp4/mkv/*.dat
 PREFILE="$( /usr/bin//rev <<< "$DATGET" | /usr/bin//cut -d "." -f2 | /usr/bin//rev )"
 >>>>>>> 7ec161e5c2fe99a9c3028e53ce2a2b3d0bb30954
 if [[ -z "$DATGET" ]]; then
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 else
 	/.bin/mv "$PREFILE.mkv" hold/
 	/.bin/mv "$PREFILE.dat" hold/
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 fi
 
 $0
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 
 
 

@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 
 #cd /home/faron/var/streamings/files/raw
-#~/.falcon/scripts/.bin/file-name-cleaner.sh
+#/home/faron/.falcon/scripts/.bin/file-name-cleaner.sh
 /home/faron/.bin/.bin/file-name-cleaner
 mv *.mkv mkv/
 
@@ -57,4 +57,4 @@ fi
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
 startmkv
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

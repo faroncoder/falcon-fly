@@ -1,13 +1,13 @@
 #!/bin/bash
 THISFARON
-"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>~/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
-"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>~/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
-startgreen=`date +%s000`; stopwatchtime() { stopred=`date +%s000`; faronruntime=$( echo `expr $startgreen - $stopred` ); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0 } ######## IGNORE ABOVE -- LOGGING PURPOSE ### USE 'stopwatchtime' to exit
+"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>/home/faron/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
+"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>/home/faron/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
+startgreen=`date +%s000`; stopwatchtime() { stopred=`date +%s000`; faronruntime=$( echo `expr $startgreen - $stopred` ); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0 } ######## IGNORE ABOVE -- LOGGING PURPOSE ### USE 'stopwatchtime' to exit
 "startgreen=`date +%s000` 
  stopwatchtime() { 
  stopred=`date +%s000` 
  faronruntime=$( echo `expr $startgreen - $stopred` ); 
- echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs /scripts.log; 
+ echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs /scripts.log; 
  exit 0 
  } 
  ######## IGNORE ABOVE -- LOGGING PURPOSE ######## 
@@ -16,7 +16,7 @@ echo "startgreen=`date +%s000`
  stopwatchtime() { 
  stopred=`date +%s000` 
  faronruntime=$( echo `expr $startgreen - $stopred` ); 
- echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs /scripts.log; 
+ echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs /scripts.log; 
  exit 0 
  } 
  ######## IGNORE ABOVE -- LOGGING PURPOSE ######## 
@@ -25,7 +25,7 @@ echo "startgreen=`date +%s000`
  stopwatchtime() { 
  stopred=`date +%s000` 
  faronruntime=$( echo `expr $startgreen - $stopred` ); 
- echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs /scripts.log; 
+ echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs /scripts.log; 
  exit 0 
  } 
  ######## IGNORE ABOVE -- LOGGING PURPOSE ######## 
@@ -49,14 +49,14 @@ for i in {1..100}
 
 
 THISFARON
-"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>~/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
-"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>~/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
-startgreen=`date +%s000`; stopwatchtime() { stopred=`date +%s000`; faronruntime=$( echo `expr $startgreen - $stopred` ); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0 } ######## IGNORE ABOVE -- LOGGING PURPOSE ### USE 'stopwatchtime' to exit
+"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>/home/faron/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
+"startgreen=`date+%s000`;functionstopwatchtime(){stopred=`date+%s000`;faronruntime=$(echo`expr$startgreen-$stopred`);echo"$0|$startgreen|$stopred|$faronruntime">>/home/faron/.falcon/logs/scripts.log;exit0}########IGNOREABOVE--LOGGINGPURPOSE###USE'stopwatchtime'toexit"
+startgreen=`date +%s000`; stopwatchtime() { stopred=`date +%s000`; faronruntime=$( echo `expr $startgreen - $stopred` ); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0 } ######## IGNORE ABOVE -- LOGGING PURPOSE ### USE 'stopwatchtime' to exit
 "startgreen=`date +%s000` 
  stopwatchtime() { 
  stopred=`date +%s000` 
  faronruntime=$( echo `expr $startgreen - $stopred` ); 
- echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs /scripts.log; 
+ echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs /scripts.log; 
  exit 0 
  } 
  ######## IGNORE ABOVE -- LOGGING PURPOSE ######## 
@@ -65,7 +65,7 @@ echo "startgreen=`date +%s000`
  stopwatchtime() { 
  stopred=`date +%s000` 
  faronruntime=$( echo `expr $startgreen - $stopred` ); 
- echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs /scripts.log; 
+ echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs /scripts.log; 
  exit 0 
  } 
  ######## IGNORE ABOVE -- LOGGING PURPOSE ######## 
@@ -74,7 +74,7 @@ echo "startgreen=`date +%s000`
  stopwatchtime() { 
  stopred=`date +%s000` 
  faronruntime=$( echo `expr $startgreen - $stopred` ); 
- echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs /scripts.log; 
+ echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs /scripts.log; 
  exit 0 
  } 
  ######## IGNORE ABOVE -- LOGGING PURPOSE ######## 

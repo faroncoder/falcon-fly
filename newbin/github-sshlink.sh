@@ -56,9 +56,9 @@ function respondData {
 	SELFFILE=$( basename $0 )
 	RESPONSEFILE="$SELFFILE.txt"
 	THISHOST=$( hostname -s )
-	THEHOSTKEY="$HOME/.ssh/id_github"
+	THEHOSTKEY="$HOME///.ssh/id_github"
 	THEHOSTKEYFILE="$THEHOSTKEY.pub"
-	TRASH="$HOME/.local/share/Trash/files"
+	TRASH="$HOME///.local/share/Trash/files"
 
 
 
