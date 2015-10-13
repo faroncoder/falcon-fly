@@ -13,16 +13,31 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $Xe
 export PATH=$PATH:/home/faron/.bin
 
 DOMAINS=( faron.ca  faronhost.ca faronintel.ca phoenixsafety.ca f1 f6 f7 f10 )
+sendlog() {
+	logger $check $status
+}
 
 for check in "${DOMAINS[@]}"; do
 	GETRESULT="$( ping -c 3 $check  2> /dev/null )"
 	if [ ! -z "$GETRESULT" ]; then
-		notify-send  "$check" -i /home/faron/.falcon/scripts/icons/set-1/Basic_set_Png/Basic_set_Png/tick_32.png
+		status='is up'
+		sendlog
+		#notify-send  "$check" -i /home/faron/.falcon/scripts/icons/set-1/Basic_set_Png/Basic_set_Png/tick_32.png
 	else
-		notify-send  "$check" -i /home/faron/.falcon/scripts/icons/set-1/Basic_set_Png/Basic_set_Png/help_32.png
+		DOWNSERVER=( $DOWNSERVER $GETRESULT )
 	fi
 done
 
+if [ ! "$DOWNSERVER" ]; then
+	XeF
+else
+for down in "${DOWNSERVER[@]}"; do
+		status='is down'
+		check=$down
+		sendlog
+		#notify-send  "$down" -i /home/faron/.falcon/scripts/icons/set-1/Basic_set_Png/Basic_set_Png/help_32.png
+done
+fi
 ################### END
 #elif [ "$1" = '' ];
 #	then
