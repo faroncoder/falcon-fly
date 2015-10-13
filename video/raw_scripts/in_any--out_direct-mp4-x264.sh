@@ -43,4 +43,4 @@ if [ -z "$CHECKFILE" ]
 -metadata artist="" "NEW-direct-x264-$FILE.mp4" < /dev/null
 fi
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

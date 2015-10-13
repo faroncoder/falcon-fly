@@ -3,13 +3,13 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
 	exit 0
 }
 
 
 #################### BEGIN
-source ~/.bash_colors
+source $HOME//.bash_colors
 
 for i in {201..277}
 do

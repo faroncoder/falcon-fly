@@ -30,4 +30,4 @@ PATHGRAB=$PWD; LISTINGS=( `ls $PATHGRAB/*.mp4`,`ls $PATHGRAB/*.mkv` ); for f in 
 # 	rm c.txt
 # done
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

@@ -4,7 +4,7 @@ if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
 fi
 XeB=`date +%s`
 function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> ~/.falcon/logs/scripts.log; exit 0 
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /home/faron/.falcon/logs/scripts.log; exit 0 
 }
 
 #if [ "$1" != "" ]; then
@@ -33,10 +33,10 @@ for appget in "${PACKS[@]}";
 		do
 		if [[ "$EUID" != 0 ]]; then
 			sudo $command
-			echo $appget >> ~/.falcon/setup/apt-get/appsCurrent.list
+			echo $appget >> /home/faron/.falcon/setup/apt-get/appsCurrent.list
 		else
 			$command
-			echo $appget >> ~/.falcon/setup/apt-get/appsCurrent.list
+			echo $appget >> /home/faron/.falcon/setup/apt-get/appsCurrent.list
 		fi
 
 	done

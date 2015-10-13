@@ -22,5 +22,5 @@ trash-put $INPUT
 ######## IGNORE BELOW -- LOGGING PURPOSE ######
 #stopred=`date +%s000`;
 #faronruntime=$(( $stopred - $startgreen ));
-#echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+#echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
 exit 0

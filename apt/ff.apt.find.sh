@@ -14,11 +14,11 @@ LOADAPP=( $( $OPEN $parma | sort | sed 's/^/|/g' ))
 GETPROCESSED=( $( echo "${LOADAPP[@]}" | sed 's/|/\n|/g' | awk '{ gsub("-", "=", $2); print $0 }' | sed '1d' ) )
 echo "${GETPROCESSED[@]}" | tr '|' '\n'
 
-# echo -e "$( echo -e \"${GETPROCESSED[@]}\" | sed 's/|/\n$BGreen /g' | sed 's/=/$Color_Off\ =\ /g' )" >> ~/tmp/apt-get.list
+# echo -e "$( echo -e \"${GETPROCESSED[@]}\" | sed 's/|/\n$BGreen /g' | sed 's/=/$Color_Off\ =\ /g' )" >> $HOMEtmp/apt-get.list
 # while read line;
 # 	do
 # 		echo -e $line
-# 	done < ~/tmp/apt-get.list
+# 	done < $HOMEtmp/apt-get.list
 
 #echo -e "${GETPROCESSED[@]}" | sed 's/|/$BGreen/g' | sed 's/=/$Color_Off\ =\ /g' )
 # while read -r -d ' - ';

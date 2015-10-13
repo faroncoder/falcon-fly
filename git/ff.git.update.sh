@@ -3,13 +3,13 @@ startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log
+  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
   exit 0
 }
 
-#GITLIST=( "$(find ~/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
+#GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
-GETALLGIT=( $( find ~/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+GETALLGIT=( $( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
 
 
@@ -21,7 +21,7 @@ do
 	cd $p 2> /dev/null
 	THISGIT="$( basename $PWD ).git"
 	if [[ "$THISGIT" = 'scripts.git' ]]; then
-		THISGIT=~/.falcon-fly.git"
+		THISGIT=/home/faron/.falcon-fly.git"
 	fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	#git config --global user.name "faroncoder"
@@ -36,10 +36,10 @@ do
 	# 	git config --global user.email faronledger@gmail.com
 	# fi
 
-	# if [ ! -d "~/.falcon/scripting~/.falcon-gits/`echo $p`/.git" ]; then
+	# if [ ! -d "/home/faron/.falcon/scripting/home/faron/.falcon-gits/`echo $p`/.git" ]; then
 	# 		git init
 	# fi
-	# CHECKCONF=$( grep 'url' ~/.falcon/scripting~/.falcon-gits/$( echo $p )/.git/config )
+	# CHECKCONF=$( grep 'url' /home/faron/.falcon/scripting/home/faron/.falcon-gits/$( echo $p )/.git/config )
 	# if [ -z "$CHECKCONF" ];
 		# then
 		#git config --global push.default simple
@@ -54,8 +54,8 @@ do
 	git push
 done
 
-# echo "FALCON: Updating~/.falcon-fly"
-# cd ~/.falcon/scripts
+# echo "FALCON: Updating/home/faron/.falcon-fly"
+# cd /home/faron/.falcon/scripts
 # CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 # 	CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
 # 	if [ -z "$CHECKNAME" ];
@@ -69,17 +69,17 @@ done
 # 	#git config --global push.default simple
 # 	#git remote add origin
 # 	git fetch
-# 	#git remote set-url origin git@github.com:faroncoder~/.falcon-fly.git
+# 	#git remote set-url origin git@github.com:faroncoder/home/faron/.falcon-fly.git
 # 	git pull
 # 	git status
 # 	git add --all
 # 	git commit -m "auto-committer"
 # 	git push
 
-# # find "~/.falcon/scripting" -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > /tmp/x.txt
+# # find "/home/faron/.falcon/scripting" -maxdepth 3 ! -path '*/gits/*' -type d -name '.git' > /tmp/x.txt
 # 	#for f in "${GITLIST[@]}"; do
 # 	#	DRIVE="$( dirname $f )"
-# 	sed -i -e '/\/home\/faron\/~/.falcon\/scripting\/gits/d' /tmp/x.txt
+# 	sed -i -e '/\/home\/faron\//home/faron/.falcon\/scripting\/gits/d' /tmp/x.txt
 # while read line;
 # 	do
 # 		DRIVE=$( dirname $line );

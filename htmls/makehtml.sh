@@ -1,6 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-BINPULL="~/.falcon/scripts/htmls/VAULT"
+BINPULL="/home/faron/.falcon/scripts/htmls/VAULT"
 faceboxdoc="
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -420,4 +420,4 @@ echo $videobackbone > "$PWD/facebox.html"
 	# 	cd ./jsc/media
 	# 	/home/faron/.bin/flv-tsx-er
 	# fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

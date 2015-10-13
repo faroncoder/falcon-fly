@@ -28,9 +28,9 @@ while read line;
         PREFILE="$( rev <<< "$FILENAME" | cut -d "." -f2 | rev )"
         FILELOC="$VIDEOLOC/$PREFILE.html"
         cp templatevideo.txt $FILELOC
-        sed -i -e "s/~_PATH_~/$NAMEFOLDER\/$PREFILE/g" $FILELOC
+        sed -i -e "s/~_PATH_$HOME$NAMEFOLDER\/$PREFILE/g" $FILELOC
     done < a.list
     cp templatedynamic.txt "$NAMEVIDEO.php"
-    sed -i -e "s/~_PATHa_~/$VIDEOLOC\/$NAMEFOLDER/g" "$NAMEVIDEO.php"
-    sed -i -e "s/~_PATHb_~/$VIDEOLOC/g" "$NAMEVIDEO.php"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+    sed -i -e "s/~_PATHa_$HOME$VIDEOLOC\/$NAMEFOLDER/g" "$NAMEVIDEO.php"
+    sed -i -e "s/~_PATHb_$HOME$VIDEOLOC/g" "$NAMEVIDEO.php"
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

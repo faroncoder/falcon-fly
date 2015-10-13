@@ -1,7 +1,7 @@
 #!/bin/bash
 startgreen=`date +%s`
 function gitupdategits {
-BASELOC="~/.falcon/scripting~/.falcon-gits"
+BASELOC="/home/faron/.falcon/scripting/home/faron/.falcon-gits"
 GIT="/home/faron/tmp/gits.list"
 cd $BASELOC
 > $GIT
@@ -32,7 +32,7 @@ ffrm gits.list
 }
 
 function gitupdatemaster {
-BASELOC="~/.falcon/scripts"
+BASELOC="/home/faron/.falcon/scripts"
 cd $BASELOC
                               echo "updating GIT for $line..."
                               #git fetch
@@ -49,4 +49,4 @@ cd $BASELOC
 gitupdatemaster
 gitupdategits
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
