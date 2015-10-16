@@ -70,7 +70,7 @@ function ffmpegengine() {
 	fi
 	COMMENTFILE="Falcon $( date ) - $0"
 	ffmpeg -fflags genpts -i $INPUT -flags +global_header -map 0:0 -codec copy "copy_$INPUT" < /dev/null
-	# /usr/bin/avidemux2_cli --load $INPUT --save-raw-audio --save-raw-video --save-uncompressed-audio --save-uncompressed-video --save-unpacked-vop --force-unpack --audio-map --autoindex --rebuild-index --force-smart --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_mastercopy.mkv" --quit
+	 #echo -e "y" | /usr/bin/avidemux2_cli --load copy_$INPUT --save-raw-audio --save-raw-video --save-uncompressed-audio --save-uncompressed-video --save-unpacked-vop --force-unpack --audio-map --autoindex --rebuild-index --force-smart --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_mastercopy.mkv" --quit
 	# ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y $CODECVCOMMANDS \
 	# 	-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
 	# 	-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \

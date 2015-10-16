@@ -22,7 +22,7 @@ for check in "${DOMAINS[@]}"; do
 	if [ ! -z "$GETRESULT" ]; then
 		status='is up'
 		sendlog
-		#notify-send  "$check" -i /home/faron/.falcon/scripts/icons/set-1/Basic_set_Png/Basic_set_Png/tick_32.png
+		notify-send  "$check" -i /home/faron/.falcon/scripts/icons/set-1/Basic_set_Png/Basic_set_Png/tick_32.png < /dev/null
 	else
 		DOWNSERVER=( $DOWNSERVER $GETRESULT )
 	fi
