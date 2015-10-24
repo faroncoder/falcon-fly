@@ -51,10 +51,7 @@ LOGINURL="http://uploaded.net/io/login"
 
 echo "Temporary directory: ${TMPDIR}"
 echo "Log in via POST request to ${LOGINURL}, save cookies."
-wget --save-cookies=${COOKIESFILE} --server-response \
-    --output-document ${LOGINRESPFILE} \
-    --post-data="id=${USERNAME}&pw=${PASSWORD}" \
-    ${LOGINURL} > ${LOGINOUTPUTFILE} 2>&1
+wget --save-cookies=${COOKIESFILE} --server-response --output-document ${LOGINRESPFILE} --post-data="id=${USERNAME}&pw=${PASSWORD}" ${LOGINURL} > ${LOGINOUTPUTFILE} 2>&1
 
 # Status code is 200 even if login failed.
 # Uploaded sends a '{"err":"User and password do not match!"}'-like response

@@ -26,7 +26,7 @@ if [ -z "$loc" ]; then
 	echo "case \$selection in " >> $FILETEMP
 	echo "${CATCHOUPUT[@]} | sed 's/:/)/g' | sed 's/|/\\n/g'" >> $FILETEMP
 	echo "*) break ;;" >> $FILETEMP
-																																																																																																																																																							echo "easc" >> $FILETEMP
+	echo "easc" >> $FILETEMP
 	echo "exit 0" >> $FILETEMP
 	chmod +x $FILETEMP
 	selection=

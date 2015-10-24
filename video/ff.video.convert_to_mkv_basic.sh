@@ -8,11 +8,12 @@ stopwatchtime() {
 }
 #### IGNORE ABOVE
 export PATH=$PATH
-PATHDIR="$PWD"
-cd $PATHDIR
-INPUT="$1"
-PREFILE="$( rev <<< $INPUT | cut -d"." -f2 | rev )"
-EFXI="$( rev <<< $INPUT | cut -d"." -f1 | rev )"
+#PATHDIR="$PWD"
+#cd $PATHDIR
+
+#PREFILE="$( rev <<< $1 | cut -d"." -f2 | rev )"
+PREFILE=`printf $1 | cut -d"." -f 1`
+#EFXI="$( rev <<< $INPUT | cut -d"." -f1 | rev )"
 FILETYPE="mkv"
 ## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
 #CODECVID="libx264"
@@ -71,9 +72,23 @@ FILETYPE="mkv"
 	#        FILETYPE="mkv"
 	# fi
 	#COMMENTFILE="Falcon $( date ) - $0"
-	ffmpeg -fflags genpts -i $INPUT -flags +global_header -map 0:0 -codec copy "copy_$INPUT_.$FILETYPE" < /dev/null
-	 #echo -e "y" | /usr/bin/avidemux2_cli --load copy_$INPUT --save-raw-audio --save-raw-video --save-uncompressed-audio --save-uncompressed-video --save-unpacked-vop --force-unpack --audio-map --autoindex --rebuild-index --force-smart --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_mastercopy.mkv" --quit
-	# ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y $CODECVCOMMANDS \
+	#ffmpeg -fflags genpts -i $INPUT -flags +global_header -map 0:0 -codec copy -f mkv "$PREFILE.$FILETYPE" < /dev/null
+
+	echo "$1 | `ls -al --block-size=M $1 | awk '{print $5}'`" > "$PREFILE.list"
+#	 ls -al $1 | awk '{print $5}' > "$PREFILE.list"
+	 echo -e "y" | avidemux2_cli --force-alt-h264 --load $1 --save THISFILE.mkv --output-format  MATROSKA --quit
+
+	 echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "$PREFILE.list"
+	 #ls -al THISFILE.mkv | awk '{print $5}' >> "$PREFILE.list"
+	rm $1
+	ffmpeg -fflags genpts -i THISFILE.mkv -flags +global_header -codec copy "$PREFILE.$FILETYPE" < /dev/null
+	rm THISFILE.mkv
+	echo "$PREFILE.$FILETYPE | `ls -al --block-size=M $PREFILE.$FILETYPE | awk '{print $5}'`" >> "$PREFILE.list"
+	echo "-----------" >> "$PREFILE.list"
+	mediainfo "$PREFILE.$FILETYPE" >> "$PREFILE.list"
+	 #ls -al "$PREFILE.$FILETYPE" | awk '{print $5}' >> "$PREFILE.list"
+
+	#ffmpeg -fflags genpts -ss 00:00:00 -i THISFILE.mkv -y $CODECVCOMMANDS \
 	# 	-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
 	# 	-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
 	# 	-flags +loop -flags +global_header -movflags +faststart  \
