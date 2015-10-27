@@ -56,8 +56,11 @@ if [ -d "$PATHDIRJSC/css" ]; then
 	#fi
 	#CLEANGLOP=( $( echo "${CSSGLOPPER[@]}" | sed '/cssengine/d' | sed '/ie6/d' | sed '/ie7/d' | sed '/ie8/d' | sed '/ie9/d' ) )
 		echo "@charset \"UTF-8\";" > "$PATHDIRJSC/css/cssengine.css"
+		echo "@import url(http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);" >> "$PATHDIRJSC/css/cssengine.css"
+
 	for b in "${CSSGLOPPER[@]}"; do
-	 	INJECTION="@import url (`printf  \"'$b'\"`);"
+
+	 	INJECTION="@import url(`printf  \"'$b'\"`);"
 	 	echo $INJECTION >> "$PATHDIRJSC/css/cssengine.css"
 		done
 		echo "FALCON: cssengine.css built"

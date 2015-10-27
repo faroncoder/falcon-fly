@@ -10,22 +10,27 @@ stopwatchtime() {
 
 #################### BEGIN
 
-#PATHDIR=/srv/www/htdocs/.jsc/projects
-APP="/srv/www/htdocs/.jsc/projects/`basename $1`"
-if [ "$APP" = '' ]; then
-	echo "Aborting : no path for the project specificed. "
-	stopwatchtime
-	break
+PATHDIR=/srv/www/htdocs/.jsc/projects
+if [ ! -d $PATHDIR ]; then
+	mkdir -p $PATHDIR
 fi
 
-if [ ! -d "$APP" ];
+if [[ ! -z $1 ]]; then
+	APP="$PATHDIR/$( basename $1 )"
+fi
+
+if [ ! -d "$APP" ]; then
+	echo "Aborting : no path for the project specificed. "
+	stopwatchtime
+fi
+if [ -d "$APP" ];
 	then
-	`/home/faron/.bin/ff.hl.app.new $APP`
+	ff.hl.app.new $APP
 fi
 
 if [ ! -f "$APP/index.html" ];
 	then
-	sudo cp "/home/faron/.falcon/scripts/htmls/VAULT/html-full.txt" "$APP/index.html"
+	sudo cp "$HOME/.falcon/scripts/htmls/VAULT/html-full.txt" "$APP/index.html"
 	echo "index.html created in $APP"
 	else
 	echo "index.html exists ($APP/index.html)."

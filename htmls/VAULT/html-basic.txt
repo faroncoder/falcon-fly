@@ -10,6 +10,7 @@
     </head>
     <body>
         <!-- Javascript files -->
+	 <script src="https://jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js" type="text/javascript"></script>
         <script type="text/javascript">
         $(document).ready(function() {

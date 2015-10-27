@@ -32,12 +32,27 @@ if [[ -d "$PATHDIRJSC" ]]; then
 	#if [[ ! -f $FILEPOINT ]]; then
 		> $FILEPOINT
 		echo "
-	\$.getScript(\"./jsc/js/bootstrap.min.js\", function(data, textStatus) {
+	\$.getScript(\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\", function(data, textStatus) {
 		console.log(\"bootstrap.min.js loaded\", textStatus);
-	});\"" >> $FILEPOINT
+	});" >> $FILEPOINT
 	#fi
+	CHECKANGULAR=$( find -L ./jsc/js -maxdepth 1 -type f -name 'angular*.js' )
+	if [ -f "$CHECKANGULAR" ]; then
+		CLEANFILELOC=$( basename $CHECKANGULAR )
+		echo "
+	\$.getScript(\"$CHECKANGULAR\", function(data, textStatus) {
+		console.log(\"$CLEANFILELOC\", textStatus);
+	});" >> $FILEPOINT
+	fi
+	# 	echo "
+	# \$.getScript(\"http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.5/angular.min.js\", function(data, textStatus) {
+	# 	console.log(\"angular.min.js fetched\", textStatus);
+	# });" >> $FILEPOINT
+
+
+
 	echo "App structures match!"
-	JSGLOPPER=( `find -L $PATHDIRJSC -maxdepth 1 -type f -name '*.js' ! -name 'appengine.js' ! -name '*bootstrap*' ! -name '*ie*.js'  -exec basename {} \; ` )
+	JSGLOPPER=( `find -L $PATHDIRJSC -maxdepth 1 -type f -name '*.js' ! -name 'appengine.js' ! -name 'bootstrap.min.js' ! -name 'angular.min.js' ! -name '*ie*.js'  -exec basename {} \; ` )
 		## CHECKING FOR DEPENDENCIES FOR THE APP AND INSTALL IF NO FIND
 	 # 	if [ ! -f "$PATHDIRHOME/jsc/js/bootstrap.min.js" ]; then
 		# 		getBootstrap

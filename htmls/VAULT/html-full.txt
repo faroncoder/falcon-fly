@@ -7,16 +7,15 @@
         <meta name="description" content="">
         <meta name="author" content="faron">
         <title>{TITLE}</title>
-        <link href="./jsc/css/cssengine.css" rel="stylesheet" type="text/css" />
+        <link href="./jsc/css/cssengine.css" rel="stylesheet" type="text/css"></link>
         <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
         <![endif]-->
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
     </head>
     <body>
         <!-- SED-CUSTOM -->
         <!-- Javascript files -->
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+	 <script src="https://jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
         <script src="./jsc/js/appengine.js" type="text/javascript"></script>
         <script type="text/javascript">
         \$(document).ready(function() {

@@ -1540,8 +1540,6 @@ keyserver           584        udp    Key Server                   [Gary_Howland
                     585               De-registered                                                                                                                                             2006-04-25                                                                  Use of 585 is not recommended, use 993 instead
 password-chg        586        tcp    Password Change
 password-chg        586        udp    Password Change
-submission          587        tcp    Message Submission                                                                                                                                        2011-11-17   [RFC6409]
-submission          587        udp    Message Submission                                                                                                                                        2011-11-17   [RFC6409]
 cal                 588        tcp    CAL                          [Myron_Hattig]                                        [Myron_Hattig]
 cal                 588        udp    CAL                          [Myron_Hattig]                                        [Myron_Hattig]
 eyelink             589        tcp    EyeLink                      [Dave_Stampe]                                         [Dave_Stampe]
@@ -2099,7 +2097,6 @@ cadlock2           1000        udp
                                       Solaris????
 surf               1010        tcp    surf                         [Joseph_Geer]                                         [Joseph_Geer]
 surf               1010        udp    surf                         [Joseph_Geer]                                         [Joseph_Geer]
-                 1011-1020            Reserved
 exp1               1021        tcp    RFC3692-style Experiment 1   [IESG]                                                [IETF_Chair]                                                                        [1][RFC4727][RFC6335]
 exp1               1021        udp    RFC3692-style Experiment 1   [IESG]                                                [IETF_Chair]                                                                        [1][RFC4727][RFC6335]
 exp1               1021       sctp    RFC3692-style Experiment 1   [IESG]                                                [IETF_Chair]                                                                        [1][RFC4727][RFC6335]
@@ -8066,8 +8063,6 @@ asam               3451        tcp    ASAM Services                [Mike_Gossett
 asam               3451        udp    ASAM Services                [Mike_Gossett]                                        [Mike_Gossett]                                            2002-04
 sabp-signal        3452        tcp    SABP-Signalling Protocol     [Brendan_McWilliams]                                  [Brendan_McWilliams]                                      2002-04
 sabp-signal        3452        udp    SABP-Signalling Protocol     [Brendan_McWilliams]                                  [Brendan_McWilliams]                                      2002-04
-pscupd             3453        tcp    PSC Update                   [Datalogic_ADC_Inc]                                   [Reid_B_Ligon]                                            2001-11-10   2014-07-31
-pscupd             3453        udp    PSC Update                   [Datalogic_ADC_Inc]                                   [Reid_B_Ligon]                                            2001-11-10   2014-07-31
 mira               3454        tcp    Apple Remote Access Protocol [Mike_Alexander]                                      [Mike_Alexander]
 mira               3454        udp    Apple Remote Access Protocol [Mike_Alexander]                                      [Mike_Alexander]
 prsvp              3455        tcp    RSVP Port                    [Bob_Braden]                                          [Bob_Braden]
@@ -9844,7 +9839,6 @@ ml-svnet           4171        tcp    Maxlogic Supervisor          [Taha_Paksu] 
 pcoip              4172        tcp    PC over IP                   [Teradici]                                            [Jeff_Dillabough]                                         2009-12-23   2012-03-06
 pcoip              4172        udp    PC over IP                   [Teradici]                                            [Jeff_Dillabough]                                         2009-12-23   2012-03-06
                    4173        tcp    Reserved
-mma-discovery      4173        udp    MMA Device Discovery         [MIDI_Manufacturers_Assoc_Inc]                        [Tom_White]                                               2011-11-14
 smcluster          4174        tcp    StorMagic Cluster Services   [Chris_Farey]                                         [Chris_Farey]                                             2011-03-09
 sm-disc            4174        udp    StorMagic Discovery          [StorMagic_Ltd]                                       [Chris_Farey]                                             2011-12-16
 bccp               4175        tcp    Brocade Cluster              [Norival_Figueira]                                    [Norival_Figueira]                                        2010-04-07
@@ -14757,7 +14751,6 @@ blocks             10288       udp    Blocks                       [Carl_Malamud
 cosir              10321       tcp    Computer Op System           [Kevin_C_Barber]                                      [Kevin_C_Barber]                                          2009-01-13
                                       Information Report
                    10321       udp    Reserved
-                10322-10438           Unassigned
 bngsync            10439       udp    BalanceNG session table      [Inlab_Software_GmbH]                                 [Thomas_G._Obermair]                                      2014-05-02
                                       synchronization protocol
                    10439       tcp    Reserved
@@ -14916,7 +14909,6 @@ atm-uhas           11367       udp    ATM UHAS                     [Todd_Barker]
                 11368-11370           Unassigned
 hkp                11371       tcp    OpenPGP HTTP Keyserver       [David_Shaw]                                          [David_Shaw]                                              2003-05
 hkp                11371       udp    OpenPGP HTTP Keyserver       [David_Shaw]                                          [David_Shaw]                                              2003-05
-                11372-11429           Unassigned
 lsdp               11430       udp    Lenbrook Service Discovery   [Lenbrook_Industries_Limited]                         [Kevin_Groeneveld]                                        2014-03-27
                                       Protocol
                    11430       tcp    Reserved
@@ -15330,7 +15322,6 @@ avdecc             17221       udp    Enumeration, Connection      [IEEE_1722_1]
                                       management, and Control
                    17222       tcp    Reserved
                                       Control Plane
-cpsp               17222       udp    Synchronization Protocol     [Randall_Stewart_2]                                   [Randall_Stewart_2]                                       2011-11-10
                                       (SPSP)
                                       ISA100 GCI is a service
                                       utilizing a common interface
@@ -15600,7 +15591,6 @@ optohost004        22004       tcp    Opto Host Port 4             [Doug_Leany] 
 optohost004        22004       udp    Opto Host Port 4             [Doug_Leany]                                          [Doug_Leany]                                              2006-09
 optohost004        22005       tcp    Opto Host Port 5             [Doug_Leany]                                          [Doug_Leany]                                              2006-09
 optohost004        22005       udp    Opto Host Port 5             [Doug_Leany]                                          [Doug_Leany]                                              2006-09
-                22006-22124           Unassigned
 dcap               22125       tcp    dCache Access Protocol       [Christoph_Anton_Mitt]                                [Christoph_Anton_Mitt]                                    2009-03-10
                    22125       udp    Reserved
                 22126-22127           Unassigned
@@ -15846,7 +15836,6 @@ scscp              26133       tcp    Software Composability       [Alexander_Ko
                                       Symbolic Computation
 scscp              26133       udp    Software Composability       [Alexander_Konovalov]                                 [Alexander_Konovalov]                                     2007-11-27
                                       Protocol
-                26134-26207           Unassigned
 wnn6-ds            26208       tcp    wnn6-ds                      [Yasunari_Gon_Yamasit]                                [Yasunari_Gon_Yamasit]
 wnn6-ds            26208       udp    wnn6-ds                      [Yasunari_Gon_Yamasit]                                [Yasunari_Gon_Yamasit]
                 26209-26256           Unassigned
@@ -16266,7 +16255,6 @@ tentacle           41121       tcp    Tentacle Server              [Sancho_Leren
                 41122-41229           Unassigned
 z-wave-s           41230       tcp    Z-Wave Protocol over SSL/TLS [Sigma_Designs_3]                                     [Anders_Brandt_4]                                         2015-06-26
 z-wave-s           41230       udp    Z-Wave Protocol over DTLS    [Sigma_Designs_3]                                     [Anders_Brandt_4]                                         2015-06-26
-                41231-41793           Unassigned
 crestron-cip       41794       tcp    Crestron Control Port        [Ed_Ranney]                                           [Ed_Ranney]                                               2003-01
 crestron-cip       41794       udp    Crestron Control Port        [Ed_Ranney]                                           [Ed_Ranney]                                               2003-01
 crestron-ctp       41795       tcp    Crestron Terminal Port       [Ed_Ranney]                                           [Ed_Ranney]                                               2003-01
@@ -16306,7 +16294,6 @@ shaperai           43210       tcp    Shaper Automation Server     [Shaper_Autom
                                       Management
 shaperai-disc      43210       udp    Shaper Automation Server     [Shaper_Automation]                                   [Yohann_Sulaiman]                                         2012-06-22
                                       Management Discovery
-                43211-43438           Unassigned
 eq3-update         43439       tcp    EQ3 firmware update          [eQ-3_Entwicklung_GmbH]                               [Tido_de_Vries]                                           2012-02-10   2014-05-09
 eq3-config         43439       udp    EQ3 discovery and            [eQ-3_Entwicklung_GmbH]                               [Tido_de_Vries]                                           2012-02-10   2014-05-09
                                       configuration
@@ -21316,7 +21303,6 @@ zigbee-gateway                 udp    ZigBee IP Gateway            [ZigBee_Allia
 [Microtec_Informatique]                                                             Microtec Informatique mailto:raph&microtec.fr                                       2012-03-15
 [MicroTechniX]                                                                      MicroTechniX          mailto:Info&microtechnix.com                                  2014-10-13
 [Mictron]                                                                           Mictron               mailto:iana&mictron.se                                        2013-10-17
-[MIDI_Manufacturers_Assoc_Inc]                                                      MIDI Manufacturers    mailto:info&midi.org                                          2011-11-14
                                                                                     Assoc Inc
 [Midnight_Oil_Enterprises_LLC]                                                      Midnight Oil          mailto:corkill&mn-oil.com                                     2013-07-09
                                                                                     Enterprises, LLC
@@ -22954,7 +22940,6 @@ zigbee-gateway                 udp    ZigBee IP Gateway            [ZigBee_Allia
 [Tom_Taylor]                                              Tom Taylor                                      mailto:Tom.Taylor&unisys.com
 [Tom_Taylor_2]                                            Tom Taylor                                      mailto:taylor&nortelnetworks.com
 [Tom_Taylor_3]                                            Tom Taylor                                      mailto:taylor&nortel.com                                      2006-09
-[Tom_White]                                               Tom White                 MIDI Manufacturers    mailto:info&midi.org                                          2011-11-14
                                                                                     Assoc Inc
 [Tom_Whittaker]                                           Tom Whittaker                                   mailto:tomw&ssec.wisc.edu
 [Tomahawk_Holdings]                                                                 Tomahawk Holdings Ltd mailto:sagara&tomahawk.lk                                     2013-05-01

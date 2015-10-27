@@ -6,149 +6,60 @@ stopwatchtime() {
 	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
 	exit 0
 }
-#### IGNORE ABOVE
+
 export PATH=$PATH
-#PATHDIR="$PWD"
-#cd $PATHDIR
-
-#PREFILE="$( rev <<< $1 | cut -d"." -f2 | rev )"
-PREFILE=`printf $1 | cut -d"." -f 1`
-#EFXI="$( rev <<< $INPUT | cut -d"." -f1 | rev )"
-FILETYPE="mkv"
-## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
-#CODECVID="libx264"
-## 1 = ultrafast | 2 = fast | 3 = medium | 4 = veryslow
-#PRESET="1"
-## YES = 1 | NO = NULL
-#FORCINGHIGHPROFILE=""
-#CRF="25"
-## Video resolution.  360 for 360p; 480 for 480p; 720 for 720p, etc
-#HEIGHTWT="480"
-## This provokes the VBV method in ffmpeg
-## BEGING of VBV
-#MAXRAT="1200k"
-#BUFRAT="900k"
-#BITRAT="900k"
-## END OF VBV
-## Let's define variables for ffmpeg
-#TITLEFILE=" "
-#YEARFILE=""
-#ALBUMFILE=""
-#CONTAINTERFILE=""
-#ARTISTFILE=""
-
-#function ffmpegengine() {
-	## Let's meet pre-requestions before firing ffmpeg.  Let's identify which server we are residenting in:
-
-	#if [[ "$( hostname )" == "f10" ]]; then
-                    ## if this host is server A, let use this library
-               #     CODECAID="libfdk_aac"
-            #else
-            		## If this host is not Server A, we'll use different library.
-              #      CODECAID="libvo_aacenc"
-    #fi
-    #if [[ "$CODECVID" == "libx264" ]]; then
-    #		COND1="-tune zerolatency -qp 0"
-    		## Defining our codes for libx264
-      #  	if [[ "$PRESET" == "1" ]]; then
-	#				PRESETx264="ultrafast $COND1"
-        	#fi
-	    #     if [[ "$PRESET" == "2" ]]; then
-					# PRESETx264="fast"
-	    #     fi
-	    #     if [[ "$PRESET" == "3" ]]; then
-					# PRESETx264="medium"
-	    #     fi
-	    #     if [[ "$PRESET" == "4" ]]; then
-					# PRESETx264="veryslow $COND1"
-	    #     fi
-	    #     ## Triggering a flag whether to use -profile high or not
-	    #     if [[ -z "$FORCINGHIGHPROFILE" ]] || [[ ! "$FORCINGHIGHPROFILE" ]]; then
-	    #     			FORCEPROFILE=""
-	    #     	else
-	    #     			FORCEPROFILE="-profile high"
-	    #     fi
-	    #     CODECVCOMMANDS=" -vcodec $CODECVID -preset $PRESETx264 -crf $CRF $FORCEPROFILE"
-	#        FILETYPE="mkv"
-	# fi
-	#COMMENTFILE="Falcon $( date ) - $0"
-	#ffmpeg -fflags genpts -i $INPUT -flags +global_header -map 0:0 -codec copy -f mkv "$PREFILE.$FILETYPE" < /dev/null
-
-	echo "$1 | `ls -al --block-size=M $1 | awk '{print $5}'`" > "$PREFILE.list"
-#	 ls -al $1 | awk '{print $5}' > "$PREFILE.list"
-	 echo -e "y" | avidemux2_cli --force-alt-h264 --load $1 --save THISFILE.mkv --output-format  MATROSKA --quit
-
-	 echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "$PREFILE.list"
-	 #ls -al THISFILE.mkv | awk '{print $5}' >> "$PREFILE.list"
-	rm $1
-	ffmpeg -fflags genpts -i THISFILE.mkv -flags +global_header -codec copy "$PREFILE.$FILETYPE" < /dev/null
-	rm THISFILE.mkv
-	echo "$PREFILE.$FILETYPE | `ls -al --block-size=M $PREFILE.$FILETYPE | awk '{print $5}'`" >> "$PREFILE.list"
-	echo "-----------" >> "$PREFILE.list"
-	mediainfo "$PREFILE.$FILETYPE" >> "$PREFILE.list"
-	 #ls -al "$PREFILE.$FILETYPE" | awk '{print $5}' >> "$PREFILE.list"
-
-	#ffmpeg -fflags genpts -ss 00:00:00 -i THISFILE.mkv -y $CODECVCOMMANDS \
-	# 	-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
-	# 	-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
-	# 	-flags +loop -flags +global_header -movflags +faststart  \
-	# 	-pix_fmt +yuv420p -g 60 -coder 1 -cmp chroma \
-	# 	-partitions +parti4x4+partp8x8+partb8x8 \
-	# 	-me_method hex -subq 6 -me_range 16 -keyint_min 25 -sc_threshold 40 \
-	# 	-i_qfactor 0.71 -b_strategy 1 \
-	# 	-acodec "$CODECAID" -b:a 128k -ar 44100 -ac 2 \
-	# 	-metadata title="$TITLEFILE" \
-	# 	-metadata album="$ALBUMFILE" \
-	# 	-metadata year="$YEARFILE" \
-	# 	-metadata container="$CONTAINTERFILE" \
-	# 	-metadata artist="$ARTISTFILE" \
-	# 	-metadata comment="$COMMENTFILE" \
-	# 	-f $FILETYPE "$PREFILE.$FILETYPE" < /dev/null
-		#lets md5sum the file
-		#md5sum "$PREFILE.$FILETYPE" > "$PREFILE.dat"
-		#Lets clean up - sending input file to 'completed' folder
-
-		#mkdir $PWD/completed -p
-		#mv $INPUT "`basename $INPUT | cut -d"." -f1`_orig_but_discard_me.`basename $INPUT | rev | cut -d"." -f1 | rev`"
-
-		#rev <<< $INPUT | cut -d"." -f2 | rev
-		## Sending new processed file to 'output' folder
-		#mkdir $PWD/output -p
-		#mv "$PREFILE.*" $PWD/output/
-#}
-
-## Let's see if we have file to process by command 'find'
-
-# if [[ ! -z "$1" ]]; then
-# 	INPUT="$1"
-# else
-# 	INPUT=$( find "$PATHDIR" -maxdepth 1 -type f -name '*.mkv' -exec basename {} \; | sort | head -n 1 )
-# fi
-
-## Supposedly INPUT returns as true (found a file)
-#if [[ ! -z "$INPUT" ]]; then
-
-		## we grab filename of the file without extension
-        #PREFILE="$( rev <<< $INPUT | cut -d"." -f2 | rev )"
-        ## start ffmpeg function
-  #      ffmpegengine
-    ## if INPUT returns as false ( found a file )
-    #else
-    	## Let's double check if we actually do not have file to process to be safe than sorry (via sort/find/extracting filename from file )
-   # 	if [[ -z "$PREFILE" ]]; then
-		## if there is no filename, then we are satisfied and exit via logger.
-#		stopwatchtime
-  #  	fi
-#fi
-
-#ffmpeg -ss 00:00:10.435 -i "output/$PREFILE.mp4" -y -f  image2 -vframes 1 "$PREFILE.png"  < /dev/null
-#convert "$PREFILE.png" -resize "330x248^" -gravity center -background black -extent 330x248 "thumbs/$INPUT.png" < /dev/null
-#convert "$PREFILE.png" -resize 256x256\> "thumbs/$PREFILE.png"
-#rm "$PREFILE.png"
-#ffmpegthumbnailer -i "output/$PREFILE.mp4" -w -c png -s 0 -o "thumbs/$INPUT.png"
 
 
-## script self-executes so it'd loop to finish all of files.
-#$0
+GRABMOV=( `ls *.mov` )
+for m in "${GRABMOV[@]}";
+	do
+		PREFILE=$( printf "$m" | cut -d"." -f 1 )
+		FILETYPE="mkv"
+		#echo "$m | `ls -al --block-size=M $m | awk '{print $5}'`" > "_list/$PREFILE.list"
+		#echo -e "y" | avidemux2_cli --force-alt-h264 --load $m --unpack-vop --save THISFILE.mkv --output-format  MATROSKA --quit
+		#echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "_list/$PREFILE.list"
+	 	#rm $m
+	 	ffmpeg -fflags genpts -i $m -flags +global_header -codec copy "$PREFILE.$FILETYPE" < /dev/null
+		mv $m to_be_discarded_after_checking/
+		#rm THISFILE.mkv
+		echo "$PREFILE.$FILETYPE | `ls -al --block-size=M \"$PREFILE.$FILETYPE\" | awk '{print $5}'`" >> "_list/$PREFILE.list"
+		echo "-----------" >> "_list/$PREFILE.list"
+		mediainfo "$PREFILE.$FILETYPE" >> "_list/$PREFILE.list"
+		PREFILE=""
+	done
+GRABAVI=( `ls *.avi` )
+for a in "${GRABAVI[@]}";
+	do
+		PREFILE=$( printf "$a" | cut -d"." -f 1 )
+		FILETYPE="mkv"
+		#echo "$a | `ls -al --block-size=M $a | awk '{print $5}'`" > "_list/$PREFILE.list"
+		#echo -e "y" | avidemux2_cli --force-alt-h264 --load $a --unpack-vop --save THISFILE.mkv --output-format  MATROSKA --quit
+		#echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "_list/$PREFILE.list"
+
+		ffmpeg -fflags genpts -i $a -flags +global_header -codec copy "$PREFILE.$FILETYPE" < /dev/null
+		mv $a to_be_discarded_after_checking/
+		#rm THISFILE.mkv
+		echo "$PREFILE.$FILETYPE | `ls -al --block-size=M \"$PREFILE.$FILETYPE\" | awk '{print $5}'`" >> "_list/$PREFILE.list"
+		echo "-----------" >> "_list/$PREFILE.list"
+		mediainfo "$PREFILE.$FILETYPE" >> "_list/$PREFILE.list"
+		PREFILE=""
+	done
+GRABMPEG=( `ls *.mp4` )
+for p in "${GRABMPEG[@]}";
+	do
+		PREFILE=$( printf "$p" | cut -d"." -f 1 )
+		FILETYPE="mkv"
+		#echo "$p | `ls -al --block-size=M $p | awk '{print $5}'`" > "_list/$PREFILE.list"
+		#echo -e "y" | avidemux2_cli  --force-alt-h264 --load $p --unpack-vop --save THISFILE.mkv --output-format  MATROSKA --quit
+		#echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "_list/$PREFILE.list"
+	 	ffmpeg -fflags genpts -i $p -flags +global_header -codec copy "$PREFILE.$FILETYPE" < /dev/null
+		mv $p to_be_discarded_after_checking/
+		#rm THISFILE.mkv
+		echo "$PREFILE.$FILETYPE | `ls -al --block-size=M \"$PREFILE.$FILETYPE\" | awk '{print $5}'`" >> "_list/$PREFILE.list"
+		echo "-----------" >> "_list/$PREFILE.list"
+		mediainfo "$PREFILE.$FILETYPE" >> "_list/$PREFILE.list"
+		PREFILE=""
+	done
+
+
 stopwatchtime
-### Faron's note:  I didn't use loop via array for this one. FFMPEG does take time to finish processing one file at a rate of movie's length time which it'll stands as an ETA for FMPEG to finish processing.  I.e. if mkv has a movie stream and its movie time is 1hr and 30min; therefore ETA for FFMPEG to finish would be 1hr and 30min (more or less) [ x264 is huge reason ].  So, if I did use array method to loop / process files, when I break the code via CTRL-C, script will stop processing the file, but it'll still move on to next movie to process.  It'll have to be stopped via CTRL-Z.  I prefer using CTRL-C in order to be able to track for various reasons however CTRL-Z only kill the script but leaving with no footprints - thus harder for me to track (and it opens the door for bugs).  This method simply process the file at a time, and will exit but, also self-execute so, it'd loop to next file leaving footprints which are trackable.
