@@ -37,13 +37,13 @@ ARTISTFILE=""
 
 function ffmpegengine() {
 	## Let's meet pre-requestions before firing ffmpeg.  Let's identify which server we are residenting in:
-	if [[ "$( hostname )" == "f10" ]]; then
+#	if [[ "$( `hostname --short` )" == "f10" ]]; then
                     ## if this host is server A, let use this library
                     CODECAID="libfdk_aac"
-            else
+#            else
             		## If this host is not Server A, we'll use different library.
-                    CODECAID="libvo_aacenc"
-    fi
+#                    CODECAID="libvo_aacenc"
+ #   fi
     if [[ "$CODECVID" == "libx264" ]]; then
     		COND1="-tune zerolatency -qp 0"
     		## Defining our codes for libx264

@@ -37,7 +37,7 @@ esac
 	alias la='ls -A'
 	alias l='ls -CF'
 
- 	last_command=$? ##   Must come first!
+	last_command=$? ##   Must come first!
 	PS1=""
 	if [[ "$last_command" == 0 ]]; then
 			PS1+="$Green_SHELL$checkmark_SHELL"
@@ -57,10 +57,10 @@ esac
 ######### FARONIZED-MENU FUNCTION
     cd()  {
 	builtin cd "$@"
-    	RET="$?"
- 	find . -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
-    	ls
-    	return $RET
+	RET="$?"
+	find . -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
+	ls
+	return $RET
 }
 
 #cd $HOME 2> /dev/null
