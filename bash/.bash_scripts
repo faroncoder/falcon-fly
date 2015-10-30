@@ -62,10 +62,3 @@ esac
     	ls
     	return $RET
 }
-
-#cd $HOME 2> /dev/null
-
-
-
-
-

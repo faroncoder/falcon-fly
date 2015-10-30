@@ -1,6 +1,5 @@
-#!/bin/bash
-export PATH
-source $HOME///.bash_ssh
+export PATH=$PATH
+source $HOME/.bash_ssh
 PIDWHO="$1"
 if [ ! "$PIDWHO" ]; then
 	echo -n "which service to pidof for?  "
@@ -14,15 +13,15 @@ clearPIDS() {
 }
 
 checkPIDS() {
-	PIDALL=( `pidof $PIDWHO` )
-	PIDGET=`echo "${PIDALL[@]}" | wc -w`
+	PIDALL=( $( pidof $PIDWHO ) )
+	PIDGET=$( echo "${PIDALL[@]}" | wc -w )
 		#echo $CMD
 }
 
 checkPIDS
 if [[ "$PIDWHO" = "ssh-agent" ]]; then
 	if [[ "$PIDGET" -gt 3 ]]; then
-		sudo kill -9 `pidof $PIDWHO`
+		kill -9 `pidof $PIDWHO`
 		clearPIDS
 	fi
 	if [[ "$PIDGET" = 0 ]]; then
@@ -33,6 +32,4 @@ fi
 # if [[ $FIRECMD = 1 ]]; then
 #  	echo "$PIDWHO: $PIDGET  ${PIDALL[@]}"
 # fi
-
-exit 0
 
