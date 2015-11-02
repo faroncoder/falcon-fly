@@ -11,8 +11,11 @@ umask 002
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
 	source "$HOME/.bashrc"  2> /dev/null
-fi	
 
 export PEPPER_FLASH_VERSION=$(grep '"version":' /opt/google/chrome*/PepperFlash/manifest.json| grep -Po '(?<=version": ")(?:\d|\.)*')
+fi
+
+
+
 
 
