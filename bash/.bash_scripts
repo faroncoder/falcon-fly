@@ -56,9 +56,15 @@ esac
 
 ######### FARONIZED-MENU FUNCTION
 cd() {
+<<<<<<< HEAD
 	builtin cd "$@"
 	RET="$?"
 	find  -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
+=======
+ 	builtin cd "$@"
+	RET="$?"
+	find -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
+>>>>>>> 9695e3d3d78835d23d7b617b1735849bca167e01
 	ls
 	return $RET
 }

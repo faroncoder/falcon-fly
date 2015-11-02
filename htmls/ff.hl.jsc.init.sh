@@ -9,10 +9,18 @@ stopwatchtime(){
 ######## IGNORE ABOVE -- LOGGING PURPOSE ########
 ######## use 'stopwatchtime' instead of 'exit 0' ########
 
+if [ ! "$( echo $PWD | grep '/srv/www' )" ]; then
+	THISURLOPEN=""
+else
+
+	THISURLOPEN=$( echo $THISURLCHECK | sed 's/\/srv\/www\/htdocs\///g'  )
+fi
+
 PATHDIRHOME="$1"
 if [ "$PATHDIRHOME" = '' ]; then
 				PATHDIRHOME="$PWD"
-			fi
+fi
+
 JSCFILE="jsc-build.tar.bz2"
 BIN="/home/faron/.falcon/scripts/htmls/VAULT"
 

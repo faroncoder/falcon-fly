@@ -1,0 +1,117 @@
+#!/bin/bash
+startgreen=`date +%s`
+stopwatchtime() {
+	stopred=`date +%s`
+	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log;
+	exit 0
+}
+
+# if [ "$1" != "" ]; then
+#################### BEGIN
+LOADERBIN=$HOME/.falcon/scripts/htmls/VAULT
+CURPATH=""
+APPNAME=$1
+
+loadJSC() {
+if [ ! -d "$PROJ/jsc" ] || [ ! -d "$PROJ/.jsc" ]; then
+		sudo tar -jxvf $LOADERBIN/jsc-build.tar.bz2
+fi
+}
+
+starter() {
+if [ -z "$( echo $PWD | grep '/srv/www' )" ]; then
+	CURPATH=$PWD
+fi
+if [ ! -z $( echo $PWD | grep '/srv/www' ) ] && [ -d $( echo $PWD | grep '.jsc/projects' ) ]; then
+	CURPATH=/srv/www/htdocs/.jsc/projects
+	cd $CURPATH
+fi
+
+echo "Project path: $CURPATH"
+echo -n "New project name ? "
+read APPNAME
+PROJ="$CURPATH/$APPNAME"
+if [ ! -d "$PROJ" ]; then
+	sudo mkdir -p $CURPATH/$APPNAME
+	cd $PROJ
+fi
+if [ -d "$PROJ" ]; then
+	echo "Current => $PROJ "
+fi
+}
+
+statusGet() {
+JSC=''
+if [ -d "$CURPATH/.jsc" ]; then
+	JSC="JSC ✓"
+fi
+if [ -d "$CURPATH/jsc" ]; then
+	JSC="JSC ✓"
+fi
+if [ -z "$JSC" ]; then
+	JSC="JSC ✗"
+fi
+
+echo "$JSC"
+
+}
+
+jscInit() {
+if [ -d "$CURPATH/.jsc" ]; then
+	CURJSc=$PROJ/.jsc
+elif [ -d "$CURPATH/jsc" ]; then
+	CURJSc=$PROJ/jsc
+else
+	loadJSC
+fi
+ff.hl.js.glop
+ff.hl.css.glop
+}
+
+
+newHTML() {
+	echo -n "name of new page? "
+	read NAMEPAGE
+	echo -n "title of the page? "
+	read PAGETITLE
+	sudo cp "$LOADERBIN/html-full.txt" "$PROJ/$NAMEPAGE.html"
+	sudo sed -i -e "s/{TITLE}/$PAGETITLE/g" "$PROJ/$NAMEPAGE.html"
+	echo "$NAMEPAGE.html => built!"
+ }
+
+starter
+SELECT=""
+while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
+    echo "[ n=new page | s=status | j=JSC build | p=new plugin | x=exit ]"
+    #echo "Press <Enter> to do foo"
+    #echo "Press <Space> to do bar"
+    #read -s -N 1 SELECT
+    IFS= read -s -n 1 SELECT
+ 	echo "Current cmd: $SELECT"
+ 	case "$SELECT" in
+ 		n) newHTML shift ;;
+		j) jscInit shift ;;
+		s) statusGet shift;;
+		a) loadAJAX shift ;;
+		x) echo "exiting spawner"; break ;;
+
+	esac
+
+
+done
+
+stopwatchtime
+
+
+################### END
+# elif [ "$1" = "" ];
+# 	then
+#   echo "usage: keystroke-capture "
+#   echo "example:    "
+# fi
+
+
+## TALON: keystroke-capture
+
+

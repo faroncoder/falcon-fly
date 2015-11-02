@@ -6,12 +6,12 @@ if [ -z $1 ]
 	echo -n "Name of app? "
 	read appname
 fi
-if [ ! -d "/home/www/html/$appname" ]
+if [ ! -d "/srv/www/htdocs/$appname" ]
 	then
 	echo "invalid domain.  exiting."
 	exit 1
 fi
-pathdir="/home/www/html/$appname"
+pathdir="/srv/www/htdocs/$appname"
 binpull="/home/faron/.falcon/scripting/dat"
 #######
 cat $binpull/robots.txt > $pathdir/
