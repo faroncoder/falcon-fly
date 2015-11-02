@@ -5,14 +5,9 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-	NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin"
-	export PATH=$NEWPATH
-	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
-	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
-	#CLEANBINS=$( echo $PATH )
-	#CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
-	#export PATH=$CLEANUP
-	alias rm="trash-put"
+NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:$HOME/.bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin"
+export PATH=$NEWPATH
+alias rm="trash-put"
 
 case $- in
 	*i*) ;;
@@ -53,12 +48,9 @@ esac
 	LS_COLORS='di=1;35'
 	export LS_COLORS
 
-
-######### FARONIZED-MENU FUNCTION
-    cd()  {
-	builtin cd "$@"
+cd()  { builtin cd "$@"
 	RET="$?"
-	find . -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
+	find -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
 	ls
 	return $RET
 }
