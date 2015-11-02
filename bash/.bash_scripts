@@ -55,7 +55,7 @@ esac
 
 
 ######### FARONIZED-MENU FUNCTION
-cd(){
+cd() {
 	builtin cd "$@"
 	RET="$?"
 	find  -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
@@ -63,7 +63,7 @@ cd(){
 	return $RET
 }
 
-ssh-engine(){
+ssh-engine() {
 	echo "Initializing SSH agent..."
 	chmod -R 700 $HOME/.ssh
 	echo "privizating $HOME/.ssh : done"
