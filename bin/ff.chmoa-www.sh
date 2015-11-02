@@ -1,8 +1,8 @@
 #!/bin/bash
 
-WWWD=/home/www/html
+WWWD=/srv/www/htdocs
 
-sudo chown -R www-data:www-data $WWWD
-sudo chmod -R 775 $WWWD
+sudo chown -R faron:www-data $WWWD
+sudo chmod -R 665 $WWWD
 
 exit 0
