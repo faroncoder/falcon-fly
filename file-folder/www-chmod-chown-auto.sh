@@ -1,7 +1,7 @@
 #!/bin/bash
 startgreen=`date +%s`
 
-WWWD=/home/www/html
+WWWD=/srv/www/htdocs
 
 find $WWWD -maxdepth 1
 

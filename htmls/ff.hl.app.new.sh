@@ -9,15 +9,14 @@ stopwatchtime() {
 
 
 #################### BEGIN
-
+CURPATH=
 #PATHDIR=/srv/www/htdocs/.jsc/projects
 APPNAME="$1"
-if [ -z "$APPNAME" ]; then
-echo -n "name of new project? "
-read APPNAME
-APPNAME=`basename $APPNAME`
-fi
-
+# if [[ -z "$APPNAME" ]]; then
+# echo -n "name of new project? "
+# read APPNAME
+# APPNAME=$( basename $APPNAME )
+# fi
 
 APPLOC="/srv/www/htdocs/.jsc/projects/$APPNAME"
 
