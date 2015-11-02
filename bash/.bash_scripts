@@ -55,21 +55,15 @@ esac
 
 
 ######### FARONIZED-MENU FUNCTION
-cd() {
-<<<<<<< HEAD
+cd(){
 	builtin cd "$@"
 	RET="$?"
-	find  -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
-=======
- 	builtin cd "$@"
-	RET="$?"
 	find -maxdepth 1 -type d -name '*' -name '.*' ! -path '*.gvfs' -empty -exec rm -r {} \;  2> /dev/null
->>>>>>> 9695e3d3d78835d23d7b617b1735849bca167e01
 	ls
 	return $RET
 }
 
-ssh-engine() {
+ssh-engine(){
 	echo "Initializing SSH agent..."
 	chmod -R 700 $HOME/.ssh
 	echo "privizating $HOME/.ssh : done"
@@ -77,3 +71,4 @@ ssh-engine() {
 	eval $( ssh-agent -s ) > $HOME/.ssh/environment
 	find ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
 }
+
