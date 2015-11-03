@@ -63,6 +63,8 @@ cd() {
 	return $RET
 }
 
+PGVERSION=`pg_lsclusters -h | head -n 1 | cut -d' ' -f1`
+
 ssh-engine() {
 	echo "Initializing SSH agent..."
 	chmod -R 700 $HOME/.ssh

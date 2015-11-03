@@ -59,7 +59,7 @@ if [[ "$NEXTCOMM" == "y" ]];
 		for pull in "${BULKED[@]}";
 			do
 				sudo apt-get build-dep $pull
-				sudo apt-get install $pull
+				sudo apt-get install -y --force-yes $pull
 			done
 fi
 exit 0
