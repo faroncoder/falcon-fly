@@ -46,3 +46,39 @@ decoded as follows:
 	removal, subject to the value of the promptvars shell option (see
 	the description of the shopt command under SHELL BUILTIN COMMANDS
 	below).
+
+	[0:*] = regular 
+	[1:*] = bold
+	[2:*] = light
+	[3:*] = initalized
+	[4:*] = underline 
+	[5:*] = normal 
+	[6:*] = light
+	[7:*] = hightlighted
+	[8:*] = invisible
+	[9:*] = strike-out
+	[10:*] = color
+
+	[*:30] = gray
+	[*:31] = red
+	[*:32] = green
+	[*:33] = yellow
+	[*:34] = blue
+	[*:35] = purple
+	[*:36] = teal
+	[*:37] = white
+	[*:38] = invisible
+	[*:39] = normal
+
+	[*:40] = font black
+	[*:41] = font red
+	[*:42] = font green
+	[*:43] = font yellow
+	[*:44] = font blue
+	[*:45] = font purple
+	[*:46] = font teal
+	[*:47] = font white
+
+
+
+

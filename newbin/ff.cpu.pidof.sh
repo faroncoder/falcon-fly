@@ -1,6 +1,5 @@
 #!/bin/bash
 export PATH
-source $HOME///.bash_ssh
 PIDWHO="$1"
 if [ ! "$PIDWHO" ]; then
 	echo -n "which service to pidof for?  "

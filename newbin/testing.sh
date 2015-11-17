@@ -1,84 +1,23 @@
 #!/bin/bash
-if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
-	export PATH=$PATH:/home/faron/.bin:/usr/local/bin
+if [ ! "$( echo $PATH | grep '/home/faron/.bin/' )" ]; then
+	export PATH=$PATH:/home/faron/.bin
 fi
 XeB=`date +%s`
 function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /home/faron/.falcon/logs/scripts.log; exit 0
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
-
-#if [ "$1" != "" ]; then
+if [ "$1" != "" ]; then
 #################### BEGIN
 
-
+echo $PWD
 
 ################### END
-#elif [ "$1" = "" ];
-#	then
-#  echo "usage: testing.sh "
-#  echo "example:    "
-#fi
-
-
-## TALON: testing.sh
-XeF
-
-
-#!/bin/bash
-if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
-	export PATH=$PATH:/home/faron/.bin:/usr/local/bin
+elif [ "$1" = '' ];
+	then
+  echo "usage: testing "
+  echo "example:  testing  "
 fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /home/faron/.falcon/logs/scripts.log; exit 0
-}
-
-#if [ "$1" != "" ]; then
-#################### BEGIN
-
-## FUNCTIONS
-
-## SCRIPTING
-
-
-################### END
-#elif [ "$1" = '' ];
-#	then
-#  echo "usage: testing "
-#  echo "example:    "
-#fi
-
-
-## TALON: testing
-XeF
-
-
-#!/bin/bash
-if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
-	export PATH=$PATH:/home/faron/.bin:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /home/faron/.falcon/logs/scripts.log; exit 0
-}
-
-#if [ "$1" != "" ]; then
-#################### BEGIN
-
-## FUNCTIONS
-
-## SCRIPTING
-
-
-################### END
-#elif [ "$1" = '' ];
-#	then
-#  echo "usage: testing "
-#  echo "example:    "
-#fi
-
-
-## TALON: testing
+## TALON:
 XeF
 
 

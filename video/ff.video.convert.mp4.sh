@@ -12,7 +12,7 @@ PATHDIR="$PWD"
 cd $PATHDIR
 INPUT="$1"
 PREFILE=$( rev <<< $INPUT | cut -d"." -f2 | rev )
-EFXI="$( rev <<< $INPUT | cut -d"." -f1 | rev )"
+EFXI=$( rev <<< $INPUT | cut -d"." -f1 | rev )
 ## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
 CODECVID="libx264"
 ## 1 = ultrafast | 2 = fast | 3 = medium | 4 = veryslow
@@ -39,10 +39,10 @@ function ffmpegengine() {
 	## Let's meet pre-requestions before firing ffmpeg.  Let's identify which server we are residenting in:
 #	if [[ "$( `hostname --short` )" == "f10" ]]; then
                     ## if this host is server A, let use this library
-                    CODECAID="libfdk_aac"
+#                    CODECAID="libfdk_aac"
 #            else
             		## If this host is not Server A, we'll use different library.
-#                    CODECAID="libvo_aacenc"
+                    CODECAID="libvo_aacenc"
  #   fi
     if [[ "$CODECVID" == "libx264" ]]; then
     		COND1="-tune zerolatency -qp 0"
@@ -85,8 +85,11 @@ function ffmpegengine() {
 		-metadata container="$CONTAINTERFILE" \
 		-metadata artist="$ARTISTFILE" \
 		-metadata comment="$COMMENTFILE" \
-		-f $FILETYPE "`basename $INPUT | cut -d"." -f1`.$FILETYPE"
-		rename 's/_mastercopy/_copy/g' "`basename $INPUT | cut -d"." -f1`.$FILETYPE"
+		-f $FILETYPE "lib_mp4/$PREFILE.$FILETYPE"
+
+
+#"`basename $INPUT | cut -d"." -f1`.$FILETYPE"
+#		rename 's/_mastercopy/_copy/g' "`basename $INPUT | cut -d"." -f1`.$FILETYPE"
 		#lets md5sum the file
 		#md5sum "$PREFILE.$FILETYPE" > "$PREFILE.dat"
 		#Lets clean up - sending input file to 'completed' folder
