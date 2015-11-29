@@ -9,6 +9,7 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
+ssh-engine
 cd ~/.falcon/scripts 2> /dev/null
 find -type f -name '*~' -exec rm {} \;
 git fetch
