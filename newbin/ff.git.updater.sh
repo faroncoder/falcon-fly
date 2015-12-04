@@ -10,12 +10,12 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #################### BEGIN
 
 ssh-engine
-cd ~/.falcon/scripts 2> /dev/null
-find -type f -name '*~' -exec rm {} \;
-git fetch
+cd ~/.falcon/scripts 
+ff.clean
 git status
 git add -A
-git commit -a -m 'f10'
+git commit -a -m "$( hostname --short )"
+git pull
 git push
 
 
@@ -27,5 +27,3 @@ git push
 #fi
 ## TALON:
 XeF
-
-
