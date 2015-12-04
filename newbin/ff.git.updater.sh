@@ -1,7 +1,5 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/home/faron/.bin/' )" ]; then
-	export PATH=$PATH:/home/faron/.bin
-fi
+export PATH=$PATH:/home/faron/.bin
 XeB=`date +%s`
 function XeF {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
