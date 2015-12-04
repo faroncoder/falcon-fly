@@ -1,5 +1,4 @@
-export PATH=$PATH
-usb_rescanner 1> /dev/null
+export PATH=$PATH:/home/faron/.bin
 source $HOME/.bash_colors
 source $HOME/.bash_scripts
 source $HOME/.bash_aliases

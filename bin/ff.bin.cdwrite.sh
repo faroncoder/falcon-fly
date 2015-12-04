@@ -12,19 +12,21 @@ echo 'usage: ff.mongo.insert [collection] [query stings]'
   stopwatchtime
 }
 
-if [ "$1" != '' ] && [ "$2" != '' ]; then
+if [ "$1" != '' ]; then
 #################### BEGIN
 
-sudo wodim -eject -tao speed=10 dev=/dev/sr0 -v -data /media/falcon/files/downloads/ubuntu-15.10-server-i386.iso
+sudo wodim -eject -tao speed=10 dev=/dev/sr0 -v -data $1
 
 ################### END
+else
+	stopwatchtime
+fi
 if [ "$1" = '' ]; then
 		helpecho
 fi
 if [ "$1" = '' ] && [ "$2" = '' ]; then
 		helpecho
 fi
-
 stopwatchtime
 ## TALON: ff.bin.cdwrite
 
