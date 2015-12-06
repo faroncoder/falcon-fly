@@ -8,8 +8,8 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #################### BEGIN
 
 ssh-engine
-cd ~/.falcon/scripts 
-ff.clean
+cd ~/.falcon/scripts
+find . -type f -name '*~' -exec rm {} \;
 git status
 git add -A
 git commit -a -m "$( hostname --short )"

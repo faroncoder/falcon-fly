@@ -8,22 +8,16 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 }
 #if [ "$1" != "" ]; then
 #################### BEGIN
-
-ssh-engine
-cd ~/.falcon/scripts 
-ff.clean
-git status
-git add -A
-git commit -a -m "$( hostname --short )"
-git pull
-git push
-
-
+sudo add-apt-repository ppa:mutse-young/remastersys
+ff.apt.update
+ff.apt.fetch remastersys
 ################### END
 #elif [ "$1" = '' ];
 #	then
-#  echo "usage: ff.git.updater "
-#  echo "example:  ff.git.updater  "
+#  echo "usage: install_remastersys "
+#  echo "example:  install_remastersys  "
 #fi
 ## TALON:
 XeF
+
+

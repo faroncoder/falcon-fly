@@ -16,7 +16,7 @@ EFXI=$( rev <<< $INPUT | cut -d"." -f1 | rev )
 ## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
 CODECVID="libx264"
 ## 1 = ultrafast | 2 = fast | 3 = medium | 4 = veryslow
-PRESET="1"
+PRESET="4"
 ## YES = 1 | NO = NULL
 FORCINGHIGHPROFILE=""
 CRF="25"
@@ -39,10 +39,10 @@ function ffmpegengine() {
 	## Let's meet pre-requestions before firing ffmpeg.  Let's identify which server we are residenting in:
 #	if [[ "$( `hostname --short` )" == "f10" ]]; then
                     ## if this host is server A, let use this library
-#                    CODECAID="libfdk_aac"
+                    CODECAID="libfdk_aac"
 #            else
             		## If this host is not Server A, we'll use different library.
-                    CODECAID="libvo_aacenc"
+#                    CODECAID="libvo_aacenc"
  #   fi
     if [[ "$CODECVID" == "libx264" ]]; then
     		COND1="-tune zerolatency -qp 0"
@@ -70,6 +70,8 @@ function ffmpegengine() {
 	fi
 	COMMENTFILE="Falcon $( date ) - $0"
 	#echo "y" | /usr/bin/avidemux2_cli --load $INPUT --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_converted_mkv.mkv" --quit
+	#mkdir $PWD/lib_mp4
+
 	ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y $CODECVCOMMANDS \
 		-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
 		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
@@ -85,7 +87,7 @@ function ffmpegengine() {
 		-metadata container="$CONTAINTERFILE" \
 		-metadata artist="$ARTISTFILE" \
 		-metadata comment="$COMMENTFILE" \
-		-f $FILETYPE "lib_mp4/$PREFILE.$FILETYPE"
+		-f $FILETYPE "lib_mp4/new_$PREFILE.$FILETYPE"
 
 
 #"`basename $INPUT | cut -d"." -f1`.$FILETYPE"

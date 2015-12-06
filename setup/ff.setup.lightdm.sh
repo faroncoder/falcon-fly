@@ -7,6 +7,6 @@ autologin-user-timeout=0
 user-session=ubuntu
 greeter-session=unity-greeter
 allow-guest=false
-\" >> /etc/lightdm/lightdm.conf"
-
+\" > /etc/lightdm/lightdm.conf"
+sudo dpkg-reconfigure lightdm
 exit 0

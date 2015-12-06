@@ -29,18 +29,17 @@ XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); logger \"\$0 | \$XeB
 ## TALON:
 XeF
 
-" >> "$newbin/$proofreadfile";
+" >> $newbin/$proofreadfile
 
-gedit "$newbin/$proofreadfile";
-
+subl $newbin/$proofreadfile
 
 ###DETERMINING WHICH APP TO OPEN THE SCRIPT DEPENEDING ON WHICH SERVERS
 ##SRVNAME=`hostname --short`
 
-##if [ "$SRVNAME" != 'f10' ]; then
-##	nano $newbin/$proofreadfile
-##else
-##	gedit $newbin/$proofreadfile
-##fi
+# if [[ "$( hostname --short )" != 'f10' ]]; then
+# 	nano $newbin/$proofreadfile
+# else
+# 	subl $newbin/$proofreadfile
+# fi
 
 exit 0
