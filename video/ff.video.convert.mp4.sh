@@ -9,14 +9,15 @@ stopwatchtime() {
 #### IGNORE ABOVE
 export PATH=$PATH
 PATHDIR="$PWD"
+MASTERPATH=$( dirname $PATHDIR )
 cd $PATHDIR
-INPUT="$1"
+INPUT="$( basename $1 )"
 PREFILE=$( rev <<< $INPUT | cut -d"." -f2 | rev )
 EFXI=$( rev <<< $INPUT | cut -d"." -f1 | rev )
 ## only have one option for now which is libx264. future development will add few more libraries to the choice such as libraries for webm, flv, etc.
 CODECVID="libx264"
 ## 1 = ultrafast | 2 = fast | 3 = medium | 4 = veryslow
-PRESET="4"
+PRESET="3"
 ## YES = 1 | NO = NULL
 FORCINGHIGHPROFILE=""
 CRF="25"
@@ -35,11 +36,13 @@ ALBUMFILE=""
 CONTAINTERFILE=""
 ARTISTFILE=""
 
+
+
 function ffmpegengine() {
 	## Let's meet pre-requestions before firing ffmpeg.  Let's identify which server we are residenting in:
 #	if [[ "$( `hostname --short` )" == "f10" ]]; then
                     ## if this host is server A, let use this library
-                    CODECAID="libfdk_aac"
+                    CODECAID="libmp3lame"
 #            else
             		## If this host is not Server A, we'll use different library.
 #                    CODECAID="libvo_aacenc"
@@ -72,22 +75,29 @@ function ffmpegengine() {
 	#echo "y" | /usr/bin/avidemux2_cli --load $INPUT --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_converted_mkv.mkv" --quit
 	#mkdir $PWD/lib_mp4
 
-	ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y $CODECVCOMMANDS \
+
+cp $INPUT $HOME/
+mv $INPUT hold/
+cd $HOME
+
+	ffmpeg -fflags genpts -ss 00:00:00 -i ${INPUT} -y -ss 00:00:00 $CODECVCOMMANDS \
 		-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
-		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
-		-flags +loop -flags +global_header -movflags +faststart  \
-		-pix_fmt +yuv420p -g 60 -coder 1 -cmp chroma \
-		-partitions +parti4x4+partp8x8+partb8x8 \
+		-coder 1 -cmp chroma -partitions +parti4x4+partp8x8+partb8x8 \
 		-me_method hex -subq 6 -me_range 16 -keyint_min 25 -sc_threshold 40 \
 		-i_qfactor 0.71 -b_strategy 1 \
-		-acodec "$CODECAID" -b:a 128k -ar 44100 -ac 2 \
+		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
+		-flags +loop -flags +global_header -movflags +faststart  \
+		-pix_fmt +yuv420p -g 60 -acodec "$CODECAID" -b:a 128k -ar 44100 -ac 2 \
 		-metadata title="$TITLEFILE" \
 		-metadata album="$ALBUMFILE" \
 		-metadata year="$YEARFILE" \
 		-metadata container="$CONTAINTERFILE" \
 		-metadata artist="$ARTISTFILE" \
 		-metadata comment="$COMMENTFILE" \
-		-f $FILETYPE "lib_mp4/new_$PREFILE.$FILETYPE"
+		-f $FILETYPE new_$PREFILE.mp4
+		cd $PATHDIR
+		mv "$HOME/new_$PREFILE.mp4" "$PATHDIR/mp4/$PREFILE_new.mp4"
+		mv "$PATHDIR/hold/$INPUT" "$PATHDIR/del/$INPUT"
 
 
 #"`basename $INPUT | cut -d"." -f1`.$FILETYPE"
@@ -137,6 +147,6 @@ fi
 
 
 ## script self-executes so it'd loop to finish all of files.
-$0
+#$0
 stopwatchtime
 ### Faron's note:  I didn't use loop via array for this one. FFMPEG does take time to finish processing one file at a rate of movie's length time which it'll stands as an ETA for FMPEG to finish processing.  I.e. if mkv has a movie stream and its movie time is 1hr and 30min; therefore ETA for FFMPEG to finish would be 1hr and 30min (more or less) [ x264 is huge reason ].  So, if I did use array method to loop / process files, when I break the code via CTRL-C, script will stop processing the file, but it'll still move on to next movie to process.  It'll have to be stopped via CTRL-Z.  I prefer using CTRL-C in order to be able to track for various reasons however CTRL-Z only kill the script but leaving with no footprints - thus harder for me to track (and it opens the door for bugs).  This method simply process the file at a time, and will exit but, also self-execute so, it'd loop to next file leaving footprints which are trackable.

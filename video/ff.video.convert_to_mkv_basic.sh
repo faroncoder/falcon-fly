@@ -10,11 +10,13 @@ stopwatchtime() {
 export PATH=$PATH
 
 
-GRABMOV=( `ls *.mov` )
+GRABMOV=( echo $( find . -maxdepth 1 -type f ) )
 for m in "${GRABMOV[@]}";
 	do
-		PREFILE=$( printf "$m" | cut -d"." -f 1 )
-		FILETYPE="mkv"
+		INPUT=$( basename $1 )
+		PREFILE=$( rev <<< $INPUT | cut -d"." -f2 | rev )
+		EXT=$( rev <<< $INPUT | cut -d"." -f1 | rev )
+		REQEXT=""
 		#echo "$m | `ls -al --block-size=M $m | awk '{print $5}'`" > "_list/$PREFILE.list"
 		#echo -e "y" | avidemux2_cli --force-alt-h264 --load $m --unpack-vop --save THISFILE.mkv --output-format  MATROSKA --quit
 		#echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "_list/$PREFILE.list"
@@ -54,8 +56,7 @@ for p in "${GRABMPEG[@]}";
 		#echo "THISFILE.mkv | `ls -al --block-size=M THISFILE.mkv | awk '{print $5}'`" >> "_list/$PREFILE.list"
 	 	ffmpeg -fflags genpts -i $p -flags +global_header -codec copy "$PREFILE.$FILETYPE" < /dev/null
 		mv $p to_be_discarded_after_checking/
-		#rm THISFILE.mkv
-		echo "$PREFILE.$FILETYPE | `ls -al --block-size=M \"$PREFILE.$FILETYPE\" | awk '{print $5}'`" >> "_list/$PREFILE.list"
+		#rm THISFILE.mkv*\		echo "$PREFILE.$FILETYPE | `ls -al --block-size=M \"$PREFILE.$FILETYPE\" | awk '{print $5}'`" >> "_list/$PREFILE.list"
 		echo "-----------" >> "_list/$PREFILE.list"
 		mediainfo "$PREFILE.$FILETYPE" >> "_list/$PREFILE.list"
 		PREFILE=""
