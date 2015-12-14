@@ -10,6 +10,8 @@ stopwatchtime() {
 export PATH=$PATH
 PATHDIR="$PWD"
 MASTERPATH=$( dirname $PATHDIR )
+BASELOC=$( basename $PATHDIR )
+SERVER=$( hostname --short )
 cd $PATHDIR
 INPUT="$( basename $1 )"
 PREFILE=$( rev <<< $INPUT | cut -d"." -f2 | rev )
@@ -76,11 +78,12 @@ function ffmpegengine() {
 	#mkdir $PWD/lib_mp4
 
 
-cp $INPUT $HOME/
-mv $INPUT hold/
+
+cp "$PWD/$INPUT" "$HOME/$INPUT"
+mv "$INPUT" "hold/$( hostname --short )_$INPUT"
 cd $HOME
 
-	ffmpeg -fflags genpts -ss 00:00:00 -i ${INPUT} -y -ss 00:00:00 $CODECVCOMMANDS \
+	ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y -ss 00:00:00 $CODECVCOMMANDS \
 		-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
 		-coder 1 -cmp chroma -partitions +parti4x4+partp8x8+partb8x8 \
 		-me_method hex -subq 6 -me_range 16 -keyint_min 25 -sc_threshold 40 \
@@ -94,10 +97,11 @@ cd $HOME
 		-metadata container="$CONTAINTERFILE" \
 		-metadata artist="$ARTISTFILE" \
 		-metadata comment="$COMMENTFILE" \
-		-f $FILETYPE new_$PREFILE.mp4
+		-f mp4 "$( hostname --short )_$( echo $INPUT | sed 's/.mkv/.mp4/g' )"
+		mv "$( hostname --short )_$( echo $INPUT | sed 's/.mkv/.mp4/g' )" "$PATHDIR/mp4/$( echo $INPUT | sed 's/.mkv/.mp4/g' )"
+		rm $INPUT
 		cd $PATHDIR
-		mv "$HOME/new_$PREFILE.mp4" "$PATHDIR/mp4/$PREFILE_new.mp4"
-		mv "$PATHDIR/hold/$INPUT" "$PATHDIR/del/$INPUT"
+		mv "hold/$( hostname --short)_$INPUT" "done/$INPUT"
 
 
 #"`basename $INPUT | cut -d"." -f1`.$FILETYPE"
