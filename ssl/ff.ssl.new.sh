@@ -8,8 +8,8 @@ stopwatchtime(){
 }
 # Generates a self-signed certificate.
 # Edit dovecot-openssl.cnf before running this.
-if [[ ! "$EUID" = 0 ]]; then
-    echo "Faron - use sudo su instead "
+if [[ "$EUID" = 0 ]]; then
+    echo "Faron - run it in your USERNAME"
 fi
 
 SSLDIR=/etc/ssl
@@ -30,21 +30,21 @@ else
   DOMAIN1=$1
 fi
 
-  if [[ "$DOMAIN1" = 'app' ]]; then
-      echo -n "name for key? "
-      read newkey
-      #echo $CONFFILE > "/etc/ssl/cnfs/app_$newkey.conf"
+  #if [[ "$DOMAIN1" = 'app' ]]; then
+   #   echo -n "name for key? "
+    #  read newkey
+     # #echo $CONFFILE > "/etc/ssl/cnfs/app_$newkey.conf"
       #openssl req -x509 -newkey rsa:1024 -keyout "$KEYDIR/app_$newkey.key" -out "$CERTDIR/app_$newkey.crt" -nodes -days 365
-      sudo openssl req -x509 -nodes -newkey rsa:1024 -keyout "$SSLDIR/private/app_$newkey.key" -out "$SSLDIR/certs/app_$newkey.crt" -days 365
-      sudo chmod 0600 "$SSLDIR/private/app_$newkey.key"
-      echo "$newkey.key certified and privatized (Location: $SSLDIR/private/app_$newkey.key)"
-      stopwatchtime
-    fi
+      #sudo sh -c "openssl req -x509 -nodes -newkey rsa:1024 -keyout \"$SSLDIR/private/app_$newkey.key\" -out \"$SSLDIR/certs/app_$newkey.crt\" -days 365"
+      #sudo sh -c "chmod 0600 \"$SSLDIR/private/app_$newkey.key\""
+      #echo "$newkey.key certified and privatized (Location: $SSLDIR/private/app_$newkey.key)"
+      #stopwatchtime
+    #fi
     DOMAINE="$( echo $DOMAIN1 | tr '*' 'A' | tr '.' '_' )"
     #DOMAINE="$( echo $DOMAIN1 | sed 's/./_/g' )"
       #find "$SSLDIR" -type f -name "*$DOMAINE*" -exec rm {} \;
       echo "SYSTEM CHECK = OK"
-    sh -c "echo \"
+    sudo sh -c "echo \"
 [ req ]
 default_bits = 2048
 distinguished_name = req_dn
@@ -92,7 +92,7 @@ nsCertType = server
           read KEYCHECK
           if [[ "$KEYCHECK" = "y" ]] || [[ "$KEYCHECK" = "Y" ]]; then
             echo "KEY FILE = NEW"
-            rm "$SSLDIR/private/$DOMAINE.pem"
+            sudo rm "$SSLDIR/private/$DOMAINE.pem"
           fi
             #echo "KEY FILE = KEEP"
           #fi
@@ -102,7 +102,7 @@ nsCertType = server
           read CERTCHECK
           if [[ "$CERTCHECK" = "y" ]] || [[ "$CERTCHECK" = "Y" ]]; then
             echo "CERT FILE = NEW"
-            rm "$SSLDIR/certs/$DOMAINE.pem"
+            sudo rm "$SSLDIR/certs/$DOMAINE.pem"
           fi
      fi
       # if [ -f "$SSLDIR/certs/$DOMAINE.pem" ]; then
@@ -116,11 +116,11 @@ nsCertType = server
       # fi
 
       echo "PREREQUIREMENT = SUCCESS!"
-      sudo openssl req -new -x509 -nodes -config "$SSLDIR/cnfs/$DOMAINE.cnf" -out "$SSLDIR/certs/$DOMAINE.pem" -keyout "$SSLDIR/private/$DOMAINE.pem" -days 365
+      sudo sh -c "openssl req -new -x509 -nodes -config \"$SSLDIR/cnfs/$DOMAINE.cnf\" -out \"$SSLDIR/certs/$DOMAINE.pem\" -keyout \"$SSLDIR/private/$DOMAINE.pem\" -days 365"
       echo "CERTIFICATE AND KEY GENERATED AND IMPLEMENTED"
-      chmod 0600 $SSLDIR/private/$DOMAINE.pem
+      sudo sh -c "chmod 0600 $SSLDIR/private/$DOMAINE.pem"
       echo "KEY PRIVATIZED FOR SERVER READ"
-      sudo openssl x509 -subject -fingerprint -noout -in "$SSLDIR/certs/$DOMAINE.pem"
+      sudo sh -c "openssl x509 -subject -fingerprint -noout -in \"$SSLDIR/certs/$DOMAINE.pem\""
       echo "KEY/CERTIFICATE FINGERPRINTED AND SEALED FOR USE: $DOMAIN1"
 #     fi
 # fi
