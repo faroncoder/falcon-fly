@@ -9,23 +9,24 @@ stopwatchtime(){
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
-GETALLGIT=( $( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+#GETALLGIT=( $( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+GETALLGIT=$( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  )
 
-
+cd $GETALLGIT 2> /dev/null
 
 #CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 #CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
 
-for p in "${GETALLGIT[@]}";
-do
-	cd $p 2> /dev/null
-	THISGIT="$( basename $PWD ).git"
-	if [[ "$THISGIT" = 'scripts.git' ]]; then
-		THISGIT=/home/faron/.falcon/scripts/falcon-fly.git
+#for p in "${GETALLGIT[@]}";
+#do
+#	cd $p 2> /dev/null
+	CKTHISGIT="$( basename $GETALLGIT )"
+	if [[ "$CKTHISGIT" = 'scripts' ]]; then
+		THISGIT="falcon-fly.git"
 	fi
-	#git remote set-url origin "git@github.com:faroncoder/$THISGIT"
-	#git config --global user.name "faroncoder"
-	#git config --global user.email "faronledger@gmail.com"
+	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
+	git config --global user.name "faroncoder"
+	git config --global user.email "faronledger@gmail.com"
 	sleep 1
 	echo "FALCON: Updating $THISGIT"
 	sleep 1
@@ -52,7 +53,7 @@ do
 	git add --all
 	git commit -a -m "auto-$( hostname )-$( date )"
 	git push
-done
+#done
 
 # echo "FALCON: Updating/home/faron/.falcon-fly"
 # cd /home/faron/.falcon/scripts
