@@ -9,14 +9,18 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-COLELCT=( `find -L /home/faron/.falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet' -exec basename {} \;` )
-if [  "$COLELCT" != '' ]; then
-	for snippet in "${COLELCT[@]}"; do
-		logger "$( `basename $0` ) : $snippet moved"
-		mv "home/faron/.falcon/code/sublime/User/$snippet" "/home/faron/.falcon/code/sublime/mysnippets/$snippet" 2> /dev/null
-		#DISPLAY=:0.0
-		notify-send "Snippet found and special archived"
-	done
+HUNTFILE=( `find -L /media/falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet'  `  )
+if [[ ! -z "$HUNTFILE" ]]; then
+        for snippet in "${HUNTFILE[@]}"; do
+        	FILEME=$( basename $snippet )
+        	logger "Found: $FILE and moving to resident folder"
+        	mv $snippet /media/falcon/code/sublime/mysnippets/
+        	CHECKME=$( ls -al /media/falcon/code/sublime/mysnippets/$FILEME )
+        	if [[ ! -z "$FILEME" ]]; then
+        		echo "$FILEME secured."
+        	fi
+        	ff.notify.echo "Found: $( basename $snippet )" < /dev/null
+        done
 fi
 
 
