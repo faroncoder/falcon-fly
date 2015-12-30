@@ -31,11 +31,14 @@ for j in "${orderfiles[@]}";
 		PREFILE=`rev <<< $j | cut -d"." -f2 | rev `
 		GETEXT=`rev <<< $j | cut -d"." -f1 | rev`
 		GETNEWNAME=`seq -w 0 $( echo $MEXT ) | tail -n 1 `
+
+		rename "s/$PREFILE/$( seq -w 00001 $( echo $MEXT  ) | tail -n 1 )/g" $j
 		#cp $line seralized/"$GETNEWNAME.$GETEXT"
-		mv $j "$PWD/$TRIMUP/$GETNEWNAME.$GETEXT"
+		#msssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssv $j "$PWD/$TRIMUP/$GETNEWNAME.$GETEXT"
 		#rm $line
 		#rename 's/$( echo $GETNAME )/$( echo $GETNEWNAME )/g' $line
-		MEXT=`expr $MEXT + 1`
+		#MEXT=`expr $MEXT + 1`
+		MEXT=$( echo $(( $MEXT + 1 )) )
 		#rm $line
 		#find -name "$FILE*" -type f -exec mv {} $FILEASS
 		#mv $line $FILEASS.$FILE

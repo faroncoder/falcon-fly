@@ -9,35 +9,62 @@ stopwatchtime() {
 ## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
 ## BEGIN
 
-if [ -z "$TYPERES" ]; then
-    echo -n "FALCON: element type [Div|Form|Img|Link|Paragraph] ? "
+TYPERES=$1
+ID=$2
+CLASS=$3
+HTML=$4
+
+if [ ! "$TYPERES" ]; then
+    echo -n "FALCON: element type ? "
     read TYPERES
-else
-
-
-	if [[ "$TYPERES" == "D" ]]; then
-    TYPE="div"
-	elif [[ "$TYPERES" == "F" ]]; then
-    TYPE="form"
-	elif [[ "$TYPERES" == "I" ]]; then
-    TYPE="img"
-	elif [[ "$TYPERES" == "L" ]];  then
-    TYPE="a"
-	elif [[ "$TYPERES" == "P" ]]; then
-    TYPE="p"
-	fi
 fi
-if [ -z "$ID" ]; then
+if [ ! "$ID" ]; then
     echo -n "FALCON: id name? "
     read ID
 fi
-if [ -z "$CLASS" ]; then
+if [ ! "$HTML" ]; then
+    echo -n "FALCON: which file to read for HTML injection? "
+    read HTML
+    if [ -f $HTML ]; then
+        HTMLLOAD=$( cat $HTML )
+    fi
+fi
+if [ ! "$CLASS" ]; then
     echo -n "FALCON: class name? "
     read CLASS
 fi
-NODE="$( echo "<$TYPE id=\"$ID\" class=\"$CLASS\"><$TYPE>" )"
-echo $NODE
+FILEID=$( uuid | cut -d"-" -f1 )
+FILE="/tmp/$FILEID.html"
 
+
+echo "<nODe id=\"$ID\" class=\"$CLASS\">$HTMLLOAD </nODe>" > $FILE
+COMMAND=$( sed -i -e "s/nODe/$TYPERES/g" $FILE )
+$COMMAND
+
+
+
+ # if [[ "$TYPERES" = 'div' ]]; then
+
+ #        fi
+ #        if [[ "$TYPERES" = 'F' ]]; then
+ #            sed -i -e "s/nODe/form/g" /tmp/testing.html
+ #        fi
+ #        if [[ "$TYPERES" = 'I' ]]; then
+ #           sed -i -e "s/nODe/img/g" /tmp/testing.html
+ #        fi
+ #        if [[ "$TYPERES" = 'L' ]];  then
+ #            sed -i -e "s/nODe/a/g" /tmp/testing.html
+ #        fi
+ #        if [[ "$TYPERES" = 'P' ]]; then
+ #              sed -i -e "s/nODe/p/g" /tmp/testing.html
+ #        fi
+
+
+#NODE="NODETYPE id=\"$ID\" class=\"$CLASS\">{CUSTOM} NODEEND"
+#NODECLEAN=$( echo $NODE | sed "s/NODETYPE/$( echo $NODETYPE)/g" )
+#NODECLEANER=$( echo $NODECLEAN | sed "s/NODEEND/$( echo $NODEEND)/g" )
+
+#echo $NODECLEANER >> /tmp/testing.html
 ## END
 stopwatchtime
 

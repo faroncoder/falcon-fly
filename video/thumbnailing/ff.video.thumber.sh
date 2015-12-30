@@ -6,13 +6,13 @@ startgreen=`date +%s`
         mkdir -p $PWD/thumbs
 fi
 
-INPUT=( `find -L . -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ` )
-# if [ -z "$INPUT" ];
-# 	then
-# 		INPUT=( $( find $PWD -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ) )
-# 	else
-# 		INPUT="$1"
-# fi
+INPUT=( $( find -L $PWD -maxdepth 1 -type f -name '*.mp4' ) )
+ if [ -z "$INPUT" ];
+ 	then
+ 		INPUT=( $( find $PWD -maxdepth 1 -type f -name '*.mp4' ) )
+ 	else
+ 		INPUT="$1"
+ fi
 
 if [[ -z "${INPUT[@]}" ]]; then
 		echo "nope there is no file -- ending the encoding engine..."
@@ -22,7 +22,7 @@ else
 		do
 		PREFILE="$( rev <<< $f | cut -d"." -f2 | rev )"
 		ffmpegthumbnailer -i $f -c png -s 512 -o "process.png"
-		convert process.png -resize 250x -resize 'x200<' -resize 100% -gravity center -crop 250x200+0+0 +repage "thumbs/$PREFILE.png"
+		convert process.png -resize 512x -resize 'x288<' -resize 100% -gravity center -crop 512x288+0+0 +repage "thumbs/$PREFILE.png"
 		rm process.png
 		done
 		# ffmpeg -ss 00:01:00 -i $f -y -t 1 -vf scale=-1:$HEIGHTPNG -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null

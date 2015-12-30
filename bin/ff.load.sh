@@ -16,21 +16,26 @@ getFileToLoad(){
 	else
 		for varget in "${FILEHUNT[@]}"; do
 	 		#IFS= read -r varget ; do
+			#FILENAME="$( rev <<< $varget | cut -d "." -f2 | rev )"
+			#EXT="$( rev <<< $varget | cut -d "." -f1 | rev )"
 			FILE=$( basename $varget )
-			ORIG="$( dirname $varget )/$FILE"
-			BINFORMAT="$BINHOME/$FILE"
-			BIN=$( echo $BINFORMAT | sed 's/.sh//g' )
+			ORIG=$varget
+			BINFILE=$( echo $FILE | sed 's/.sh//g' )
+			BINFORMAT="$BINHOME/$BINFILE"
+
+			#BIN=$PREFILE
 			if [[ -f "$ORIG" ]]; then
-				ORIGPRINT=$( printf ": found" )
+				ORIGPRINT=$( printf ": original found" )
 			fi
-			if [[ -f "$BIN" ]]; then
+			if [[ -f "$BINFILE" ]]; then
 				BINPRINT=$( printf ": true" )
 			else
 				BINPRINT=$( printf ": no link and created" )
-
-				cd $HOME/.bin
-				rm $BIN
-				ln -s $ORIG
+				BACKHOME=$PWD
+				cd $BINHOME
+				rm "$BINFILE*" 2> /dev/null
+				ln -s $ORIG $BINFILE
+				cd $BACKHOME
 			fi
 		done
 	fi

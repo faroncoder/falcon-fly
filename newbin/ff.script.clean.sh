@@ -13,6 +13,7 @@ FILENAME=$( printf "$FILEGET" | sed 's/lab./ff./' )
 less $FILEGET | sed '/#/d' | sed '/^$/d' > $FILENAME
 echo "$FILEGET finalized as $FILENAME"
 ff.script.kill $FILEGET
+chmod +x $FILENAME
 
 ################### END
 #elif [ "$1" = '' ];
