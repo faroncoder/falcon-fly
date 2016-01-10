@@ -1,6 +1,0 @@
-#!/bin/bash
-case $selection in 
-1) loc=/home/faron/.falcon/scripts/app/task.list; break ;; | 2) loc=/home/faron/.falcon/scripts/apt/task.list; break ;; | 3) loc=/home/faron/.falcon/scripts/bash/task.list; break ;; | 4) loc=/home/faron/.falcon/scripts/bin/task.list; break ;; | 5) loc=/home/faron/.falcon/scripts/c/task.list; break ;; | 6) loc=/home/faron/.falcon/scripts/dns/task.list; break ;; | 7) loc=/home/faron/.falcon/scripts/file-folder/task.list; break ;; | 8) loc=/home/faron/.falcon/scripts/git/task.list; break ;; | 9) loc=/home/faron/.falcon/scripts/htmls/task.list; break ;; | 10) loc=/home/faron/.falcon/scripts/init.d/task.list; break ;; | 11) loc=/home/faron/.falcon/scripts/mongo/task.list; break ;; | 12) loc=/home/faron/.falcon/scripts/newbin/task.list; break ;; | 13) loc=/home/faron/.falcon/scripts/programs/task.list; break ;; | 14) loc=/home/faron/.falcon/scripts/python/task.list; break ;; | 15) loc=/home/faron/.falcon/scripts/setup/task.list; break ;; | 16) loc=/home/faron/.falcon/scripts/ssl/task.list; break ;; | 17) loc=/home/faron/.falcon/scripts/video/task.list; break ;; | 18) loc=/home/faron/.falcon/scripts/virtuals/task.list; break ;; | | sed 's/:/)/g' | sed 's/|/\n/g'
-*) break ;;
-easc
-exit 0

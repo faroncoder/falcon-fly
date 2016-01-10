@@ -1,36 +1,24 @@
 #!/bin/bash
-startgreen=`date +%s`
 
-echo "run this in root su"
-
-echo -n "location of video htmls folder? "
-read VIDEOLOC
-echo -n "location of video clips (full path)? "
-read VIDEOCLIPS
-echo -n "name of php name for html? "
-read NAMEVIDEO
-
-NAMEFOLDER="$( basename $VIDEOCLIPS )"
-
-if [ ! -d "$PWD/$VIDEOLOC" ]; then
-    mkdir "$PWD/$VIDEOLOC"
+if [ ! -d "$PWD/jsc/videos" ]; then
+    mkdir $PWD/jsc/videos -p
 fi
 
-if [ ! -d "$PWD/$VIDEOLOC/$NAMEFOLDER" ]; then
-    ln -s "$( ln -s $VIDEOCLIPS $PWD/$VIDEOLOC/$NAMEFOLDER  )"
+if [ ! -d "$PWD/jsc/videos/src" ]; then
+    mkdir $PWD/jsc/videos/src -p
 fi
-> a.list
-find -maxdepth 1 -type f -name '*.mp4' >> a.list
-#ls $VIDEOLOC/$NAMEFOLDER/*.mp4 >> a.list
-while read line;
-    do
-        FILENAME="$( basename $line )"
-        PREFILE="$( rev <<< "$FILENAME" | cut -d "." -f2 | rev )"
-        FILELOC="$VIDEOLOC/$PREFILE.html"
-        cp templatevideo.txt $FILELOC
-        sed -i -e "s/~_PATH_$HOME$NAMEFOLDER\/$PREFILE/g" $FILELOC
-    done < a.list
-    cp templatedynamic.txt "$NAMEVIDEO.php"
-    sed -i -e "s/~_PATHa_$HOME$VIDEOLOC\/$NAMEFOLDER/g" "$NAMEVIDEO.php"
-    sed -i -e "s/~_PATHb_$HOME$VIDEOLOC/g" "$NAMEVIDEO.php"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+BINPULL=/media/falcon/scripts/htmls/VAULT
+
+
+GET=( `find $PWD -maxdepth 1 -type f -name '*.mp4'  ` )
+for w in "${GET[@]}"; do
+    echo $w
+    # FILENAME=$( basename $w )
+    # PREFILE=$( rev <<< "$FILENAME" | cut -d "." -f2 | rev )
+    # EXT=$( rev <<< "$FILENAME" | cut -d "." -f1 | rev )
+    # PROCESS=$( cat $BINPULL/video-backside-page.txt | sed "s/{PREFILE}/$PREFILE/g" )
+    # PROCESS2=$( echo $PROCESS | sed "s/{EXT}/$EXT/g" )
+    # echo -e $PROCESS2 > $PWD/jsc/videos/$PREFILE.html
+    # mv $w $PWD/jsc/videos/src/
+done
+exit 0

@@ -1,4 +1,0 @@
-
-	<iframe src="./jsc/media/htmls/{FILENAME}.html" width="700" height="500"frameborder="0" scrolling="no"></iframe>
-	
-	

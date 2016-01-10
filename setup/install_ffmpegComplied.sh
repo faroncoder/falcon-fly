@@ -13,7 +13,7 @@ if [ ! -d "$FFMPG" ]; then
 cd $FFMPG
 hg clone https://bitbucket.org/multicoreware/x265
 cd ~/ffmpeg_sources/x265/build/linux
-PATH="/usr/local/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source
+PATH="/usr/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/usr" -DENABLE_SHARED:bool=off ../../source
 make
 make install
 make distclean
@@ -24,7 +24,7 @@ tar xzvf fdk-aac.tar.gz
 rm fdk-aac.tar.gz
 cd mstorsjo-fdk-aac*
 autoreconf -fiv
-./configure --prefix="$HOME/ffmpeg_build" --disable-shared
+./configure --prefix="/usr" --disable-shared
 make
 make install
 make distclean
@@ -41,17 +41,17 @@ make install
 make clean
 
 cd ~/ffmpeg_sources
-#wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
+wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
 #tar xjvf ffmpeg-snapshot.tar.bz2
 #rm ffmpeg-snapshot.tar.bz2
 cd ffmpeg
-PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig"
+PKG_CONFIG_PATH="/usr/lib/pkgconfig"
 ./configure \
-  --prefix="$HOME/ffmpeg_build" \
+  --prefix="/usr" \
   --pkg-config-flags="--static" \
-  --extra-cflags="-I$HOME/ffmpeg_build/include" \
-  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
-  --bindir="/usr/local/bin" \
+  --extra-cflags="-I/usr/include" \
+  --extra-ldflags="-L/usr/lib" \
+  --bindir="/usr/bin" \
   --enable-gpl \
   --enable-libass \
   --enable-libfdk-aac \
