@@ -90,12 +90,12 @@ while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
     IFS= read -s -n 1 SELECT
  	echo "Current cmd: $SELECT"
  	case "$SELECT" in
- 		n) newHTML shift ;;
-		j) jscInit shift ;;
-		s) statusGet shift;;
-		a) loadAJAX shift ;;
+ 		n) newHTML break ;;
+		i) ff.ip break ;;
+		j) jscInit break ;;
+		s) statusGet break ;;
+		a) loadAJAX break ;;
 		x) echo "exiting spawner"; break ;;
-
 	esac
 
 

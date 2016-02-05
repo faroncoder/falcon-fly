@@ -70,7 +70,7 @@ function ffmpegengine() {
 	fi
 	COMMENTFILE="Falcon $( date ) - $0"
 	#echo "y" | /usr/bin/avidemux2_cli --load $INPUT --output-format MATROSKA --save "`basename $INPUT | cut -d"." -f1`_converted_mkv.mkv" --quit
-	ffmpeg -fflags genpts -ss 00:00:00 -i $INPUT -y $CODECVCOMMANDS \
+	ffmpeg -i $INPUT -y $CODECVCOMMANDS \
 		-maxrate $MAXRAT -bufsize $BUFRAT -b:v $BITRAT \
 		-vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" \
 		-flags +loop -flags +global_header -movflags +faststart  \

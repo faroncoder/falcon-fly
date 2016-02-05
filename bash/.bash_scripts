@@ -5,8 +5,10 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-	NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:$HOME/.bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin"
+	NODE_PATH=/usr/bin/node
+	NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:$HOME/.bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH"
 	export PATH=$NEWPATH
+
 	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
 	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
 	#CLEANBINS=$( echo $PATH )
