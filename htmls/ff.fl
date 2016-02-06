@@ -14,8 +14,11 @@ CURPATH=""
 APPNAME=$1
 
 loadJSC() {
-if [ ! -d "$PROJ/jsc" ] || [ ! -d "$PROJ/.jsc" ]; then
-		sudo tar -jxvf $LOADERBIN/jsc-build.tar.bz2
+if [ "$nwjsc" == 0 ]; then
+		tar -jxvf $LOADERBIN/jsc-build.tar.bz2
+		nwjsc=1
+else
+		echo "JSC already loaded."
 fi
 }
 
@@ -33,50 +36,53 @@ echo -n "New project name ? "
 read APPNAME
 PROJ="$CURPATH/$APPNAME"
 if [ ! -d "$PROJ" ]; then
-	sudo mkdir -p $CURPATH/$APPNAME
+	mkdir -p $PROJ
+	echo "Current => $PROJ "
 	cd $PROJ
 fi
 if [ -d "$PROJ" ]; then
 	echo "Current => $PROJ "
+	cd $PROJ
 fi
 }
 
 statusGet() {
-JSC=''
-if [ -d "$CURPATH/.jsc" ]; then
+JSC=""
+if [[ "$( find $PROJ -maxdepth 1 -type d -name '*jsc*' )" != '' ]]; then
 	JSC="JSC ✓"
-fi
-if [ -d "$CURPATH/jsc" ]; then
-	JSC="JSC ✓"
-fi
-if [ -z "$JSC" ]; then
+	jscnw="1"
+	if [ -d "$PROJ/jsc" ];
+		then
+		jscloc="$PROJ/jsc"
+	fi
+	if [ -d "$PROJ/.jsc" ];
+		then
+		jscloc="$PROJ/.jsc"
+	fi	
+else
+# if [ -d "$PROJ/jsc" ]; then
 	JSC="JSC ✗"
+	nwjsc="0"
 fi
-
-echo "$JSC"
-
+echo $JSC
+# if [[ ! -d "$PROJ/.jsc" ]] && [[ ! -d "$PROJ/jsc" ]]; then
+	
+# fi
 }
 
 jscInit() {
-if [ -d "$CURPATH/.jsc" ]; then
-	CURJSc=$PROJ/.jsc
-elif [ -d "$CURPATH/jsc" ]; then
-	CURJSc=$PROJ/jsc
-else
-	loadJSC
-fi
-ff.hl.js.glop
-ff.hl.css.glop
+ff.hl.jsglop $PROJ
+ff.hl.cssglop $PROJ
 }
 
 
 newHTML() {
-	echo -n "name of new page? "
+	echo -n "name of html file? "
 	read NAMEPAGE
 	echo -n "title of the page? "
 	read PAGETITLE
-	sudo cp "$LOADERBIN/html-full.txt" "$PROJ/$NAMEPAGE.html"
-	sudo sed -i -e "s/{TITLE}/$PAGETITLE/g" "$PROJ/$NAMEPAGE.html"
+	cp "$LOADERBIN/html-full.txt" "$PROJ/$NAMEPAGE.html"
+	sed -i -e "s/{TITLE}/$PAGETITLE/g" "$PROJ/$NAMEPAGE.html"
 	echo "$NAMEPAGE.html => built!"
  }
 
