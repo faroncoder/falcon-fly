@@ -49,9 +49,9 @@ esac
 	if [[ "$EUID" == 0 ]]; then
 		PS1+="$BRed_SHELL \\h $USER "
 	else
-		PS1+="$BBlue_SHELL \\h $BYellow_SHELL  $USER "
+		PS1+="$BGreen_SHELL \\h $BYellow_SHELL  $USER "
 	fi
-	PS1+="$IPurple_SHELL\\w $reset_SHELL $ "
+	PS1+="$ICyan_SHELL\\w $reset_SHELL $ "
 	LS_COLORS='di=1;35'
 	export LS_COLORS
 
