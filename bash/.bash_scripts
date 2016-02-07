@@ -5,15 +5,10 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-	NODE_PATH=/usr/bin/node
-	NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:$HOME/.bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH"
+	NODE_PATH=/usr/local/bin/node;
+	NWJS=/usr/local/bin/nwjs;
+	NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:$HOME/.bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH:$NWJS"
 	export PATH=$NEWPATH
-
-	#AVA_HOME="/usr/local/jvm/jdk1.8.0_60"
-	#RE_HOME="/usr/local/jvm/jre1.8.0_60"
-	#CLEANBINS=$( echo $PATH )
-	#CLEANUP=$( echo $CLEANBINS | tr ':' '\n' | sort | uniq | sort | tr '\n' ':' | sed 's/::/:/g' )
-	#export PATH=$CLEANUP
 	alias rm="trash-put"
 
 case $- in
@@ -52,8 +47,8 @@ esac
 		PS1+="$BGreen_SHELL \\h $BYellow_SHELL  $USER "
 	fi
 	PS1+="$ICyan_SHELL\\w $reset_SHELL $ "
-	LS_COLORS='di=1;44'
-	export LS_COLORS
+	LS_COLORS='di=1;35'
+	export $LS_COLORS
 
 
 ######### FARONIZED-MENU FUNCTION
