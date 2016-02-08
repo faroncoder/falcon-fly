@@ -1,6 +1,5 @@
 #!/bin/bash
 HERE=$PWD
-ssh-engine
 startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
@@ -8,6 +7,36 @@ stopwatchtime(){
   echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
   exit 0
 }
+
+ssh-engine(){
+	echo "Initializing SSH agent..."
+	chmod 700 -R $HOME/.ssh;
+	echo "privizating $HOME/.ssh : done";
+	if [ -f "$HOME/.ssh/authorized_keys" ]; then
+		chmod 600 ~/.ssh/authorized_keys
+	fi
+	ssh-agent;
+	eval $( ssh-agent -s ) > $HOME/.ssh/environment;
+	find -L $HOME/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
+}
+
+startedSSH(){
+	PIDOFCHECK=$( pidof ssh-agent | wc -w )
+	if [[ "$PIDOFCHECK" -gt 2 ]]; then
+		sudo kill -15 `pidof ssh-agent`
+		ssh-engine
+	else
+		if [ -z $PIDOFCHECK ]; then
+			ssh-engine
+		fi
+	fi
+}
+
+
+git config --global push.default simple
+
+startedSSH
+
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 
