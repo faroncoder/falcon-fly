@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=$PATH:/home/faron/.bin
+export PATH=$PATH:/usr/local/bin
 #file=`uuid | sed 's/-//g'`
 file=$( uuid | cut -d"-" -f1 )
 

@@ -8,17 +8,19 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 }
 #if [ "$1" != "" ]; then
 #################### BEGIN
-
-MODSENABLE=( FARONFUCKSIN )
-for m in "${MODSENABLE}"; do
-	sudo a2enmod $m 2>&1 /dev/null
-
+HERE=$PWD
+cd "/usr/local/bin"
+find /mnt/falcon/scripts -type f -name 'ff.*' -exec ln -s {} \;
+./ff.bin.extension.remove.sh
+export PATH=$PATH
+echo "Falcon's commands installed. Exiting."
+cd $HERE 
 
 ################### END
 #elif [ "$1" = '' ];
 #	then
-#  echo "usage: lab.apache2.enable "
-#  echo "example:  lab.apache2.enable  "
+#  echo "usage: install_falconCommands "
+#  echo "example:  install_falconCommands  "
 #fi
 ## TALON:
 XeF

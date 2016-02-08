@@ -1,4 +1,6 @@
 #!/bin/bash
+HERE=$PWD
+ssh-engine
 startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
@@ -94,5 +96,8 @@ cd $GETALLGIT 2> /dev/null
 # 		git push;
 # 	done < /tmp/x.txt
 # rm /tmp/x.txt
-
+cd $HERE
 stopwatchtime
+exit 0
+
+

@@ -1,5 +1,5 @@
 #!/bin/sh -e
-PATHDIR="/home/faron/.bin"
+PATHDIR="/usr/local/bin"
 FINDLINK="$( find $PATHDIR -maxdepth 1 -name 'Link\ *' )"
 if [ ! -z "$FINDLINK" ]
             then

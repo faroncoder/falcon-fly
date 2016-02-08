@@ -22,7 +22,7 @@
 #  #      blipme
 #  #   done
 
-# #cd /home/faron/var/Desktop/engine/method1 && inotifyexec /home/faron/.bin/blipme < /dev/null
+# #cd /home/faron/var/Desktop/engine/method1 && inotifyexec /usr/local/bin/blipme < /dev/null
 
 # /home/faron/var/Desktop/engine/method1/./inotifyexec blipme
 

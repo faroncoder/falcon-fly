@@ -1,10 +1,10 @@
 #!/bin/bash
 if [ "" = '' ]; then
-	export PATH=/bin:/usr/bin:/sbin:/usr/sbin:/home/faron/.bin:/home/faron/bin:/usr/local/bin:/usr/local/sbin:/usr/lib/jvm/java-8-oracle/bin:/home/faron/.bin
+	export PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/home/faron/bin:/usr/local/bin:/usr/local/sbin:/usr/lib/jvm/java-8-oracle/bin:/usr/local/bin
 fi
 XeB=`date +%s`
 function XeF {
-XeE=`date +%s`; XeT=; logger "/home/faron/.bin/ff.script.new |  |  |  "; exit 0
+XeE=`date +%s`; XeT=; logger "/usr/local/bin/ff.script.new |  |  |  "; exit 0
 }
 #if [ "" != "" ]; then
 #################### BEGIN
@@ -18,8 +18,8 @@ XeE=`date +%s`; XeT=; logger "/home/faron/.bin/ff.script.new |  |  |  "; exit 0
 XeF
 
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/home/faron/.bin/' )" ]; then
-	export PATH=$PATH:/home/faron/.bin
+if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
+	export PATH=$PATH:/usr/local/bin
 fi
 XeB=`date +%s`
 function XeF {

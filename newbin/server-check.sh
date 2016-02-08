@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
-	export PATH=$PATH:/home/faron/.bin
+if [ "$( echo $PATH | grep '/usr/local/bin/' )" = '' ]; then
+	export PATH=$PATH:/usr/local/bin
 fi
 XeB=`date +%s`
 function XeF {
@@ -10,7 +10,7 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $Xe
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-export PATH=$PATH:/home/faron/.bin
+export PATH=$PATH:/usr/local/bin
 
 DOMAINS=( faron.ca  faronhost.ca faronintel.ca phoenixsafety.ca f1 f6 f7 f10 )
 

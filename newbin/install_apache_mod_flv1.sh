@@ -1,5 +1,6 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
+HERE=$PWD
+if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then
 	export PATH=$PATH:/usr/local/bin
 fi
 XeB=`date +%s`
@@ -9,16 +10,13 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-MODSENABLE=( FARONFUCKSIN )
-for m in "${MODSENABLE}"; do
-	sudo a2enmod $m 2>&1 /dev/null
-
 
 ################### END
+cd $HERE
 #elif [ "$1" = '' ];
 #	then
-#  echo "usage: lab.apache2.enable "
-#  echo "example:  lab.apache2.enable  "
+#  echo "usage: install_apache_mod_flv1.sh "
+#  echo "example:  install_apache_mod_flv1.sh  "
 #fi
 ## TALON:
 XeF

@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 
  #/home/faron/var/streamings/files/raw
-/home/faron/.bin/file-name-cleaner
+/usr/local/bin/file-name-cleaner
 findMKV=( ls *.mkv )
 for cc in "${findMKV[@]}";
 	do mv $cc mkv/;

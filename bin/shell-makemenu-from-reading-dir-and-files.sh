@@ -173,7 +173,7 @@ printf "echo \$ONEFILE"
 	# if [ "$EXT"="flv" ]
 	# then
 	# 	cd ./jsc/media
-	# 	/home/faron/.bin/flv-tsx-er
+	# 	/usr/local/bin/flv-tsx-er
 	# fi
 
 

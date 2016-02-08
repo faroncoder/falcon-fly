@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ "$( echo $PATH | grep '/home/faron/.bin/' )" = '' ]; then
-	export PATH=$PATH:/home/faron/.bin
+if [ "$( echo $PATH | grep '/usr/local/bin/' )" = '' ]; then
+	export PATH=$PATH:/usr/local/bin
 fi
 XeB=`date +%s`
 function XeF {
@@ -9,13 +9,13 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-HUNTFILE=( `find -L /media/falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet'  `  )
+HUNTFILE=( `find -L /mnt/falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet'  `  )
 if [[ ! -z "$HUNTFILE" ]]; then
         for snippet in "${HUNTFILE[@]}"; do
         	FILEME=$( basename $snippet )
         	logger "Found: $FILE and moving to resident folder"
-        	mv $snippet /media/falcon/code/sublime/mysnippets/
-        	CHECKME=$( ls -al /media/falcon/code/sublime/mysnippets/$FILEME )
+        	mv $snippet /mnt/falcon/code/sublime/mysnippets/
+        	CHECKME=$( ls -al /mnt/falcon/code/sublime/mysnippets/$FILEME )
         	if [[ ! -z "$FILEME" ]]; then
         		echo "$FILEME secured."
         	fi

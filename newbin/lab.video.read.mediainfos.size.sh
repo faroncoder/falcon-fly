@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/home/faron/.bin' )" ]; then
-	export PATH=$PATH:/home/faron/.bin
+if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then
+	export PATH=$PATH:/usr/local/bin
 	echo "exporting real PATH into here."
 fi
 XeB=`date +%s`

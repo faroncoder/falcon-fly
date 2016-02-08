@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=$PATH:/home/faron/.bin
+export PATH=$PATH:/usr/local/bin
 XeB=`date +%s`
 function XeF {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0

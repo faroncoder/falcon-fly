@@ -90,8 +90,8 @@ if [ -z "$loc" ]; then
 # chmod +x $newbin/$proofreadfile
 # echo "#!/bin/bash
 # XeB=\`date +%s\`
-# if [ \"\$( echo \$PATH | grep '/home/faron/.bin/' )\" = '' ]; then
-# 	export PATH=\$PATH:/home/faron/.bin
+# if [ \"\$( echo \$PATH | grep '/usr/local/bin/' )\" = '' ]; then
+# 	export PATH=\$PATH:/usr/local/bin
 # fi
 # #if [[ \"\$SRVNAME\" != 'f10' ]]; then
 # #	YOUR CUSTOM COMMAND

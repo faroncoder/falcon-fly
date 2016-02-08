@@ -7,7 +7,7 @@ fi
 if [ ! -d "$PWD/jsc/videos/src" ]; then
     mkdir $PWD/jsc/videos/src -p
 fi
-BINPULL=/media/falcon/scripts/htmls/VAULT
+BINPULL=/mnt/falcon/scripts/htmls/VAULT
 
 
 GET=( `find $PWD -maxdepth 1 -type f -name '*.mp4'  ` )

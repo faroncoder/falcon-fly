@@ -1,4 +1,4 @@
-#export PATH=$PATH:$HOME/.bin
+export PATH=$PATH:$HOME/.bin
 	if [ -f "$HOME/.bash_colors" ]; then
 			source $HOME/.bash_colors
 		else

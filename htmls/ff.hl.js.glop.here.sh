@@ -72,7 +72,7 @@ TYPE="js"
 
 		echo -e "$INPUTLOAD" >> $FILEPOINT
  	done
-# 	/home/faron/.bin/ff.bin.chom
+# 	/usr/local/bin/ff.bin.chom
 	glopperGo
 	echo "FALCON: appengine.js built"
 #else

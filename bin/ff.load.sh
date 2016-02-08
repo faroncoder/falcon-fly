@@ -1,7 +1,7 @@
 #!/bin/bash
 VAR=$1
-BINHOME="/home/faron/.bin"
-SCRHOME="/media/falcon/scripts"
+BINHOME="/usr/local/bin"
+SCRHOME="/mnt/falcon/scripts"
 #WHICHUSER=$( echo $PWD | cut -d"/" -f 3 )
 #if [[ $WHICHUSER = 'fly' ]]; then
 #	BINHOME="/home/faron/.falcon/bin"
@@ -30,7 +30,7 @@ getFileToLoad(){
 			if [[ -f "$BINFILE" ]]; then
 				BINPRINT=$( printf ": true" )
 			else
-				BINPRINT=$( printf ": no link and created" )
+				BINPRINT=$( printf ": linked" )
 				BACKHOME=$PWD
 				cd $BINHOME
 				rm "$BINFILE*" 2> /dev/null
@@ -41,6 +41,7 @@ getFileToLoad(){
 	fi
 	echo $ORIG $ORIGPRINT
 	echo $BIN $BINPRINT
+	export PATH=$PATH
 
 }
 

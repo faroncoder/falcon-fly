@@ -24,5 +24,5 @@ cd $pathdir
 git remote add origin git@github.com:faroncoder/$app.git
 git add --all
 git push -u origin master
-cd /home/faron/.bin/commands/vault/systemengine/scripting
+cd /usr/local/bin/commands/vault/systemengine/scripting
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

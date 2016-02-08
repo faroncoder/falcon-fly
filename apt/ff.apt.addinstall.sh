@@ -20,7 +20,7 @@ APTLIST="/home/faron/.falcon/apt/aptlist.list"
 
 	GRAB=( "$( cat $APTLIST | uniq | sort )" )
 	for f in "${GRAB[@]}"; do
-		/home/faron/.bin/ff.apt.fetch $f
+		/usr/local/bin/ff.apt.fetch $f
 	done
 ################### END
 
