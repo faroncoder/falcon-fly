@@ -24,8 +24,8 @@ decoded as follows:
 	\u		the username of the current user
 	\v		the version of bash (e.g., 2.00)
 	\V		the release of bash, version + patch level (e.g., 2.00.0)
-	\w		the current working directory, with $HOME abbreviated with a tilde
-	\W		the basename of the current working directory, with $HOME
+	\w		the current working directory, with ~ abbreviated with a tilde
+	\W		the basename of the current working directory, with ~
 			 abbreviated with a tilde
 	\!		the history number of this command
 	\#		the command number of this command

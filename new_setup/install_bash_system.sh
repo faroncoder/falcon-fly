@@ -16,12 +16,12 @@ else
 	fi
 fi
 
-mkdir $HOME/.bash_backup 2> /dev/null
+mkdir $HOME/.bash_cache -p 2> /dev/null
 find $HOME/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_backup/ \;
 cp "/mnt/falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profile"
 echo ".profile install as master file at $HOME"
 echo "Files copied as backup as alternative bash in case server goes down:"
-find $HOME/.bash_backup -type f -name '.*' -exec basename {} \;
+find $HOME/.bash_cache -type f -name '.*' -exec basename {} \;
 echo "Primary bash files linked to remote server:"
 cd $HOME 2> /dev/null
 find $HOME/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec ln -s {} \;
@@ -29,6 +29,6 @@ UPDATE=( $( find $HOME/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec
 for d in "${UPDATE[@]}"; do
 	ls -al $d | awk '{print $9 $10 $11}'
 done
-# 	`source ~/.profile`
+`source ~/.profile`
 
 exit 0
