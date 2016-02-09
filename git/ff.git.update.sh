@@ -9,7 +9,7 @@ stopwatchtime(){
 }
 
 export PATH=$PATH
-ff.ssh-engine
+ff.accessengine
 
 git config --global push.default simple
 
