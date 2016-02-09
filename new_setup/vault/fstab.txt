@@ -18,7 +18,7 @@
 #/home/clips7  /mnt/clips7  none  bind  0  0
 #/home/clips10  /mnt/clips10  none  bind  0  0
 
-/mnt/falcon    /home/faron/.falcon  none  bine  0  0
+/mnt/falcon    /home/faron/.falcon  none  bind  0  0
 
 /home/faron/.falcon/files/documents  /home/faron/Documents none bind 0 0
 /home/faron/.falcon/files/downloads   /home/faron/Downloads none bind 0 0

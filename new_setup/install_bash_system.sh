@@ -17,7 +17,7 @@ else
 fi
 
 mkdir $HOME/.bash_cache -p 2> /dev/null
-find $HOME/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_backup/ \;
+find $HOME/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_cache/ \;
 cp "/mnt/falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profile"
 echo ".profile install as master file at $HOME"
 echo "Files copied as backup as alternative bash in case server goes down:"

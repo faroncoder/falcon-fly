@@ -7,7 +7,14 @@ stopwatchtime() {
 	exit 0
 }
 #################### BEGIN
-sudo service apache2 restart
+
+
+SUDO=""
+if [[ "$USER" == "root" ]]; then
+	SUDO="sudo"
+fi
+
+$SUDO service apache2 restart
 
 
 ################### END
