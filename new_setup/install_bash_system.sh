@@ -25,11 +25,14 @@ if [ ! -d ~/.falcon ]; then
 		ln -s /mnt/falcon ~/.falcon
 	fi
 fi
-echo "Files copied as backup as alternative bash in case server goes down:"
+#echo "Files copied as backup as alternative bash in case server goes down:"
 #find $HOME/.bash_cache -type f -name '.*' -exec basename {} \;
 #echo "Primary bash files linked to remote server:"
 cd $HOME 2> /dev/null
-cp $HOME/.falcon/scripts/bash/.bashrc ./
+rm ~/.bashrc
+rm ~/.profile
+cp $HOME/.falcon/setup/new_scripts/vault/profile.txt $HOME/.profile
+cp $HOME/.falcon/setup/new_scripts/vault/bashrc.txt $HOME/.bashrc
 #find $HOME/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec ln -s {} \;
 #UPDATE=( $( find $HOME/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec basename {} \; ) )
 #for d in "${UPDATE[@]}"; do

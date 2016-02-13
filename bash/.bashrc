@@ -36,8 +36,8 @@ esac
 	alias la='ls -A'
 	alias l='ls -CF'
 
-	LS_COLORS='di=1;35'
-	export LS_COLORS
+	export LS_COLORS='di=1;35'
+
 
 
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
@@ -213,8 +213,6 @@ On_IWhite='\e[0;107m'  # White
 # 	fi
 # 	PS1+="$IPurple_SHELL\\w $reset_SHELL $ "
 
-
-
 	last_command=$? ##   Must come first!
 	PS1=""
 	if [[ "$last_command" == 0 ]]; then
@@ -227,22 +225,80 @@ On_IWhite='\e[0;107m'  # White
 		PS1+="$Red_SHELL\\h SUDO "
 		fi
 	else
-		PS1+="$BGreen_SHELL\\h $BYellow_SHELL  $USER "
+		PS1+="$BGreen_SHELL\\h$BYellow_SHELL $USER "
 	fi
 	PS1+="$ICyan_SHELL$Red_SHELL"
-	if [ -f /mnt/falcon/.status ]; then
-			PS1+="no falcon "
-	fi
-	if [  -f /mnt/clips6/.status ]; then
-			PS1+="$fancyX_SHELLf6"
-	fi
-	if [  -f /mnt/clips7/.status ]; then
-			PS1+="$fancyX_SHELLf7"
-	fi
-	if [  -f /mnt/clips10/.status ]; then
-			PS1+="$fancyX_SHELLf10"
-	fi
-	PS1+="$ICyan_SHELL\\w$reset_SHELL | "
+ONE="/mnt/falcon/.idle"
+TW0="/mnt/clips6/.idle"
+THREE="/mnt/clips7/.idle"
+FOUR="/mnt/clips10/.idle"
+STATUS=""
+if [[ ! -f "$ONE" ]]; then STATUS="falcon$fancyX_SHELL " ; fi
+if [[ ! -f "$TW0" ]]; then STATUS+="f6$fancyX_SHELL "; fi
+if [[ ! -f "$THREE"  ]]; then STATUS+="f7$fancyX_SHELL "; fi
+if [[ ! -f "$FOUR"  ]]; then STATUS+="f10$fancyX_SHELL "; fi
+PS1+="$STATUS"
+STATUS=""
+	# if [[  -f "/mnt/falcon/.idle" ]]; then
+	# 		GRAB="$GRAB $fancyX_SHELLfalcon"
+	# fi
+	# if [[  ! -f "/mnt/clips6/.idle" ]]; then
+	# 		GRAB="$GRAB $fancyX_SHELLf6"
+	# fi
+	# if [[  -f "/mnt/clips7/.idle" ]]; then
+	# 		GRAB="$GRAB $fancyX_SHELLf7"
+	# fi
+	# if [[  -f "/mnt/clips10/.idle" ]]; then
+	# 		GRAB="$GRAB $fancyX_SHELLf10"
+	# fi
+	PS1+="$ICyan_SHELL$GRAB$reset_SHELL"
+
+ #           GETFOLDER=$( ls -al $PWD -d | awk '{ print $1 }' )
+	# B1=$( echo ${GETFOLDER:1:3} )
+	# B2=$( echo ${GETFOLDER:4:3} )
+	# B3=$( echo ${GETFOLDER:7:3} )
+	# SUP=( echo "$A1 $B2 $C3" )
+
+	# for g in "${SUP[@]}"; do
+	# 	N=1
+	# 	VAR="B$N"
+	# 	if [[ $g == "rwx" ]]; then
+	# 		PS1+="$Green_SHELL|$reset_SHELL"
+	# 	fi
+	# 	if [[ $g == "rws" ]]; then
+	# 		PS1+="$Green_SHELL|$reset_SHELL"
+	# 	fi
+	# 	if [[ "$G" == "r-x" ]]; then
+	# 		PS1+="$Yellow_SHELL|$reset_SHELL"
+	# 	fi
+	# 	if [[ "$G" == "r--" ]]; then
+	# 		PS1+="$Red_SHELL|$reset_SHELL"
+	# 	fi
+	# done
+	# PS1+="$reset_SHELL "
+	PS1+="$ICyan_SHELL\\w$ICyan_SHELL$reset_SHELL "
+	GETFOLDER=$( ls -al $PWD -d | awk '{ print $1 }' )
+	A1=$( echo ${GETFOLDER:1:3} )
+	B2=$( echo ${GETFOLDER:4:3} )
+	C3=$( echo ${GETFOLDER:7:3} )
+	SUP=( $(  echo $A1 $B2 $C3  )  )
+	FILESTT=""
+	for G in "${SUP[@]}"; do
+		if [[ "$G" == "rwx" ]]; then
+			FILESTT="$FILESTT$Green_SHELL|"
+		fi
+		if [[ "$G" == "rws" ]]; then
+			FILESTT="$FILESTT$Green_SHELL|"
+		fi
+		if [[ "$G" == "r-x" ]]; then
+			FILESTT="$FILESTT$Yellow_SHELL|"
+		fi
+		if [[ "$G" == "r--" ]]; then
+			FILESTT="$FILESTT$Red_SHELL|"
+		fi
+	done
+	PS1+="$FILESTT$reset_SHELL "
+
 ######### FARONIZED-MENU FUNCTION
 
 alias   ff.net="ifconfig -a | cut -d' ' -f1 | sed '/^$/d' "
@@ -270,7 +326,7 @@ alias	fly=" cd ~/.falcon "
 alias	mtrmake=" meteor-kitchen "
 alias	ports="     sudo netstat -tulanp "
 alias	setup="     cd ~/.falcon/setup "
-alias   bashsr="    source ~/.profile "
+alias   bashsr="  . ~/.bashrc "
 alias   bin=" ls /usr/local/bin "
 alias   diskspace=" gksu baobab "
 alias   ff.colors="  cat ~/.falcon/bash/.bash_colors_help "
@@ -297,13 +353,6 @@ alias ff.stream=" cd /mnt/clips6/lib/ "
 alias flocal=" /usr/local/bin "
 alias ff.etc=" cd /etc "
 alias ff.usr=" cd /usr/local "
-
-
-
-
-
-
-
 
 
 cd(){
