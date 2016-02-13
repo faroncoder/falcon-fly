@@ -20,6 +20,11 @@ mkdir $HOME/.bash_cache -p 2> /dev/null
 find $HOME/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_cache/ \;
 cp "/mnt/falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profile"
 echo ".profile install as master file at $HOME"
+if [ ! -d ~/.falcon ]; then
+	if [[ "$USER" == 0 ]]; then
+		ln -s /mnt/falcon ~/.falcon
+	fi
+fi
 echo "Files copied as backup as alternative bash in case server goes down:"
 find $HOME/.bash_cache -type f -name '.*' -exec basename {} \;
 echo "Primary bash files linked to remote server:"

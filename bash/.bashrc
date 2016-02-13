@@ -1,21 +1,402 @@
-export PATH=$PATH
-	if [ -f "~/.bash_colors" ]; then
-			source ~/.bash_colors
-		else
-			source ~/.bash_cache/.bash_colors
+	export PATH=$PATH
+
+
+
+
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completions ]; then
+		. /etc/bash_completion
 	fi
-	if [ ! -f ~/.bash_scripts ]; then
-		source ~/.bash_cache/.bash_scripts
+fi
+
+
+
+case $- in
+	*i*) ;;
+	*) return;;
+esac
+	HISTCONTROL=ignoreboth
+	shopt -s histappend
+	HISTSIZE=10000000
+	HISTFILESIZE=20000000
+	shopt -s checkwinsize
+	shopt -s globstar
+	export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+	if [ -x /usr/bin/dircolors ]; then
+		test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+		alias ls='ls --color=auto'
+		alias grep='grep --color=auto'
+		alias fgrep='fgrep --color=auto'
+		alias egrep='egrep --color=auto'
+	fi
+	alias ll='ls -alF'
+	alias la='ls -A'
+	alias l='ls -CF'
+
+	LS_COLORS='di=1;35'
+	export LS_COLORS
+
+
+Color_Off_SHELL="\[\e[0m\]" # Text Reset
+reset_SHELL="\[\e[00m\]" #  Reset
+fancyX_SHELL="\342\234\227"
+checkmark_SHELL="\342\234\223"
+
+# Regular Colors
+Black_SHELL="\[\e[0;30m\]"   # Black
+Red_SHELL="\[\e[0;31m\]" # Red
+Green_SHELL="\[\e[0;32m\]"   # Green
+Yellow_SHELL="\[\e[0;33m\]"  # Yellow
+Blue_SHELL="\[\e[0;34m\]" # Blue
+Purple_SHELL="\[\e[0;35m\]"  # Purple
+Cyan_SHELL="\[\e[0;36m\]" # Cyan
+White_SHELL="\[\e[0;37m\]"   # White
+# Bold
+BBlack_SHELL="\[\e[1;30m\]"  # Black
+BRed_SHELL="\[\e[1;31m\]" # Red
+BGreen_SHELL="\[\e[1;32m\]"  # Green
+BYellow_SHELL="\[\e[1;33m\]" # Yellow
+BBlue_SHELL="\[\e[1;34m\]"   # Blue
+BPurple_SHELL="\[\e[1;35m\]" # Purple
+BCyan_SHELL="\[\e[1;36m\]"   # Cyan
+BWhite_SHELL="\[\e[1;37m\]"  # White
+# Underline
+UBlack_SHELL="\[\e[4;30m\]"  # Black
+URed_SHELL="\[\e[4;31m\]" # Red
+UGreen_SHELL="\[\e[4;32m\]"  # Green
+UYellow_SHELL="\[\e[4;33m\]" # Yellow
+UBlue_SHELL="\[\e[4;34m\]"   # Blue
+UPurple_SHELL="\[\e[4;35m\]" # Purple
+UCyan_SHELL="\[\e[4;36m\]"   # Cyan
+UWhite_SHELL="\[\e[4;37m\]"  # White
+# Background
+On_Black_SHELL="\[\e[40m\]"  # Black
+On_Red_SHELL="\[\e[41m\]" # Red
+On_Green_SHELL="\[\e[42m\]"  # Green
+On_Yellow_SHELL="\[\e[43m\]" # Yellow
+On_Blue_SHELL="\[\e[44m\]"   # Blue
+On_Purple_SHELL="\[\e[45m\]" # Purple
+On_Cyan_SHELL="\[\e[46m\]"   # Cyan
+On_White_SHELL="\[\e[47m\]"  # White
+# High Intensity
+IBlack_SHELL="\[\e[0;90m\]"  # Black
+IRed_SHELL="\[\e[0;91m\]" # Red
+IGreen_SHELL="\[\e[0;92m\]"  # Green
+IYellow_SHELL="\[\e[0;93m\]" # Yellow
+IBlue_SHELL="\[\e[0;94m\]"   # Blue
+IPurple_SHELL="\[\e[0;95m\]" # Purple
+ICyan_SHELL="\[\e[0;96m\]"   # Cyan
+IWhite_SHELL="\[\e[0;97m\]"  # White
+# Bold High Intensity
+BIBlack_SHELL="\[\e[1;90m\]" # Black
+BIRed_SHELL="\[\e[1;91m\]"   # Red
+BIGreen_SHELL="\[\e[1;92m\]" # Green
+BIYellow_SHELL="\[\e[1;93m\]" # Yellow
+BIBlue_SHELL="\[\e[1;94m\]"  # Blue
+BIPurple_SHELL="\[\e[1;95m\]" # Purple
+BICyan_SHELL="\[\e[1;96m\]"  # Cyan
+BIWhite_SHELL="\[\e[1;97m\]" # White
+# High Intensity backgrounds
+On_IBlack_SHELL="\[\e[0;100m\]"  # Black
+On_IRed_SHELL="\[\e[0;101m\]" # Red
+On_IGreen_SHELL="\[\e[0;102m\]"  # Green
+On_IYellow_SHELL="\[\e[0;103m\]" # Yellow
+On_IBlue_SHELL="\[\e[0;104m\]"   # Blue
+On_IPurple_SHELL="\[\e[0;105m\]" # Purple
+On_ICyan_SHELL="\[\e[0;106m\]"   # Cyan
+On_IWhite_SHELL="\[\e[0;107m\]"  # White
+########## FARON CODES
+Color_Off='\e[0m' # Text Reset
+reset='\e[00m' #  Reset
+fancyX='\342\234\227'
+checkmark='\342\234\223'
+# Regular Colors
+Black='\e[0;30m'   # Black
+Red='\e[0;31m' # Red
+Green='\e[0;32m'   # Green
+Yellow='\e[0;33m'  # Yellow
+Blue='\e[0;34m' # Blue
+Purple='\e[0;35m'  # Purple
+Cyan='\e[0;36m' # Cyan
+White='\e[0;37m'   # White
+# Bold
+BBlack='\e[1;30m'  # Black
+BRed='\e[1;31m' # Red
+BGreen='\e[1;32m'  # Green
+BYellow='\e[1;33m' # Yellow
+BBlue='\e[1;34m'   # Blue
+BPurple='\e[1;35m' # Purple
+BCyan='\e[1;36m'   # Cyan
+BWhite='\e[1;37m'  # White
+# Underline
+UBlack='\e[4;30m'  # Black
+URed='\e[4;31m' # Red
+UGreen='\e[4;32m'  # Green
+UYellow='\e[4;33m' # Yellow
+UBlue='\e[4;34m'   # Blue
+UPurple='\e[4;35m' # Purple
+UCyan='\e[4;36m'   # Cyan
+UWhite='\e[4;37m'  # White
+# Background
+On_Black='\e[40m'  # Black
+On_Red='\e[41m' # Red
+On_Green='\e[42m'  # Green
+On_Yellow='\e[43m' # Yellow
+On_Blue='\e[44m'   # Blue
+On_Purple='\e[45m' # Purple
+On_Cyan='\e[46m'   # Cyan
+On_White='\e[47m'  # White
+# High Intensity
+IBlack='\e[0;90m'  # Black
+IRed='\e[0;91m' # Red
+IGreen='\e[0;92m'  # Green
+IYellow='\e[0;93m' # Yellow
+IBlue='\e[0;94m'   # Blue
+IPurple='\e[0;95m' # Purple
+ICyan='\e[0;96m'   # Cyan
+IWhite='\e[0;97m'  # White
+# Bold High Intensity
+BIBlack='\e[1;90m' # Black
+BIRed='\e[1;91m'   # Red
+BIGreen='\e[1;92m' # Green
+BIYellow='\e[1;93m' # Yellow
+BIBlue='\e[1;94m'  # Blue
+BIPurple='\e[1;95m' # Purple
+BICyan='\e[1;96m'  # Cyan
+BIWhite='\e[1;97m' # White
+# High Intensity backgrounds
+On_IBlack='\e[0;100m'  # Black
+On_IRed='\e[0;101m' # Red
+On_IGreen='\e[0;102m'  # Green
+On_IYellow='\e[0;103m' # Yellow
+On_IBlue='\e[0;104m'   # Blue
+On_IPurple='\e[0;105m' # Purple
+On_ICyan='\e[0;106m'   # Cyan
+On_IWhite='\e[0;107m'  # White
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	NODE_PATH=/usr/local/bin/node;
+	NWJS=/usr/local/bin/nwjs;
+	NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:~/.bin:~/bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH:$NWJS"
+	export PATH=$NEWPATH
+	alias rm="trash-put"
+
+
+
+
+# last_command=$? ##   Must come first!
+# 	PS1=""
+# 	if [[ "$last_command" == 0 ]]; then
+# 			PS1+="$Green_SHELL$checkmark_SHELL "
+# 		else
+# 			PS1+="$Red_SHELL$fancyX_SHELL "
+# 	fi
+# 	if [[ "$EUID" == 0 ]]; then
+# 		PS1+="$BRed_SHELL\\h "
+# 	else
+# 		PS1+="$BBlue_SHELL\\h "
+# 	fi
+# 	PS1+="$IPurple_SHELL\\w $reset_SHELL $ "
+
+
+
+	last_command=$? ##   Must come first!
+	PS1=""
+	if [[ "$last_command" == 0 ]]; then
+			PS1+="$Green_SHELL$checkmark_SHELL"
+		else
+			PS1+="$Red_SHELL$fancyX_SHELL"
+	fi
+	if [[ "$USER" == "root" ]]; then
+		if [[ "$EUID" == 0 ]]; then
+		PS1+="$Red_SHELL\\h SUDO "
+		fi
 	else
-		source ~/.bash_scripts
+		PS1+="$BGreen_SHELL\\h $BYellow_SHELL  $USER "
 	fi
-	if [ -f ~/.bash_aliases ]; then
-			source ~/.bash_aliases
-		else
-			source ~/.bash_cache/.bash_aliases
+	PS1+="$ICyan_SHELL$Red_SHELL"
+	if [ -f /mnt/falcon/.status ]; then
+			PS1+="no falcon "
 	fi
-	if [ -f ~/.bash_todo ]; then
-			source ~/.bash_todo
-		else
-			source ~/.bash_cache/.bash_todo
+	if [  -f /mnt/clips6/.status ]; then
+			PS1+="$fancyX_SHELLf6"
 	fi
+	if [  -f /mnt/clips7/.status ]; then
+			PS1+="$fancyX_SHELLf7"
+	fi
+	if [  -f /mnt/clips10/.status ]; then
+			PS1+="$fancyX_SHELLf10"
+	fi
+	PS1+="$ICyan_SHELL\\w$reset_SHELL | "
+######### FARONIZED-MENU FUNCTION
+
+alias   ff.net="ifconfig -a | cut -d' ' -f1 | sed '/^$/d' "
+alias   falcon=" cd ~/.falcon/scripts "
+alias	ff.clean=" ff.bin.files.backup.delete "
+alias	ff.code=" cd ~/.falcon/code "
+alias	ff.edit.bashrc=" nano ~/.bashrc "
+alias	ff.fstab=" cat /etc/fstab "
+alias	ff.id="   cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1 "
+alias	ff.java=" cd ~/.falcon/code/java/projects "
+alias	ff.loc=" cd /usr/local 2> /dev/null "
+alias	ff.log=" tail -n 50 /var/log/syslog"
+alias	ff.md5="      grabfiles=( \"$( find -L $PWD -maxdepth 1 -type f ! -type d ! -path '*/.gvfs' -exec basename {} \; )\" ); for w in \"${grabfiles[@]}\"; do md5sum $w; done "
+alias	ff.node="    cd ~/.falcon/code/node/projects "
+alias	ff.open=" nautilus . 2> /dev/null < /dev/null"
+alias	ff.script="  cd ~/.falcon/scripts "
+alias	ff.vid="  cd ~/Videos"
+alias	ff6e=" ssh -o PubkeyAuthentication=no faron@192.168.111.6"
+alias	ff6=" ssh faron@192.168.111.6"
+alias	ff7e=" ssh -o PubkeyAuthentication=no faron@192.168.111.7"
+alias	ff7=" ssh faron@192.168.111.7"
+alias	ff.met=" cd ~/.falcon/scripts/meteor/projects-meteor "
+alias	ff.privs=" cd /srv/www/htdocs/.privs "
+alias	fly=" cd ~/.falcon "
+alias	mtrmake=" meteor-kitchen "
+alias	ports="     sudo netstat -tulanp "
+alias	setup="     cd ~/.falcon/setup "
+alias   bashsr="    source ~/.profile "
+alias   bin=" ls /usr/local/bin "
+alias   diskspace=" gksu baobab "
+alias   ff.colors="  cat ~/.falcon/bash/.bash_colors_help "
+alias   ff.desk="    cd ~/Desktop "
+alias   ff.dl="      cd ~/Downloads "
+alias   ff.pix="     cd ~/Pictures "
+alias   ff.vid="     cd ~/Videos "
+alias   ff10e="      ssh -o PubkeyAuthentication=no faron@192.168.111.10 "
+#alias   ff10="      ssh faron@192.168.111.10"
+alias   fff="       cd /srv/www/htdocs"
+alias   ff.html.in="    cd ~/.falcon/code/htmls/projects-htmls "
+alias   ff.html.out="    cd /srv/www/htdocs/.jsc/projects "
+alias   ff.x="     cd ~/Videos/XXX "
+alias   play=" mpv --msg-color --msg-module --really-quiet"
+alias   play1=" mpv --msg-color --msg-module --speed 1 --really-quiet"
+alias   play2=" mpv --msg-color --msg-module --speed 2 --really-quiet"
+alias ff.task.list=" yokadi t_list "
+alias ff.mov6=" cd /mnt/clips6 "
+alias ff.mov7=" cd /mnt/clips7 "
+alias ff.mov1=" cd /mnt/clips10 "
+alias ffj=" cd /srv/www/htdocs/.jsc "
+alias ff.doc=" cd ~/Documents "
+alias ff.stream=" cd /mnt/clips6/lib/ "
+alias flocal=" /usr/local/bin "
+alias ff.etc=" cd /etc "
+alias ff.usr=" cd /usr/local "
+
+
+
+
+
+
+
+
+
+cd(){
+	builtin cd "$@";
+	RET="$?";
+	ls;
+	return "$RET"
+}
+
+
+historylinkfix(){
+			if [ -f ~/.history_disable ]; then
+				cat "~/.bash_cache/history_cache_$USER" >> ~/.history_disable
+				mv ~/.bash_history ~/.bash_history_backup_safeToDelete && mv  ~/.history_disable ~/.bash_history
+				mv "~/.bash_cache/history_cache_$USER" "~/.bash_cache/history_cache_$USER_safeToDelete"
+				cp -r -u ~/.bash_cache /mnt/falcon/scripts
+			fi
+			if [ ! -f ~/.bash_history ]; then
+				touch "~/.bash_cache/history_cache_$USER"
+				mv ~/.bash_history ~/.history_disable && ln -s "~/.bash_cache/history_cache_$USER" ~/.bash_history
+			fi
+}
+historylinkfix
+
+
+
+
+
+
+
+
+
+# ff.task.new() {
+# COLLECTPROJ="$1"
+# TASKDESP="$2"
+
+# if [ ! "$COLLECTPROJ" ]; then
+#         echo -n "which project? "
+#         read COLLECTPROJ
+# fi
+# if [ ! "$TASKDESP" ]; then
+#         echo -n "task? "
+#         read TASKDESP
+# fi
+# if [[ "$COLLECTPROJ" = "falcon" ]];  then
+#         TASKPROJ=$( printf \"2\" )
+#  else
+#         TASKPROJ="$( printf \"1\" )"
+#  fi
+#  if [ ! "$3" ]; then
+#          echo "assign to which project? "
+#          read TASKPROJ
+#           yokadi t_add $COLLECTPROJ $TASKDESP
+# fi
+
+# }
+
+# function ff.new.alias1 {
+#         echo -n "alias name? "
+#         read ALSIANAME
+#         echo -n "command for $ALSIANAME? "
+#         read ALSCOMM
+#        echo "alias $ALSIANAME=\"   $ALSCOMM\"
+#        " >> ~/.falcon/scripts/bash/.bash_aliases
+#         echo "alias added: $ALSIANAME"
+#         clear
+#         bashsr
+# }
+
+# function ff.list.alias {
+#     GETLISTINGALS=$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )
+#     echo "$GETLISTINGALS"
+# }
+
+# function ff.remove.alias {
+
+#     echo -n "which alias to remove? "
+#     read FINDALIASDEL
+#     if [ -z "$FINDALIASDEL" ]
+#         then
+#             echo "alias not found"
+#         else
+#             sed -i -e "/$FINDALIASDEL/d" /home/faron/.falcon/scripts/bash/.bash_aliases
+#         fi
+#     clear
+#     bashsr
+# }
+
+# ff.task.list
+
+
+
+
+
+
+

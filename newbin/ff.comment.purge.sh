@@ -11,7 +11,7 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #################### BEGIN
 
 if [ ! -d /home/faron/.originals ]; then
-	mkdir /home/faron/.originals -p
+	ln -s ~/home/faron/.falcon/originals ~/.originals
 fi
 
 FILE=$1
