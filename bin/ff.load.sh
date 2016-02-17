@@ -1,7 +1,7 @@
 #!/bin/bash
 VAR=$1
 BINHOME="/usr/local/bin"
-SCRHOME="/mnt/falcon/scripts"
+SCRHOME="~/.falcon/scripts"
 #WHICHUSER=$( echo $PWD | cut -d"/" -f 3 )
 #if [[ $WHICHUSER = 'fly' ]]; then
 #	BINHOME="/home/faron/.falcon/bin"

@@ -122,6 +122,7 @@ nsCertType = server
       echo "KEY PRIVATIZED FOR SERVER READ"
       sudo sh -c "openssl x509 -subject -fingerprint -noout -in \"$SSLDIR/certs/$DOMAINE.pem\""
       echo "KEY/CERTIFICATE FINGERPRINTED AND SEALED FOR USE: $DOMAIN1"
+	sudo update-ca-certificates
 #     fi
 # fi
 stopwatchtime
