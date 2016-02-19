@@ -9,18 +9,22 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 }
 #if [ "$1" != "" ]; then
 #################### BEGIN
-ff.apt.fetch apache2-dev
-cd /tmp
-wget http://people.apache.org/~pquerna/modules/mod_flvx.c
-sudo apxs -i -a -c mod_flvx.c 
-ff.apache2.restart
+WHO="faron"
+if [[ "$1" = "33" ]]; then WHO="www-data:www-data"; fi
+if [[ "$1" = "0" ]]; then WHO="root:root"; fi
+if [[ "$1" = "666" ]]; then WHO="nobody:nogroup"; fi
+if [[ "$1" = "" ]]; then echo "u"
+CMD="chgroup $WHO $PWD/*; chgroup -R $WHO $PWD;"
+if [[ "$EUID" != 0 ]]; then sudo $CMD; else $CMD; fi
+
+
 
 ################### END
 cd $HERE
 #elif [ "$1" = '' ];
 #	then
-#  echo "usage: install_apache_mod_flv1.sh "
-#  echo "example:  install_apache_mod_flv1.sh  "
+#  echo "usage: ff.bin.read "
+#  echo "example:  ff.bin.read  "
 #fi
 ## TALON:
 XeF
