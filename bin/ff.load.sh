@@ -1,174 +1,62 @@
-#!/bin/bash -e
+#!/bin/bash
+RETURN=$PWD
+if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
+fcbk="$(tput setaf 0)"; fcr="$(tput setaf 1)"; fcg="$(tput setaf 2)"; fcy="$(tput setaf 3)"; fcb="$(tput setaf 4)"; fcp="$(tput setaf 5)"; fcc="$(tput setaf 6)"; fcw="$(tput setaf 7)"; fco="$(tput sgr0)"; fcm="OK";
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+if [ ! -z "$1" ]; then
+#################### BEGIN
+LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  LOC="/home/faron/.falcon/scripts"; fi
+
 VAR=$1
-ALSR=$2
-BINHOME="/usr/local/bin"
-SCRHOME="/home/faron/.falcon/scripts"
+FILEHUNT=( $( find "$LOC"  -type f  -name '*.sh'  -name "*$VAR*" ! -path '*/.git/*'  ) );
 
-
-fg0="$(tput setaf 0)"
-fcr="$(tput setaf 1)"
-fcg="$(tput setaf 2)"
-fcy="$(tput setaf 3)"
-fcb="$(tput setaf 4)"
-fcp="$(tput setaf 5)"
-fcc="$(tput setaf 6)"
-fcw="$(tput setaf 7)"
-fco="$(tput sgr0)"
-
-#BIN=$PREFILE
-#WHICHUSER=$( echo $PWD | cut -d"/" -f 3 )
-#if [[ $WHICHUSER = 'fly' ]]; then
-#	BINHOME="/home/faron/.falcon/bin"
-#	echo "Hello fly!"
-#fi
-
-askAliasname(){
-	echo -n "alias for $BINFILE ? "
-	read GETNEWMANE
-	if [[ "$GETNEWMANE" != "" ]]; then
-		GETNEWMANE="$BINHOME/$BINFILE"
-		RC="$RC and aliased."
-	fi
+makelink(){
+			FILE=$( basename $entry )
+			EXT=$( echo $FILE | sed 's/.sh//g' )
+			find /usr/local/bin -type l -name "*$EXT*" -exec rm {} \;
+			fcm="OK"; echo -e "[$fcc$fcm$fco]: bin sync-ed";
+			ln -s "$entry" "/usr/local/bin/$EXT" 2>/dev/null
+			fcm="OK"; echo -e "[$fcc$fcm$fco]: $FILE linked";
 }
 
-sniffLink(){
-	for entry in "${THIS[@]}"; do
+if [ ! "$FILEHUNT" ];  then
 
-#recify file
-			if [ -f "$entry" ]; then
-#link assume=no
-#checks for linked
-				RC="$BINFILE ${fcg}found${fco}"
-				if [[ -f "$BINFORMAT" ]]; then
-#We have link
-	#reverify link is same
-					 RECIFY=$( ls -al $BINFORMAT | awk '{ print $11 }' )
-		 # yes  = same link
-					 if [[ "$BINFORMAT" == "$RECIFY" ]]; then
-	 	#no action and log result
-					 	RC+="...${fcg}linked${fco}"
-		#but if link not same
-					 else
-	 	# then remove link and log result
-				 		rm $BINFORMAT 2>/dev/null
-				 		RC+="...${fcr}link repaired${fco}"
-				  	fi
-				 fi
-#but if no link
-#create link with request
-				GETNEWMANE="$BINHOME/$BINFILE"
-				RC+="...${fcg}linked${fco}"
-				if [[ ! "$2" ]]; then
-					GETNEWMANE="$2"
+	$fcm="ERR"
+	echo -e "[$fcr$fcm$fco] None found"
+	exit 1
+else
+	for entry in "${FILEHUNT[@]}"; do
+		SELECT=""
+			while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
+				echo "${FILEHUNT[@]}"
+				echo "Proceed?  [g] to proceed"
+    				IFS= read -s -n 1 SELECT
 
-				else
-					askAliasname
-					RC+="...${fcg}aliased${fco}"
-				fi
-				RC+="...${fcg}we are done!${fco}"
-			fi
-	echo -e "$RC"
+				 	case "$SELECT" in
+				 	# 	n) newHTML break ;;
+						# i) ff.ip break ;;
+						# j) jscInit break ;;
+						# s) statusGet break ;;
+						# a) loadAJAX break ;;
+						# x) echo "exiting spawner"; break ;;
+						g ) makelink ; break;;
+						* ) echo "exiting unchanged"; break;;
+					esac
+			done
 	done
-
-
-}
-
-
-getFileToLoad(){
-#find files
-FILEHUNT=( $( find "$SCRHOME" -type f -name "*$VAR*" ! -path '*/.git/*' ) )
-#if query empty
-	if [ ! "$FILEHUNT" ]; then
-		printf "$BRed$fancyX"
-#but if query not empty
-	else
-	#for each find
-		for varget in "${FILEHUNT[@]}"; do
-		#get attirbutes
-			FILE=$( basename $varget )
-			THIS=$varget
-			echo "$BGreen_SHELL $checkmark_SHELL "
-		#remove extension
-		#arraizing all in
-			BINFILE="$BINFILE $( echo $FILE | sed 's/.sh//g' )"
-		done
-	#results delivered as object BINFILE
-	fi
-sniffLink
-}
-
-
-getFileToLoad
+fi
 
 
 
 
+################### END
+#cd $RETURN
+else fcm="ERROR"; echo -e "[$fcr$fcm$fco]: path of file you want to load"; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=ff.script.new active=y
 
-#BINHUNT=( $( find -L $BINHOME -type l -name "$BINFILE"  ) )
-			# 	 fi
-
-			# 		=1
-			# 	fi
-
-			# 	ORIGPRINT=$( printf ": original found" )
-			# 	ORIGCHECK=$( md5sum $ORIG )
-			# 	CHECKLINK=$( find -L $BINHOME -type l -name "*$BINFILE*" )
-			# 	HAVELINK=$( basename "$CHECKLINK" )
-			# 	if [ ! "$2" ]; then
-			# 		if [ -f "$HAVELINK" ]; then
-			# 			#
-			# 			BINCHECK=$( md5sum $HAVELINK | awk '{ print $1}' )
-			# 			if [[ "$BINCHECK" == "$ORIGCHECK" ]]; then
-			# 				ORIGPRINT=$( printf ": original found and the link is same" )
-			# 			else
-			# 				rm "$BINHOME/$HAVELINK" 2> /dev/null
-			# 				ORIGPRINT=$( printf ": original found and link repaired." )
-			# 				ln -s "$varget"  "$BINFORMAT"
-			# 			fi
-			# 		else
-			# 			ORIGPRINT=$( printf " = New script and new link spawned as $ALSR." )
-			# 			ln -s $varget "$BINHOME/$ALSR"
-			# 		fi
-			# 	else
-			# 		HAVEALSR=$( find -L $BINHOME -type l -name "*$ALSR*" )
-			# 		if [ -f "$BINHOME/$ALSR" ]; then
-			# 			BINCHECK=$( md5sum "$BINHOME/$ALSR" | awk '{ print $1}' )
-			# 			if [[ "$BINCHECK" == "$BINHOME/$ALSR" ]]; then
-			# 				ORIGPRINT=$( printf ": original found and the link is same")
-			# 			else
-			# 				rm "$BINHOME/$ALSR" 2> /dev/null
-			# 				ORIGPRINT=$( printf ": original found and link repaired." )
-			# 				ln -s "$varget"  "$BINHOME/$ALSR"
-			# 			fi
-			# 		else
-			# 			ln -s "$varget" "$BINHOME/$ALSR"
-			# 			ORIGPRINT=$( printf ": this is new script and your personalized link spawned." )
-			# 		fi
-			# 	fi
-			# else
-			# 	ORIGPRINT=$( printf ": can not find it." )
-			# fi
-
-			# # if [[ -f "$BINFILE" ]]; then
-			# # 	BINPRINT=$( printf ": true" )
-			# # else
-			# # 	BINPRINT=$( printf ": linked" )
-			# # 	BACKHOME=$PWD
-			# # 	cd $BINHOME
-			# # 	rm "$BINFILE*" 2> /dev/null
-			# # 	ln -s $ORIG $BINFILE
-			# # 	cd $BACKHOME
-			# # fi
-
-# 		done
-
-# 	fi
-
-# }
-
-# getFileToLoad
-
-# find -L $BINHOME -maxdepth 1 -name "$FIL2" -exec rm {} \;
-# ln -s "$PWD/$FIL0" "$BINHOME/$FIL2"
-#echo "FALCON: Symlink created for $FIL1 => $FIL2"
-exit 0
