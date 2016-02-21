@@ -1,49 +1,60 @@
 #!/bin/bash
 newfile="$1"
 newbin="/mnt/falcon/scripts/newbin"
+arbin="/mnt/falcon/scripts/archivebin"
 if [ -z "$1" ]; then
 	echo -n "name of new file? "
 	read newfile
 fi
 proofreadfile="$( echo $newfile | tr '  ' ' ' | sed 's/.sh//g' ).sh"
-touch $newbin/$proofreadfile
-chmod +x $newbin/$proofreadfile
-echo "#!/bin/bash
-HERE=\$PWD
-if [ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]; then
-	export PATH=\$PATH:/usr/local/bin
+if [ -f "$newbin/$proofreadfile" ]; then
+	GETNA="$( uuid | cut -d'-' -f5 )"
+	mv "$newbin/$proofreadfile" "$arbin/$GETNA_proofreadfile"
 fi
+touch "$newbin/$proofreadfile"
+chmod +x "$newbin/$proofreadfile"
+
+echo "
+#!/bin/bash
+RETURN=\$PWD
+if [ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]; then export PATH=\$PATH:/usr/local/bin; fi
+fcbk=\"\$(tput setaf 0)\"; fcr=\"\$(tput setaf 1)\"; fcg=\"\$(tput setaf 2)\"; fcy=\"\$(tput setaf 3)\"; fcb=\"\$(tput setaf 4)\"; fcp=\"\$(tput setaf 5)\"; fcc=\"\$(tput setaf 6)\"; fcw=\"\$(tput setaf 7)\"; fco=\"\$(tput sgr0)\"; fcok=\"[\$fcg OK \$fco]\"; fcer=\"[\$fcr ERR \$fco]\";
 XeB=\`date +%s\`
 function XeF {
 XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); logger \"\$0 | \$XeB | \$XeE | \$XeT \"; exit 0
 }
-#if [ \"\$1\" != \"\" ]; then
+if [[ \"\$1\" != \"\" ]]; then
 #################### BEGIN
 
 
-################### END
-cd \$HERE
-#elif [ \"\$1\" = '' ];
-#	then
-#  echo \"usage: $newfile \"
-#  echo \"example:  $newfile  \"
-#fi
-## TALON:
-XeF
+echo -e \"\$fcok \$fcy\$( basename \$0 )\$fco\"
 
-" >> $newbin/$proofreadfile
+################### END
+#cd \$RETURN
+else echo -e \"\$fcer Arg 1=\$fcy empty\$fco\"; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=ff.script.new active=y
+"  >> "$newbin/$proofreadfile"
 
 #subl $newbin/$proofreadfile
-
 ###DETERMINING WHICH APP TO OPEN THE SCRIPT DEPENEDING ON WHICH SERVERS
 ##SRVNAME=`hostname --short`
 
+<<<<<<< HEAD
 #ln -s $newbin/$proofreadfile
 
  if [[ "$( hostname --short )" != "f10" ]]; then
  	nano $newbin/$proofreadfile
+=======
+ln -s "$newbin/$proofreadfile" "$HOME/$proofreadfile" 2>/dev/null
+
+ if [[ "$( hostname --short )" == "f10" ]]; then
+ 	subl "$newbin/$proofreadfile"
+>>>>>>> c3443e9cbb3798c5dc81c3655915d4a4ab7a958b
  else
- 	subl $newbin/$proofreadfile
+ 	nano "$newbin/$proofreadfile"
  fi
 
 exit 0

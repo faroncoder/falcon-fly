@@ -1,0 +1,2 @@
+/bin:/usr/bin:/sbin:/usr/sbin:/home/faron/.bin:/home/faron/bin:/usr/local/bin:/usr/local/sbin:/usr/lib/jvm/java-8-oracle/bin:/usr/local/bin/node:/usr/local/bin/nwjs
+/bin
