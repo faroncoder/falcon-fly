@@ -9,7 +9,7 @@ stopwatchtime(){
 }
 
 export PATH=$PATH
-ff.accessengine
+opensh_engine
 
 git config --global push.default simple
 
@@ -54,12 +54,13 @@ cd $GETALLGIT 2> /dev/null
 		#git config --global push.default simple
 
 	#fi
-	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
+	#git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	git fetch
 	git pull
+	git commit -a -m "$( hostname )-merge" 
 	git status
-	git add --all
-	git commit -a -m "auto-$( hostname )-$( date )"
+	git add -A
+	git commit -a -m "$( hostname )-update"
 	git push
 #done
 
