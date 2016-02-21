@@ -1,4 +1,5 @@
 #!/bin/bash
+export PATH=$PATH
 HERE=$PWD
 startgreen=`date +%s`
 stopwatchtime(){
@@ -8,8 +9,30 @@ stopwatchtime(){
   exit 0
 }
 
-export PATH=$PATH
-source ~/.bashrc_sources
+opensh_engine(){
+        echo "Initializing SSH agent..."
+        chmod 700 -R ~/.ssh;
+        echo "privizating ~/.ssh : done";
+        if [ -f "~/.ssh/authorized_keys" ]; then
+                chmod 640 ~/.ssh/authorized_keys
+        fi
+        ssh-agent;
+        eval $( ssh-agent -s ) > ~/.ssh/environment;
+        find -L "$HOME/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
+}
+
+opensh_started(){
+        PIDOFCHECK=$( pidof ssh-agent | wc -w )
+        if [[ "$PIDOFCHECK" -gt 2 ]]; then
+                sudo kill -15 `pidof ssh-agent`
+                opensh_engine
+        else
+                if [[ "$PIDOFCHECK" == "" ]]; then
+                        opensh_engine
+                fi
+        fi
+}
+
 opensh_started
 
 git config --global push.default simple
@@ -17,10 +40,8 @@ git config --global push.default simple
 
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
-
 #GETALLGIT=( $( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 GETALLGIT=$( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  )
-
 cd $GETALLGIT 2> /dev/null
 
 #CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
@@ -105,6 +126,7 @@ cd $GETALLGIT 2> /dev/null
 # 	done < /tmp/x.txt
 # rm /tmp/x.txt
 cd $HERE
+echo -e "fcok"
 stopwatchtime
 exit 0
 
