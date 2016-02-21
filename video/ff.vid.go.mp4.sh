@@ -61,8 +61,8 @@ startFFMPEG() {
 		SIZEKILE=$( ls $x -s | awk '{print $5}' ) ## GET BYTE SIZE
  		INPUT=$( basename $x)
  		STEPEXT=$( rev <<< $INPUT | cut -d"." -f1 | rev )  ## GET FILE EXTENSION
- 		STEPFULL=$( rev <<< $x | cut -d"." -f2 | rev | cut -d"_" -f1 )  ## GET FILE EXTENSION
-		STEPNUM=$( rev <<< "$x" | cut -d"."  -f2  | rev | cut -d"_" -f2 )  ## GET FILE EXTENSION
+ 		STEPFULL=$( rev <<< $INPUT | cut -d"." -f2 | rev | cut -d"_" -f1 )  ## GET FILE EXTENSION
+		STEPNUM=$( rev <<< "$INPUT" | cut -d"."  -f2  | rev | cut -d"_" -f2 )  ## GET FILE EXTENSION
  		#STEPNUM=( $( find . -maxdepth 1 -type f -name "*_$STEPFULL*" | wc -l ) ) ## CHECKS FOR SERIAL NUMBER 
 					if [[ "$STEPNUM" = 0 ]]; then   ## IF THERE IS NO SERIAL NUMBER
 						SEQ=$( seq -w 0 0 | tail -n 1 )  ##ASSIGN SERIAL NUMBER
@@ -76,9 +76,9 @@ startFFMPEG() {
 		ARTISTFILE=""
 		COMMENTFILE=""
 		OUTPUTA="$STEPFULL"
-		OUTPUT="$STEPFULL-$SEQ.mp4"
-		EXIT="$STEPFULL-$SEQ-done-$SEAF.$STEPEXT"
-		EXITA="$STEPFULL-$STEPNUM.$STEPEXT"
+		OUTPUT="$STEPFULL.mp4"
+		EXIT="$STEPFULL.$STEPEXT"
+		EXITA="$STEPFULL-done.$STEPEXT"
 	
 	        			#DEGREE=$( echo $(( $SIZEKILE - $KNFILE )) )
 	       
@@ -95,13 +95,13 @@ startFFMPEG() {
 			        		
 			        		#echo $(( $SIZEKILE - $KNFILE ))
 							OUTFILE="converted: ID=$SEAF FILE=$x  IN=$SIZEFILE  OUT=$KNFILE  version=$THISVERSION" #LOG FORMAT
-							mv $x "done/$EXIT" 2> /dev/null		#
-							rename "s/-/_/g" "done/$EXIT"  #DISABLE FILE LOCK
+							mv $x "done/" 2> /dev/null		#
+							#rename "s/-/_/g" "done/$EXIT"  #DISABLE FILE LOCK
 							
-							ffmpeg -i $OUTPUTA -codec copy -metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" -metadata comment="$COMMENTFILE" -f mp4  "$OUTPUT" < /dev/null
+							ffmpeg -i $OUTPUTA -codec copy -metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" -metadata comment="$COMMENTFILE" -f mp4  "mp4/$OUTPUT" < /dev/null
 							rm $OUTPUTA
-							mv "$OUTPUT" "mp4/$OUTPUT"
-							rename "s/-/_/g" "mp4/$OUTPUT"  #DISABLE FILE LOCK
+							#mv "$OUTPUT" "mp4/$OUTPUT"
+							#rename "s/-/_/g" "mp4/$OUTPUT"  #DISABLE FILE LOCK
 							
 	        				echo $OUTFILE >> .result_converted #SEND TO LOG
 	        done
