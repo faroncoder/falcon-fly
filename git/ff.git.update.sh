@@ -10,7 +10,7 @@ stopwatchtime(){
 
 export PATH=$PATH
 source ~/.bashrc_sources
-opensh_engine
+opensh_started
 
 git config --global push.default simple
 
