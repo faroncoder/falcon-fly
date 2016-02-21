@@ -3,7 +3,7 @@
 cd ~/
 rm -r .profile .bashrc .bash_aliases .bash_scripts ! -name '.bash_history'  .bash_todo .bash_colors .bash_colors_help .bash_*  2> /dev/null
 CHECKHISTORY=$( find  ~/ -maxdepth 1 -type l -name '.bash_history' )
-if [[ ! "$CHECKHISTORY" ]]; then
+if [[ ! "$CHECKHISTORY" ]]; thenS
 	cat "~/.bash_history" >> "~/.falcon/archives/bash_history/$(hostname --short)_history"  2> /dev/null
 	rm .bash_history && ln -s "~/.falcon/archives/bash_history/$(hostname --short)_history" "~/.bash_history"
 else

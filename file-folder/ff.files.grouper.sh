@@ -15,6 +15,7 @@ stopwatchtime() {
 #orderfiles=( "$CMDGET" )
 
 		if [[ "$1" != "" ]]; then
+
 			TRIMUP="$( rev <<< $1 | cut -d"." -f1 | rev )"
 			if [[ ! -d "$PWD/$TRIMUP" ]]; then
 				mkdir $TRIMUP -p
