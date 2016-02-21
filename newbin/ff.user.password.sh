@@ -9,18 +9,17 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 }
 #if [ "$1" != "" ]; then
 #################### BEGIN
-ff.apt.fetch apache2-dev
-cd /tmp
-wget http://people.apache.org/~pquerna/modules/mod_flvx.c
-sudo apxs -i -a -c mod_flvx.c 
-ff.apache2.restart
-
+GETPASS=$( ruby -e 'print "$1".crypt("JU"); print("\n");' )
+echo $GETPASS >> /srv/www/access/.htpasswd
+if [ ! $1 ]; then echo "passcode needed" exit 1 fi
+if [ ! $2 ]; then echo "email needed" exit 2 fi
+echo $GETPASS | mail -s 'New password: $1 generated at %{%H:%M:%S}d' $2
 ################### END
 cd $HERE
 #elif [ "$1" = '' ];
 #	then
-#  echo "usage: install_apache_mod_flv1.sh "
-#  echo "example:  install_apache_mod_flv1.sh  "
+#  echo "usage: ff.user.password "
+#  echo "example:  ff.user.password  "
 #fi
 ## TALON:
 XeF

@@ -38,9 +38,9 @@ XeF
 ###DETERMINING WHICH APP TO OPEN THE SCRIPT DEPENEDING ON WHICH SERVERS
 ##SRVNAME=`hostname --short`
 
-ln -s $newbin/$proofreadfile
+#ln -s $newbin/$proofreadfile
 
- if [[ "$( hostname --short )" != 'f10' ]]; then
+ if [[ "$( hostname --short )" != "f10" ]]; then
  	nano $newbin/$proofreadfile
  else
  	subl $newbin/$proofreadfile
