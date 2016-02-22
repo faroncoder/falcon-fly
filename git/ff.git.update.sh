@@ -54,10 +54,10 @@ for git in "${GETALLGIT[@]}";
 #do
 #	cd $p 2> /dev/null
 	CKTHISGIT="$( basename $PWD )"
-	if [[ "$git" = 'scripts' ]]; then
+	if [[ "$CKTHISGIT" = 'scripts' ]]; then
 		THISGIT="falcon-fly.git"
 	else
-		THISGIT="$git.git"
+		THISGIT="$CKTHISGIT.git"
 	fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	git config --global user.name "faroncoder"
