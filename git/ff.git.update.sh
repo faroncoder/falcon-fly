@@ -41,8 +41,11 @@ git config --global push.default simple
 
 #GITLIST=( "$(find /home/faron/.falcon/scripting -maxdepth 3 -type d -name '.git' -exec dirname {} \; | sed '/\/gits\//d' )" )
 #GETALLGIT=( $( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
-GETALLGIT=$( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  )
-cd $GETALLGIT 2> /dev/null
+GETALLGIT=( $( find /home/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+
+for git in "${GETALLGIT[@]}";
+	do 
+	cd $git 2> /dev/null
 
 #CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
 #CHECKEMAIL=$( grep 'faronledger@gmail.com' $PWD/.git/config )
@@ -50,14 +53,17 @@ cd $GETALLGIT 2> /dev/null
 #for p in "${GETALLGIT[@]}";
 #do
 #	cd $p 2> /dev/null
-	CKTHISGIT="$( basename $GETALLGIT )"
-	if [[ "$CKTHISGIT" = 'scripts' ]]; then
+	CKTHISGIT="$( basename $PWD )"
+	if [[ "$git" = 'scripts' ]]; then
 		THISGIT="falcon-fly.git"
+	else
+		THISGIT="$git.git"
 	fi
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	git config --global user.name "faroncoder"
 	git config --global user.email "faronledger@gmail.com"
 	sleep 1
+	
 	echo "FALCON: Updating $THISGIT"
 	sleep 1
 	# if [ ! "$CHECKNAME" ]; then
@@ -85,7 +91,8 @@ cd $GETALLGIT 2> /dev/null
 	git commit -a -m "$( hostname )-update"
 	git push
 #done
-
+	echo -e $fcok
+done
 # echo "FALCON: Updating/home/faron/.falcon-fly"
 # cd /home/faron/.falcon/scripts
 # CHECKNAME=$( grep 'faroncoder' $PWD/.git/config )
@@ -125,9 +132,11 @@ cd $GETALLGIT 2> /dev/null
 # 		git push;
 # 	done < /tmp/x.txt
 # rm /tmp/x.txt
-cd $HERE
-echo -e "fcok"
-stopwatchtime
-exit 0
-
+################### END
+#cd $RETURN
+else echo -e "$fcer NADA =$fcy no gits $fco"; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=ff.script.new active=y
 
