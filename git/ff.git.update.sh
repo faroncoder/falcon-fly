@@ -50,13 +50,18 @@ for git in "${GETALLGIT[@]}"; do
 	sleep 1
 	echo "FALCON: Updating $THISGIT"
 	sleep 1
+	
+	git status
+	git commit -a -m "$( hostname )-update" 
+	git push
+	
 	git fetch
-	git pull
-	git commit -a -m "$( hostname )-merge" 
 	git status
 	git add -A
-	git commit -a -m "$( hostname )-update"
-	git push
+	git commit -a -m "$( hostname )-merge"
+	git pull
+	
+
 	echo -e $fcok
 done
 cd $RETURN
