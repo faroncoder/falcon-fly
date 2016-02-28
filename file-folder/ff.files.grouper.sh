@@ -14,9 +14,10 @@ stopwatchtime() {
 #orderfiles=( $( find $PWD -type f -name "*.$EXT" ) )
 #orderfiles=( "$CMDGET" )
 
-		if [ "$1" != '' ]; then
-			TRIMUP=`rev <<< $1 | cut -d"." -f1 | rev`
-			if [ ! -d "$PWD/$TRIMUP" ]; then
+		if [[ "$1" != "" ]]; then
+
+			TRIMUP="$( rev <<< $1 | cut -d"." -f1 | rev )"
+			if [[ ! -d "$PWD/$TRIMUP" ]]; then
 				mkdir $TRIMUP -p
 			fi
 				orderfiles=( `find -type f -name "*.$TRIMUP" ! -path "$PWD/$TRIMUP/*"` )
@@ -25,28 +26,28 @@ stopwatchtime() {
 		fi
 
 MEXT=0
+THIS=$( uuid )
+mkdir /home/tmp/$THIS -p
+
+SALT=$( uuid | sed 's/-//g' | sed 's/[A-Za-z]//g'  )
+MEXT=${SALT:0:8}
+N=1
 
 for j in "${orderfiles[@]}";
 	do
-		PREFILE=`rev <<< $j | cut -d"." -f2 | rev `
-		GETEXT=`rev <<< $j | cut -d"." -f1 | rev`
-		GETNEWNAME=`seq -w 0000 $( echo $MEXT ) | tail -n 1 `
+		# PREFILE=$( rev <<< $j | cut -d"." -f2 | rev )
+		N=`echo $(( $N + 1 ))`
+		GETEXT=$( rev <<< $j | cut -d"." -f1 | rev )
+		MEXT=`echo $(( $MEXT + $SALT )) `
+		DEQ=$( seq -w 0000 $( echo $N ) | tail -n 1 )
+		THISNAME=`echo "$DEQ${MEXT:0:8}" | sed 's/-//g' `
+		TRIMME="${THISNAME:0:9}"
+		FINAL="${TRIMME:0:12}.$GETEXT"
+		mv $j "/home/tmp/$THIS/$FINAL"
 
-		#rename "s/$PREFILE/$( seq -w 00001 $( echo $MEXT  ) | tail -n 1 )/g" $j
-		#mv $j "$PWD/$GETNEWNAME.$GETEXT"
-		#echo "$j will be renamed to \"$PWD/$GETNEWNAME.$GETEXT\""
-		mv $j "$PWD/$GETNEWNAME.$GETEXT"
+		# FORMAT=$( echo "$(( $MEXT + $SALT )) | sed 's/-//g' " )
 
-
-		#cp $line seralized/"$GETNEWNAME.$GETEXT"
-		#msssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssxv $j "$PWD/$TRIMUP/$GETNEWNAME.$GETEXT"
-		#rm $line
-		#rename 's/$( echo $GETNAME )/$( echo $GETNEWNAME )/g' $line
-		#MEXT=`expr $MEXT + 1`
-		MEXT=$( echo $(( $MEXT + 1 )) )
-		#rm $line
-		#find -name "$FILE*" -type f -exec mv {} $FILEASS
-		#mv $line $FILEASS.$FILE
 	done
+	find "/home/tmp/$THIS/" -type f -exec mv {} ./ \;
 
 stopwatchtime

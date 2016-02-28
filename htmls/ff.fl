@@ -58,7 +58,7 @@ if [[ "$( find $PROJ -maxdepth 1 -type d -name '*jsc*' )" != '' ]]; then
 	if [ -d "$PROJ/.jsc" ];
 		then
 		jscloc="$PROJ/.jsc"
-	fi	
+	fi
 else
 # if [ -d "$PROJ/jsc" ]; then
 	JSC="JSC ✗"
@@ -66,7 +66,7 @@ else
 fi
 echo $JSC
 # if [[ ! -d "$PROJ/.jsc" ]] && [[ ! -d "$PROJ/jsc" ]]; then
-	
+
 # fi
 }
 
@@ -102,6 +102,7 @@ while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
 		s) statusGet break ;;
 		a) loadAJAX break ;;
 		x) echo "exiting spawner"; break ;;
+		*) break;;
 	esac
 
 

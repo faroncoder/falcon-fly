@@ -1,53 +1,62 @@
 #!/bin/bash
+RETURN=$PWD
+if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
+fcbk="$(tput setaf 0)"; fcr="$(tput setaf 1)"; fcg="$(tput setaf 2)"; fcy="$(tput setaf 3)"; fcb="$(tput setaf 4)"; fcp="$(tput setaf 5)"; fcc="$(tput setaf 6)"; fcw="$(tput setaf 7)"; fco="$(tput sgr0)"; fcm="OK";
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+if [ ! -z "$1" ]; then
+#################### BEGIN
+LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  LOC="/home/faron/.falcon/scripts"; fi
+
 VAR=$1
-BINHOME="/usr/local/bin"
-SCRHOME="/mnt/falcon/scripts"
-#WHICHUSER=$( echo $PWD | cut -d"/" -f 3 )
-#if [[ $WHICHUSER = 'fly' ]]; then
-#	BINHOME="/home/faron/.falcon/bin"
-#	echo "Hello fly!"
-#fi
-FILEHUNT=( $( find -L "$SCRHOME" -type f -name "*$VAR*" ! -path '*/.git/*' ) )
+FILEHUNT=( $( find "$LOC"  -type f  -name '*.sh'  -name "*$VAR*" ! -path '*/.git/*'  ) );
 
-getFileToLoad(){
-
- 	if [[ ! "$FILEHUNT" ]]; then
-		printf "no file"
-	else
-		for varget in "${FILEHUNT[@]}"; do
-	 		#IFS= read -r varget ; do
-			#FILENAME="$( rev <<< $varget | cut -d "." -f2 | rev )"
-			#EXT="$( rev <<< $varget | cut -d "." -f1 | rev )"
-			FILE=$( basename $varget )
-			ORIG=$varget
-			BINFILE=$( echo $FILE | sed 's/.sh//g' )
-			BINFORMAT="$BINHOME/$BINFILE"
-
-			#BIN=$PREFILE
-			if [[ -f "$ORIG" ]]; then
-				ORIGPRINT=$( printf ": original found" )
-			fi
-			if [[ -f "$BINFILE" ]]; then
-				BINPRINT=$( printf ": true" )
-			else
-				BINPRINT=$( printf ": linked" )
-				BACKHOME=$PWD
-				cd $BINHOME
-				rm "$BINFILE*" 2> /dev/null
-				ln -s $ORIG $BINFILE
-				cd $BACKHOME
-			fi
-		done
-	fi
-	echo $ORIG $ORIGPRINT
-	echo $BIN $BINPRINT
-	export PATH=$PATH
-
+makelink(){
+			FILE=$( basename $entry )
+			EXT=$( echo $FILE | sed 's/.sh//g' )
+			find /usr/local/bin -type l -name "*$EXT*" -exec rm {} \;
+			fcm="OK"; echo -e "[$fcc$fcm$fco]: bin sync-ed";
+			ln -s "$entry" "/usr/local/bin/$EXT" 2>/dev/null
+			fcm="OK"; echo -e "[$fcc$fcm$fco]: $FILE linked";
 }
 
-getFileToLoad
+if [ ! "$FILEHUNT" ];  then
 
-# find -L $BINHOME -maxdepth 1 -name "$FIL2" -exec rm {} \;
-# ln -s "$PWD/$FIL0" "$BINHOME/$FIL2"
-#echo "FALCON: Symlink created for $FIL1 => $FIL2"
-exit 0
+	$fcm="ERR"
+	echo -e "[$fcr$fcm$fco] None found"
+	exit 1
+else
+	for entry in "${FILEHUNT[@]}"; do
+		SELECT=""
+			while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
+				echo "${FILEHUNT[@]}"
+				echo "Proceed?  [g] to proceed"
+    				IFS= read -s -n 1 SELECT
+
+				 	case "$SELECT" in
+				 	# 	n) newHTML break ;;
+						# i) ff.ip break ;;
+						# j) jscInit break ;;
+						# s) statusGet break ;;
+						# a) loadAJAX break ;;
+						# x) echo "exiting spawner"; break ;;
+						g ) makelink ; break;;
+						* ) echo "exiting unchanged"; break;;
+					esac
+			done
+	done
+fi
+
+
+
+
+################### END
+#cd $RETURN
+else fcm="ERROR"; echo -e "[$fcr$fcm$fco]: path of file you want to load"; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=ff.script.new active=y
+

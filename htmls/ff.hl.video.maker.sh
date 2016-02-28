@@ -15,7 +15,7 @@ fi
 GET=( ` find $PWD -maxdepth 1 -type f -name '*.mp4' ` )
 for w in "${GET[@]}"; do
     FILENAME=$( basename $w )
-    PREFILE=$( rev <<< "$FILENAME" | cut -d "." -f2 | rev )
+
     EXT=$( rev <<< "$FILENAME" | cut -d "." -f1 | rev )
     cp $BINPULL/video-backside-page.txt $PWD/tmp.txt
     sed -i -e "s/{PREFILE}/$PREFILE/g" $PWD/tmp.txt

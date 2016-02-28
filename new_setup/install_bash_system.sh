@@ -1,43 +1,44 @@
 #!/bin/bash
 
-cd $HOME
-rm -r .profile .bashrc .bash_aliases .bash_scripts .bash_todo .bash_colors .bash_colors_help .bash_*  2> /dev/null
-CHECKHISTORY=$( find  $HOME -maxdepth 1 -type l -name '.bash_history' )
-if [ -z "$CHECKHISTORY" ]; then
-	cat "$HOME/.bash_history" >> "/mnt/falcon/archives/bash_history/$(hostname --short)_history"  2> /dev/null
-	rm .bash_history 2> /dev/null && ln -s "/mnt/falcon/archives/bash_history/$(hostname --short)_history" "$HOME/.bash_history"
+cd ~/
+rm -r .profile .bashrc .bash_aliases .bash_scripts ! -name '.bash_history'  .bash_todo .bash_colors .bash_colors_help .bash_*  2> /dev/null
+CHECKHISTORY=$( find  ~/ -maxdepth 1 -type l -name '.bash_history' )
+if [[ ! "$CHECKHISTORY" ]]; then
+	cat "~/.bash_history" >> "~/.falcon/archives/bash_history/$(hostname --short)_history"  2> /dev/null
+	rm .bash_history && ln -s "~/.falcon/archives/bash_history/$(hostname --short)_history" "~/.bash_history"
 else
-	CHECKLINK="$( ls -al $HOME/.bash_history | awk '{print $11}' )"
-	if [[ "$CHECKLINK" == "/mnt/falcon/archives/bash_history/$(hostname --short)_history" ]]; then
+	CHECKLINK="$( ls -al ~/.bash_history | awk '{print $11}' )"
+	if [[ "$CHECKLINK" == "~/.falcon/archives/bash_history/$(hostname --short)_history" ]]; then
 		echo ".bash_history = ok"
 	else
-		rm .bash_history 2> /dev/null && ln -s "/mnt/falcon/archives/bash_history/$(hostname --short)_history" "$HOME/.bash_history"
+		rm .bash_history  && ln -s "~/.falcon/archives/bash_history/$(hostname --short)_history" "~/.bash_history"
 		echo ".bash_history = repaired"
 	fi
 fi
 
-#mkdir $HOME/.bash_cache -p 2> /dev/null
-#find $HOME/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_cache/ \;
-cp "/mnt/falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profile"
-echo ".profile install as master file at $HOME"
-if [ ! -d ~/.falcon ]; then
-	if [[ "$USER" == 0 ]]; then
-		ln -s /mnt/falcon ~/.falcon
-	fi
+#mkdir ~/.bash_cache -p 2> /dev/null
+#find ~/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_cache/ \;
+#cp -u "~/.falcon/scripts/new_setup/vault/profile.txt" "~/.profile" 2> /dev/null
+#echo ".profile install as master file at ~/"
+cp /mnt/falcon/scripts/bash/* ~/
+
+if [[ ! -d ~/.falcon ]]; then
+	ln -s "~/mnt/falcon" "~/.falcon" 2>/dev/null
 fi
+
 #echo "Files copied as backup as alternative bash in case server goes down:"
-#find $HOME/.bash_cache -type f -name '.*' -exec basename {} \;
+#find ~/.bash_cache -type f -name '.*' -exec basename {} \;
 #echo "Primary bash files linked to remote server:"
-cd $HOME 2> /dev/null
-rm ~/.bashrc
-rm ~/.profile
-cp $HOME/.falcon/setup/new_scripts/vault/profile.txt $HOME/.profile
-cp $HOME/.falcon/setup/new_scripts/vault/bashrc.txt $HOME/.bashrc
-#find $HOME/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec ln -s {} \;
-#UPDATE=( $( find $HOME/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec basename {} \; ) )
+#cd ~/ 2> /dev/null
+#rm ~/.bashrc 2> /dev/null
+#rm ~/.profile 2> /dev/null
+#cp ~/.falcon/setup/new_scripts/vault/profile.txt ~/.profile 2> /dev/null
+#cp ~/.falcon/setup/new_scripts/vault/bashrc.txt ~/.bashrc 2> /dev/null
+#find ~/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec ln -s {} \;
+#UPDATE=( $( find ~/.falcon/scripts/bash -maxdepth 1 -type f -name '.*' -exec basename {} \; ) )
 #for d in "${UPDATE[@]}"; do
 #	ls -al $d | awk '{print $9 $10 $11}'
 #done
-source $HOME/.profile
+#source ~/.profile
 
 exit 0

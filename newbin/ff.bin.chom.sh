@@ -1,94 +1,89 @@
-#!/bin/bash
-startgreen=`date +%s`
-stopwatchtime() {
-	stopred=`date +%s`
-	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
-	exit 0
-}
 
-#if [ "$1" != "" ]; then
+#!/bin/bash
+RETURN=$PWD
+if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
+fcbk="$(tput setaf 0)"; fcr="$(tput setaf 1)"; fcg="$(tput setaf 2)"; fcy="$(tput setaf 3)"; 
+fcb="$(tput setaf 4)"; fcp="$(tput setaf 5)"; fcc="$(tput setaf 6)"; fcw="$(tput setaf 7)"; fco="$(tput sgr0)"; 
+fcm="$fcc CUSTOM $fco"
+fcnf="[$fcy $fcm $fco]"; fcok="[$fcg OK $fco]"; fcer="[$fcr ERR $fco]";
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+#if [[ "$1" != "" ]]; then
 #################### BEGIN
-USER=""
-GROUP=""
+
+USER="$USER"
+GROUP="$USER"
 LOCP="$PWD"
 
 if [ "$LOCP" = '' ];
 	then
 		LOCP="$PWD"
-		echo $PWD > /tmp/a.dat
-		FIND=`echo $LOCP | grep '/www/html'`
+		FIND=`echo $PWD | grep '/srv/www/'`
 		if [[ "$FIND" != "" ]];
 			then
 				USER="www-data"
 				GROUP="www-data"
-				echo $USER:$GROUP
+				echo -e "$fcc $fcy $USER:$GROUP $fco"
 		fi
 		FIND=`echo $LOCP | grep '/etc'`
 		if [[ "$FIND" != "" ]];
 			then
 				USER="root"
 				GROUP="root"
-				echo $USER:$GROUP
+				echo -e "$fcnf Dry run for $fcy $USER:$GROUP $fco"
 		fi
 		FIND=`echo $LOCP | grep '/home/faron'`
 		if [[ "$FIND" != "" ]];
 			then
 				USER="faron"
 				GROUP="faron"
-				echo $USER:$GROUP
+				fcm="$fcy SELECTED $fco"
+				echo -e "$fcnf $fcy $USER:$GROUP $fco"
 		fi
 fi
-
-#if [ -f "/tmp/a.dat" ];
-#	sudo rm -f /tmp/a.dat
-#fi
 
 while :
 do
     case "$1" in
-   #  --www)
-		 #  	USER="www-data"
-		 #  	GROUP="www-data"
-		 #  	shift
-		 #  	;;
-   #  --faron)
-			# USER="faron"
-		 #  	GROUP="faron"
-		 #  	shift
-		 #  	;;
 	-c)
-			USER="$1"
-			GROUP="$2"
+			USER="$2"
+			GROUP="$3"
 			shift 3
-			;;
-     --) # End of all options
-	 	shift
-	  	break
-	  ;;
-      -*)
-	  	echo "Error: Unknown option: $1" >&2
-	  	exit 1
-	  ;;
-      *)  # No more options
-	  	break
-	  ;;
+	;;
+    --dry)
+			echo -e "$fcer"
+			fcm="$fcy SELECTED $fco"
+			echo -e "$fcnf Dry run for $fcy $USER:$GROUP $fco"
+			shift 3
+			XeF
+			break
+	;;
+	--) # End of all options
+	 		shift
+	  		break
+	;;
+    -*)
+			echo "Error: Unknown option: $1" >&2
+	  		exit 1
+	;;
+	*)  # No more options
+	 		break
+	;;
     esac
 done
-
-sudo chown -R "$USER:$GROUP" $LOCP
-sudo chmod -R 775 $LOCP
-
-
+	 		echo -e "$fcnf Dry run for $fcy $USER:$GROUP $fco"
+	 		chown -R "$USER:$GROUP" $PWD
+			echo -e "$fcok "
+			chmod -R 775 $PWD
+			echo -e "$fcok" 
+#echo -e "$fcok $fcy$( basename $0 )$fco"
 
 ################### END
-#elif [ "$1" = "" ];
-#	then
-#  echo "usage: ff.bin.www-ch-own-mod "
-#  echo "example:    "
-#fi
-
-stopwatchtime
-## TALON: ff.bin.www-ch-own-mod
-
-
+#cd $RETURN
+#else echo -e "$fcer Arg 1=$fcy empty$fco"; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=ff.script.new active=y

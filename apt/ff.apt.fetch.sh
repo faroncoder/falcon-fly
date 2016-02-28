@@ -25,22 +25,80 @@ while :
 		;;
 	esac
 done
-PACKS=( $STRINGCOL )
-for appget in "${PACKS[@]}";
-	do
-	CMD=( "apt-get build-dep -y --force-yes $appget" "apt-get install -y --force-yes $appget" )
-	for command in "${CMD[@]}";
-		do
-		if [[ "$EUID" != 0 ]]; then
-			sudo $command
-			echo $appget >> /home/faron/.falcon/setup/apt-get/appsCurrent.list
-		else
-			$command
-			echo $appget >> /home/faron/.falcon/setup/apt-get/appsCurrent.list
-		fi
+# firecommand="${CMD}"
+# if [[ "$EUID" != "0" ]]; then
+# 			firecommand="sudo ${CMD}"
+# fi
+APID="$( uuid )_f"
 
+defaultFunction(){
+	sudo rm /var/lib/dpkg/lock; sudo dpkg --configure -a;
+}
+
+beginInstall(){
+	defaultFunction
+	sudo apt-get install -y $appget
+}
+
+beginBuild(){
+	defaultFunction
+	sudo apt-get build-dep -y --force-yes $appget
+}
+beginCheck(){
+	defaultFunction
+	beginInstall < /dev/null >> /tmp/$APID
+}
+
+appCheck(){
+	if [ -f "/tmp/$APID" ]; then
+		while read line; do
+			echo $line
+		done < /tmp/$APID
+	else
+		echo "no dependency needed"	
+		> /tmp/$APID
+	fi
+}
+
+appGo(){
+	PACKS=( $STRINGCOL )
+	for appget in "${PACKS[@]}"; do
+			beginBuild
+			beginCheck
+			appCheck
+			beginInstall
 	done
-done
+	appget=""
+}
+appGo
+# 		# GETPACK=( "$( echo \"$( sudo apt-get install $appget < /dev/null" |  sed  -n  -e '{ /Suggested packages/,/The following NEW/p }' | sed '/The following/d' )\" )" )
+# 		# GETPACK=$( sudo apt-get install $appget 2< /dev/null  |  sed  -n  -e '{ /Suggested packages/,/The following NEW/p }' | sed '/The following NEW/d' | sed '/Suggested /d' )
+# #echo ${GETPACK[@]}
+
+
+# 		 # 	for sendto in "${GETPACK[@]}"; do
+# 		 # 		# echo $sendto 
+# 			# 	suggestcoll=( $suggestcoll $sendto )
+# 		 # 		# echo $sendto >> "~/.falcon/setup/apt-get/$( hostname -s)_suggested.list"
+# 			# done
+# 		fi
+# 		#CMD="( `sudo apt-get install -y --force-yes $appget` )"
+# 		#`$firecommand ${CMD}`
+# 	done
+
+# }
+
+
+# if [[ "${suggestcoll[@]}" != "" ]]; then
+#  		echo "install suggested packages too?"
+#  		read REPLY
+#  		if [[ "$REPLY" = y ]]; then
+#  				for pack2 in "${CMD2[@]}"; do
+#  					ff.apt.fetch $pack2;
+#  				done
+# # 		fi
+# fi
+
 
 ################### END
 #elif [ "$1" = "" ];
