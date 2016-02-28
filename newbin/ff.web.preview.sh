@@ -22,7 +22,7 @@ if [[ "$( echo $THISURLCHECK | grep '/srv/www/' )" != "" ]]; then
 #
 #	chromium-browser "$THISURLOPEN" 
 	while read line; do 
-	 	firefox $line </dev/null
+	 	firefox --url $line --new-tab --private 
 	 	#chromium-browser $line < /dev/null
 	 	#echo "this is webpath :: $line"
 	done < /tmp/.cache_script
