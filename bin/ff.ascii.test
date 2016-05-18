@@ -1,0 +1,55 @@
+#!/bin/bash
+PAR='\e['
+GO=';'
+LF='m'
+for i in {0..10}; do
+	SETA=$PAR$i$GO
+	for j in {0..60}; do
+		echo -e "$SETA$j$( echo m )Hello this is Jeff! ( $i - $j ) \e[0;00m"
+	done
+done
+
+
+
+#for COL in "${z[@]}"; do
+#	PARTA="\\e[$COL"
+#	echo $PARTA
+#	for SEL in "${y[@]}"; do
+#		PARTB=";$SEL"
+#		PARTC="$( echo $PARTBm )"
+#		echo "$PARTA$PARTC"
+#	done
+#done
+
+#	GRABVAR=( $i )
+#	for SEQ in "${GRABVAR[@]}"; do
+#		PAR='\e['
+#		ALT="$PAR$SEQ"
+#	done
+#done
+
+#for j in {0..200}; do
+#	GRAB=( $j )
+#	echo "${COLLECT[@]};${GRAB[@]}m"	
+#for SAQ in "$GRABARR[@]}"; do
+#		echo $SAQ
+#	done
+#	BATCHUP=( $SAF )
+#	echo $BATHCUP
+#done
+
+#JFQ="$K$( echo m )"
+#	done	
+#	printf $ALT$JFQ
+#done
+#	echo ${ALT[@]}
+#	for K in {0..200}; do
+#		EQUA=";$K"
+#	echo -e $EQUA
+#	TESTME="Jeff"
+#	SEQ1="\\e[$THISCHAN"
+#	for j in {0..200}; do
+#		SEQ=$j
+#		echo -e "$SEQ1$SEQm"
+
+exit 0

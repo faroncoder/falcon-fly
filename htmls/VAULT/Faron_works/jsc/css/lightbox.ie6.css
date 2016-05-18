@@ -1,0 +1,80 @@
+.lightbox-border-top-left
+{
+  background: url(../images/lightbox-theme.gif) no-repeat 0 0;
+}
+
+.lightbox-border-top-right
+{
+  background: url(../images/lightbox-theme.gif) no-repeat right 0;
+}
+
+.lightbox-border-bottom-left
+{
+  background: url(../images/lightbox-theme.gif) no-repeat 0 bottom;
+}
+
+.lightbox-border-bottom-right
+{
+  background: url(../images/lightbox-theme.gif) no-repeat right bottom;
+}
+
+
+.lightbox-button-close
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -190px -115px;
+}
+
+.lightbox-button-close:hover
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -220px -115px;
+}
+
+.lightbox-buttons .lightbox-buttons-init
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -151px -153px;
+}
+
+.lightbox-buttons .lightbox-buttons-end
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -244px -153px;
+}
+
+.lightbox-buttons .lightbox-button-left
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -156px -153px;
+}
+
+.lightbox-buttons .lightbox-button-left:hover
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -156px -194px;
+}
+
+.lightbox-buttons .lightbox-button-right
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -220px -153px;
+}
+
+.lightbox-buttons .lightbox-button-right:hover
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -220px -194px;
+}
+
+.lightbox-buttons .lightbox-button-max
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -182px -153px;
+}
+
+.lightbox-buttons .lightbox-button-max:hover
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -182px -194px;
+}
+
+.lightbox-buttons .lightbox-button-min
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -162px -235px;
+}
+
+.lightbox-buttons .lightbox-button-min:hover
+{
+  background: url(../images/lightbox-theme.gif) no-repeat -207px -235px;
+}
