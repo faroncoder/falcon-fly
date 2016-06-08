@@ -1,108 +1,74 @@
 #!/bin/bash
 source /usr/local/lib/faron_falcon/colors
+THISFUILE="/tmp/$( uuid )"
 
 
 
-# BULK=( "$@" )
-# NEWBULK=( $( echo ${BULK[@]} | sed "s/$1//g" ) )
-# OPEN="sudo apt-cache search"
-if [[ "$UUID" != 0 ]]; then
-	SUDO="sudo"
-fi
-
-# if [[  ! "$2"  ]]; then
-# 	$SUDO $CMD > /tmp/listing
-# else
-# 	CMD="apt-cache search $1 | grep \"$2\""
-# fi
-# if [[  ! "$3"  ]]; then
-# 		$SUDO $CMD > /tmp/listing
-# else
-# 	CMD="apt-cache search $1 | grep \"$2\" | grep \"$3\""
-# fi
-
-# if [[ "$4" != "" ]]; then
-# 	echo -e "$Fno $Fred Too many words $Foff"
-# 	exit 1
-# else
-# 	$SUDO $CMD > /tmp/listing
-# fi
-
-makeloader(){
-
-	while read line; do
-		N=$( echo $(( N + 1 )))
-		echo -e "$Fgreen$N$Foff : $line"
-	done < /tmp/listing
-#	while :
-# 	do
-# 	case "$N" in
-# 		$1)  GET=$( sed -n $1p /tmp/listing | awk '{ print $1}' ); ff.apt.fetch $GET;
-# 		break
-# 		;;
-# 		*)
-# 		break
-# 		;;
-# 	esac
-# done
+makelister(){
+		NUMB=$( cat $THISFUILE | wc -l )
+		N=0
+		while read line; do
+			N=$( echo $(( $N + 1 )) )
+			echo -e "$Fyellow$N$Foff $line"
+		done < $THISFUILE
+		echo "-----"
+		echo -e "Packages found:$Fblue $NUMB $Foff"
 }
 
 
 
-
 if [[ ! -z "$2" ]]; then
-	if [[ ! -z "$3" ]]; then
-		apt-cache search $1 | grep "$2" | grep "$3" > /tmp/listing
-		NUMB=$( cat /tmp/listing | wc -l )
-		if [[ "${NUMB[@]}" < 50 ]]; then
-			cat /tmp/listing
-			echo -e "Packages found:$Fgreen $NUMB $Foff"
-			else
-			makeloader
-			echo -e "$Finfo Key searched \"$Fyellow $1 $Foff , Fgreen $2 $Foff , $Fblue $3\" $Foff"
-			echo -e "Packages found:$Fgreen $NUMB $Foff"
+		apt-cache search $1 | grep "$2" > $THISFUILE
+		makelister
+	 	echo -e "$Finfo Key searched $Fyellow $1 $2 $Foff"
 
-		fi
-	else
-		apt-cache search $1 | grep "$2" > /tmp/listing
-		NUMB=$( cat /tmp/listing | wc -l )
-		if [[ "${NUMB[@]}" > 50 ]]; then
-			cat /tmp/listing
-			echo -e "Packages found:$Fgreen $NUMB $Foff"
-			else
-			makeloader
-			echo -e "$Finfo Key searched $Fyellow $1 $Foff and $Fgreen $2 $Foff"
-			echo -e "Packages found:$Fgreen $NUMB $Foff"
-		fi
-	fi
+
+elif [[ ! -z "$3" ]]; then
+		apt-cache search $1 | grep "$2" | grep "$3"  > $THISFUILE
+		makelister
+	 	echo -e "$Finfo Key searched $Fyellow $1 $2 $3 $Foff"
+
 else
-	apt-cache search $1 > /tmp/listing
-	NUMB=$( cat /tmp/listing | wc -l )
-		if [[ "${NUMB[@]}" > 50 ]]; then
-			cat /tmp/listing
-			echo -e "Packages found:$Fgreen $NUMB $Foff"
-			echo -e "$Finfo Key searched \"$Fyellow $1 $Foff\""
-			else
-			makeloader
-			echo -e "$Finfo Key searched \"$Fyellow $1 $Foff\""
-			echo -e "Packages found:$Fgreen $NUMB $Foff"
-		fi
+		apt-cache search $1  > $THISFUILE
+		makelister
+	 	echo -e "$Finfo Key searched $Fyellow $1 $Foff"
+
 fi
+
+
+echo -n "Item to install ? "
+read ITEM
+while :
+	do
+	case "$ITEM" in
+		$ITEM)
+				for itemgrab in "${ITEM[@]}"; do
+				ff.apt.fetch $( awk "NR==$itemgrab" $THISFUILE | awk '{ print $1 }' );
+				done
+				break
+		;;
+		*)
+				exit 0
+		;;
+	esac
+
+done
+
 
 # 	fi
 # if [[ -z ! "$2" ]] && [[ -z ! "$3" ]]; then
-# 	cat /tmp/listing | grep "$2" | grep "$3"
+# 	cat $THISFUILE | grep "$2" | grep "$3"
 
 # 	fi
 
-# 	cat /tmp/listing
+# 	cat $THISFUILE
 # 	echo -e "$Finfo Key searched \"$Fyellow $1 $Foff\""
 # elif [[ -z ! "$3" ]];
 
 
 
 # 	if [[ ! "$4" ]]; then
-# 		cat /tmp/listing | grep "$2" | grep "$3"
+# 		cat $THISFUILE | grep "$2" | grep "$3"
 # 			else
 # 		echo -e "$Fred KNOCK IT OFF! $Foff"
 # 		exit 1
@@ -118,7 +84,7 @@ fi
 
 
 # if [[ "$3" != "" ]]; then
-# 	grep \"$2\" | grep \"$3\" /tmp/listing
+# 	grep \"$2\" | grep \"$3\" $THISFUILE
 # fi
 # # parma="$1"
 # # for arg in "${NEWBULK[@]}";
@@ -165,7 +131,10 @@ fi
 # #TOTAL="$( echo ${OUTTO[@]} | wc -l )"
 # #TOTAL="$( `echo ${GETAPP[@]} | tr '|' '\n' | awk '{print $1}' | wc -l `)"
 # #echo -e $GETLIST
-echo "-----"
+
+
+
+
 #BULKED=( `echo "${GETPROCESSED[@]}" | tr '|' '\n' | awk '{print $1}' ` )
 #SORTED=$( echo "${BULKED[@]}" | wc --words )
 #echo -e "Packages found:$Fgreen $NUMB $Foff"

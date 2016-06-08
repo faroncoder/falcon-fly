@@ -37,12 +37,12 @@ defaultFunction(){
 
 beginInstall(){
 	defaultFunction
-	sudo apt-get install -y $appget
+	sudo apt-get install -y  $appget
 }
 
 beginBuild(){
 	defaultFunction
-	sudo apt-get build-dep -y --force-yes $appget
+	sudo apt-get build-dep -y $appget
 }
 beginCheck(){
 	defaultFunction

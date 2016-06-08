@@ -15,11 +15,13 @@
     <body>
         <!-- SED-CUSTOM -->
         <!-- Javascript files -->
-	 <script src="https://jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+	 <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+              integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+              crossorigin="anonymous"></script>
         <script src="./jsc/js/appengine.js" type="text/javascript"></script>
         <script type="text/javascript">
         /* SED-CUSTOM-javascript */
-        \$(document).ready(function() {
+         $(document).ready(function() {
         /* SED-CUSTOM-JQ */
         }); //end ready
         </script>

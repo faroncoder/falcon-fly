@@ -36,7 +36,7 @@ XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
 ### [FALCON] name=\$( basename \$0 ) active=y
 "  >> "$newbin/$proofreadfile"
-$Fok
+echo -e $Fok
 echo -e "$Fblue $proofreadfile $Fgreen created. $Foff"
 subl "$newbin/$proofreadfile" 2> /dev/null
 ################### END

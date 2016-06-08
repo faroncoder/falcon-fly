@@ -15,3 +15,6 @@ if [ -n "$BASH_VERSION" ]; then
 		source ~/.bashrc < /dev/null
 	fi
 fi
+# Ubuntu make installation of Ubuntu Make binary symlink
+PATH=/home/faron/.local/share/umake/bin:$PATH
+
