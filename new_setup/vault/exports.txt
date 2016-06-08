@@ -1,5 +1,0 @@
-#/mnt/clips6 192.168.1.0/24(rw,sync,no_subtree_check)
-#/mnt/clips7 192.168.1.0/24(rw,sync,no_subtree_check)
-/mnt/clips10 192.168.1.0/24(rw,sync,no_subtree_check)
-#/mnt/falcon 192.168.1.0/24(rw,sync,no_subtree_check)
-

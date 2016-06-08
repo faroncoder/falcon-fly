@@ -32,45 +32,51 @@ done
 APID="$( uuid )_f"
 
 defaultFunction(){
-	sudo rm /var/lib/dpkg/lock; sudo dpkg --configure -a;
+	sudo rm /var/lib/dpkg/lock;
+	sudo dpkg --configure -a;
 }
 
 beginInstall(){
 	defaultFunction
-	sudo apt-get install -y $appget
+	cat "/mnt/falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
+	echo "$appget" >> /tmp/aptgrab_pkg
+	less "/tmp/aptgrab_pkg" | uniq | sort > /mnt/falcon/files/configs/etc_apt-get_packages.list
+	logger "FARON:: apt-get package recorded for installation = $appget "
+	sudo apt-get install -y $appget --force-yes
 }
 
 beginBuild(){
 	defaultFunction
-	sudo apt-get build-dep -y --force-yes $appget
+	sudo apt-get build-dep $appget -y --force-yes
 }
-beginCheck(){
-	defaultFunction
-	beginInstall < /dev/null >> /tmp/$APID
-}
+#beginCheck(){
+#	defaultFunction
+#	beginInstall < /dev/null >> /tmp/$APID
+#}
 
 appCheck(){
 	if [ -f "/tmp/$APID" ]; then
 		while read line; do
 			echo $line
 		done < /tmp/$APID
-	else
-		echo "no dependency needed"	
-		> /tmp/$APID
+#	else
+#		echo "no dependency needed"
+#		> /tmp/$APID
 	fi
 }
 
 appGo(){
-	PACKS=( $STRINGCOL )
+	PACKS=( `echo ${STRINGCOL[@]}` )
 	for appget in "${PACKS[@]}"; do
 			beginBuild
-			beginCheck
-			appCheck
+#			beginCheck
+#			appCheck
 			beginInstall
 	done
 	appget=""
 }
 appGo
+
 # 		# GETPACK=( "$( echo \"$( sudo apt-get install $appget < /dev/null" |  sed  -n  -e '{ /Suggested packages/,/The following NEW/p }' | sed '/The following/d' )\" )" )
 # 		# GETPACK=$( sudo apt-get install $appget 2< /dev/null  |  sed  -n  -e '{ /Suggested packages/,/The following NEW/p }' | sed '/The following NEW/d' | sed '/Suggested /d' )
 # #echo ${GETPACK[@]}
