@@ -12,6 +12,10 @@ umask 002
 if [ -n "$BASH_VERSION" ]; then
 
 	if [ -f ~/.bashrc ]; then
+<<<<<<< HEAD
 		source ~/.bashrc < /dev/null
+=======
+		source ~/.bashrc 2> /dev/null
+>>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
 	fi
 fi
