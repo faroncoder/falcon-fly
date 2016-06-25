@@ -8,7 +8,7 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 }
 if [ ! -z "$1" ]; then
 #################### BEGIN
-LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  LOC="/home/faron/.falcon/scripts"; fi
+LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  LOC="/home/users/faron/.falcon/scripts"; fi
 
 VAR=$1
 FILEHUNT=( $( find "$LOC"  -type f  -name '*.sh'  -name "*$VAR*" ! -path '*/.git/*'  ) );
