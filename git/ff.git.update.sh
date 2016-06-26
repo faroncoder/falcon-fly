@@ -54,13 +54,11 @@ echo -e "$Finfo updating local git from remote"
 	git status
 	git checkout
 	echo -e "$Fok git merged"
-
 	git add -A
 	git commit -a -m "`date` "
 	git push --set-upstream origin master  1> /dev/null & 2> /dev/null
 	#git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
-	sleep 1
 
 	logger "$THISGIT updated with Github"
 
