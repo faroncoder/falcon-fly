@@ -50,8 +50,8 @@ for git in "${GETALLGIT[@]}"; do
 	sleep 1
 
 echo -e "$Finfo updating local git from remote"
-	git status 1> /dev/null
-	#git fetch
+	git status
+	git fetch
 	git pull git@github.com:faroncoder/$THISGIT master
 	git commit -a -m "merging"
 	git merge
