@@ -51,7 +51,7 @@ for git in "${GETALLGIT[@]}"; do
 
 echo -e "$Finfo updating local git from remote"
 	git status
-	git fetch
+	#git fetch
 	git pull https://github.com/faroncoder/$THISGIT
 	git add -A
 	git commit -a -m "merging"
