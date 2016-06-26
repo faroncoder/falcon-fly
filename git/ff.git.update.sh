@@ -53,7 +53,6 @@ echo -e "$Finfo updating local git from remote"
 	git status
 	git fetch
 	git add -A
-	git checkout
 	git commit -a -m "$( hostname )-merge"
 	git merge
 
