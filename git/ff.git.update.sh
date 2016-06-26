@@ -45,17 +45,18 @@ for git in "${GETALLGIT[@]}"; do
 	fi
 
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT" 1> /dev/null
-	git remote add origin "git@github.com:faroncoder/$THISGIT" 1> /dev/null
 	git config --global user.name "faroncoder" 1> /dev/null
 	git config --global user.email "faronledger@gmail.com" 1> /dev/null
 	sleep 1
 
 	echo -e "$Finfo Updating $THISGIT"
+	git fetch
 	git status
+	git merge
 	git commit -a -m "$( hostname -s )-update"
 	git push
 
-	git push --set-upstream master
+	git push --set-upstream origin master
 	git push -u origin master
 	echo -e "$Fok git updated"
 	sleep 1
