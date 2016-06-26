@@ -29,6 +29,8 @@ opensh_engine(){
         find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
 }
 
+opensh_engine
+
 git config --global push.default simple
 
 GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
