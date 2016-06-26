@@ -53,7 +53,7 @@ for git in "${GETALLGIT[@]}"; do
 	git status
 	git add -A
 	git commit -a -m "$( hostname )-merge"
-	git pull
+	git pull git@github.com:faroncoder/$THISGIT master
 	echo -e "$Fok git merged"
 	sleep 1
 	echo -e "$Finfo Updating $THISGIT"
