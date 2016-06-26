@@ -55,7 +55,7 @@ echo -e "$Finfo updating local git from remote"
 	git status
 	git add -A
 	git commit -a -m "$( hostname )-merge"
-	git pull git@github.com:faroncoder/$THISGIT origin/master
+	git pull git@github.com:faroncoder/$THISGIT master
 	git merge
 	git checkout -b $THISGIT-working
 	git fetch
