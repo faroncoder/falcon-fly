@@ -60,6 +60,7 @@ for git in "${GETALLGIT[@]}"; do
 	git commit -a -m "$( hostname )-update"
 	git push
 	git remote add origin "git@github.com:faroncoder/$THISGIT"
+	git push --set-upstream origin master
 	git push -u origin master
 	echo -e "$Fok git updated"
 	sleep 1
