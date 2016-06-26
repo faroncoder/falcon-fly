@@ -7,7 +7,11 @@ stopwatchtime() {
 	exit 0
 }
 helpecho() {
+<<<<<<< HEAD
 HELP="execute fm.dbs without arguments"
+=======
+HELP="execute ff.mongo.dbs without arguments"
+>>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
   echo $HELP
   stopwatchtime
 }
@@ -47,4 +51,8 @@ echo "$CMD" | mongo $1 --quiet
 ################### END
 
 stopwatchtime
+<<<<<<< HEAD
 ## TALON: fm.dbs
+=======
+## TALON: ff.mongo.dbs
+>>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
