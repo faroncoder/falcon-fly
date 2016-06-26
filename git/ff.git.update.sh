@@ -56,7 +56,7 @@ echo -e "$Finfo updating local git from remote"
 	echo -e "$Fok git merged"
 	git add -A
 	git commit -a -m "`date` "
-	git push --set-upstream origin master
+	git push --set-upstream master origin
 	#git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
 
