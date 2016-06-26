@@ -48,6 +48,17 @@ for git in "${GETALLGIT[@]}"; do
 	git config --global user.name "faroncoder"
 	git config --global user.email "faronledger@gmail.com"
 	sleep 1
+
+	echo -e "$Finfo Updating $THISGIT"
+	git status
+	git commit -a -m "$( hostname -s )-update"
+	git push
+	git remote add origin "git@github.com:faroncoder/$THISGIT"
+	git push --set-upstream origin master
+	git push -u origin master
+	echo -e "$Fok git updated"
+	sleep 1
+
 	echo -e "$Finfo updating local git from remote"
 	git fetch
 	git status
@@ -56,16 +67,7 @@ for git in "${GETALLGIT[@]}"; do
 	git pull git@github.com:faroncoder/$THISGIT master
 	echo -e "$Fok git merged"
 	sleep 1
-	echo -e "$Finfo Updating $THISGIT"
-	git status
-	git commit -a -m "$( hostname -s )-update"
-	git push
-	git remote add origin "git@github.com:faroncoder/$THISGIT"
-	git push --set-upstream origin master
-	git push --set-upstream origin master
-	git push -u origin master
-	echo -e "$Fok git updated"
-	sleep 1
+
 done
 
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
