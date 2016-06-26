@@ -60,7 +60,7 @@ echo -e "$Finfo updating local git from remote"
 	echo -e "$Fok git merged"
 	sleep 1
 
-	git pull
+	git pull https://github.com/faroncoder/$THISGIT
 	git add -A
 	git commit -a -m "merging"
 	git merge
