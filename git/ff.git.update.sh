@@ -72,10 +72,9 @@ echo -e "$Finfo updating local git from remote"
 	echo -e "$Fok git updated"
 	sleep 1
 
-
+	logger "$THISGIT updated with Github"
 
 done
-
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
 
 ################### END
