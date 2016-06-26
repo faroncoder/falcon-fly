@@ -54,7 +54,7 @@ echo -e "$Finfo updating local git from remote"
 	#git fetch
 	git pull git@github.com:faroncoder/$THISGIT master
 	git commit -a -m "merging"
-	git merge git@github.com:faroncoder/$THISGIT master
+	git merge
 	echo -e "$Fok git merged"
 
 	git add -A
