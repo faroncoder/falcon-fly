@@ -54,8 +54,7 @@ echo -e "$Finfo updating local git from remote"
 	git fetch
 	git add -A
 	#git commit -a -m "$( hostname )-merge"
-	git merge -a -m "merging"
-	checkout
+	git merge
 	echo -e "$Fok git merged"
 	sleep 1
 
