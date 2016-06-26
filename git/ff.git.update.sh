@@ -26,7 +26,7 @@ opensh_engine(){
         fi
         ssh-agent; 2> /dev/null < /dev/null
         eval ` ssh-agent -s `  > ~/.ssh/environment;
-        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
+        find /home/users/$USER/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
 }
 
 opensh_engine
@@ -43,6 +43,7 @@ for git in "${GETALLGIT[@]}"; do
 	else
 		THISGIT="$CKTHISGIT.git"
 	fi
+
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
 	git config --global user.name "faroncoder"
 	git config --global user.email "faronledger@gmail.com"
