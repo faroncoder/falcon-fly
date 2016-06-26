@@ -60,6 +60,11 @@ echo -e "$Finfo updating local git from remote"
 	echo -e "$Fok git merged"
 	sleep 1
 
+	git pull
+	git add -A
+	git commit -a -m "merging"
+	git merge
+
 	echo -e "$Finfo Updating $THISGIT"
 	git status
 	git add -A
