@@ -52,7 +52,7 @@ echo -e "$Finfo updating local git from remote"
 	git fetch
 	git status
 	git pull git@github.com:faroncoder/$THISGIT master
-
+	git checkout
 	echo -e "$Fok git merged"
 
 	git add -A
@@ -60,7 +60,6 @@ echo -e "$Finfo updating local git from remote"
 	git push --set-upstream  master  1> /dev/null & 2> /dev/null
 	#git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
-	git checkout
 	sleep 1
 
 	logger "$THISGIT updated with Github"
