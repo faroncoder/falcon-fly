@@ -50,7 +50,7 @@ for git in "${GETALLGIT[@]}"; do
 	sleep 1
 
 echo -e "$Finfo updating local git from remote"
-	git branch -b origin
+	git branch -a
 	git status
 	git pull git@github.com:faroncoder/$THISGIT master
 	git fetch
