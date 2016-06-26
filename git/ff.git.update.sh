@@ -49,6 +49,18 @@ for git in "${GETALLGIT[@]}"; do
 	git config --global user.email "faronledger@gmail.com" 1> /dev/null
 	sleep 1
 
+echo -e "$Finfo updating local git from remote"
+	git branch $THISGIT-working
+	git fetch
+	git status
+	git add -A
+	git commit -a -m "$( hostname )-merge"
+	git pull git@github.com:faroncoder/$THISGIT master
+	git merge
+	git checkout -b $THISGIT-working
+	echo -e "$Fok git merged"
+	sleep 1
+
 	echo -e "$Finfo Updating $THISGIT"
 	git fetch
 	git status
@@ -61,17 +73,7 @@ for git in "${GETALLGIT[@]}"; do
 	echo -e "$Fok git updated"
 	sleep 1
 
-	echo -e "$Finfo updating local git from remote"
-	git branch $THISGIT-working
-	git fetch
-	git status
-	git add -A
-	git commit -a -m "$( hostname )-merge"
-	git pull git@github.com:faroncoder/$THISGIT master
-	git merge
-	git checkout -b $THISGIT-working
-	echo -e "$Fok git merged"
-	sleep 1
+
 
 done
 
