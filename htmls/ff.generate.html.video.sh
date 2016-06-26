@@ -11,7 +11,7 @@ if [ "$1" ]; then
 FILENAMEME=$1
 
 #################### BEGIN
-#BINPULL="/home/faron/.falcon/scripts/htmls/VAULT"
+#BINPULL="/mnt/falcon/scripts/htmls/VAULT"
 PREFILE=$( rev <<< "$1" | cut -d "." -f2 | rev )
 EXT=$( rev <<< "$1" | cut -d "." -f1 | rev )
 mkdir -p  src

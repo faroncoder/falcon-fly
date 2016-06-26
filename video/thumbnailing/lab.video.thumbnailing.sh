@@ -23,7 +23,7 @@ if [[ -z "$INPUT" ]];
 						rm "$INPUT.png"
 						#find . -maxdepth 1 -type f -name '*.png' -exec convert -resize 340x256^ {} "$PWD/thumbs/{}" \; -exec rm {} \;
 						##rm *.png
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 					else
 
 						find . -maxdepth 1 -type f -exec ffmpegthumbnailer -i {} -o "{}.png" -s 0 \;  -exec convert -resize 340x256^ "{}.png"  "{}x.png" \; -exec convert -crop 341x256+0+0 "{}x.png" "thumbs/{}.png" \; -exec rm "*.png" \;
@@ -31,7 +31,7 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
 						rename 's/$EXTREG//g' "*.png"
 						#find . -maxdepth 1 -type f -name '*.png' -exec convert -resize 340x256^  {} "thumbs/{}" \; -exec rm {} \;
 						#rm *.png
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 				fi
 
 	else
@@ -42,7 +42,7 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
 		rm *.png
 		#ffmpeg -i "$INPUT" -y  -f  image2 -vframes 1   < /dev/null
 		#convert -resize 340x256^ "$INPUT.png" "thumbs/$INPUT.png"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 				fi
 	else
 
@@ -55,7 +55,7 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
 						#ffmpeg -ss 00:60:00.00  -i "$FINALIN" -y  -f  image2 -vframes 1 "$PREFILE.$EXTREG.png"  < /dev/null
 						#convert -resize 340x256^ "$PREFILE.$EXTREG.png" "$PWD/thumbs/$PREFILE.$EXTREG.png"
 ""
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 
 
 
@@ -81,7 +81,7 @@ WHOLEOUT="$LOCFILEOUT/$PREFILE.png"
 						rename 's/$EXTREG//g' *.png
 						find . -maxdepth 1 -type f -name '*.png' -exec convert -resize 340x256^ {} "{}" \;
 						##rm *.png
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 					else
 						##  SINGLE PRINT ONLY WITH REGULAR EXT
 						ffmpegthumbnailer -i "$FINALIN" -o "x.png" -s 0 \;
@@ -90,14 +90,14 @@ stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $star
 						#ffmpeg  -ss 00:60:00.00  -i "$FINALIN" -y  -f  image2 -vframes 1 "$PREFILE.$EXTREG.png"  < /dev/null
 						#convert -resize 340x256^ "$PREFILE.$EXTREG.png"  "$PWD/$PREFILE.$EXTREG.png"
 						##rm *.png
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 				fi
 		#ffmpeg -i "$INPUT" -y -ss 00:00:10.435 -f image2 -vframes 1 INPUT.dat < /dev/null
 		#convert INPUT.dat -resize 256x256\> "thumbs/$INPUT.png" < /dev/null
 		#rm INPUT.dat
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 	fi
 #ffmpeg -i "$INPUT" -y -ss 00:00:10.435 -f image2 -vframes 1 INPUT.dat < /dev/null
 #convert INPUT.dat -resize 256x256\> "$FILEEXTENOUT" < /dev/null
 #rm INPUT.dat
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0

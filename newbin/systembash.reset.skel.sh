@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo `expr $startgreen - $stopred` );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
 	exit 0
 }
 ## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
@@ -24,16 +24,16 @@ else
 	fi
 fi
 cd $PATHHOME
-SPAWNFILES=( "$( find -L /home/faron/.falcon/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec basename {} \; )" )
+SPAWNFILES=( "$( find -L /mnt/falcon/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec basename {} \; )" )
 
 echo "FALCON: refreshing skel files"
 for b in "${SPAWNFILES[@]}"; do
 	rm "$PATHHOME/$b"
-	ln -s "/home/faron/.falcon/bash/$b"
+	ln -s "/mnt/falcon/bash/$b"
 done
 echo "FALCON: task completed"
 
-# find -L /home/faron/.falcon/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec ln -s {} \;
+# find -L /mnt/falcon/bash -maxdepth 1 -type f -name '.*' -name '.bash*' ! -name '*functions' ! -name '*history' ! -name '.*logout*' ! -name '*help' -exec ln -s {} \;
 # echo "FALCON: clean skel files injected"
 source $PATHHOME/.bashrc
 ## END

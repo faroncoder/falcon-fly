@@ -1,7 +1,7 @@
 #!/bin/bash
 startgreen=`date +%s`
 
- #/home/faron/var/streamings/files/raw
+ #/home/users/$USER/var/streamings/files/raw
 /usr/local/bin/file-name-cleaner
 findMKV=( ls *.mkv )
 for cc in "${findMKV[@]}";
@@ -74,4 +74,4 @@ for fs in "${grabavi[@]}";
 #rm ffmpeg*
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0

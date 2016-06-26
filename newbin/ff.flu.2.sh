@@ -4,5 +4,5 @@ startgreen=`date +%s`
 flumotion-worker -d 3 -v -T tcp  -u faron -p Gnothi7411 /etc/flumotion/workers/default.xml
 #flumotion-worker -d 3 -v -T tcp -u faron -p great
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 

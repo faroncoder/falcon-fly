@@ -1,13 +1,13 @@
 #!/bin/bash
 startgreen=`date +%s`
 stopwatchtime() {
-	stopred=$( date +%s); faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+	stopred=$( date +%s); faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 	}
 
 #################### BEGIN
 
 LIST="/aptlist.list"
-PATH="/home/faron/.falcon/apt"
+PATH="/mnt/falcon/apt"
 APTLIST="$PATH$LIST"
 
 if [[ "$1" != "" ]]; then

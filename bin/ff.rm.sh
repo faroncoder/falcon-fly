@@ -3,13 +3,13 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
 	exit 0
 }
 
 if [ "$1" != "" ]; then
 #################### BEGIN
-FOLDERSEND="/home/faron/.local/share/Trash/files"
+FOLDERSEND="/home/users/$USER/.local/share/Trash/files"
 if [ -f "$1" ];
 	then
 		#mv $1 "$FOLDERSEND/`uuid`-$1"

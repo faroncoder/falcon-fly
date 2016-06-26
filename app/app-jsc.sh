@@ -15,15 +15,15 @@ fi
 
 if [ "$typedest"=="n" ] || [ "$typedest"=="N" ]
 	then
-	pathdir="/home/faron/var/Scripts/node/projects/$appname/public"
+	pathdir="/home/users/$USER/var/Scripts/node/projects/$appname/public"
 
 fi
 if [ "$typedest"=="h" ] || [ "$typedest"=="H" ]
 	then
-	pathdir="/home/faron/var/Scripts/htmls/projects/$appname"
+	pathdir="/home/users/$USER/var/Scripts/htmls/projects/$appname"
 fi
 
-binpull="/home/faron/.falcon/scripts/app/libsafe"
+binpull="/mnt/falcon/scripts/app/libsafe"
 	cd $pathdir
 	cp $binpull/jsc-build.tar.bz2 ./
 	echo "unpacking jsc build"
@@ -36,4 +36,4 @@ binpull="/home/faron/.falcon/scripts/app/libsafe"
 	mv javascripts/* jsc/js/
 	rm -r images javascripts stylesheets fonts
 	echo "finishing up jsc building... "
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0

@@ -4,7 +4,7 @@ if [ "$( echo $PATH | grep '/usr/local/bin/' )" = '' ]; then
 fi
 XeB=`date +%s`
 function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /home/faron/.falcon/logs/scripts.log; exit 0
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /mnt/falcon/logs/scripts.log; exit 0
 }
 
 #if [ "$1" != "" ]; then

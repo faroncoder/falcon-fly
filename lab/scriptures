@@ -489,7 +489,7 @@ startedSSH
 #         then
 #             echo "alias not found"
 #         else
-#             sed -i -e "/$FINDALIASDEL/d" /home/faron/.falcon/scripts/bash/.bash_aliases
+#             sed -i -e "/$FINDALIASDEL/d" /mnt/falcon/scripts/bash/.bash_aliases
 #         fi
 #     clear
 #     bashsr

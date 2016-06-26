@@ -1,9 +1,9 @@
 #!/bin/bash
 startgreen=`date +%s`
 ##POPULATING VARIABLES
-HOMEPATH="/home/faron/var/streamings/files"
+HOMEPATH="/home/users/$USER/var/streamings/files"
 timestamp="$( date )"
-LOG="/home/faron/.falcon/logs/media-encoding.log"
+LOG="/mnt/falcon/logs/media-encoding.log"
 HEIGHTWT="$1"
 ## collecting files into array but in order of size and if they are mkv files
 
@@ -41,11 +41,11 @@ HEIGHTWT="$1"
 				mediainfo "$fme.flv" > "$HOMEPATH/mediainfos/$fme-flv.info"
 				echo "$timestamp: mediainfo $HOMEPATH/$fmv.flv" >> $LOG
 				echo "$timestamp: sending $f to master server" >> $LOG
-				scp $f f1:/home/faron/var/streamings/final/mkv/
+				scp $f f1:/home/users/$USER/var/streamings/final/mkv/
 				mv $f "$HOMEPATH/finish-mkv/"
 				echo "$timestamp: $f sent" >> $LOG
 				echo "$timestamp: sending $fmv.flv to master server" >> $LOG
-				scp "$fme.flv" f1:/home/faron/var/streamings/final/flv/
+				scp "$fme.flv" f1:/home/users/$USER/var/streamings/final/flv/
 				mv "$fme.flv" "$HOMEPATH/finish-flv/"
 				echo "$timestamp: $fmv.flv sent" >> $LOG
 			done
@@ -76,5 +76,5 @@ flvcherk
 flverstart
 closelog
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 ## bin | video | flv-er

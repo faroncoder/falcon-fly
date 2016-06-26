@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo `expr $startgreen - $stopred` );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
 	exit 0
 }
 ## IGNORE ABOVE :: LOGGING PURPOSE | use 'stopwatchtime' instead of 'exit 0' ##
@@ -13,7 +13,7 @@ export PATH="$PATH:/usr/.bin:/.bin:/faron/home/.bin"
 =======
 export PATH="$PATH:/usr/bin/:/bin:/faron/home/bin"
 >>>>>>> 7ec161e5c2fe99a9c3028e53ce2a2b3d0bb30954
-PATHLINK="/home/faron/var/Streamings/files/engine/factory-mp4/output"
+PATHLINK="/home/users/$USER/var/Streamings/files/engine/factory-mp4/output"
 cd $PATHLINK
 if [ ! -d "$PATHLINK/streamer" ]; then
 	echo "no streamer folder - exiting"

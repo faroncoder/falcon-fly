@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/faron/.bash_colors
+source /home/users/$USER/.bash_colors
 
 BULK=( "$@" )
 NEWBULK=( $( echo ${BULK[@]} | sed "s/$1//g" ) )

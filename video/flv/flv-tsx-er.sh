@@ -8,7 +8,7 @@ TIME="$( echo $GETDATE | awk '{print$4}' )"
 NOW="$MONTH-$DAY-$YEAR @ $TIME"
 mypath="$(readlink -f "$0")"
 fileonly="$( basename $mypath )"
-streamlog="/home/faron/var/streamings/encoding.log"
+streamlog="/home/users/$USER/var/streamings/encoding.log"
 
 
 function tsizing {
@@ -41,12 +41,12 @@ if [ -z "$1" ]
             done < listing.txt
         else
             echo "terminating..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
     fi
 else
     INPUT="$1"
     tsizing
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
 fi
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0

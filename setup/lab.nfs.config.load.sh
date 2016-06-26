@@ -21,7 +21,7 @@ function StartProcess {
 		echo "192.168.1.6:/media/$n   /media/$n  nfs  rw,hard,intr  0   0" >> "$HOME/fstab.new"
 		echo "/media/$n /home/$USER/.$n  none  bind  0  0" >> "$HOME/fstab.new"
 	done
-	sudo mv /etc/fstab /home/faron/old_fstab
+	sudo mv /etc/fstab /home/users/$USER/old_fstab
 	sudo mv "$HOME/fstab.new" /etc/fstab
 	sudo mount -a
 }
