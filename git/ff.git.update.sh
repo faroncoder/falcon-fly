@@ -58,7 +58,7 @@ echo -e "$Finfo updating local git from remote"
 
 	git add -A
 	git commit -a -m "`date` "
-	git push --set-upstream origin master  1>2 /dev/null
+	git push --set-upstream  master  1>2 /dev/null
 	#git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
 	git checkout
