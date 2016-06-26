@@ -1,12 +1,25 @@
-fg_black="$(tput setaf 0)"
-fg_red="$(tput setaf 1)"
-fg_green="$(tput setaf 2)"
-fg_yellow="$(tput setaf 3)"
-fg_blue="$(tput setaf 4)"
-fg_magenta="$(tput setaf 5)"
-fg_cyan="$(tput setaf 6)"
-fg_white="$(tput setaf 7)"
-reset="$(tput sgr0)"
+fg_black="$(tput setaf 0 clear )"
+fg_red="$(tput setaf 1 clear )"
+fg_green="$(tput setaf 2 clear )"
+fg_yellow="$(tput setaf 3 clear )"
+fg_blue="$(tput setaf 4 clear )"
+fg_magenta="$(tput setaf 5 clear )"
+fg_cyan="$(tput setaf clear ) "
+fg_white="$(tput setaf clear )"
+reset="$(tput sgr0 clear )"
+
+# fcbk="$(tput setaf 0)"
+# fcr="$(tput setaf 1)"
+# fcg="$(tput setaf 2)"
+# fcy="$(tput setaf 3)"
+# fcb="$(tput setaf 4)"
+# fcp="$(tput setaf 5)"
+# fcc="$(tput setaf 6)"
+# fcw="$(tput setaf 7)"
+# fco="$(tput sgr0)"
+# fcok="[$fcg OK $fco]"
+# fcer="[$fcr ERR $fco]"
+
 
 
 Fred=$( echo -e $fg_red  )
@@ -161,16 +174,4 @@ On_IBlue='\e[0;104m'   # Blue
 On_IPurple='\e[0;105m' # Purple
 On_ICyan='\e[0;106m'   # Cyan
 On_IWhite='\e[0;107m'  # White
-
-fcbk="$(tput setaf 0)"
-fcr="$(tput setaf 1)"
-fcg="$(tput setaf 2)"
-fcy="$(tput setaf 3)"
-fcb="$(tput setaf 4)"
-fcp="$(tput setaf 5)"
-fcc="$(tput setaf 6)"
-fcw="$(tput setaf 7)"
-fco="$(tput sgr0)"
-fcok="[$fcg OK $fco]"
-fcer="[$fcr ERR $fco]"
 
