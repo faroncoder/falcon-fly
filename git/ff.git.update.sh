@@ -52,17 +52,15 @@ for git in "${GETALLGIT[@]}"; do
 echo -e "$Finfo updating local git from remote"
 	git status
 	git fetch
-	git merge $THISGIT origin
+	git pull https://github.com/faroncoder/$THISGIT
 	git add -A
-	git commit -a -m "$( hostname )-merge"
+	git commit -a -m "merging"
+	git merge $THISGIT origin
 
 	echo -e "$Fok git merged"
 	sleep 1
 
-	git pull https://github.com/faroncoder/$THISGIT
-	git add -A
-	git commit -a -m "merging"
-	git merge
+
 
 
 	echo -e "$Finfo Updating $THISGIT"
