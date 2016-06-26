@@ -50,9 +50,8 @@ for git in "${GETALLGIT[@]}"; do
 	sleep 1
 
 echo -e "$Finfo updating local git from remote"
-
-	git fetch
 	git status
+	git fetch
 	git add -A
 	git checkout
 	git commit -a -m "$( hostname )-merge"
