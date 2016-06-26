@@ -61,6 +61,7 @@ echo -e "$Finfo updating local git from remote"
 	git push --set-upstream origin master 2>&1 /dev/null
 	#git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
+	git checkout
 	sleep 1
 
 
