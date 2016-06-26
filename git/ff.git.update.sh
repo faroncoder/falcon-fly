@@ -56,7 +56,7 @@ echo -e "$Finfo updating local git from remote"
 	git add -A
 	git commit -a -m "merging"
 	git merge $THISGIT origin
-
+	git checkout
 	echo -e "$Fok git merged"
 	sleep 1
 
