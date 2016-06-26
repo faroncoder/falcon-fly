@@ -51,8 +51,8 @@ for git in "${GETALLGIT[@]}"; do
 
 echo -e "$Finfo updating local git from remote"
 	git status
-	git fetch
 	git pull git@github.com:faroncoder/$THISGIT master
+	git fetch
 	git merge
 	echo -e "$Fok git merged"
 
