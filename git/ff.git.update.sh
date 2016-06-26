@@ -61,9 +61,7 @@ echo -e "$Finfo updating local git from remote"
 	sleep 1
 
 	echo -e "$Finfo Updating $THISGIT"
-	git fetch
 	git status
-	git merge
 	git commit -a -m "$( hostname -s )-update"
 	git push --set-upstream origin master 1> /dev/null
 	git push -u origin master 1> /dev/null
