@@ -52,9 +52,9 @@ for git in "${GETALLGIT[@]}"; do
 echo -e "$Finfo updating local git from remote"
 	git status 1> /dev/null
 	#git fetch
-	git pull $THISGIT master
+	git pull git@github.com:faroncoder/$THISGIT.git  master
 	git commit -a -m "merging"
-	git merge $THISGIT origin
+	git merge git@github.com:faroncoder/$THISGIT.git origin
 	echo -e "$Fok git merged"
 
 	git add -A
