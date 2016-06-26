@@ -25,7 +25,7 @@ opensh_engine(){
                 chmod 640 /home/users/$USER/.ssh/authorized_keys
         fi
         ssh-agent; 2> /dev/null < /dev/null
-        eval $( ssh-agent -s ) > ~/.ssh/environment;
+        eval ` ssh-agent -s `  > ~/.ssh/environment;
         find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
 }
 
