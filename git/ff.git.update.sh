@@ -47,10 +47,9 @@ for git in "${GETALLGIT[@]}"; do
 	git remote set-url origin "git@github.com:faroncoder/$THISGIT" 1> /dev/null
 	git config --global user.name "faroncoder" 1> /dev/null
 	git config --global user.email "faronledger@gmail.com" 1> /dev/null
-	sleep 1
 
 echo -e "$Finfo updating local git from remote"
-	git branch -a
+	git fetch
 	git status
 	git pull git@github.com:faroncoder/$THISGIT master
 
