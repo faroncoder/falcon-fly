@@ -56,6 +56,7 @@ echo -e "$Finfo updating local git from remote"
 	git checkout
 	git commit -a -m "$( hostname )-merge"
 	git merge
+	git checkout
 	echo -e "$Fok git merged"
 	sleep 1
 
@@ -65,7 +66,7 @@ echo -e "$Finfo updating local git from remote"
 	git commit -a -m "$( hostname -s )-update"
 	git push --set-upstream origin master 2> /dev/null
 	git push -u origin master 1> /dev/null
-	git checkout
+
 	echo -e "$Fok git updated"
 	sleep 1
 
