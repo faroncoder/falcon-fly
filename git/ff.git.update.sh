@@ -59,12 +59,23 @@ for git in "${GETALLGIT[@]}"; do
 	echo -e "$Fok git updated"
 	sleep 1
 
+	echo -e "$Finfo branching between repos"
+	git checkout -b $THISGIT-working
+	git checkout master
+	git branch -d $THISGIT-working
+	git push origin master
+	sleep 1
+
 	echo -e "$Finfo updating local git from remote"
 	git fetch
 	git status
 	git add -A
 	git commit -a -m "$( hostname )-merge"
 	git pull git@github.com:faroncoder/$THISGIT master
+	git checkout --detach
+
+
+
 	echo -e "$Fok git merged"
 	sleep 1
 
