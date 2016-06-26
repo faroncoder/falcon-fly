@@ -49,9 +49,9 @@ for git in "${GETALLGIT[@]}"; do
 	git config --global user.email "faronledger@gmail.com" 1> /dev/null
 
 echo -e "$Finfo updating local git from remote"
+	git pull git@github.com:faroncoder/$THISGIT master
 	git fetch
 	git status
-	git pull git@github.com:faroncoder/$THISGIT master
 	git checkout
 	echo -e "$Fok git merged"
 
