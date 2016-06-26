@@ -63,7 +63,7 @@ echo -e "$Finfo updating local git from remote"
 	echo -e "$Finfo Updating $THISGIT"
 	git status
 	git commit -a -m "$( hostname -s )-update"
-	git push --set-upstream origin master 1>&2 /dev/null
+	git push --set-upstream origin master 1&2> /dev/null
 	git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
 	sleep 1
