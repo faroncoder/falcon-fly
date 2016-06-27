@@ -36,20 +36,6 @@ esac
 	export LS_COLORS="di=1;35"
 
 
-
-
-
-fg_black="$(tput setaf 0)"
-fg_red="$(tput setaf 1)"
-fg_green="$(tput setaf 2)"
-fg_yellow="$(tput setaf 3)"
-fg_blue="$(tput setaf 4)"
-fg_magenta="$(tput setaf 5)"
-fg_cyan="$(tput setaf 6)"
-fg_white="$(tput setaf 7)"
-reset="$(tput sgr0)"
-
-
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
 reset_SHELL="\[\e[00m\]" #  Reset
 fancyX_SHELL="\342\234\227"
@@ -191,33 +177,6 @@ On_IWhite='\e[0;107m'  # White
 
 
 
-
-
-opensh_engine(){
-        echo "Initializing SSH agent..."
-        chmod 700 -R ~/.ssh;
-        echo "privizating ~/.ssh : done";
-        if [ -f "~/.ssh/authorized_keys" ]; then
-                chmod 640 ~/.ssh/authorized_keys
-        fi
-        ssh-agent;
-        eval $( ssh-agent -s ) > ~/.ssh/environment;
-        find -L "$HOME/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
-}
-
-opensh_started(){
-        PIDOFCHECK=$( pidof ssh-agent | wc -w )
-        if [[ "$PIDOFCHECK" -gt 2 ]]; then
-                sudo kill -15 `pidof ssh-agent`
-                opensh_engine
-        else
-                if [[ "$PIDOFCHECK" == "" ]]; then
-                        opensh_engine
-                fi
-        fi
-}
-
-opensh_started
 
 
 
@@ -376,57 +335,6 @@ cd(){
 	ls;
 	return "$RET";
 }
-
-
-# historylinkfix(){
-# 			if [ -f ~/.history_disable ]; then
-# 				cat "~/.bash_cache/history_cache_$USER" >> ~/.history_disable
-# 				mv ~/.bash_history ~/.bash_history_backup_safeToDelete && mv  ~/.history_disable ~/.bash_history
-# 				mv "~/.bash_cache/history_cache_$USER" "~/.bash_cache/history_cache_$USER_safeToDelete"
-# 				cp -r -u ~/.bash_cache /mnt/falcon/scripts
-# 			fi
-# 			if [ ! -f ~/.bash_history ]; then
-# 				touch "~/.bash_cache/history_cache_$USER"
-# 				mv ~/.bash_history ~/.history_disable && ln -s "~/.bash_cache/history_cache_$USER" ~/.bash_history
-# 			fi
-# }
-# historylinkfix
-editrecent(){
-
-builtin "$@";
-	RET="$?";
-	subl `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )`
-	return "$RET";
-}
-
-ssh-engine(){
-        echo "Initializing SSH agent..."
-        chmod 700 -R ~/.ssh;
-        chmod 700 ~/.ssh/*;
-           chmod -x ~/.ssh/*;
-        echo "privizating ~/.ssh : done";
-        if [ -f "~/.ssh/authorized_keys" ]; then
-                chmod 600 ~/.ssh/authorized_keys
-        fi
-        eval $( `ssh-agent -s` ) > ~/.ssh/environment;
-        find -L ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
-}
-
-startedSSH(){
-        PIDOFCHECK=$( pidof ssh-agent | wc -w )
-        if [[ "$PIDOFCHECK" -gt 2 ]]; then
-                sudo kill -15 `pidof ssh-agent`
-                ssh-engine
-        else
-                if [ -z $PIDOFCHECK ]; then
-                        ssh-engine
-                fi
-        fi
-}
-
-startedSSH
-
-
 
 
 

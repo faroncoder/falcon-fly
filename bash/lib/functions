@@ -1,28 +1,23 @@
 XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+XeF(){
+        XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0;
 }
 
-opensh_started(){
+openshengine(){
         PIDOFCHECK=$( pidof ssh-agent | wc -w )
         if [[ "$PIDOFCHECK" -gt 2 ]]; then
                 $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
         fi
-}
-
-opensh_engine(){
-        opensh_started
         echo "Initializing SSH agent..."
         chmod 700 -R ~/.ssh;
-        echo "privizating ~/.ssh : done";
         if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
                 chmod 640 /home/users/$USER/.ssh/authorized_keys
         fi
-        ssh-agent; 2> /dev/null < /dev/null
+        echo -e "$Fstatus ~/.ssh made privatized";
+        echo -e "$Fstatus ` ssh-agent; 2> /dev/null < /dev/null`"
         eval $( ssh-agent -s ) > ~/.ssh/environment;
-        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
+        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
 }
-
 
 cd(){
 	builtin cd "$@";
@@ -31,58 +26,34 @@ cd(){
 	return "$RET";
 }
 
-
-# historylinkfix(){
-# 			if [ -f ~/.history_disable ]; then
-# 				cat "~/.bash_cache/history_cache_$USER" >> ~/.history_disable
-# 				mv ~/.bash_history ~/.bash_history_backup_safeToDelete && mv  ~/.history_disable ~/.bash_history
-# 				mv "~/.bash_cache/history_cache_$USER" "~/.bash_cache/history_cache_$USER_safeToDelete"
-# 				cp -r -u ~/.bash_cache /mnt/falcon/scripts
-# 			fi
-# 			if [ ! -f ~/.bash_history ]; then
-# 				touch "~/.bash_cache/history_cache_$USER"
-# 				mv ~/.bash_history ~/.history_disable && ln -s "~/.bash_cache/history_cache_$USER" ~/.bash_history
-# 			fi
-# }
-# historylinkfix
-editrecent(){
-
-builtin "$@";
-	RET="$?";
-	subl `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )`
-	return "$RET";
+editme(){
+        builtin "$@";
+                if [[ "$( hostname -s )" == "f10" ]]; then
+                        EDITOR="subl"
+                else
+                        EDITOR="nano"
+                fi
+                RET="$?";
+                $EDITOR `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )` 2> /dev/null < /dev/null;
+                return "$RET";
 }
 
-# ssh-engine(){
-#         echo "Initializing SSH agent..."
-#         chmod 700 -R ~/.ssh;
-#         chmod 700 ~/.ssh/*;
-#            chmod -x ~/.ssh/*;
-#         echo "privizating ~/.ssh : done";
-#         if [ -f "~/.ssh/authorized_keys" ]; then
-#                 chmod 600 ~/.ssh/authorized_keys
-#         fi
-#         eval $( `ssh-agent -s` ) > ~/.ssh/environment;
-#         find -L ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
-# }
+loadSudo(){
+        GETID=$( echo $EUID )
+        if [[ "$GETID" != 0 ]]; then SUDO="sudo"; fi
+}
 
-# startedSSH(){
-#         PIDOFCHECK=$( pidof ssh-agent | wc -w )
-#         if [[ "$PIDOFCHECK" -gt 2 ]]; then
-#                 sudo kill -15 `pidof ssh-agent`
-#                 ssh-engine
-#         else
-#                 if [ -z $PIDOFCHECK ]; then
-#                         ssh-engine
-#                 fi
-#         fi
-# }
+loadEditor(){
+        if [[ "$( hostname -s )" == "f10" ]]; then
+                EDITOR="subl"
+        else
+                EDITOR="nano"
+        fi
+}
 
-# startedSSH
-
-
-
-
+loadSudo
+loadEditor
+openshengine
 
 # ff.task.new() {
 # COLLECTPROJ="$1"

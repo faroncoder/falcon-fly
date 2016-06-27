@@ -4,8 +4,8 @@ fg_green="$(tput setaf 2 clear 2> /dev/null < /dev/null )"
 fg_yellow="$(tput setaf 3 clear 2> /dev/null < /dev/null )"
 fg_blue="$(tput setaf 4 clear 2> /dev/null < /dev/null )"
 fg_magenta="$(tput setaf 5 clear 2> /dev/null < /dev/null )"
-fg_cyan="$(tput setaf clear 2> /dev/null < /dev/null ) "
-fg_white="$(tput setaf clear 2> /dev/null < /dev/null )"
+fg_cyan="$(tput setaf 6 clear 2> /dev/null < /dev/null ) "
+fg_white="$(tput setaf 7 clear 2> /dev/null < /dev/null )"
 reset="$(tput sgr0 clear 2> /dev/null < /dev/null )"
 
 Fred=$( echo -e $fg_red  )
