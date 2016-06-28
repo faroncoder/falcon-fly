@@ -11,22 +11,29 @@ VAR=$1
 FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
 
 echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
-cd /usr/local/bin 1> /dev/null;
-sudo rm ff.* 2> /dev/null;
+
+
 makelink(){
-			FILE=`basename $entry`
-			EXT=$( echo $FILE | sed 's/.sh//g' )
-#			echo -e "$Finfo Falcon Bin sync-ed."
-			ln -s "$entry" "$EXT" 2> /dev/null;
-# 			echo -e "$Fok $FILE linked";
+
+
+			#ln -s "$entry" "$EXT" 2>/dev/null
+			# echo "$FILE | /usr/local/bin/$EXT "
+			$SUDO chmod 555 /usr/local/bin/$FILE
+			$SUDO chmod +x /usr/local/bin/$FILE
+ 			echo -e "$Fok $EXT installed";
 }
 
 if [[ -z "$FILEHUNT" ]];  then
 	echo -e "$Fno None found"
 	XeF
 else
+	rm /usr/local/bin/ff.* 2> /dev/null
+	echo -e "$Finfo loc bin cleaned $Foff"
+
 	for entry in "${FILEHUNT[@]}"; do
-		makelink;
+		FILE=`basename $entry`
+		EXT=$( echo $entry | sed 's/.sh//g' )
+		cp $entry $EXT 1> /dev/null ; echo -e "$Fok" < /dev/null;
 	done
 	# 	SELECT=""
 	# 		while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
@@ -40,15 +47,13 @@ else
 	# 		done
 	 # done
 fi
-sudo chown /usr/local/bin/ff.* 2> /dev/null;
-sudo chmod /usr/local/bin/ff.* 2> /dev/null;
-source ~/.profile
+source ~/.bashrc
 echo -e "$Fok Falcon Bin sync-ed."
 
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
 
 ################### END
-cd $RETURN 1> /dev/null;
+cd $RETURN 1> /dev/null
 #else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
 ### exit code for clean exit
 XeF

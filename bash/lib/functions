@@ -53,7 +53,7 @@ loadEditor(){
 
 loadSudo
 loadEditor
-openshengine
+
 
 # ff.task.new() {
 # COLLECTPROJ="$1"
