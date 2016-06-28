@@ -4,35 +4,15 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
-
-
-if [[ "$EUID" != 0 ]];
-	then SUDO="sudo"
-fi
-openshengine(){
-        PIDOFCHECK=$( pidof ssh-agent | wc -w )
-        if [[ "$PIDOFCHECK" -gt 2 ]]; then
-                $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
-        fi
-        echo "Initializing SSH agent..."
-        chmod 700 -R ~/.ssh;
-        if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
-                chmod 640 /home/users/$USER/.ssh/authorized_keys
-        fi
-        echo -e "$Fstatus ~/.ssh made privatized";
-        echo -e "$Fstatus ` ssh-agent; 2> /dev/null < /dev/null`"
-        eval $( ssh-agent -s ) > ~/.ssh/environment;
-        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
-}
-
+loadSudo
 openshengine
 
+git config --global push.default simple
 
 GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
 for git in "${GETALLGIT[@]}"; do
 	cd $git 1> /dev/null
-	git config --global push.default simple
 	CKTHISGIT="$( basename $PWD )"
 	if [[ "$CKTHISGIT" = 'scripts' ]]; then
 		THISGIT="falcon-fly.git"
