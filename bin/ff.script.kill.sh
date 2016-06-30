@@ -9,10 +9,11 @@ if [[ "$1" != "" ]]; then
 ## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
 
 arbin="/mnt/falcon/archives/kills"
+search="/mnt/falcon/scripts"
 echo -e "$Finfo Killing $1 $Foff"
 GETNA="$( uuid | cut -d'-' -f5 )"
-mv "$PWD/$1" "$arbin/$GETNA-$1"
-echo -e "$Fok $1 killed"
+find "$search" -type f -name "*$1*" -exec mv {} "$arbin/$GETNA-$1" \; 1> /dev/null; echo -e "$Fok $1 killed" < /dev/null;
+#mv "$PWD/$1" "$arbin/$GETNA-$1"
 
 ################### END
 #cd $RETURN 1> /dev/null
