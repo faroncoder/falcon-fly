@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
 	exit 0
 }
 
@@ -31,7 +31,7 @@ if [ "$LOCP" = '' ];
 				GROUP="root"
 				echo $USER:$GROUP $fcok
 		fi
-		FIND=`echo $LOCP | grep '/home/users/$USER'`
+		FIND=`echo $LOCP | grep '/home/faron'`
 		if [[ "$FIND" != "" ]];
 			then
 				USER="faron"

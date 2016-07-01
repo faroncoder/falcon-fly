@@ -10,16 +10,17 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-GETAPP=''
+STRINGCOL=''
 while :
 	do
 	case "$1" in
 		$1)
-			GETAPP="$GETAPP $1"
-			if [[ "$2" == "" ]]; then
-				break;
+			STRINGCOL="$STRINGCOL $1"
+			if [ "$2" = '' ]; then
+				shift
+				break
 			else
-				shift;
+				shift
 			fi
 		;;
 	esac
@@ -28,55 +29,51 @@ done
 # if [[ "$EUID" != "0" ]]; then
 # 			firecommand="sudo ${CMD}"
 # fi
-#APID="$( uuid )_f"
+APID="$( uuid )_f"
 
 defaultFunction(){
-	sudo rm /var/lib/dpkg/lock; sudo dpkg --configure -a;
-
+	sudo rm /var/lib/dpkg/lock;
+	sudo dpkg --configure -a;
 }
 
 beginInstall(){
 	defaultFunction
-	# sudo apt-get install -y  $appget
-	# cat "/mnt/falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
-	# echo "$appget" >> /tmp/aptgrab_pkg
-	# less "/tmp/aptgrab_pkg" | uniq | sort > /mnt/falcon/files/configs/etc_apt-get_packages.list
-	logger "FARON:: apt-get package recorded for installation = $p "
-	sudo apt-get install -y $p --force-yes 2> /dev/null
+	cat "/mnt/falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
+	echo "$appget" >> /tmp/aptgrab_pkg
+	less "/tmp/aptgrab_pkg" | uniq | sort > /mnt/falcon/files/configs/etc_apt-get_packages.list
+	logger "FARON:: apt-get package recorded for installation = $appget "
+	sudo apt-get install -y $appget --force-yes
 }
 
 beginBuild(){
 	defaultFunction
-	sudo apt-get build-dep -y --force-yes $p
+	sudo apt-get build-dep $appget -y --force-yes
 }
-beginCheck(){
-	defaultFunction
+#beginCheck(){
+#	defaultFunction
 #	beginInstall < /dev/null >> /tmp/$APID
-}
+#}
 
-# appCheck(){
-# 	if [ -f "/tmp/$APID" ]; then
-# 		while read line; do
-# 			echo $line
-# 		done < /tmp/$APID
-# 	else
-# 		echo "no dependency needed"
-# 		> /tmp/$APID
-# #	else
-# #		echo "no dependency needed"
-# #		> /tmp/$APID
-# 	fi
-# }
+appCheck(){
+	if [ -f "/tmp/$APID" ]; then
+		while read line; do
+			echo $line
+		done < /tmp/$APID
+#	else
+#		echo "no dependency needed"
+#		> /tmp/$APID
+	fi
+}
 
 appGo(){
-
-	for p in "${GETAPP[@]}"; do
-			defaultFunction
+	PACKS=( `echo ${STRINGCOL[@]}` )
+	for appget in "${PACKS[@]}"; do
 			beginBuild
-			beginInstall
+#			beginCheck
 #			appCheck
+			beginInstall
 	done
-	p=""
+	appget=""
 }
 appGo
 
@@ -86,7 +83,7 @@ appGo
 
 
 # 		 # 	for sendto in "${GETPACK[@]}"; do
-# 		 # 		# echo $sendto
+# 		 # 		# echo $sendto 
 # 			# 	suggestcoll=( $suggestcoll $sendto )
 # 		 # 		# echo $sendto >> "~/.falcon/setup/apt-get/$( hostname -s)_suggested.list"
 # 			# done

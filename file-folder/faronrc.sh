@@ -3,12 +3,12 @@ startgreen=`date +%s`
 <<<<<<< HEAD
 FARON_PATH="/usr/.bin:/usr/local/bin:/home/local/.bin"
 =======
-FARON_PATH="/usr/bin/:/home/users/$USER/bin:/home/local/bin"
+FARON_PATH="/usr/bin/:/home/faron/bin:/home/local/bin"
 >>>>>>> 7ec161e5c2fe99a9c3028e53ce2a2b3d0bb30954
 export PATH="$PATH:$FARON_PATH"
-LOG="/mnt/falcon/logs/faronrc/logging.log"
+LOG="/home/faron/.falcon/logs/faronrc/logging.log"
 DTW=$( date )
-cd /home/users/$USER/.faronrc-listen
+cd /home/faron/.faronrc-listen
 
 function init {
 SRLOG=$( awk 'NR 1 {print $0}' faronrc )
@@ -38,5 +38,5 @@ init
 doCmd
 endCmd
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 

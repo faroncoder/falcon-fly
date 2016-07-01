@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 if [[ ! "$EUID" = 0 ]]; then
 		echo "su yourself in first, Faron"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 	fi
 echo "
 #
@@ -248,7 +248,7 @@ echo "
 
 
 [mkv]
-	path = /home/users/$USER/var/Streamings/files/engine/factory-mp4/mkv
+	path = /home/faron/var/Streamings/files/engine/factory-mp4/mkv
 	writeable = yes
 	browseable = yes
 	valid users = faron
@@ -256,15 +256,15 @@ echo "
     directory mask = 0777
 
 [output]
-	path = /home/users/$USER/var/Streamings/files/engine/factory-mp4/output
+	path = /home/faron/var/Streamings/files/engine/factory-mp4/output
 	writeable = yes
 	browseable = yes
 	valid users = faron
 	create mask = 0777
     directory mask = 0777
 
-/mnt/falcon]
-	path = /mnt/falcon
+/home/faron/.falcon]
+	path = /home/faron/.falcon
 	valid users = faron
 	writeable = yes
 	browseable = yes
@@ -287,12 +287,12 @@ fi
 if [[ ! "$( hostname )" = "f10" ]]; then
 	
 			## if it is a client then reconfigure
-			if [[ ! "$( grep /mnt/falcon' /etc/fstab )" ]]; then
-				echo "nope you dont have /mnt/falcon' in fstab"
-				echo "//192.168.1.10/mnt/falcon /media/mnt/falcon  none  nfs  0  0 " >> /etc/fstab
-				echo "now you have/mnt/falcon"
+			if [[ ! "$( grep /home/faron/.falcon' /etc/fstab )" ]]; then
+				echo "nope you dont have /home/faron/.falcon' in fstab"
+				echo "//192.168.1.10/home/faron/.falcon /media/home/faron/.falcon  none  nfs  0  0 " >> /etc/fstab
+				echo "now you have/home/faron/.falcon"
 			else
-				echo "/mnt/falcon for /etc/fstab is already set"
+				echo "/home/faron/.falcon for /etc/fstab is already set"
 			fi
 			if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 				echo "nope you dont have 'output' in fstab"
@@ -308,10 +308,10 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			else
 				echo "/mkv for /etc/fstab is already set"
 			fi
-			if [[ ! -f "/home/users/$USER/.smbcredentials" ]]; then
+			if [[ ! -f "/home/faron/.smbcredentials" ]]; then
 			## adding credits for NFS
 				echo "adding creditals"
-				#cp /mnt/falcon/configs/configs-private/cifs_access.txt  /home/users/$USER/.smbcredentials
+				#cp /home/faron/.falcon/configs/configs-private/cifs_access.txt  /home/faron/.smbcredentials
 				#echo "creditals creation completed"
 			fi
 	else
@@ -319,25 +319,25 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 		## checking if exports is set up
 			if [[ ! "$( grep 'output' /etc/exports )" ]]; then
 				echo "nope you dont have output"
-				echo "/home/users/$USER/var/Streamings/files/factory-mp4/output  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "/home/faron/var/Streamings/files/factory-mp4/output  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 				echo "now you have output"
 			else
 				echo "/output for /etc/exports is already set"
 			fi
 			if [[ ! "$( grep 'mkv' /etc/exports )" ]]; then
 				echo "nope you dont have mkv"
-				echo "/home/users/$USER/var/Streamings/files/factory-mp4/mkv  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "/home/faron/var/Streamings/files/factory-mp4/mkv  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 				echo "now you have mkv"
 			else
 				echo "/mkv for /etc/exports is already set"
 			fi
-			if [[ ! "$( grep '/mnt/falcon' /etc/exports )" ]]; then
-				echo "nope you dont have/mnt/falcon"
-				echo "/mnt/falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
-				echo "now you have/mnt/falcon"
+			if [[ ! "$( grep '/home/faron/.falcon' /etc/exports )" ]]; then
+				echo "nope you dont have/home/faron/.falcon"
+				echo "/home/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "now you have/home/faron/.falcon"
 			else
-				echo "/mnt/falcon for /etc/exports is already set"
+				echo "/home/faron/.falcon for /etc/exports is already set"
 			fi
 fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 

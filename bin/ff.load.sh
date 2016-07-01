@@ -1,57 +1,64 @@
 #!/bin/bash
 RETURN=$PWD
 if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions
-#if [[ "$1" != "" ]]; then
+fcbk="$(tput setaf 0)"; fcr="$(tput setaf 1)"; fcg="$(tput setaf 2)"; fcy="$(tput setaf 3)"; fcb="$(tput setaf 4)"; fcp="$(tput setaf 5)"; fcc="$(tput setaf 6)"; fcw="$(tput setaf 7)"; fco="$(tput sgr0)"; fcm="OK";
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+if [ ! -z "$1" ]; then
 #################### BEGIN
-
-LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  echo -e "$Fno Falcon is not mounted. Exiting"; exit 1;   fi
+LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  LOC="/home/faron/.falcon/scripts"; fi
 
 VAR=$1
-FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
+FILEHUNT=( $( find "$LOC"  -type f  -name '*.sh'  -name "*$VAR*" ! -path '*/.git/*'  ) );
 
-echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
-cd /usr/local/bin 1> /dev/null;
-sudo rm ff.* 2> /dev/null;
 makelink(){
-			FILE=`basename $entry`
+			FILE=$( basename $entry )
 			EXT=$( echo $FILE | sed 's/.sh//g' )
-#			echo -e "$Finfo Falcon Bin sync-ed."
-			ln -s "$entry" "$EXT" 2> /dev/null;
-# 			echo -e "$Fok $FILE linked";
+			find -L /usr/local/bin -type f -name "*$EXT*" -exec rm {} \;
+			fcm="OK"; echo -e "[$fcc$fcm$fco]: bin sync-ed";
+			cd /usr/local/bin 1> /dev/null;
+			find /mnt/falcon/scripts -type f -name 'ff.*' -name '*.sh' -exec ln -s {} \;
+			rename 's/.sh//g' *
+			fcm="OK"; echo -e "[$fcc$fcm$fco]: $FILE linked";
 }
 
-if [[ -z "$FILEHUNT" ]];  then
-	echo -e "$Fno None found"
-	XeF
+if [ ! "$FILEHUNT" ];  then
+
+	$fcm="ERR"
+	echo -e "[$fcr$fcm$fco] None found"
+	exit 1
 else
 	for entry in "${FILEHUNT[@]}"; do
-		makelink;
-	done
-	# 	SELECT=""
-	# 		while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
-	# 			echo "${FILEHUNT[@]}"
-	# 			echo -e "$Finfo Proceed?  [g] to proceed"
- #    				IFS= read -s -n 1 SELECT
-	# 			 	case "$SELECT" in
-	# 					g ) makelink ; break;;
-	# 					* ) echo "exiting unchanged"; break;;
-	# 				esac
-	# 		done
-	 # done
-fi
-sudo chown /usr/local/bin/ff.* 2> /dev/null;
-sudo chmod /usr/local/bin/ff.* 2> /dev/null;
-source ~/.profile
-echo -e "$Fok Falcon Bin sync-ed."
+		SELECT=""
+			while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
+				echo "${FILEHUNT[@]}"
+				echo "Proceed?  [g] to proceed"
+    				IFS= read -s -n 1 SELECT
 
-#echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
+				 	case "$SELECT" in
+				 	# 	n) newHTML break ;;
+						# i) ff.ip break ;;
+						# j) jscInit break ;;
+						# s) statusGet break ;;
+						# a) loadAJAX break ;;
+						# x) echo "exiting spawner"; break ;;
+						g ) makelink ; break;;
+						* ) echo "exiting unchanged"; break;;
+					esac
+			done
+	done
+fi
+
+
+
 
 ################### END
-cd $RETURN 1> /dev/null;
-#else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
+#cd $RETURN
+else fcm="ERROR"; echo -e "[$fcr$fcm$fco]: path of file you want to load"; fi
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FALCON] name=$( basename $0 ) active=y
+### [FALCON] name=ff.script.new active=y
 

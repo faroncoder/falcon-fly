@@ -3,15 +3,11 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
 	exit 0
 }
 helpecho() {
-<<<<<<< HEAD
-echo "execute 'fm.drop [db] [collection]'"
-=======
 echo "execute 'ff.mongo.drop [db] [collection]'"
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
 echo "to remove a collection (table) from specific db"
   stopwatchtime
 }
@@ -56,8 +52,4 @@ else
 fi
 
 stopwatchtime
-<<<<<<< HEAD
-## TALON: fm.drop
-=======
 ## TALON: ff.mongo.drop
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927

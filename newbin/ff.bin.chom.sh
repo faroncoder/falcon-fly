@@ -34,7 +34,7 @@ if [ "$LOCP" = '' ];
 				GROUP="root"
 				echo -e "$fcnf Dry run for $fcy $USER:$GROUP $fco"
 		fi
-		FIND=`echo $LOCP | grep '/home/users/$USER'`
+		FIND=`echo $LOCP | grep '/home/faron'`
 		if [[ "$FIND" != "" ]];
 			then
 				USER="faron"

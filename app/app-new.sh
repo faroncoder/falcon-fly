@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 typedest="$1"
 appname="$2"
-binpull="/mnt/falcon/scripts/app/libsafe"
+binpull="/home/faron/.falcon/scripts/app/libsafe"
 if [ -z $1 ]
 	then
 	echo -n "HTML or Node? "
@@ -16,7 +16,7 @@ fi
 
 if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 	then
-	pathdir="/home/users/$USER/var/Scripts/node/projects/$appname"
+	pathdir="/home/faron/var/Scripts/node/projects/$appname"
 	mkdir -p $pathdir
 	echo "app created and heading to the path now..."
 	cd $pathdir
@@ -30,12 +30,12 @@ if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 	echo "configuring $appname ..."
 	cp $binpull/html-full.txt $pathdir/public/index.html
 	echo "app created!  Current directory: $PWD and you may begin scripting..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 
 fi
 if [ "$typedest"="h" ] || [ "$typedest"="H" ]
 	then
-	pathdir="/home/users/$USER/var/Scripts/htmls/projects/$appname"
+	pathdir="/home/faron/var/Scripts/htmls/projects/$appname"
 	mkdir -p $pathdir
 	echo "app created and heading to the path now..."
 	cd $pathdir
@@ -45,7 +45,7 @@ if [ "$typedest"="h" ] || [ "$typedest"="H" ]
 	cp $binpull/html-full.txt $pathdir/index.html
 	echo "now we are here and you may begin scripting..."
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
 fi
 
 
@@ -60,4 +60,4 @@ fi
 
 
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "" = '' ]; then
-	export PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/home/users/$USER/bin:/usr/local/bin:/usr/local/sbin:/usr/lib/jvm/java-8-oracle/bin:/usr/local/bin
+	export PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/home/faron/bin:/usr/local/bin:/usr/local/sbin:/usr/lib/jvm/java-8-oracle/bin:/usr/local/bin
 fi
 XeB=`date +%s`
 function XeF {
