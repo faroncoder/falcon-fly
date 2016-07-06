@@ -1,0 +1,442 @@
+.lightbox-move *
+{
+  webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.lightbox-overlay
+{
+  background:#000000;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.lightbox
+{
+  position:relative;
+  padding:17px 0;
+}
+
+.lightbox-border-top-left,
+.lightbox-border-top-right,
+.lightbox-border-bottom-left,
+.lightbox-border-bottom-right
+{
+  position:absolute;
+  height:18px;
+  width:12%;
+  z-index:7000;
+}
+
+.lightbox-border-top-left
+{
+  background: url(../images/lightbox-theme.png) no-repeat 0 0;
+  top:0;
+  left:0;
+}
+
+.lightbox-border-top-right
+{
+  background: url(../images/lightbox-theme.png) no-repeat right 0;
+  top:0;
+  right:0;
+}
+
+.lightbox-border-top-middle
+{
+  background:#2b2b2b;
+  position:absolute;
+  height:7px;
+  width:78%;
+  top:0;
+  left:12%;
+  z-index:7000;
+  overflow:hidden;
+}
+
+.lightbox-border-bottom-left
+{
+  background: url(../images/lightbox-theme.png) no-repeat 0 bottom;
+  bottom:0;
+  left:0;
+}
+
+.lightbox-border-bottom-right
+{
+  background: url(../images/lightbox-theme.png) no-repeat right bottom;
+  bottom:0;
+  right:0;
+}
+
+.lightbox-border-bottom-middle
+{
+  background:#2b2b2b;
+  height:7px;
+  width:78%;
+  position:absolute;
+  bottom:0;
+  left:12%;
+  z-index:7000;
+  overflow:hidden;
+}
+
+.lightbox-title
+{
+  background:#2b2b2b;
+  color:#FFFFFF;
+  font-family:verdana,arial,serif;
+  font-size:11px;
+  line-height:14px;
+  padding:5px 8px;
+  margin:3px;
+  position:absolute;
+  bottom:0;
+  z-index:7000;
+  opacity:0.9;
+}
+
+.lightbox-html
+{
+  z-index:7000;
+  position:relative;
+  border:0;
+  border-left:7px solid #2b2b2b;
+  border-right:7px solid #2b2b2b;
+  padding:0px 15px;
+  vertical-align:top;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lightbox-html embed,
+.lightbox-html object,
+.lightbox-html iframe
+{
+  vertical-align:top;
+  display:block;
+}
+
+.lightbox-background
+{
+  position:absolute;
+  top:7px;
+  left:7px;
+  z-index:6999;
+  float:left;
+  padding:0;
+}
+
+.lightbox-background img
+{
+  display:block;
+  position:relative;
+  border:0;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+
+
+.lightbox-mode-image .lightbox-html
+{
+  z-index:6998;
+  padding:0;
+}
+
+.lightbox-mode-html .lightbox-background
+{
+  background:#FFFFFF;
+}
+
+.lightbox-mode-html .lightbox-html
+{
+  overflow:auto;
+}
+
+.lightbox-loading,
+.lightbox-mode-html .lightbox-loading
+{
+  background:#FFFFFF url(../images/loading.gif) no-repeat center center;
+}
+
+.lightbox-button-close
+{
+  background: url(../images/lightbox-theme.png) no-repeat -190px -115px;
+  position:absolute;
+  top:12px;
+  right:-26px;
+  width:29px;
+  height:29px;
+}
+
+.lightbox-button-close:hover
+{
+  background: url(../images/lightbox-theme.png) no-repeat -220px -115px;
+}
+
+.lightbox-button-close span,
+.lightbox-buttons span
+{
+  display:none;
+}
+
+.lightbox-mode-image .lightbox-button-close
+{
+  right:14px;
+  z-index:7002;
+}
+
+.lightbox-buttons
+{
+  position:absolute;
+  top:7px;
+  left:7px;
+  z-index:7001;
+  height:39px;
+  display:none;
+}
+
+.lightbox-buttons .lightbox-buttons-init,
+.lightbox-buttons .lightbox-buttons-end
+{
+  width:5px;
+  height:39px;
+  float:left;
+  display:inline;
+}
+
+.lightbox-buttons .lightbox-buttons-init
+{
+  background: url(../images/lightbox-theme.png) no-repeat -151px -153px;
+  margin:7px 0 0 7px;
+}
+
+.lightbox-buttons .lightbox-buttons-end
+{
+  background: url(../images/lightbox-theme.png) no-repeat -244px -153px;
+  margin:7px 0 0 0;
+}
+
+.lightbox-buttons .lightbox-button-left
+{
+  background: url(../images/lightbox-theme.png) no-repeat -156px -153px;
+  width:24px;
+  height:39px;
+  float:left;
+  display:inline;
+  margin:7px 0 0 0;
+}
+
+.lightbox-buttons .lightbox-button-left:hover
+{
+  background: url(../images/lightbox-theme.png) no-repeat -156px -194px;
+}
+
+
+.lightbox-buttons .lightbox-button-right
+{
+  background: url(../images/lightbox-theme.png) no-repeat -220px -153px;
+  width:24px;
+  height:39px;
+  float:left;
+  display:inline;
+  margin:7px 0 0 0;
+}
+
+.lightbox-buttons .lightbox-button-right:hover
+{
+  background: url(../images/lightbox-theme.png) no-repeat -220px -194px;
+}
+
+
+.lightbox-buttons .lightbox-button-max
+{
+  background: url(../images/lightbox-theme.png) no-repeat -182px -153px;
+  width:36px;
+  height:39px;
+  float:left;
+  display:inline;
+  margin:7px 0 0 0;
+}
+
+.lightbox-buttons .lightbox-button-max:hover
+{
+  background: url(../images/lightbox-theme.png) no-repeat -182px -194px;
+}
+
+
+.lightbox-buttons .lightbox-button-min
+{
+  background: url(../images/lightbox-theme.png) no-repeat -162px -235px;
+  width:36px;
+  height:39px;
+  float:left;
+  display:inline;
+  margin:7px 0 0 0;
+}
+
+.lightbox-buttons .lightbox-button-min:hover
+{
+  background: url(../images/lightbox-theme.png) no-repeat -207px -235px;
+}
+
+
+.lightbox-buttons-custom
+{
+  height:39px;
+  float:left;
+  display:inline;
+  background:#2b2b2b;
+  line-height:39px;
+  font-size:10px;
+  margin:7px 0 0 0;
+}
+
+.lightbox-buttons-custom a
+{
+  color:#FFFFFF;
+  font-size:10px;
+  display:inline;
+  font-weight:normal;
+  text-decoration:underline;
+  padding:0 3px;
+}
+
+.lightbox-mode-image .lightbox-button-close
+{
+  opacity:0.7;
+}
+
+.lightbox-mode-image .lightbox-buttons
+{
+  opacity:0.3;
+}
+
+.lightbox-mode-image:hover .lightbox-buttons,
+.lightbox-mode-image:hover .lightbox-button-close
+{
+  opacity:0.9;
+}
+
+.lightbox-navigator
+{
+  display:none;
+}
+
+.lightbox-hide
+{
+  display:none;
+}
+
+/* Retina: */
+@media screen and (max-device-width: 640px), screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-device-width: 768px) and (max--moz-device-pixel-ratio: 2)
+{
+  .lightbox-button-close,
+  .lightbox-button-close:hover,
+  .lightbox-border-top-left,
+  .lightbox-border-top-right,
+  .lightbox-border-bottom-left,
+  .lightbox-border-bottom-right,
+  .lightbox-buttons .lightbox-buttons-init,
+  .lightbox-buttons .lightbox-buttons-end,
+  .lightbox-buttons .lightbox-button-left,
+  .lightbox-buttons .lightbox-button-left:hover,
+  .lightbox-buttons .lightbox-button-right,
+  .lightbox-buttons .lightbox-button-right:hover,
+  .lightbox-buttons .lightbox-button-max,
+  .lightbox-buttons .lightbox-button-max:hover,
+  .lightbox-buttons .lightbox-button-min,
+  .lightbox-buttons .lightbox-button-min:hover
+  {
+    background-image: url(../images/lightbox-theme-mobile.png);
+    background-size: 834px auto;
+  }
+
+  .lightbox-button-close
+  {
+    background-position:-380px -230px;
+    width:58px;
+    height:58px;
+    right:-52px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+  }
+
+  .lightbox-button-close:hover
+  {
+    background-position:-440px -230px;
+  }
+
+  .lightbox-buttons .lightbox-buttons-init,
+  .lightbox-buttons .lightbox-buttons-end
+  {
+    width:10px;
+    height:78px;
+  }
+
+  .lightbox-buttons .lightbox-buttons-init
+  {
+    background-position: -302px -306px;
+  }
+
+  .lightbox-buttons .lightbox-buttons-end
+  {
+    background-position: -488px -306px;
+  }
+
+  .lightbox-buttons .lightbox-button-left
+  {
+    background-position: -312px -306px;
+    width:48px;
+    height:78px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+  }
+
+  .lightbox-buttons .lightbox-button-left:hover
+  {
+    background-position: -312px -388px;
+  }
+
+  .lightbox-buttons .lightbox-button-right
+  {
+    background-position: -440px -306px;
+    width:48px;
+    height:78px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+  }
+
+  .lightbox-buttons .lightbox-button-right:hover
+  {
+    background-position: -440px -388px;
+  }
+
+  .lightbox-buttons .lightbox-button-max
+  {
+    background-position: -364px -306px;
+    width:72px;
+    height:78px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+  }
+
+  .lightbox-buttons .lightbox-button-max:hover
+  {
+    background-position: -364px -388px;
+  }
+
+  .lightbox-buttons .lightbox-button-min
+  {
+    background-position: -324px -470px;
+    width:72px;
+    height:78px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+  }
+
+  .lightbox-buttons .lightbox-button-min:hover
+  {
+    background-position: -414px -470px;
+  }
+}

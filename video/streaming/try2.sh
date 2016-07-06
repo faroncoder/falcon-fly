@@ -1,0 +1,1 @@
+cvlc 8.mp4 --sout='#transcode{vcodec=h264,vfilter=postproc,scale=Auto,width=600,acodec=mpga,ab=128,channels=2,samplerate=44100}:duplicate{dst=rtp{sdp=rtsp://:8002/live}}' --sout-all --sout-keep

@@ -1,0 +1,27 @@
+#!/bin/bash
+startgreen=`date +%s`
+stopwatchtime() {
+	stopred=`date +%s`
+	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
+	exit 0
+}
+
+if [ "$1" != "" ]; then
+#################### BEGIN
+
+
+## place your script here
+
+
+################### END
+elif [ "$1" = "" ];
+	then
+  echo "usage: ff.script.update "
+  echo "example:    "
+fi
+
+stopwatchtime
+## TALON: ff.script.update
+
+
