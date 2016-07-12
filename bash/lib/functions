@@ -1,23 +1,28 @@
 XeB=`date +%s`
-XeF(){
-        XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0;
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
 
-openshengine(){
+openshstarted(){
         PIDOFCHECK=$( pidof ssh-agent | wc -w )
         if [[ "$PIDOFCHECK" -gt 2 ]]; then
                 $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
         fi
+}
+
+openshengine(){
+        opensh_started
         echo "Initializing SSH agent..."
         chmod 700 -R ~/.ssh;
+        echo "privizating ~/.ssh : done";
         if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
                 chmod 640 /home/users/$USER/.ssh/authorized_keys
         fi
-        echo -e "$Fstatus ~/.ssh made privatized";
-        echo -e "$Fstatus ` ssh-agent; 2> /dev/null < /dev/null`"
+        ssh-agent; 2> /dev/null < /dev/null
         eval $( ssh-agent -s ) > ~/.ssh/environment;
-        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
+        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
 }
+
 
 cd(){
 	builtin cd "$@";
@@ -26,90 +31,15 @@ cd(){
 	return "$RET";
 }
 
-editme(){
-        builtin "$@";
-                if [[ "$( hostname -s )" == "f10" ]]; then
-                        EDITOR="subl"
-                else
-                        EDITOR="nano"
-                fi
-                RET="$?";
-                $EDITOR `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )` 2> /dev/null < /dev/null;
-                return "$RET";
+
+editrecent(){
+
+builtin "$@";
+	RET="$?";
+	subl `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )`
+	return "$RET";
 }
 
 loadSudo(){
-        GETID=$( echo $EUID )
-        if [[ "$GETID" != 0 ]]; then SUDO="sudo"; fi
+        if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
 }
-
-loadEditor(){
-        if [[ "$( hostname -s )" == "f10" ]]; then
-                EDITOR="subl"
-        else
-                EDITOR="nano"
-        fi
-}
-
-loadSudo
-loadEditor
-
-
-# ff.task.new() {
-# COLLECTPROJ="$1"
-# TASKDESP="$2"
-
-# if [ ! "$COLLECTPROJ" ]; then
-#         echo -n "which project? "
-#         read COLLECTPROJ
-# fi
-# if [ ! "$TASKDESP" ]; then
-#         echo -n "task? "
-#         read TASKDESP
-# fi
-# if [[ "$COLLECTPROJ" = "falcon" ]];  then
-#         TASKPROJ=$( printf \"2\" )
-#  else
-#         TASKPROJ="$( printf \"1\" )"
-#  fi
-#  if [ ! "$3" ]; then
-#          echo "assign to which project? "
-#          read TASKPROJ
-#           yokadi t_add $COLLECTPROJ $TASKDESP
-# fi
-
-# }
-
-# function ff.new.alias1 {
-#         echo -n "alias name? "
-#         read ALSIANAME
-#         echo -n "command for $ALSIANAME? "
-#         read ALSCOMM
-#        echo "alias $ALSIANAME=\"   $ALSCOMM\"
-#        " >> ~/.falcon/scripts/bash/.bash_aliases
-#         echo "alias added: $ALSIANAME"
-#         clear
-#         bashsr
-# }
-
-# function ff.list.alias {
-#     GETLISTINGALS=$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )
-#     echo "$GETLISTINGALS"
-# }
-
-# function ff.remove.alias {
-
-#     echo -n "which alias to remove? "
-#     read FINDALIASDEL
-#     if [ -z "$FINDALIASDEL" ]
-#         then
-#             echo "alias not found"
-#         else
-#             sed -i -e "/$FINDALIASDEL/d" /mnt/falcon/scripts/bash/.bash_aliases
-#         fi
-#     clear
-#     bashsr
-# }
-
-# ff.task.list
-

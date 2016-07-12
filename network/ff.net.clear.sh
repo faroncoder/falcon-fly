@@ -1,4 +1,3 @@
-
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;  loadSudo;
@@ -35,7 +34,7 @@ while read line; do
 	ff_ipsclear
 done < $TMP0
 rm $TMP $TMP0
-$SUDO service networking restart
+ifconfig
 
 ################### END
 #cd $RETURN 1> /dev/null

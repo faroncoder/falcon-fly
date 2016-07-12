@@ -1,12 +1,13 @@
-fg_black="$(tput setaf 0 clear 2> /dev/null < /dev/null )"
-fg_red="$(tput setaf 1 clear 2> /dev/null < /dev/null )"
-fg_green="$(tput setaf 2 clear 2> /dev/null < /dev/null )"
-fg_yellow="$(tput setaf 3 clear 2> /dev/null < /dev/null )"
-fg_blue="$(tput setaf 4 clear 2> /dev/null < /dev/null )"
-fg_magenta="$(tput setaf 5 clear 2> /dev/null < /dev/null )"
-fg_cyan="$(tput setaf 6 clear 2> /dev/null < /dev/null ) "
-fg_white="$(tput setaf 7 clear 2> /dev/null < /dev/null )"
-reset="$(tput sgr0 clear 2> /dev/null < /dev/null )"
+fg_black="$(tput setaf 0)"
+fg_red="$(tput setaf 1)"
+fg_green="$(tput setaf 2)"
+fg_yellow="$(tput setaf 3)"
+fg_blue="$(tput setaf 4)"
+fg_magenta="$(tput setaf 5)"
+fg_cyan="$(tput setaf 6)"
+fg_white="$(tput setaf 7)"
+reset="$(tput sgr0)"
+
 
 Fred=$( echo -e $fg_red  )
 Fblack=$( echo -e $fg_black  )
@@ -19,9 +20,9 @@ Fwhite=$( echo -e $fg_white  )
 Foff=$( echo -e $reset  )
 
 Fok="[$Fgreen OK $Foff]"
-Fno="[$Fred NO $Foff]"
-Finfo="[$Fpurple INFO $Foff]"
-Fwarn="[$Fyellow WARN $Foff]"
+Fno="[$Fred ERR $Foff]"
+Finfo="[$Fblue INFO $Foff]"
+Farg="[$Fyellow ARG $Foff]"
 Fstat="[$Fteal Status $Foff]"
 
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
@@ -160,4 +161,16 @@ On_IBlue='\e[0;104m'   # Blue
 On_IPurple='\e[0;105m' # Purple
 On_ICyan='\e[0;106m'   # Cyan
 On_IWhite='\e[0;107m'  # White
+
+fcbk="$(tput setaf 0)"
+fcr="$(tput setaf 1)"
+fcg="$(tput setaf 2)"
+fcy="$(tput setaf 3)"
+fcb="$(tput setaf 4)"
+fcp="$(tput setaf 5)"
+fcc="$(tput setaf 6)"
+fcw="$(tput setaf 7)"
+fco="$(tput sgr0)"
+fcok="[$fcg OK $fco]"
+fcer="[$fcr ERR $fco]"
 

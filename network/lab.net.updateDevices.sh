@@ -1,18 +1,17 @@
 #!/bin/bash
 RETURN=$PWD
-if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falcon/$z; done
-if [[ "$1" != "" ]]; then
+#if [[ "$1" != "" ]]; then
 #################### BEGIN
 
 
-GI=`basename $1`
-GIF="$PWD/$GI"
-jj=$( uuid );
-ji=`printf $jj | cut -d '-' -f 4`
-mv $PWD/$1 /mnt/falcon/scripts/kills/$jj-$GI
-#mv "$XD/$XF" "$XD/old-$ji-$XF";
-echo -e "$Fstat $1 killed."
+CHECKMAIN=`ifconfig | grep 'inet addr' | sed '/127.0/d' | awk '{print $2}' | cut -d':' -f 2`
+GETIFACE="$( ff.network.devices  | sed '/lo/d' )"
+$SUDO ifconfig $( print $GETIFACE ) 0.0.0.0;
+ff.net.addr $CHECKMAIN 24
+
+
 
 ################### END
 #cd $RETURN 1> /dev/null;

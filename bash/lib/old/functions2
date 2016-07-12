@@ -3,25 +3,25 @@ function XeF {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
 
-opensh_started(){
-        PIDOFCHECK=$( pidof ssh-agent | wc -w )
-        if [[ "$PIDOFCHECK" -gt 2 ]]; then
-                $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
-        fi
-}
+# opensh_started(){
+#         PIDOFCHECK=$( pidof ssh-agent | wc -w )
+#         if [[ "$PIDOFCHECK" -gt 2 ]]; then
+#                 $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
+#         fi
+# }
 
-opensh_engine(){
-        opensh_started
-        echo "Initializing SSH agent..."
-        chmod 700 -R ~/.ssh;
-        echo "privizating ~/.ssh : done";
-        if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
-                chmod 640 /home/users/$USER/.ssh/authorized_keys
-        fi
-        ssh-agent; 2> /dev/null < /dev/null
-        eval $( ssh-agent -s ) > ~/.ssh/environment;
-        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
-}
+# opensh_engine(){
+#         opensh_started
+#         echo "Initializing SSH agent..."
+#         chmod 700 -R ~/.ssh;
+#         echo "privizating ~/.ssh : done";
+#         if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
+#                 chmod 640 /home/users/$USER/.ssh/authorized_keys
+#         fi
+#         ssh-agent; 2> /dev/null < /dev/null
+#         eval $( ssh-agent -s ) > ~/.ssh/environment;
+#         find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
+# }
 
 
 cd(){
@@ -30,6 +30,7 @@ cd(){
 	ls;
 	return "$RET";
 }
+
 
 
 # historylinkfix(){

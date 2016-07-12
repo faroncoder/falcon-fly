@@ -9,11 +9,10 @@ RETURN=$PWD;
 ## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
 
 $SUDO ifconfig enp1s5 0.0.0.0
-$SUDO ifconfig enp1s5:1 192.168.2.10/24
-$SUDO ifconfig enp1s5:2 64.140.117.18/29
-$SUDO ifconfig enp1s5:3 192.168.1.10/24
+$SUDO ifconfig enp1s5:1 10.0.0.10/8
+$SUDO ifconfig enp1s5:1 10.74.11.1/8
 
-ifconfig
+#ifconfig
 
 route -n
 
