@@ -8,15 +8,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 if [[ $USER != 0 ]]; then
 	SUDO="sudo "
 fi
-<<<<<<< HEAD
-BASE="/home/users/faron/.falcon/logs/router"
-=======
-<<<<<<< HEAD
-BASE="/home/users/faron/.falcon/logs/router"
-=======
 BASE="/mnt/falcon/logs/router"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 LOG="$BASE/router.log"
 ACCEPT="$BASE/accepted.log"
 DROP="$BASE/dropped.log"

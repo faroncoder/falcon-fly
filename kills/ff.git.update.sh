@@ -34,7 +34,7 @@ opensh_started(){
 
 opensh_started
 git config --global push.default simple
-GETALLGIT=( $( find /home/users/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
 for git in "${GETALLGIT[@]}"; do 
 	cd $git 2> /dev/null

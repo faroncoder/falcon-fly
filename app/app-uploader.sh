@@ -15,34 +15,15 @@ fi
 
 if [ "$typedest" == "n" ]
 	then
-<<<<<<< HEAD
 	pathdir="/drive/home/users/$USER/var/Scripts/nodes/projects/$appname/public"
-=======
-	pathdir="/drive/home/faron/var/Scripts/nodes/projects/$appname/public"
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 
 fi
 if [ "$typedest" == "h" ]
 	then
-<<<<<<< HEAD
 	pathdir="/drive/home/users/$USER/var/Scripts/htmls/projects/$appname"
 fi
 
-binpull="home/faron/.bin/core/scripts/home/users/faron/.falcon-fly/app/libsafe"
-=======
-	pathdir="/drive/home/faron/var/Scripts/htmls/projects/$appname"
-fi
-
-<<<<<<< HEAD
-binpull="home/faron/bin/core/scripting/falcon-fly/app/libsafe"
-=======
-<<<<<<< HEAD
-binpull="home/faron/.bin/core/scripts/home/users/faron/.falcon-fly/app/libsafe"
-=======
 binpull="home/faron/.bin/core/scripts/mnt/falcon-fly/app/libsafe"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> a7b8b3414c7756672e93487e5d0bcd7e38a26e27
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 	cp $binpull/jUploader.tar.gz $pathdir/
 	echo "unpacking jsc build"
 	cd $pathdir
@@ -55,16 +36,4 @@ binpull="home/faron/.bin/core/scripts/mnt/falcon-fly/app/libsafe"
 	mv javascripts/* jsc/js/
 	rm -r images javascripts stylesheets fonts
 	echo "finishing up jsc building... "
-<<<<<<< HEAD
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-=======
-<<<<<<< HEAD
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-=======
-<<<<<<< HEAD
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-=======
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> a7b8b3414c7756672e93487e5d0bcd7e38a26e27
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347

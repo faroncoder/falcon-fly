@@ -1,18 +1,6 @@
 #!/bin/bash
 startgreen=`date +%s`
-<<<<<<< HEAD
-BINPULL="/home/users/faron/.falcon/scripts/htmls/VAULT"
-=======
-<<<<<<< HEAD
-BINPULL="$HOME/.falcon/scripting/falcon-fly/htmls/VALVE"
-=======
-<<<<<<< HEAD
-BINPULL="/home/users/faron/.falcon/scripts/htmls/VAULT"
-=======
 BINPULL="/mnt/falcon/scripts/htmls/VAULT"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> a7b8b3414c7756672e93487e5d0bcd7e38a26e27
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 
 #function populateoption {
 	#find $BINPULL -type f ! -name '*old*' -exec basename {} \;
@@ -185,25 +173,9 @@ printf "echo \$ONEFILE"
 	# if [ "$EXT"="flv" ]
 	# then
 	# 	cd ./jsc/media
-<<<<<<< HEAD
 	# 	/usr/local/bin/flv-tsx-er
-=======
-	# 	/home/faron/bin/flv-tsx-er
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 	# fi
 
 
 
-<<<<<<< HEAD
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-=======
-<<<<<<< HEAD
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-=======
-<<<<<<< HEAD
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-=======
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> a7b8b3414c7756672e93487e5d0bcd7e38a26e27
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347

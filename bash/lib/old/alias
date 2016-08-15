@@ -125,13 +125,8 @@ alias bin=' ls /usr/local/bin '
 alias diskspace=' gksu baobab '
 alias egrep='egrep --color=auto'
 alias falcon=' cd ~/.falcon/scripts '
-<<<<<<< HEAD
-alias ff.ap2=" tail -n 100 /home/users/faron/.falcon/logs/apache2_engine_error.log"
-alias ff.ap2=" tail -n 100 /home/users/faron/.falcon/logs/apache2_engine_error.log"
-=======
 alias ff.ap2=" tail -n 100 /mnt/falcon/logs/apache2_engine_error.log"
 alias ff.ap2=" tail -n 100 /mnt/falcon/logs/apache2_engine_error.log"
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 alias ff.clean=' ff.bin.files.backup.delete '
 alias ff.code=' cd ~/.falcon/code '
 alias ff.desk='    cd ~/Desktop '

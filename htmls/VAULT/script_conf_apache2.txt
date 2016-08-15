@@ -8,7 +8,7 @@ KeepAliveTimeout 5
 User ${APACHE_RUN_USER}
 Group ${APACHE_RUN_GROUP}
 HostnameLookups Off
-ErrorLog /home/users/faron/.falcon/logs/apache2/{HOSTFARON}_apache2_error.log
+ErrorLog /mnt/falcon/logs/apache2/{HOSTFARON}_apache2_error.log
 LogLevel error
 IncludeOptional mods-enabled/*.load
 IncludeOptional mods-enabled/*.conf

@@ -3,15 +3,7 @@ startgreen=`date +%s`
 stopwatchtime(){
   stopred=`date +%s`
   faronruntime=$( echo "$(( $stopred - $startgreen ))" )
-<<<<<<< HEAD
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log
-=======
-<<<<<<< HEAD
-  echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log
-=======
   echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
   #exit 0
 }
 ######## IGNORE ABOVE -- LOGGING PURPOSE ########
@@ -30,26 +22,6 @@ if [ "$PATHDIRHOME" = '' ]; then
 fi
 
 JSCFILE="jsc-build.tar.bz2"
-<<<<<<< HEAD
-BIN="/home/faron/.falcon/scripts/htmls/VAULT"
-
-if [ ! -f "$PATHDIRHOME//home/faron/.falcon_fly" ]; then
-		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "
-		read CHEK
-		if [[ "$CHEK" = "y" ]]; then
-			sudo touch $PATHDIRHOME//home/faron/.falcon_fly
-			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME//home/faron/.falcon_fly"
-=======
-<<<<<<< HEAD
-BIN="/home/users/faron/.falcon/scripts/htmls/VAULT"
-
-if [ ! -f "$PATHDIRHOME//home/users/faron/.falcon_fly" ]; then
-		echo -n "FALCON: current pathdir isn't a building site.  Proceed? [y/n] "
-		read CHEK
-		if [[ "$CHEK" = "y" ]]; then
-			sudo touch $PATHDIRHOME//home/users/faron/.falcon_fly
-			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME//home/users/faron/.falcon_fly"
-=======
 BIN="/mnt/falcon/scripts/htmls/VAULT"
 
 if [ ! -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
@@ -58,8 +30,6 @@ if [ ! -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
 		if [[ "$CHEK" = "y" ]]; then
 			sudo touch $PATHDIRHOME//mnt/falcon_fly
 			sudo sh -c "echo \"new jsc bundle load\" >> $PATHDIRHOME//mnt/falcon_fly"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 			cd $PATHDIRHOME
 			CHECKLOC=$( echo $PATHDIRHOME | cut -d"/" -f 1 )
 			echo $CHECKLOC
@@ -80,15 +50,7 @@ if [ ! -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
 				else
 					$0 $PATHDIRHOME
 					stopwatchtime
-<<<<<<< HEAD
-			#	if [ -f "$PATHDIRHOME//home/faron/.falcon_fly" ]; then
-=======
-<<<<<<< HEAD
-			#	if [ -f "$PATHDIRHOME//home/users/faron/.falcon_fly" ]; then
-=======
 			#	if [ -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 			#		cd $PATHDIRHOME
 			#		echo "FALCON: current pathdir is a building site.  Ready to proceed"
 			fi
@@ -104,15 +66,7 @@ if [ ! -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
 			fi
 				#mkdir -p $PATHDIRHOME
 				#cd $PATHDIRHOME
-<<<<<<< HEAD
-				#touch $PATHDIRHOME//home/faron/.falcon_fly
-=======
-<<<<<<< HEAD
-				#touch $PATHDIRHOME//home/users/faron/.falcon_fly
-=======
 				#touch $PATHDIRHOME//mnt/falcon_fly
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 				#echo "FALCON: initalizing pathdir as building site. Ready to proceed."
 				# if [ ! -d jsc ]; then
  			# 		cp "$BIN/$JSCFILE" $PWD
@@ -139,67 +93,27 @@ if [ ! -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
 # 			read PROJECTNAME
 # 			PATHDIRHOME="/home/srv/htdocs/privs/$PROJECTNAME"
 # 			mkdir -p $PATHDIRHOME
-<<<<<<< HEAD
-# 			touch $PATHDIRHOME//home/faron/.falcon_fly
-# 			if [ -f "$PATHDIRHOME//home/faron/.falcon_fly" ]; then
-=======
-<<<<<<< HEAD
-# 			touch $PATHDIRHOME//home/users/faron/.falcon_fly
-# 			if [ -f "$PATHDIRHOME//home/users/faron/.falcon_fly" ]; then
-=======
 # 			touch $PATHDIRHOME//mnt/falcon_fly
 # 			if [ -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 # 				echo "FALCON: project initalized and ready to build"
 # 			fi
 # 		else
 # 		    if [ -d "$PATHDIRHOME" ]; then
-<<<<<<< HEAD
-# 		    	if [ -f "$PATHDIRHOME//home/faron/.falcon_fly" ]; then
-# 		    		echo "FALCON: target path found and building site already enabled"
-# 		    	else
-# 		    		touch "$PATHDIRHOME//home/faron/.falcon_fly"
-=======
-<<<<<<< HEAD
-# 		    	if [ -f "$PATHDIRHOME//home/users/faron/.falcon_fly" ]; then
-# 		    		echo "FALCON: target path found and building site already enabled"
-# 		    	else
-# 		    		touch "$PATHDIRHOME//home/users/faron/.falcon_fly"
-=======
 # 		    	if [ -f "$PATHDIRHOME//mnt/falcon_fly" ]; then
 # 		    		echo "FALCON: target path found and building site already enabled"
 # 		    	else
 # 		    		touch "$PATHDIRHOME//mnt/falcon_fly"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 # 		    		echo "FALCON: project initalized and ready to build"
 # 				fi
 # 			else
 # 			 	mkdir -p "$PATHDIRHOME"
-<<<<<<< HEAD
-# 			 	touch "$PATHDIRHOME//home/faron/.falcon_fly"
-=======
-<<<<<<< HEAD
-# 			 	touch "$PATHDIRHOME//home/users/faron/.falcon_fly"
-=======
 # 			 	touch "$PATHDIRHOME//mnt/falcon_fly"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 # 		    	echo "FALCON: project initalized and ready to build"
 # 			fi
 # 		fi
 # else
 # 		PATHDIRHOME="$PWD"
-<<<<<<< HEAD
-# 		if [ -f "$PATHDIRHOME//home/faron/.falcon_fly"]; then
-=======
-<<<<<<< HEAD
-# 		if [ -f "$PATHDIRHOME//home/users/faron/.falcon_fly"]; then
-=======
 # 		if [ -f "$PATHDIRHOME//mnt/falcon_fly"]; then
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 # 			echo "FALCON: project ready to build"
 # 		fi
 # fi

@@ -10,33 +10,15 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-<<<<<<< HEAD
 if [ ! -d /home/faron/.originals ]; then
 	ln -s ~/home/faron/.falcon/originals ~/.originals
-=======
-<<<<<<< HEAD
-if [ ! -d /home/faron/.originals ]; then
-	ln -s ~/home/faron/.falcon/originals ~/.originals
-=======
-if [ ! -d /home/users/$USER/.originals ]; then
-	ln -s ~/mnt/falcon/originals ~/.originals
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 fi
 
 FILE=$1
 FILEB="$( basename $FILE )"
 FILED="$( dirname $FILE )"
 FILET="/tmp/$FILEB"
-<<<<<<< HEAD
 FILEO="/home/faron/.originals"
-=======
-<<<<<<< HEAD
-FILEO="/home/faron/.originals"
-=======
-FILEO="/home/users/$USER/.originals"
->>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 
 if [ ! "$1" ]; then 
 	echo "No input. Aborting."
