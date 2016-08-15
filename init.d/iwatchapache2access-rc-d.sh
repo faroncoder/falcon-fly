@@ -8,14 +8,24 @@
 # Description:       <DESCRIPTION>
 ### END INIT INFO
 
+<<<<<<< HEAD
+SCRIPT=home/faron/.bin/core/scripts/home/users/faron/.falcon-fly/init.d/iwatchapache2access.sh
+=======
 SCRIPT=home/faron/.bin/core/scripts/mnt/falcon-fly/init.d/iwatchapache2access.sh
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 RUNAS=faron
 NAME=iwatchFaron
 PATH="/sbin:/.bin"
 PIDFILE=/var/run/$NAME.pid
+<<<<<<< HEAD
+LOGFILE=home/faron/.bin/core/scripts/home/users/faron/.falcon-fly/init.d/$NAME.log
+
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
 LOGFILE=home/faron/.bin/core/scripts/mnt/falcon-fly/init.d/$NAME.log
 
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 
 start() {
   if [ -f $PIDFILE ] && kill -0 $(cat $PIDFILE); then

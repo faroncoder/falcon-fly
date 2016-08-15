@@ -23,7 +23,11 @@ if [ "$typedest" == "h" ]
 	pathdir="/drive/home/users/$USER/var/Scripts/htmls/projects/$appname"
 fi
 
+<<<<<<< HEAD
+binpull="home/faron/.bin/core/scripts/home/users/faron/.falcon-fly/app/libsafe"
+=======
 binpull="home/faron/.bin/core/scripts/mnt/falcon-fly/app/libsafe"
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 	cp $binpull/jUploader.tar.gz $pathdir/
 	echo "unpacking jsc build"
 	cd $pathdir
@@ -36,4 +40,8 @@ binpull="home/faron/.bin/core/scripts/mnt/falcon-fly/app/libsafe"
 	mv javascripts/* jsc/js/
 	rm -r images javascripts stylesheets fonts
 	echo "finishing up jsc building... "
+<<<<<<< HEAD
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8

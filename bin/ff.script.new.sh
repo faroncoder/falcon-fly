@@ -1,5 +1,42 @@
 #!/bin/bash
 RETURN=$PWD
+<<<<<<< HEAD
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falcon/$z; done
+xcv="$1"
+xcs="$2"
+CL=$( basename "$xcv" )
+
+if [[ "$CL" == "" ]]; then
+	echo -n -e "$Finfo name of the script? "
+	read CL
+fi
+if [[ "$xcs" == "" ]]; then
+	echo -n -e "$Finfo which folder? "
+	read xcs
+fi
+LYH="/home/users/faron/.falcon/scripts"
+XF="$( echo $CL | tr '  ' ' ' | sed 's/.sh//g' ).sh"
+MEF="$LYH/$xcs/$XF"
+jj=$( uuid );
+ji=`printf $jj | cut -d '-' -f 4`
+KIL="$LYH/kills/$ji-killed-$XF"
+#XD="/home/users/faron/.falcon/scripts/$xcs/$CL"
+#MEF="$PWD/$XF"
+if [[ -f "$MEF" ]]; then
+	echo -e "$Fno filename exists."; XeF
+fi
+
+
+ #ji=$( uuid );
+> $MEF
+chmod +x $MEF
+
+echo "#!/bin/bash
+RETURN=\$PWD
+if [[ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]]; then export PATH=\$PATH:/usr/local/bin; fi
+x=( colors functions ); for z in \"\${x[@]}\"; do source /usr/local/lib/faron_falcon/\$z; done
+=======
 if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
 <<<<<<< HEAD
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
@@ -60,6 +97,7 @@ XeE=\`date +%s\`; XeT=\$( echo \"\$(( \$XeB - \$XeE ))\" ); logger \"\$0 | \$XeB
 }
 >>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
 >>>>>>> 6224fb5b175399210b72de5d5294ce9546f28ecf
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 if [[ \"\$1\" != \"\" ]]; then
 #################### BEGIN
 
@@ -68,12 +106,26 @@ if [[ \"\$1\" != \"\" ]]; then
 echo -e \$Fok\"\$Fyellow \$( basename \$0 ) \$Foff\"
 
 ################### END
+#cd \$RETURN 1> /dev/null;
+=======
+<<<<<<< HEAD
+echo -e \$Fok\"\$Fyellow \$( basename \$0 ) \$Foff\"
+
+################### END
 #cd \$RETURN 1> /dev/null
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 else echo -e \$Finfo \"Arg 1=\$Fyellow empty \$Foff \"; fi
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
 ### [FALCON] name=\$( basename \$0 ) active=y
+<<<<<<< HEAD
+"  > "$MEF"
+echo -e "$Fstat $Fblue $XF $Fgreen created. $Foff"
+subl "$MEF"
+################### END
+#cd $RETURN 1> /dev/null;
+=======
 "  >> "$newbin/$proofreadfile"
 echo -e $Fok
 echo -e "$Fblue $proofreadfile $Fgreen created. $Foff"
@@ -94,6 +146,7 @@ echo -e $fcok "$newbin/$proofreadfile"
 >>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
 ################### END
 #cd $RETURN
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 #else echo -e "$fcer Arg 1=$fcy domain to search $fco"; fi
 ### exit code for clean exit
 XeF

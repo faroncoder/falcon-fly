@@ -1,5 +1,8 @@
 #!/bin/bash
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 source /usr/local/lib/faron_falcon/colors
 THISFUILE="/tmp/$( uuid )"
 
@@ -149,6 +152,9 @@ done
 ##				sudo apt-get install -y --force-yes $pull
 #			done
 #fi
+<<<<<<< HEAD
+
+=======
 =======
 source /home/faron/.bash_colors
 
@@ -214,4 +220,5 @@ if [[ "$NEXTCOMM" == "y" ]];
 			done
 fi
 >>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 exit 0

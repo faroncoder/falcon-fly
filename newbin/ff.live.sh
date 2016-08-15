@@ -5,7 +5,11 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
+<<<<<<< HEAD
+LOCPN="/home/users/faron/.falcon/code/html/lib/live"
+=======
 LOCPN="/mnt/falcon/code/html/lib/live"
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 source $LOCPN/functions.txt
 source $LOCPN/templates.txt
 
