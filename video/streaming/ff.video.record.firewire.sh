@@ -13,7 +13,15 @@ file=$( uuid | cut -d"-" -f1 )
 #dvgrab -noavc -format avi -guid 1 - | ffmpeg -v error -re -f avi -i - -y -c:v libx264 -preset ultrafast -profile baseline -qp 0 -pix_fmt yuv420p -tune zerolatency -crf 25 -g 60 -maxrate 1024k -bufsize 1229k -c:a libmp3lame -b:a 128k -ar 44100 -ac 2 -f mpg "$MYHOME/$file.mpeg" < /dev/null
 
 ##OPTION 1 if not have libfk
+<<<<<<< HEAD
 dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultrafast -maxrate 1024k -bufsize 1024k -crf 25.0 -qp 0 -tune zerolatency -g 60 -pix_fmt yuv420p -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f asf "$HOME/$file.avi"  > /dev/null;
+=======
+<<<<<<< HEAD
+dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultrafast -maxrate 1024k -bufsize 1024k -crf 25.0 -qp 0 -tune zerolatency -g 60 -pix_fmt yuv420p -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f asf "$HOME/$file.avi" < /dev/null && sleep 2; mpv "$HOME/$file.avi";
+=======
+dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultrafast -maxrate 1024k -bufsize 1024k -crf 25.0 -qp 0 -tune zerolatency -g 60 -pix_fmt yuv420p -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f asf "$HOME/$file.avi"  > /dev/null;
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 
 #dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264  -preset ultrafast -maxrate 1512k -bufsize 768k -crf 25.0 -qp 0 -tune zerolatency -g 60 -pix_fmt yuv420p -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f asf "$HOME/$file.avi"
 

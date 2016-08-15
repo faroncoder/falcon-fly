@@ -28,8 +28,13 @@ echo -e "$Fok"
 # ifconfig
 
 ################### END
+<<<<<<< HEAD
 #cd $RETURN 1> /dev/null
 #else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
+=======
+#cd $RETURN 1> /dev/null;
+#else echo -e "$Finfo Arg 1=$Fyellow empty $Foff "; fi
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

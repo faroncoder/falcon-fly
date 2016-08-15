@@ -3,7 +3,15 @@ startgreen=`date +%s`
 ##POPULATING VARIABLES
 HOMEPATH="/home/users/$USER/var/streamings/files"
 timestamp="$( date )"
+<<<<<<< HEAD
 LOG="/home/users/faron/.falcon/logs/media-encoding.log"
+=======
+<<<<<<< HEAD
+LOG="/home/users/faron/.falcon/logs/media-encoding.log"
+=======
+LOG="/mnt/falcon/logs/media-encoding.log"
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 HEIGHTWT="$1"
 ## collecting files into array but in order of size and if they are mkv files
 
@@ -76,5 +84,13 @@ flvcherk
 flverstart
 closelog
 
+<<<<<<< HEAD
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
+<<<<<<< HEAD
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 ## bin | video | flv-er

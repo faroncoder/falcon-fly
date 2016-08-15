@@ -38,7 +38,11 @@ cd(){
 # 				cat "~/.bash_cache/history_cache_$USER" >> ~/.history_disable
 # 				mv ~/.bash_history ~/.bash_history_backup_safeToDelete && mv  ~/.history_disable ~/.bash_history
 # 				mv "~/.bash_cache/history_cache_$USER" "~/.bash_cache/history_cache_$USER_safeToDelete"
+<<<<<<< HEAD
 # 				cp -r -u ~/.bash_cache /home/users/faron/.falcon/scripts
+=======
+# 				cp -r -u ~/.bash_cache /mnt/falcon/scripts
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 # 			fi
 # 			if [ ! -f ~/.bash_history ]; then
 # 				touch "~/.bash_cache/history_cache_$USER"
@@ -135,7 +139,11 @@ builtin "$@";
 #         then
 #             echo "alias not found"
 #         else
+<<<<<<< HEAD
 #             sed -i -e "/$FINDALIASDEL/d" /home/users/faron/.falcon/scripts/bash/.bash_aliases
+=======
+#             sed -i -e "/$FINDALIASDEL/d" /mnt/falcon/scripts/bash/.bash_aliases
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 #         fi
 #     clear
 #     bashsr

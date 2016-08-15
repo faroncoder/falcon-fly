@@ -1,11 +1,25 @@
 #!/bin/bash
+<<<<<<< HEAD
 export PATH=$PATH:/usr/local/bin
+=======
+<<<<<<< HEAD
+export PATH=$PATH:/usr/local/bin
+=======
+if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
+	export PATH=$PATH:/usr/local/bin
+fi
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 XeB=`date +%s`
 function XeF {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
 #if [ "$1" != "" ]; then
 #################### BEGIN
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 	### GO TO /MEDIA AND ADD FOLDERS AS MANY AS YOU WANT BY 	mkdir -p <name  of folder>.  THIS WILL POPULATE INTO ARRAY AND USES IT TO CREATE NETWORK FOLDERS TO CORRESPOND TO THESE FOLDERS YOU JUST CREATED - ALL BY THE FLY !
 	GETARRAY=( $( sudo find /media -maxdepth 1 -type d -exec basename {} \; | sed '/media/d' | sed '/cdrom/d' | tr '\n' ' ' ) )
 	GETTOTAL=$( echo "${GETARRAY[@]}" | wc -w )
@@ -42,6 +56,12 @@ function checkStatus {
 
 	ENABLECONF=0
 	checkStatus
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 
 ################### END
 #elif [ "$1" = '' ];

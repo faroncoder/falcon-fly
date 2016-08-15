@@ -12,7 +12,11 @@ fi
 openshengine
 
 
+<<<<<<< HEAD
 GETALLGIT=( $( find /home/users/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+=======
+GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 
 for git in "${GETALLGIT[@]}"; do
 	cd $git 1> /dev/null
@@ -46,8 +50,13 @@ done
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
 
 ################### END
+<<<<<<< HEAD
 cd $RETURN 1> /dev/null
 #else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
+=======
+#cd $RETURN 1> /dev/null;
+else echo -e "$Finfo Arg 1=$Fyellow empty $Foff "; fi
+>>>>>>> f9d0d2959eeb7851b72492ad118e70e0d9a2b347
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
