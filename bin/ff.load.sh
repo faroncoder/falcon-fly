@@ -5,7 +5,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-LOC="/mnt/falcon/scripts"; if [ ! -d "$LOC" ]; then  echo -e "$Fno Falcon is not mounted. Exiting"; exit 1;   fi
+LOC="/home/users/faron/.falcon/scripts"; if [ ! -d "$LOC" ]; then  echo -e "$Fno Falcon is not mounted. Exiting"; exit 1;   fi
 
 VAR=$1
 FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );

@@ -9,7 +9,7 @@ RETURN=$PWD;
 ## Fok Fno Finfo Fwarn Fstat ##
 ## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
 J="nameserver "; K="162.220"; L="64.68.198";
-$SUDO sh -c "echo  \"$J $L.91\n$J $L.183\n$J $L.83\n$J 166.88.18.58\n$J $K.33.236\n$J $K.34.74\n\" > /etc/resolvconf/resolv.conf.d/head"
+$SUDO sh -c "echo  \"$J 127.0.0.1\n$J 192.168.1.1\n$J $L.91\n$J $L.183\n$J $L.83\n$J 166.88.18.58\n$J $K.33.236\n$J $K.34.74\n\" > /etc/resolvconf/resolv.conf.d/head"
 cat /etc/resolvconf/resolv.conf.d/head
 echo -e $Fok
 #echo -e "$Fok$Fyellow $( basename $0 ) $Foff"

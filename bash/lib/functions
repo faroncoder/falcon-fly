@@ -11,16 +11,19 @@ openshstarted(){
 }
 
 openshengine(){
-        opensh_started
+	PIDOFCHECK=`pidof ssh-agent | wc -w `
+        if [[ "$PIDOFCHECK" -gt 2 ]]; then
+                $SUDO kill -9 `pidof ssh-agent` 2> /dev/null
+        fi
         echo "Initializing SSH agent..."
-        chmod 700 -R ~/.ssh;
+        chmod 700 -R /home/users/$USER/.ssh
         echo "privizating ~/.ssh : done";
         if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
                 chmod 640 /home/users/$USER/.ssh/authorized_keys
         fi
-        ssh-agent; 2> /dev/null < /dev/null
-        eval $( ssh-agent -s ) > ~/.ssh/environment;
-        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
+        ssh-agent 2> /dev/null < /dev/null
+        eval $( ssh-agent -s ) > /home/users/$USER/.ssh/environment;
+        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
 }
 
 

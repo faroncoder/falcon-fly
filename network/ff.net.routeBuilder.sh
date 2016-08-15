@@ -6,17 +6,20 @@ RETURN=$PWD;
 #################### BEGIN
 
  SR="route add "
- IF="enp1s5"
+ IF=`/home/users/faron/.falcon/scripts/newbin/ff.network.devices.sh | sed '/lo/d' | sed '/:/d'`
  HR="0.0.0.0"
  SRi="if up route add "
 
-
- IF="enp1s5"
- HR="0.0.0.0"
-
-
 NT="$1"
 GW="$2"
+
+echo -n -e "$Fstatus Create script for (a)uto or (s)ystem?"
+read JOB
+
+if [[ "$JOB" = "a" ]]; then
+	
+
+
 FILE="/tmp/routesbuilding.txt"
 FILEa="/tmp/routesifup.txt"
 echo "#!/bin/bash
@@ -66,9 +69,38 @@ functionGetRoutes
 
 }
 
+fi
 
 
-functionGetRoutes
+if [[ "$JOB" = "s" ]]; then
+
+
+functionLoadRoutes(){
+
+if [[ ! "$NT" ]]; then
+
+		echo -e -n "$Finfo Network: "
+		read NT
+		if [[ "$NT" == "" ]]; then
+			echo -e "$Fno No route loaded"
+			exit 0
+		fi
+
+#		GETHOST=`echo $NT  | cut -d'.' -f4 `
+		BP="$2"; LP=":$3";
+		if [[ "$2" = "" ]]; then BP="?";
+
+		echo -e -n "$Finfo Port Forwarding $GETHOST "
+		read BP
+		fi
+
+}
+
+	
+fi
+
+
+
 
 
 ################### END
