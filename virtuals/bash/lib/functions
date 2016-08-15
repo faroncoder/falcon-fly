@@ -1,0 +1,45 @@
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+
+openshstarted(){
+        PIDOFCHECK=$( pidof ssh-agent | wc -w )
+        if [[ "$PIDOFCHECK" -gt 2 ]]; then
+                $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
+        fi
+}
+
+openshengine(){
+        opensh_started
+        echo "Initializing SSH agent..."
+        chmod 700 -R ~/.ssh;
+        echo "privizating ~/.ssh : done";
+        if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
+                chmod 640 /home/users/$USER/.ssh/authorized_keys
+        fi
+        ssh-agent; 2> /dev/null < /dev/null
+        eval $( ssh-agent -s ) > ~/.ssh/environment;
+        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
+}
+
+
+cd(){
+	builtin cd "$@";
+	RET="$?";
+	ls;
+	return "$RET";
+}
+
+
+editrecent(){
+
+builtin "$@";
+	RET="$?";
+	subl `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )`
+	return "$RET";
+}
+
+loadSudo(){
+        if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
+}

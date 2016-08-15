@@ -1,0 +1,27 @@
+{
+    "name": "FARON NEW PROJECT NAME",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "express": "3.4.8",
+        "express-hbs": "*",
+        "mongoose": "*",
+        "handlebars-runtime": "*",
+        "express3-handlebars": "*",
+        "MD5": "*"
+    },
+    "devDependencies": {
+        "bower": "*",
+        "browserify": "*",
+        "hbsfy": "*",
+        "jquery": "*",
+        "backbone": "*",
+        "underscore": "*"
+    },
+    "main": "app.js",
+    "author": "Faron Ledger",
+    "license": "ISC"
+}
