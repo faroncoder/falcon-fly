@@ -66,5 +66,5 @@ mv final.txt $PREFILE.json;
 ######### echo "}" >> a.json
 ######### echo "{" > final.json
 ######### cat a.json >> final.json
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
 

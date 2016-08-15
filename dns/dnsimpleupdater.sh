@@ -7,8 +7,8 @@ echo ""
 echo ""
 }
 
-LOGIN="$( cat /mnt/falcon/data/private/dnsimple.txt | head -n1 )"
-TOKEN="$( cat /mnt/falcon/data/private/dnsimple.txt | tail -n1 )"
+LOGIN="$( cat $HOME/.falcon/data/private/dnsimple.txt | head -n1 )"
+TOKEN="$( cat $HOME/.falcon/data/private/dnsimple.txt | tail -n1 )"
 ACCESSAPI="$LOGIN:$TOKEN"
 IP="$( curl http://icanhazip.com )"
 
@@ -127,4 +127,4 @@ DOMAIN_ID="faronhost.ca"
 RECORD_ID="3520797"
 NAME="rtsp"
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
