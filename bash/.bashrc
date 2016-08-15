@@ -5,4 +5,3 @@ source $PATHDIR/alias
 source $PATHDIR/environments
 source $PATHDIR/functions
 
-source ~/.bashrc_sources
