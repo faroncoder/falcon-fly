@@ -5,22 +5,18 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-loadSudo
+
+if [[ "$EUID" != 0 ]];
+	then SUDO="sudo"
+fi
 openshengine
 
 
-GETALLGIT=( $( find /home/users/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
-
-setupAccess(){
-	git config --global push.default simple
-	git remote set-url origin "git@github.com:faroncoder/$THISGIT"
-	git config --global user.name "faroncoder"
-	git config --global user.email "faronledger@gmail.com"
-	git push --set-upstream origin master
-}
+GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
 for git in "${GETALLGIT[@]}"; do
 	cd $git 1> /dev/null
+	git config --global push.default simple
 	CKTHISGIT="$( basename $PWD )"
 	if [[ "$CKTHISGIT" = 'scripts' ]]; then
 		THISGIT="falcon-fly.git"
@@ -28,17 +24,23 @@ for git in "${GETALLGIT[@]}"; do
 		THISGIT="$CKTHISGIT.git"
 	fi
 
+	git remote set-url origin "git@github.com:faroncoder/$THISGIT" 1> /dev/null
+	git config --global user.name "faroncoder" 1> /dev/null
+	git config --global user.email "faronledger@gmail.com" 1> /dev/null
+
 echo -e "$Finfo updating local git from remote"
-	git pull
+	git pull git@github.com:faroncoder/$THISGIT master
+	git fetch
 	git status
-#	git checkout
+	git checkout
 	echo -e "$Fok git merged"
 	git add -A
 	git commit -a -m "`date` "
-	# git push --set-upstream origin master
+	git push --set-upstream origin master
 	#git push -u origin master 1> /dev/null
 	echo -e "$Fok git updated"
-	logger "$( hostname -s ) $0  :: $THISGIT updated @ github.com"
+
+	logger "$THISGIT updated with Github"
 
 done
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"

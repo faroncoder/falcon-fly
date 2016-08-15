@@ -12,7 +12,7 @@ if [ ! -d "/srv/www/htdocs/$appname" ]
 	exit 1
 fi
 pathdir="/srv/www/htdocs/$appname"
-binpull="/mnt/falcon/scripting/dat"
+binpull="/home/users/faron/.falcon/scripting/dat"
 #######
 cat $binpull/robots.txt > $pathdir/
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

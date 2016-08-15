@@ -34,9 +34,9 @@ defaultFunction(){
 beginInstall(){
 	defaultFunction
 	sudo apt-get install -y $appget
-	cat "/mnt/falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
+	cat "/home/users/faron/.falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
 	echo "$appget" >> /tmp/aptgrab_pkg
-	less "/tmp/aptgrab_pkg" | uniq | sort > /mnt/falcon/files/configs/etc_apt-get_packages.list
+	less "/tmp/aptgrab_pkg" | uniq | sort > /home/users/faron/.falcon/files/configs/etc_apt-get_packages.list
 	logger "FARON:: apt-get package recorded for installation = $appget "
 	sudo apt-get install -y $appget --force-yes
 }

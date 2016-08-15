@@ -3,7 +3,7 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log;
 	exit 0
 }
 
@@ -14,7 +14,7 @@ if [ ! "$EUID" = 0 ]; then
     stopwatchtime
 else
 
-APTLIST="/mnt/falcon/apt/aptlist.list"
+APTLIST="/home/users/faron/.falcon/apt/aptlist.list"
 
 
 if [ "$1" != "" ]; then

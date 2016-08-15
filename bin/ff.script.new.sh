@@ -14,13 +14,13 @@ if [[ "$xcs" == "" ]]; then
 	echo -n -e "$Finfo which folder? "
 	read xcs
 fi
-LYH="/mnt/falcon/scripts"
+LYH="/home/users/faron/.falcon/scripts"
 XF="$( echo $CL | tr '  ' ' ' | sed 's/.sh//g' ).sh"
 MEF="$LYH/$xcs/$XF"
 jj=$( uuid );
 ji=`printf $jj | cut -d '-' -f 4`
 KIL="$LYH/kills/$ji-killed-$XF"
-#XD="/mnt/falcon/scripts/$xcs/$CL"
+#XD="/home/users/faron/.falcon/scripts/$xcs/$CL"
 #MEF="$PWD/$XF"
 if [[ -f "$MEF" ]]; then
 	echo -e "$Fno filename exists."; XeF

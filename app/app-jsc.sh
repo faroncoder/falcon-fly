@@ -23,7 +23,7 @@ if [ "$typedest"=="h" ] || [ "$typedest"=="H" ]
 	pathdir="/home/users/$USER/var/Scripts/htmls/projects/$appname"
 fi
 
-binpull="/mnt/falcon/scripts/app/libsafe"
+binpull="/home/users/faron/.falcon/scripts/app/libsafe"
 	cd $pathdir
 	cp $binpull/jsc-build.tar.bz2 ./
 	echo "unpacking jsc build"
@@ -36,4 +36,4 @@ binpull="/mnt/falcon/scripts/app/libsafe"
 	mv javascripts/* jsc/js/
 	rm -r images javascripts stylesheets fonts
 	echo "finishing up jsc building... "
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

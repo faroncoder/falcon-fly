@@ -9,13 +9,13 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 #if [ "$1" != "" ]; then
 #################### BEGIN
 
-HUNTFILE=( `find -L /mnt/falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet'  `  )
+HUNTFILE=( `find -L /home/users/faron/.falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet'  `  )
 if [[ ! -z "$HUNTFILE" ]]; then
         for snippet in "${HUNTFILE[@]}"; do
         	FILEME=$( basename $snippet )
         	logger "Found: $FILE and moving to resident folder"
-        	mv $snippet /mnt/falcon/code/sublime/mysnippets/
-        	CHECKME=$( ls -al /mnt/falcon/code/sublime/mysnippets/$FILEME )
+        	mv $snippet /home/users/faron/.falcon/code/sublime/mysnippets/
+        	CHECKME=$( ls -al /home/users/faron/.falcon/code/sublime/mysnippets/$FILEME )
         	if [[ ! -z "$FILEME" ]]; then
         		echo "$FILEME secured."
         	fi
