@@ -1,13 +1,8 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
-	export PATH=$PATH:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-
-#if [ "$1" != "" ]; then
+RETURN=$PWD
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
+#if [[ "$1" != "" ]]; then
 #################### BEGIN
 
 STRINGCOL=''
@@ -112,12 +107,10 @@ appGo
 
 
 ################### END
-#elif [ "$1" = "" ];
-#	then
-#  echo "usage: ff.apt.fetch "
-#  echo "example:    "
-#fi
-
-
-## TALON: ff.apt.fetch
+#cd $RETURN 1> /dev/null;
+else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
+### exit code for clean exit
 XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=$( basename $0 ) active=y
+
