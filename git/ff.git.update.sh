@@ -6,9 +6,6 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #################### BEGIN
 
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f1947ec92557cbd00ab0ac487866345bdb767ed8
 loadSudo
 openshengine
 
@@ -23,8 +20,6 @@ setupAccess(){
 	git push --set-upstream origin master
 }
 
-<<<<<<< HEAD
-=======
 =======
 
 if [[ "$EUID" != 0 ]];
@@ -57,7 +52,6 @@ git config --global push.default simple
 GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
 >>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f1947ec92557cbd00ab0ac487866345bdb767ed8
 for git in "${GETALLGIT[@]}"; do
 	cd $git 1> /dev/null
 	CKTHISGIT="$( basename $PWD )"
@@ -68,22 +62,10 @@ for git in "${GETALLGIT[@]}"; do
 	fi
 
 <<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f1947ec92557cbd00ab0ac487866345bdb767ed8
 echo -e "$Finfo updating local git from remote"
 	git pull
 	git status
 #	git checkout
-<<<<<<< HEAD
-	echo -e "$Fok $THISGIT updated on local from remote"
-	git add -A
-	git commit -a -m "`date` "
-	# git push --set-upstream origin master
-	git push
-	echo -e "$Fok git updated"
-	logger "$( hostname -s ) $0  :: $THISGIT updated @ github.com"
-=======
 	echo -e "$Fok git merged"
 	git add -A
 	git commit -a -m "`date` "
@@ -122,7 +104,6 @@ echo -e "$Finfo updating local git from remote"
 
 	logger "$THISGIT updated with Github"
 >>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f1947ec92557cbd00ab0ac487866345bdb767ed8
 
 done
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
@@ -132,14 +113,9 @@ done
 #cd $RETURN 1> /dev/null;
 else echo -e "$Finfo Arg 1=$Fyellow empty $Foff "; fi
 =======
-<<<<<<< HEAD
-#cd $RETURN 1> /dev/null;
-else echo -e "$Finfo Arg 1=$Fyellow empty $Foff "; fi
-=======
 cd $RETURN 1> /dev/null
 #else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
 >>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
->>>>>>> f1947ec92557cbd00ab0ac487866345bdb767ed8
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
