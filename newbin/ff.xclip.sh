@@ -25,7 +25,11 @@ do
       -h | --help)
 			display_help  # Call your function
 			# no shifting needed here, we're done.
+<<<<<<< HEAD
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 	;;
       -v | --verbose)
           #  It's better to assign a string, than a number like "verbose=1"

@@ -11,7 +11,11 @@ $SUDO subl /etc/network/interfaces
 $SUDO subl /etc/dhcp/dhclient.conf
 $SUDO subl /etc/hosts
 $SUDO subl /etc/hostname
+<<<<<<< HEAD
 $SUDO subl /etc/network/if-up.d/ff.net.ifaces
+=======
+
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 echo -e $Fok
 
 ################### END

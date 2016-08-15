@@ -12,6 +12,15 @@ umask 002
 if [ -n "$BASH_VERSION" ]; then
 
 	if [ -f ~/.bashrc ]; then
+<<<<<<< HEAD
 		source ~/.bashrc 2> /dev/null
 	fi
 fi
+=======
+		source ~/.bashrc < /dev/null
+	fi
+fi
+# Ubuntu make installation of Ubuntu Make binary symlink
+#PATH=/home/users/$USER/.local/share/umake/bin:$PATH
+
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8

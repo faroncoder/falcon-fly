@@ -23,5 +23,9 @@ mv "$INPUT" "del_$INPUT"
 ######## IGNORE BELOW -- LOGGING PURPOSE ######
 #stopred=`date +%s000`;
 #faronruntime=$(( $stopred - $startgreen ));
+<<<<<<< HEAD
 #echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log;
+=======
+#echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log;
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 exit 0

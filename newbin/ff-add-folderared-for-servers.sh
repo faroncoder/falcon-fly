@@ -2,7 +2,11 @@
 startgreen=`date +%s`
 if [[ ! "$EUID" = 0 ]]; then
 		echo "su yourself in first, Faron"
+<<<<<<< HEAD
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 	fi
 echo "
 #
@@ -263,8 +267,13 @@ echo "
 	create mask = 0777
     directory mask = 0777
 
+<<<<<<< HEAD
 /home/users/faron/.falcon]
 	path = /home/users/faron/.falcon
+=======
+/mnt/falcon]
+	path = /mnt/falcon
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 	valid users = faron
 	writeable = yes
 	browseable = yes
@@ -287,12 +296,21 @@ fi
 if [[ ! "$( hostname )" = "f10" ]]; then
 	
 			## if it is a client then reconfigure
+<<<<<<< HEAD
 			if [[ ! "$( grep /home/users/faron/.falcon' /etc/fstab )" ]]; then
 				echo "nope you dont have /home/users/faron/.falcon' in fstab"
 				echo "//192.168.1.10/home/users/faron/.falcon /media/home/users/faron/.falcon  none  nfs  0  0 " >> /etc/fstab
 				echo "now you have/home/users/faron/.falcon"
 			else
 				echo "/home/users/faron/.falcon for /etc/fstab is already set"
+=======
+			if [[ ! "$( grep /mnt/falcon' /etc/fstab )" ]]; then
+				echo "nope you dont have /mnt/falcon' in fstab"
+				echo "//192.168.1.10/mnt/falcon /media/mnt/falcon  none  nfs  0  0 " >> /etc/fstab
+				echo "now you have/mnt/falcon"
+			else
+				echo "/mnt/falcon for /etc/fstab is already set"
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 			fi
 			if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 				echo "nope you dont have 'output' in fstab"
@@ -311,7 +329,11 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			if [[ ! -f "/home/users/$USER/.smbcredentials" ]]; then
 			## adding credits for NFS
 				echo "adding creditals"
+<<<<<<< HEAD
 				#cp /home/users/faron/.falcon/configs/configs-private/cifs_access.txt  /home/users/$USER/.smbcredentials
+=======
+				#cp /mnt/falcon/configs/configs-private/cifs_access.txt  /home/users/$USER/.smbcredentials
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 				#echo "creditals creation completed"
 			fi
 	else
@@ -331,6 +353,7 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			else
 				echo "/mkv for /etc/exports is already set"
 			fi
+<<<<<<< HEAD
 			if [[ ! "$( grep '/home/users/faron/.falcon' /etc/exports )" ]]; then
 				echo "nope you dont have/home/users/faron/.falcon"
 				echo "/home/users/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
@@ -340,4 +363,15 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			fi
 fi
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+=======
+			if [[ ! "$( grep '/mnt/falcon' /etc/exports )" ]]; then
+				echo "nope you dont have/mnt/falcon"
+				echo "/mnt/falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "now you have/mnt/falcon"
+			else
+				echo "/mnt/falcon for /etc/exports is already set"
+			fi
+fi
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 

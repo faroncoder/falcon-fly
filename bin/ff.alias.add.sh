@@ -1,4 +1,5 @@
 #!/bin/bash
+<<<<<<< HEAD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;  loadSudo;
 RETURN=$PWD;
@@ -30,3 +31,17 @@ XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
 ### [FALCON] name=$( basename $0 ) active=y
 
+=======
+startgreen=`date +%s`
+      echo -n "alias name? "
+      read aliasesname
+      echo -n "command for $aliasesname? "
+      read aliascomm
+
+queryalias="alias $aliasesname=\" $aliascomm \""
+echo $queryalias >> ~/.bash_aliases
+
+echo "alias added..."
+
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
