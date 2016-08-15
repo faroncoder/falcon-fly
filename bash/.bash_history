@@ -1196,10 +1196,10 @@ ls
 cat `ff.html.in`
 fly
 ls
-mount /mnt/falcon
+mount /home/users/faron/.falcon
 cat /etc/fstab
 sudo nano /etc/fstab
-sudo mount /mnt/falcon
+sudo mount /home/users/faron/.falcon
 sudo mount /mnt/clips6/
 ls
 tree /mnt/clips6

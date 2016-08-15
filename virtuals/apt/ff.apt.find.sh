@@ -38,6 +38,11 @@ fi
 
 echo -n "Item to install ? "
 read ITEM
+
+if [[ "$ITEM" == "" ]]; then
+	XeF
+fi
+
 while :
 	do
 	case "$ITEM" in

@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 
 cd /home/users/$USER/var/streamings/files/raw
-/mnt/falcon/scripts/.bin/file-name-cleaner.sh
+/home/users/faron/.falcon/scripts/.bin/file-name-cleaner.sh
 mv *.mkv mkv/
 
 ## function to collect all exisiting files in this directory only but one by one at a time
@@ -54,4 +54,4 @@ fi
 #rm ffmpeg*
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

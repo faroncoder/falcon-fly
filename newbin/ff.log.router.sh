@@ -9,7 +9,7 @@ if [[ $USER != 0 ]]; then
 	SUDO="sudo "
 fi
 
-$SUDO grep 'ns0-lan1.faron.ca' /var/log/syslog  >> /mnt/falcon/logs/router/router.log  && $SUDO sed -i -e '/ns0-lan1.faron.ca/d' /var/log/syslog
+$SUDO grep 'ns0-lan1.faron.ca' /var/log/syslog  >> /home/users/faron/.falcon/logs/router/router.log  && $SUDO sed -i -e '/ns0-lan1.faron.ca/d' /var/log/syslog
 
 
 ################### END

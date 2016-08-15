@@ -20,10 +20,10 @@ fi
 #find ~/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_cache/ \;
 #cp -u "~/.falcon/scripts/new_setup/vault/profile.txt" "~/.profile" 2> /dev/null
 #echo ".profile install as master file at ~/"
-cp /mnt/falcon/scripts/bash/* ~/
+cp /home/users/faron/.falcon/scripts/bash/* ~/
 
 if [[ ! -d ~/.falcon ]]; then
-	ln -s "~/mnt/falcon" "~/.falcon" 2>/dev/null
+	ln -s "~/home/users/faron/.falcon" "~/.falcon" 2>/dev/null
 fi
 
 #echo "Files copied as backup as alternative bash in case server goes down:"

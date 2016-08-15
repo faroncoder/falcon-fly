@@ -2,7 +2,7 @@
 startgreen=`date +%s`
 if [[ ! "$EUID" = 0 ]]; then
 		echo "su yourself in first, Faron"
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
 fi
 apt-get install -y nfs-kernel-server nfs-common cifs-utils libnss-winbind winbind
 
@@ -24,7 +24,7 @@ if [[ "$( hostname )" == "f10" ]]; then
 			# if not have it - install it.
 	 		echo "/home/users/$USER/var/Streamings/files/factory-mp4/output  192.168.1.10/24(rw,sync,no_subtree_check)
 			/home/users/$USER/var/Streamings/files/factory-mp4/mkv  192.168.1.10/24(rw,sync,no_subtree_check)
-			/mnt/falcon 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+			/home/users/faron/.falcon 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 		else
 			echo "all of export folders of your preference is already set"
 		fi
@@ -42,21 +42,21 @@ if [[ "$( hostname )" == "f10" ]]; then
 		else
 			echo "/mkv for /etc/exports is already set"
 		fi
-		if [[ -z "$( grep '/mnt/falcon' /etc/exports )" ]]; then
-			echo "nope you dont have/mnt/falcon"
-			echo "/mnt/falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
-			echo "now you have/mnt/falcon"
+		if [[ -z "$( grep '/home/users/faron/.falcon' /etc/exports )" ]]; then
+			echo "nope you dont have/home/users/faron/.falcon"
+			echo "/home/users/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+			echo "now you have/home/users/faron/.falcon"
 		else
-			echo "/mnt/falcon for /etc/exports is already set"
+			echo "/home/users/faron/.falcon for /etc/exports is already set"
 		fi
 else
 	## if it is a client then reconfigure
-	if [[ ! "$( grep /mnt/falcon' /etc/fstab )" ]]; then
-		echo "nope you dont have /mnt/falcon' in fstab"
-		echo "//192.168.1.10/mnt/falcon /mnt/falcon  cifs  credentials=/home/users/$USER/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
-		echo "/mnt/falcon for /etc/fstab configured"
+	if [[ ! "$( grep /home/users/faron/.falcon' /etc/fstab )" ]]; then
+		echo "nope you dont have /home/users/faron/.falcon' in fstab"
+		echo "//192.168.1.10/home/users/faron/.falcon /home/users/faron/.falcon  cifs  credentials=/home/users/$USER/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
+		echo "/home/users/faron/.falcon for /etc/fstab configured"
 	else
-		echo "/mnt/falcon for /etc/fstab is already set"
+		echo "/home/users/faron/.falcon for /etc/fstab is already set"
 	fi
 	if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 		echo "nope you dont have 'output' in fstab"
@@ -76,12 +76,12 @@ else
 	if [[ ! -f "/home/users/$USER/.smbcredentials" ]]; then
 	## adding credits for NFS
 		echo "adding creditals"
-		cp /mnt/falcon/configs/configs-private/cifs_access.txt  /home/users/$USER/.smbcredentials
+		cp /home/users/faron/.falcon/configs/configs-private/cifs_access.txt  /home/users/$USER/.smbcredentials
 		echo "creditals creation completed"
 	else
 		echo "creditals already is in the system"
 	fi
 fi
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
 

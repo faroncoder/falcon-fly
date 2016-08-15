@@ -4,25 +4,25 @@ cd $HOME
 rm -r .profile .bashrc .bash_aliases .bash_scripts .bash_todo .bash_colors .bash_colors_help .bash_*  2> /dev/null
 CHECKHISTORY=$( find  $HOME -maxdepth 1 -type l -name '.bash_history' )
 if [ -z "$CHECKHISTORY" ]; then
-	cat "$HOME/.bash_history" >> "/mnt/falcon/archives/bash_history/$(hostname --short)_history" /dev/null >2
-	rm .bash_history 2> /dev/null && ln -s "/mnt/falcon/archives/bash_history/$(hostname --short)_history" "$HOME/.bash_history"
+	cat "$HOME/.bash_history" >> "/home/users/faron/.falcon/archives/bash_history/$(hostname --short)_history" /dev/null >2
+	rm .bash_history 2> /dev/null && ln -s "/home/users/faron/.falcon/archives/bash_history/$(hostname --short)_history" "$HOME/.bash_history"
 else
 	CHECKLINK="$( ls -al $HOME/.bash_history | awk '{print $11}' )"
-	if [[ "$CHECKLINK" == "/mnt/falcon/archives/bash_history/$(hostname --short)_history" ]]; then
+	if [[ "$CHECKLINK" == "/home/users/faron/.falcon/archives/bash_history/$(hostname --short)_history" ]]; then
 		echo ".bash_history = ok"
 	else
-		rm .bash_history 2> /dev/null && ln -s "/mnt/falcon/archives/bash_history/$(hostname --short)_history" "$HOME/.bash_history"
+		rm .bash_history 2> /dev/null && ln -s "/home/users/faron/.falcon/archives/bash_history/$(hostname --short)_history" "$HOME/.bash_history"
 		echo ".bash_history = repaired"
 	fi
 fi
 
 #mkdir $HOME/.bash_cache -p 2> /dev/null
 #find $HOME/.falcon/scripts/bash -type f -name '.*' -exec cp {} ~/.bash_cache/ \;
-cp "/mnt/falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profile"
+cp "/home/users/faron/.falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profile"
 echo ".profile install as master file at $HOME"
 if [ ! -d ~/.falcon ]; then
 	if [[ "$USER" == 0 ]]; then
-		ln -s /mnt/falcon ~/.falcon
+		ln -s /home/users/faron/.falcon ~/.falcon
 	fi
 fi
 #echo "Files copied as backup as alternative bash in case server goes down:"

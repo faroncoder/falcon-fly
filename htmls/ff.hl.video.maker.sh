@@ -1,6 +1,6 @@
 #!/bin/bash
 export PATH=$PATH:/usr/local/bin
-BINPULL=/mnt/falcon/scripts/htmls/VAULT
+BINPULL=/home/users/faron/.falcon/scripts/htmls/VAULT
 if [ ! -d "$PWD/jsc" ]; then
     tar -jxvf $BINPULL/video-jsc-pack.tar.bz2
 fi

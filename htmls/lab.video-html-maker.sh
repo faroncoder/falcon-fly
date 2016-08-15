@@ -57,4 +57,4 @@ echo "edited"
 echo "opening - check your default browser"
 chromium-browser http://f10/privs/raw/$BASHFILENAME.html < /dev/null
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

@@ -33,7 +33,7 @@ opensh_engine
 
 git config --global push.default simple
 
-GETALLGIT=( $( find /mnt/falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
+GETALLGIT=( $( find /home/users/faron/.falcon/scripts -type d -name '.git' -exec dirname {} \;  ) )
 
 for git in "${GETALLGIT[@]}"; do
 	cd $git 1> /dev/null

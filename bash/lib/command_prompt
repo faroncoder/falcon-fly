@@ -50,13 +50,13 @@ esac
 	PS1+="$ICyan_SHELL$Red_SHELL"
 
 # STATUS=""
-# if [[ ! -f /mnt/falcon/.idle ]]; then STATUS="falcon$fancyX_SHELL " ; fi
+# if [[ ! -f /home/users/faron/.falcon/.idle ]]; then STATUS="falcon$fancyX_SHELL " ; fi
 # if [[ ! -f /mnt/clips6/.idle ]]; then STATUS+="f6$fancyX_SHELL "; fi
 # if [[ ! -f /mnt/clips7/.idle  ]]; then STATUS+="f7$fancyX_SHELL "; fi
 # if [[ ! -f /mnt/clips10/.idle  ]]; then STATUS+="f10$fancyX_SHELL "; fi
 # PS1+="$STATUS"
 
-	# if [[  -f "/mnt/falcon/.idle" ]]; then
+	# if [[  -f "/home/users/faron/.falcon/.idle" ]]; then
 	# 		GRAB="$GRAB $fancyX_SHELLfalcon"
 	# fi
 	# if [[  ! -f "/mnt/clips6/.idle" ]]; then

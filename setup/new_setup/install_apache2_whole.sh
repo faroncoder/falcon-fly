@@ -8,10 +8,10 @@ fi
 if [ ! "$( which uuid )" ]; then
 	ff.apt.fetch uuid
 fi
-BINPULL=/mnt/falcon/scripts/new_setup/vault
- #if [[ "$( find . -maxdepth 1 -type l -name 'htdocs' -exec ls -al {} \; | awk '{ print $11 }' )" != "/mnt/falcon/configs/htdocs" ]]; then
+BINPULL=/home/users/faron/.falcon/scripts/new_setup/vault
+ #if [[ "$( find . -maxdepth 1 -type l -name 'htdocs' -exec ls -al {} \; | awk '{ print $11 }' )" != "/home/users/faron/.falcon/configs/htdocs" ]]; then
  		rm /etc/apache2/htdocs
- 		cp -r /mnt/falcon/configs/htdocs /etc/apache2/
+ 		cp -r /home/users/faron/.falcon/configs/htdocs /etc/apache2/
  		cd /etc/apache2 2> /dev/null
  		ln -s htdocs/apache-controls/apache2.conf
 # else

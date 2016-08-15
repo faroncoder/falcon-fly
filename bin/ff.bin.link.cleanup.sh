@@ -24,4 +24,4 @@ find $LOC -maxdepth 1 -name 'Link*to*' -exec rename 's/Link\ to\ //g' {} \; -exe
 #  			DISPLAY=:0.0 /usr/bin//notify-send -i /home/users/$USER/var/Pictures/self/sunfaron.png "bin: $( echo $line ) :: link cleaned up ";
 #  done
 #  rm x.list
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /mnt/falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

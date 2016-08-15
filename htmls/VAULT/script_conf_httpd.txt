@@ -239,13 +239,13 @@ AddDefaultCharset utf-8
 </IfModule>
 <IfModule mod_log_config.c>
   LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" combined
-  CustomLog /mnt/falcon/logs/apache2/{HOSTFARON}_stream_access.log combined
+  CustomLog /home/users/faron/.falcon/logs/apache2/{HOSTFARON}_stream_access.log combined
   <IfModule mod_deflate.c>
     DeflateFilterNote Input instream
     DeflateFilterNote Output outstream
     DeflateFilterNote Ratio ratio
     LogFormat '"%r" %{outstream}n/%{instream}n (%{ratio}n%%)' deflate
-    CustomLog /mnt/falcon/logs/apache2/{HOSTFARON}_stream_deflate.log deflate
+    CustomLog /home/users/faron/.falcon/logs/apache2/{HOSTFARON}_stream_deflate.log deflate
   </IfModule>
 </IfModule>
 
