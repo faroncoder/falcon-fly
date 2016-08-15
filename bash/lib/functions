@@ -1,0 +1,173 @@
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+
+<<<<<<< HEAD
+openshstarted(){
+=======
+opensh_started(){
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+        PIDOFCHECK=$( pidof ssh-agent | wc -w )
+        if [[ "$PIDOFCHECK" -gt 2 ]]; then
+                $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
+        fi
+}
+
+<<<<<<< HEAD
+openshengine(){
+	PIDOFCHECK=`pidof ssh-agent | wc -w `
+        if [[ "$PIDOFCHECK" -gt 2 ]]; then
+                $SUDO kill -9 `pidof ssh-agent` 2> /dev/null
+        fi
+        echo "Initializing SSH agent..."
+        chmod 700 -R /home/users/$USER/.ssh
+=======
+opensh_engine(){
+        opensh_started
+        echo "Initializing SSH agent..."
+        chmod 700 -R ~/.ssh;
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+        echo "privizating ~/.ssh : done";
+        if [[ -f "/home/users/$USER/.ssh/authorized_keys" ]]; then
+                chmod 640 /home/users/$USER/.ssh/authorized_keys
+        fi
+<<<<<<< HEAD
+        ssh-agent 2> /dev/null < /dev/null
+        eval $( ssh-agent -s ) > /home/users/$USER/.ssh/environment;
+        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
+=======
+        ssh-agent; 2> /dev/null < /dev/null
+        eval $( ssh-agent -s ) > ~/.ssh/environment;
+        find -L "/home/users/$USER/.ssh" -type f -name 'id_*' ! -name '*.pub' -$
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+}
+
+
+cd(){
+	builtin cd "$@";
+	RET="$?";
+	ls;
+	return "$RET";
+}
+
+
+<<<<<<< HEAD
+=======
+# historylinkfix(){
+# 			if [ -f ~/.history_disable ]; then
+# 				cat "~/.bash_cache/history_cache_$USER" >> ~/.history_disable
+# 				mv ~/.bash_history ~/.bash_history_backup_safeToDelete && mv  ~/.history_disable ~/.bash_history
+# 				mv "~/.bash_cache/history_cache_$USER" "~/.bash_cache/history_cache_$USER_safeToDelete"
+# 				cp -r -u ~/.bash_cache /mnt/falcon/scripts
+# 			fi
+# 			if [ ! -f ~/.bash_history ]; then
+# 				touch "~/.bash_cache/history_cache_$USER"
+# 				mv ~/.bash_history ~/.history_disable && ln -s "~/.bash_cache/history_cache_$USER" ~/.bash_history
+# 			fi
+# }
+# historylinkfix
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
+editrecent(){
+
+builtin "$@";
+	RET="$?";
+	subl `which $( tail -n 1 ~/.bash_history | awk '{print $1}' )`
+	return "$RET";
+}
+
+<<<<<<< HEAD
+loadSudo(){
+        if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
+}
+=======
+# ssh-engine(){
+#         echo "Initializing SSH agent..."
+#         chmod 700 -R ~/.ssh;
+#         chmod 700 ~/.ssh/*;
+#            chmod -x ~/.ssh/*;
+#         echo "privizating ~/.ssh : done";
+#         if [ -f "~/.ssh/authorized_keys" ]; then
+#                 chmod 600 ~/.ssh/authorized_keys
+#         fi
+#         eval $( `ssh-agent -s` ) > ~/.ssh/environment;
+#         find -L ~/.ssh -type f -name 'id_*' ! -name '*.pub' -exec ssh-add {} \;
+# }
+
+# startedSSH(){
+#         PIDOFCHECK=$( pidof ssh-agent | wc -w )
+#         if [[ "$PIDOFCHECK" -gt 2 ]]; then
+#                 sudo kill -15 `pidof ssh-agent`
+#                 ssh-engine
+#         else
+#                 if [ -z $PIDOFCHECK ]; then
+#                         ssh-engine
+#                 fi
+#         fi
+# }
+
+# startedSSH
+
+
+
+
+
+# ff.task.new() {
+# COLLECTPROJ="$1"
+# TASKDESP="$2"
+
+# if [ ! "$COLLECTPROJ" ]; then
+#         echo -n "which project? "
+#         read COLLECTPROJ
+# fi
+# if [ ! "$TASKDESP" ]; then
+#         echo -n "task? "
+#         read TASKDESP
+# fi
+# if [[ "$COLLECTPROJ" = "falcon" ]];  then
+#         TASKPROJ=$( printf \"2\" )
+#  else
+#         TASKPROJ="$( printf \"1\" )"
+#  fi
+#  if [ ! "$3" ]; then
+#          echo "assign to which project? "
+#          read TASKPROJ
+#           yokadi t_add $COLLECTPROJ $TASKDESP
+# fi
+
+# }
+
+# function ff.new.alias1 {
+#         echo -n "alias name? "
+#         read ALSIANAME
+#         echo -n "command for $ALSIANAME? "
+#         read ALSCOMM
+#        echo "alias $ALSIANAME=\"   $ALSCOMM\"
+#        " >> ~/.falcon/scripts/bash/.bash_aliases
+#         echo "alias added: $ALSIANAME"
+#         clear
+#         bashsr
+# }
+
+# function ff.list.alias {
+#     GETLISTINGALS=$( cat ~/.bash_aliases | awk '{ print $2}' | sed 's/="/\ |\ /g' | tr '\n' ' ' )
+#     echo "$GETLISTINGALS"
+# }
+
+# function ff.remove.alias {
+
+#     echo -n "which alias to remove? "
+#     read FINDALIASDEL
+#     if [ -z "$FINDALIASDEL" ]
+#         then
+#             echo "alias not found"
+#         else
+#             sed -i -e "/$FINDALIASDEL/d" /mnt/falcon/scripts/bash/.bash_aliases
+#         fi
+#     clear
+#     bashsr
+# }
+
+# ff.task.list
+
+>>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
