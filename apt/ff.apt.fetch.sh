@@ -27,14 +27,14 @@ FILEAP="$FILEwof.list"
 FILESO="$FILEwof.txt"
 
 beginInstall(){
-	$SUDO apt-get install -y $appget --force-yes
+	$SUDO apt-get install -y $appget --force-yes 2> /dev/null < /dev/null
 	$SUDO sh -c "echo \"$appget\" >> $FILEAP"
 	logger "$( hostname -s ) apt-get installation: $appget"
 }
 
 beginBuild(){
 	# Building deps command to intergrate function on fly for each item in array
-	$SUDO apt-get build-dep -y  $appget
+	$SUDO apt-get build-dep -y  $appget --allow
 }
 
 appGo(){
@@ -45,8 +45,9 @@ appGo(){
 			beginInstall
 	done
 	# Updating the package list and remove any duplications
-	mv $FILEAP $FILESO
-	uniq $FILESO > $FILEAP
+	$SUDO mv $FILEAP $FILESO
+	$SUDO uniq $FILESO > $FILEAP
+	$SUDO rm $FILESO
 
 	# emptying array out of memory (to prevent arrays from going global affecting the system.  We only want this array to be in effect for this script run only )
 	appget=""

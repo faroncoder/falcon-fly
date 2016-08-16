@@ -1,5 +1,10 @@
 #!/bin/bash
-source /usr/local/lib/faron_falcon/colors
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;  loadSudo;
+RETURN=$PWD;
+#if [[ "$1" != "" ]]; then
+#################### BEGIN
+
 THISFUILE="/tmp/$( uuid )"
 
 
@@ -19,56 +24,47 @@ makelister(){
 
 if [[ ! -z "$2" ]]; then
 		apt-cache search $1 | grep "$2" > $THISFUILE
-		KEYWORD="$1 $2 $3"
+		makelister
+	 	echo -e "$Finfo Key searched $Fyellow $1 $2 $Foff"
+
+
 elif [[ ! -z "$3" ]]; then
 		apt-cache search $1 | grep "$2" | grep "$3"  > $THISFUILE
-		KEYWORD="$1 $2"
+		makelister
+	 	echo -e "$Finfo Key searched $Fyellow $1 $2 $3 $Foff"
+
 else
 		apt-cache search $1  > $THISFUILE
-	 	KEYWORD="$1"
+		makelister
+	 	echo -e "$Finfo Key searched $Fyellow $1 $Foff"
+
 fi
 
-# if [[ ! -z "$2" ]]; then
-# 		apt-cache search $1 | grep "$2" > $THISFUILE
-# 		makelister
-# 	 	echo -e "$Finfo Key searched $Fyellow $1 $2 $Foff"
 
-
-# elif [[ ! -z "$3" ]]; then
-# 		apt-cache search $1 | grep "$2" | grep "$3"  > $THISFUILE
-# 		makelister
-# 	 	echo -e "$Finfo Key searched $Fyellow $1 $2 $3 $Foff"
-
-# else
-# 		apt-cache search $1  > $THISFUILE
-# 		makelister
-# 	 	echo -e "$Finfo Key searched $Fyellow $1 $Foff"
-
-# fi
-makelister
-echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
-echo -n -e "Item to install ? "
+echo -n "Item to install ? "
 read ITEM
 
 if [[ "$ITEM" == "" ]]; then
-	exit 0
-else
+	XeF
+fi
 
 while :
 	do
 	case "$ITEM" in
 		$ITEM)
-			for itemgrab in "${ITEM[@]}"; do
-				ff.apt.fetch $( awk "NR==$itemgrab" $THISFUILE | awk '{ print $1 }' );
-			done
+				for itemgrab in "${ITEM[@]}"; do
+				ff.apt.fetch "$( awk "NR==$itemgrab" $THISFUILE | awk '{ print $1 }' )";
+				done
 				break
-				;;
-		esac
+		;;
+		*)
+				exit 0
+		;;
+	esac
+
 done
 
-makelister	
 
-fi
 # 	fi
 # if [[ -z ! "$2" ]] && [[ -z ! "$3" ]]; then
 # 	cat $THISFUILE | grep "$2" | grep "$3"
@@ -163,4 +159,11 @@ fi
 #			done
 #fi
 
-exit 0
+
+################### END
+#cd $RETURN 1> /dev/null
+#else echo -e "$Fwarn Arg 1:$Fyellow name of arg $Foff \n$Fwarn Arg 2: $Fyellow name of arg $Foff"; exit 1; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=$( basename $0 ) active=y
