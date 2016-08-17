@@ -43,3 +43,5 @@ builtin "$@";
 loadSudo(){
         if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
 }
+loadSudo
+
