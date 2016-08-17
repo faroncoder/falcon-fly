@@ -8,9 +8,10 @@ PATHLOC=$1
 #ADUP=$( find $PATHLOC -maxdepth 1 -type d | sort | tail -1 )
 #NAD=$( basename $ADUP )
 #DUH="$( echo $NAD )"
-MEXT=`expr 0 + 1`
 
-orderfiles=( $( find $PWD -type f -name '*.mkv' ) )
+MEXT=1
+
+orderfiles=( $( find $PWD -type f -name '*.mp4') )
 for line in "${orderfiles[@]}";
 	do
 		getname=$( echo $line | cut -d '.' -f1 )
@@ -19,12 +20,9 @@ for line in "${orderfiles[@]}";
 		echo "moving $line $getnewname.mkv"
 
 		#rename 's/$( echo $getname )/$( echo $getnewname )/g' $line
-		MEXT=`expr $MEXT + 1`
-
+		MEXT=`echo $(( $MEXT + 1 ))`
 		#find -name "$FILE*" -type f -exec mv {} $FILEASS
 		#mv $line $FILEASS.$FILE
 
 	done
-
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-
+exit 0

@@ -26,8 +26,8 @@ stopwatchtime() {
 		fi
 
 MEXT=0
-THIS=$( uuid )
-mkdir /home/tmp/$THIS -p
+THS=$( uuid )
+THIS="/tmp/$THS" 
 
 SALT=$( uuid | sed 's/-//g' | sed 's/[A-Za-z]//g'  )
 MEXT=${SALT:0:8}
@@ -43,7 +43,7 @@ for j in "${orderfiles[@]}";
 		THISNAME=`echo "$DEQ${MEXT:0:8}" | sed 's/-//g' `
 		TRIMME="${THISNAME:0:9}"
 		FINAL="${TRIMME:0:12}.$GETEXT"
-		mv $j "/home/tmp/$THIS/$FINAL"
+		mv $j "$THIS/$FINAL"
 
 		# FORMAT=$( echo "$(( $MEXT + $SALT )) | sed 's/-//g' " )
 
