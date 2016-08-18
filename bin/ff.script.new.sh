@@ -1,7 +1,9 @@
 #!/bin/bash
 RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falcon/$z; done
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
+#if [[ "$1" != "" ]]; then
+#################### BEGIN
 xcv="$1"
 xcs="$2"
 CL=$( basename "$xcv" )
@@ -34,28 +36,32 @@ chmod +x $MEF
 echo "#!/bin/bash
 RETURN=\$PWD
 if [[ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]]; then export PATH=\$PATH:/usr/local/bin; fi
-x=( colors functions ); for z in \"\${x[@]}\"; do source /usr/local/lib/faron_falcon/\$z; done
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
 if [[ \"\$1\" != \"\" ]]; then
 #################### BEGIN
 
+echo -e \"\$Fstat\"
+echo -e \"\$Fno\"
+echo -e \"\$Fwarn\"
+echo -e \"\$Finfo\"
+echo -e \"\$Fok\"
 
-echo -e \$Fok\"\$Fyellow \$( basename \$0 ) \$Foff\"
 
 ################### END
 #cd \$RETURN 1> /dev/null;
-else echo -e \$Finfo \"Arg 1=\$Fyellow empty \$Foff \"; fi
+else echo -e \"\$Fstat \$Fred Arg 1 \$Foff=\$Fyellow explain argments before calling. \$Foff\"; fi
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FALCON] name=\$( basename \$0 ) active=y
-"  > "$MEF"
+### [FILE] \$0  [ACTIVE] y
+
+" > "$MEF"
 echo -e "$Fstat $Fblue $XF $Fgreen created. $Foff"
 subl "$MEF"
 ################### END
 #cd $RETURN 1> /dev/null;
-#else echo -e "$fcer Arg 1=$fcy domain to search $fco"; fi
+#else echo -e "$Fstatus $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FALCON] name=ff.script.new active=y
-
+### [FILE] /usr/local/bin/ff.script.new  [ACTIVE] y

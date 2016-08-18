@@ -26,7 +26,7 @@ Foff=$( echo -e $reset  )
 Fok="[$Fgreen OK $Foff]"
 Fno="[$Fred ERR $Foff]"
 Finfo="[$Fblue INFO $Foff]"
-Farg="[$Fyellow ARG $Foff]"
+Fwarn="[$Fyellow WARN $Foff]"
 Fstat="[$Fteal Status $Foff]"
 
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
