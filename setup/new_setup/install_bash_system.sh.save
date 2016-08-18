@@ -22,7 +22,7 @@ cp "/home/users/faron/.falcon/scripts/new_setup/vault/profile.txt" "$HOME/.profi
 echo ".profile install as master file at $HOME"
 if [ ! -d ~/.falcon ]; then
 	if [[ "$USER" == 0 ]]; then
-		ln -s /home/users/faron/.falcon ~/.falcon
+		ln -s /mnt/falcon ~/.falcon
 	fi
 fi
 #echo "Files copied as backup as alternative bash in case server goes down:"

@@ -1,5 +1,0 @@
-hostname -i
-hostname -I
-hostname -f
-hostname -d
-hostname -s

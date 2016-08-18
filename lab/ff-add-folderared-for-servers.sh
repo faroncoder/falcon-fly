@@ -24,7 +24,7 @@ if [[ "$( hostname )" == "f10" ]]; then
 			# if not have it - install it.
 	 		echo "/home/users/$USER/var/Streamings/files/factory-mp4/output  192.168.1.10/24(rw,sync,no_subtree_check)
 			/home/users/$USER/var/Streamings/files/factory-mp4/mkv  192.168.1.10/24(rw,sync,no_subtree_check)
-			/home/users/faron/.falcon 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+			/mnt/falcon 192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
 		else
 			echo "all of export folders of your preference is already set"
 		fi
@@ -42,21 +42,21 @@ if [[ "$( hostname )" == "f10" ]]; then
 		else
 			echo "/mkv for /etc/exports is already set"
 		fi
-		if [[ -z "$( grep '/home/users/faron/.falcon' /etc/exports )" ]]; then
-			echo "nope you dont have/home/users/faron/.falcon"
-			echo "/home/users/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
-			echo "now you have/home/users/faron/.falcon"
+		if [[ -z "$( grep '/mnt/falcon' /etc/exports )" ]]; then
+			echo "nope you dont have/mnt/falcon"
+			echo "/mnt/falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+			echo "now you have/mnt/falcon"
 		else
-			echo "/home/users/faron/.falcon for /etc/exports is already set"
+			echo "/mnt/falcon for /etc/exports is already set"
 		fi
 else
 	## if it is a client then reconfigure
-	if [[ ! "$( grep /home/users/faron/.falcon' /etc/fstab )" ]]; then
-		echo "nope you dont have /home/users/faron/.falcon' in fstab"
-		echo "//192.168.1.10/home/users/faron/.falcon /home/users/faron/.falcon  cifs  credentials=/home/users/$USER/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
-		echo "/home/users/faron/.falcon for /etc/fstab configured"
+	if [[ ! "$( grep /mnt/falcon' /etc/fstab )" ]]; then
+		echo "nope you dont have /mnt/falcon' in fstab"
+		echo "//192.168.1.10/mnt/falcon /mnt/falcon  cifs  credentials=/home/users/$USER/.smbcredentials,iocharset=utf8,gid=1004,uid=1004,file_mode=0777,dir_mode=0777  0 0" >> /etc/fstab
+		echo "/mnt/falcon for /etc/fstab configured"
 	else
-		echo "/home/users/faron/.falcon for /etc/fstab is already set"
+		echo "/mnt/falcon for /etc/fstab is already set"
 	fi
 	if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 		echo "nope you dont have 'output' in fstab"

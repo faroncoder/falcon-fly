@@ -23,7 +23,7 @@ fi
 cp /home/users/faron/.falcon/scripts/bash/* ~/
 
 if [[ ! -d ~/.falcon ]]; then
-	ln -s "~/home/users/faron/.falcon" "~/.falcon" 2>/dev/null
+	ln -s "~/mnt/falcon" "~/.falcon" 2>/dev/null
 fi
 
 #echo "Files copied as backup as alternative bash in case server goes down:"

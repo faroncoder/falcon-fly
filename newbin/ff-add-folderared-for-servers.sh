@@ -263,8 +263,8 @@ echo "
 	create mask = 0777
     directory mask = 0777
 
-/home/users/faron/.falcon]
-	path = /home/users/faron/.falcon
+/mnt/falcon]
+	path = /mnt/falcon
 	valid users = faron
 	writeable = yes
 	browseable = yes
@@ -287,12 +287,12 @@ fi
 if [[ ! "$( hostname )" = "f10" ]]; then
 	
 			## if it is a client then reconfigure
-			if [[ ! "$( grep /home/users/faron/.falcon' /etc/fstab )" ]]; then
-				echo "nope you dont have /home/users/faron/.falcon' in fstab"
-				echo "//192.168.1.10/home/users/faron/.falcon /media/home/users/faron/.falcon  none  nfs  0  0 " >> /etc/fstab
-				echo "now you have/home/users/faron/.falcon"
+			if [[ ! "$( grep /mnt/falcon' /etc/fstab )" ]]; then
+				echo "nope you dont have /mnt/falcon' in fstab"
+				echo "//192.168.1.10/mnt/falcon /media/mnt/falcon  none  nfs  0  0 " >> /etc/fstab
+				echo "now you have/mnt/falcon"
 			else
-				echo "/home/users/faron/.falcon for /etc/fstab is already set"
+				echo "/mnt/falcon for /etc/fstab is already set"
 			fi
 			if [[ ! "$( grep 'output' /etc/fstab )" ]]; then
 				echo "nope you dont have 'output' in fstab"
@@ -331,12 +331,12 @@ if [[ ! "$( hostname )" = "f10" ]]; then
 			else
 				echo "/mkv for /etc/exports is already set"
 			fi
-			if [[ ! "$( grep '/home/users/faron/.falcon' /etc/exports )" ]]; then
-				echo "nope you dont have/home/users/faron/.falcon"
-				echo "/home/users/faron/.falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
-				echo "now you have/home/users/faron/.falcon"
+			if [[ ! "$( grep '/mnt/falcon' /etc/exports )" ]]; then
+				echo "nope you dont have/mnt/falcon"
+				echo "/mnt/falcon  192.168.1.10/24(rw,sync,no_subtree_check)" >> /etc/exports
+				echo "now you have/mnt/falcon"
 			else
-				echo "/home/users/faron/.falcon for /etc/exports is already set"
+				echo "/mnt/falcon for /etc/exports is already set"
 			fi
 fi
 stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

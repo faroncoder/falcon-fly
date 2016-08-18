@@ -5,8 +5,8 @@ function listrecords {
 curl  -H "X-DNSimple-Token: $ACCESSAPI" -H "Accept: application/json" -H "Content-Type: application/json" --url "https://api.dnsimple.com/v1/domains/$DOMAIN_ID/records"
 }
 
-LOGIN="$( cat /home/users/faron/.falcon/data/private/dnsimple.txt | head -n1 )"
-TOKEN="$( cat /home/users/faron/.falcon/data/private/dnsimple.txt | tail -n1 )"
+LOGIN="$( cat /home/faron/.falcon/data/private/dnsimple.txt | head -n1 )"
+TOKEN="$( cat /home/faron/.falcon/data/private/dnsimple.txt | tail -n1 )"
 ACCESSAPI="$LOGIN:$TOKEN"
 #IP="$( curl http://icanhazip.com )"
 
@@ -24,4 +24,4 @@ OUTPUT="$( echo $GETDATA | sed 's/\[//g' | sed 's/\]//g' )"
 
 jq  -a ".$OUTPUT"
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

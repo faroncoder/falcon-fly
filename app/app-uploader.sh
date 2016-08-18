@@ -23,7 +23,7 @@ if [ "$typedest" == "h" ]
 	pathdir="/drive/home/users/$USER/var/Scripts/htmls/projects/$appname"
 fi
 
-binpull="home/faron/.bin/core/scripts/home/users/faron/.falcon-fly/app/libsafe"
+binpull="home/faron/.bin/core/scripts/mnt/falcon-fly/app/libsafe"
 	cp $binpull/jUploader.tar.gz $pathdir/
 	echo "unpacking jsc build"
 	cd $pathdir

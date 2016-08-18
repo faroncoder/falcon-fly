@@ -1,8 +1,13 @@
 #!/bin/bash
-RETURN=$PWD
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
-#if [[ "$1" != "" ]]; then
+if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
+	export PATH=$PATH:/usr/local/bin
+fi
+XeB=`date +%s`
+function XeF {
+XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+}
+
+#if [ "$1" != "" ]; then
 #################### BEGIN
 
 STRINGCOL=''
@@ -20,21 +25,49 @@ while :
 		;;
 	esac
 done
+# firecommand="${CMD}"
+# if [[ "$EUID" != "0" ]]; then
+# 			firecommand="sudo ${CMD}"
+# fi
+APID="$( uuid )_f"
 
-# file containing all packages for the system.  this file serve as manifest for system's package, and can be pulled and used for new system to self-inkove apt-get installation of all packages in the list.  In other words, see that file as configuration file if you wanted new server to be identiical with parent server (while tailoring package against the system architure   Example:  AMD64 and i386 can have same functions/abililty but built according to the system's specifications rather than full cloning the diskimage which will fail on different system.  Automate builder.)
-FILEwof="/home/users/faron/.falcon/files/configs/etc_apt-get_packages"
-FILEAP="$FILEwof.list"
-FILESO="$FILEwof.txt"
+defaultFunction(){
+	sudo rm /var/lib/dpkg/lock; sudo dpkg --configure -a;
+
+}
 
 beginInstall(){
-	$SUDO apt-get install -y $appget --force-yes 2> /dev/null < /dev/null
-	$SUDO sh -c "echo \"$appget\" >> $FILEAP"
-	logger "$( hostname -s ) apt-get installation: $appget"
+	defaultFunction
+	sudo apt-get install -y $appget
+	cat "/home/users/faron/.falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
+	echo "$appget" >> /tmp/aptgrab_pkg
+	less "/tmp/aptgrab_pkg" | uniq | sort > /home/users/faron/.falcon/files/configs/etc_apt-get_packages.list
+	logger "FARON:: apt-get package recorded for installation = $appget "
+	sudo apt-get install -y $appget --force-yes
 }
 
 beginBuild(){
-	# Building deps command to intergrate function on fly for each item in array
-	$SUDO apt-get build-dep -y  $appget --allow
+	defaultFunction
+	sudo apt-get build-dep -y --force-yes $appget
+}
+beginCheck(){
+	defaultFunction
+	beginInstall < /dev/null >> /tmp/$APID
+}
+#beginCheck(){
+#	defaultFunction
+#	beginInstall < /dev/null >> /tmp/$APID
+#}
+
+appCheck(){
+	if [ -f "/tmp/$APID" ]; then
+		while read line; do
+			echo $line
+		done < /tmp/$APID
+#	else
+#		echo "no dependency needed"
+#		> /tmp/$APID
+	fi
 }
 
 appGo(){
@@ -42,25 +75,49 @@ appGo(){
 	PACKS=( `echo ${STRINGCOL[@]}` )
 	for appget in "${PACKS[@]}"; do
 			beginBuild
+#			beginCheck
+#			appCheck
 			beginInstall
 	done
-	# Updating the package list and remove any duplications
-	$SUDO mv $FILEAP $FILESO
-	$SUDO uniq $FILESO > $FILEAP
-	$SUDO rm $FILESO
-
-	# emptying array out of memory (to prevent arrays from going global affecting the system.  We only want this array to be in effect for this script run only )
 	appget=""
 }
 appGo
+# 		# GETPACK=( "$( echo \"$( sudo apt-get install $appget < /dev/null" |  sed  -n  -e '{ /Suggested packages/,/The following NEW/p }' | sed '/The following/d' )\" )" )
+# 		# GETPACK=$( sudo apt-get install $appget 2< /dev/null  |  sed  -n  -e '{ /Suggested packages/,/The following NEW/p }' | sed '/The following NEW/d' | sed '/Suggested /d' )
+# #echo ${GETPACK[@]}
 
+
+# 		 # 	for sendto in "${GETPACK[@]}"; do
+# 		 # 		# echo $sendto
+# 			# 	suggestcoll=( $suggestcoll $sendto )
+# 		 # 		# echo $sendto >> "~/.falcon/setup/apt-get/$( hostname -s)_suggested.list"
+# 			# done
+# 		fi
+# 		#CMD="( `sudo apt-get install -y --force-yes $appget` )"
+# 		#`$firecommand ${CMD}`
+# 	done
+
+# }
+
+
+# if [[ "${suggestcoll[@]}" != "" ]]; then
+#  		echo "install suggested packages too?"
+#  		read REPLY
+#  		if [[ "$REPLY" = y ]]; then
+#  				for pack2 in "${CMD2[@]}"; do
+#  					ff.apt.fetch $pack2;
+#  				done
+# # 		fi
+# fi
 
 
 ################### END
-#cd $RETURN 1> /dev/null
-#else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
-### exit code for clean exit
-XeF
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FALCON] name=$( basename $0 ) active=y
+#elif [ "$1" = "" ];
+#	then
+#  echo "usage: ff.apt.fetch "
+#  echo "example:    "
+#fi
 
+
+## TALON: ff.apt.fetch
+XeF

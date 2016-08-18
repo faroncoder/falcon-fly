@@ -1,0 +1,66 @@
+#!/bin/bash
+RETURN=$PWD
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
+#if [[ "$1" != "" ]]; then
+#################### BEGIN
+
+STRINGCOL=''
+while :
+	do
+	case "$1" in
+		$1)
+			STRINGCOL="$STRINGCOL $1"
+			if [ "$2" = '' ]; then
+				shift
+				break
+			else
+				shift
+			fi
+		;;
+	esac
+done
+
+# file containing all packages for the system.  this file serve as manifest for system's package, and can be pulled and used for new system to self-inkove apt-get installation of all packages in the list.  In other words, see that file as configuration file if you wanted new server to be identiical with parent server (while tailoring package against the system architure   Example:  AMD64 and i386 can have same functions/abililty but built according to the system's specifications rather than full cloning the diskimage which will fail on different system.  Automate builder.)
+FILEwof="/home/users/faron/.falcon/files/configs/etc_apt-get_packages"
+FILEAP="$FILEwof.list"
+FILESO="$FILEwof.txt"
+
+beginInstall(){
+	$SUDO apt-get install -y $appget --force-yes 2> /dev/null < /dev/null
+	$SUDO sh -c "echo \"$appget\" >> $FILEAP"
+	logger "$( hostname -s ) apt-get installation: $appget"
+}
+
+beginBuild(){
+	# Building deps command to intergrate function on fly for each item in array
+	$SUDO apt-get build-dep -y  $appget --allow
+}
+
+appGo(){
+
+	PACKS=( `echo ${STRINGCOL[@]}` )
+	for appget in "${PACKS[@]}"; do
+			beginBuild
+			beginInstall
+	done
+	# Updating the package list and remove any duplications
+	$SUDO mv $FILEAP $FILESO
+	$SUDO uniq $FILESO > $FILEAP
+	$SUDO rm $FILESO
+
+	# emptying array out of memory (to prevent arrays from going global affecting the system.  We only want this array to be in effect for this script run only )
+	appget=""
+}
+appGo
+
+
+
+################### END
+#cd $RETURN 1> /dev/null
+#else echo -e $Finfo "Arg 1=$Fyellow empty $Foff "; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=$( basename $0 ) active=y
+
