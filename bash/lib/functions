@@ -3,12 +3,6 @@ function XeF {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
 
-openshstarted(){
-        PIDOFCHECK=$( pidof ssh-agent | wc -w )
-        if [[ "$PIDOFCHECK" -gt 2 ]]; then
-                $SUDO kill -15 `pidof ssh-agent` 2> /dev/null
-        fi
-}
 
 openshengine(){
         opensh_started

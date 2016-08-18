@@ -1,11 +1,15 @@
 NODE_PATH=/usr/local/bin/node;
-NWJS=/usr/local/bin/nwjs;
-ANDROID_HOME=/home/users/$USER/Android/Sdk;
+#NWJS=/usr/local/bin/nwjs;
+#ANDROID_HOME=/home/users/$USER/Android/Sdk;
+
+NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH"
+
+CLEAN=`echo $NEWPATH | tr ':' '\n' | sort | uniq | tr '\n' ':'`
+
+export PATH=$CLEAN
 
 
-NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:~/.bin:~/bin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH:$NWJS:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
-
-export PATH=$PATH:$NEWPATH
-	alias rm="trash-put"
+alias rm="trash-put"
+alias rm1="rm"
 
