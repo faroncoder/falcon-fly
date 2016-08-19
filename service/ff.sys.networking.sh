@@ -8,7 +8,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 $SUDO service networking restart
 
-echo -e "$Finfo networking service restart requested"
+echo -e "$Finfo networking service restarted"
 
 
 ################### END

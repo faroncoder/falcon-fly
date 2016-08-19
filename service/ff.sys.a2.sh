@@ -6,13 +6,9 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #################### BEGIN
 
 
-$SUDO service networking restart
+$SUDO service apache2 restart
 
-# echo -e "$Fstat"
-# echo -e "$Fno"
-# echo -e "$Fwarn"
-echo -e "$Finfo networking service restart requested"
-# echo -e "$Fok"
+echo -e "$Finfo apache2 service restarted"
 
 
 ################### END
