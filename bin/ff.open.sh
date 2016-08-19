@@ -5,14 +5,8 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-
-$SUDO service apache2 restart
-
-# echo -e "$Fstat"
-# echo -e "$Fno"
-# echo -e "$Fwarn"
-echo -e "$Finfo apache2 service restarted"
-# echo -e "$Fok"
+nautilus $PWD 2>&1 /dev/null; < /dev/null;
+echo -e "$Fok"
 
 
 ################### END
