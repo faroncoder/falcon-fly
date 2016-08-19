@@ -8,7 +8,15 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 $SUDO service apache2 restart
 
+<<<<<<< HEAD
 echo -e "$Finfo apache2 service restarted"
+=======
+# echo -e "$Fstat"
+# echo -e "$Fno"
+# echo -e "$Fwarn"
+echo -e "$Finfo apache2 service restarted"
+# echo -e "$Fok"
+>>>>>>> 29e4183d3b6d1850a4ea2847270ca4df3c22fcf8
 
 
 ################### END
