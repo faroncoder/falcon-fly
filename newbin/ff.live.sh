@@ -10,7 +10,7 @@ source $LOCPN/functions.txt
 source $LOCPN/templates.txt
 
 SELECT=""
-while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
+while [[ "$ITEM" != $"\x0a" && "$ITEM" != $"\x20" ]]; do
     echo -e "$Finfo (f)avicon : (s)tatus : (j)s update :  (n)ew page : s(t)ructure : e(x)it "
     #echo "Press <Enter> to do foo"
     #echo "Press <Space> to do bar"
