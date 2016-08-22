@@ -1,13 +1,8 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
-	export PATH=$PATH:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-
-#if [ "$1" != "" ]; then
+RETURN=$PWD
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falcon/$z; done
+if [[ "$1" != "" ]]; then
 #################### BEGIN
 
 STRINGCOL=''
@@ -38,37 +33,37 @@ defaultFunction(){
 
 beginInstall(){
 	defaultFunction
-	sudo apt-get install -y $appget
-	cat "/home/users/faron/.falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
-	echo "$appget" >> /tmp/aptgrab_pkg
-	less "/tmp/aptgrab_pkg" | uniq | sort > /home/users/faron/.falcon/files/configs/etc_apt-get_packages.list
-	logger "FARON:: apt-get package recorded for installation = $appget "
-	sudo apt-get install -y $appget --force-yes
+	#$SUDO apt-get install -y $appget --force-yes 2> /dev/null; < /dev/null;
+#	cat "/home/users/faron/.falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
+#	echo "$appget" >> /tmp/aptgrab_pkg
+#	less "/tmp/aptgrab_pkg" | uniq | sort > /home/users/faron/.falcon/files/configs/etc_apt-get_packages.list
+	$SUDO apt-get install -y $appget --force-yes 2> /dev/null; 
+	logger "$( date ) :: FALCON:  apt-get package installed: $appget "
 }
 
 beginBuild(){
 	defaultFunction
-	sudo apt-get build-dep -y --force-yes $appget
-}
-beginCheck(){
-	defaultFunction
-	beginInstall < /dev/null >> /tmp/$APID
+	sudo apt-get build-dep -y --force-yes $appget 2> /dev/null; 
 }
 #beginCheck(){
 #	defaultFunction
 #	beginInstall < /dev/null >> /tmp/$APID
 #}
+#beginCheck(){
+#	defaultFunction
+#	beginInstall < /dev/null >> /tmp/$APID
+#}
 
-appCheck(){
-	if [ -f "/tmp/$APID" ]; then
-		while read line; do
-			echo $line
-		done < /tmp/$APID
+#appCheck(){
+#	if [ -f "/tmp/$APID" ]; then
+#		while read line; do
+#			echo $line
+#		done < /tmp/$APID
 #	else
 #		echo "no dependency needed"
 #		> /tmp/$APID
-	fi
-}
+#	fi
+#}
 
 appGo(){
 
@@ -110,14 +105,11 @@ appGo
 # # 		fi
 # fi
 
-
 ################### END
-#elif [ "$1" = "" ];
-#	then
-#  echo "usage: ff.apt.fetch "
-#  echo "example:    "
-#fi
-
-
-## TALON: ff.apt.fetch
+#cd $RETURN 1> /dev/null;
+else echo -e $Finfo "$Fyellow enter package name to install or use 'ff.apt.find' $Foff "; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FALCON] name=$( basename $0 ) active=y
 XeF

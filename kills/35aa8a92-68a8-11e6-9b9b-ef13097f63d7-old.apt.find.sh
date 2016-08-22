@@ -14,6 +14,7 @@ while :
 		$1)
 			GETPACK=( $GETPACK $1 )
 			if [ "$2" = '' ]; then
+#				shift
 				break
 			else
 				shift
@@ -25,10 +26,10 @@ done
 THISFUILE="/tmp/$( uuid )"
 
 if [[ "$KEYWORD" == "" ]]; then
-		echo -e "$Fno -- exiting"
+		echo -e "$Fno -- exiting"	
 		XeF
 elif [[ "$KEYWORD" == " " ]]; then
-		echo -e "$Fno -- exiting"
+		echo -e "$Fno -- exiting"	
 		XeF
 fi
 
@@ -63,6 +64,8 @@ makelister(){
 
 pickProcesser(){
 
+checkList
+
 echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
 	echo -n -e "Item to install ? "
 	#read -s -N 1 SELECT
@@ -71,7 +74,7 @@ echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
 
 
 if [[ "${PICK[@]}" == "" ]] || [[ "${PICK[@]}" == " " ]]; then
-		echo -e "$Fno -- exiting"
+		echo -e "$Fno -- exiting"	
 		XeF
 else
 
@@ -83,10 +86,10 @@ F=0
 	for pickme in "${PICKS[@]}"; do
 		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME="`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `"
-
-		echo -e "$Finfo fetching $Fteal$WHOME$Foff";
+	
+		echo -e "$Finfo fetching $Fteal$WHOME$Foff";		
 		ff.apt.fetch $WHOME
-		echo "----------------------------------------------------"
+		echo "----------------------------------------------------"	
 		DPKG=`dpkg -l | grep -w "$WHOME" | awk '{ print $2 }'`
 			if [[ "$DPKG" == "$WHOME" ]]; then
 			G="`echo $(( $G + 1 ))`"
@@ -94,17 +97,18 @@ F=0
 		else
 			F=`echo $(( $F + 1 ))`
 			echo -e "[$Fred NOT INSTALLED$Foff ] $WHOME | $Fyellow Installed: $Fgreen$G$Foff | $Fyellow Not installed:$Fred$FO$Foff"
-
+				
 			fi
 		pickme=""
 		WHOME=""
 	done
 fi
 
+
 menuEngine
 }
 
-checkList(){
+checkList(){ 
 if [[ $G == $NUMB ]]; then
 	echo -e -n "$Fstat New search keyword: "
 	read NEWSEARCH
@@ -113,11 +117,31 @@ if [[ $G == $NUMB ]]; then
 fi
 }
 
+
 menuEngine(){
-	checkList
 	makelister
 	pickProcesser
 }
+
+
+#	while :
+#		do
+#			case "$pickme" in
+#				$pickme) 
+#					ff.apt.fetch "$( awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' )";
+#					break
+#				;;
+#			esac
+#		done
+#done
+
+#aptMenu
+#}
+
+#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do echo -e "$Finfo No package	
+#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "$Finfo No package is selected - exiting"; XeF ; done; fi
+
+#aptMenu
 
 menuEngine
 
