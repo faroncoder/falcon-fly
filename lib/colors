@@ -24,10 +24,12 @@ Fwhite=$( echo -e $fg_white  )
 Foff=$( echo -e $reset  )
 
 Fok="[$Fgreen OK $Foff]"
-Fno="[$Fred ERR $Foff]"
-Finfo="[$Fblue INFO $Foff]"
+Fno="[$Fred NO $Foff]"
+Finfo="[$Fteal INFO $Foff]"
 Fwarn="[$Fyellow WARN $Foff]"
 Fstat="[$Fteal Status $Foff]"
+Ferror="[$Fred ERR $Foff]"
+
 
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
 reset_SHELL="\[\e[00m\]" #  Reset
