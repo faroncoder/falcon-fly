@@ -16,9 +16,7 @@ makelister(){
 		N=0
 		while read line; do
 			N=$( echo $(( $N + 1 )) )
-			NAME="`echo $line | sed  's/\s.*$//'`"
-			DEP="` echo $line | sed "s/$NAME//g" `"
-			echo -e "$Fred$N $Fyellow$NAME$Foff$DEP"
+			echo -e "$Fyellow$N$Foff $line"
 		done < $THISFUILE
 		echo "-----"
 		echo -e "Packages found:$Fblue $NUMB $Foff"
@@ -37,7 +35,7 @@ fi
 
 makelister
 
-echo -e "$Fstat Keyword searched: $Fred $KEYWORD $Foff"
+echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
 echo -n -e "Item to install ? "
 read ITEM
 

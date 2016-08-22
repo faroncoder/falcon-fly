@@ -7,7 +7,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 LOC="/home/users/faron/.falcon/scripts"; if [ ! -d "$LOC" ]; then  echo -e "$Fno Falcon is not mounted. Exiting"; exit 1;   fi
 
-FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
+FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' 2> /dev/null; < /dev/null; ` );
 
 echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
 

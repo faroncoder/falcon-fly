@@ -1,0 +1,1857 @@
+mkdir faron
+mkdir falcon
+mkdir clips6
+mkdir clips7
+mkdir clips10
+ls
+sudo chown -R faron:root falcon clips*
+chmod 777 clips*
+chmod 777 clips*/*
+chmod 777 falcon
+ls -al
+chmod 775 falcon/
+chmod 775 clips*
+ls
+ls /home
+sudo mount -a
+;s
+sudo nano /etc/fstab 
+scp faron@192.168.1.10:~/fstab ./
+ls
+exit
+ls
+exit
+blkid >> /etc/fstab
+nano /etc/fstab
+ls
+cd ..
+ls
+cd falcon/
+ls
+cd ..
+ls
+ls faron/
+ls
+exit
+nano /etc/network/interfaces
+sudo service networking restart
+ifconfig
+ping f6
+sudo nano /etc/hosts
+nano /etc/dhcp/dhclient.conf 
+sudo service networking restart
+ifconfig
+ping gtwy
+ping f10
+ping f6
+ping f7
+ifconfig
+ssh f10
+cd
+ls
+ls -al
+exit
+echo "auto eth0" >> /etc/fstab
+echo "iface eth0 inet dhcp" >> /etc/fstab
+sudo service networking restart
+ifconfig
+sudo sed -i -e 's/eth0/enp2s0/g' /etc/network/interfaces
+cat /etc/network/interfaces
+sudo su
+exit
+ls
+blkid
+blkid >> /etc/fstab
+nano /etc/fstab
+hostname 
+hostname --long
+sudo exportfs
+sudo reboot
+ls
+chown faron:faron clips10/*
+ls -al
+ls clips10/
+ls
+ls -al
+cd clips10
+ls
+exportfs
+ls
+cd clips6
+cd ../clips6
+ls
+chown faron:faron ./
+ls -al
+mount -a
+nano /etc/exports 
+exportfs
+exit
+systemctl enable samba
+systemctl samba enable
+systemctl enable samba
+systemctl enable nmbd
+service samba restart
+systemctl enable samba
+exit
+cp /bin/ls /home/faron/
+ls
+exit
+blkid
+cat /etc/fstab
+sudo nano /etc/fstab
+sudo mount -a
+exit
+sudo mount -a
+nano /etc/fstab
+mount -a
+nano /etc/fstab
+mount -a
+cat /etc/default/grub 
+nano /etc/default/grub 
+update-grub2 
+cat /etc/default/grub 
+exit
+ls
+cd ..
+ls
+cd hostdata/
+ls
+ls -al
+cd ..
+ls
+tree 
+ff.apt.fetch dovecot
+exit
+echo "rpcbind : ALL" >> /etc/hosts.deny 
+exit
+find -type f -exec sudo sed -i -e 's/\/media\/falcon/\/mnt\/falcon/g' {}  \; 
+exit
+cat fstab.txt >> /etc/fstab
+nano /etc/fstab
+mount -a
+ls
+cd /mnt
+ls
+GET=( ls )
+for j in "${GET[@]}"; do umount -f $j; done
+GET=( `ls` )
+for j in "${GET[@]}"; do umount -f $j; done
+umount /home/faron/.falcon
+umount /home/faron/.falcon -f
+ls
+tree
+xit
+exit
+nano /etc/fstab
+cd /mnt/falcon/setup/new_setup/vault/
+ls
+cat fstab.txt >> /etc/fstab
+nano /etc/fstab
+sudo reboot
+./install_apache2_whole.sh 
+nano ./install_apache2_whole.sh 
+exit
+nano install_apache2_whole.sh 
+ls
+./install_apache2_whole.sh 
+ls
+./install_apache2_whole.sh 
+ff.log
+exit
+cat apache2.conf 
+ls
+rm apache2.conf 
+ln -s htdocs/apache-controls/apache2.conf 
+exit
+rm -r old_httpds/
+ls
+ls -al
+exit
+touch .idle
+chmod 555 .idle
+exit
+umask 002
+exit
+make
+ff.ip
+ls
+cd ../tinydns/
+cd root/
+ls
+echo "9" >> Makefile 
+axfr-get --help
+man axfr-get 
+tcpclient 
+ls
+tcpclient ns2.faron.ca 53 axfr-get ip-64-140-118-219.user.start.ca zone-8 zone-8.tmp
+ff.log
+ls
+exit
+umount /mnt/falcon
+umount /mnt/falcon -f
+which nfs
+ls -al
+find . -maxdepth 1 -type file 
+find . -maxdepth 1 -type f
+cd ..
+find . -maxdepth 1 -type f
+find . -maxdepth 1 -type f | sort
+exit
+php -q /srv/www/cp/htdocs
+php --help
+ls
+sudo adduser root www-data
+sudo adduser faron www-data
+sudo adduser www-data faron
+ls
+bashsr
+exit
+cd
+ls -al
+cat passwords.txt 
+cat .profile 
+ls
+bashsr
+exit
+./10_1_1.sh 
+cd
+ls
+cat passwords.txt 
+exit
+cd
+ls
+cat passwords.txt 
+exit
+chmod -R 555 /etc/apache2/
+chmod -R  /etc/apache2/*
+chmod -R 555 /etc/apache2/*
+ls
+ls -al
+rm var
+ls
+rm etc/
+ls -al /etc/zpanel
+ls -al
+cd /etc
+ls
+mv zpanel disable_zpanel
+ls
+cd /home/faron/
+cd zpanel_copy/
+ls 
+ls -al
+cd ..
+ls
+rm zpanel_copy
+rm -r zpanel_copy
+cd /etc
+mv disable_zpanel zpanel
+ls
+cd var
+cd /var
+ls
+ls -al /etc/zpanel
+ls
+ln -s /srv/www/cp zpanel
+ls
+exit
+./10_1_1.sh 
+ls
+exit
+cd /etc/apache2/
+cd htdocs_settings/
+ls
+cd apache-controls/
+ls
+sed -i -e '/configs\/apache\/httpd\/d' *
+cat apache2-f7.conf 
+sed -i -e '/zpanel/d' *
+cat apache2-f7.conf 
+sed -i -e '/cp/d' *
+ls
+cat apache2-f7.conf 
+exit
+./10_1_1.sh 
+exit
+fff
+cd /srv
+cd www/
+ls
+ls -al
+cd cp
+ls
+ls ../cpmodules/
+mv ../cpmodules/* modules/
+cp -r ../cpmodules/* modules/
+ls
+ls ..
+rm ../cpmodules/
+rm -r ../cpmodules/
+ls
+ls htdocs | wc -l
+find htdocs -type f  | wc -l
+ls
+cd panel/
+ls
+ls bin
+ls
+ls cnf
+ls
+ls doc
+ls
+ls dryden/
+ls
+cd etc
+ls
+cd ..
+ls
+cd etc
+ls
+ls -al
+cd build/
+ls
+./prepare.sh
+ls
+cat prepare.bat 
+ls
+ls bin
+ls
+cd ..
+ls
+tree 
+ls
+cd ..
+ls
+cat index.php 
+ls
+cd ..
+ls
+ls htdocs
+ls
+sudo service apache2 restart
+bash <(curl -Ss https://raw.github.com/zpanel/installers/master/upgrade/Ubuntu-12_04/10_1_1.sh)
+ls
+ls -al
+ls
+ls -al htdocs
+ls
+ls panel/
+ls
+ls configs/
+tree -L 2
+ls
+exit
+mkdir /var/run/sshd -p
+exit
+cd /srv/www
+ls
+cd default
+tar -zxvf /home/home/zpanel.tar.gz
+tar -zxvf /home/faron/zpanel.tar.gz 
+ls
+ls -al
+ls zpanel/
+ls -al zpanel/
+ls
+cd ..
+ls
+cd default
+ls
+mv zpanel/ ../
+cd ..
+ls
+mv zpanel/ cp
+ls
+exit
+ls
+chmod +x 10_1_1.sh 
+./10_1_1.sh 
+exit
+cp -r ./* /usr/
+exit
+cp -r ./* /usr/
+npm update npm -g
+exit
+ls
+mv cpmodules/ cp/modules
+ls
+cp -r .cache cp/
+exit
+umount /mnt/falcon/
+cd /mnt
+ls
+ls -al
+tree
+tree falcon
+tree falcon -L 1
+ls -al
+ls falcon/
+cd falcon/
+ls
+cd files/
+ls
+cd documents/
+ls
+cd ..
+ls
+cd ..
+ls
+cd scripts/
+ls
+tree
+cat cat video/ff.vid.go.mp4.sh 
+cd /
+mkdir data
+mongod --path=/data
+mongodb --path=/data
+ff.apt.fetch mongodb-server
+exit
+rm /var/lib/dpkg/lock 
+dpkg --configure -a
+ff.apt.update
+exit
+cd ../clips7/
+ls
+ls -al
+chown -R faron:faron done
+chmod -R 775 done
+chmod -R 775 done/*
+chown -R faron:faron raw
+chmod -R 775 raw
+chmod -R 775 raw/*
+exit
+cd
+ls -al
+cd clips7/
+ls
+find . -type f
+find . -type f | wc -l
+find . -type f -empty | wc -l
+find . -type f -empty -exec rm {} \;
+ls
+find . -type f | wc -l
+find done -type f | wc -l
+find raw -type f | wc -l
+find done -type f | wc -l
+cd
+ls
+ls -al
+cat .bashrc
+ls
+ls -al
+rm .bashrc .profile
+ln -s /mnt/falcon .falcon
+ls
+ls -al
+cp .falcon/scripts/bash/* ./
+cp .falcon/scripts/bash/.* ./
+ls
+source ~/.profile
+ls -al
+ls
+cd clips7/
+find done -type f | wc -l
+ls
+find raw -type f | wc -l
+ls
+cd /root
+ls
+cd clips7/
+ls
+cd raw/
+ls
+chown -R faron:faron $PWD
+chmod -R 775 $PWD
+ls
+cd ..
+ls
+mv raw /home/clips7/
+ls
+ls -al
+chmod -R 775 raw/*
+ls -al
+cd raw/
+ls -al
+ls mp4
+ls mp4 -al
+ls
+cd ..
+ls
+cd raw
+ls 
+find . -type f --empty
+find . -type f -empty
+find . -type f -empty -exec rm {} \;
+ls
+cd ..
+ls
+cd done
+find . -type f -empty -exec rm {} \;
+find . -type f | wc -l
+cd ..
+ls
+cd raw/
+find . -type f | wc -l
+cd ..
+ls
+find . -type f | wc -l
+find . -type f -empty -exec rm {} \;
+find . -type f | wc -l
+ls
+cd ..
+ls
+cd clips7/
+find . -type f -empty -exec rm {} \;
+find . -type f | wc -l
+ls
+find . -type f | wc -l
+find . -type f -empty -exec rm {} \;
+find . -type f | wc -l
+find . -type f -empty -exec rm {} \;
+find . -type f | wc -l
+extundelete
+ls
+nudu
+ncdu
+ls
+mv done /home/clips7/
+ls
+mv raw /home/clips7/
+mv raw/* /home/clips7/raw/
+ls
+cd raw/
+ls
+mv done/* /home/clips7/raw/done/
+mv mp4/* /home/clips7/raw/mp4/
+ls
+cd ..
+ls
+cd ..
+ls
+rm -r clips7/
+diskspace
+alias
+ls
+exit
+ls
+ls -al
+cd ..
+ls
+ls -al
+trash-empty
+ls
+diskspace 
+exit
+cd /
+testdisk 
+ff.apt.fetch testdisk
+testdisk 
+exit
+cd /root
+ls -al
+find clips7 -type f -empty -exec rm {} \;
+find clips7 -type f | wc -l
+cd clips7
+ls mp4
+ls
+ncdu
+mv /srv/www/.cache /srv/www/default/cp/
+mv /srv/www/.cache/* /srv/www/default/cp/.cache/*
+cp -r -u /srv/www/.cache/* /srv/www/default/cp/.cache/*
+ls
+rm -r /srv/www/.cache
+ls
+find -type f | wc -l
+testdisk
+ls
+clear
+ls
+cd ..
+cd
+cd clips7
+find . -type f | wc -l
+ls
+cd /home
+cd graveyard
+find clips7 -type f -empty -exec rm {} \;
+find clips7 -type f | wc -l
+find clips7 -type f >> listing.list
+cat listing.list
+cd /
+cd root
+while read line; do ls $line; done < /home/graveyard/clips7/listing.list
+while read line; do md5sum $line; done < /home/graveyard/clips7/listing.list >> results.md5sum
+while read line; do ls $line; done < /home/graveyard/clips7/listing.list
+while read line; do ls $line; done < /home/graveyard/listing.list
+while read line; do md5sum $line; done < /home/graveyard/listing.list >> results.md5sum
+ncdu
+ls
+cd clips7
+find . type -f -empty
+find . -type f -empty
+find . -type f -empty -exec rm  {} \;
+ls
+ncdu
+find . -type f -empty | wc -l
+find . -type f  | wc -l
+cd /home
+cd grveyard
+cd graveyard
+cd clips7
+find . -type f -empty
+find . -type f -empty -exec rm {} \;
+find . -type f | wc -l
+find /root/clips7 -type f | wc -l
+ls
+cd ..
+find clips7 -type f >> listings.list
+ls
+rm listing.list
+ls
+cat listings.list
+cd ~/
+while read line; do ls -lh $line | awk '{print $5}'; done < /fdupes -r $PWD /root/clips7 --delete --noprompt 
+ls
+mv main.cf disable_main.cf
+ls
+postconf -d
+ls
+postconf -d > main.cf
+ls
+cat main.cf 
+ls
+ls -al
+cd /srv/www/default/cp/panel/
+cd ..
+cd configs/
+cd postfix/
+cat main.cf 
+ls
+cat master.cf 
+postconf
+postconf -d
+postconf -d > main.cf
+ls
+cat master.cf 
+cat main.cf 
+postconf -e
+postconf -F
+postconf -f
+dpkg-reconfigure postfix
+ff.log
+ping f7:25
+ping f7.faron.ca:25
+ping f7.faron.ca:465
+ls
+cat mynetworks 
+echo "64.140.118.219/28" >> mynetworks 
+ls
+cat mysql-relay_domains_maps.cf 
+ls
+cat mysql-virtual_alias_maps.cf 
+ls
+cat transport 
+passwd faron
+nano /etc/fstab
+dclear
+ls
+mount -o rw,remount /
+nano /etc/fstab
+nano /etc/exports
+systemctl disable nfs
+systemctl disable nfs-kernel-server
+cd /etc/default/
+cat nfs-kernel-server 
+man nice
+nice --help
+cd ../init
+ls -al | more
+cd ../init.d/
+cat mountkernfs.sh 
+cat mountkernfs.sh  | more
+;s
+ls -al
+cat umountfs 
+cat umountfs | more
+ls
+cat umountnfs.sh 
+cat umountnfs.sh | more
+systemctl enable umountnfs
+ls
+cat network-manager 
+ls
+cd ../
+cd default/
+cat networking 
+ifconfig -a
+ls
+cat nfs-common 
+nano nfs-common 
+dpkg -r nfs-kernel-server
+dpkg -r nfs-common
+service nfs-config stop
+systemctl disable nfs-kernel-server
+systemctl disable nfs-common
+exit
+route add 192.168.2.1 gw 192.168.2.1
+netstat -rn
+route add 192.168.2.10
+route add 192.168.2.10 dev enp2s0
+netstat -rn
+route add 192.168.2.10 gw 192.168.2.1
+netstat -rn
+ping 192.168.2.10
+nano /etc/hosts
+nano /etc/exports
+reboot
+route add 192.168.1.6 gw 192.168.1.1
+netstat -rn
+ssh 192.168.1.6
+service networking restart
+ifconfig
+ping 192.168.1.6
+route add 192.168.1.7 gw 192.168.2.1
+netstat -rn
+ls
+ifconfig
+cat /etc/hosts
+sudo reboot
+ls
+nano /etc/hosts
+cat /etc/fstab
+sudo nano /etc/fstab
+service nfs-kernel-server restart
+nano /etc/exports
+exportfs
+apt-get install nfs-kernel-server
+ls
+ifconfig
+ifconfig -a
+sudo ifconfig enp2s0 up
+if ifconf
+fconfig
+ifconfig
+ifconfig enp2s0 192.168.1.7
+ifconfig
+netstat -rn
+exportfs
+apt-get install nfs-common
+ls
+cat /etc/hosts
+cat /etc/network/interfaces
+sudo reboot
+mount --all
+mount -a
+sudo apt-get install -y nfs-common
+ifconfig
+sudo ifconfig enp2s0 192.168.1.7
+ifconfig
+sudo apt-get install -y nfs-common
+service networking restart
+sudo apt-get install -y nfs-common
+ifconfig
+sudo ifconfig enp2s0:avahi down
+ifconfig
+sudo ifconfig enp2s0 192.168.1.7
+sudo ifconfig enp2s0 192.168.1.7 dev enp2s0
+sudo ifconfig enp2s0 192.168.1.7 
+ifconfig
+netstat -rn
+sudo route add 192.168.1.1 gw 192.168.1.1
+ping 192.168.1.6
+sudo route add 192.168.1.6 gw 192.168.1.1
+ifconfig
+netstat -rn
+sudo route add 192.168.1.7 gw 192.168.1.1
+sudo route add 192.168.1.10 gw 192.168.1.1
+netstat -rn
+ping 192.168.1.6
+reboot
+cd /etc
+nano hosts
+ls
+cat hosts
+cp hosts ~/
+nano /etc/network/interfaces
+ifconfig
+cat /etc/network/interfaces
+ls
+ifconfig enp2s0 down
+ifconfig
+ifconfig enp2s0 up
+ifconfig
+ifconfig enp2s0 192.168.2.7
+ifconfig
+exit
+nano /etc/hosts
+nano /etc/exports 
+nano /etc/fstab
+sudo ifconfig 
+ifconfig enp2s0 192.168.1.7
+systemctl enable networking
+service networking restart
+ifconfig
+netstat -rn
+nano /etc/network/interfaces
+service networking restart
+exit
+route add 192.168.1.0 gw 192.168.1.1 enp2s0
+route add 192.168.1.1 gw 192.168.1.1 enp2s0
+route add 169.254.0.0 enp2s0
+ifconfig
+netstat -rn
+route add 192.168.1.6 gw 192.168.1.1 enp2s0
+ifconfig
+ssh faron@192.168.1.6
+route add 192.168.1.10 gw 192.168.1.1 enp2s0
+ssh faron@192.168.1.10
+ssh -p 44 root@192.168.1.1
+nano /etc/fstab
+nano /etc/exports 
+find /etc -type f -name '*dnsmasq*'
+cd /etc/dbus-1/system.d/
+nano dnsmasq.conf 
+bashsr
+ls
+cat wpa_supplicant.conf 
+cat org.freedesktop.network1.conf 
+nano /etc/hosts
+sudo reboot
+sh -c "echo \"nameserver 192.168.0.1\" >> /etc/resolv.conf
+"
+cat /etc/resolv.conf 
+bind9
+bind9 status
+cd /etc/
+dnsmasq 
+dnsmasq --expand-hosts
+sudo dnsmasq --expand-hosts
+sudo apt-get update
+ifconfig
+sudo nano /etc/network/interfaces
+nano /etc/dhcp/dhclient.conf 
+service dhcp restart
+service dhcpd restart
+sudo service networking restart
+ifconfig
+sudo ifconfig enp2s0 192.168.1.7
+ifconfig
+netstat -rn
+nano /etc/hosts
+exit
+dnssec-verify 
+dnssec-verify -v
+dnssec-verify -v 192
+dnssec-verify -v 192.168.1.1
+dnssec-verify -v 1 192.168.1.1
+dnssec-verify -v 1 db.192
+dnsqr
+dnsq
+dnsq 192.168.2.1
+dnsip
+dnsip f10
+dnsdomainname 
+dnsfilter 
+ls
+dnsname 
+dnsname --help
+dnsname 64.140.112.13
+dnsmasq 
+dnsmasq f10
+dnsmasq f10.faron.ca
+dnsmasq 192.168.2.1
+exit
+adduser faron video
+passwd
+cat /etc/group
+nano /etc/group
+cd /etc
+networkctl 
+networkctl --help
+networkctl --all
+dnscache
+cat sysctl.conf 
+ls
+cat netconfig 
+service rpcbind stop
+networking reload
+service networking reload
+sudo systemctl disable rpcbind
+reboot
+grep -r 'net.ipv*' *
+nano ufw/sysctl.conf 
+reboot
+nano /etc/hosts
+ifconfig
+sudo ifconfig wlxa0f3c126157a down
+sudo ifconfig enp2s0 192.168.2.97
+route
+ping gtwyaccess
+ping gtwyaccess.faron.ca
+nano /etc/network/interfaces
+sudo nano /etc/hosts
+dig faron.ca all
+cd /
+tar -zxvfp /home/_f7_backup.tar.gz 
+tar -zxvfp /home/_f7_backup.tar.gz -C /
+tar -zxfpv home/_f7_backup.tar.gz 
+tar -zxpfv home/_f7_backup.tar.gz 
+clear
+cd /home/
+tar -zxfpv _f7_backup.tar.gz -C /
+tar -zxfpv _f7_backup.tar.gz -c /
+tar --help
+tar --help | more
+cd /
+tar -zxvf --preserve-permissions /home/_f7_backup.tar.gz ./
+tar -zxvf --preserve-permissions /home/_f7_backup.tar.gz 
+tar -zxf --preserve-permissions /home/_f7_backup.tar.gz 
+tar -zxf  /home/_f7_backup.tar.gz 
+ls
+cat /etc/fstab
+clear
+lcear
+blkid >> /etc/fstab
+sudo nano /etc/fstab
+update-grub2
+reboot
+passwd faron
+clear
+ifconfig
+ifconfig enp2s0 192.168.1.7
+ifconfig
+netstat -rn
+sudo nano /etc/network/interfaces
+ifconfig
+sudo reboot
+ifconfig enp2s0
+ifconfig enp2s0 $( hostname -i )
+ifconfig
+sudo ifconfig lo $( hostname -s )
+ifconfig
+ifconfig enp2s0:0 192.168.1.7
+ifconfig
+ifconfig enp2s0 169.254.6.11
+ifconfig
+ifconfig enp2s0:2 192.168.2.7
+ifconfig
+hostname -I
+IP=192.168.1.7
+echo $IP
+echo $IP | cut -d'.' -f 3
+GETNET=$( echo $IP | cut -d'.' -f 3 )
+echo "192.168.$GETNET.0"
+gedit
+ff.network.scan 
+ifconfig
+ifconfig -a
+ifconfig -a | awk '{ print $1 }'
+ifconfig
+ifconfig --help
+man ifconfig
+ifconfig -s
+ifconfig --help
+man ifconfig
+ls
+mv faron graveyard/ && mkdir faron -p && chown -R faron:faron faron
+ls
+ls faron
+ls
+cd faron
+ls -al
+mv ../graveyard/faron/.falcon ./
+mv ../graveyard/faron/.ssh ./
+mv ../graveyard/faron/.bash* ./
+mv ../graveyard/faron/.profile ./
+exit
+passwd
+cat /etc/passwd
+cd ..
+sudo chown -R faron:faron clips7 local7 www tmp
+ls
+ls -al
+top
+w
+exit
+host -l
+host -l f7.faron.ca
+ifconfig
+sudo ifconfig lo 127.0.0.1
+ifconfig
+route add 169.254.0.0 enp2s0
+hostname -l
+hostname -f
+hostname -d
+hostname -s
+hostname -i
+hostname -I
+networking start
+service networking start
+sudo service network-manager disable
+sudo apt-get network-manager remove --purge
+sudo apt-get remove network-manager --purge
+mv /etc/NetworkManager /etc/disable_NetworkManager
+systemctl enable networking 
+netstat -rn
+arping 
+arping -b
+arping -b faron.ca
+arping -b f7
+arping -b f7 -f
+man arping
+arping enp2s0
+arping f7 enp2s0
+arping f7
+arping 192.168.12
+nano /etc/hosts
+reboot
+ifconfig
+nano /etc/hosts
+ifconfig enp2s0:0 192.168.1.57
+netstat -rn
+arping f7
+service networking restart
+reboot
+arpaname 
+arpaname host
+arpaname --help
+arpd 
+arp
+arping $( hostname -i )
+arping $( hostname -f )
+nano /etc/hosts
+sudo ifconfig enp2s0 192.168.1.67
+ifconfig
+hostname -i
+hostname -I
+serivce --status-all | more
+service --status-all | more
+systemctl enable bind9 hostname.sh mongodb networking resolvconf rsyslog ssh
+service --status-all | more
+systemctl disable bluetooth flumotion mountnfs-bootclean.sh mountkernfs.sh mountnfs.sh nfs-kernel-server nmbd postfix proftpd rpcbind samba samba-ad-dc  saned  smbd 
+sudo apt-get remove --purge samba
+service --status-all | more
+ifconfig
+nano /etc/hosts
+nano /etc/apache2/apache2.conf 
+ls /mnt
+mount -a
+reboot
+ls
+ifconfig enp2s0:0 192.168.24
+ifconfig enp2s0:1 64.140.117.21
+netstat -rn
+route add 192.168.2.0/29 gw 192.168.1.1 enp2s0:0
+route add 192.168.2.0/24 gw 192.168.1.1 enp2s0:0
+route add 192.168.2.0 gw 192.168.1.1 enp2s0:0
+netstat -rn
+route add 192.168.2.1/32 gw 192.168.1.1
+netstat -rn
+ssh root@192.168.2.1
+ssh root@192.168.2.1 -p 44
+ff.net
+ff.network.scan 
+ifconfig
+sudo service networking restart
+ifconfig
+ifconfig enp2s0 64.140.117.21
+ifconfig enp2s0 64.140.117.21 -f
+ifconfig enp2s0 0.0.0.0
+ifconfig enp2s0 192.168.2.4
+ifconfig enp2s0:1 64.140.117.21
+route
+netstat -rn
+route add 192.168.2.0/24 gw 192.168.1.1 enp2s0:0
+route add 192.168.2.0/24 gw 192.168.1.1 enp2s0
+route add 192.168.2.0/29 gw 192.168.1.1 enp2s0
+route add 192.168.2.0/29 gw 192.168.2.1 enp2s0
+route add 192.168.2.0/24 gw 192.168.2.1 enp2s0
+route add 192.168.2.0 gw 192.168.2.1 enp2s0
+route add 192.168.2.0 gw 192.168.1.1 enp2s0
+route add 192.168.1.2/32 gw 192.168.1.1 enp2s0
+route add 192.168.2.1//32 gw 192.168.1.1 enp2s0
+route add -host 192.168.2.1 gw 192.168.1.1 enp2s0
+route add -host 192.168.2.1/32 enp2s0
+netstat -rn
+route add -net 64.140.117.16 gw 64.140.118.219 enp2s0
+route add 64.140.117.16/29 gw 64.140.118.219 enp2s0
+route add 64.140.117.16/29 gw 64.140.118.219 
+route add 64.140.117.16/32 gw 64.140.118.219 
+route add 192.168.1.2/32 gw 192.168.1.1
+route add 192.168.2.0/32 gw 192.168.1.1
+route add 192.168.2.1/32 gw 192.168.1.1
+route
+netstat -rn
+ssh -p 22 192.168.2.1
+route add 64.140.118.219 gw 64.140.112.13 enp2s0
+route
+etstat -rn
+netstat -rn
+route add 64.140.114.21 enp2s0
+route add 64.140.114.22 enp2s0
+netstat -rn
+route add 64.140.118.219
+route add 64.140.118.219 enp2s0
+route add 64.140.117.16 enp2s0
+route add 64.140.112.13 enp2s0
+netstat -rn
+apt-get update
+ifconfig
+sudo enp2s0:0 down
+sudo ifconfig enp2s0:0 down
+ifconfig
+netstat -rn
+sudo reboot
+ifconfig
+sudo nautilus /etc/network
+moutn -a
+mount -a
+cat /etc/fstab
+ls media
+ls /media
+ls /mnt
+nano /etc/fstab
+nano /etc/hosts
+nano /etc/network/interfaces
+nano /etc/default/
+nano /etc/default/networking 
+sudo service networking restart
+sudo mount -a
+ifconfig
+ifconfig enp2s0 192.168.2.7
+ifconfig
+ifconfig enp2s0 192.168.2.7/32
+ifconfig
+route
+sudo service networking restarr
+sudo service networking restart
+route
+ifconfig
+netstat -rn
+route add 169.254.0.0 enp2s0
+route add 0.0.0.0 192.168.2.1 enp2s0
+route add 0.0.0.0 gw 192.168.2.1 enp2s0
+ifconfig
+route add 192.168.2.0 gw 192.168.2.1 eth0
+ifconfig
+exit
+ifconfig
+cat *
+cd ..
+cat rsyslog.conf 
+sudo cat rsyslog.conf 
+sudo nano rsyslog.conf 
+sudo nano /etc/default/rsyslog 
+sudo systemctl enable rsyslog
+ports
+sudo service rsyslog start
+ifconfig
+service rsyslog status
+ff.log
+ls
+ifconfig
+ff.log
+logger testing
+ff.log
+rsyslogd 
+exit
+route add 0.0.0.0 gw 192.168.2.1 
+ifconfig enp2s0 192.168.2.7
+ifconfig enp2s0  up
+ifconfig enp2s0:1 64.140.117.20
+ifconfig
+ifconfig lo up
+ifconfig
+netstat -rn
+route add 0.0.0.0 gw 192.168.2.1 enp2s0
+route add 192.168.2.1 enp2s0
+route add 64.140.118.219 gw 64.140.112.13 enp2s0:1
+route add 64.140.117.16 gw 64.140.118.219 enp2s0:1
+route add 0.0.0.0 gw 64.140.117.17 enp2s0:1
+netstat -rn
+cd /etc/bind/
+nano named.conf.local 
+nano named.conf.options 
+nano named.conf
+cd ../zpanel/panel/
+ls
+cd ..
+ls
+cd ..
+ls
+cd zpanel
+tree
+cd ..
+mount -a
+cd /home
+cd www
+cd f7
+cd /srv/www
+mv cp_old* /home/
+ls
+cd f7
+ls cp
+cd ..
+ls
+cd www
+cd cp/
+tree
+ls
+rm -r $PWD
+cd ..
+ls
+cd /srv
+cd www
+cd f7
+cd ..
+ls default
+cd default
+ls
+cd ..
+cd cp
+ls
+cd f7
+cd cp/
+cd panel/
+cd ..
+cd configs/
+cd bin
+cd bind
+cd ..
+cd bind
+cat named.conf 
+gedit
+sudo service bind9 restart
+ff.log
+sudo adduser bind
+addgroup bind
+ls
+ls -al
+chown -R root:bind $PWD
+ls
+ls -al
+cd ..
+chown -R root:root postfix
+chown -R root:root proftpd/
+chown -R root:root phpmyadmin/
+ls bin
+chown -R root:root $PWD
+ls
+chown -R root:bind bind
+chown -R root:www-data apache
+sudo service apache2 restart
+ff.log
+sudo service bind9 restart
+sudo service networking restart
+dig faron.ca all
+ff.log
+sudo service postfix restart
+ff.log
+ls
+cat /etc/passwd
+cat /etc/passwd | grep 'postfix'
+sudo addgroup postfix
+nano /etc/group
+ls
+cd /etc/postfix
+sudo chown -R root:postfix $PWD
+cd /srv/www/f7/cp/configs/
+chown -R root:postfix postfix
+service apace2 restart
+service apache2 restart
+sudo service postfix restart
+sudo service dovecot restart
+ff.log
+cd /etc/postfix/
+postconf 
+ls
+cat master.cf 
+cat main.cf 
+postconf > main.cf
+ls
+postfix
+cat main.cf 
+nano  main.cf 
+cat main.cf | grep 'user'
+service postfix restart
+ff.log
+cat main.cf | grep 'owner'
+sed -i -e 's/mail_owner = postifx/mail_owner = root/g' main.cf 
+cat main.cf | grep 'owner'
+nano main.cf 
+adduser postifx
+cat /etc/passw
+cat /etc/passwd
+adduser postfix mail
+adduser mail postfix
+adduser postfix mail
+addgroup postfix mail
+addgroup mail postfix
+sudo service postfix restart
+ff.log
+dpkg-reconfigure postfix
+sudo service bind9 restart
+ff.log
+gedit < /dev/null
+fconfig
+ifconfig
+netstat -rn
+route add 64.140.118.219 gw 64.140.112.13 enp2s0:1
+route add 64.140.117.16 gw 64.140.118.219 enp2s0:1
+route
+route del 64.0.0.0  enp20s
+route del 64.0.0.0  enp2s0
+route
+service networking restart
+ifconfig
+ifconfig enp2s0:1 down
+ifconfig
+cat /etc/network/interfaces
+nano /etc/network/interfaces
+nano /etc/hosts
+sudo service dovecot restart
+ff.log
+systemctl disable ntpdate
+service ntpdate stop
+sysctl disable ntpdate
+systemctl disable ntpdate
+systemctl enable bind9
+sudo service bind9 start
+ifconfig
+chromium-browser 
+ifconfig
+ff.log
+cd /etc/dovecot/
+nano dovecot.conf 
+sudo service dovecot restart
+ff.log
+doveconf 
+doveadm 
+dovecot 
+adduser dovecot
+chown -R dovecot:postfix /srv/www/f7/cp/configs/dovecot2
+cd /srv/www/f7/cp/configs/dovecot2
+cat dovecot.conf 
+cat /etc/passwd | grep vmail
+addgroup vmail
+addgroup mail vmail
+addgroup dovecot vmail
+addgroup dovecot mail
+addgroup dovecot postfix
+addgroup postfix dovecot
+adduser postfix
+nano group
+nano /etc/group
+sudo service dovecot restart
+ff.log
+ls
+cat dovecot-dict-quota.conf 
+ls
+cat dovecot-mysql.conf 
+nano dovecot-mysql.conf 
+cp dovecot-mysql.conf  dovecot-mysql.bak
+nano dovecot-mysql.conf 
+ls
+cat dovecot-trash.conf 
+cat globalfilter.sieve 
+ls
+doveconf 
+grep default_login
+grep -r 'default_login' *
+ls
+cat /etc/dovecot/dovecot.conf 
+adduser vmail
+adduser vmail mail
+adduser mail vmail
+nano  /etc/dovecot/dovecot.conf 
+service dovecot restart
+ff.log
+dpkg-reconfigure dovecot
+ifconfig
+netstat -rn
+route
+route add 64.140.117.16 gw 64.140.118.219 enp2s0
+ifconfig enp2s0:1 64.140.117.20
+ifconfig
+route add 64.140.117.16 gw 64.140.118.219 enp2s0
+route add 64.140.117.16 gw 64.140.118.219 enp2s0:1
+route add 64.140.118.219 gw 64.140.112.13 enp2s0:1
+route add 64.140.118.219 eth0:1
+route add 64.140.118.219 enp2s0:1
+netstat -rn
+ifconfig
+ping 64.140.117.17
+route add 64.140.117.17 enp2s0:1
+netstat -rn
+gedit ~/.bash_history 
+ln -s /usr/bin/gedit /usr/sbin/gedit
+gedit
+cd
+mkdir /home/root_dirs
+cp ~/.bash_history /tmp
+chmod 777 /tmp/.bash_history 
+grep 'route' /tmp/.bash_history >> /tmp/cmds_route
+cat /tmp/cmds_route 
+cat /tmp/cmds_route | sort
+cat /tmp/cmds_route | sort | uniq 
+cat /tmp/cmds_route | sort | wc -l
+cat /tmp/cmds_route | sort | uniq | wc -ll
+cat /tmp/cmds_route | sort | uniq | wc -l
+cat /tmp/cmds_route | sort | uniq | wc -l >> /tmp/cmds_route 
+uniq --help
+cat /tmp/cmds_route | sort | uniq -u
+cat /tmp/cmds_route | sort | uniq -u | wc -l
+cat /tmp/refinded_route  | sort | uniq -u | wc -l
+cat /tmp/refinded_routes | sort | uniq -u | wc -l
+cat /tmp/refinded_routes | sort | uniq -u 
+cat /tmp/refinded_routes | sort | uniq -u > /tmp/final_routes
+cat /tmp/.bash_history | grep 'ifconfig'
+cat /tmp/.bash_history | grep 'ifconfig' | uniq -u
+cat /tmp/.bash_history | grep 'ifconfig' | uniq -u > /tmp/ifconfig_cmds
+sed -i -e '/ifconfig\\n/d' /tmp/ifconfig_cmds 
+sed -i -e '/ifconfig\n/d' /tmp/ifconfig_cmds 
+cat /tmp/ifocnfig_final | uniq -u
+cat /tmp/ifocnfig_final | uniq -u | wc -l
+cat /tmp/ifocnfig_final |  wc -l
+cat /tmp/ifocnfig_final | uniq -u > /tmp/ifconfig
+sed -i -e '/192.168.1/d' /tmp/ifconfig
+cat /tmp/ifconfig | wc -l
+ls
+cd /tmp
+mv ifconfig ~/
+while read line; do `$line`; done < ifconfig
+ls
+while read line; do `$line`; done < network_routes_up.txt 
+cd 
+ifconfig
+while read line; do $line; done < ifconfig 
+ifconfig
+ifconfig enp2s0:0 0.0.0.0
+ifconfig enp2s0 down
+ifconfig
+while read line; do $line; done < /home/faron/network_routes_up.txt 
+ifconfig
+route
+sudo service networking restart
+fuck
+ifconfig
+route
+ifconfig enp2s0 0.0.0.0
+ifconfig enp2s0 up
+ifconfig
+ifconfig enp2s0:2 0.0.0.0
+sudo ifconfig enp2s0:2 0.0.0.0
+sudo ifconfig enp2s0:2 down
+ifconfig
+sudo ifconfig enp2s0 192.168.2.7
+while read line; do $line; done < /home/faron/network_routes_up.txt 
+route
+while read line; do `$line`; done < /home/faron/network_routes_up.txt 
+route
+netstat -rn
+ssh root@192.168.2.1
+cd
+ls
+exit
+ifconfig
+sudo service networking restart
+ifconfig
+netstat -rn
+ip addr
+ff.apt.update
+ifconfig
+sudo dnmasq
+dnsmx asq
+dnsq
+dnsq 192.168.2.1
+dnsq -4 192.168.2.1
+man dnsq
+dnsq t faron.ca 192.168.2.1
+dnsq  faron.ca 192.168.2.1
+dnsq  faron.ca dns2.zoneedit.com
+dnsq  faron.ca gtwy2.faron.ca
+arpaname `hostname -s`
+arpaname `hostname -s` enp2s0
+arp enp2s0
+arp f7.faron.ca enp2s0
+hostname -I
+ifconfig 
+nstat -rn
+netstat -rn
+service networking restart
+systemctl enable networking
+cat /etc/network/interfaces
+nano /etc/network/interfaces
+service networking restart
+ifconfig
+netstat -rn
+exit
+ls
+ifconfig
+exit
+naon /etc/hosts
+nano /etc/hosts
+netstat -rn
+while read line, do `$line`; done < network_routes_up.txt
+while read line; do `$line`; done < network_routes_up.txt
+netstat -rn
+service networking restart
+ifconfig
+hostname
+hostname -f
+hostname -d
+hostname -
+hostname -i
+hostname -I
+ifconfig
+route add 64.140.117.17/32
+route add 64.140.117.17/32 enp2s0:1
+route
+route oute192.168.2.0/24 enp2s0
+route 192.168.2.0/24 enp2s0
+route add 192.168.2.0/24 enp2s0
+route add 192.168.2.0 enp2s0
+route
+service network-manager restart
+ifconfig
+netstat -rn
+ssh root@192.168.2.1
+echo "nameserver 192.168.2.1 192.168.1.1 64.114.118.219" >> /etc/resolv.conf 
+sudo service networking restart
+ifocnfig
+ifconfig
+sudo ifconfig enp2s0:1 down
+ifconfig
+sudo service networking restart
+ifconfig
+ssh root@192.168.2.1 -p 2222
+ssh root@192.168.2.1
+ifconfig
+sudo ifconfig enp2s0:1 down
+ifconfigh
+ifconfig
+naon /etc/hosts
+sudo nano /etc/hosts
+ifconfig
+sudo service networking restart
+ifconfig
+sudo nano /etc/network/interfaces
+service networking restart
+route
+ifconfig
+ifconfig enp2s0:2 192.168.1.7
+route
+netstat -rn
+ifconfig
+ifconfig enp2s0:2 down
+ifconfig enp2s0:1 down
+ifconfig enp2s0 192.168.1.7
+netstat -r
+ifconfig
+ifconfig enp2s0:1 192.168.2.7
+netstat -rn
+ssh faron@192.168.2.6
+exit
+route add 0.0.0.0 gw 192.168.1.2 enp2s0
+ifconfig
+route
+route add 192.168.1.0/24 gw 192.168.1.1 enp2s0
+route add 192.168.1.0 gw 192.168.1.1 enp2s0
+route
+ifconfig
+sudo nano /etc/hosts
+ifconfig
+route
+route del 192.168.1.0 gw 192.168.1.1
+route
+nano /etc/network/interfaces
+sudo service networking restart
+nano /etc/network/interfaces
+nano /etc/hosts.allow
+cat /etc/hostname
+dnsdomainname 
+ypdomainname 
+ypdomainname faron.ca
+ypdomainname 
+cd /etc/default/
+cat rsyslog 
+ls
+cat bind9
+nano bind9
+cat intel-microcode 
+sudo nano intel-microcode 
+nano networking 
+nano nfs-common
+cat nfs-kernel-server 
+ff.apt.remove nfs-kernel-server
+dpkg -r nfs-kernel-server
+dpkg -r nfs-common
+dpkg -r rpcbind
+cat /etc/idmapd.conf 
+sudo nano  /etc/idmapd.conf 
+cat /etc/passwd
+grep 'nobody' /etc/passwd
+ls
+deluser dnsmasq
+ls
+cat networking 
+ls
+rm nfs-common
+rm nfs-kernel-server 
+cat nss
+ls
+cat ssh
+cat rsyslog 
+cat rcS 
+sudo nano rcS 
+ifconfig
+netstat -rn
+ssh root@192.168.1.2
+dig faron.ca all
+sudo nano /etc/resolv.conf 
+dig faron.ca all
+nano /etc/hosts
+ssh 192.168.1.57
+hostname
+hostname =d
+hostname-d
+hostname -d
+ypdomainname 
+netstat -rn
+route
+reboot
+echo "nameserver 192.168.2.1" >> /etc/resolv.conf 
+echo "nameserver 192.168.1.1" >> /etc/resolv.conf 
+echo "nameserver 64.140.118.219" >> /etc/resolv.conf 
+echo "nameserver 64.140.112.13" >> /etc/resolv.conf 
+netstat -rn
+ssh root@192.168.2.1
+netstat -rn
+netstat
+ip6-f7.faron.ca
+ping6 ip6-f7.faron.ca
+service networking restart
+nano /etc/default/grub 
+update-grub2
+nano /etc/default/grub 
+update-grub2
+nano /etc/default/grub 
+update-grub2
+apt-get clean
+apt-get autoclean
+ff.apt.udate
+ff.apt.udpdate
+exit
+nano /etc/resolv.conf 
+service networking retart
+service networking restart
+route
+ifconfig 
+ifconfig enp2s0 down
+ifconfig enp2s0 up
+ifconfig
+netstat -rn
+route add 0.0.0.0 192.168.2.1 enp2s0
+route add 0.0.0.0 gw 192.168.2.1 enp2s0
+route
+netstat -rn
+ifconfig
+ifconfig enp2s0:1 192.168.1.7
+netstat -rn
+ifconfig
+ifconfig all
+ifconfig -a
+nano /etc/default/networking 
+ccd /etc/default/
+cd /etc/default/
+rm nfs-common.save 
+cat cr
+cat crda 
+ls
+cat bsdmainutils 
+ls
+cat alsa 
+ls
+cat anacron 
+ls
+cat apport 
+whatis appport
+whatis apport
+whichis apport
+what apport
+whatis apport
+exit
+systemd --log-color=1
+systemd --log-color=1 --user
+systemd --user
+systemd --test
+exit
+resolveip 
+resolveip  *
+resolveip gtwy.faron.ca
+resolveip gtwy2.faron.ca
+resolveip f10.faron.ca
+resolveip f6.faron.ca
+resolveip www.faron.ca
+nslookup faron.ca
+nslookup faron.ca gtwy.faron.ca
+nslookup --help
+resolveip 
+resolveip  -s
+resolveip  f1
+resolveip  f10
+resolveip  f6
+resolveip  f7
+ifconfig
+ifconfig enp2s0:1 192.168.1.7
+man nslookup
+ethtool 
+ethtool --help
+ethtool [ autoneg on|off ]
+ethtool --autoneg on
+ethtool --autone
+ethtool -autoneg
+networking
+service networking
+service networking status
+cd /etc/network/
+cd if-up.d/
+cat postfix 
+ls
+cat ethtool 
+cat bind9 
+ls
+cd ..
+cd if-pre-up.d/
+ls
+cat wireless-tools 
+ls
+cd ..
+rm interfaces.save 
+cd if-down.d/
+./avahi-autoipd 
+cd ../
+if-p
+ls if-post-down.d/
+ls if-down.d/
+if-up.d/
+ls if-up.d/
+cd if-up.d/
+cat 000resolvconf 
+resolvconf -a enp2s0.IP4
+echo "nameserver 192.168.1.1" >> /etc/resolv.conf 
+echo "nameserver 64.140.114.21" >> /etc/resolv.conf 
+echo "nameserver 64.140.114.22" >> /etc/resolv.conf 
+echo "nameserver 64.140.118.219" >> /etc/resolv.conf 
+service networking restart
+ff.log
+sudo service ntpdate stop
+sudo systemctl disable ntpdate
+dpkg -r ntpdate
+sudo apt-get remove --purge ntpdate
+cd /etc/default/
+cat slapd 
+ls
+rm ntpdate 
+cat kerneloops 
+ls
+cat halt 
+ls
+cat devpts 
+dmesg
+cgmanager 
+sudo cgmanager 
+cgmanager --help
+ls
+cat brltty 
+update-initramfs 
+update-initramfs  -u
+update-grub
+update-manager 
+ff.apt.update
+ifconfig
+exit
+while read line; do `$line`; done < network_routes_up.txt 
+ls -al
+netstat -rn
+ff.apt.update
+ff.log
+ifconfig
+sudo ifconfig enp2s0 0.0.0.0
+ifconfig
+exit
+while read line; do $line; done < network_routes_up.txt 
+nano network_routes_up.txt 
+while read line; do $line; done < network_routes_up.txt 
+netstat -rn
+service networking restart
+route
+nano /etc/network
+nano /etc/networks
+route
+apt-get update
+resolvconf -d enp2s0 --enable-updates
+exit
+while read line; do $line; done < network_routes_up.txt 
+ifconfig
+ifconfigh enp2s0 0.0.0.0
+ifconfig enp2s0 0.0.0.0
+ls
+ifconfig
+ifconfig enp2s0:0 192.168.2.7
+ifconfig enp2s0:1 64.140.17.20/29
+ifocnfig
+ifconfig
+while read line; do $line; done < network_routes_up.txt 
+netstat -rn
+route add 0.0.0.0 gw 64.140.117.17 enp2s0:1
+netstat -rn
+route add 169.254.0.0 enp2s0
+service networking restart
+exit
+nano /etc/passwd
+sudo deluser bind
+sudo delgroup bind
+cat /etc/passwd
+sudo deluser postfix
+sudo delgroup postfix
+sudo deluser dovecot; sudo delgroup dovecot;
+stat
+statd
+ls
+cat /etc/passwd
+sudo deluser postfix; sudo delgroup postfix
+sudo nano /etc/group
+avahi-autoipd 
+avahi-autoipd enp2s0
+sudo adduser faron avahi-autoipd
+avahi-autoipd enp2s0:1
+ifconfig
+netcat 
+service networking restart
+netstat -rn
+ls
+nano intel-microcode 
+cat networking 
+systemctl disable bind9
+sudo service bind9 stop
+dnsmx 
+dnsname 
+dnsip
+bashsr
+exit
+cd /home
+cd root_dirs/
+cd ..
+cd srv/
+cd clips7/
+ls -al
+sudo chmod -R +x $PWD
+sudo adduser faron video
+ls
+cd final_loads/
+totem  016858595.mp4 
+ls
+cd
+ls -al
+ff.id
