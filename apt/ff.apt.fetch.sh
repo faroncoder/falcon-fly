@@ -31,15 +31,15 @@ defaultFunction(){
 
 }
 
-beginInstall(){
-	defaultFunction
+#beginInstall(){
+#	defaultFunction
 	#$SUDO apt-get install -y $appget --force-yes 2> /dev/null; < /dev/null;
 #	cat "/home/users/faron/.falcon/files/configs/etc_apt-get_packages.list" | uniq | sort > /tmp/aptgrab_pkg
 #	echo "$appget" >> /tmp/aptgrab_pkg
 #	less "/tmp/aptgrab_pkg" | uniq | sort > /home/users/faron/.falcon/files/configs/etc_apt-get_packages.list
-	$SUDO apt-get install -y $appget --force-yes 2> /dev/null; 
-	logger "$( date ) :: FALCON:  apt-get package installed: $appget "
-}
+#	$SUDO apt-get install -y $appget --force-yes 2> /dev/null; 
+	#logger "$( date ) :: FALCON:  apt-get package installed: $appget "
+#}
 
 beginBuild(){
 	defaultFunction
