@@ -8,14 +8,15 @@ PICKS=( $@ )
 
 for j in "${PICKS[@]}"; do
 
-	CHECKDPKG=`dpkg-query --show --showformat='${db:Status-Status}' "$j"`
-	sudo rm /var/lib/dpkg/lock; sudo dpkg --configure -a; 2> /dev/null;
-	if [[ "$CHECKDPKG" == "installed" ]]; then
-		echo -e "$Fwarn skipping $j as its installed."
-	else
+	#CHECKDPKG=`dpkg-query --show --showformat='${db:Status-Status}' "$j"` 2> /dev/null;
+	#sudo rm /var/lib/dpkg/lock; sudo dpkg --configure -a; 2> /dev/null;
+	#if [[ "$CHECKDPKG" == "installed" ]]; then
+	#	echo -e "$Fwarn skipping $j as its installed."
+	#else
+		/usr/local/bin/ff.apt.check $j
 		/usr/local/bin/ff.apt.build $j
 		sudo apt-get install -y $j --force-yes 2> /dev/null;
-	fi
+	#fi
 	j=""
 done
 
