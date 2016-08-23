@@ -70,7 +70,7 @@ startFFMPEG() {
 		## PACKING ALL INFO OF THE VIDEO INTO MEDIAINFO FOR EASY INDEXING
 		COMMENTFILE="PST=$PRESETx264 CRF=$CRFSET OLD=$SIZEFILE NEW=$KNFILE"
 		ffmpeg -i "$REELFEED" -y -codec copy -metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" -metadata comment="$COMMENTFILE" -f mp4  "$PWD/mp4/$OUTPUT" < /dev/null;
-		mv $REELFEED "$PWD/now-you-can-delete-me"
+		trash-put $REELFEED 
 		#QUERY="db.result.insert( {\"NAME\":\"$OUTPUT\",\"ORIG\":\"$INPUT\",\"JOB\":\"$SEAF\", \"EXECUTED\":\"$SEAF\", \"PST\":\"$PRESETx264\", \"CRF\":\"$CRFSET\", \"OLD_SIZE\":\"$SIZEFILE\", \"NEW_SIZE\":\"$KNFILE\", \"BIT\":\"$BITRAT\", \"BUF\":\"$BUFRAT\", \"MAX\":\"$MAXRAT\"} )"
 		#echo $QUERY | mongo pornalive
 	done
