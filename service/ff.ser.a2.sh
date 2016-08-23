@@ -9,10 +9,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 $SUDO service apache2 restart
 
 echo -e "$Finfo apache2 service restarted"
-<<<<<<< HEAD:service/ff.ser.a2.sh
 
-=======
->>>>>>> 84896e1352a91461b3a324e1c2a7475758bfb568:service/ff.sys.a2.sh
 
 ################### END
 #cd $RETURN 1> /dev/null;
