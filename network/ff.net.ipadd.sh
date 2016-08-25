@@ -15,12 +15,18 @@ if [[ "$CDR" == "" ]]; then
 	read CDR
 fi
 
-FINDME=`ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | sed '/lo/d' | tail -n 1`
-FINDMI=`echo $FINDME | cut -d ':' -f2 `
+
+#FINDME=`ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | sed '/lo/d' | tail -n 1`
+#FINDMI=`echo $FINDME | cut -d ':' -f2 `
+
+# grab the interface name via 
+FINDMI=`/usr/local/bin/ff.net.devices`
+
+### NUMBER to assign to interface
 ASSI=`echo $(( $FINDMI + 1 )) `
 MEIFME=`echo $FINDME | cut -d ':' -f1 `
 
-
+## fire the command to add virtual address via ifconfig ( ifconfig dev:# device )
 $SUDO ifconfig $MEIFME:$ASSI $IPGET/$CDR;
 echo -e "$Fok"
 # $SUDO ifconfig $MEIFME $ASSI IPGET/$CDR

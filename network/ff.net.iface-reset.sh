@@ -6,19 +6,24 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #################### BEGIN
 
 
-## Get the real interface name
-ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | head -n 1
+## grab the function in getting interface name
+MEEF=`/usr/local/bin/ff.net.devices`
 
+echo -e "$Fwarn switching $MEEF off"
+$SUDO ifconfig $MEEF down
 
-## get all of interfaces (including virutuals)
-## ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' 
+$SUDO ifconfig $MEEF up
+echo -e "$Fstat switching $MEEF on"
+$SUDO service networking reload
+echo -e "$Fok"
 
 
 ################### END
 #cd $RETURN 1> /dev/null;
-#else echo -e "$Fstatus $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
+#else echo -e "$Fstat $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /usr/local/bin/ff.script.new  [ACTIVE] y
+### [FILE] $0  [ACTIVE] y
+
 

@@ -7,11 +7,11 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 
 ## Get the real interface name
-ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | head -n 1
+#ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | head -n 1
 
 
 ## get all of interfaces (including virutuals)
-## ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' 
+ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' 
 
 
 ################### END

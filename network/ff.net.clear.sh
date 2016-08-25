@@ -4,37 +4,16 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 RETURN=$PWD;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
-## avail for coding in colors: ##
-## Fok Fno Finfo Fwarn Fstat ##
-## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
 
-#echo -e "$Fok$Fyellow $( basename $0 ) $Foff"
-TMP="/tmp/`uuid`"
-TMP0="/tmp/`uuid`"
-THISIF=`ff.network.devices | head -n 1`
-hostname -i | tr ' ' '\n' > $TMP
-hostname -I | tr ' ' '\n'>> $TMP
-cat $TMP | sort | uniq | sed '/^$/d'> $TMP0
-cat $TMP0
-N=0
-CLR=0.0.0.0
-ff_ipsclear(){
-		if [[ $N == 0 ]]; then
-			$SUDO ifconfig $THISIF $CLR 2> /dev/null;
-			$SUDO ifconfig $THISIF:$N $CLR 2> /dev/null;
-			echo -e "$Fstat $THISIF cleared"
-		else
-			$SUDO ifconfig $THISIF:$N $CLR 2> /dev/null;
-			echo -e "$Fstat $THISIF:$N cleared"
-		fi
-		N=`echo $(( $N + 1))`
-}
-
-while read line; do
-	ff_ipsclear
-done < $TMP0
-rm $TMP $TMP0
-ifconfig
+GETSF=( `/usr/local/bin/ff.net.iface-all` )
+for c in "${GETSF[@]}"; do
+	if [[ "$c" == "lo" ]]; then
+		echo -e "$Fstat ignoring $c"
+	else
+		$SUDO ifconfig $c 0.0.0.0 2> /dev/null;
+		echo -e "$Fwarn $c cleared"
+	fi
+done
 
 ################### END
 #cd $RETURN 1> /dev/null

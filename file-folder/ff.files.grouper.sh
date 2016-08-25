@@ -9,7 +9,7 @@ x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falco
 ##NUMBERS ONLY
 MEXT=`uuid |  sed 's/[A-Za-z]*//g' | sed 's/-//g' | rev | awk '{print substr($1,0,5) }'`
 
-orderfiles=( `find . -type f ! -name '.*'` )
+orderfiles=( `find . -maxdepth 1 -type f ! -name '.*'` )
 for line in "${orderfiles[@]}"; do		
 	GETB=`basename $line`
 	GET=`echo "$GETB" | cut -d'.' -f1`
