@@ -35,7 +35,7 @@ checkList(){
 if [[ $G == $NUMB ]]; then
 	echo -e -n "$Fstat New search keyword: "
 	read NEWSEARCH
-	ff.apt.find `echo $NEWSEARCH`
+	ff.apt.find $NEWSEARCH
 	XeF
 fi
 }
@@ -77,8 +77,8 @@ F=0
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
 		echo -e "$Finfo fetching $Fteal$WHOME$Foff";
-		/usr/local/bin/ff.apt.check $WHOME
-		/usr/local/bin/ff.apt.fetch $WHOME
+		/usr/local/bin/ff.apt.verify $WHOME
+		#/usr/local/bin/ff.apt.fetch $WHOME
 		echo "----------------------------------------------------"	
 #		
 

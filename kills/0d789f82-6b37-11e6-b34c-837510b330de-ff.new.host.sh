@@ -1,0 +1,179 @@
+#!/bin/bash
+RETURN=$PWD
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
+GET=$1; if [[ "$1" == "" ]]; then
+#################### BEGIN
+echo -e -n "$Fstat domain? "
+read -e GET
+fi
+			 								
+#### GET										
+### subdomain.example.com/abc/def
+
+GETACTU=`echo $GET | tr '/' ' '`				
+### subdomain.example.com abc def
+
+GETRIM=`echo $GETACTU | awk '{print $1}'` 
+### subdomain.example.com
+
+CHECKDOM=`echo $GETRIM | rev | tr '.' ' '`  	
+### moc example niamodbus
+
+EXTRACT=`echo $CHECKDOM | awk '{ print $1"."$2 }'`  
+### moc.elpmaxe
+
+DOMAIN=` echo $EXTRACT | rev  | tr ' ' '.'` 	
+### example.com
+
+HOSTFET=`hostname -s ` 					      	
+### UNIX to grab host name of this computer
+
+ASKDOMAIN="$HOSTFET.$DOMAIN"					
+### host.example.com
+#### whatever user input is, we only focus on grabbing the domain only and use this host
+#### name that it was orginally built with, and we use that name to go with domain name
+#### otherwise this host wouldn't be able to connect to the WAN as host with public ip.
+
+#### NOTE: this is kinda of overkill but, a bulletproof on getting domain on first script run.
+
+goAndSetupSystem(){
+	$SUDO ypdomainname --boot $DOMAIN
+	echo -e "$Fwarn ypdomainname set for $DOMAIN"   			## UNIX command
+	$SUDO nisdomainname --boot $DOMAIN 	 					## UNIX command
+	echo -e "$Fwarn nisdomainname set for $DOMAIN"   			## UNIX command
+	$SUDO sh -c "echo \"$ASKDOMAIN\" >> /etc/hostname"    	## UNIX writes new name to /etc/hostname
+	echo -e "$Fwarn configuring /etc/hostname"
+	echo -e "$Fok $ASKDOMAIN configured"					## output  as confirmed
+}
+
+
+
+echo -e -n "$Finfo proceed setting up as $ASKDOMAIN? (y/Y)"
+GOAHEAD=""  											### filter <return> key or <space bar> out
+while [[ "$GOAHEAD" != $"\x0a" && "$GOAHEAD" != $"\x20" ]]; do
+    #read -s -N 1 GOAHEAD
+    IFS= read -s -n 1 GOAHEAD							### grab user input but on one keystroke
+ 	echo -e "\n$Fstat your response: $GOAHEAD" 			### confirming user entered as yes
+ 	case "$GOAHEAD" in
+ 		y) goAndSetupSystem; break ;;					### if Y or y then fire the command and exit
+		Y) goAndSetupSystem; break ;;
+		*) echo -e "Fwarn exiting"; break;;
+	esac
+done
+
+GATEWAYGET=`route -n | head -n 4 | tail -n 2 | head -n 1 | awk '{ print $2}'`
+### gateway address  from UNIX route -n
+
+
+GATEWAY=`route -n | head -n 4 | tail -n 2 | head -n 1 | awk '{ print $2}'`
+D=`echo $GATEWAY | cut -d'.' -f4`
+A=`echo $GATEWAY | cut -d'.' -f1`
+B=`echo $GATEWAY | cut -d'.' -f2`
+C=`echo $GATEWAY | cut -d'.' -f3`
+SUBNET="$A.$B.$C"
+CHOICE=""
+if [[ "$CHOICE" == "" ]]; then
+		echo -n "$Fstat Gateway: $GATEWAY and this host address: $SUBNET."
+		read CHOICE
+fi
+HOSTIP="$SUBNET.$CHOICE"
+echo -e "\n$Fwarn setting ip for $HOSTIP" 			### confirming user entered as yes
+HOSTIFACE=`ff.net.iface`
+HOSTIFACEMAC=`ff.net.iface-mac`
+THISIP6=`ff.net.ip6`
+
+$SUDO sh -c "echo \"option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;
+send host-name = gethostname();
+request subnet-mask, broadcast-address, time-offset, routers,
+	domain-name, domain-name-servers, domain-search, host-name,
+	dhcp6.name-servers, dhcp6.domain-search, dhcp6.fqdn, dhcp6.sntp-servers,
+	netbios-name-servers, netbios-scope, interface-mtu,
+	rfc3442-classless-static-routes, ntp-servers;
+timeout 300;
+
+send dhcp-client-identifier $HOSTIFACEMAC;
+send dhcp-lease-time 86400;
+supersede domain-name \"$DOMAIN\";
+prepend domain-name-servers 127.0.0.1,$GATEWAYGET,64.140.118.115,64.140.112.13,64.140.114.21,64.140.114.22,8.8.8.8;
+
+script \"/sbin/dhclient-script\";
+
+lease {
+ interface \"$HOSTIFACE\";
+ supersede domain-name \"$DOMAIN\"
+ fixed-address $HOSTIP;
+ option host-name \"$ASKDOMAIN\";
+ option subnet-mask 255.255.255.0;
+ option broadcast-address $SUBNET.255;
+ option routers $GATEWAYGET;
+ option domain-name-servers 127.0.0.1,$GATEWAY,64.140.118.115,64.140.112.13,64.140.114.21,64.140.114.22,8.8.8.8;
+}
+
+\" > /etc/dhcp/dhclient.conf"
+echo "$Fwarn new /etc/dhcp/dhclient.conf configured"
+$SUDO sh -c "echo \"source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+auto $HOSTIFACE
+iface $HOSTIFACE inet static
+	address $HOSTIP
+	network	$SUBNET.0
+	netmask 255.255.255.0
+	gateway $GATEWAY
+	broadcast $SUBNET.255
+
+iface $HOSTIFACE inet6 manual
+	pre-up /sbin/modprobe -q ipv6 ; /bin/true
+	netmask 64
+	address $THISIP6
+	gateway 2001:470:1c:820:212:3fff:fe81:4d71
+
+\" > /etc/network/interfaces"
+echo "$Fwarn new /etc/network/interfaces configured"
+
+$SUDO sh -c "echo \"net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.send_redirects=1
+net.ipv4.conf.all.accept_redirects=1
+net.ipv4.conf.all.send_redirects=1
+net.ipv4.conf.all.secure_redirects=0
+net.ipv6.conf.all.accept_redirects=1
+net.ipv4.conf.all.rp_filter=0
+kernel.domainname=faron.ca
+net.ipv6.conf.all.secure_redirects=0
+net.ipv4.tcp_syncookies=1
+net.ipv4.conf.all.accept_source_route=1
+net.ipv6.conf.all.accept_source_route=1
+net.ipv4.conf.default.rp_filter=0
+net.ipv4.conf.all.log_martians=1
+\" > /etc/sysctl.conf"
+echo "$Fwarn new /etc/sysctl.conf configured"
+$SUDO sed -i -e '/User privilege/a faron  ALL=(ALL:ALL) ALL' /etc/sudoers
+echo "$Fwarn Securing sudo role for superadmin: $USER"
+sudo sed -i -e 's/home\/faron/home\/users\/faron/g' /etc/passwd
+echo "$Fwarn /home/$USER --> /home/users/$USER"
+echo "$Fwarn rebooting"
+##$SUDO reboot
+mkdir /home/users/faron/.config/sublime-text-3 -p
+sudo sh -c "echo \"/home/users/faron/.config/sublime-text-3  /home/users/faron/.falcon/scripts/files/snippets  none  0 0 \" >> /etc/fstab"
+
+
+$SUDO systemctl disable apparmor
+$SUDO systemctl enable apache2
+#$SUDO mysql_secure_installation
+
+
+
+
+################### END
+#cd $RETURN 1> /dev/null;
+#else echo -e "$Fstat $Fred Arg 1 $Foff=$Fyellow enter domain name to set up with $Foff"; fi
+### exit code for clean exit
+XeF
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] $0  [ACTIVE] y
+
+
