@@ -1,5 +1,5 @@
 XeB=`date +%s`
-function XeF {
+function XeF() {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
 

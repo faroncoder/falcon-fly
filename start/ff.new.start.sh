@@ -235,6 +235,29 @@ $SUDO sed -i -e '/User privilege/a faron  ALL=(ALL:ALL) ALL' /etc/sudoers
 echo "$Fwarn Securing sudo role for superadmin: $USER"
 $SUDO sed -i -e 's/home\/faron/home\/users\/faron/g' /etc/passwd
 echo "$Fwarn /home/$USER --> /home/users/$USER"
+#!/bin/bash
+RETURN=$PWD
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
+#if [[ "$1" != "" ]]; then
+#################### BEGIN
+
+
+$SUDO sed -i -e '/UUID/d' /etc/fstab
+NUMB="0 1"
+dCODE=( `blkid | grep 'ext4' | cut -d'"' -f2 ` )
+CODES=`cat /etc/fstab | grep ext4 | awk '{$1=""; $2=""; $5="";$6=""; print $0}' `
+for m in "${dCODE[@]}"; do
+	$SUDO sh -c "echo \"UUID=$m $CODES $NUMB\" >> /etc/stab"
+	NUMB="0 0"
+done
+SCODES=( `blkid | grep 'swap' | cut -d'"' -f2 ` )
+sCODES=`cat /etc/fstab | grep swap | awk '{$1=""; $2=""; print $0}' | sed 's/1//g' | sed 's/0//g'`
+for o in "${SCODES[@]}"; do
+	$SUDO sh -c "echo \"UUID=$o $sCODES $NUMB\" >> /etc/stab"
+done
+echo "$Fok /etc/fstab configured"
+
  $SUDO systemctl disable apparmor
  $SUDO systemctl enable apache2
  $SUDO mysql_secure_installation

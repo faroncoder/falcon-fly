@@ -15,18 +15,22 @@
 			{
 				"selected_items":
 				[
+					[
+						"GET",
+						"GETFILDF"
+					],
+					[
+						"F",
+						"FILECHECKS"
+					],
+					[
+						"col",
+						"collection"
+					]
 				]
 			},
 			"buffers":
 			[
-				{
-					"file": "/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
-					"settings":
-					{
-						"buffer_size": 9665,
-						"line_ending": "Unix"
-					}
-				}
 			],
 			"build_system": "",
 			"build_system_choices":
@@ -60,10 +64,20 @@
 			},
 			"file_history":
 			[
+				"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
+				"/home/users/faron/.falcon/scripts/start/ff.new.fstab.sh",
+				"/home/users/faron/.falcon/scripts/bash/lib/functions",
+				"/home/users/faron/.falcon/scripts/apt/ff.apt.verify.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/4.list",
+				"/home/users/faron/.falcon/scripts/lab.find-files-by-sizes-then-fdupes.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/to-be-queued/25.list",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/test/1.list",
+				"/usr/local/bin/ff.load",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/supplmentaryFolder/mp4/done/.info"
 			],
 			"find":
 			{
-				"height": 0.0
+				"height": 34.0
 			},
 			"find_in_files":
 			{
@@ -77,6 +91,10 @@
 				"case_sensitive": false,
 				"find_history":
 				[
+					"grep",
+					"/tmp/",
+					"/tmp/FILECHECKS",
+					"READFILE"
 				],
 				"highlight": true,
 				"in_selection": false,
@@ -84,6 +102,8 @@
 				"regex": false,
 				"replace_history":
 				[
+					"/bin/grep",
+					"$PWD/FILECHECKS"
 				],
 				"reverse": false,
 				"show_context": true,
@@ -94,43 +114,14 @@
 			"groups":
 			[
 				{
-					"selected": 0,
 					"sheets":
 					[
-						{
-							"buffer": 0,
-							"file": "/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 9665,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1040,
-										1040
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 0,
-							"type": "text"
-						}
 					]
 				}
 			],
 			"incremental_find":
 			{
-				"height": 0.0
+				"height": 23.0
 			},
 			"input":
 			{
@@ -164,11 +155,11 @@
 				"height": 0.0
 			},
 			"pinned_build_system": "",
-			"position": "0,0,0,0,0,146,176,1405,901,1920,1080",
+			"position": "0,0,0,0,0,220,338,1542,1064,1920,1080",
 			"project": "",
 			"replace":
 			{
-				"height": 0.0
+				"height": 62.0
 			},
 			"save_all_on_build": true,
 			"select_file":
