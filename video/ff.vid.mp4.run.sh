@@ -8,7 +8,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 if [[ $EUID == 0 ]]; then
 	echo -e "$Fno sudo yourself out"
 	XeF
-else 
+else
 	GETFILE="$1"
 	THISVERSION=730ebd32-d446-11e5-b1f0-7bf895f2366a
 	ffmpegStart(){
@@ -111,13 +111,13 @@ else
 		filePrep
 
 		YEARFILE=`date`
-		
+
 		## GRAB OLD FILESIZE
-		
-		
+
+
 	#	chmod 555 $INFOA
 		#ffmpeg -r 25 -i $GETFILE -y -codec:v $CODECVID -preset $CALCULATED -maxrate "$( echo $MAXRAT)k" -bufsize "$( echo $BUFRAT)k" -b:v "$( echo $BITRAT)k" -crf $CRF -pix_fmt +yuv420p -vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" -coder 1 -flags +loop -flags +global_header -movflags +faststart -x264opts keyint=600:min-keyint=30:bframes=16 -cmp chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 59.94 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0 -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k -f mp4 $FEED < /dev/null;
-	
+
 
 
 HEIGHTWT="480"
@@ -148,7 +148,7 @@ ffmpeg -i "$GETFILE" -y \
 -movflags +faststart \
 -flags +global_header \
 -pix_fmt yuv420p \
--crf 27 \
+-crf 25 \
 -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k \
 -f mp4 "$FEED" < /dev/null 
 
@@ -165,7 +165,7 @@ ffmpeg -i "$GETFILE" -y \
 		 mv $GETFILE $TRASH
 
 		mediainfo "$TRASH" > "$INFOA"
-		
+
 
 		# SIZEFILE=`ls $TRASH -lh | awk '{ print $5 }'`
 		# ## GRAB NEW FILESIZE
@@ -178,11 +178,11 @@ ffmpeg -i "$GETFILE" -y \
 -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" \
 -metadata comment="$COMMENTFILE" -f mp4  "$COLLECT"  < /dev/null;
 #		chmod 555 $COLLECT
-		
+
 
 		rm $FEED
 		mediainfo "$COLLECT" > "$INFOB"
-#		chmod 555 $COLLECT	
+#		chmod 555 $COLLECT
 		#QUERY="db.result.insert( {\"NAME\":\"$OUTPUT\",\"ORIG\":\"$INPUT\",\"JOB\":\"$SEAF\", \"EXECUTED\":\"$SEAF\", \"PST\":\"$PRESETx264\", \"CRF\":\"$CRFSET\", \"OLD_SIZE\":\"$SIZEFILE\", \"NEW_SIZE\":\"$KNFILE\", \"BIT\":\"$BITRAT\", \"BUF\":\"$BUFRAT\", \"MAX\":\"$MAXRAT\"} )"
 		#echo $QUERY | mongo pornalive
 	#	chmod 555 $INFOB
@@ -190,10 +190,11 @@ ffmpeg -i "$GETFILE" -y \
 	}
 GETFILES=$1
  if [[ $GETFILES == "" ]]; then
- 	GETFILES=( `find $PWD -maxdepth 1 -type f -name '*.mp4' ! -name '*.sh' ` )
- fi
+ 	GETFILES=( `find $PWD -maxdepth 1 -type f ! -name '*.sh' ` )
 	ffmpegStart
-	
+	else
+	exit 0
+fi
 	for j in "${GETFILE[@]}"; do 
 	#	CHECKTHIS=`mediainfo $j | grep 'Format' | head -n 1 | awk '{ print $3 }'`; 
 	#	if [[ $CHECKTHIS != "" ]]; then 
@@ -203,6 +204,8 @@ GETFILES=$1
 	#	fi
 	done
 fi
+ffmpegStart
+
 
 ################### END
 #cd $RETURN 1> /dev/null;

@@ -7,13 +7,8 @@ stopwatchtime() {
 	exit 0
 }
 helpecho() {
-<<<<<<< HEAD
 echo "execute 'fm.collections [db]'"
 echo "execute fm.dbs to find existing database for this command"
-=======
-echo "execute 'ff.mongo.collections [db]'"
-echo "execute ff.mongo.dbs to find existing database for this command"
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
   stopwatchtime
 }
 
@@ -55,8 +50,5 @@ else
 	helpecho
 fi
 stopwatchtime
-<<<<<<< HEAD
 ## TALON: fm.collections
-=======
-## TALON: ff.mongo.collections
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
+

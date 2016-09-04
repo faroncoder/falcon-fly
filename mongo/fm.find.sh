@@ -7,13 +7,9 @@ stopwatchtime() {
 	exit 0
 }
 helpecho() {
-<<<<<<< HEAD
 echo 'usage: fm.insert [collection] [query stings]'
   echo 'example:  fm.find faron admin'
-=======
-echo 'usage: ff.mongo.insert [collection] [query stings]'
-  echo 'example:  ff.mongo.find faron admin'
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
+
   stopwatchtime
 }
 
@@ -61,10 +57,6 @@ if [ "$1" = '' ] && [ "$2" = '' ]; then
 fi
 
 stopwatchtime
-<<<<<<< HEAD
 ## TALON: fm.insert
-=======
-## TALON: ff.mongo.insert
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
 
 
