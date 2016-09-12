@@ -256,10 +256,10 @@
 					}
 				},
 				{
-					"file": "/home/users/faron/.falcon/scripts/mpv-player/input.conf",
+					"file": "/home/users/faron/.falcon/scripts/bash/lib/alias",
 					"settings":
 					{
-						"buffer_size": 7349,
+						"buffer_size": 2011,
 						"line_ending": "Unix"
 					}
 				}
@@ -296,6 +296,7 @@
 			},
 			"file_history":
 			[
+				"/home/users/faron/.falcon/scripts/mpv-player/input.conf",
 				"/home/users/faron/.config/mpv/input.conf",
 				"/usr/local/bin/ff.vid.mp4.run",
 				"/home/users/faron/.falcon/scripts/bash/lib/alias",
@@ -337,6 +338,7 @@
 				"case_sensitive": false,
 				"find_history":
 				[
+					"$PWD/*",
 					"FileInput",
 					"GETFILES",
 					"GETFILE",
@@ -358,6 +360,7 @@
 				"regex": false,
 				"replace_history":
 				[
+					"",
 					"FileInput",
 					"FileConverted",
 					"FileFeed",
@@ -522,19 +525,19 @@
 						},
 						{
 							"buffer": 5,
-							"file": "/home/users/faron/.falcon/scripts/mpv-player/input.conf",
+							"file": "/home/users/faron/.falcon/scripts/bash/lib/alias",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 7349,
+								"buffer_size": 2011,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										850,
-										850
+										1966,
+										1966
 									]
 								],
 								"settings":
@@ -542,7 +545,7 @@
 									"syntax": "Packages/Text/Plain text.tmLanguage"
 								},
 								"translation.x": 0.0,
-								"translation.y": 0.0,
+								"translation.y": 456.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
