@@ -7,7 +7,7 @@
 	"log_indexing": false,
 	"settings":
 	{
-		"new_window_height": 1028.0,
+		"new_window_height": 0.0,
 		"new_window_settings":
 		{
 			"auto_complete":
@@ -179,7 +179,7 @@
 			{
 			}
 		},
-		"new_window_width": 928.0
+		"new_window_width": 0.0
 	},
 	"windows":
 	[
@@ -213,304 +213,6 @@
 			"buffers":
 			[
 				{
-					"file": "/home/users/faron/.falcon/scripts/video/ff.vid.ts.run.sh",
-					"settings":
-					{
-						"buffer_size": 1292,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"contents": "#!/bin/bash\nRETURN=$PWD\nif [[ ! \"$( echo $PATH | grep '/usr/local/bin' )\" ]]; then export PATH=$PATH:/usr/local/bin; fi\nsource /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;\nif [[ \"$1\" != \"\" ]]; then\n#################### BEGIN\n\nGETFILES=$1\n# if [[ $GETFILES == \"\" ]]; then\n# 	GETFILES=( `find $PWD -maxdepth 1 -type f -name '*.mp4' ! -name '*.sh' ` )\n# fi\n for j in \"${GETFILES[@]}\"; do\n	PREFILE=$( rev <<< $j | cut -d\".\" -f2 | rev )\n	GETEXT=$( rev <<< $j | cut -d\".\" -f1 | rev )\n	FileNill=`echo $PREFILE | cut -d\"-\" -f1`\n	SystemFile=\"$FileNill.$GETEXT\"\n	FileOriginal=\"$FileNill-original.$GETEXT\"\n	if [[ -f \"$SystemFile\" ]]; then\n		mv $SystemFile $FileOriginal;\n		j=\"$FileOriginal\"\n	fi\n	FileAsFixed=\"$PWD/$PREFILE-repaired.$GETEXT\"\n	echo \"$Fwarn repairing $SystemFile\"\n	ffmpeg -fflags genpts -i $j -y -codec copy -flags +global_header -map 0:0 -acodec copy $FileAsFixed < /dev/null;\n	echo \"$Fok done!\"\ndone\n\n################### END\n#cd $RETURN 1> /dev/null;\nelse echo -e \"$Fstat $Fred Arg 1 $Foff= File(s) to repair $Foff\"; fi\n### exit code for clean exit\nXeF\n### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS\n### [FILE] $0  [ACTIVE] y\n\n",
-					"file": "/home/users/faron/.falcon/scripts/video/ff.vid.duration.fix.sh",
-					"file_size": 1180,
-					"file_write_time": 131167893600770471,
-					"settings":
-					{
-						"buffer_size": 1181,
-						"line_ending": "Unix"
-					}
-				}
-			],
-			"build_system": "",
-			"build_system_choices":
-			[
-			],
-			"build_varint": "",
-			"command_palette":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"console":
-			{
-				"height": 0.0,
-				"history":
-				[
-				]
-			},
-			"distraction_free":
-			{
-				"menu_visible": true,
-				"show_minimap": false,
-				"show_open_files": false,
-				"show_tabs": false,
-				"side_bar_visible": false,
-				"status_bar_visible": false
-			},
-			"file_history":
-			[
-				"/home/users/faron/.falcon/scripts/video/ff.vid.ts.run.sh",
-				"/home/users/faron/.falcon/scripts/video/ff.vid.duration.fix.sh",
-				"/home/users/faron/.falcon/scripts/video/ff.vid.unpack.run.sh",
-				"/home/users/faron/.falcon/scripts/video/ff.ffmpeg.fix.duration.sh",
-				"/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
-				"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/falcon/scripts/video/ff.vid.mp4.run.sh",
-				"/home/users/faron/Videos/1h7Yd5Oiece8UTyhDyf0FleYWnPZXMbB.sh",
-				"/home/users/faron/.falcon/scripts/bash/lib/alias",
-				"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv/clips7/YF7n6Gi5oP27dZNf2yQEogHkXsjPD6mm",
-				"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
-				"/home/users/faron/.falcon/scripts/start/ff.new.fstab.sh",
-				"/home/users/faron/.falcon/scripts/bash/lib/functions",
-				"/home/users/faron/.falcon/scripts/apt/ff.apt.verify.sh",
-				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/4.list",
-				"/home/users/faron/.falcon/scripts/lab.find-files-by-sizes-then-fdupes.sh",
-				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/to-be-queued/25.list",
-				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/test/1.list",
-				"/usr/local/bin/ff.load",
-				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/supplmentaryFolder/mp4/done/.info"
-			],
-			"find":
-			{
-				"height": 34.0
-			},
-			"find_in_files":
-			{
-				"height": 0.0,
-				"where_history":
-				[
-				]
-			},
-			"find_state":
-			{
-				"case_sensitive": false,
-				"find_history":
-				[
-					"grep",
-					"/tmp/",
-					"/tmp/FILECHECKS",
-					"READFILE"
-				],
-				"highlight": true,
-				"in_selection": false,
-				"preserve_case": false,
-				"regex": false,
-				"replace_history":
-				[
-					"/bin/grep",
-					"$PWD/FILECHECKS"
-				],
-				"reverse": false,
-				"show_context": true,
-				"use_buffer2": true,
-				"whole_word": false,
-				"wrap": true
-			},
-			"groups":
-			[
-				{
-					"selected": 1,
-					"sheets":
-					[
-						{
-							"buffer": 0,
-							"file": "/home/users/faron/.falcon/scripts/video/ff.vid.ts.run.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1292,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										821,
-										821
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-									"translate_tabs_to_spaces": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 133.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 1,
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"file": "/home/users/faron/.falcon/scripts/video/ff.vid.duration.fix.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1181,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										11,
-										11
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-									"translate_tabs_to_spaces": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 0,
-							"type": "text"
-						}
-					]
-				}
-			],
-			"incremental_find":
-			{
-				"height": 34.0
-			},
-			"input":
-			{
-				"height": 0.0
-			},
-			"layout":
-			{
-				"cells":
-				[
-					[
-						0,
-						0,
-						1,
-						1
-					]
-				],
-				"cols":
-				[
-					0.0,
-					1.0
-				],
-				"rows":
-				[
-					0.0,
-					1.0
-				]
-			},
-			"menu_visible": true,
-			"output.find_results":
-			{
-				"height": 0.0
-			},
-			"pinned_build_system": "",
-			"position": "0,0,1,0,0,992,24,1920,1052,1920,1080",
-			"project": "",
-			"replace":
-			{
-				"height": 64.0
-			},
-			"save_all_on_build": true,
-			"select_file":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"select_project":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"select_symbol":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"selected_group": 0,
-			"settings":
-			{
-			},
-			"show_minimap": true,
-			"show_open_files": false,
-			"show_tabs": true,
-			"side_bar_visible": true,
-			"side_bar_width": 150.0,
-			"status_bar_visible": true,
-			"template_settings":
-			{
-			},
-			"window_id": 2,
-			"workspace_name": ""
-		},
-		{
-			"auto_complete":
-			{
-				"selected_items":
-				[
-					[
-						"FIle",
-						"FileFiltered"
-					],
-					[
-						"File",
-						"FileAsTS"
-					],
-					[
-						"GET",
-						"GETFILDF"
-					],
-					[
-						"F",
-						"FILECHECKS"
-					],
-					[
-						"col",
-						"collection"
-					]
-				]
-			},
-			"buffers":
-			[
-				{
-					"file": "/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
-					"settings":
-					{
-						"buffer_size": 6274,
-						"line_ending": "Unix"
-					}
-				},
-				{
 					"file": "/home/users/faron/.falcon/scripts/mongo/fm.dbs.sh",
 					"settings":
 					{
@@ -535,13 +237,13 @@
 					}
 				},
 				{
-					"contents": "\n#!/bin/bash\nRETURN=$PWD\nif [ ! \"$( echo $PATH | grep '/usr/local/bin' )\" ]; then export PATH=$PATH:/usr/local/bin; fi\nfcbk=\"$(tput setaf 0)\"; fcr=\"$(tput setaf 1)\"; fcg=\"$(tput setaf 2)\"; fcy=\"$(tput setaf 3)\"; fcb=\"$(tput setaf 4)\"; fcp=\"$(tput setaf 5)\"; fcc=\"$(tput setaf 6)\"; fcw=\"$(tput setaf 7)\"; fco=\"$(tput sgr0)\"; fcok=\"[$fcg OK $fco]\"; fcer=\"[$fcr ERR $fco]\";\nXeB=`date +%s`\nfunction XeF {\nXeE=`date +%s`; XeT=$( echo \"$(( $XeB - $XeE ))\" ); logger \"$0 | $XeB | $XeE | $XeT \"; exit 0\n}\nif [[ \"$1\" != \"\" ]]; then\n#################### BEGIN\nDATABASE=$1\nTABLE=$2\nARG=$( ${@:3} )\necho $ARG\n\nDATABASE=$1\nTABLE=$2\nARG=\"${@:3}\"\n\n\n\nwhile :\n	do\n	case \"${ARG[@]}\" in\n		$ARG) \n			if [[ \"$2\" == \"\" ]]; then\n				echo -e \"$fcer no entry for $1\";\n				exit 1;\n				break;\n			else\n				if [[ \"$SRING\" != \"\" ]]; then\n					SRING=\"$SRING,\\\"$1\\\":\\\"$2\\\"\"\n					shift 2\n				else\n					SRING=\"\\\"$1\\\":\\\"$2\\\"\";\n					shift 2;\n				fi	\n			fi\n			;;\n	esac\ndone\n\necho -e \"$fcok $DATABASE\"\necho -e \"$fcok $TABLE\"\necho -e \"$fcok $SRING\"\n\n# while :\n# 	do\n# 	case \"$3\" in\n# 	$3)	\n# 			if [[ \"$4\" != \"\" ]]; then  SRING=\"\\\"$1\\\":\\\"$2\\\"\"; fi;  shift 2 ;;\n\n# 		# $1)\n\n# 		# 	if [[ \"$1\" == \"\" ]]; then break; else SRING=\"$SRING, \\\"$1\\\":\\\"$2\\\"\"; shift 2 ;; fi\n# 		*) 		echo -e \"$fcer name of object can't be empty\"\n# 				break; exit 1 ;;\n\n# 		--)  	echo -e \"$fcer name of object can't be empty\"; break; exit 2;;\n# 	esac\n# done\n\n\n\n#for j in ${GET[@]}; do echo -e \"db.$2.insert({ \\\"name\\\":\\\"$j\\\" })\" | mongo $1 --silent; echo -e \"$fcok: $j\" done\n\n\n\n################### END\n#cd $RETURN\nelse echo -e \"$fcer Arg 1=$fcy database name $fco\"; echo -e \"$fcer Arg 2=$fcy collection $fco\" ; fi\n### exit code for clean exit\nXeF\n### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS\n### [FALCON] name=ff.script.new active=y\n\n",
+					"contents": "",
 					"file": "/home/users/faron/.falcon/scripts/mongo/fm.insertAll.sh",
 					"file_size": 1768,
 					"file_write_time": 131162143160000000,
 					"settings":
 					{
-						"buffer_size": 1771,
+						"buffer_size": 0,
 						"line_ending": "Unix"
 					}
 				},
@@ -554,18 +256,10 @@
 					}
 				},
 				{
-					"file": "/home/users/faron/.falcon/scripts/video/mp4s/lab.vid.mp4.encode.sh",
+					"file": "/home/users/faron/.falcon/scripts/mpv-player/input.conf",
 					"settings":
 					{
-						"buffer_size": 1735,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"contents": "#!/bin/bash\nRETURN=$PWD\nif [[ ! \"$( echo $PATH | grep '/usr/local/bin' )\" ]]; then export PATH=$PATH:/usr/local/bin; fi\nsource /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;\nif [[ \"$1\" != \"\" ]]; then\n#################### BEGIN\n\nGETFILES=$1\nMEDIA=$PWD/video-info\nNEWCLIPS=$PWD/video-new\nTRASH=$PWD/video-trashbin\n# if [[ $GETFILES == \"\" ]]; then\n# 	GETFILES=( `find $PWD -maxdepth 1 -type f -name '*.mp4' ! -name '*.sh' ` )\n# fi\nfor j in \"${GETFILES[@]}\"; do\n	PREFILE=$( rev <<< $j | cut -d\".\" -f2 | rev )\n	GETEXT=$( rev <<< $j | cut -d\".\" -f1 | rev )\n	FileNill=$( echo $PREFILE | cut -d'-' -f1 )\n	IamTheFile=\"$PWD/$FileNill.$GETEXT\"\n	mv $j $IamTheFile\n	FileAsFixed=\"$PREFILE-repaired.$GETEXT\"\n	FileAsTrashed=\"$PREFILE-trashed.$GETEXT\"\n	echo -n \"$Fwarn repairing $IamTheFile\"\n	ffmpeg -fflags genpts -i $j -y -codec copy -flags +global_header -map 0:0 -bsf:v mpeg4_unpack_bframes -acodec copy $FileAsFixed < /dev/null;\n	echo \"$Fok done!\"\n	mv $j $FileAsTrashed\ndone\n\n################### END\n#cd $RETURN 1> /dev/null;\nelse echo -e \"$Fstat $Fred Arg 1 $Foff= File(s) to repair $Foff\"; fi\n### exit code for clean exit\nXeF\n### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS\n### [FILE] $0  [ACTIVE] y\n\n",
-					"settings":
-					{
-						"buffer_size": 1237,
+						"buffer_size": 7349,
 						"line_ending": "Unix"
 					}
 				}
@@ -602,15 +296,19 @@
 			},
 			"file_history":
 			[
+				"/home/users/faron/.config/mpv/input.conf",
+				"/usr/local/bin/ff.vid.mp4.run",
+				"/home/users/faron/.falcon/scripts/bash/lib/alias",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
+				"/home/users/faron/.falcon/scripts/video/mp4s/lab.vid.mp4.encode.sh",
+				"/tmp/testfa",
 				"/home/users/faron/.falcon/scripts/mongo/fm.find.sh",
 				"/home/users/faron/.falcon/scripts/video/ff.vid.ts.run.sh",
 				"/home/users/faron/.falcon/scripts/video/ff.vid.duration.fix.sh",
 				"/home/users/faron/.falcon/scripts/video/ff.vid.unpack.run.sh",
 				"/home/users/faron/.falcon/scripts/video/ff.ffmpeg.fix.duration.sh",
-				"/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
 				"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/falcon/scripts/video/ff.vid.mp4.run.sh",
 				"/home/users/faron/Videos/1h7Yd5Oiece8UTyhDyf0FleYWnPZXMbB.sh",
-				"/home/users/faron/.falcon/scripts/bash/lib/alias",
 				"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv/clips7/YF7n6Gi5oP27dZNf2yQEogHkXsjPD6mm",
 				"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
 				"/home/users/faron/.falcon/scripts/start/ff.new.fstab.sh",
@@ -683,35 +381,6 @@
 					[
 						{
 							"buffer": 0,
-							"file": "/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 6274,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										3946,
-										3946
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-									"translate_tabs_to_spaces": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 2437.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 5,
-							"type": "text"
-						},
-						{
-							"buffer": 1,
 							"file": "/home/users/faron/.falcon/scripts/mongo/fm.dbs.sh",
 							"semi_transient": false,
 							"settings":
@@ -723,64 +392,8 @@
 								"selection":
 								[
 									[
-										298,
-										298
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": -0.0,
-								"translation.y": 627.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 4,
-							"type": "text"
-						},
-						{
-							"buffer": 2,
-							"file": "/home/users/faron/.falcon/scripts/mongo/fm.collections.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 892,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										865,
-										865
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 546.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 3,
-							"type": "text"
-						},
-						{
-							"buffer": 3,
-							"file": "/home/users/faron/.falcon/scripts/mongo/fm.insert.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 861,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										551,
-										551
+										379,
+										379
 									]
 								],
 								"settings":
@@ -795,20 +408,76 @@
 							"type": "text"
 						},
 						{
-							"buffer": 4,
-							"file": "/home/users/faron/.falcon/scripts/mongo/fm.insertAll.sh",
+							"buffer": 1,
+							"file": "/home/users/faron/.falcon/scripts/mongo/fm.collections.sh",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 1771,
+								"buffer_size": 892,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										646,
-										646
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/users/faron/.falcon/scripts/mongo/fm.insert.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 861,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 4,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/users/faron/.falcon/scripts/mongo/fm.insertAll.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 0,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
 									]
 								],
 								"settings":
@@ -817,14 +486,14 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 334.0,
+								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 1,
+							"stack_index": 5,
 							"type": "text"
 						},
 						{
-							"buffer": 5,
+							"buffer": 4,
 							"file": "/home/users/faron/.falcon/scripts/mongo/fm.remove.sh",
 							"semi_transient": false,
 							"settings":
@@ -836,75 +505,47 @@
 								"selection":
 								[
 									[
-										1036,
-										1036
+										465,
+										465
 									]
 								],
 								"settings":
 								{
 									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 								},
-								"translation.x": -0.0,
-								"translation.y": 684.0,
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 5,
+							"file": "/home/users/faron/.falcon/scripts/mpv-player/input.conf",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 7349,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										850,
+										850
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
-							"type": "text"
-						},
-						{
-							"buffer": 6,
-							"file": "/home/users/faron/.falcon/scripts/video/mp4s/lab.vid.mp4.encode.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1735,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1451,
-										1451
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 114.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 6,
-							"type": "text"
-						},
-						{
-							"buffer": 7,
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1237,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1237,
-										1237
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-									"translate_tabs_to_spaces": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 215.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 7,
 							"type": "text"
 						}
 					]
@@ -946,7 +587,7 @@
 				"height": 0.0
 			},
 			"pinned_build_system": "",
-			"position": "0,0,0,0,0,325,277,1647,1003,1920,1080",
+			"position": "0,0,0,0,0,289,277,1822,992,1920,1080",
 			"project": "",
 			"replace":
 			{

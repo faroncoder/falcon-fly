@@ -4,17 +4,7 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
-
-if [[ $EUID == 0 ]]; then
-	echo -e "$Fno sudo yourself out"
-	XeF
-else
-	GETFILE="$1"
-	THISVERSION=730ebd32-d446-11e5-b1f0-7bf895f2366a
-	ffmpegStart(){
-
-
-	if [[ ! -d "$PWD/new-mp4" ]]; then
+if [[ ! -d "$PWD/new-mp4" ]]; then
 		mkdir "$PWD/new-mp4" -p 2> /dev/null;
 	fi
 	if [[ ! -d "$PWD/mediainfo" ]]; then
@@ -25,6 +15,19 @@ else
 	fi
 
 
+if [[ $EUID == 0 ]]; then
+	echo -e "$Fno sudo yourself out"
+	XeF
+else
+
+
+
+	GETFILE="$1"
+	THISVERSION=730ebd32-d446-11e5-b1f0-7bf895f2366a
+	#ffmpegStart(){
+
+
+	
 	# configData
 
 	#BUFRAT=`echo $(( 2 * $MAXRAT ))`  #SET VIDEO TO BE PARSABLE IN AHEAD PREBUFFERING BY SAME MAXRATE
@@ -54,7 +57,7 @@ else
 	# 	fi
 	# SEAF=$( uuid )
 
-			} 
+	#		} 
 
 	# configData(){
 
@@ -191,9 +194,9 @@ ffmpeg -i "$GETFILE" -y \
 GETFILES=$1
  if [[ $GETFILES == "" ]]; then
  	GETFILES=( `find $PWD -maxdepth 1 -type f ! -name '*.sh' ` )
-	ffmpegStart
-	else
-	exit 0
+ 		if [[ $GETFILES == "" ]]; then
+ 			exit 0
+ 		fi
 fi
 	for j in "${GETFILE[@]}"; do 
 	#	CHECKTHIS=`mediainfo $j | grep 'Format' | head -n 1 | awk '{ print $3 }'`; 
@@ -204,7 +207,6 @@ fi
 	#	fi
 	done
 fi
-ffmpegStart
 
 
 ################### END
