@@ -10,13 +10,12 @@ cd ~/.falcon/scripts 1> /dev/null;
 if [[ "$COMMIT" == "" ]]; then
 	echo -e -n "$Fstatus Commit message?"
 	read COMMIT
-fi
+else
 
-
-git status; git add -A; git commit -am "$COMMIT"; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
+git status; git add -A; git commit -am '`echo $COMMIT`'; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
 
 echo -e "$Fok"
-
+fi
 
 ################### END
 #cd $RETURN 1> /dev/null;

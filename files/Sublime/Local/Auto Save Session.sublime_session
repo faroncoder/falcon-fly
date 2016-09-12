@@ -259,7 +259,7 @@
 					"file": "/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
 					"settings":
 					{
-						"buffer_size": 829,
+						"buffer_size": 839,
 						"line_ending": "Unix"
 					}
 				}
@@ -529,15 +529,15 @@
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 829,
+								"buffer_size": 839,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										407,
-										407
+										584,
+										584
 									]
 								],
 								"settings":
@@ -545,7 +545,7 @@
 									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 								},
 								"translation.x": 0.0,
-								"translation.y": -0.0,
+								"translation.y": 57.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
