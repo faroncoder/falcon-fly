@@ -5,17 +5,18 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-COMMIT="$1"
+COMMIT=$1
 cd $HOME/.falcon/scripts 1> /dev/null;
-if [[ ! "$COMMIT" ]]; then
+if [[ ! $COMMIT ]]; then
 	echo -e -n "$Fstatus Commit message? "
 	read COMMIT
-	git status; git add -A; git commit -am "`echo $COMMIT`"; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
-	echo "$Fok"
-
 else
 	exit 1
 fi
+
+	git status; git add -A; git commit -am "`echo $COMMIT`"; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
+	echo "$Fok"
+
 
 ################### END
 #cd $RETURN 1> /dev/null;
