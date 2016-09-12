@@ -10,7 +10,7 @@ cd $HOME/.falcon/scripts 1> /dev/null;
 if [[ ! "$COMMIT" ]]; then
 	echo -e -n "$Fstatus Commit message? "
 	read COMMIT
-	git status; git add -A; git commit -am '`echo $COMMIT`'; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
+	git status; git add -A; git commit -am "`echo $COMMIT`"; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
 	echo "$Fok"
 
 else
