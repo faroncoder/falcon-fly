@@ -256,10 +256,10 @@
 					}
 				},
 				{
-					"file": "/home/users/faron/.falcon/scripts/bash/lib/alias",
+					"file": "/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
 					"settings":
 					{
-						"buffer_size": 2011,
+						"buffer_size": 829,
 						"line_ending": "Unix"
 					}
 				}
@@ -296,10 +296,10 @@
 			},
 			"file_history":
 			[
+				"/home/users/faron/.falcon/scripts/bash/lib/alias",
 				"/home/users/faron/.falcon/scripts/mpv-player/input.conf",
 				"/home/users/faron/.config/mpv/input.conf",
 				"/usr/local/bin/ff.vid.mp4.run",
-				"/home/users/faron/.falcon/scripts/bash/lib/alias",
 				"/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
 				"/home/users/faron/.falcon/scripts/video/mp4s/lab.vid.mp4.encode.sh",
 				"/tmp/testfa",
@@ -508,8 +508,8 @@
 								"selection":
 								[
 									[
-										465,
-										465
+										585,
+										585
 									]
 								],
 								"settings":
@@ -525,27 +525,27 @@
 						},
 						{
 							"buffer": 5,
-							"file": "/home/users/faron/.falcon/scripts/bash/lib/alias",
+							"file": "/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 2011,
+								"buffer_size": 829,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										1966,
-										1966
+										407,
+										407
 									]
 								],
 								"settings":
 								{
-									"syntax": "Packages/Text/Plain text.tmLanguage"
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 								},
 								"translation.x": 0.0,
-								"translation.y": 456.0,
+								"translation.y": -0.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
