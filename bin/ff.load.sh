@@ -1,37 +1,49 @@
 #!/bin/bash
 RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-LOC="/home/users/faron/.falcon/scripts"; if [ ! -d "$LOC" ]; then  echo -e "$Fno Falcon is not mounted. Exiting"; exit 1;   fi
+LOC="/home/users/faron/.falcon/scripts"; 
 
-if [[ $1 != "" ]]; then
-	FILEHUNT=( `find $LOC -type f -name "*$1*" ! -path '*/.git/*' ` )
-else
-	FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' 2> /dev/null; < /dev/null; ` );
+if [[ ! -d "$LOC" ]]; then  
+		echo "$Fno Falcon is not mounted. Exiting"
+		XeF
+	else
+
+	if [[ "$1" != "" ]]; then
+		FILEHUNT=( `find $LOC -type f -name "*$1*" ! -path '*/.git/*' ` )
+	else
+		FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
+	fi
+
+	echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
+
+	makelink(){
+				EXT=".`echo $entry | rev | cut -d'.' -f1 | rev`"
+				FILEBODY=`echo $entry | sed "s/$EXT//g"`
+				NEWHOME=`basename $FILEBODY`
+				BINLOC="/usr/local/bin/$NEWHOME"
+				#echo "$entry --> $BINLOC" 
+				rm "/usr/local/bin/ff.*" 2> /dev/null;
+				if [[ "$FILEBODY" != "ff.git.updater" ]]; then
+					ln -s $entry $BINLOC 2> /dev/null;	
+				fi
+				
+	}
+
+	if [[ -z "$FILEHUNT" ]];  then
+		echo "$Fno None found"
+		XeF
+	else
+		for entry in "${FILEHUNT[@]}"; do
+				makelink;
+		done
+	fi
+	source $HOME/.profile
+	echo -e "$Fok Falcon Bin sync-ed."
 fi
-echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
-
-makelink(){
-			FILE=`basename $entry`
-			EXT=$( echo $FILE | sed 's/.sh//g' )
-			cd /usr/local/bin 1> /dev/null
-			/bin/rm "ff.*" 2> /dev/null
-			ln -s "$entry" "$EXT" 2>/dev/null
-}
-
-if [[ -z "$FILEHUNT" ]];  then
-	echo -e "$Fno None found"
-	XeF
-else
-	for entry in "${FILEHUNT[@]}"; do
-		makelink;
-	done
-fi
-source ~/.profile
-echo -e "$Fok Falcon Bin sync-ed."
 
 ################### END
 #cd $RETURN 1> /dev/null;

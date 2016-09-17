@@ -12,7 +12,7 @@ GETFILES=( ` find . -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ` )
 
 for m in "${GETFILES[@]}"; do
 		PREFILE="$( rev <<< "$m" | cut -d "." -f2 | rev )"
-		ffmpeg -ss 00:01:00.000 -i $m -y -f image2 -vframes 1 "$PREFILE.png" < /dev/null
+		ffmpeg -ss 00:01:00.000 -i $m -y -f image2 -vframes 1 "thumbs/$PREFILE.png" < /dev/null
 		#mv "$PWD/$PREFILE.mp4" "$PWD/output/"
 	done
 

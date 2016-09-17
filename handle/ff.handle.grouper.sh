@@ -1,21 +1,20 @@
 #!/bin/bash
 RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falcon/$z; done
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-
 ##NUMBERS ONLY
-MEXT=`uuid |  sed 's/[A-Za-z]*//g' | sed 's/-//g' | rev | awk '{print substr($1,0,5) }'`
+#MEXT=`uuid |  sed 's/[A-Za-z]*//g' | sed 's/-//g' | rev | awk '{print substr($1,0,5) }'`
 
-orderfiles=( `find . -maxdepth 1 -type f ! -name '.*'` )
+orderfiles=( `find . -maxdepth 1 -type f ! -name '.*' ! -name '*.sh' ` )
 for line in "${orderfiles[@]}"; do		
 	GETB=`basename $line`
 	GET=`echo "$GETB" | cut -d'.' -f1`
 	## ABC ONLY 
 	LET=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
-	rename "s/$GET/$LET/g" $line
+	rename "s/$GET/$LET/g" $GETB
 done
 
 echo -e "$Fok"
