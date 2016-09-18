@@ -5,7 +5,8 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-LOC="/home/users/faron/.falcon/scripts"; 
+LOC="/home/users/faron/.falcon/scripts";
+find -L /usr/local/bin -name 'ff.*' -exec rm {} \;
 
 if [[ ! -d "$LOC" ]]; then  
 		echo "$Fno Falcon is not mounted. Exiting"
@@ -19,6 +20,8 @@ if [[ ! -d "$LOC" ]]; then
 	fi
 
 	echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
+	
+	
 
 	makelink(){
 				EXT=".`echo $entry | rev | cut -d'.' -f1 | rev`"
@@ -26,11 +29,7 @@ if [[ ! -d "$LOC" ]]; then
 				NEWHOME=`basename $FILEBODY`
 				BINLOC="/usr/local/bin/$NEWHOME"
 				#echo "$entry --> $BINLOC" 
-				rm "/usr/local/bin/ff.*" 2> /dev/null;
-				if [[ "$FILEBODY" != "ff.git.updater" ]]; then
-					ln -s $entry $BINLOC 2> /dev/null;	
-				fi
-				
+				ln -s "$entry" "$BINLOC"					
 	}
 
 	if [[ -z "$FILEHUNT" ]];  then
