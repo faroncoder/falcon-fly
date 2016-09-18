@@ -3,11 +3,11 @@ startgreen=`date +%s`
 stopwatchtime() {
 	stopred=`date +%s`
 	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log;
+	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon//logs/scripts.log;
 	exit 0
 }
 
-if [ "$1" != "" ]; then
+#if [ "$1" != "" ]; then
 #################### BEGIN
 THIS=$(( $( top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=6 {print}' | head -n 23 | wc -l ) - 1 ));
 
@@ -15,12 +15,12 @@ THIS=$(( $( top -bn1  | awk '{print $1"|"$9"|"$10"|" }' | awk 'NR>=6 {print}' | 
 
 
 ################### END
-elif [ "$1" = "" ];
-	then
-  echo "usage: ff.cpu.watch "
-  echo "example:    "
-fi
-
+#elif [ "$1" = "" ];
+#	then
+ ## echo "usage: ff.cpu.watch "
+ # echo "example:    "
+#fi
+#
 stopwatchtime
 ## TALON: ff.cpu.watch
 
