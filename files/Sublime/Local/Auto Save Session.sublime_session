@@ -381,18 +381,37 @@
 					}
 				},
 				{
-					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
+					"file": "/usr/local/bin/ff.clean",
 					"settings":
 					{
-						"buffer_size": 1393,
+						"buffer_size": 964,
 						"line_ending": "Unix"
 					}
 				},
 				{
-					"file": "/home/users/faron/.bash_history",
+					"contents": "#!/bin/bash\n\n\n\nexit 0\n",
+					"file": "/usr/local/bin/ff.bin.files.backup.delete",
+					"file_size": 166,
+					"file_write_time": 131196178830390880,
 					"settings":
 					{
-						"buffer_size": 94570,
+						"buffer_size": 22,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
+					"settings":
+					{
+						"buffer_size": 964,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
+					"settings":
+					{
+						"buffer_size": 1393,
 						"line_ending": "Unix"
 					}
 				},
@@ -444,6 +463,9 @@
 			],
 			"file_history":
 			[
+				"/home/users/faron/.falcon/scripts/bash/lib/alias",
+				"/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
+				"/home/users/faron/.bash_history",
 				"/usr/local/bin/ff.net.ip6",
 				"/usr/local/bin/ff.network.ip6",
 				"/usr/local/bin/ff.network.ip6-loader",
@@ -494,7 +516,6 @@
 				"/etc/hosts",
 				"/etc/fstab",
 				"/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
-				"/home/users/faron/.falcon/scripts/bash/lib/alias",
 				"/home/users/faron/.falcon/scripts/mpv-player/input.conf",
 				"/home/users/faron/.config/mpv/input.conf",
 				"/usr/local/bin/ff.vid.mp4.run",
@@ -521,7 +542,7 @@
 			],
 			"find":
 			{
-				"height": 34.0
+				"height": 35.0
 			},
 			"find_in_files":
 			{
@@ -535,6 +556,8 @@
 				"case_sensitive": false,
 				"find_history":
 				[
+					"getfilethrow",
+					"rm -f $PWD/",
 					"FILEKILL",
 					"\\'",
 					"\"",
@@ -579,6 +602,8 @@
 				"regex": false,
 				"replace_history":
 				[
+					"$DOTHECLEAN",
+					"",
 					"FILESTART",
 					"\\\"",
 					"\\'",
@@ -659,6 +684,90 @@
 						},
 						{
 							"buffer": 1,
+							"file": "/usr/local/bin/ff.clean",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 964,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/usr/local/bin/ff.bin.files.backup.delete",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 22,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										15,
+										15
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 964,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										406,
+										406
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 4,
 							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
 							"semi_transient": false,
 							"settings":
@@ -682,39 +791,11 @@
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 2,
+							"stack_index": 4,
 							"type": "text"
 						},
 						{
-							"buffer": 2,
-							"file": "/home/users/faron/.bash_history",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 94570,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										89351,
-										89351
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/Text/Plain text.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 92055.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 1,
-							"type": "text"
-						},
-						{
-							"buffer": 3,
+							"buffer": 5,
 							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 							"semi_transient": false,
 							"settings":
@@ -726,8 +807,8 @@
 								"selection":
 								[
 									[
-										649,
-										649
+										318,
+										318
 									]
 								],
 								"settings":
@@ -738,7 +819,7 @@
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 0,
+							"stack_index": 5,
 							"type": "text"
 						}
 					]
@@ -780,11 +861,11 @@
 				"height": 0.0
 			},
 			"pinned_build_system": "",
-			"position": "0,0,0,0,0,280,350,1813,1201,1920,1080",
+			"position": "0,0,0,0,0,281,201,1814,1052,1920,1080",
 			"project": "",
 			"replace":
 			{
-				"height": 62.0
+				"height": 64.0
 			},
 			"save_all_on_build": true,
 			"select_file":
