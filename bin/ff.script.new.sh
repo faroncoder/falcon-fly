@@ -6,13 +6,41 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #################### BEGIN
 xcv="$1"
 xcs="$2"
-CL=$( basename "$xcv" )
+interactive="$3"
+if [[ -z "$interactive" ]]; then
+	echo -n "$Fwarn script to interact with user? (y or n) "
+	read interactive
+	echo "$Fstat Enter short description explaining how to interact with the script:"
+	read Descript
+	LOADDes="$Descript"
+	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
+	ENDINTERACT="else echo \"\$Fno \$Fred Arg 1 \$Foff=\$Fyellow $LOADDes \$Foff\"; fi"
+fi
+if [[ "$interactive" == "y" ]]; then
+	echo "$Fstat Enter short description explaining how to interact with the script:"
+	read Descript
+	LOADDes="\"$Descript\""
+	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
+	ENDINTERACT="else echo \"\$Fno \$Fred Arg 1 \$Foff=\$Fyellow $LOADDes \$Foff\"; fi"
+else
+	INTERACT=""
+	ENDINTERACT=""
+#	INTERACT="#if [[ \"\$1\" != \"\" ]]; then"
+#	ENDINTERACT="#else echo \"\$Fno \$Fred Arg 1 \$Foff=\$Fyellow $Descript \$Foff\"; fi"
+fi
+#echo "$Fwarn script to be interacted: $interactive"
+
+CL=`basename "$xcv"`
 
 if [[ "$CL" == "" ]]; then
 	echo -n -e "$Finfo name of the script? "
 	read CL
 fi
 if [[ "$xcs" == "" ]]; then
+	echo -n -e "$Finfo which folder? "
+	read xcs
+fi
+if [[ "$interactive" == "" ]]; then
 	echo -n -e "$Finfo which folder? "
 	read xcs
 fi
@@ -37,27 +65,29 @@ echo "#!/bin/bash
 RETURN=\$PWD
 if [[ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]]; then export PATH=\$PATH:/usr/local/bin; fi
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
-if [[ \"\$1\" != \"\" ]]; then
+$INTERACT
 #################### BEGIN
 
-echo -e \"\$Fstat\"
-echo -e \"\$Fno\"
-echo -e \"\$Fwarn\"
-echo -e \"\$Finfo\"
-echo -e \"\$Fok\"
+echo \"\$Fstat\"
+echo \"\$Fno\"
+echo \"\$Fwarn\"
+echo \"\$Finfo\"
+echo \"\$Fok\"
 
 
 ################### END
 #cd \$RETURN 1> /dev/null;
-else echo -e \"\$Fstat \$Fred Arg 1 \$Foff=\$Fyellow explain argments before calling. \$Foff\"; fi
+$ENDINTERACT
 ### exit code for clean exit
 XeF
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] \$0  [ACTIVE] y
+### [FILE] $MEF [ACTIVE] y
 
 " > "$MEF"
 echo -e "$Fstat $Fblue $XF $Fgreen created. $Foff"
+ff.load
 subl "$MEF"
+
 ################### END
 #cd $RETURN 1> /dev/null;
 #else echo -e "$Fstatus $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi

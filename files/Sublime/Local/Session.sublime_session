@@ -1,0 +1,764 @@
+{
+	"folder_history":
+	[
+		"/srv",
+		"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv",
+		"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv",
+		"/srv/www/default/htdocs",
+		"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv/www/default/htdocs",
+		"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs",
+		"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs/tv",
+		"/home/users/faron/.falcon/scripts/htmls",
+		"/home/users/faron/.falcon/scripts/handle"
+	],
+	"last_version": 3083,
+	"last_window_id": 9,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 715.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"_T",
+						"_Type"
+					],
+					[
+						"_fi",
+						"_fileName"
+					],
+					[
+						"FIle",
+						"FileFiltered"
+					],
+					[
+						"File",
+						"FileAsTS"
+					],
+					[
+						"GET",
+						"GETFILDF"
+					],
+					[
+						"F",
+						"FILECHECKS"
+					],
+					[
+						"col",
+						"collection"
+					]
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/users/faron/.falcon/scripts/htmls/ff.hl.js.glop.here.sh",
+				"/home/users/faron/.falcon/scripts/htmls/ff.hl.cssglop.sh",
+				"/home/users/faron/.falcon/scripts/htmls/ff.html.glopper.sh",
+				"/home/users/faron/.falcon/scripts/handle/ff.scripts.sync.sh",
+				"/home/users/faron/.falcon/scripts/bin/ff.load.",
+				"/home/users/faron/.cache/.fr-dZ7WXj/flumotion-0.10.1/install-sh",
+				"/etc/apache2/settings/sites/default.conf",
+				"/etc/hosts",
+				"/etc/fstab",
+				"/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
+				"/home/users/faron/.falcon/scripts/bash/lib/alias",
+				"/home/users/faron/.falcon/scripts/mpv-player/input.conf",
+				"/home/users/faron/.config/mpv/input.conf",
+				"/usr/local/bin/ff.vid.mp4.run",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
+				"/home/users/faron/.falcon/scripts/video/mp4s/lab.vid.mp4.encode.sh",
+				"/tmp/testfa",
+				"/home/users/faron/.falcon/scripts/mongo/fm.find.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.ts.run.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.duration.fix.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.unpack.run.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.ffmpeg.fix.duration.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/falcon/scripts/video/ff.vid.mp4.run.sh",
+				"/home/users/faron/Videos/1h7Yd5Oiece8UTyhDyf0FleYWnPZXMbB.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv/clips7/YF7n6Gi5oP27dZNf2yQEogHkXsjPD6mm",
+				"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
+				"/home/users/faron/.falcon/scripts/start/ff.new.fstab.sh",
+				"/home/users/faron/.falcon/scripts/bash/lib/functions",
+				"/home/users/faron/.falcon/scripts/apt/ff.apt.verify.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/4.list",
+				"/home/users/faron/.falcon/scripts/lab.find-files-by-sizes-then-fdupes.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/to-be-queued/25.list",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/test/1.list",
+				"/usr/local/bin/ff.load",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/supplmentaryFolder/mp4/done/.info"
+			],
+			"find":
+			{
+				"height": 26.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"\\\"",
+					"]",
+					"[",
+					"$PWD/*",
+					"FileInput",
+					"GETFILES",
+					"GETFILE",
+					"j",
+					"GETFILE",
+					"COLLECT",
+					"FEED",
+					"INFOB",
+					"INFOA",
+					"GETNAME",
+					"grep",
+					"/tmp/",
+					"/tmp/FILECHECKS",
+					"READFILE"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"'",
+					"]]",
+					"[[",
+					"",
+					"FileInput",
+					"FileConverted",
+					"FileFeed",
+					"FileInfoConverted",
+					"FileInfoOriginal",
+					"PREFILE",
+					"/bin/grep",
+					"$PWD/FILECHECKS"
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 26.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 62.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 259.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1533.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"_T",
+						"_Type"
+					],
+					[
+						"_fi",
+						"_fileName"
+					],
+					[
+						"FIle",
+						"FileFiltered"
+					],
+					[
+						"File",
+						"FileAsTS"
+					],
+					[
+						"GET",
+						"GETFILDF"
+					],
+					[
+						"F",
+						"FILECHECKS"
+					],
+					[
+						"col",
+						"collection"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "this.options.socialurlforeach||this.createSocialMedia();\nthis.options.googleanalyticsaccount&&!window._gaq&&(window._gaq=window._gaq||\n												[],window._gaq.push([\"_setAccount\",this.options.googleanalyticsaccount]),window._gaq.push([\"_trackPageview\"]),b.getScript(\"https://ssl.google-analytics.com/ga.js\"))},createSocialMedia:function(){\n\nb(\".html5gallery-viral-\"+this.id,this.$gallery).empty();\nvar a=window.location.href;\nthis.options.socialurlforeach&&(a+=(0>window.location.href.indexOf(\"?\")?\"?\":\"&\")+\"html5galleryid=\"+this.elemArray[this.curElem][0]);\nif(this.options.showsocialmedia&&this.options.showfacebooklike){\nvar c=\"<div style='display:block;\n float:left;\n width:110px;\n height:21px;\n'></div>\",\n											c=this.options.facebooklikeurl&&0<this.options.facebooklikeurl.length?c+encodeURIComponent(this.options.facebooklikeurl):c+a;\nb(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\"&amp;\nsend=false&amp;\nlayout=button_count&amp;\nwidth=450&amp;\nshow_faces=false&amp;\naction=like&amp;\ncolorscheme=light&amp;\nfont&amp;\nheight=21' scrolling='no' frameborder='0' style='border:none;\n;\noverflow:hidden;\n width:110px;\n height:21px;\n' allowTransparency='true'></iframe></div>\")}this.options.showsocialmedia&&this.options.showtwitter&&\n											(c=\"<div style='display:block;\n float:left;\n width:110px;\n height:21px;\n'><a href='https://twitter.com/share' class='twitter-share-button'\",c=this.options.twitterurl&&0<this.options.twitterurl.length?c+(\" data-url='\"+this.options.twitterurl+\"'\"):c+(\" data-url='\"+a+\"'\"),this.options.twitterusername&&0<this.options.twitterusername.length&&(c+=\" data-via='\"+this.options.twittervia+\"' data-related='\"+this.options.twitterusername+\"'\"),b(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\">Tweet</a></div>\"),\n											b.getScript(\"https://platform.twitter.com/widgets.js\"));\nthis.options.showsocialmedia&&this.options.showgoogleplus&&(c=\"<div style='display:block;\n float:left;\n width:100px;\n height:21px;\n'><div class='g-plusone' data-size='medium'\",c=this.options.googleplusurl&&0<this.options.googleplusurl.length?c+(\" data-href='\"+this.options.googleplusurl+\"'\"):c+(\" data-href='\"+a+\"'\"),b(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\"></div></div>\"),b.getScript(\"https://apis.google.com/js/plusone.js\"))},playGallery:function(){\n\nvar a=\n											this;",
+					"settings":
+					{
+						"buffer_size": 2338,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "#!/bin/bash -e\nRETURN=$PWD\nif [ ! \"$( echo $PATH | grep '/usr/local/bin' )\" ]; then export PATH=$PATH:/usr/local/bin; fi\nfcbk=\"$(tput setaf 0)\"; fcr=\"$(tput setaf 1)\"; fcg=\"$(tput setaf 2)\"; fcy=\"$(tput setaf 3)\"; fcb=\"$(tput setaf 4)\"; fcp=\"$(tput setaf 5)\"; fcc=\"$(tput setaf 6)\"; fcw=\"$(tput setaf 7)\"; fco=\"$(tput sgr0)\"; fcm=\"OK\";\nXeB=1455908241\nfunction XeF {\nXeE=1455908241; XeT=$( echo \"$(( $XeB - $XeE ))\" ); logger \"$0 | $XeB | $XeE | $XeT \"; exit 0\n}\nif [ \"$1\" ]; then\n\nFILENAMEME=$1\n\n#################### BEGIN\n#BINPULL=\"/home/users/faron/.falcon/scripts/htmls/VAULT\"\n\n\nLOC=$1\nif [[ \"$LOC\" == \"\" ]]; then\n	LOC=$PWD\nfi\n\nGETFILES=( `find $LOC -maxdepth 1 -name '*.mp4'` )\nvideobackbone=\"\n<!DOCTYPE html>\n<html>\n	<head>\n		<meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\" />\n		<title>$_FileMe</title>\n		<style>\n			body { background: black; }\n			video { width:100%; height:100%; }\n		</style>\n	</head>\n	<body>\n		<video id=\\\"$_fileme\\\" controls=\\\"controls\\\">\n			<source src=\\\"http://192.168.1.6:8800/$_FileMe.mp4\\\" type=\\\"video/mp4\\\">\n			<! -- <track kind=\\\"captions\\\" src=\\\"http://192.168.1.6:8800/cc/$_fileme.vtt\\\" srclang=\\\"en\\\" ></track>  -->\n				<p>Your browser leaves much to be desired.</p>\n			</video>\n		</body>\n	</html>\n\"\nfor file in \"${GETFILES[@]}\"; do\n		_FileMe=`echo $file | rev | cut -d'.' -f2 | rev`\n		mkdir $PWD/docs -p\n	echo $videobackbone > \"$PWD/docs/$_FileMe.html\"\ndone\n\n################### END\n#cd $RETURN\n#else fcm=\"WARNING: Arg needed\"; echo \"[$fcy$fcm$fco]\"; fi\n### exit code for clean exit\nXeF\n### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS\n### [FALCON] name=ff.script.new active=y\n\n",
+					"file": "/usr/local/bin/ff.generate.html.video",
+					"file_size": 2524,
+					"file_write_time": 131186109628108991,
+					"settings":
+					{
+						"buffer_size": 1637,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
+					"settings":
+					{
+						"buffer_size": 1393,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
+					"settings":
+					{
+						"buffer_size": 903,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "With the growth of internet, many of materials have been digitalized for the use by internet such as documents and websites and all of information available on the earth as much as possible.  99% of public information are accessible on internet.  For last few years, there is a quick rising of videos being deployed via streaming which also, became very accessible by anyone - even mobile. \n\nAfter so much surge rise of videos being available on market, almost all streaming companies do not offer closed-captioning nor does not have subtitle feature available in their player/embed iframe in their http document.  I am deaf and I rely on closed-captioning / subtitle for an obvious reason, which is something that these companies frustrated me so much, especially when doing homework for university course that rely on videos off the internet.  ",
+					"settings":
+					{
+						"buffer_size": 846,
+						"line_ending": "Unix",
+						"name": "With the growth of internet, many of materials hav"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 392.0,
+				"last_filter": "pack",
+				"selected_items":
+				[
+					[
+						"pack",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 449.0
+			},
+			"console":
+			{
+				"height": 146.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+			],
+			"file_history":
+			[
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs/tv/success/html5gallery/html5gallery.js",
+				"/home/users/faron/.falcon/scripts/bin/ff.load.sh",
+				"/home/users/faron/.cache/.fr-cqGldx/examples/demo_horizontal_skin.html",
+				"/home/users/faron/.falcon/scripts/bin/ff.bin.chom.sh",
+				"/home/users/faron/.falcon/scripts/newbin/ff.bin.chom.sh",
+				"/home/users/faron/.falcon/scripts/bin/ff.find.sh",
+				"/home/users/faron/.falcon/scripts/htmls/ff.hl.loop.linker.links.sh",
+				"/home/users/faron/.falcon/scripts/newbin/ff.find.sh",
+				"/home/users/faron/.falcon/scripts/bin/ff.load.fstab.sh",
+				"/home/users/faron/.falcon/scripts/newbin/ff.load.fstab.sh",
+				"/home/users/faron/.falcon/scripts/htmls/ff.hl.loop.linker.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.flu.3.sh",
+				"/home/users/faron/.falcon/scripts/newbin/ff.flu.3.sh",
+				"/home/users/faron/.falcon/scripts/virtuals/ff.setup.vm2.sh",
+				"/home/users/faron/.falcon/scripts/virtuals/ff.setup.vm.sh",
+				"/home/users/faron/.falcon/scripts/virtuals/ff.setup.vm3.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs/tv/success/original.html",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs/tv/success/html5gallery/froogaloop2.min.min.js",
+				"/home/users/faron/.config/sublime-text-3/Packages/User/JavascriptBeautify.sublime-settings",
+				"/home/users/faron/.config/sublime-text-3/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
+				"/home/users/faron/.falcon/scripts/htmls/ff.hl.js.glop.here.sh",
+				"/home/users/faron/.falcon/scripts/htmls/ff.hl.cssglop.sh",
+				"/home/users/faron/.falcon/scripts/htmls/ff.html.glopper.sh",
+				"/home/users/faron/.falcon/scripts/handle/ff.scripts.sync.sh",
+				"/home/users/faron/.falcon/scripts/bin/ff.load.",
+				"/home/users/faron/.cache/.fr-dZ7WXj/flumotion-0.10.1/install-sh",
+				"/etc/apache2/settings/sites/default.conf",
+				"/etc/hosts",
+				"/etc/fstab",
+				"/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
+				"/home/users/faron/.falcon/scripts/bash/lib/alias",
+				"/home/users/faron/.falcon/scripts/mpv-player/input.conf",
+				"/home/users/faron/.config/mpv/input.conf",
+				"/usr/local/bin/ff.vid.mp4.run",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.mp4.run.sh",
+				"/home/users/faron/.falcon/scripts/video/mp4s/lab.vid.mp4.encode.sh",
+				"/tmp/testfa",
+				"/home/users/faron/.falcon/scripts/mongo/fm.find.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.ts.run.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.duration.fix.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.vid.unpack.run.sh",
+				"/home/users/faron/.falcon/scripts/video/ff.ffmpeg.fix.duration.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/falcon/scripts/video/ff.vid.mp4.run.sh",
+				"/home/users/faron/Videos/1h7Yd5Oiece8UTyhDyf0FleYWnPZXMbB.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv/clips7/YF7n6Gi5oP27dZNf2yQEogHkXsjPD6mm",
+				"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
+				"/home/users/faron/.falcon/scripts/start/ff.new.fstab.sh",
+				"/home/users/faron/.falcon/scripts/bash/lib/functions",
+				"/home/users/faron/.falcon/scripts/apt/ff.apt.verify.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/4.list",
+				"/home/users/faron/.falcon/scripts/lab.find-files-by-sizes-then-fdupes.sh",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/to-be-queued/25.list",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/test/1.list",
+				"/usr/local/bin/ff.load",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/supplmentaryFolder/mp4/done/.info"
+			],
+			"find":
+			{
+				"height": 34.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"\\'",
+					"\"",
+					"href=\"",
+					"data-webm=\"images/Big_Buck_Bunny.webm\"",
+					"\"+this.options.watermarkcode)",
+					"watermark",
+					"php",
+					"(){\n",
+					";\n",
+					"{\n",
+					"{",
+					";",
+					"(){",
+					"freelink",
+					"HTML5 G",
+					"HTML",
+					".php",
+					"http",
+					"\\\"",
+					"]",
+					"[",
+					"$PWD/*",
+					"FileInput",
+					"GETFILES",
+					"GETFILE",
+					"j",
+					"GETFILE",
+					"COLLECT",
+					"FEED",
+					"INFOB",
+					"INFOA",
+					"GETNAME",
+					"grep",
+					"/tmp/",
+					"/tmp/FILECHECKS",
+					"READFILE"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"\\\"",
+					"\\'",
+					"data-src=\"",
+					"",
+					"\")",
+					"(){",
+					";",
+					"{",
+					"{\n",
+					";\n",
+					"(){\n",
+					"'",
+					"]]",
+					"[[",
+					"",
+					"FileInput",
+					"FileConverted",
+					"FileFeed",
+					"FileInfoConverted",
+					"FileInfoOriginal",
+					"PREFILE",
+					"/bin/grep",
+					"$PWD/FILECHECKS"
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "/run/user/1000/gvfs/sftp:host=192.168.1.6/srv"
+				},
+				{
+					"path": "/run/user/1000/gvfs/sftp:host=192.168.1.7/srv"
+				},
+				{
+					"path": "/srv"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 2,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2338,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										2338,
+										2338
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/usr/local/bin/ff.generate.html.video",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1637,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										582,
+										582
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": -0.0,
+								"translation.y": 162.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1393,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										661,
+										661
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 162.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 903,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										650,
+										650
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 4,
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 846,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										846,
+										846
+									]
+								],
+								"settings":
+								{
+									"auto_name": "With the growth of internet, many of materials hav",
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 26.0
+			},
+			"input":
+			{
+				"height": 34.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,181,133,1714,984,1920,1080",
+			"project": "",
+			"replace":
+			{
+				"height": 62.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 259.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 9,
+			"workspace_name": "/home/users/faron/.falcon/scripts/handle/Sublime/Packages/User/default.sublime-workspace"
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+			"/home/users/faron/.falcon/scripts/handle/Sublime/Packages/User/default.sublime-workspace"
+		]
+	}
+}

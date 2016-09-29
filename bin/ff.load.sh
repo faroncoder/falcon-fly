@@ -6,7 +6,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #################### BEGIN
 
 LOC="/home/users/faron/.falcon/scripts";
-find -L /usr/local/bin -name 'ff.*' -exec rm {} \;
+
 
 if [[ ! -d "$LOC" ]]; then  
 		echo "$Fno Falcon is not mounted. Exiting"
@@ -36,6 +36,7 @@ if [[ ! -d "$LOC" ]]; then
 		echo "$Fno None found"
 		XeF
 	else
+		find -L /usr/local/bin -name 'ff.*' -exec rm {} \;
 		for entry in "${FILEHUNT[@]}"; do
 				makelink;
 		done

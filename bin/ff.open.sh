@@ -5,8 +5,8 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-nautilus $PWD 2>&1 /dev/null; < /dev/null;
-echo -e "$Fok"
+nautilus "$PWD" 
+echo "$Fok"
 
 
 ################### END
