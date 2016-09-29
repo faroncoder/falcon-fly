@@ -10,7 +10,7 @@ if [[ "$( hostname -s  )" == "f8" ]]; then
 	exit 1
 else
 	echo -e -n "$Fwarn sync-ing falcon scripts..."
-	rsync -avzh --delete --exclude .git faron@192.168.1.8:~/.falcon/scripts ~/.falcon/
+	rsync -avzh --delete --exclude .git --exclude Sublime faron@192.168.1.8:~/.falcon/scripts ~/.falcon/
 	echo -e $Fok
 fi
 

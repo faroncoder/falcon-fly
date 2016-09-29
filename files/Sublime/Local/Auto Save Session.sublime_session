@@ -381,33 +381,6 @@
 					}
 				},
 				{
-					"file": "/usr/local/bin/ff.clean",
-					"settings":
-					{
-						"buffer_size": 964,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"contents": "#!/bin/bash\n\n\n\nexit 0\n",
-					"file": "/usr/local/bin/ff.bin.files.backup.delete",
-					"file_size": 166,
-					"file_write_time": 131196178830390880,
-					"settings":
-					{
-						"buffer_size": 22,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
-					"settings":
-					{
-						"buffer_size": 964,
-						"line_ending": "Unix"
-					}
-				},
-				{
 					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
 					"settings":
 					{
@@ -420,6 +393,14 @@
 					"settings":
 					{
 						"buffer_size": 903,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/usr/local/bin/ff.scripts.sync",
+					"settings":
+					{
+						"buffer_size": 816,
 						"line_ending": "Unix"
 					}
 				}
@@ -464,6 +445,8 @@
 			"file_history":
 			[
 				"/home/users/faron/.falcon/scripts/bash/lib/alias",
+				"/usr/local/bin/ff.clean",
+				"/usr/local/bin/ff.bin.files.backup.delete",
 				"/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
 				"/home/users/faron/.bash_history",
 				"/usr/local/bin/ff.net.ip6",
@@ -684,90 +667,6 @@
 						},
 						{
 							"buffer": 1,
-							"file": "/usr/local/bin/ff.clean",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 964,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 2,
-							"type": "text"
-						},
-						{
-							"buffer": 2,
-							"file": "/usr/local/bin/ff.bin.files.backup.delete",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 22,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										15,
-										15
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 1,
-							"type": "text"
-						},
-						{
-							"buffer": 3,
-							"file": "/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 964,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										406,
-										406
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 0,
-							"type": "text"
-						},
-						{
-							"buffer": 4,
 							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
 							"semi_transient": false,
 							"settings":
@@ -791,11 +690,11 @@
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 4,
+							"stack_index": 2,
 							"type": "text"
 						},
 						{
-							"buffer": 5,
+							"buffer": 2,
 							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 							"semi_transient": false,
 							"settings":
@@ -819,7 +718,35 @@
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 5,
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/usr/local/bin/ff.scripts.sync",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 816,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										498,
+										498
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
 							"type": "text"
 						}
 					]
