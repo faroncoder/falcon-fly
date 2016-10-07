@@ -246,100 +246,16 @@
 				"selected_items":
 				[
 					[
-						"END",
-						"ENDINTERACT"
+						"if",
+						"if	if … fi"
 					],
 					[
-						"deathR",
-						"deathReaperCheck"
+						"marg",
+						"margin-top"
 					],
 					[
-						"FILE",
-						"FILEHERE"
-					],
-					[
-						"kill",
-						"killerScript"
-					],
-					[
-						"FI",
-						"FILEQUERY"
-					],
-					[
-						"FIE",
-						"FILECOUNT"
-					],
-					[
-						"var",
-						"varsGenerate"
-					],
-					[
-						"filem",
-						"filenameget"
-					],
-					[
-						"clear",
-						"clearVars"
-					],
-					[
-						"filename",
-						"filenameget"
-					],
-					[
-						"scr",
-						"scriptNamer"
-					],
-					[
-						"file",
-						"filenameget"
-					],
-					[
-						"sc",
-						"scriptNamer"
-					],
-					[
-						"death",
-						"deathizeScript"
-					],
-					[
-						"singe",
-						"singlekillgo"
-					],
-					[
-						"ide",
-						"identfyMeFile"
-					],
-					[
-						"single",
-						"singlekillgo"
-					],
-					[
-						"sing",
-						"singlekillgo"
-					],
-					[
-						"CHECK",
-						"CHECKFILES"
-					],
-					[
-						"CHEC",
-						"CHECKFILES"
-					],
-					[
-						"interact",
-						"interactive"
-					],
-					[
-						"mul",
-						"multiFiles"
-					],
-					[
-						"F",
-						"FILEKILL"
-					],
-					[
-						"scriptK",
-						"scriptKillerConfirm"
+						"min",
+						"min-width"
 					],
 					[
 						"_T",
@@ -362,6 +278,10 @@
 						"GETFILDF"
 					],
 					[
+						"F",
+						"FILECHECKS"
+					],
+					[
 						"col",
 						"collection"
 					]
@@ -369,6 +289,14 @@
 			},
 			"buffers":
 			[
+				{
+					"contents": "this.options.socialurlforeach||this.createSocialMedia();\nthis.options.googleanalyticsaccount&&!window._gaq&&(window._gaq=window._gaq||\n												[],window._gaq.push([\"_setAccount\",this.options.googleanalyticsaccount]),window._gaq.push([\"_trackPageview\"]),b.getScript(\"https://ssl.google-analytics.com/ga.js\"))},createSocialMedia:function(){\n\nb(\".html5gallery-viral-\"+this.id,this.$gallery).empty();\nvar a=window.location.href;\nthis.options.socialurlforeach&&(a+=(0>window.location.href.indexOf(\"?\")?\"?\":\"&\")+\"html5galleryid=\"+this.elemArray[this.curElem][0]);\nif(this.options.showsocialmedia&&this.options.showfacebooklike){\nvar c=\"<div style='display:block;\n float:left;\n width:110px;\n height:21px;\n'></div>\",\n											c=this.options.facebooklikeurl&&0<this.options.facebooklikeurl.length?c+encodeURIComponent(this.options.facebooklikeurl):c+a;\nb(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\"&amp;\nsend=false&amp;\nlayout=button_count&amp;\nwidth=450&amp;\nshow_faces=false&amp;\naction=like&amp;\ncolorscheme=light&amp;\nfont&amp;\nheight=21' scrolling='no' frameborder='0' style='border:none;\n;\noverflow:hidden;\n width:110px;\n height:21px;\n' allowTransparency='true'></iframe></div>\")}this.options.showsocialmedia&&this.options.showtwitter&&\n											(c=\"<div style='display:block;\n float:left;\n width:110px;\n height:21px;\n'><a href='https://twitter.com/share' class='twitter-share-button'\",c=this.options.twitterurl&&0<this.options.twitterurl.length?c+(\" data-url='\"+this.options.twitterurl+\"'\"):c+(\" data-url='\"+a+\"'\"),this.options.twitterusername&&0<this.options.twitterusername.length&&(c+=\" data-via='\"+this.options.twittervia+\"' data-related='\"+this.options.twitterusername+\"'\"),b(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\">Tweet</a></div>\"),\n											b.getScript(\"https://platform.twitter.com/widgets.js\"));\nthis.options.showsocialmedia&&this.options.showgoogleplus&&(c=\"<div style='display:block;\n float:left;\n width:100px;\n height:21px;\n'><div class='g-plusone' data-size='medium'\",c=this.options.googleplusurl&&0<this.options.googleplusurl.length?c+(\" data-href='\"+this.options.googleplusurl+\"'\"):c+(\" data-href='\"+a+\"'\"),b(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\"></div></div>\"),b.getScript(\"https://apis.google.com/js/plusone.js\"))},playGallery:function(){\n\nvar a=\n											this;",
+					"settings":
+					{
+						"buffer_size": 2338,
+						"line_ending": "Unix"
+					}
+				},
 				{
 					"contents": "#!/bin/bash -e\nRETURN=$PWD\nif [ ! \"$( echo $PATH | grep '/usr/local/bin' )\" ]; then export PATH=$PATH:/usr/local/bin; fi\nfcbk=\"$(tput setaf 0)\"; fcr=\"$(tput setaf 1)\"; fcg=\"$(tput setaf 2)\"; fcy=\"$(tput setaf 3)\"; fcb=\"$(tput setaf 4)\"; fcp=\"$(tput setaf 5)\"; fcc=\"$(tput setaf 6)\"; fcw=\"$(tput setaf 7)\"; fco=\"$(tput sgr0)\"; fcm=\"OK\";\nXeB=1455908241\nfunction XeF {\nXeE=1455908241; XeT=$( echo \"$(( $XeB - $XeE ))\" ); logger \"$0 | $XeB | $XeE | $XeT \"; exit 0\n}\nif [ \"$1\" ]; then\n\nFILENAMEME=$1\n\n#################### BEGIN\n#BINPULL=\"/home/users/faron/.falcon/scripts/htmls/VAULT\"\n\n\nLOC=$1\nif [[ \"$LOC\" == \"\" ]]; then\n	LOC=$PWD\nfi\n\nGETFILES=( `find $LOC -maxdepth 1 -name '*.mp4'` )\nvideobackbone=\"\n<!DOCTYPE html>\n<html>\n	<head>\n		<meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\" />\n		<title>$_FileMe</title>\n		<style>\n			body { background: black; }\n			video { width:100%; height:100%; }\n		</style>\n	</head>\n	<body>\n		<video id=\\\"$_fileme\\\" controls=\\\"controls\\\">\n			<source src=\\\"http://192.168.1.6:8800/$_FileMe.mp4\\\" type=\\\"video/mp4\\\">\n			<! -- <track kind=\\\"captions\\\" src=\\\"http://192.168.1.6:8800/cc/$_fileme.vtt\\\" srclang=\\\"en\\\" ></track>  -->\n				<p>Your browser leaves much to be desired.</p>\n			</video>\n		</body>\n	</html>\n\"\nfor file in \"${GETFILES[@]}\"; do\n		_FileMe=`echo $file | rev | cut -d'.' -f2 | rev`\n		mkdir $PWD/docs -p\n	echo $videobackbone > \"$PWD/docs/$_FileMe.html\"\ndone\n\n################### END\n#cd $RETURN\n#else fcm=\"WARNING: Arg needed\"; echo \"[$fcy$fcm$fco]\"; fi\n### exit code for clean exit\nXeF\n### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS\n### [FALCON] name=ff.script.new active=y\n\n",
 					"file": "/usr/local/bin/ff.generate.html.video",
@@ -389,6 +317,46 @@
 					}
 				},
 				{
+					"file": "/home/users/faron/.falcon/scripts/bin/ff.edit.sh",
+					"settings":
+					{
+						"buffer_size": 695,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/etc/dhcp/dhclient.conf",
+					"settings":
+					{
+						"buffer_size": 814,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/etc/resolvconf/resolv.conf.d/head",
+					"settings":
+					{
+						"buffer_size": 218,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "<!DOCTYPE html>\n<html lang=\\\"en\\\">\n	<head>\n		<meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\">\n		<meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=Edge,chrome=1\\\">\n		<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\n		<meta name=\\\"description\\\" content=\\\"\\\">\n		<meta name=\\\"author\\\" content=\\\"faron\\\">\n		<title>$PREFILE</title>\n		<link rel=\\\"stylesheet\\\" href=\\\"./.jsc/css/mediaelement/mediaelementplayer.min.css\\\" />\n		<link rel=\\\"stylesheet\\\" href=\\\"./.jsc/css/mediaelement/mejs-skins.css\\\" />\n		<link rel=\\\"stylesheet\\\" href=\\\"./.jsc/css/cssengine.css\\\" />\n		<style>\n				html {\n					height: 100%;\n					width:  100%;\n				}\n				body {\n					min-width: 100% ;\n					min-height:  100%;\n					background: black;\n				}\n				video {\n					min-width: 100%;\n					min-height: 100%;\n					margin-left: auto;\n					margin-right: auto;\n					margin-top: auto;\n					margin-bottom: auto;\n				}\n		</style>\n	</head>\n	<body>\n		<video class=\\\"mejs-skins\\\" id=\\\"$PREFILE\\\" controls muted >\n			<source src=\\\"https://tv.faron.ca/.priv/$PREFILE.mp4\\\" type=\\\"video/mp4\\\" >\n		</video>\n		<script src=\\\"https://code.jquery.com/jquery-1.12.4.min.js\\\"></script>\n		<script src=\\\"./.jsc/js/appengine.js\\\"></script>\n		<script src=\\\"./.jsc/js/mediaelement/mediaelement-and-player.min.js\\\"></script>\n		<script>\n		\\$('audio,video').mediaelementplayer({\n			defaultVideoHeight: 480,\n			defaultVideoWeight: 800,\n			videoWidth: -1,\n			videoHeight: -1,\n			pluginHeight: -1,\n			pluginWeight: -1,\n			startLanguage:'en',\n			stretching: 'none'\n			// automatically translate into these languages\n			// translations:['es','ar','zh','ru'],\n			// // enable the dropdown list of languages\n			//translationSelector: true\n		});\n		</script>\n	</body>\n</html>",
+					"settings":
+					{
+						"buffer_size": 1747,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/srv/www/default/htdocs/.player/demo/mediaelementplayer-responsive.html",
+					"settings":
+					{
+						"buffer_size": 1204,
+						"line_ending": "Unix"
+					}
+				},
+				{
 					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 					"settings":
 					{
@@ -397,10 +365,95 @@
 					}
 				},
 				{
-					"file": "/usr/local/bin/ff.scripts.sync",
+					"contents": "With the growth of internet, many of materials have been digitalized for the use by internet such as documents and websites and all of information available on the earth as much as possible.  99% of public information are accessible on internet.  For last few years, there is a quick rising of videos being deployed via streaming which also, became very accessible by anyone - even mobile. \n\nAfter so much surge rise of videos being available on market, almost all streaming companies do not offer closed-captioning nor does not have subtitle feature available in their player/embed iframe in their http document.  I am deaf and I rely on closed-captioning / subtitle for an obvious reason, which is something that these companies frustrated me so much, especially when doing homework for university course that rely on videos off the internet.  ",
 					"settings":
 					{
-						"buffer_size": 816,
+						"buffer_size": 846,
+						"line_ending": "Unix",
+						"name": "With the growth of internet, many of materials hav"
+					}
+				},
+				{
+					"file": "/srv/www/default/htdocs/test.html",
+					"settings":
+					{
+						"buffer_size": 1542,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "<!DOCTYPE html>\n<html lang=en> <head><meta http-equiv=Content-Type content=\"text/html; charset=utf-8\"><meta http-equiv=X-UA-Compatible content=IE=Edge,chrome=1><meta name=viewport content=\"width=device-width, initial-scale=1.0\"><meta name=description content><meta name=author content=faron><title>$PREFILE</title><link rel=stylesheet href=./.jsc/css/cssengine.css><link rel=stylesheet href=./.jsc/css/mediaelement/mediaelementplayer.min.css><link rel=stylesheet href=./.jsc/css/mediaelement/mejs-skins.css><style>\n 		 html {\n 			height: 100%;\n 			width:  100%;\n 		}\n\n 		body {\n 			min-width: 100% ;\n 			min-height:  100%;\n 			background: black;\n 		}\n		video {\n			min-height: 100%;\n			min-width: 800px;\n		}\n		</style></head> <body> <video align=center class=mejs-skins id=$PREFILE controls muted poster=https://tv.faron.ca/.priv/thumbs/$PREFILE.png> <source src=https://tv.faron.ca/.priv/$PREFILE.mp4 type=video/mp4> </video> <script src=https://code.jquery.com/jquery-1.12.4.min.js></script> <script src=./.jsc/js/appengine.js></script> <script src=./.jsc/js/mediaelement/mediaelement-and-player.min.js></script> <script>\n        $( document ).ready(function(){\n	        $('audio,video').mediaelementplayer({\n    	        defaultVideoHeight: 480,\n        	    startLanguage: 'en',\n            	stretching: 'auto'\n	        });\n	    });\n        </script> </body> </html> ",
+					"file": "/srv/www/default/htdocs/test.min.html",
+					"file_size": 1370,
+					"file_write_time": 131203191286004006,
+					"settings":
+					{
+						"buffer_size": 1370,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "/*!\n *\n * MediaElement.js\n * HTML5 <video> and <audio> shim and player\n * http://mediaelementjs.com/\n *\n * Creates a JavaScript object that mimics HTML5 MediaElement API\n * for browsers that don't understand HTML5 or can't play the provided codec\n * Can play MP4 (H.264), Ogg, WebM, FLV, WMV, WMA, ACC, and MP3\n *\n * Copyright 2010-2014, John Dyer (http://j.hn)\n * License: MIT\n *\n */\nvar mejs = mejs || {};\nmejs.version = \"2.23.2\", mejs.meIndex = 0, mejs.plugins = { silverlight: [{ version: [\n				3, 0], types: [\"video/mp4\", \"video/m4v\", \"video/mov\", \"video/wmv\",\n				\"audio/wma\", \"audio/m4a\", \"audio/mp3\", \"audio/wav\", \"audio/mpeg\"] }], flash: [\n			{ version: [9, 0, 124], types: [\"video/mp4\", \"video/m4v\", \"video/mov\",\n					\"video/flv\", \"video/rtmp\", \"video/x-flv\", \"audio/flv\", \"audio/x-flv\",\n					\"audio/mp3\", \"audio/m4a\", \"audio/mp4\", \"audio/mpeg\", \"video/dailymotion\",\n					\"video/x-dailymotion\", \"application/x-mpegURL\", \"audio/ogg\"] }], youtube: [\n			{ version: null, types: [\"video/youtube\", \"video/x-youtube\",\n					\"audio/youtube\", \"audio/x-youtube\"] }], vimeo: [{ version: null, types: [\n				\"video/vimeo\", \"video/x-vimeo\"] }] }, mejs.Utility = { encodeUrl: function (\n			a) {\n			return encodeURIComponent(a) }, escapeHTML: function (a) {\n			return a.toString()\n				.split(\"&\")\n				.join(\"&amp;\")\n				.split(\"<\")\n				.join(\"&lt;\")\n				.split('\"')\n				.join(\"&quot;\") }, absolutizeUrl: function (a) {\n			var b = document.createElement(\"div\");\n			return b.innerHTML = '<a href=\"' + this.escapeHTML(a) + '\">x</a>', b.firstChild\n				.href }, getScriptPath: function (a) {\n			for (var b, c, d, e, f, g, h = 0, i = \"\", j = \"\", k = document.getElementsByTagName(\n					\"script\"), l = k.length, m = a.length; l > h; h++) {\n				for (e = k[h].src, c = e.lastIndexOf(\"/\"), c > -1 ? (g = e.substring(c + 1),\n						f = e.substring(0, c + 1)) : (g = e, f = \"\"), b = 0; m > b; b++)\n					if (j = a[b], d = g.indexOf(j), d > -1) { i = f;\n						break }\n				if (\"\" !== i) break }\n			return i }, calculateTimeFormat: function (a, b, c) { 0 > a && (a = 0),\n				\"undefined\" == typeof c && (c = 25);\n			var d = b.timeFormat,\n				e = d[0],\n				f = d[1] == d[0],\n				g = f ? 2 : 1,\n				h = \":\",\n				i = Math.floor(a / 3600) % 24,\n				j = Math.floor(a / 60) % 60,\n				k = Math.floor(a % 60),\n				l = Math.floor((a % 1 * c)\n					.toFixed(3)),\n				m = [[l, \"f\"], [k, \"s\"], [j, \"m\"], [i, \"h\"]];\n			d.length < g && (h = d[g]);\n			for (var n = !1, o = 0, p = m.length; p > o; o++)\n				if (-1 !== d.indexOf(m[o][1])) n = !0;\n				else if (n) {\n				for (var q = !1, r = o; p > r; r++)\n					if (m[r][0] > 0) { q = !0;\n						break }\n				if (!q) break;\n				f || (d = e + d), d = m[o][1] + h + d, f && (d = m[o][1] + d), e = m[o][1] }\n			b.currentTimeFormat = d }, twoDigitsString: function (a) {\n			return 10 > a ? \"0\" + a : String(a) }, secondsToTimeCode: function (a, b) {\n			if (0 > a && (a = 0), \"object\" != typeof b) {\n				var c = \"m:ss\";\n				c = arguments[1] ? \"hh:mm:ss\" : c, c = arguments[2] ? c + \":ff\" : c, b = { currentTimeFormat: c,\n					framesPerSecond: arguments[3] || 25 } }\n			var d = b.framesPerSecond; \"undefined\" == typeof d && (d = 25);\n			var c = b.currentTimeFormat,\n				e = Math.floor(a / 3600) % 24,\n				f = Math.floor(a / 60) % 60,\n				g = Math.floor(a % 60),\n				h = Math.floor((a % 1 * d)\n					.toFixed(3));\n			lis = [[h, \"f\"], [g, \"s\"], [f, \"m\"], [e, \"h\"]];\n			var j = c;\n			for (i = 0, len = lis.length; i < len; i++) j = j.replace(lis[i][1] + lis[i]\n				[1], this.twoDigitsString(lis[i][0])), j = j.replace(lis[i][1], lis[i][0]);\n			return j }, timeCodeToSeconds: function (a, b, c, d) { \"undefined\" == typeof c\n				? c = !1 : \"undefined\" == typeof d && (d = 25);\n			var e = a.split(\":\"),\n				f = parseInt(e[0], 10),\n				g = parseInt(e[1], 10),\n				h = parseInt(e[2], 10),\n				i = 0,\n				j = 0;\n			return c && (i = parseInt(e[3]) / d), j = 3600 * f + 60 * g + h + i },\n		convertSMPTEtoSeconds: function (a) {\n			if (\"string\" != typeof a) return !1;\n			a = a.replace(\",\", \".\");\n			var b = 0,\n				c = -1 != a.indexOf(\".\") ? a.split(\".\")[1].length : 0,\n				d = 1;\n			a = a.split(\":\")\n				.reverse();\n			for (var e = 0; e < a.length; e++) d = 1, e > 0 && (d = Math.pow(60, e)), b +=\n				Number(a[e]) * d;\n			return Number(b.toFixed(c)) }, removeSwf: function (a) {\n			var b = document.getElementById(a);\n			b && /object|embed/i.test(b.nodeName) && (mejs.MediaFeatures.isIE ? (b.style\n				.display = \"none\",\n				function () { 4 == b.readyState ? mejs.Utility.removeObjectInIE(a) :\n						setTimeout(arguments.callee, 10) }()) : b.parentNode.removeChild(b)) },\n		removeObjectInIE: function (a) {\n			var b = document.getElementById(a);\n			if (b) {\n				for (var c in b) \"function\" == typeof b[c] && (b[c] = null);\n				b.parentNode.removeChild(b) } }, determineScheme: function (a) {\n			return a && -1 != a.indexOf(\"://\") ? a.substr(0, a.indexOf(\"://\") + 3) :\n				\"//\" }, debounce: function (a, b, c) {\n			var d;\n			return function () {\n				var e = this,\n					f = arguments,\n					g = function () { d = null, c || a.apply(e, f) },\n					h = c && !d;\n				clearTimeout(d), d = setTimeout(g, b), h && a.apply(e, f) } } }, mejs.PluginDetector = { hasPluginVersion: function (\n			a, b) {\n			var c = this.plugins[a];\n			return b[1] = b[1] || 0, b[2] = b[2] || 0, c[0] > b[0] || c[0] == b[0] && c[\n				1] > b[1] || c[0] == b[0] && c[1] == b[1] && c[2] >= b[2] ? !0 : !1 }, nav: window\n			.navigator, ua: window.navigator.userAgent.toLowerCase(), plugins: [],\n		addPlugin: function (a, b, c, d, e) { this.plugins[a] = this.detectPlugin(b,\n				c, d, e) }, detectPlugin: function (a, b, c, d) {\n			var e, f, g, h = [0, 0, 0];\n			if (\"undefined\" != typeof this.nav.plugins && \"object\" == typeof this.nav.plugins[\n					a]) {\n				if (e = this.nav.plugins[a].description, e && (\"undefined\" == typeof this.nav\n						.mimeTypes || !this.nav.mimeTypes[b] || this.nav.mimeTypes[b].enabledPlugin\n					))\n					for (h = e.replace(a, \"\")\n						.replace(/^\\s+/, \"\")\n						.replace(/\\sr/gi, \".\")\n						.split(\".\"), f = 0; f < h.length; f++) h[f] = parseInt(h[f].match(/\\d+/),\n						10) } else if (\"undefined\" != typeof window.ActiveXObject) try { g = new ActiveXObject(\n					c), g && (h = d(g)) } catch (i) {}\n			return h } }, mejs.PluginDetector.addPlugin(\"flash\", \"Shockwave Flash\",\n		\"application/x-shockwave-flash\", \"ShockwaveFlash.ShockwaveFlash\",\n		function (a) {\n			var b = [],\n				c = a.GetVariable(\"$version\");\n			return c && (c = c.split(\" \")[1].split(\",\"), b = [parseInt(c[0], 10),\n				parseInt(c[1], 10), parseInt(c[2], 10)]), b }), mejs.PluginDetector.addPlugin(\n		\"silverlight\", \"Silverlight Plug-In\", \"application/x-silverlight-2\",\n		\"AgControl.AgControl\",\n		function (a) {\n			var b = [0, 0, 0, 0],\n				c = function (a, b, c, d) {\n					for (; a.isVersionSupported(b[0] + \".\" + b[1] + \".\" + b[2] + \".\" + b[3]);)\n						b[c] += d;\n					b[c] -= d };\n			return c(a, b, 0, 1), c(a, b, 1, 1), c(a, b, 2, 1e4), c(a, b, 2, 1e3), c(a,\n				b, 2, 100), c(a, b, 2, 10), c(a, b, 2, 1), c(a, b, 3, 1), b }), mejs.MediaFeatures = { init: function () {\n			var a, b, c = this,\n				d = document,\n				e = mejs.PluginDetector.nav,\n				f = mejs.PluginDetector.ua.toLowerCase(),\n				g = [\"source\", \"track\", \"audio\", \"video\"];\n			c.isiPad = null !== f.match(/ipad/i), c.isiPhone = null !== f.match(\n					/iphone/i), c.isiOS = c.isiPhone || c.isiPad, c.isAndroid = null !== f.match(\n					/android/i), c.isBustedAndroid = null !== f.match(/android 2\\.[12]/), c.isBustedNativeHTTPS =\n				\"https:\" === location.protocol && (null !== f.match(/android [12]\\./) ||\n					null !== f.match(/macintosh.* version.* safari/)), c.isIE = -1 != e.appName\n				.toLowerCase()\n				.indexOf(\"microsoft\") || null !== e.appName.toLowerCase()\n				.match(/trident/gi), c.isChrome = null !== f.match(/chrome/gi), c.isChromium =\n				null !== f.match(/chromium/gi), c.isFirefox = null !== f.match(/firefox/gi),\n				c.isWebkit = null !== f.match(/webkit/gi), c.isGecko = null !== f.match(\n					/gecko/gi) && !c.isWebkit && !c.isIE, c.isOpera = null !== f.match(\n					/opera/gi), c.hasTouch = \"ontouchstart\" in window, c.svgAsImg = !!\n				document.implementation.hasFeature(\n					\"http://www.w3.org/TR/SVG11/feature#Image\", \"1.1\");\n			for (a = 0; a < g.length; a++) b = document.createElement(g[a]);\n			c.supportsMediaTag = \"undefined\" != typeof b.canPlayType || c.isBustedAndroid;\n			try { b.canPlayType(\"video/mp4\") } catch (h) { c.supportsMediaTag = !1 }\n			c.supportsPointerEvents = function () {\n					var a, b = document.createElement(\"x\"),\n						c = document.documentElement,\n						d = window.getComputedStyle;\n					return \"pointerEvents\" in b.style ? (b.style.pointerEvents = \"auto\", b.style\n						.pointerEvents = \"x\", c.appendChild(b), a = d && \"auto\" === d(b, \"\")\n						.pointerEvents, c.removeChild(b), !!a) : !1 }(), c.hasFirefoxPluginMovingProblem = !\n				1, c.hasiOSFullScreen = \"undefined\" != typeof b.webkitEnterFullscreen, c.hasNativeFullscreen =\n				\"undefined\" != typeof b.requestFullscreen, c.hasWebkitNativeFullScreen =\n				\"undefined\" != typeof b.webkitRequestFullScreen, c.hasMozNativeFullScreen =\n				\"undefined\" != typeof b.mozRequestFullScreen, c.hasMsNativeFullScreen =\n				\"undefined\" != typeof b.msRequestFullscreen, c.hasTrueNativeFullScreen = c\n				.hasWebkitNativeFullScreen || c.hasMozNativeFullScreen || c.hasMsNativeFullScreen,\n				c.nativeFullScreenEnabled = c.hasTrueNativeFullScreen, c.hasMozNativeFullScreen ?\n				c.nativeFullScreenEnabled = document.mozFullScreenEnabled : c.hasMsNativeFullScreen &&\n				(c.nativeFullScreenEnabled = document.msFullscreenEnabled), c.isChrome &&\n				(c.hasiOSFullScreen = !1), c.hasTrueNativeFullScreen && (c.fullScreenEventName =\n					\"\", c.hasWebkitNativeFullScreen ? c.fullScreenEventName =\n					\"webkitfullscreenchange\" : c.hasMozNativeFullScreen ? c.fullScreenEventName =\n					\"mozfullscreenchange\" : c.hasMsNativeFullScreen && (c.fullScreenEventName =\n						\"MSFullscreenChange\"), c.isFullScreen = function () {\n						return c.hasMozNativeFullScreen ? d.mozFullScreen : c.hasWebkitNativeFullScreen ?\n							d.webkitIsFullScreen : c.hasMsNativeFullScreen ? null !== d.msFullscreenElement :\n							void 0 }, c.requestFullScreen = function (a) { c.hasWebkitNativeFullScreen ?\n							a.webkitRequestFullScreen() : c.hasMozNativeFullScreen ? a.mozRequestFullScreen() :\n							c.hasMsNativeFullScreen && a.msRequestFullscreen() }, c.cancelFullScreen =\n					function () { c.hasWebkitNativeFullScreen ? document.webkitCancelFullScreen() :\n							c.hasMozNativeFullScreen ? document.mozCancelFullScreen() : c.hasMsNativeFullScreen &&\n							document.msExitFullscreen() }), c.hasiOSFullScreen && f.match(\n					/mac os x 10_5/i) && (c.hasNativeFullScreen = !1, c.hasiOSFullScreen = !1) } },\n	mejs.MediaFeatures.init(), mejs.HtmlMediaElement = { pluginType: \"native\",\n		isFullScreen: !1, setCurrentTime: function (a) { this.currentTime = a },\n		setMuted: function (a) { this.muted = a }, setVolume: function (a) { this.volume =\n				a }, stop: function () { this.pause() }, setSrc: function (a) {\n			for (var b = this.getElementsByTagName(\"source\"); b.length > 0;) this.removeChild(\n				b[0]);\n			if (\"string\" == typeof a) this.src = a;\n			else {\n				var c, d;\n				for (c = 0; c < a.length; c++)\n					if (d = a[c], this.canPlayType(d.type)) { this.src = d.src;\n						break } } }, setVideoSize: function (a, b) { this.width = a, this.height =\n				b } }, mejs.PluginMediaElement = function (a, b, c) { this.id = a, this.pluginType =\n			b, this.src = c, this.events = {}, this.attributes = {} }, mejs.PluginMediaElement\n	.prototype = { pluginElement: null, pluginType: \"\", isFullScreen: !1,\n		playbackRate: -1, defaultPlaybackRate: -1, seekable: [], played: [], paused:\n			!0, ended: !1, seeking: !1, duration: 0, error: null, tagName: \"\", muted: !1,\n		volume: 1, currentTime: 0, play: function () { null != this.pluginApi && (\n				\"youtube\" == this.pluginType || \"vimeo\" == this.pluginType ? this.pluginApi\n				.playVideo() : this.pluginApi.playMedia(), this.paused = !1) }, load: function () { null\n				!= this.pluginApi && (\"youtube\" == this.pluginType || \"vimeo\" == this.pluginType ||\n					this.pluginApi.loadMedia(), this.paused = !1) }, pause: function () { null\n				!= this.pluginApi && (\"youtube\" == this.pluginType || \"vimeo\" == this.pluginType ?\n					1 == this.pluginApi.getPlayerState() && this.pluginApi.pauseVideo() :\n					this.pluginApi.pauseMedia(), this.paused = !0) }, stop: function () { null\n				!= this.pluginApi && (\"youtube\" == this.pluginType || \"vimeo\" == this.pluginType ?\n					this.pluginApi.stopVideo() : this.pluginApi.stopMedia(), this.paused = !0\n				) }, canPlayType: function (a) {\n			var b, c, d, e = mejs.plugins[this.pluginType];\n			for (b = 0; b < e.length; b++)\n				if (d = e[b], mejs.PluginDetector.hasPluginVersion(this.pluginType, d.version))\n					for (c = 0; c < d.types.length; c++)\n						if (a == d.types[c]) return \"probably\";\n			return \"\" }, positionFullscreenButton: function (a, b, c) { null != this.pluginApi &&\n				this.pluginApi.positionFullscreenButton && this.pluginApi.positionFullscreenButton(\n					Math.floor(a), Math.floor(b), c) }, hideFullscreenButton: function () { null\n				!= this.pluginApi && this.pluginApi.hideFullscreenButton && this.pluginApi\n				.hideFullscreenButton() }, setSrc: function (a) {\n			if (\"string\" == typeof a) this.pluginApi.setSrc(mejs.Utility.absolutizeUrl(\n				a)), this.src = mejs.Utility.absolutizeUrl(a);\n			else {\n				var b, c;\n				for (b = 0; b < a.length; b++)\n					if (c = a[b], this.canPlayType(c.type)) { this.pluginApi.setSrc(mejs.Utility\n							.absolutizeUrl(c.src)), this.src = mejs.Utility.absolutizeUrl(c.src);\n						break } } }, setCurrentTime: function (a) { null != this.pluginApi && (\n				\"youtube\" == this.pluginType || \"vimeo\" == this.pluginType ? this.pluginApi\n				.seekTo(a) : this.pluginApi.setCurrentTime(a), this.currentTime = a) },\n		setVolume: function (a) { null != this.pluginApi && (\"youtube\" == this.pluginType ?\n				this.pluginApi.setVolume(100 * a) : this.pluginApi.setVolume(a), this.volume =\n				a) }, setMuted: function (a) { null != this.pluginApi && (\"youtube\" == this\n				.pluginType ? (a ? this.pluginApi.mute() : this.pluginApi.unMute(), this.muted =\n					a, this.dispatchEvent({ type: \"volumechange\" })) : this.pluginApi.setMuted(\n					a), this.muted = a) }, setVideoSize: function (a, b) { this.pluginElement &&\n				this.pluginElement.style && (this.pluginElement.style.width = a + \"px\",\n					this.pluginElement.style.height = b + \"px\"), null != this.pluginApi &&\n				this.pluginApi.setVideoSize && this.pluginApi.setVideoSize(a, b) },\n		setFullscreen: function (a) { null != this.pluginApi && this.pluginApi.setFullscreen &&\n				this.pluginApi.setFullscreen(a) }, enterFullScreen: function () { null !=\n				this.pluginApi && this.pluginApi.setFullscreen && this.setFullscreen(!0) },\n		exitFullScreen: function () { null != this.pluginApi && this.pluginApi.setFullscreen &&\n				this.setFullscreen(!1) }, addEventListener: function (a, b, c) { this.events[\n				a] = this.events[a] || [], this.events[a].push(b) }, removeEventListener: function (\n			a, b) {\n			if (!a) return this.events = {}, !0;\n			var c = this.events[a];\n			if (!c) return !0;\n			if (!b) return this.events[a] = [], !0;\n			for (var d = 0; d < c.length; d++)\n				if (c[d] === b) return this.events[a].splice(d, 1), !0;\n			return !1 }, dispatchEvent: function (a) {\n			var b, c = this.events[a.type];\n			if (c)\n				for (b = 0; b < c.length; b++) c[b].apply(this, [a]) }, hasAttribute: function (\n			a) {\n			return a in this.attributes }, removeAttribute: function (a) { delete this.attributes[\n				a] }, getAttribute: function (a) {\n			return this.hasAttribute(a) ? this.attributes[a] : null }, setAttribute: function (\n			a, b) { this.attributes[a] = b }, remove: function () { mejs.Utility.removeSwf(\n				this.pluginElement.id) } }, mejs.MediaElementDefaults = { mode: \"auto\",\n		plugins: [\"flash\", \"silverlight\", \"youtube\", \"vimeo\"], enablePluginDebug: !1,\n		httpsBasicAuthSite: !1, type: \"\", pluginPath: mejs.Utility.getScriptPath([\n			\"mediaelement.js\", \"mediaelement.min.js\", \"mediaelement-and-player.js\",\n			\"mediaelement-and-player.min.js\"]), flashName: \"flashmediaelement.swf\",\n		flashStreamer: \"\", flashScriptAccess: \"sameDomain\", enablePluginSmoothing: !1,\n		enablePseudoStreaming: !1, pseudoStreamingStartQueryParam: \"start\",\n		silverlightName: \"silverlightmediaelement.xap\", defaultVideoWidth: 480,\n		defaultVideoHeight: 270, pluginWidth: -1, pluginHeight: -1, pluginVars: [],\n		timerRate: 250, startVolume: .8, customError: \"\", success: function () {},\n		error: function () {} }, mejs.MediaElement = function (a, b) {\n		return mejs.HtmlMediaElementShim.create(a, b) }, mejs.HtmlMediaElementShim = { create: function (\n			a, b) {\n			var c, d, e = {},\n				f = \"string\" == typeof a ? document.getElementById(a) : a,\n				g = f.tagName.toLowerCase(),\n				h = \"audio\" === g || \"video\" === g,\n				i = h ? f.getAttribute(\"src\") : f.getAttribute(\"href\"),\n				j = f.getAttribute(\"poster\"),\n				k = f.getAttribute(\"autoplay\"),\n				l = f.getAttribute(\"preload\"),\n				m = f.getAttribute(\"controls\");\n			for (d in mejs.MediaElementDefaults) e[d] = mejs.MediaElementDefaults[d];\n			for (d in b) e[d] = b[d];\n			return i = \"undefined\" == typeof i || null === i || \"\" == i ? null : i, j =\n				\"undefined\" == typeof j || null === j ? \"\" : j, l = \"undefined\" == typeof l ||\n				null === l || \"false\" === l ? \"none\" : l, k = !(\"undefined\" == typeof k ||\n					null === k || \"false\" === k), m = !(\"undefined\" == typeof m || null === m ||\n					\"false\" === m), c = this.determinePlayback(f, e, mejs.MediaFeatures.supportsMediaTag,\n					h, i), c.url = null !== c.url ? mejs.Utility.absolutizeUrl(c.url) : \"\", c\n				.scheme = mejs.Utility.determineScheme(c.url), \"native\" == c.method ? (\n					mejs.MediaFeatures.isBustedAndroid && (f.src = c.url, f.addEventListener(\n						\"click\",\n						function () { f.play() }, !1)), this.updateNative(c, e, k, l)) : \"\" !==\n				c.method ? this.createPlugin(c, e, j, k, l, m) : (this.createErrorMessage(\n					c, e, j), this) }, determinePlayback: function (a, b, c, d, e) {\n			var f, g, h, i, j, k, l, m, n, o, p, q = [],\n				r = { method: \"\", url: \"\", htmlMediaElement: a, isVideo: \"audio\" !== a.tagName\n						.toLowerCase(), scheme: \"\" };\n			if (\"undefined\" != typeof b.type && \"\" !== b.type)\n				if (\"string\" == typeof b.type) q.push({ type: b.type, url: e });\n				else\n					for (f = 0; f < b.type.length; f++) q.push({ type: b.type[f], url: e });\n			else if (null !== e) k = this.formatType(e, a.getAttribute(\"type\")), q.push({ type: k,\n				url: e });\n			else\n				for (f = 0; f < a.childNodes.length; f++) j = a.childNodes[f], 1 == j.nodeType &&\n					\"source\" == j.tagName.toLowerCase() && (e = j.getAttribute(\"src\"), k =\n						this.formatType(e, j.getAttribute(\"type\")), p = j.getAttribute(\"media\"),\n						(!p || !window.matchMedia || window.matchMedia && window.matchMedia(p)\n							.matches) && q.push({ type: k, url: e }));\n			if (!d && q.length > 0 && null !== q[0].url && this.getTypeFromFile(q[0].url)\n				.indexOf(\"audio\") > -1 && (r.isVideo = !1), r.isVideo && mejs.MediaFeatures\n				.isBustedAndroid && (a.canPlayType = function (a) {\n					return null !== a.match(/video\\/(mp4|m4v)/gi) ? \"maybe\" : \"\" }), r.isVideo &&\n				mejs.MediaFeatures.isChromium && (a.canPlayType = function (a) {\n					return null !== a.match(/video\\/(webm|ogv|ogg)/gi) ? \"maybe\" : \"\" }), c &&\n				(\"auto\" === b.mode || \"auto_plugin\" === b.mode || \"native\" === b.mode) &&\n				(!mejs.MediaFeatures.isBustedNativeHTTPS || b.httpsBasicAuthSite !== !0)) {\n				for (d || (o = document.createElement(r.isVideo ? \"video\" : \"audio\"), a.parentNode\n						.insertBefore(o, a), a.style.display = \"none\", r.htmlMediaElement = a =\n						o), f = 0; f < q.length; f++)\n					if (\"video/m3u8\" == q[f].type || \"\" !== a.canPlayType(q[f].type)\n						.replace(/no/, \"\") || \"\" !== a.canPlayType(q[f].type.replace(/mp3/,\n							\"mpeg\"))\n						.replace(/no/, \"\") || \"\" !== a.canPlayType(q[f].type.replace(/m4a/,\n							\"mp4\"))\n						.replace(/no/, \"\")) { r.method = \"native\", r.url = q[f].url;\n						break }\n				if (\"native\" === r.method && (null !== r.url && (a.src = r.url),\n						\"auto_plugin\" !== b.mode)) return r }\n			if (\"auto\" === b.mode || \"auto_plugin\" === b.mode || \"shim\" === b.mode)\n				for (f = 0; f < q.length; f++)\n					for (k = q[f].type, g = 0; g < b.plugins.length; g++)\n						for (l = b.plugins[g], m = mejs.plugins[l], h = 0; h < m.length; h++)\n							if (n = m[h], null == n.version || mejs.PluginDetector.hasPluginVersion(\n									l, n.version))\n								for (i = 0; i < n.types.length; i++)\n									if (k.toLowerCase() == n.types[i].toLowerCase()) return r.method = l,\n										r.url = q[f].url, r;\n			return \"auto_plugin\" === b.mode && \"native\" === r.method ? r : (\"\" === r.method &&\n				q.length > 0 && (r.url = q[0].url), r) }, formatType: function (a, b) {\n			return a && !b ? this.getTypeFromFile(a) : b && ~b.indexOf(\";\") ? b.substr(\n				0, b.indexOf(\";\")) : b }, getTypeFromFile: function (a) { a = a.split(\"?\")[\n				0];\n			var b = a.substring(a.lastIndexOf(\".\") + 1)\n				.toLowerCase(),\n				c = /(mp4|m4v|ogg|ogv|m3u8|webm|webmv|flv|wmv|mpeg|mov)/gi.test(b) ?\n				\"video/\" : \"audio/\";\n			return this.getTypeFromExtension(b, c) }, getTypeFromExtension: function (a,\n			b) {\n			switch (b = b || \"\", a) {\n			case \"mp4\":\n			case \"m4v\":\n			case \"m4a\":\n			case \"f4v\":\n			case \"f4a\":\n				return b + \"mp4\";\n			case \"flv\":\n				return b + \"x-flv\";\n			case \"webm\":\n			case \"webma\":\n			case \"webmv\":\n				return b + \"webm\";\n			case \"ogg\":\n			case \"oga\":\n			case \"ogv\":\n				return b + \"ogg\";\n			case \"m3u8\":\n				return \"application/x-mpegurl\";\n			case \"ts\":\n				return b + \"mp2t\";\n			default:\n				return b + a } }, createErrorMessage: function (a, b, c) {\n			var d = a.htmlMediaElement,\n				e = document.createElement(\"div\"),\n				f = b.customError;\n			e.className = \"me-cannotplay\";\n			try { e.style.width = d.width + \"px\", e.style.height = d.height + \"px\" } catch (\n				g) {}\n			f || (f = '<a href=\"' + a.url + '\">', \"\" !== c && (f += '<img src=\"' + c +\n				'\" width=\"100%\" height=\"100%\" alt=\"\" />'), f += \"<span>\" + mejs.i18n.t(\n				\"mejs.download-file\") + \"</span></a>\"), e.innerHTML = f, d.parentNode.insertBefore(\n				e, d), d.style.display = \"none\", b.error(d) }, createPlugin: function (a, b,\n			c, d, e, f) {\n			var g, h, i, j = a.htmlMediaElement,\n				k = 1,\n				l = 1,\n				m = \"me_\" + a.method + \"_\" + mejs.meIndex++,\n				n = new mejs.PluginMediaElement(m, a.method, a.url),\n				o = document.createElement(\"div\");\n			n.tagName = j.tagName;\n			for (var p = 0; p < j.attributes.length; p++) {\n				var q = j.attributes[p];\n				q.specified && n.setAttribute(q.name, q.value) }\n			for (h = j.parentNode; null !== h && null != h.tagName && \"body\" !== h.tagName\n				.toLowerCase() && null != h.parentNode && null != h.parentNode.tagName &&\n				null != h.parentNode.constructor && \"ShadowRoot\" === h.parentNode.constructor\n				.name;) {\n				if (\"p\" === h.parentNode.tagName.toLowerCase()) { h.parentNode.parentNode.insertBefore(\n						h, h.parentNode);\n					break }\n				h = h.parentNode }\n			if (a.isVideo ? (k = b.pluginWidth > 0 ? b.pluginWidth : b.videoWidth > 0 ?\n					b.videoWidth : null !== j.getAttribute(\"width\") ? j.getAttribute(\"width\") :\n					b.defaultVideoWidth, l = b.pluginHeight > 0 ? b.pluginHeight : b.videoHeight >\n					0 ? b.videoHeight : null !== j.getAttribute(\"height\") ? j.getAttribute(\n						\"height\") : b.defaultVideoHeight, k = mejs.Utility.encodeUrl(k), l =\n					mejs.Utility.encodeUrl(l)) : b.enablePluginDebug && (k = 320, l = 240), n\n				.success = b.success, o.className = \"me-plugin\", o.id = m + \"_container\",\n				a.isVideo ? j.parentNode.insertBefore(o, j) : document.body.insertBefore(o,\n					document.body.childNodes[0]), \"flash\" === a.method || \"silverlight\" === a\n				.method) {\n				var r = \"audio/mp4\" === j.getAttribute(\"type\"),\n					s = j.getElementsByTagName(\"source\");\n				if (s && !r)\n					for (var p = 0, t = s.length; t > p; p++) \"audio/mp4\" === s[p].getAttribute(\n						\"type\") && (r = !0);\n				i = [\"id=\" + m, \"isvideo=\" + (a.isVideo || r ? \"true\" : \"false\"),\n						\"autoplay=\" + (d ? \"true\" : \"false\"), \"preload=\" + e, \"width=\" + k,\n						\"startvolume=\" + b.startVolume, \"timerrate=\" + b.timerRate,\n						\"flashstreamer=\" + b.flashStreamer, \"height=\" + l, \"pseudostreamstart=\" +\n						b.pseudoStreamingStartQueryParam], null !== a.url && (\"flash\" == a.method ?\n						i.push(\"file=\" + mejs.Utility.encodeUrl(a.url)) : i.push(\"file=\" + a.url)\n					), b.enablePluginDebug && i.push(\"debug=true\"), b.enablePluginSmoothing &&\n					i.push(\"smoothing=true\"), b.enablePseudoStreaming && i.push(\n						\"pseudostreaming=true\"), f && i.push(\"controls=true\"), b.pluginVars && (\n						i = i.concat(b.pluginVars)), window[m + \"_init\"] = function () {\n						switch (n.pluginType) {\n						case \"flash\":\n							n.pluginElement = n.pluginApi = document.getElementById(m);\n							break;\n						case \"silverlight\":\n							n.pluginElement = document.getElementById(n.id), n.pluginApi = n.pluginElement\n								.Content.MediaElementJS }\n						null != n.pluginApi && n.success && n.success(n, j) }, window[m +\n						\"_event\"] = function (a, b) {\n						var c, d, e;\n						c = { type: a, target: n };\n						for (d in b) n[d] = b[d], c[d] = b[d];\n						e = b.bufferedTime || 0, c.target.buffered = c.buffered = { start: function (\n								a) {\n								return 0 }, end: function (a) {\n								return e }, length: 1 }, n.dispatchEvent(c) } }\n			switch (a.method) {\n			case \"silverlight\":\n				o.innerHTML =\n					'<object data=\"data:application/x-silverlight-2,\" type=\"application/x-silverlight-2\" id=\"' +\n					m + '\" name=\"' + m + '\" width=\"' + k + '\" height=\"' + l +\n					'\" class=\"mejs-shim\"><param name=\"initParams\" value=\"' + i.join(\",\") +\n					'\" /><param name=\"windowless\" value=\"true\" /><param name=\"background\" value=\"black\" /><param name=\"minRuntimeVersion\" value=\"3.0.0.0\" /><param name=\"autoUpgrade\" value=\"true\" /><param name=\"source\" value=\"' +\n					b.pluginPath + b.silverlightName + '\" /></object>';\n				break;\n			case \"flash\":\n				mejs.MediaFeatures.isIE ? (g = document.createElement(\"div\"), o.appendChild(\n							g), g.outerHTML =\n						'<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"//download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab\" id=\"' +\n						m + '\" width=\"' + k + '\" height=\"' + l +\n						'\" class=\"mejs-shim\"><param name=\"movie\" value=\"' + b.pluginPath + b.flashName +\n						\"?\" + (new Date)\n						.getTime() + '\" /><param name=\"flashvars\" value=\"' + i.join(\"&amp;\") +\n						'\" /><param name=\"quality\" value=\"high\" /><param name=\"bgcolor\" value=\"#000000\" /><param name=\"wmode\" value=\"transparent\" /><param name=\"allowScriptAccess\" value=\"' +\n						b.flashScriptAccess +\n						'\" /><param name=\"allowFullScreen\" value=\"true\" /><param name=\"scale\" value=\"default\" /></object>'\n					) : o.innerHTML = '<embed id=\"' + m + '\" name=\"' + m +\n					'\" play=\"true\" loop=\"false\" quality=\"high\" bgcolor=\"#000000\" wmode=\"transparent\" allowScriptAccess=\"' +\n					b.flashScriptAccess +\n					'\" allowFullScreen=\"true\" type=\"application/x-shockwave-flash\" pluginspage=\"//www.macromedia.com/go/getflashplayer\" src=\"' +\n					b.pluginPath + b.flashName + '\" flashvars=\"' + i.join(\"&\") + '\" width=\"' +\n					k + '\" height=\"' + l + '\" scale=\"default\"class=\"mejs-shim\"></embed>';\n				break;\n			case \"youtube\":\n				var u;\n				if (-1 != a.url.lastIndexOf(\"youtu.be\")) u = a.url.substr(a.url.lastIndexOf(\n					\"/\") + 1), -1 != u.indexOf(\"?\") && (u = u.substr(0, u.indexOf(\"?\")));\n				else {\n					var v = a.url.match(/[?&]v=([^&#]+)|&|#|$/);\n					v && (u = v[1]) }\n				youtubeSettings = { container: o, containerId: o.id, pluginMediaElement: n,\n					pluginId: m, videoId: u, height: l, width: k, scheme: a.scheme,\n					variables: b.youtubeIframeVars }, window.postMessage ? mejs.YouTubeApi.enqueueIframe(\n					youtubeSettings) : mejs.PluginDetector.hasPluginVersion(\"flash\", [10, 0,\n					0]) && mejs.YouTubeApi.createFlash(youtubeSettings, b);\n				break;\n			case \"vimeo\":\n				var w = m + \"_player\";\n				if (n.vimeoid = a.url.substr(a.url.lastIndexOf(\"/\") + 1), o.innerHTML =\n					'<iframe src=\"' + a.scheme + \"player.vimeo.com/video/\" + n.vimeoid +\n					\"?api=1&portrait=0&byline=0&title=0&player_id=\" + w + '\" width=\"' + k +\n					'\" height=\"' + l + '\" frameborder=\"0\" class=\"mejs-shim\" id=\"' + w +\n					'\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',\n					\"function\" == typeof $f) {\n					var x = $f(o.childNodes[0]),\n						y = -1;\n					x.addEvent(\"ready\", function () {\n						function a(a, b, c, d) {\n							var e = { type: c, target: b }; \"timeupdate\" == c && (b.currentTime =\n									e.currentTime = d.seconds, b.duration = e.duration = d.duration), b\n								.dispatchEvent(e) }\n						x.playVideo = function () { x.api(\"play\") }, x.stopVideo = function () { x\n									.api(\"unload\") }, x.pauseVideo = function () { x.api(\"pause\") }, x.seekTo =\n							function (a) { x.api(\"seekTo\", a) }, x.setVolume = function (a) { x.api(\n									\"setVolume\", a) }, x.setMuted = function (a) { a ? (x.lastVolume =\n									x.api(\"getVolume\"), x.api(\"setVolume\", 0)) : (x.api(\"setVolume\", x\n									.lastVolume), delete x.lastVolume) }, x.getPlayerState = function () {\n								return y }, x.addEvent(\"play\", function () { y = 1, a(x, n, \"play\"),\n									a(x, n, \"playing\") }), x.addEvent(\"pause\", function () { y = 2, a(x,\n									n, \"pause\") }), x.addEvent(\"finish\", function () { y = 0, a(x, n,\n									\"ended\") }), x.addEvent(\"playProgress\", function (b) { a(x, n,\n									\"timeupdate\", b) }), x.addEvent(\"seek\", function (b) { y = 3, a(x,\n									n, \"seeked\", b) }), x.addEvent(\"loadProgress\", function (b) { y = 3,\n									a(x, n, \"progress\", b) }), n.pluginElement = o, n.pluginApi = x, n.success(\n								n, n.pluginElement) }) } else console.warn(\n					\"You need to include froogaloop for vimeo to work\") }\n			return j.style.display = \"none\", j.removeAttribute(\"autoplay\"), n },\n		updateNative: function (a, b, c, d) {\n			var e, f = a.htmlMediaElement;\n			for (e in mejs.HtmlMediaElement) f[e] = mejs.HtmlMediaElement[e];\n			return b.success(f, f), f } }, mejs.YouTubeApi = { isIframeStarted: !1,\n		isIframeLoaded: !1, loadIframeApi: function (a) {\n			if (!this.isIframeStarted) {\n				var b = document.createElement(\"script\");\n				b.src = a.scheme + \"www.youtube.com/player_api\";\n				var c = document.getElementsByTagName(\"script\")[0];\n				c.parentNode.insertBefore(b, c), this.isIframeStarted = !0 } }, iframeQueue: [],\n		enqueueIframe: function (a) { this.isLoaded ? this.createIframe(a) : (this.loadIframeApi(\n				a), this.iframeQueue.push(a)) }, createIframe: function (a) {\n			var b = a.pluginMediaElement,\n				c = { controls: 0, wmode: \"transparent\" },\n				d = new YT.Player(a.containerId, { height: a.height, width: a.width,\n					videoId: a.videoId, playerVars: $.extend({}, c, a.variables), events: { onReady: function (\n							c) { d.setVideoSize = function (a, b) { d.setSize(a, b) }, a.pluginMediaElement\n								.pluginApi = d, a.pluginMediaElement.pluginElement = document.getElementById(\n									a.containerId), b.success(b, b.pluginElement), mejs.YouTubeApi.createEvent(\n									d, b, \"canplay\"), setInterval(function () { mejs.YouTubeApi.createEvent(\n										d, b, \"timeupdate\") }, 250), \"undefined\" != typeof b.attributes.autoplay &&\n								d.playVideo() }, onStateChange: function (a) { mejs.YouTubeApi.handleStateChange(\n								a.data, d, b) } } }) }, createEvent: function (a, b, c) {\n			var d = { type: c, target: b };\n			if (a && a.getDuration) { b.currentTime = d.currentTime = a.getCurrentTime(),\n					b.duration = d.duration = a.getDuration(), d.paused = b.paused, d.ended =\n					b.ended, d.muted = a.isMuted(), d.volume = a.getVolume() / 100, d.bytesTotal =\n					a.getVideoBytesTotal(), d.bufferedBytes = a.getVideoBytesLoaded();\n				var e = d.bufferedBytes / d.bytesTotal * d.duration;\n				d.target.buffered = d.buffered = { start: function (a) {\n						return 0 }, end: function (a) {\n						return e }, length: 1 } }\n			b.dispatchEvent(d) }, iFrameReady: function () {\n			for (this.isLoaded = !0, this.isIframeLoaded = !0; this.iframeQueue.length >\n				0;) {\n				var a = this.iframeQueue.pop();\n				this.createIframe(a) } }, flashPlayers: {}, createFlash: function (a) { this\n				.flashPlayers[a.pluginId] = a;\n			var b, c = a.scheme +\n				\"www.youtube.com/apiplayer?enablejsapi=1&amp;playerapiid=\" + a.pluginId +\n				\"&amp;version=3&amp;autoplay=0&amp;controls=0&amp;modestbranding=1&loop=0\";\n			mejs.MediaFeatures.isIE ? (b = document.createElement(\"div\"), a.container.appendChild(\n						b), b.outerHTML =\n					'<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"' +\n					a.scheme +\n					'download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab\" id=\"' + a.pluginId +\n					'\" width=\"' + a.width + '\" height=\"' + a.height +\n					'\" class=\"mejs-shim\"><param name=\"movie\" value=\"' + c +\n					'\" /><param name=\"wmode\" value=\"transparent\" /><param name=\"allowScriptAccess\" value=\"' +\n					options.flashScriptAccess +\n					'\" /><param name=\"allowFullScreen\" value=\"true\" /></object>') : a.container\n				.innerHTML = '<object type=\"application/x-shockwave-flash\" id=\"' + a.pluginId +\n				'\" data=\"' + c + '\" width=\"' + a.width + '\" height=\"' + a.height +\n				'\" style=\"visibility: visible; \" class=\"mejs-shim\"><param name=\"allowScriptAccess\" value=\"' +\n				options.flashScriptAccess +\n				'\"><param name=\"wmode\" value=\"transparent\"></object>' }, flashReady: function (\n			a) {\n			var b = this.flashPlayers[a],\n				c = document.getElementById(a),\n				d = b.pluginMediaElement;\n			d.pluginApi = d.pluginElement = c, b.success(d, d.pluginElement), c.cueVideoById(\n				b.videoId);\n			var e = b.containerId + \"_callback\";\n			window[e] = function (a) { mejs.YouTubeApi.handleStateChange(a, c, d) }, c.addEventListener(\n				\"onStateChange\", e), setInterval(function () { mejs.YouTubeApi.createEvent(\n					c, d, \"timeupdate\") }, 250), mejs.YouTubeApi.createEvent(c, d, \"canplay\") },\n		handleStateChange: function (a, b, c) {\n			switch (a) {\n			case -1:\n				c.paused = !0, c.ended = !0, mejs.YouTubeApi.createEvent(b, c,\n					\"loadedmetadata\");\n				break;\n			case 0:\n				c.paused = !1, c.ended = !0, mejs.YouTubeApi.createEvent(b, c, \"ended\");\n				break;\n			case 1:\n				c.paused = !1, c.ended = !1, mejs.YouTubeApi.createEvent(b, c, \"play\"),\n					mejs.YouTubeApi.createEvent(b, c, \"playing\");\n				break;\n			case 2:\n				c.paused = !0, c.ended = !1, mejs.YouTubeApi.createEvent(b, c, \"pause\");\n				break;\n			case 3:\n				mejs.YouTubeApi.createEvent(b, c, \"progress\");\n				break;\n			case 5:\n			} } }, window.onYouTubePlayerAPIReady = function () { mejs.YouTubeApi.iFrameReady() },\n	window.onYouTubePlayerReady = function (a) { mejs.YouTubeApi.flashReady(a) },\n	window.mejs = mejs, window.MediaElement = mejs.MediaElement,\n	function (a, b, c) { \"use strict\";\n		var d = { \"default\": \"en\", locale: { language: b.i18n && b.i18n.locale.language ||\n					\"\", strings: b.i18n && b.i18n.locale.strings || {} }, ietf_lang_regex: /^(x\\-)?[a-z]{2,}(\\-\\w{2,})?(\\-\\w{2,})?$/,\n			methods: {} };\n		d.getLanguage = function () {\n				var a = d.locale.language || window.navigator.userLanguage || window.navigator\n					.language;\n				return d.ietf_lang_regex.exec(a) ? a : null }, \"undefined\" != typeof mejsL10n &&\n			(d.locale.language = mejsL10n.language), d.methods.checkPlain = function (a) {\n				var b, c, d = { \"&\": \"&amp;\", '\"': \"&quot;\", \"<\": \"&lt;\", \">\": \"&gt;\" };\n				a = String(a);\n				for (b in d) d.hasOwnProperty(b) && (c = new RegExp(b, \"g\"), a = a.replace(\n					c, d[b]));\n				return a }, d.methods.t = function (a, b) {\n				var c;\n				return d.locale.strings && d.locale.strings[b.context] && (c = d.locale.strings[\n						b.context][a]), !c && d.locale.strings && d.locale.strings[d[\"default\"]] &&\n					(c = d.locale.strings[d[\"default\"]][a]), c = c || a, d.methods.checkPlain(\n						c) }, d.t = function (a, b) {\n				if (\"string\" == typeof a && a.length > 0) {\n					var c = d.getLanguage();\n					return b = b || { context: c }, d.methods.t(a, b) }\n				throw { name: \"InvalidArgumentException\", message: \"First argument is either not a string or empty.\" } },\n			b.i18n = d }(document, mejs),\n	function (a, b) { \"use strict\"; \"undefined\" != typeof mejsL10n && (a[mejsL10n.language] =\n			mejsL10n.strings) }(mejs.i18n.locale.strings),\n	function (a, b) { \"use strict\"; \"undefined\" == typeof a.en && (a.en = { \"mejs.download-file\": \"Download File\", \"mejs.fullscreen-off\": \"Turn off Fullscreen\", \"mejs.fullscreen-on\": \"Go Fullscreen\", \"mejs.download-video\": \"Download Video\", \"mejs.fullscreen\": \"Fullscreen\", \"mejs.time-jump-forward\": \"Jump forward %1 seconds\", \"mejs.play\": \"Play\", \"mejs.pause\": \"Pause\", \"mejs.close\": \"Close\", \"mejs.time-slider\": \"Time Slider\", \"mejs.time-help-text\": \"Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds.\", \"mejs.time-skip-back\": \"Skip back %1 seconds\", \"mejs.captions-subtitles\": \"Captions/Subtitles\", \"mejs.none\": \"None\", \"mejs.mute-toggle\": \"Mute Toggle\", \"mejs.volume-help-text\": \"Use Up/Down Arrow keys to increase or decrease volume.\", \"mejs.unmute\": \"Unmute\", \"mejs.mute\": \"Mute\", \"mejs.volume-slider\": \"Volume Slider\", \"mejs.video-player\": \"Video Player\", \"mejs.audio-player\": \"Audio Player\", \"mejs.ad-skip\": \"Skip ad\", \"mejs.ad-skip-info\": \"Skip in %1 seconds\", \"mejs.source-chooser\": \"Source Chooser\" }) }\n	(mejs.i18n.locale.strings),\n	/*!\n	 *\n	 * MediaElementPlayer\n	 * http://mediaelementjs.com/\n	 *\n	 * Creates a controller bar for HTML5 <video> add <audio> tags\n	 * using jQuery and MediaElement.js (HTML5 Flash/Silverlight wrapper)\n	 *\n	 * Copyright 2010-2013, John Dyer (http://j.hn/)\n	 * License: MIT\n	 *\n	 */\n	\"undefined\" != typeof jQuery ? mejs.$ = jQuery : \"undefined\" != typeof Zepto ?\n	(mejs.$ = Zepto, Zepto.fn.outerWidth = function (a) {\n		var b = $(this)\n			.width();\n		return a && (b += parseInt($(this)\n			.css(\"margin-right\"), 10), b += parseInt($(this)\n			.css(\"margin-left\"), 10)), b }) : \"undefined\" != typeof ender && (mejs.$ =\n		ender),\n	function (a) { mejs.MepDefaults = { poster: \"\", showPosterWhenEnded: !1,\n				defaultVideoWidth: 480, defaultVideoHeight: 270, videoWidth: -1,\n				videoHeight: -1, defaultAudioWidth: 400, defaultAudioHeight: 30,\n				defaultSeekBackwardInterval: function (a) {\n					return .05 * a.duration }, defaultSeekForwardInterval: function (a) {\n					return .05 * a.duration }, setDimensions: !0, audioWidth: -1, audioHeight:\n					-1, startVolume: .8, loop: !1, autoRewind: !0, enableAutosize: !0,\n				timeFormat: \"\", alwaysShowHours: !1, showTimecodeFrameCount: !1,\n				framesPerSecond: 25, autosizeProgress: !0, alwaysShowControls: !1,\n				hideVideoControlsOnLoad: !1, clickToPlayPause: !0, controlsTimeoutDefault: 1500,\n				controlsTimeoutMouseEnter: 2500, controlsTimeoutMouseLeave: 1e3,\n				iPadUseNativeControls: !1, iPhoneUseNativeControls: !1,\n				AndroidUseNativeControls: !1, features: [\"playpause\", \"current\", \"progress\",\n					\"duration\", \"tracks\", \"volume\", \"fullscreen\"], isVideo: !0, stretching: \"auto\",\n				enableKeyboard: !0, pauseOtherPlayers: !0, keyActions: [{ keys: [32, 179],\n						action: function (a, b, c, d) { mejs.MediaFeatures.isFirefox || (b.paused ||\n								b.ended ? b.play() : b.pause()) } }, { keys: [38], action: function (a,\n							b, c, d) { a.container.find(\".mejs-volume-slider\")\n								.css(\"display\", \"block\"), a.isVideo && (a.showControls(), a.startControlsTimer());\n							var e = Math.min(b.volume + .1, 1);\n							b.setVolume(e) } }, { keys: [40], action: function (a, b, c, d) { a.container\n								.find(\".mejs-volume-slider\")\n								.css(\"display\", \"block\"), a.isVideo && (a.showControls(), a.startControlsTimer());\n							var e = Math.max(b.volume - .1, 0);\n							b.setVolume(e) } }, { keys: [37, 227], action: function (a, b, c, d) {\n							if (!isNaN(b.duration) && b.duration > 0) { a.isVideo && (a.showControls(),\n									a.startControlsTimer());\n								var e = Math.max(b.currentTime - a.options.defaultSeekBackwardInterval(\n									b), 0);\n								b.setCurrentTime(e) } } }, { keys: [39, 228], action: function (a, b,\n							c, d) {\n							if (!isNaN(b.duration) && b.duration > 0) { a.isVideo && (a.showControls(),\n									a.startControlsTimer());\n								var e = Math.min(b.currentTime + a.options.defaultSeekForwardInterval(\n									b), b.duration);\n								b.setCurrentTime(e) } } }, { keys: [70], action: function (a, b, c, d) { \"undefined\" !=\n							typeof a.enterFullScreen && (a.isFullScreen ? a.exitFullScreen() : a.enterFullScreen()) } },\n					{ keys: [77], action: function (a, b, c, d) { a.container.find(\n									\".mejs-volume-slider\")\n								.css(\"display\", \"block\"), a.isVideo && (a.showControls(), a.startControlsTimer()),\n								a.media.muted ? a.setMuted(!1) : a.setMuted(!0) } }] }, mejs.mepIndex =\n			0, mejs.players = {}, mejs.MediaElementPlayer = function (b, c) {\n				if (!(this instanceof mejs.MediaElementPlayer)) return new mejs.MediaElementPlayer(\n					b, c);\n				var d = this;\n				return d.$media = d.$node = a(b), d.node = d.media = d.$media[0], d.node ?\n					\"undefined\" != typeof d.node.player ? d.node.player : (\"undefined\" ==\n						typeof c && (c = d.$node.data(\"mejsoptions\")), d.options = a.extend({},\n							mejs.MepDefaults, c), d.options.timeFormat || (d.options.timeFormat =\n							\"mm:ss\", d.options.alwaysShowHours && (d.options.timeFormat = \"hh:mm:ss\"),\n							d.options.showTimecodeFrameCount && (d.options.timeFormat += \":ff\")),\n						mejs.Utility.calculateTimeFormat(0, d.options, d.options.framesPerSecond ||\n							25), d.id = \"mep_\" + mejs.mepIndex++, mejs.players[d.id] = d, d.init(),\n						d) : void 0 }, mejs.MediaElementPlayer.prototype = { hasFocus: !1,\n				controlsAreVisible: !0, init: function () {\n					var b = this,\n						c = mejs.MediaFeatures,\n						d = a.extend(!0, {}, b.options, { success: function (a, c) { b.meReady(a,\n									c) }, error: function (a) { b.handleError(a) } }),\n						e = b.media.tagName.toLowerCase();\n					if (b.isDynamic = \"audio\" !== e && \"video\" !== e, b.isDynamic ? b.isVideo =\n						b.options.isVideo : b.isVideo = \"audio\" !== e && b.options.isVideo, c.isiPad &&\n						b.options.iPadUseNativeControls || c.isiPhone && b.options.iPhoneUseNativeControls\n					) b.$media.attr(\"controls\", \"controls\"), c.isiPad && null !== b.media.getAttribute(\n						\"autoplay\") && b.play();\n					else if (c.isAndroid && b.options.AndroidUseNativeControls);\n					else if (b.isVideo || !b.isVideo && b.options.features.length) { b.$media\n							.removeAttr(\"controls\");\n						var f = b.isVideo ? mejs.i18n.t(\"mejs.video-player\") : mejs.i18n.t(\n							\"mejs.audio-player\");\n						a('<span class=\"mejs-offscreen\">' + f + \"</span>\")\n							.insertBefore(b.$media), b.container = a('<div id=\"' + b.id +\n								'\" class=\"mejs-container ' + (mejs.MediaFeatures.svgAsImg ? \"svg\" :\n									\"no-svg\") + '\" tabindex=\"0\" role=\"application\" aria-label=\"' + f +\n								'\"><div class=\"mejs-inner\"><div class=\"mejs-mediaelement\"></div><div class=\"mejs-layers\"></div><div class=\"mejs-controls\"></div><div class=\"mejs-clear\"></div></div></div>'\n							)\n							.addClass(b.$media[0].className)\n							.insertBefore(b.$media)\n							.focus(function (a) {\n								if (!b.controlsAreVisible && !b.hasFocus && b.controlsEnabled && (b.showControls(!\n										0), !b.hasMsNativeFullScreen)) {\n									var c = b.container.find(\".mejs-playpause-button > button\");\n									c.focus() } }), b.options.features.length || b.container.css(\n								\"background\", \"transparent\")\n							.find(\".mejs-controls\")\n							.hide(), b.isVideo && \"fill\" === b.options.stretching && !b.container.parent(\n								\"mejs-fill-container\")\n							.length && (b.outerContainer = b.$media.parent(), b.container.wrap(\n								'<div class=\"mejs-fill-container\"/>')), b.container.addClass((c.isAndroid ?\n								\"mejs-android \" : \"\") + (c.isiOS ? \"mejs-ios \" : \"\") + (c.isiPad ?\n								\"mejs-ipad \" : \"\") + (c.isiPhone ? \"mejs-iphone \" : \"\") + (b.isVideo ?\n								\"mejs-video \" : \"mejs-audio \")), b.container.find(\".mejs-mediaelement\")\n							.append(b.$media), b.node.player = b, b.controls = b.container.find(\n								\".mejs-controls\"), b.layers = b.container.find(\".mejs-layers\");\n						var g = b.isVideo ? \"video\" : \"audio\",\n							h = g.substring(0, 1)\n							.toUpperCase() + g.substring(1);\n						b.options[g + \"Width\"] > 0 || b.options[g + \"Width\"].toString()\n							.indexOf(\"%\") > -1 ? b.width = b.options[g + \"Width\"] : \"\" !== b.media.style\n							.width && null !== b.media.style.width ? b.width = b.media.style.width :\n							null !== b.media.getAttribute(\"width\") ? b.width = b.$media.attr(\n								\"width\") : b.width = b.options[\"default\" + h + \"Width\"], b.options[g +\n								\"Height\"] > 0 || b.options[g + \"Height\"].toString()\n							.indexOf(\"%\") > -1 ? b.height = b.options[g + \"Height\"] : \"\" !== b.media\n							.style.height && null !== b.media.style.height ? b.height = b.media.style\n							.height : null !== b.$media[0].getAttribute(\"height\") ? b.height = b.$media\n							.attr(\"height\") : b.height = b.options[\"default\" + h + \"Height\"], b.setPlayerSize(\n								b.width, b.height), d.pluginWidth = b.width, d.pluginHeight = b.height } else\n						b.isVideo || b.options.features.length || b.$media.hide();\n					mejs.MediaElement(b.$media[0], d), \"undefined\" != typeof b.container && b\n						.options.features.length && b.controlsAreVisible && b.container.trigger(\n							\"controlsshown\") }, showControls: function (a) {\n					var b = this;\n					a = \"undefined\" == typeof a || a, b.controlsAreVisible || (a ? (b.controls\n						.removeClass(\"mejs-offscreen\")\n						.stop(!0, !0)\n						.fadeIn(200, function () { b.controlsAreVisible = !0, b.container.trigger(\n								\"controlsshown\") }), b.container.find(\".mejs-control\")\n						.removeClass(\"mejs-offscreen\")\n						.stop(!0, !0)\n						.fadeIn(200, function () { b.controlsAreVisible = !0 })) : (b.controls\n						.removeClass(\"mejs-offscreen\")\n						.css(\"display\", \"block\"), b.container.find(\".mejs-control\")\n						.removeClass(\"mejs-offscreen\")\n						.css(\"display\", \"block\"), b.controlsAreVisible = !0, b.container.trigger(\n							\"controlsshown\")), b.setControlsSize()) }, hideControls: function (b) {\n					var c = this;\n					b = \"undefined\" == typeof b || b, !c.controlsAreVisible || c.options.alwaysShowControls ||\n						c.keyboardAction || c.media.paused || c.media.ended || (b ? (c.controls.stop(!\n								0, !0)\n							.fadeOut(200, function () { a(this)\n									.addClass(\"mejs-offscreen\")\n									.css(\"display\", \"block\"), c.controlsAreVisible = !1, c.container.trigger(\n										\"controlshidden\") }), c.container.find(\".mejs-control\")\n							.stop(!0, !0)\n							.fadeOut(200, function () { a(this)\n									.addClass(\"mejs-offscreen\")\n									.css(\"display\", \"block\") })) : (c.controls.addClass(\"mejs-offscreen\")\n							.css(\"display\", \"block\"), c.container.find(\".mejs-control\")\n							.addClass(\"mejs-offscreen\")\n							.css(\"display\", \"block\"), c.controlsAreVisible = !1, c.container.trigger(\n								\"controlshidden\"))) }, controlsTimer: null, startControlsTimer: function (\n					a) {\n					var b = this;\n					a = \"undefined\" != typeof a ? a : b.options.controlsTimeoutDefault, b.killControlsTimer(\n						\"start\"), b.controlsTimer = setTimeout(function () { b.hideControls(),\n							b.killControlsTimer(\"hide\") }, a) }, killControlsTimer: function (a) {\n					var b = this;\n					null !== b.controlsTimer && (clearTimeout(b.controlsTimer), delete b.controlsTimer,\n						b.controlsTimer = null) }, controlsEnabled: !0, disableControls: function () {\n					var a = this;\n					a.killControlsTimer(), a.hideControls(!1), this.controlsEnabled = !1 },\n				enableControls: function () {\n					var a = this;\n					a.showControls(!1), a.controlsEnabled = !0 }, meReady: function (b, c) {\n					var d, e, f = this,\n						g = mejs.MediaFeatures,\n						h = c.getAttribute(\"autoplay\"),\n						i = !(\"undefined\" == typeof h || null === h || \"false\" === h);\n					if (!f.created) {\n						if (f.created = !0, f.media = b, f.domNode = c, !(g.isAndroid && f.options\n								.AndroidUseNativeControls || g.isiPad && f.options.iPadUseNativeControls ||\n								g.isiPhone && f.options.iPhoneUseNativeControls)) {\n							if (!f.isVideo && !f.options.features.length) return i && \"native\" == b\n								.pluginType && f.play(), void(f.options.success && (\"string\" ==\n									typeof f.options.success ? window[f.options.success](f.media, f.domNode,\n										f) : f.options.success(f.media, f.domNode, f)));\n							f.buildposter(f, f.controls, f.layers, f.media), f.buildkeyboard(f, f.controls,\n									f.layers, f.media), f.buildoverlays(f, f.controls, f.layers, f.media),\n								f.findTracks();\n							for (d in f.options.features)\n								if (e = f.options.features[d], f[\"build\" + e]) try { f[\"build\" + e](f,\n										f.controls, f.layers, f.media) } catch (j) {}\n								f.container.trigger(\"controlsready\"), f.setPlayerSize(f.width, f.height),\n								f.setControlsSize(), f.isVideo && (mejs.MediaFeatures.hasTouch && !f.options\n									.alwaysShowControls ? f.$media.bind(\"touchstart\", function () { f.controlsAreVisible ?\n											f.hideControls(!1) : f.controlsEnabled && f.showControls(!1) }) : (\n										f.clickToPlayPauseCallback = function () {\n											if (f.options.clickToPlayPause) { f.media.paused ? f.play() : f.pause();\n												var a = f.$media.closest(\".mejs-container\")\n													.find(\".mejs-overlay-button\"),\n													b = a.attr(\"aria-pressed\");\n												a.attr(\"aria-pressed\", !b) } }, f.media.addEventListener(\"click\",\n											f.clickToPlayPauseCallback, !1), f.container.bind(\"mouseenter\",\n											function () { f.controlsEnabled && (f.options.alwaysShowControls ||\n													(f.killControlsTimer(\"enter\"), f.showControls(), f.startControlsTimer(\n														f.options.controlsTimeoutMouseEnter))) })\n										.bind(\"mousemove\", function () { f.controlsEnabled && (f.controlsAreVisible ||\n												f.showControls(), f.options.alwaysShowControls || f.startControlsTimer(\n													f.options.controlsTimeoutMouseEnter)) })\n										.bind(\"mouseleave\", function () { f.controlsEnabled && (f.media.paused ||\n												f.options.alwaysShowControls || f.startControlsTimer(f.options.controlsTimeoutMouseLeave)\n											) })), f.options.hideVideoControlsOnLoad && f.hideControls(!1), i &&\n									!f.options.alwaysShowControls && f.hideControls(), f.options.enableAutosize &&\n									f.media.addEventListener(\"loadedmetadata\", function (a) { f.options.videoHeight <=\n												0 && null === f.domNode.getAttribute(\"height\") && !isNaN(a.target.videoHeight) &&\n												(f.setPlayerSize(a.target.videoWidth, a.target.videoHeight), f.setControlsSize(),\n													f.media.setVideoSize(a.target.videoWidth, a.target.videoHeight)) }, !\n										1)), f.media.addEventListener(\"play\", function () {\n									var a;\n									for (a in mejs.players) {\n										var b = mejs.players[a];\n										b.id == f.id || !f.options.pauseOtherPlayers || b.paused || b.ended ||\n											b.pause(), b.hasFocus = !1 }\n									f.hasFocus = !0 }, !1), f.media.addEventListener(\"ended\", function (b) {\n									if (f.options.autoRewind) try { f.media.setCurrentTime(0), window.setTimeout(\n											function () { a(f.container)\n													.find(\".mejs-overlay-loading\")\n													.parent()\n													.hide() }, 20) } catch (c) {}\n									\"youtube\" === f.media.pluginType ? f.media.stop() : f.media.pause(),\n										f.setProgressRail && f.setProgressRail(), f.setCurrentRail && f.setCurrentRail(),\n										f.options.loop ? f.play() : !f.options.alwaysShowControls && f.controlsEnabled &&\n										f.showControls() }, !1), f.media.addEventListener(\"loadedmetadata\",\n									function () { mejs.Utility.calculateTimeFormat(f.duration, f.options,\n												f.options.framesPerSecond || 25), f.updateDuration && f.updateDuration(),\n											f.updateCurrent && f.updateCurrent(), f.isFullScreen || (f.setPlayerSize(\n												f.width, f.height), f.setControlsSize()) }, !1);\n							var k = null;\n							f.media.addEventListener(\"timeupdate\", function () { k !== this.duration &&\n										(k = this.duration, mejs.Utility.calculateTimeFormat(k, f.options,\n												f.options.framesPerSecond || 25), f.updateDuration && f.updateDuration(),\n											f.updateCurrent && f.updateCurrent(), f.setControlsSize()) }, !1),\n								f.container.focusout(function (b) {\n									if (b.relatedTarget) {\n										var c = a(b.relatedTarget);\n										f.keyboardAction && 0 === c.parents(\".mejs-container\")\n											.length && (f.keyboardAction = !1, f.isVideo && !f.options.alwaysShowControls &&\n												f.hideControls(!0)) } }), setTimeout(function () { f.setPlayerSize(\n										f.width, f.height), f.setControlsSize() }, 50), f.globalBind(\n									\"resize\",\n									function () { f.isFullScreen || mejs.MediaFeatures.hasTrueNativeFullScreen &&\n											document.webkitIsFullScreen || f.setPlayerSize(f.width, f.height),\n											f.setControlsSize() }), \"youtube\" == f.media.pluginType && (g.isiOS ||\n									g.isAndroid) && (f.container.find(\".mejs-overlay-play\")\n									.hide(), f.container.find(\".mejs-poster\")\n									.hide()) }\n						i && \"native\" == b.pluginType && f.play(), f.options.success && (\n							\"string\" == typeof f.options.success ? window[f.options.success](f.media,\n								f.domNode, f) : f.options.success(f.media, f.domNode, f)) } },\n				handleError: function (a) {\n					var b = this;\n					b.controls && b.controls.hide(), b.options.error && b.options.error(a) },\n				setPlayerSize: function (a, b) {\n					var c = this;\n					if (!c.options.setDimensions) return !1;\n					switch (\"undefined\" != typeof a && (c.width = a), \"undefined\" != typeof b &&\n						(c.height = b), c.options.stretching) {\n					case \"fill\":\n						c.isVideo ? this.setFillMode() : this.setDimensions(c.width, c.height);\n						break;\n					case \"responsive\":\n						this.setResponsiveMode();\n						break;\n					case \"none\":\n						this.setDimensions(c.width, c.height);\n						break;\n					default:\n						this.hasFluidMode() === !0 ? this.setResponsiveMode() : this.setDimensions(\n							c.width, c.height) } }, hasFluidMode: function () {\n					var a = this;\n					return a.height.toString()\n						.indexOf(\"%\") > 0 || \"none\" !== a.$node.css(\"max-width\") && \"t.width\" !==\n						a.$node.css(\"max-width\") || a.$node[0].currentStyle && \"100%\" === a.$node[\n							0].currentStyle.maxWidth }, setResponsiveMode: function () {\n					var b = this,\n						c = function () {\n							return b.isVideo ? b.media.videoWidth && b.media.videoWidth > 0 ? b.media\n								.videoWidth : null !== b.media.getAttribute(\"width\") ? b.media.getAttribute(\n									\"width\") : b.options.defaultVideoWidth : b.options.defaultAudioWidth }\n						(),\n						d = function () {\n							return b.isVideo ? b.media.videoHeight && b.media.videoHeight > 0 ? b.media\n								.videoHeight : null !== b.media.getAttribute(\"height\") ? b.media.getAttribute(\n									\"height\") : b.options.defaultVideoHeight : b.options.defaultAudioHeight }\n						(),\n						e = b.container.parent()\n						.closest(\":visible\")\n						.width(),\n						f = b.container.parent()\n						.closest(\":visible\")\n						.height(),\n						g = b.isVideo || !b.options.autosizeProgress ? parseInt(e * d / c, 10) :\n						d;\n					(isNaN(g) || 0 !== f && g > f && f > d) && (g = f), b.container.parent()\n						.length > 0 && \"body\" === b.container.parent()[0].tagName.toLowerCase() &&\n						(e = a(window)\n							.width(), g = a(window)\n							.height()), g && e && (b.container.width(e)\n							.height(g), b.$media.add(b.container.find(\".mejs-shim\"))\n							.width(\"100%\")\n							.height(\"100%\"), b.isVideo && b.media.setVideoSize && b.media.setVideoSize(\n								e, g), b.layers.children(\".mejs-layer\")\n							.width(\"100%\")\n							.height(\"100%\")) }, setFillMode: function () {\n					var a = this,\n						b = a.outerContainer;\n					b.width() || b.height(a.$media.width()), b.height() || b.height(a.$media.height());\n					var c = b.width(),\n						d = b.height();\n					a.setDimensions(\"100%\", \"100%\"), a.container.find(\".mejs-poster img\")\n						.css(\"display\", \"block\"), targetElement = a.container.find(\n							\"object, embed, iframe, video\");\n					var e = a.height,\n						f = a.width,\n						g = c,\n						h = e * c / f,\n						i = f * d / e,\n						j = d,\n						k = !(i > c),\n						l = k ? Math.floor(g) : Math.floor(i),\n						m = k ? Math.floor(h) : Math.floor(j);\n					k ? (targetElement.height(m)\n							.width(c), a.media.setVideoSize && a.media.setVideoSize(c, m)) : (\n							targetElement.height(d)\n							.width(l), a.media.setVideoSize && a.media.setVideoSize(l, d)),\n						targetElement.css({ \"margin-left\": Math.floor((c - l) / 2), \"margin-top\": 0 }) },\n				setDimensions: function (a, b) {\n					var c = this;\n					c.container.width(a)\n						.height(b), c.layers.children(\".mejs-layer\")\n						.width(a)\n						.height(b) }, setControlsSize: function () {\n					var b = this,\n						c = 0,\n						d = 0,\n						e = b.controls.find(\".mejs-time-rail\"),\n						f = b.controls.find(\".mejs-time-total\"),\n						g = e.siblings(),\n						h = g.last(),\n						i = null,\n						j = b.options && !b.options.autosizeProgress;\n					if (b.container.is(\":visible\") && e.length && e.is(\":visible\")) { j && (d =\n							parseInt(e.css(\"width\"), 10)), 0 !== d && d || (g.each(function () {\n							var b = a(this); \"absolute\" != b.css(\"position\") && b.is(\":visible\") &&\n								(c += a(this)\n									.outerWidth(!0)) }), d = b.controls.width() - c - (e.outerWidth(!0) -\n							e.width()));\n						do j || e.width(d), f.width(d - (f.outerWidth(!0) - f.width())),\n							\"absolute\" != h.css(\"position\") && (i = h.length ? h.position() : null,\n								d--); while (null !== i && i.top.toFixed(2) > 0 && d > 0);\n						b.container.trigger(\"controlsresize\") } }, buildposter: function (b, c, d,\n					e) {\n					var f = this,\n						g = a('<div class=\"mejs-poster mejs-layer\"></div>')\n						.appendTo(d),\n						h = b.$media.attr(\"poster\"); \"\" !== b.options.poster && (h = b.options.poster),\n						h ? f.setPoster(h) : g.hide(), e.addEventListener(\"play\", function () { g\n								.hide() }, !1), b.options.showPosterWhenEnded && b.options.autoRewind &&\n						e.addEventListener(\"ended\", function () { g.show() }, !1) }, setPoster: function (\n					b) {\n					var c = this,\n						d = c.container.find(\".mejs-poster\"),\n						e = d.find(\"img\");\n					0 === e.length && (e = a('<img width=\"100%\" height=\"100%\" alt=\"\" />')\n						.appendTo(d)), e.attr(\"src\", b), d.css({ \"background-image\": \"url(\" + b +\n							\")\" }) }, buildoverlays: function (b, c, d, e) {\n					var f = this;\n					if (b.isVideo) {\n						var g = a(\n								'<div class=\"mejs-overlay mejs-layer\"><div class=\"mejs-overlay-loading\"><span></span></div></div>'\n							)\n							.hide()\n							.appendTo(d),\n							h = a(\n								'<div class=\"mejs-overlay mejs-layer\"><div class=\"mejs-overlay-error\"></div></div>'\n							)\n							.hide()\n							.appendTo(d),\n							i = a(\n								'<div class=\"mejs-overlay mejs-layer mejs-overlay-play\"><div class=\"mejs-overlay-button\" role=\"button\" aria-label=\"' +\n								mejs.i18n.t(\"mejs.play\") + '\" aria-pressed=\"false\"></div></div>')\n							.appendTo(d)\n							.bind(\"click\", function () {\n								if (f.options.clickToPlayPause) { e.paused && e.play();\n									var b = a(this)\n										.find(\".mejs-overlay-button\"),\n										c = b.attr(\"aria-pressed\");\n									b.attr(\"aria-pressed\", !!c) } });\n						e.addEventListener(\"play\", function () { i.hide(), g.hide(), c.find(\n									\".mejs-time-buffering\")\n								.hide(), h.hide() }, !1), e.addEventListener(\"playing\", function () { i\n								.hide(), g.hide(), c.find(\".mejs-time-buffering\")\n								.hide(), h.hide() }, !1), e.addEventListener(\"seeking\", function () { g\n								.show(), c.find(\".mejs-time-buffering\")\n								.show() }, !1), e.addEventListener(\"seeked\", function () { g.hide(),\n								c.find(\".mejs-time-buffering\")\n								.hide() }, !1), e.addEventListener(\"pause\", function () { mejs.MediaFeatures\n								.isiPhone || i.show() }, !1), e.addEventListener(\"waiting\", function () { g\n								.show(), c.find(\".mejs-time-buffering\")\n								.show() }, !1), e.addEventListener(\"loadeddata\", function () { g.show(),\n								c.find(\".mejs-time-buffering\")\n								.show(), mejs.MediaFeatures.isAndroid && (e.canplayTimeout = window.setTimeout(\n									function () {\n										if (document.createEvent) {\n											var a = document.createEvent(\"HTMLEvents\");\n											return a.initEvent(\"canplay\", !0, !0), e.dispatchEvent(a) } },\n									300)) }, !1), e.addEventListener(\"canplay\", function () { g.hide(),\n								c.find(\".mejs-time-buffering\")\n								.hide(), clearTimeout(e.canplayTimeout) }, !1), e.addEventListener(\n							\"error\",\n							function (a) { f.handleError(a), g.hide(), i.hide(), h.show(), h.find(\n										\".mejs-overlay-error\")\n									.html(\"Error loading this resource\") }, !1), e.addEventListener(\n							\"keydown\",\n							function (a) { f.onkeydown(b, e, a) }, !1) } }, buildkeyboard: function (\n					b, c, d, e) {\n					var f = this;\n					f.container.keydown(function () { f.keyboardAction = !0 }), f.globalBind(\n						\"keydown\",\n						function (c) {\n							return b.hasFocus = 0 !== a(c.target)\n								.closest(\".mejs-container\")\n								.length && a(c.target)\n								.closest(\".mejs-container\")\n								.attr(\"id\") === b.$media.closest(\".mejs-container\")\n								.attr(\"id\"), f.onkeydown(b, e, c) }), f.globalBind(\"click\", function (\n						c) { b.hasFocus = 0 !== a(c.target)\n							.closest(\".mejs-container\")\n							.length }) }, onkeydown: function (a, b, c) {\n					if (a.hasFocus && a.options.enableKeyboard)\n						for (var d = 0, e = a.options.keyActions.length; e > d; d++)\n							for (var f = a.options.keyActions[d], g = 0, h = f.keys.length; h > g; g++)\n								if (c.keyCode == f.keys[g]) return \"function\" == typeof c.preventDefault &&\n									c.preventDefault(), f.action(a, b, c.keyCode, c), !1;\n					return !0 }, findTracks: function () {\n					var b = this,\n						c = b.$media.find(\"track\");\n					b.tracks = [], c.each(function (c, d) { d = a(d), b.tracks.push({ srclang: d\n								.attr(\"srclang\") ? d.attr(\"srclang\")\n								.toLowerCase() : \"\", src: d.attr(\"src\"), kind: d.attr(\"kind\"),\n							label: d.attr(\"label\") || \"\", entries: [], isLoaded: !1 }) }) },\n				changeSkin: function (a) { this.container[0].className = \"mejs-container \" +\n						a, this.setPlayerSize(this.width, this.height), this.setControlsSize() },\n				play: function () { this.load(), this.media.play() }, pause: function () {\n					try { this.media.pause() } catch (a) {} }, load: function () { this.isLoaded ||\n						this.media.load(), this.isLoaded = !0 }, setMuted: function (a) { this.media\n						.setMuted(a) }, setCurrentTime: function (a) { this.media.setCurrentTime(\n						a) }, getCurrentTime: function () {\n					return this.media.currentTime }, setVolume: function (a) { this.media.setVolume(\n						a) }, getVolume: function () {\n					return this.media.volume }, setSrc: function (a) {\n					var b = this;\n					if (\"youtube\" === b.media.pluginType) {\n						var c;\n						if (\"string\" != typeof a) {\n							var d, e;\n							for (d = 0; d < a.length; d++)\n								if (e = a[d], this.canPlayType(e.type)) { a = e.src;\n									break } }\n						if (-1 !== a.lastIndexOf(\"youtu.be\")) c = a.substr(a.lastIndexOf(\"/\") +\n							1), -1 !== c.indexOf(\"?\") && (c = c.substr(0, c.indexOf(\"?\")));\n						else {\n							var f = a.match(/[?&]v=([^&#]+)|&|#|$/);\n							f && (c = f[1]) }\n						null !== b.media.getAttribute(\"autoplay\") ? b.media.pluginApi.loadVideoById(\n							c) : b.media.pluginApi.cueVideoById(c) } else b.media.setSrc(a) },\n				remove: function () {\n					var a, b, c = this;\n					c.container.prev(\".mejs-offscreen\")\n						.remove();\n					for (a in c.options.features)\n						if (b = c.options.features[a], c[\"clean\" + b]) try { c[\"clean\" + b](c) } catch (\n							d) {}\n						c.isDynamic ? c.$node.insertBefore(c.container) : (c.$media.prop(\n								\"controls\", !0), c.$node.clone()\n							.insertBefore(c.container)\n							.show(), c.$node.remove()), \"native\" !== c.media.pluginType && c.media.remove(),\n						delete mejs.players[c.id], \"object\" == typeof c.container && c.container\n						.remove(), c.globalUnbind(), delete c.node.player }, rebuildtracks: function () {\n					var a = this;\n					a.findTracks(), a.buildtracks(a, a.controls, a.layers, a.media) },\n				resetSize: function () {\n					var a = this;\n					setTimeout(function () { a.setPlayerSize(a.width, a.height), a.setControlsSize() },\n						50) } },\n			function () {\n				function b(b, d) {\n					var e = { d: [], w: [] };\n					return a.each((b || \"\")\n						.split(\" \"),\n						function (a, b) {\n							var f = b + \".\" + d;\n							0 === f.indexOf(\".\") ? (e.d.push(f), e.w.push(f)) : e[c.test(b) ? \"w\" :\n								\"d\"].push(f) }), e.d = e.d.join(\" \"), e.w = e.w.join(\" \"), e }\n				var c =\n					/^((after|before)print|(before)?unload|hashchange|message|o(ff|n)line|page(hide|show)|popstate|resize|storage)\\b/;\n				mejs.MediaElementPlayer.prototype.globalBind = function (c, d, e) {\n						var f = this,\n							g = f.node ? f.node.ownerDocument : document;\n						c = b(c, f.id), c.d && a(g)\n							.bind(c.d, d, e), c.w && a(window)\n							.bind(c.w, d, e) }, mejs.MediaElementPlayer.prototype.globalUnbind =\n					function (c, d) {\n						var e = this,\n							f = e.node ? e.node.ownerDocument : document;\n						c = b(c, e.id), c.d && a(f)\n							.unbind(c.d, d), c.w && a(window)\n							.unbind(c.w, d) } }(), \"undefined\" != typeof a && (a.fn.mediaelementplayer =\n				function (b) {\n					return b === !1 ? this.each(function () {\n							var b = a(this)\n								.data(\"mediaelementplayer\");\n							b && b.remove(), a(this)\n								.removeData(\"mediaelementplayer\") }) : this.each(function () { a(this)\n								.data(\"mediaelementplayer\", new mejs.MediaElementPlayer(this, b)) }),\n						this }, a(document)\n				.ready(function () { a(\".mejs-player\")\n						.mediaelementplayer() })), window.MediaElementPlayer = mejs.MediaElementPlayer }\n	(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { playText: \"\", pauseText: \"\" }), a.extend(\n			MediaElementPlayer.prototype, { buildplaypause: function (b, c, d, e) {\n					function f(a) { \"play\" === a ? (k.removeClass(\"mejs-play\")\n							.addClass(\"mejs-pause\"), l.attr({ title: j, \"aria-label\": j })) : (k.removeClass(\n								\"mejs-pause\")\n							.addClass(\"mejs-play\"), l.attr({ title: i, \"aria-label\": i })) }\n					var g = this,\n						h = g.options,\n						i = h.playText ? h.playText : mejs.i18n.t(\"mejs.play\"),\n						j = h.pauseText ? h.pauseText : mejs.i18n.t(\"mejs.pause\"),\n						k = a(\n							'<div class=\"mejs-button mejs-playpause-button mejs-play\" ><button type=\"button\" aria-controls=\"' +\n							g.id + '\" title=\"' + i + '\" aria-label=\"' + j + '\"></button></div>')\n						.appendTo(c)\n						.click(function (a) {\n							return a.preventDefault(), e.paused ? e.play() : e.pause(), !1 }),\n						l = k.find(\"button\");\n					f(\"pse\"), e.addEventListener(\"play\", function () { f(\"play\") }, !1), e.addEventListener(\n						\"playing\",\n						function () { f(\"play\") }, !1), e.addEventListener(\"pause\", function () { f\n							(\"pse\") }, !1), e.addEventListener(\"paused\", function () { f(\"pse\") }, !\n						1) } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { stopText: \"Stop\" }), a.extend(\n			MediaElementPlayer.prototype, { buildstop: function (b, c, d, e) {\n					var f = this;\n					a(\n							'<div class=\"mejs-button mejs-stop-button mejs-stop\"><button type=\"button\" aria-controls=\"' +\n							f.id + '\" title=\"' + f.options.stopText + '\" aria-label=\"' + f.options\n							.stopText + '\"></button></div>')\n						.appendTo(c)\n						.click(function () { e.paused || e.pause(), e.currentTime > 0 && (e.setCurrentTime(\n									0), e.pause(), c.find(\".mejs-time-current\")\n								.width(\"0px\"), c.find(\".mejs-time-handle\")\n								.css(\"left\", \"0px\"), c.find(\".mejs-time-float-current\")\n								.html(mejs.Utility.secondsToTimeCode(0, b.options)), c.find(\n									\".mejs-currenttime\")\n								.html(mejs.Utility.secondsToTimeCode(0, b.options)), d.find(\n									\".mejs-poster\")\n								.show()) }) } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { enableProgressTooltip: !0,\n			progressHelpText: \"\" }), a.extend(MediaElementPlayer.prototype, { buildprogress: function (\n				b, c, d, e) {\n				var f = this,\n					g = !1,\n					h = !1,\n					i = 0,\n					j = !1,\n					k = b.options.autoRewind,\n					l = (f.options.progressHelpText ? f.options.progressHelpText : mejs.i18n\n						.t(\"mejs.time-help-text\"), b.options.enableProgressTooltip ?\n						'<span class=\"mejs-time-float\"><span class=\"mejs-time-float-current\">00:00</span><span class=\"mejs-time-float-corner\"></span></span>' :\n						\"\");\n				a(\n						'<div class=\"mejs-time-rail\"><span  class=\"mejs-time-total mejs-time-slider\"><span class=\"mejs-time-buffering\"></span><span class=\"mejs-time-loaded\"></span><span class=\"mejs-time-current\"></span><span class=\"mejs-time-handle\"></span>' +\n						l + \"</span></div>\")\n					.appendTo(c), c.find(\".mejs-time-buffering\")\n					.hide(), f.total = c.find(\".mejs-time-total\"), f.loaded = c.find(\n						\".mejs-time-loaded\"), f.current = c.find(\".mejs-time-current\"), f.handle =\n					c.find(\".mejs-time-handle\"), f.timefloat = c.find(\".mejs-time-float\"),\n					f.timefloatcurrent = c.find(\".mejs-time-float-current\"), f.slider = c.find(\n						\".mejs-time-slider\");\n				var m = function (a) {\n						var c, d = f.total.offset(),\n							h = f.total.width(),\n							i = 0,\n							j = 0,\n							k = 0;\n						c = a.originalEvent && a.originalEvent.changedTouches ? a.originalEvent\n							.changedTouches[0].pageX : a.changedTouches ? a.changedTouches[0].pageX :\n							a.pageX, e.duration && (c < d.left ? c = d.left : c > h + d.left && (\n									c = h + d.left), k = c - d.left, i = k / h, j = .02 >= i ? 0 : i *\n								e.duration, g && j !== e.currentTime && e.setCurrentTime(j), mejs.MediaFeatures\n								.hasTouch || (f.timefloat.css(\"left\", k), f.timefloatcurrent.html(\n									mejs.Utility.secondsToTimeCode(j, b.options)), f.timefloat.show())) },\n					n = function (a) {\n						var c = e.currentTime,\n							d = mejs.i18n.t(\"mejs.time-slider\"),\n							g = mejs.Utility.secondsToTimeCode(c, b.options),\n							h = e.duration;\n						f.slider.attr({ \"aria-label\": d, \"aria-valuemin\": 0, \"aria-valuemax\": h, \"aria-valuenow\": c, \"aria-valuetext\": g,\n							role: \"slider\", tabindex: 0 }) },\n					o = function () {\n						var a = new Date;\n						a - i >= 1e3 && e.play() };\n				f.slider.bind(\"focus\", function (a) { b.options.autoRewind = !1 }), f.slider\n					.bind(\"blur\", function (a) { b.options.autoRewind = k }), f.slider.bind(\n						\"keydown\",\n						function (a) { new Date - i >= 1e3 && (j = e.paused);\n							var c = a.keyCode,\n								d = e.duration,\n								f = e.currentTime,\n								g = b.options.defaultSeekForwardInterval(e),\n								h = b.options.defaultSeekBackwardInterval(e);\n							switch (c) {\n							case 37:\n							case 40:\n								f -= h;\n								break;\n							case 39:\n							case 38:\n								f += g;\n								break;\n							case 36:\n								f = 0;\n								break;\n							case 35:\n								f = d;\n								break;\n							case 32:\n							case 13:\n								return void(e.paused ? e.play() : e.pause());\n							default:\n								return }\n							return f = 0 > f ? 0 : f >= d ? d : Math.floor(f), i = new Date, j ||\n								e.pause(), f < e.duration && !j && setTimeout(o, 1100), e.setCurrentTime(\n									f), a.preventDefault(), a.stopPropagation(), !1 }), f.total.bind(\n						\"mousedown touchstart\",\n						function (a) {\n							(1 === a.which || 0 === a.which) && (g = !0, m(a), f.globalBind(\n								\"mousemove.dur touchmove.dur\",\n								function (a) { m(a) }), f.globalBind(\"mouseup.dur touchend.dur\",\n								function (a) { g = !1, \"undefined\" != typeof f.timefloat && f.timefloat\n										.hide(), f.globalUnbind(\".dur\") })) })\n					.bind(\"mouseenter\", function (a) { h = !0, f.globalBind(\"mousemove.dur\",\n								function (a) { m(a) }), \"undefined\" == typeof f.timefloat || mejs.MediaFeatures\n							.hasTouch || f.timefloat.show() })\n					.bind(\"mouseleave\", function (a) { h = !1, g || (f.globalUnbind(\".dur\"),\n							\"undefined\" != typeof f.timefloat && f.timefloat.hide()) }), e.addEventListener(\n						\"progress\",\n						function (a) { b.setProgressRail(a), b.setCurrentRail(a) }, !1), e.addEventListener(\n						\"timeupdate\",\n						function (a) { b.setProgressRail(a), b.setCurrentRail(a), n(a) }, !1),\n					f.container.on(\"controlsresize\", function (a) { b.setProgressRail(a), b\n							.setCurrentRail(a) }) }, setProgressRail: function (a) {\n				var b = this,\n					c = void 0 !== a ? a.target : b.media,\n					d = null;\n				c && c.buffered && c.buffered.length > 0 && c.buffered.end && c.duration ?\n					d = c.buffered.end(c.buffered.length - 1) / c.duration : c && void 0 !==\n					c.bytesTotal && c.bytesTotal > 0 && void 0 !== c.bufferedBytes ? d = c.bufferedBytes /\n					c.bytesTotal : a && a.lengthComputable && 0 !== a.total && (d = a.loaded /\n						a.total), null !== d && (d = Math.min(1, Math.max(0, d)), b.loaded &&\n						b.total && b.loaded.width(b.total.width() * d)) }, setCurrentRail: function () {\n				var a = this;\n				if (void 0 !== a.media.currentTime && a.media.duration && a.total && a.handle) {\n					var b = Math.round(a.total.width() * a.media.currentTime / a.media.duration),\n						c = b - Math.round(a.handle.outerWidth(!0) / 2);\n					a.current.width(b), a.handle.css(\"left\", c) } } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { duration: -1,\n			timeAndDurationSeparator: \"<span> | </span>\" }), a.extend(\n			MediaElementPlayer.prototype, { buildcurrent: function (b, c, d, e) {\n					var f = this;\n					a(\n							'<div class=\"mejs-time\" role=\"timer\" aria-live=\"off\"><span class=\"mejs-currenttime\">' +\n							mejs.Utility.secondsToTimeCode(0, b.options) + \"</span></div>\")\n						.appendTo(c), f.currenttime = f.controls.find(\".mejs-currenttime\"), e.addEventListener(\n							\"timeupdate\",\n							function () { f.controlsAreVisible && b.updateCurrent() }, !1) },\n				buildduration: function (b, c, d, e) {\n					var f = this;\n					c.children()\n						.last()\n						.find(\".mejs-currenttime\")\n						.length > 0 ? a(f.options.timeAndDurationSeparator +\n							'<span class=\"mejs-duration\">' + mejs.Utility.secondsToTimeCode(f.options\n								.duration, f.options) + \"</span>\")\n						.appendTo(c.find(\".mejs-time\")) : (c.find(\".mejs-currenttime\")\n							.parent()\n							.addClass(\"mejs-currenttime-container\"), a(\n								'<div class=\"mejs-time mejs-duration-container\"><span class=\"mejs-duration\">' +\n								mejs.Utility.secondsToTimeCode(f.options.duration, f.options) +\n								\"</span></div>\")\n							.appendTo(c)), f.durationD = f.controls.find(\".mejs-duration\"), e.addEventListener(\n							\"timeupdate\",\n							function () { f.controlsAreVisible && b.updateDuration() }, !1) },\n				updateCurrent: function () {\n					var a = this,\n						b = a.media.currentTime;\n					isNaN(b) && (b = 0), a.currenttime && a.currenttime.html(mejs.Utility.secondsToTimeCode(\n						b, a.options)) }, updateDuration: function () {\n					var a = this,\n						b = a.media.duration;\n					a.options.duration > 0 && (b = a.options.duration), isNaN(b) && (b = 0),\n						a.container.toggleClass(\"mejs-long-video\", b > 3600), a.durationD && b >\n						0 && a.durationD.html(mejs.Utility.secondsToTimeCode(b, a.options)) } }) }\n	(mejs.$),\n	function (a) {\n		a.extend(mejs.MepDefaults, { muteText: mejs.i18n.t(\"mejs.mute-toggle\"),\n				allyVolumeControlText: mejs.i18n.t(\"mejs.volume-help-text\"),\n				hideVolumeOnTouchDevices: !0, audioVolume: \"horizontal\", videoVolume: \"vertical\" }),\n			a.extend(MediaElementPlayer.prototype, {\n				buildvolume: function (b, c, d, e) {\n					if (!mejs.MediaFeatures.isAndroid && !mejs.MediaFeatures.isiOS || !this.options\n						.hideVolumeOnTouchDevices) {\n						var f = this,\n							g = f.isVideo ? f.options.videoVolume : f.options.audioVolume,\n							h = \"horizontal\" == g ? a(\n								'<div class=\"mejs-button mejs-volume-button mejs-mute\"><button type=\"button\" aria-controls=\"' +\n								f.id + '\" title=\"' + f.options.muteText + '\" aria-label=\"' + f.options\n								.muteText +\n								'\"></button></div><a href=\"javascript:void(0);\" class=\"mejs-horizontal-volume-slider\"><span class=\"mejs-offscreen\">' +\n								f.options.allyVolumeControlText +\n								'</span><div class=\"mejs-horizontal-volume-total\"></div><div class=\"mejs-horizontal-volume-current\"></div><div class=\"mejs-horizontal-volume-handle\"></div></a>'\n							)\n							.appendTo(c) : a(\n								'<div class=\"mejs-button mejs-volume-button mejs-mute\"><button type=\"button\" aria-controls=\"' +\n								f.id + '\" title=\"' + f.options.muteText + '\" aria-label=\"' + f.options\n								.muteText +\n								'\"></button><a href=\"javascript:void(0);\" class=\"mejs-volume-slider\"><span class=\"mejs-offscreen\">' +\n								f.options.allyVolumeControlText +\n								'</span><div class=\"mejs-volume-total\"></div><div class=\"mejs-volume-current\"></div><div class=\"mejs-volume-handle\"></div></a></div>'\n							)\n							.appendTo(c),\n							i = f.container.find(\n								\".mejs-volume-slider, .mejs-horizontal-volume-slider\"),\n							j = f.container.find(\n								\".mejs-volume-total, .mejs-horizontal-volume-total\"),\n							k = f.container.find(\n								\".mejs-volume-current, .mejs-horizontal-volume-current\"),\n							l = f.container.find(\n								\".mejs-volume-handle, .mejs-horizontal-volume-handle\"),\n							m = function (a, b) {\n								if (!i.is(\":visible\") && \"undefined\" == typeof b) return i.show(), m(\n									a, !0), void i.hide();\n								a = Math.max(0, a), a = Math.min(a, 1), 0 === a ? (h.removeClass(\n										\"mejs-mute\")\n									.addClass(\"mejs-unmute\"), h.children(\"button\")\n									.attr(\"title\", mejs.i18n.t(\"mejs.unmute\"))\n									.attr(\"aria-label\", mejs.i18n.t(\"mejs.unmute\"))) : (h.removeClass(\n										\"mejs-unmute\")\n									.addClass(\"mejs-mute\"), h.children(\"button\")\n									.attr(\"title\", mejs.i18n.t(\"mejs.mute\"))\n									.attr(\"aria-label\", mejs.i18n.t(\"mejs.mute\")));\n								var c = j.position();\n								if (\"vertical\" == g) {\n									var d = j.height(),\n										e = d - d * a;\n									l.css(\"top\", Math.round(c.top + e - l.height() / 2)), k.height(d - e),\n										k.css(\"top\", c.top + e) } else {\n									var f = j.width(),\n										n = f * a;\n									l.css(\"left\", Math.round(c.left + n - l.width() / 2)), k.width(Math.round(\n										n)) } },\n							n = function (a) {\n								var b = null,\n									c = j.offset();\n								if (\"vertical\" === g) {\n									var d = j.height(),\n										f = a.pageY - c.top;\n									if (b = (d - f) / d, 0 === c.top || 0 === c.left) return } else {\n									var h = j.width(),\n										i = a.pageX - c.left;\n									b = i / h }\n								b = Math.max(0, b), b = Math.min(b, 1), m(b), 0 === b ? e.setMuted(!0) :\n									e.setMuted(!1), e.setVolume(b) },\n							o = !1,\n							p = !1;\n						h.hover(function () {\n							i.show(), p = !0\n						}, function () { p = !1, o || \"vertical\" != g || i.hide() });\n						var q = function (a) {\n							var b = Math.floor(100 * e.volume);\n							i.attr({ \"aria-label\": mejs.i18n.t(\"mejs.volume-slider\"), \"aria-valuemin\": 0, \"aria-valuemax\": 100, \"aria-valuenow\": b, \"aria-valuetext\": b +\n									\"%\", role: \"slider\", tabindex: 0 }) };\n						i.bind(\"mouseover\", function () { p = !0 })\n							.bind(\"mousedown\", function (a) {\n								return n(a), f.globalBind(\"mousemove.vol\", function (a) { n(a) }), f\n									.globalBind(\"mouseup.vol\", function () { o = !1, f.globalUnbind(\n											\".vol\"), p || \"vertical\" != g || i.hide() }), o = !0, !1 })\n							.bind(\"keydown\", function (a) {\n								var b = a.keyCode,\n									c = e.volume;\n								switch (b) {\n								case 38:\n									c = Math.min(c + .1, 1);\n									break;\n								case 40:\n									c = Math.max(0, c - .1);\n									break;\n								default:\n									return !0 }\n								return o = !1, m(c), e.setVolume(c), !1 }), h.find(\"button\")\n							.click(function () { e.setMuted(!e.muted) }), h.find(\"button\")\n							.bind(\"focus\", function () { i.show() }), e.addEventListener(\n								\"volumechange\",\n								function (a) { o || (e.muted ? (m(0), h.removeClass(\"mejs-mute\")\n										.addClass(\"mejs-unmute\")) : (m(e.volume), h.removeClass(\n											\"mejs-unmute\")\n										.addClass(\"mejs-mute\"))), q(a) }, !1), 0 === b.options.startVolume &&\n							e.setMuted(!0), \"native\" === e.pluginType && e.setVolume(b.options.startVolume),\n							f.container.on(\"controlsresize\", function () { e.muted ? (m(0), h.removeClass(\n										\"mejs-mute\")\n									.addClass(\"mejs-unmute\")) : (m(e.volume), h.removeClass(\n										\"mejs-unmute\")\n									.addClass(\"mejs-mute\")) })\n					}\n				}\n			})\n	}(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { usePluginFullScreen: !0,\n			newWindowCallback: function () {\n				return \"\" }, fullscreenText: \"\" }), a.extend(MediaElementPlayer.prototype, { isFullScreen:\n				!1, isNativeFullScreen: !1, isInIframe: !1, fullscreenMode: \"\",\n			buildfullscreen: function (b, c, d, e) {\n				if (b.isVideo) { b.isInIframe = window.location != window.parent.location,\n						e.addEventListener(\"loadstart\", function () { b.detectFullscreenMode() });\n					var f = this,\n						g = null,\n						h = f.options.fullscreenText ? f.options.fullscreenText : mejs.i18n.t(\n							\"mejs.fullscreen\"),\n						i = a(\n							'<div class=\"mejs-button mejs-fullscreen-button\"><button type=\"button\" aria-controls=\"' +\n							f.id + '\" title=\"' + h + '\" aria-label=\"' + h + '\"></button></div>')\n						.appendTo(c)\n						.on(\"click\", function () {\n							var a = mejs.MediaFeatures.hasTrueNativeFullScreen && mejs.MediaFeatures\n								.isFullScreen() || b.isFullScreen;\n							a ? b.exitFullScreen() : b.enterFullScreen() })\n						.on(\"mouseover\", function () {\n							if (\"plugin-hover\" == f.fullscreenMode) { null !== g && (\n									clearTimeout(g), delete g);\n								var a = i.offset(),\n									c = b.container.offset();\n								e.positionFullscreenButton(a.left - c.left, a.top - c.top, !0) } })\n						.on(\"mouseout\", function () { \"plugin-hover\" == f.fullscreenMode && (\n								null !== g && (clearTimeout(g), delete g), g = setTimeout(function () { e\n										.hideFullscreenButton() }, 1500)) });\n					if (b.fullscreenBtn = i, f.globalBind(\"keydown\", function (a) { 27 == a\n								.keyCode && (mejs.MediaFeatures.hasTrueNativeFullScreen && mejs.MediaFeatures\n									.isFullScreen() || f.isFullScreen) && b.exitFullScreen() }), f.normalHeight =\n						0, f.normalWidth = 0, mejs.MediaFeatures.hasTrueNativeFullScreen) {\n						var j = function (a) { b.isFullScreen && (mejs.MediaFeatures.isFullScreen() ?\n								(b.isNativeFullScreen = !0, b.setControlsSize()) : (b.isNativeFullScreen = !\n									1, b.exitFullScreen())) };\n						b.globalBind(mejs.MediaFeatures.fullScreenEventName, j) } } },\n			detectFullscreenMode: function () {\n				var a = this,\n					b = \"\",\n					c = mejs.MediaFeatures;\n				return c.hasTrueNativeFullScreen && \"native\" === a.media.pluginType ? b =\n					\"native-native\" : c.hasTrueNativeFullScreen && \"native\" !== a.media.pluginType &&\n					!c.hasFirefoxPluginMovingProblem ? b = \"plugin-native\" : a.usePluginFullScreen ?\n					mejs.MediaFeatures.supportsPointerEvents ? (b = \"plugin-click\", a.createPluginClickThrough()) :\n					b = \"plugin-hover\" : b = \"fullwindow\", a.fullscreenMode = b, b },\n			isPluginClickThroughCreated: !1, createPluginClickThrough: function () {\n				var b = this;\n				if (!b.isPluginClickThroughCreated) {\n					var c, d, e = !1,\n						f = function () {\n							if (e) {\n								for (var a in g) g[a].hide();\n								b.fullscreenBtn.css(\"pointer-events\", \"\"), b.controls.css(\n										\"pointer-events\", \"\"), b.media.removeEventListener(\"click\", b.clickToPlayPauseCallback),\n									e = !1 } },\n						g = {},\n						h = [\"top\", \"left\", \"right\", \"bottom\"],\n						i = function () {\n							var a = fullscreenBtn.offset()\n								.left - b.container.offset()\n								.left,\n								d = fullscreenBtn.offset()\n								.top - b.container.offset()\n								.top,\n								e = fullscreenBtn.outerWidth(!0),\n								f = fullscreenBtn.outerHeight(!0),\n								h = b.container.width(),\n								i = b.container.height();\n							for (c in g) g[c].css({ position: \"absolute\", top: 0, left: 0 });\n							g.top.width(h)\n								.height(d), g.left.width(a)\n								.height(f)\n								.css({ top: d }), g.right.width(h - a - e)\n								.height(f)\n								.css({ top: d, left: a + e }), g.bottom.width(h)\n								.height(i - f - d)\n								.css({ top: d + f }) };\n					for (b.globalBind(\"resize\", function () { i() }), c = 0, d = h.length; d >\n						c; c++) g[h[c]] = a('<div class=\"mejs-fullscreen-hover\" />')\n						.appendTo(b.container)\n						.mouseover(f)\n						.hide();\n					fullscreenBtn.on(\"mouseover\", function () {\n							if (!b.isFullScreen) {\n								var a = fullscreenBtn.offset(),\n									d = player.container.offset();\n								media.positionFullscreenButton(a.left - d.left, a.top - d.top, !1),\n									b.fullscreenBtn.css(\"pointer-events\", \"none\"), b.controls.css(\n										\"pointer-events\", \"none\"), b.media.addEventListener(\"click\", b.clickToPlayPauseCallback);\n								for (c in g) g[c].show();\n								i(), e = !0 } }), media.addEventListener(\"fullscreenchange\",\n							function (a) { b.isFullScreen = !b.isFullScreen, b.isFullScreen ? b.media\n									.removeEventListener(\"click\", b.clickToPlayPauseCallback) : b.media\n									.addEventListener(\"click\", b.clickToPlayPauseCallback), f() }), b.globalBind(\n							\"mousemove\",\n							function (a) {\n								if (e) {\n									var c = fullscreenBtn.offset();\n									(a.pageY < c.top || a.pageY > c.top + fullscreenBtn.outerHeight(!0) ||\n										a.pageX < c.left || a.pageX > c.left + fullscreenBtn.outerWidth(!0)\n									) && (fullscreenBtn.css(\"pointer-events\", \"\"), b.controls.css(\n										\"pointer-events\", \"\"), e = !1) } }), b.isPluginClickThroughCreated = !\n						0 } }, cleanfullscreen: function (a) { a.exitFullScreen() },\n			containerSizeTimeout: null, enterFullScreen: function () {\n				var b = this;\n				return mejs.MediaFeatures.isiOS && mejs.MediaFeatures.hasiOSFullScreen &&\n					\"function\" == typeof b.media.webkitEnterFullscreen ? void b.media.webkitEnterFullscreen() :\n					(a(document.documentElement)\n						.addClass(\"mejs-fullscreen\"), b.normalHeight = b.container.height(), b\n						.normalWidth = b.container.width(), \"native-native\" === b.fullscreenMode ||\n						\"plugin-native\" === b.fullscreenMode ? (mejs.MediaFeatures.requestFullScreen(\n							b.container[0]), b.isInIframe && setTimeout(function c() {\n							if (b.isNativeFullScreen) {\n								var d = .002,\n									e = a(window)\n									.width(),\n									f = screen.width,\n									g = Math.abs(f - e),\n									h = f * d;\n								g > h ? b.exitFullScreen() : setTimeout(c, 500) } }, 1e3)) :\n						\"fullwindow\" == b.fullscreeMode, b.container.addClass(\n							\"mejs-container-fullscreen\")\n						.width(\"100%\")\n						.height(\"100%\"), b.containerSizeTimeout = setTimeout(function () { b.container\n								.css({ width: \"100%\", height: \"100%\" }), b.setControlsSize() }, 500),\n						\"native\" === b.media.pluginType ? b.$media.width(\"100%\")\n						.height(\"100%\") : (b.container.find(\".mejs-shim\")\n							.width(\"100%\")\n							.height(\"100%\"), setTimeout(function () {\n								var c = a(window),\n									d = c.width(),\n									e = c.height();\n								b.media.setVideoSize(d, e) }, 500)), b.layers.children(\"div\")\n						.width(\"100%\")\n						.height(\"100%\"), b.fullscreenBtn && b.fullscreenBtn.removeClass(\n							\"mejs-fullscreen\")\n						.addClass(\"mejs-unfullscreen\"), b.setControlsSize(), b.isFullScreen = !\n						0, b.container.find(\".mejs-captions-text\")\n						.css(\"font-size\", screen.width / b.width * 1 * 100 + \"%\"), b.container\n						.find(\".mejs-captions-position\")\n						.css(\"bottom\", \"45px\"), void b.container.trigger(\"enteredfullscreen\")) },\n			exitFullScreen: function () {\n				var b = this;\n				clearTimeout(b.containerSizeTimeout), mejs.MediaFeatures.hasTrueNativeFullScreen &&\n					(mejs.MediaFeatures.isFullScreen() || b.isFullScreen) && mejs.MediaFeatures\n					.cancelFullScreen(), a(document.documentElement)\n					.removeClass(\"mejs-fullscreen\"), b.container.removeClass(\n						\"mejs-container-fullscreen\")\n					.width(b.normalWidth)\n					.height(b.normalHeight), \"native\" === b.media.pluginType ? b.$media.width(\n						b.normalWidth)\n					.height(b.normalHeight) : (b.container.find(\".mejs-shim\")\n						.width(b.normalWidth)\n						.height(b.normalHeight), b.media.setVideoSize(b.normalWidth, b.normalHeight)\n					), b.layers.children(\"div\")\n					.width(b.normalWidth)\n					.height(b.normalHeight), b.fullscreenBtn.removeClass(\n						\"mejs-unfullscreen\")\n					.addClass(\"mejs-fullscreen\"), b.setControlsSize(), b.isFullScreen = !1,\n					b.container.find(\".mejs-captions-text\")\n					.css(\"font-size\", \"\"), b.container.find(\".mejs-captions-position\")\n					.css(\"bottom\", \"\"), b.container.trigger(\"exitedfullscreen\") } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { speeds: [\"2.00\", \"1.50\", \"1.25\",\n				\"1.00\", \"0.75\"], defaultSpeed: \"1.00\", speedChar: \"x\" }), a.extend(\n			MediaElementPlayer.prototype, { buildspeed: function (b, c, d, e) {\n					var f = this;\n					if (\"native\" == f.media.pluginType) {\n						for (var g = null, h = null, i = null, j = null, k = [], l = !1, m = 0,\n								n = f.options.speeds.length; n > m; m++) {\n							var o = f.options.speeds[m]; \"string\" == typeof o ? (k.push({ name: o +\n										f.options.speedChar, value: o }), o === f.options.defaultSpeed &&\n								(l = !0)) : (k.push(o), o.value === f.options.defaultSpeed && (l = !\n								0)) }\n						l || k.push({ name: f.options.defaultSpeed + f.options.speedChar, value: f\n								.options.defaultSpeed }), k.sort(function (a, b) {\n							return parseFloat(b.value) - parseFloat(a.value) });\n						var p = function (a) {\n								for (m = 0, n = k.length; n > m; m++)\n									if (k[m].value === a) return k[m].name },\n							q =\n							'<div class=\"mejs-button mejs-speed-button\"><button type=\"button\">' +\n							p(f.options.defaultSpeed) +\n							'</button><div class=\"mejs-speed-selector\"><ul>';\n						for (m = 0, il = k.length; m < il; m++) j = f.id + \"-speed-\" + k[m].value,\n							q += '<li><input type=\"radio\" name=\"speed\" value=\"' + k[m].value +\n							'\" id=\"' + j + '\" ' + (k[m].value === f.options.defaultSpeed ?\n								\" checked\" : \"\") + ' /><label for=\"' + j + '\" ' + (k[m].value === f.options\n								.defaultSpeed ? ' class=\"mejs-speed-selected\"' : \"\") + \">\" + k[m].name +\n							\"</label></li>\";\n						q += \"</ul></div></div>\", g = a(q)\n							.appendTo(c), h = g.find(\".mejs-speed-selector\"), i = f.options.defaultSpeed,\n							e.addEventListener(\"loadedmetadata\", function (a) { i && (e.playbackRate =\n									parseFloat(i)) }, !0), h.on(\"click\", 'input[type=\"radio\"]', function () {\n								var b = a(this)\n									.attr(\"value\");\n								i = b, e.playbackRate = parseFloat(b), g.find(\"button\")\n									.html(p(b)), g.find(\".mejs-speed-selected\")\n									.removeClass(\"mejs-speed-selected\"), g.find(\n										'input[type=\"radio\"]:checked')\n									.next()\n									.addClass(\"mejs-speed-selected\") }), g.one(\"mouseenter focusin\",\n								function () { h.height(g.find(\".mejs-speed-selector ul\")\n											.outerHeight(!0) + g.find(\".mejs-speed-translations\")\n											.outerHeight(!0))\n										.css(\"top\", -1 * h.height() + \"px\") }) } } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { startLanguage: \"\", tracksText: \"\",\n				tracksAriaLive: !1, hideCaptionsButtonWhenEmpty: !0,\n				toggleCaptionsButtonWhenOnlyOne: !1, slidesSelector: \"\" }), a.extend(\n				MediaElementPlayer.prototype, { hasChapters: !1, cleartracks: function (a,\n						b, c, d) { a && (a.captions && a.captions.remove(), a.chapters && a.chapters\n							.remove(), a.captionsText && a.captionsText.remove(), a.captionsButton &&\n							a.captionsButton.remove()) }, buildtracks: function (b, c, d, e) {\n						if (0 !== b.tracks.length) {\n							var f, g, h = this,\n								i = h.options.tracksAriaLive ?\n								'role=\"log\" aria-live=\"assertive\" aria-atomic=\"false\"' : \"\",\n								j = h.options.tracksText ? h.options.tracksText : mejs.i18n.t(\n									\"mejs.captions-subtitles\");\n							if (h.domNode.textTracks)\n								for (f = h.domNode.textTracks.length - 1; f >= 0; f--) h.domNode.textTracks[\n									f].mode = \"hidden\";\n							h.cleartracks(b, c, d, e), b.chapters = a(\n									'<div class=\"mejs-chapters mejs-layer\"></div>')\n								.prependTo(d)\n								.hide(), b.captions = a(\n									'<div class=\"mejs-captions-layer mejs-layer\"><div class=\"mejs-captions-position mejs-captions-position-hover\" ' +\n									i + '><span class=\"mejs-captions-text\"></span></div></div>')\n								.prependTo(d)\n								.hide(), b.captionsText = b.captions.find(\".mejs-captions-text\"), b.captionsButton =\n								a(\n									'<div class=\"mejs-button mejs-captions-button\"><button type=\"button\" aria-controls=\"' +\n									h.id + '\" title=\"' + j + '\" aria-label=\"' + j +\n									'\"></button><div class=\"mejs-captions-selector\"><ul><li><input type=\"radio\" name=\"' +\n									b.id + '_captions\" id=\"' + b.id +\n									'_captions_none\" value=\"none\" checked=\"checked\" /><label for=\"' + b.id +\n									'_captions_none\">' + mejs.i18n.t(\"mejs.none\") +\n									\"</label></li></ul></div></div>\")\n								.appendTo(c);\n							var k = 0;\n							for (f = 0; f < b.tracks.length; f++) g = b.tracks[f].kind, (\n								\"subtitles\" === g || \"captions\" === g) && k++;\n							for (h.options.toggleCaptionsButtonWhenOnlyOne && 1 == k ? b.captionsButton\n								.on(\"click\", function () { null === b.selectedTrack ? lang = b.tracks[\n										0].srclang : lang = \"none\", b.setTrack(lang) }) : (b.captionsButton.on(\n										\"mouseenter focusin\",\n										function () { a(this)\n												.find(\".mejs-captions-selector\")\n												.removeClass(\"mejs-offscreen\") })\n									.on(\"click\", \"input[type=radio]\", function () { lang = this.value, b.setTrack(\n											lang) }), b.captionsButton.on(\"mouseleave focusout\", function () { a\n											(this)\n											.find(\".mejs-captions-selector\")\n											.addClass(\"mejs-offscreen\") })), b.options.alwaysShowControls ? b.container\n								.find(\".mejs-captions-position\")\n								.addClass(\"mejs-captions-position-hover\") : b.container.bind(\n									\"controlsshown\",\n									function () { b.container.find(\".mejs-captions-position\")\n											.addClass(\"mejs-captions-position-hover\") })\n								.bind(\"controlshidden\", function () { e.paused || b.container.find(\n											\".mejs-captions-position\")\n										.removeClass(\"mejs-captions-position-hover\") }), b.trackToLoad = -1,\n								b.selectedTrack = null, b.isLoadingTrack = !1, f = 0; f < b.tracks.length; f++\n							) g = b.tracks[f].kind, (\"subtitles\" === g || \"captions\" === g) && b.addTrackButton(\n								b.tracks[f].srclang, b.tracks[f].label);\n							b.loadNextTrack(), e.addEventListener(\"timeupdate\", function () { b.displayCaptions() }, !\n								1), \"\" !== b.options.slidesSelector && (b.slidesContainer = a(b.options\n								.slidesSelector), e.addEventListener(\"timeupdate\", function () { b.displaySlides() }, !\n								1)), e.addEventListener(\"loadedmetadata\", function () { b.displayChapters() }, !\n								1), b.container.hover(function () { b.hasChapters && (b.chapters.removeClass(\n										\"mejs-offscreen\"), b.chapters.fadeIn(200)\n									.height(b.chapters.find(\".mejs-chapter\")\n										.outerHeight())) }, function () { b.hasChapters && !e.paused && b.chapters\n									.fadeOut(200, function () { a(this)\n											.addClass(\"mejs-offscreen\"), a(this)\n											.css(\"display\", \"block\") }) }), h.container.on(\"controlsresize\",\n								function () { h.adjustLanguageBox() }), null !== b.node.getAttribute(\n								\"autoplay\") && b.chapters.addClass(\"mejs-offscreen\") } }, setTrack: function (\n						a) {\n						var b, c = this;\n						if (\"none\" == a) c.selectedTrack = null, c.captionsButton.removeClass(\n							\"mejs-captions-enabled\");\n						else\n							for (b = 0; b < c.tracks.length; b++)\n								if (c.tracks[b].srclang == a) { null === c.selectedTrack && c.captionsButton\n										.addClass(\"mejs-captions-enabled\"), c.selectedTrack = c.tracks[b], c\n										.captions.attr(\"lang\", c.selectedTrack.srclang), c.displayCaptions();\n									break } }, loadNextTrack: function () {\n						var a = this;\n						a.trackToLoad++, a.trackToLoad < a.tracks.length ? (a.isLoadingTrack = !\n							0, a.loadTrack(a.trackToLoad)) : (a.isLoadingTrack = !1, a.checkForTracks()) },\n					loadTrack: function (b) {\n						var c = this,\n							d = c.tracks[b],\n							e = function () { d.isLoaded = !0, c.enableTrackButton(d.srclang, d.label),\n									c.loadNextTrack() };\n						a.ajax({ url: d.src, dataType: \"text\", success: function (a) { \"string\" ==\n								typeof a && /<tt\\s+xml/gi.exec(a) ? d.entries = mejs.TrackFormatParser\n									.dfxp.parse(a) : d.entries = mejs.TrackFormatParser.webvtt.parse(a),\n									e(), \"chapters\" == d.kind && c.media.addEventListener(\"play\",\n										function () { c.media.duration > 0 && c.displayChapters(d) }, !1),\n									\"slides\" == d.kind && c.setupSlides(d) }, error: function () { c.removeTrackButton(\n									d.srclang), c.loadNextTrack() } }) }, enableTrackButton: function (b,\n						c) {\n						var d = this; \"\" === c && (c = mejs.language.codes[b] || b), d.captionsButton\n							.find(\"input[value=\" + b + \"]\")\n							.prop(\"disabled\", !1)\n							.siblings(\"label\")\n							.html(c), d.options.startLanguage == b && a(\"#\" + d.id + \"_captions_\" +\n								b)\n							.prop(\"checked\", !0)\n							.trigger(\"click\"), d.adjustLanguageBox() }, removeTrackButton: function (\n						a) {\n						var b = this;\n						b.captionsButton.find(\"input[value=\" + a + \"]\")\n							.closest(\"li\")\n							.remove(), b.adjustLanguageBox() }, addTrackButton: function (b, c) {\n						var d = this; \"\" === c && (c = mejs.language.codes[b] || b), d.captionsButton\n							.find(\"ul\")\n							.append(a('<li><input type=\"radio\" name=\"' + d.id + '_captions\" id=\"' +\n								d.id + \"_captions_\" + b + '\" value=\"' + b +\n								'\" disabled=\"disabled\" /><label for=\"' + d.id + \"_captions_\" + b +\n								'\">' + c + \" (loading)</label></li>\")), d.adjustLanguageBox(), d.container\n							.find(\".mejs-captions-translations option[value=\" + b + \"]\")\n							.remove() }, adjustLanguageBox: function () {\n						var a = this;\n						a.captionsButton.find(\".mejs-captions-selector\")\n							.height(a.captionsButton.find(\".mejs-captions-selector ul\")\n								.outerHeight(!0) + a.captionsButton.find(\".mejs-captions-translations\")\n								.outerHeight(!0)) }, checkForTracks: function () {\n						var a = this,\n							b = !1;\n						if (a.options.hideCaptionsButtonWhenEmpty) {\n							for (var c = 0; c < a.tracks.length; c++) {\n								var d = a.tracks[c].kind;\n								if ((\"subtitles\" === d || \"captions\" === d) && a.tracks[c].isLoaded) { b\n										= !0;\n									break } }\n							b || (a.captionsButton.hide(), a.setControlsSize()) } }, displayCaptions: function () {\n						if (\"undefined\" != typeof this.tracks) {\n							var a, b = this,\n								c = b.selectedTrack;\n							if (null !== c && c.isLoaded) {\n								for (a = 0; a < c.entries.times.length; a++)\n									if (b.media.currentTime >= c.entries.times[a].start && b.media.currentTime <=\n										c.entries.times[a].stop) return b.captionsText.html(c.entries.text[a])\n										.attr(\"class\", \"mejs-captions-text \" + (c.entries.times[a].identifier ||\n											\"\")), void b.captions.show()\n										.height(0);\n								b.captions.hide() } else b.captions.hide() } }, setupSlides: function (\n						a) {\n						var b = this;\n						b.slides = a, b.slides.entries.imgs = [b.slides.entries.text.length], b.showSlide(\n							0) }, showSlide: function (b) {\n						if (\"undefined\" != typeof this.tracks && \"undefined\" != typeof this.slidesContainer) {\n							var c = this,\n								d = c.slides.entries.text[b],\n								e = c.slides.entries.imgs[b]; \"undefined\" == typeof e || \"undefined\" ==\n								typeof e.fadeIn ? c.slides.entries.imgs[b] = e = a('<img src=\"' + d +\n									'\">')\n								.on(\"load\", function () { e.appendTo(c.slidesContainer)\n										.hide()\n										.fadeIn()\n										.siblings(\":visible\")\n										.fadeOut() }) : e.is(\":visible\") || e.is(\":animated\") || e.fadeIn()\n								.siblings(\":visible\")\n								.fadeOut() } }, displaySlides: function () {\n						if (\"undefined\" != typeof this.slides) {\n							var a, b = this,\n								c = b.slides;\n							for (a = 0; a < c.entries.times.length; a++)\n								if (b.media.currentTime >= c.entries.times[a].start && b.media.currentTime <=\n									c.entries.times[a].stop) return void b.showSlide(a) } },\n					displayChapters: function () {\n						var a, b = this;\n						for (a = 0; a < b.tracks.length; a++)\n							if (\"chapters\" == b.tracks[a].kind && b.tracks[a].isLoaded) { b.drawChapters(\n									b.tracks[a]), b.hasChapters = !0;\n								break } }, drawChapters: function (b) {\n						var c, d, e = this,\n							f = 0,\n							g = 0;\n						for (e.chapters.empty(), c = 0; c < b.entries.times.length; c++) d = b.entries\n							.times[c].stop - b.entries.times[c].start, f = Math.floor(d / e.media.duration *\n								100), (f + g > 100 || c == b.entries.times.length - 1 && 100 > f + g) &&\n							(f = 100 - g), e.chapters.append(a('<div class=\"mejs-chapter\" rel=\"' +\n								b.entries.times[c].start + '\" style=\"left: ' + g.toString() +\n								\"%;width: \" + f.toString() + '%;\"><div class=\"mejs-chapter-block' + (\n									c == b.entries.times.length - 1 ? \" mejs-chapter-block-last\" : \"\") +\n								'\"><span class=\"ch-title\">' + b.entries.text[c] +\n								'</span><span class=\"ch-time\">' + mejs.Utility.secondsToTimeCode(b.entries\n									.times[c].start, e.options) + \"&ndash;\" + mejs.Utility.secondsToTimeCode(\n									b.entries.times[c].stop, e.options) + \"</span></div></div>\")), g += f;\n						e.chapters.find(\"div.mejs-chapter\")\n							.click(function () { e.media.setCurrentTime(parseFloat(a(this)\n									.attr(\"rel\"))), e.media.paused && e.media.play() }), e.chapters.show() } }\n			), mejs.language = { codes: { af: \"Afrikaans\", sq: \"Albanian\", ar: \"Arabic\",\n					be: \"Belarusian\", bg: \"Bulgarian\", ca: \"Catalan\", zh: \"Chinese\", \"zh-cn\": \"Chinese Simplified\", \"zh-tw\": \"Chinese Traditional\",\n					hr: \"Croatian\", cs: \"Czech\", da: \"Danish\", nl: \"Dutch\", en: \"English\", et: \"Estonian\",\n					fl: \"Filipino\", fi: \"Finnish\", fr: \"French\", gl: \"Galician\", de: \"German\",\n					el: \"Greek\", ht: \"Haitian Creole\", iw: \"Hebrew\", hi: \"Hindi\", hu: \"Hungarian\",\n					is: \"Icelandic\", id: \"Indonesian\", ga: \"Irish\", it: \"Italian\", ja: \"Japanese\",\n					ko: \"Korean\", lv: \"Latvian\", lt: \"Lithuanian\", mk: \"Macedonian\", ms: \"Malay\",\n					mt: \"Maltese\", no: \"Norwegian\", fa: \"Persian\", pl: \"Polish\", pt: \"Portuguese\",\n					ro: \"Romanian\", ru: \"Russian\", sr: \"Serbian\", sk: \"Slovak\", sl: \"Slovenian\",\n					es: \"Spanish\", sw: \"Swahili\", sv: \"Swedish\", tl: \"Tagalog\", th: \"Thai\", tr: \"Turkish\",\n					uk: \"Ukrainian\", vi: \"Vietnamese\", cy: \"Welsh\", yi: \"Yiddish\" } }, mejs.TrackFormatParser = { webvtt: { pattern_timecode: /^((?:[0-9]{1,2}:)?[0-9]{2}:[0-9]{2}([,.][0-9]{1,3})?) --\\> ((?:[0-9]{1,2}:)?[0-9]{2}:[0-9]{2}([,.][0-9]{3})?)(.*)$/,\n					parse: function (b) {\n						for (var c, d, e, f = 0, g = mejs.TrackFormatParser.split2(b, /\\r?\\n/),\n								h = { text: [], times: [] }; f < g.length; f++) {\n							if (c = this.pattern_timecode.exec(g[f]), c && f < g.length) {\n								for (f - 1 >= 0 && \"\" !== g[f - 1] && (e = g[f - 1]), f++, d = g[f], f++;\n									\"\" !== g[f] && f < g.length;) d = d + \"\\n\" + g[f], f++;\n								d = a.trim(d)\n									.replace(\n										/(\\b(https?|ftp|file):\\/\\/[-A-Z0-9+&@#\\/%?=~_|!:,.;]*[-A-Z0-9+&@#\\/%=~_|])/gi,\n										\"<a href='$1' target='_blank'>$1</a>\"), h.text.push(d), h.times.push({ identifier: e,\n										start: 0 === mejs.Utility.convertSMPTEtoSeconds(c[1]) ? .2 : mejs.Utility\n											.convertSMPTEtoSeconds(c[1]), stop: mejs.Utility.convertSMPTEtoSeconds(\n											c[3]), settings: c[5] }) }\n							e = \"\" }\n						return h } }, dfxp: { parse: function (b) { b = a(b)\n							.filter(\"tt\");\n						var c, d, e = 0,\n							f = b.children(\"div\")\n							.eq(0),\n							g = f.find(\"p\"),\n							h = b.find(\"#\" + f.attr(\"style\")),\n							i = { text: [], times: [] };\n						if (h.length) {\n							var j = h.removeAttr(\"id\")\n								.get(0)\n								.attributes;\n							if (j.length)\n								for (c = {}, e = 0; e < j.length; e++) c[j[e].name.split(\":\")[1]] = j[\n									e].value }\n						for (e = 0; e < g.length; e++) {\n							var k, l = { start: null, stop: null, style: null };\n							if (g.eq(e)\n								.attr(\"begin\") && (l.start = mejs.Utility.convertSMPTEtoSeconds(g.eq(e)\n									.attr(\"begin\"))), !l.start && g.eq(e - 1)\n								.attr(\"end\") && (l.start = mejs.Utility.convertSMPTEtoSeconds(g.eq(e -\n										1)\n									.attr(\"end\"))), g.eq(e)\n								.attr(\"end\") && (l.stop = mejs.Utility.convertSMPTEtoSeconds(g.eq(e)\n									.attr(\"end\"))), !l.stop && g.eq(e + 1)\n								.attr(\"begin\") && (l.stop = mejs.Utility.convertSMPTEtoSeconds(g.eq(e +\n										1)\n									.attr(\"begin\"))), c) { k = \"\";\n								for (var m in c) k += m + \":\" + c[m] + \";\" }\n							k && (l.style = k), 0 === l.start && (l.start = .2), i.times.push(l), d =\n								a.trim(g.eq(e)\n									.html())\n								.replace(\n									/(\\b(https?|ftp|file):\\/\\/[-A-Z0-9+&@#\\/%?=~_|!:,.;]*[-A-Z0-9+&@#\\/%=~_|])/gi,\n									\"<a href='$1' target='_blank'>$1</a>\"), i.text.push(d) }\n						return i } }, split2: function (a, b) {\n					return a.split(b) } }, 3 != \"x\\n\\ny\".split(/\\n/gi)\n			.length && (mejs.TrackFormatParser.split2 = function (a, b) {\n				var c, d = [],\n					e = \"\";\n				for (c = 0; c < a.length; c++) e += a.substring(c, c + 1), b.test(e) && (d\n					.push(e.replace(b, \"\")), e = \"\");\n				return d.push(e), d }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { sourcechooserText: \"\" }), a.extend(\n			MediaElementPlayer.prototype, { buildsourcechooser: function (b, c, d, e) {\n					var f, g = this,\n						h = g.options.sourcechooserText ? g.options.sourcechooserText : mejs.i18n\n						.t(\"mejs.source-chooser\");\n					b.sourcechooserButton = a(\n							'<div class=\"mejs-button mejs-sourcechooser-button\"><button type=\"button\" role=\"button\" aria-haspopup=\"true\" aria-owns=\"' +\n							g.id + '\" title=\"' + h + '\" aria-label=\"' + h +\n							'\"></button><div class=\"mejs-sourcechooser-selector mejs-offscreen\" role=\"menu\" aria-expanded=\"false\" aria-hidden=\"true\"><ul></ul></div></div>'\n						)\n						.appendTo(c)\n						.hover(function () { clearTimeout(f), b.showSourcechooserSelector() },\n							function () { a(this);\n								f = setTimeout(function () { b.hideSourcechooserSelector() }, 500) })\n						.on(\"keydown\", function (c) {\n							var d = c.keyCode;\n							switch (d) {\n							case 32:\n								mejs.MediaFeatures.isFirefox || b.showSourcechooserSelector(), a(\n										this)\n									.find(\".mejs-sourcechooser-selector\")\n									.find(\"input[type=radio]:checked\")\n									.first()\n									.focus();\n								break;\n							case 13:\n								b.showSourcechooserSelector(), a(this)\n									.find(\".mejs-sourcechooser-selector\")\n									.find(\"input[type=radio]:checked\")\n									.first()\n									.focus();\n								break;\n							case 27:\n								b.hideSourcechooserSelector(), a(this)\n									.find(\"button\")\n									.focus();\n								break;\n							default:\n								return !0 } })\n						.on(\"focusout\", mejs.Utility.debounce(function (c) { setTimeout(\n								function () {\n									var c = a(document.activeElement)\n										.closest(\".mejs-sourcechooser-selector\");\n									c.length || b.hideSourcechooserSelector() }, 0) }, 100))\n						.delegate(\"input[type=radio]\", \"click\", function () { a(this)\n								.attr(\"aria-selected\", !0)\n								.attr(\"checked\", \"checked\"), a(this)\n								.closest(\".mejs-sourcechooser-selector\")\n								.find(\"input[type=radio]\")\n								.not(this)\n								.attr(\"aria-selected\", \"false\")\n								.removeAttr(\"checked\");\n							var b = this.value;\n							if (e.currentSrc != b) {\n								var c = e.currentTime,\n									d = e.paused;\n								e.pause(), e.setSrc(b), e.addEventListener(\"loadedmetadata\",\n									function (a) { e.currentTime = c }, !0);\n								var f = function (a) { d || e.play(), e.removeEventListener(\n										\"canplay\", f, !0) };\n								e.addEventListener(\"canplay\", f, !0), e.load() } })\n						.delegate(\"button\", \"click\", function (c) { a(this)\n								.siblings(\".mejs-sourcechooser-selector\")\n								.hasClass(\"mejs-offscreen\") ? (b.showSourcechooserSelector(), a(this)\n									.siblings(\".mejs-sourcechooser-selector\")\n									.find(\"input[type=radio]:checked\")\n									.first()\n									.focus()) : b.hideSourcechooserSelector() });\n					for (var i in this.node.children) {\n						var j = this.node.children[i]; \"SOURCE\" !== j.nodeName || \"probably\" !=\n							e.canPlayType(j.type) && \"maybe\" != e.canPlayType(j.type) || b.addSourceButton(\n								j.src, j.title, j.type, e.src == j.src) } }, addSourceButton: function (\n					b, c, d, e) {\n					var f = this;\n					(\"\" === c || void 0 == c) && (c = b), d = d.split(\"/\")[1], f.sourcechooserButton\n						.find(\"ul\")\n						.append(a('<li><input type=\"radio\" name=\"' + f.id +\n							'_sourcechooser\" id=\"' + f.id + \"_sourcechooser_\" + c + d +\n							'\" role=\"menuitemradio\" value=\"' + b + '\" ' + (e ?\n								'checked=\"checked\"' : \"\") + 'aria-selected=\"' + e +\n							'\" /><label for=\"' + f.id + \"_sourcechooser_\" + c + d +\n							'\" aria-hidden=\"true\">' + c + \" (\" + d + \")</label></li>\")), f.adjustSourcechooserBox() },\n				adjustSourcechooserBox: function () {\n					var a = this;\n					a.sourcechooserButton.find(\".mejs-sourcechooser-selector\")\n						.height(a.sourcechooserButton.find(\".mejs-sourcechooser-selector ul\")\n							.outerHeight(!0)) }, hideSourcechooserSelector: function () { this.sourcechooserButton\n						.find(\".mejs-sourcechooser-selector\")\n						.addClass(\"mejs-offscreen\")\n						.attr(\"aria-expanded\", \"false\")\n						.attr(\"aria-hidden\", \"true\")\n						.find(\"input[type=radio]\")\n						.attr(\"tabindex\", \"-1\") }, showSourcechooserSelector: function () { this\n						.sourcechooserButton.find(\".mejs-sourcechooser-selector\")\n						.removeClass(\"mejs-offscreen\")\n						.attr(\"aria-expanded\", \"true\")\n						.attr(\"aria-hidden\", \"false\")\n						.find(\"input[type=radio]\")\n						.attr(\"tabindex\", \"0\") } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { contextMenuItems: [{ render: function (\n					a) {\n					return \"undefined\" == typeof a.enterFullScreen ? null : a.isFullScreen ?\n						mejs.i18n.t(\"mejs.fullscreen-off\") : mejs.i18n.t(\n							\"mejs.fullscreen-on\") }, click: function (a) { a.isFullScreen ? a.exitFullScreen() :\n						a.enterFullScreen() } }, { render: function (a) {\n					return a.media.muted ? mejs.i18n.t(\"mejs.unmute\") : mejs.i18n.t(\n						\"mejs.mute\") }, click: function (a) { a.media.muted ? a.setMuted(!1) :\n						a.setMuted(!0) } }, { isSeparator: !0 }, { render: function (a) {\n					return mejs.i18n.t(\"mejs.download-video\") }, click: function (a) { window\n						.location.href = a.media.currentSrc } }] }), a.extend(MediaElementPlayer\n			.prototype, { buildcontextmenu: function (b, c, d, e) { b.contextMenu = a(\n							'<div class=\"mejs-contextmenu\"></div>')\n						.appendTo(a(\"body\"))\n						.hide(), b.container.bind(\"contextmenu\", function (a) {\n							return b.isContextMenuEnabled ? (a.preventDefault(), b.renderContextMenu(\n								a.clientX - 1, a.clientY - 1), !1) : void 0 }), b.container.bind(\n							\"click\",\n							function () { b.contextMenu.hide() }), b.contextMenu.bind(\"mouseleave\",\n							function () { b.startContextMenuTimer() }) }, cleancontextmenu: function (\n					a) { a.contextMenu.remove() }, isContextMenuEnabled: !0,\n				enableContextMenu: function () { this.isContextMenuEnabled = !0 },\n				disableContextMenu: function () { this.isContextMenuEnabled = !1 },\n				contextMenuTimeout: null, startContextMenuTimer: function () {\n					var a = this;\n					a.killContextMenuTimer(), a.contextMenuTimer = setTimeout(function () { a\n							.hideContextMenu(), a.killContextMenuTimer() }, 750) },\n				killContextMenuTimer: function () {\n					var a = this.contextMenuTimer;\n					null != a && (clearTimeout(a), delete a, a = null) }, hideContextMenu: function () { this\n						.contextMenu.hide() }, renderContextMenu: function (b, c) {\n					for (var d = this, e = \"\", f = d.options.contextMenuItems, g = 0, h = f.length; h >\n						g; g++)\n						if (f[g].isSeparator) e +=\n							'<div class=\"mejs-contextmenu-separator\"></div>';\n						else {\n							var i = f[g].render(d);\n							null != i && (e +=\n								'<div class=\"mejs-contextmenu-item\" data-itemindex=\"' + g +\n								'\" id=\"element-' + 1e6 * Math.random() + '\">' + i + \"</div>\") }\n					d.contextMenu.empty()\n						.append(a(e))\n						.css({ top: c, left: b })\n						.show(), d.contextMenu.find(\".mejs-contextmenu-item\")\n						.each(function () {\n							var b = a(this),\n								c = parseInt(b.data(\"itemindex\"), 10),\n								e = d.options.contextMenuItems[c]; \"undefined\" != typeof e.show && e\n								.show(b, d), b.click(function () { \"undefined\" != typeof e.click &&\n										e.click(d), d.contextMenu.hide() }) }), setTimeout(function () { d.killControlsTimer(\n								\"rev3\") }, 100) } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { skipBackInterval: 30, skipBackText: \"\" }),\n			a.extend(MediaElementPlayer.prototype, { buildskipback: function (b, c, d, e) {\n					var f = this,\n						g = f.options.skipBackText ? f.options.skipBackText : mejs.i18n.t(\n							\"mejs.time-skip-back\"),\n						h = g.replace(\"%1\", f.options.skipBackInterval);\n					a(\n							'<div class=\"mejs-button mejs-skip-back-button\"><button type=\"button\" aria-controls=\"' +\n							f.id + '\" title=\"' + h + '\" aria-label=\"' + h + '\">NaN</div>')\n						.appendTo(c)\n						.click(function () { e.setCurrentTime(Math.max(e.currentTime - f.options\n									.skipBackInterval, 0)), a(this)\n								.find(\"button\")\n								.blur() }) } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { postrollCloseText: \"\" }), a.extend(\n			MediaElementPlayer.prototype, { buildpostroll: function (b, c, d, e) {\n					var f = this,\n						g = f.options.postrollCloseText ? f.options.postrollCloseText : mejs.i18n\n						.t(\"mejs.close\"),\n						h = f.container.find('link[rel=\"postroll\"]')\n						.attr(\"href\"); \"undefined\" != typeof h && (b.postroll = a(\n							'<div class=\"mejs-postroll-layer mejs-layer\"><a class=\"mejs-postroll-close\" onclick=\"$(this).parent().hide();return false;\">' +\n							g + '</a><div class=\"mejs-postroll-layer-content\"></div></div>')\n						.prependTo(d)\n						.hide(), f.media.addEventListener(\"ended\", function (c) { a.ajax({ dataType: \"html\",\n								url: h, success: function (a, b) { d.find(\n											\".mejs-postroll-layer-content\")\n										.html(a) } }), b.postroll.show() }, !1)) } }) }(mejs.$),\n	function (a) { a.extend(mejs.MepDefaults, { markerColor: \"#E9BC3D\", markers: [],\n			markerCallback: function () {} }), a.extend(MediaElementPlayer.prototype, { buildmarkers: function (\n				a, b, c, d) {\n				var e = 0,\n					f = -1,\n					g = -1,\n					h = -1,\n					i = -1;\n				for (e = 0; e < a.options.markers.length; ++e) b.find(\".mejs-time-total\")\n					.append('<span class=\"mejs-time-marker\"></span>');\n				d.addEventListener(\"durationchange\", function (c) { a.setmarkers(b) }),\n					d.addEventListener(\"timeupdate\", function (b) {\n						for (f = Math.floor(d.currentTime), h > f ? i > f && (i = -1) : h = f,\n							e = 0; e < a.options.markers.length; ++e) g = Math.floor(a.options.markers[\n							e]), f === g && g !== i && (a.options.markerCallback(d, d.currentTime),\n							i = g) }, !1) }, setmarkers: function (b) {\n				var c, d = this,\n					e = 0;\n				for (e = 0; e < d.options.markers.length; ++e) Math.floor(d.options.markers[\n					e]) <= d.media.duration && Math.floor(d.options.markers[e]) >= 0 && (c =\n					100 * Math.floor(d.options.markers[e]) / d.media.duration, a(b.find(\n						\".mejs-time-marker\")[e])\n					.css({ width: \"1px\", left: c + \"%\", background: d.options.markerColor })\n				) } }) }(mejs.$);\n\n",
+					"file": "/srv/www/default/htdocs/.jsc/js/mediaelement/mediaelement-and-player.min.js",
+					"file_size": 91169,
+					"file_write_time": 131202241260000000,
+					"settings":
+					{
+						"buffer_size": 116111,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.css",
+					"settings":
+					{
+						"buffer_size": 20847,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": ".mejs-offscreen{clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:polygon(0 0,0 0,0 0,0 0);position:absolute !important;height:1px;width:1px;overflow:hidden}.mejs-container{position:relative;background:#000;font-family:Helvetica,Arial,serif;text-align:left;vertical-align:top;text-indent:0}.mejs-fill-container,.mejs-fill-container .mejs-container{width:100%;height:100%}.mejs-fill-container{overflow:hidden}.mejs-container:focus{outline:0}.me-plugin{position:absolute}.mejs-embed,.mejs-embed body{width:100%;height:100%;margin:0;padding:0;background:#000;overflow:hidden}.mejs-fullscreen{overflow:hidden !important}.mejs-container-fullscreen{position:fixed;left:0;top:0;right:0;bottom:0;overflow:hidden;z-index:1000}.mejs-container-fullscreen .mejs-mediaelement,.mejs-container-fullscreen video{width:100%;height:100%}.mejs-clear{clear:both}.mejs-background{position:absolute;top:0;left:0}.mejs-mediaelement{position:absolute;top:0;left:0;width:100%;height:100%}.mejs-poster{position:absolute;top:0;left:0;background-size:contain;background-position:50% 50%;background-repeat:no-repeat}:root .mejs-poster img{display:none}.mejs-poster img{border:0;padding:0}.mejs-overlay{position:absolute;top:0;left:0}.mejs-overlay-play{cursor:pointer}.mejs-overlay-button{position:absolute;top:50%;left:50%;width:100px;height:100px;margin:-50px 0 0 -50px;background:url(../../img/mediaelement/bigplay.svg) no-repeat}.no-svg .mejs-overlay-button{background-image:url(../../img/mediaelement/bigplay.png)}.mejs-overlay:hover .mejs-overlay-button{background-position:0 -100px}.mejs-overlay-loading{position:absolute;top:50%;left:50%;width:80px;height:80px;margin:-40px 0 0 -40px;background:#333;background:url(../../img/mediaelement/background.png);background:rgba(0,0,0,.9);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(50,50,50,.9)),to(rgba(0,0,0,.9)));background:-webkit-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:-moz-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:-o-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:-ms-linear-gradient(top,rgba(50,50,50,.9),rgba(0,0,0,.9));background:linear-gradient(rgba(50,50,50,.9),rgba(0,0,0,.9))}.mejs-overlay-loading span{display:block;width:80px;height:80px;background:transparent url(../../img/mediaelement/loading.gif) 50% 50% no-repeat}.mejs-container .mejs-controls{position:absolute;list-style-type:none;margin:0;padding:0;bottom:0;left:0;background:url(../../img/mediaelement/background.png);background:rgba(0,0,0,.7);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(50,50,50,.7)),to(rgba(0,0,0,.7)));background:-webkit-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-moz-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-o-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-ms-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:linear-gradient(rgba(50,50,50,.7),rgba(0,0,0,.7));height:30px;width:100%}.mejs-container .mejs-controls div{list-style-type:none;background-image:none;display:block;float:left;margin:0;padding:0;width:26px;height:26px;font-size:11px;line-height:11px;font-family:Helvetica,Arial,serif;border:0}.mejs-controls .mejs-button button{cursor:pointer;display:block;font-size:0;line-height:0;text-decoration:none;margin:7px 5px;padding:0;position:absolute;height:16px;width:16px;border:0;background:transparent url(../../img/mediaelement/controls.svg) no-repeat}.no-svg .mejs-controls .mejs-button button{background-image:url(../../img/mediaelement/controls.png)}.mejs-controls .mejs-button button:focus{outline:dotted 1px #999}.mejs-container .mejs-controls .mejs-time{color:#fff;display:block;height:17px;width:auto;padding:10px 3px 0;overflow:hidden;text-align:center;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}.mejs-container .mejs-controls .mejs-time a{color:#fff;font-size:11px;line-height:12px;display:block;float:left;margin:1px 2px 0 0;width:auto}.mejs-controls .mejs-play button{background-position:0 0}.mejs-controls .mejs-pause button{background-position:0 -16px}.mejs-controls .mejs-stop button{background-position:-112px 0}.mejs-controls div.mejs-time-rail{direction:ltr;width:200px;padding-top:5px}.mejs-controls .mejs-time-rail span,.mejs-controls .mejs-time-rail a{display:block;position:absolute;width:180px;height:10px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;cursor:pointer}.mejs-controls .mejs-time-rail .mejs-time-total{margin:5px;background:#333;background:rgba(50,50,50,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(30,30,30,.8)),to(rgba(60,60,60,.8)));background:-webkit-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-moz-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-o-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-ms-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:linear-gradient(rgba(30,30,30,.8),rgba(60,60,60,.8))}.mejs-controls .mejs-time-rail .mejs-time-buffering{width:100%;background-image:-o-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,.15)),color-stop(0.75,rgba(255,255,255,.15)),color-stop(0.75,transparent),to(transparent));background-image:-webkit-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-moz-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-ms-linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(-45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);-webkit-background-size:15px 15px;-moz-background-size:15px 15px;-o-background-size:15px 15px;background-size:15px 15px;-webkit-animation:buffering-stripes 2s linear infinite;-moz-animation:buffering-stripes 2s linear infinite;-ms-animation:buffering-stripes 2s linear infinite;-o-animation:buffering-stripes 2s linear infinite;animation:buffering-stripes 2s linear infinite}@-webkit-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@-moz-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@-ms-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@-o-keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}@keyframes buffering-stripes{from{background-position:0 0}to{background-position:30px 0}}.mejs-controls .mejs-time-rail .mejs-time-loaded{background:#3caac8;background:rgba(60,170,200,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(44,124,145,.8)),to(rgba(78,183,212,.8)));background:-webkit-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:-moz-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:-o-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:-ms-linear-gradient(top,rgba(44,124,145,.8),rgba(78,183,212,.8));background:linear-gradient(rgba(44,124,145,.8),rgba(78,183,212,.8));width:0}.mejs-controls .mejs-time-rail .mejs-time-current{background:#fff;background:rgba(255,255,255,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(255,255,255,.9)),to(rgba(200,200,200,.8)));background:-webkit-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-moz-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-o-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-ms-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:linear-gradient(rgba(255,255,255,.9),rgba(200,200,200,.8));width:0}.mejs-controls .mejs-time-rail .mejs-time-handle{display:none;position:absolute;margin:0;width:10px;background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;cursor:pointer;border:solid 2px #333;top:-2px;text-align:center}.mejs-controls .mejs-time-rail .mejs-time-float{position:absolute;display:none;background:#eee;width:36px;height:17px;border:solid 1px #333;top:-26px;margin-left:-18px;text-align:center;color:#111}.mejs-controls .mejs-time-rail .mejs-time-float-current{margin:2px;width:30px;display:block;text-align:center;left:0}.mejs-controls .mejs-time-rail .mejs-time-float-corner{position:absolute;display:block;width:0;height:0;line-height:0;border:solid 5px #eee;border-color:#eee transparent transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;top:15px;left:13px}.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float{width:48px}.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-current{width:44px}.mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-corner{left:18px}.mejs-controls .mejs-fullscreen-button button{background-position:-32px 0}.mejs-controls .mejs-unfullscreen button{background-position:-32px -16px}.mejs-controls .mejs-mute button{background-position:-16px -16px}.mejs-controls .mejs-unmute button{background-position:-16px 0}.mejs-controls .mejs-volume-button{position:relative}.mejs-controls .mejs-volume-button .mejs-volume-slider{display:none;height:115px;width:25px;background:url(../../img/mediaelement/background.png);background:rgba(50,50,50,.7);-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;top:-115px;left:0;z-index:1;position:absolute;margin:0}.mejs-controls .mejs-volume-button:hover{-webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px}.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-total{position:absolute;left:11px;top:8px;width:2px;height:100px;background:#ddd;background:rgba(255,255,255,.5);margin:0}.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current{position:absolute;left:11px;top:8px;width:2px;height:100px;background:#ddd;background:rgba(255,255,255,.9);margin:0}.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-handle{position:absolute;left:4px;top:-3px;width:16px;height:6px;background:#ddd;background:rgba(255,255,255,.9);cursor:N-resize;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;margin:0}.mejs-controls a.mejs-horizontal-volume-slider{height:26px;width:56px;position:relative;display:block;float:left;vertical-align:middle}.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total{position:absolute;left:0;top:11px;width:50px;height:8px;margin:0;padding:0;font-size:1px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background:#333;background:rgba(50,50,50,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(30,30,30,.8)),to(rgba(60,60,60,.8)));background:-webkit-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-moz-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-o-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:-ms-linear-gradient(top,rgba(30,30,30,.8),rgba(60,60,60,.8));background:linear-gradient(rgba(30,30,30,.8),rgba(60,60,60,.8))}.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current{position:absolute;left:0;top:11px;width:50px;height:8px;margin:0;padding:0;font-size:1px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;background:#fff;background:rgba(255,255,255,.8);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(255,255,255,.9)),to(rgba(200,200,200,.8)));background:-webkit-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-moz-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-o-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:-ms-linear-gradient(top,rgba(255,255,255,.9),rgba(200,200,200,.8));background:linear-gradient(rgba(255,255,255,.9),rgba(200,200,200,.8))}.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle{display:none}.mejs-controls .mejs-captions-button{position:relative}.mejs-controls .mejs-captions-button button{background-position:-48px 0}.mejs-controls .mejs-captions-button .mejs-captions-selector{visibility:hidden;position:absolute;bottom:26px;right:-51px;width:85px;height:100px;background:url(../../img/mediaelement/background.png);background:rgba(50,50,50,.7);border:solid 1px transparent;padding:10px 10px 0;overflow:hidden;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.mejs-controls .mejs-captions-button:hover .mejs-captions-selector{visibility:visible}.mejs-controls .mejs-captions-button .mejs-captions-selector ul{margin:0;padding:0;display:block;list-style-type:none !important;overflow:hidden}.mejs-controls .mejs-captions-button .mejs-captions-selector ul li{margin:0 0 6px;padding:0;list-style-type:none !important;display:block;color:#fff;overflow:hidden}.mejs-controls .mejs-captions-button .mejs-captions-selector ul li input{clear:both;float:left;margin:3px 3px 0 5px}.mejs-controls .mejs-captions-button .mejs-captions-selector ul li label{width:55px;float:left;padding:4px 0 0;line-height:15px;font-family:Helvetica,Arial,serif;font-size:10px}.mejs-controls .mejs-captions-button .mejs-captions-translations{font-size:10px;margin:0 0 5px}.mejs-chapters{position:absolute;top:0;left:0;border-right:solid 1px #fff;width:10000px;z-index:1}.mejs-chapters .mejs-chapter{position:absolute;float:left;background:#222;background:rgba(0,0,0,.7);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(50,50,50,.7)),to(rgba(0,0,0,.7)));background:-webkit-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-moz-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-o-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:-ms-linear-gradient(top,rgba(50,50,50,.7),rgba(0,0,0,.7));background:linear-gradient(rgba(50,50,50,.7),rgba(0,0,0,.7));filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,startColorstr=#323232,endColorstr=#000000);overflow:hidden;border:0}.mejs-chapters .mejs-chapter .mejs-chapter-block{font-size:11px;color:#fff;padding:5px;display:block;border-right:solid 1px #333;border-bottom:solid 1px #333;cursor:pointer}.mejs-chapters .mejs-chapter .mejs-chapter-block-last{border-right:0}.mejs-chapters .mejs-chapter .mejs-chapter-block:hover{background:#666;background:rgba(102,102,102,.7);background:-webkit-gradient(linear,0 0,0 100%,from(rgba(102,102,102,.7)),to(rgba(50,50,50,.6)));background:-webkit-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:-moz-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:-o-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:-ms-linear-gradient(top,rgba(102,102,102,.7),rgba(50,50,50,.6));background:linear-gradient(rgba(102,102,102,.7),rgba(50,50,50,.6));filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,startColorstr=#666666,endColorstr=#323232)}.mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title{font-size:12px;font-weight:700;display:block;white-space:nowrap;text-overflow:ellipsis;margin:0 0 3px;line-height:12px}.mejs-chapters .mejs-chapter .mejs-chapter-block .ch-timespan{font-size:12px;line-height:12px;margin:3px 0 4px;display:block;white-space:nowrap;text-overflow:ellipsis}.mejs-captions-layer{position:absolute;bottom:0;left:0;text-align:center;line-height:20px;font-size:16px;color:#fff}.mejs-captions-layer a{color:#fff;text-decoration:underline}.mejs-captions-layer[lang=ar]{font-size:20px;font-weight:400}.mejs-captions-position{position:absolute;width:100%;bottom:15px;left:0}.mejs-captions-position-hover{bottom:35px}.mejs-captions-text{padding:0;background:url(../../img/mediaelement/background.png);background:rgba(20,20,20,.5);white-space:pre-wrap;-webkit-box-shadow:5px 0 0 rgba(20,20,20,.5),-5px 0 0 rgba(20,20,20,.5);box-shadow:5px 0 0 rgba(20,20,20,.5),-5px 0 0 rgba(20,20,20,.5)}.me-cannotplay a{color:#fff;font-weight:700}.me-cannotplay span{padding:15px;display:block}.mejs-controls .mejs-loop-off button{background-position:-64px -16px}.mejs-controls .mejs-loop-on button{background-position:-64px 0}.mejs-controls .mejs-backlight-off button{background-position:-80px -16px}.mejs-controls .mejs-backlight-on button{background-position:-80px 0}.mejs-controls .mejs-picturecontrols-button{background-position:-96px 0}.mejs-contextmenu{position:absolute;width:150px;padding:10px;border-radius:4px;top:0;left:0;background:#fff;border:solid 1px #999;z-index:1001}.mejs-contextmenu .mejs-contextmenu-separator{height:1px;font-size:0;margin:5px 6px;background:#333}.mejs-contextmenu .mejs-contextmenu-item{font-family:Helvetica,Arial,serif;font-size:12px;padding:4px 6px;cursor:pointer;color:#333}.mejs-contextmenu .mejs-contextmenu-item:hover{background:#2c7c91;color:#fff}.mejs-controls .mejs-sourcechooser-button{position:relative}.mejs-controls .mejs-sourcechooser-button button{background-position:-128px 0}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector{position:absolute;bottom:26px;right:-10px;width:130px;height:100px;background:url(../../img/mediaelement/background.png);background:rgba(50,50,50,.7);border:solid 1px transparent;padding:10px;overflow:hidden;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul{margin:0;padding:0;display:block;list-style-type:none !important;overflow:hidden}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li{margin:0 0 6px;padding:0;list-style-type:none !important;display:block;color:#fff;overflow:hidden}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li input{clear:both;float:left;margin:3px 3px 0 5px}.mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li label{width:100px;float:left;padding:4px 0 0;line-height:15px;font-family:Helvetica,Arial,serif;font-size:10px}.mejs-postroll-layer{position:absolute;bottom:0;left:0;width:100%;height:100%;background:url(../../img/mediaelement/background.png);background:rgba(50,50,50,.7);z-index:1000;overflow:hidden}.mejs-postroll-layer-content{width:100%;height:100%}.mejs-postroll-close{position:absolute;right:0;top:0;background:url(../../img/mediaelement/background.png);background:rgba(50,50,50,.7);color:#fff;padding:4px;z-index:100;cursor:pointer}div.mejs-speed-button{width:46px !important;position:relative}.mejs-controls .mejs-button.mejs-speed-button button{background:transparent;width:36px;font-size:11px;line-height:normal;color:#fff}.mejs-controls .mejs-speed-button .mejs-speed-selector{display:none;position:absolute;top:-100px;left:-10px;width:60px;height:100px;background:url(../../img/mediaelement/background.png);background:rgba(50,50,50,.7);border:solid 1px transparent;padding:0;overflow:hidden;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.mejs-controls .mejs-speed-button:hover>.mejs-speed-selector{display:block}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li label.mejs-speed-selected{color:rgba(33,248,248,1)}.mejs-controls .mejs-speed-button .mejs-speed-selector ul{margin:0;padding:0;display:block;list-style-type:none !important;overflow:hidden}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li{margin:0 0 6px;padding:0 10px;list-style-type:none !important;display:block;color:#fff;overflow:hidden}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li input{clear:both;float:left;margin:3px 3px 0 5px;display:none}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li label{width:60px;float:left;padding:4px 0 0;line-height:15px;font-family:Helvetica,Arial,serif;font-size:11px;color:#fff;margin-left:5px;cursor:pointer}.mejs-controls .mejs-speed-button .mejs-speed-selector ul li:hover{background-color:#c8c8c8 !important;background-color:rgba(255,255,255,.4) !important}.mejs-controls .mejs-button.mejs-jump-forward-button{background:transparent url(../../img/mediaelement/jumpforward.png) no-repeat 3px 3px}.mejs-controls .mejs-button.mejs-jump-forward-button button{background:transparent;font-size:9px;line-height:normal;color:#fff}.mejs-controls .mejs-button.mejs-skip-back-button{background:transparent url(../../img/mediaelement/skipback.png) no-repeat 3px 3px}.mejs-controls .mejs-button.mejs-skip-back-button button{background:transparent;font-size:9px;line-height:normal;color:#fff}",
+					"file": "/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.min.css",
+					"file_size": 20847,
+					"file_write_time": 131203182695043823,
+					"settings":
+					{
+						"buffer_size": 20847,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/users/faron/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+					"settings":
+					{
+						"buffer_size": 4274,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/srv/www/default/htdocs/me.html",
+					"settings":
+					{
+						"buffer_size": 1637,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "#!/bin/bash\n\nPREFILE=\"$1\"\n\n\n\n\nexit 0",
+					"file": "/srv/www/default/htdocs/videopager.sh",
+					"file_size": 1661,
+					"file_write_time": 131203193926562561,
+					"settings":
+					{
+						"buffer_size": 36,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.videopager.sh",
+					"settings":
+					{
+						"buffer_size": 2308,
 						"line_ending": "Unix"
 					}
 				}
@@ -421,7 +474,7 @@
 						"Package Control: Install Package"
 					]
 				],
-				"width": 449.0
+				"width": 575.0
 			},
 			"console":
 			{
@@ -441,34 +494,31 @@
 			},
 			"expanded_folders":
 			[
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv"
 			],
 			"file_history":
 			[
-				"/home/users/faron/.falcon/scripts/bash/lib/alias",
-				"/usr/local/bin/ff.clean",
-				"/usr/local/bin/ff.bin.files.backup.delete",
-				"/home/users/faron/.falcon/scripts/bin/ff.clean.sh",
-				"/home/users/faron/.bash_history",
-				"/usr/local/bin/ff.net.ip6",
-				"/usr/local/bin/ff.network.ip6",
-				"/usr/local/bin/ff.network.ip6-loader",
-				"/home/users/faron/.falcon/scripts/network/ff.network.ip6-loader.sh",
-				"/usr/local/bin/ff.script.kill",
-				"/home/users/faron/.falcon/scripts/test.sh",
-				"/usr/local/bin/ff.testing.scripter",
-				"/home/users/faron/.falcon/scripts/bin/ff.testing.sh",
-				"/home/users/faron/.falcon/scripts/ff.testing.faron.sh",
+				"/srv/www/default/htdocs/.jsc/css/cssengine.css",
+				"/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.",
+				"/tmp/videopager.sh",
+				"/srv/www/default/htdocs/me.html",
+				"/usr/local/bin/ff.html.glopper",
+				"/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.css",
+				"/srv/www/default/htdocs/.jsc/js/mediaelement-and-player.min.js",
+				"/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.min.css",
+				"/srv/www/default/htdocs/.jsc/js/mediaelement.min.js",
+				"/srv/www/default/htdocs/.jsc/css/mediaelementplayer.min.css",
+				"/srv/www/default/htdocs/.jsc/css/mediaelement/mejs-skins.css",
+				"/srv/www/default/htdocs/.player/build/mejs-skins.css",
+				"/srv/www/default/htdocs/.player/demo/mediaelement-stream.html",
+				"/srv/www/default/htdocs/.player/demo/test.html",
+				"/home/users/faron/Desktop/johndyer-mediaelement-a6e5af4/demo/mediaelementplayer-src.html",
+				"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs/.priv/index.html",
+				"/etc/network/interfaces",
+				"/etc/hostname",
+				"/root/.bash_history",
+				"/etc/apache2/settings/httpd.conf",
 				"/usr/local/bin/ff.script.new",
-				"/home/users/faron/.falcon/scripts/testing.sh",
-				"/home/users/faron/.falcon/scripts/ff.roar.sh",
-				"/home/users/faron/.falcon/scripts/ff.testing.scripter.sh",
-				"/home/users/faron/.falcon/scripts/network/ff.network.ip6.host-updater.sh",
-				"/home/users/faron/.falcon/scripts/network/ff.network.ip6.sh",
-				"/home/users/faron/.falcon/scripts/kills/e8a2ffd4-8618-11e6-b24b-8b2ec1afc846-test.sh",
-				"/usr/local/bin/ff.open",
-				"/home/users/faron/.falcon/scripts/bin/ff.open.sh",
-				"/home/users/faron/.falcon/scripts/bin/ff.edit.sh",
-				"/usr/local/bin/ff.load",
 				"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv/www/default/htdocs/tv/success/html5gallery/html5gallery.js",
 				"/home/users/faron/.falcon/scripts/bin/ff.load.sh",
 				"/home/users/faron/.cache/.fr-cqGldx/examples/demo_horizontal_skin.html",
@@ -499,6 +549,7 @@
 				"/etc/hosts",
 				"/etc/fstab",
 				"/home/users/faron/.falcon/scripts/git/ff.git.updater.sh",
+				"/home/users/faron/.falcon/scripts/bash/lib/alias",
 				"/home/users/faron/.falcon/scripts/mpv-player/input.conf",
 				"/home/users/faron/.config/mpv/input.conf",
 				"/usr/local/bin/ff.vid.mp4.run",
@@ -521,11 +572,12 @@
 				"/home/users/faron/.falcon/scripts/lab.find-files-by-sizes-then-fdupes.sh",
 				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/to-be-queued/25.list",
 				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/test/1.list",
+				"/usr/local/bin/ff.load",
 				"/run/user/1000/gvfs/sftp:host=192.168.1.7/home/srv/clips7/supplmentaryFolder/mp4/done/.info"
 			],
 			"find":
 			{
-				"height": 35.0
+				"height": 34.0
 			},
 			"find_in_files":
 			{
@@ -539,9 +591,33 @@
 				"case_sensitive": false,
 				"find_history":
 				[
-					"getfilethrow",
-					"rm -f $PWD/",
-					"FILEKILL",
+					"PREFILE",
+					"\"",
+					"url(../img/",
+					"853",
+					"{",
+					"}",
+					";",
+					"bottom",
+					"url(../../img/mediaelement/",
+					"\\\"",
+					"$PREFILE",
+					"bottom",
+					"\"",
+					"mejs-cont",
+					"url(../../img/mediaelement/",
+					"url(",
+					"\\\"",
+					"url(../img/mediaelement/",
+					"url(../img/",
+					"url(",
+					"\"",
+					"ca",
+					"192",
+					"><img",
+					"<img",
+					"/192",
+					"ttps./",
 					"\\'",
 					"\"",
 					"href=\"",
@@ -585,9 +661,27 @@
 				"regex": false,
 				"replace_history":
 				[
-					"$DOTHECLEAN",
-					"",
-					"FILESTART",
+					"1",
+					"\\\"",
+					"url(../../img/",
+					"{\n",
+					"}\n",
+					";\n",
+					"url(../img/mediaelement/",
+					"\"",
+					"Ll5RW6u5JRvELBj4bh9KXpy3sFT9zmTU",
+					"\\\"",
+					"url(../img/mediaelement/",
+					"url(../../img/mediaelement/",
+					"\"",
+					"url(../../img/mediaelement/",
+					"url(../img/mediaelement/",
+					"url(../img/",
+					"\\\"",
+					" target=\"_blank\"><img",
+					"target=\"_blank\"><img",
+					"//192",
+					"ttps:/",
 					"\\\"",
 					"\\'",
 					"data-src=\"",
@@ -633,11 +727,38 @@
 			"groups":
 			[
 				{
-					"selected": 3,
+					"selected": 18,
 					"sheets":
 					[
 						{
 							"buffer": 0,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2338,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										2338,
+										2338
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 18,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
 							"file": "/usr/local/bin/ff.generate.html.video",
 							"semi_transient": false,
 							"settings":
@@ -659,14 +780,14 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 0.0,
+								"translation.y": 171.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 3,
+							"stack_index": 17,
 							"type": "text"
 						},
 						{
-							"buffer": 1,
+							"buffer": 2,
 							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
 							"semi_transient": false,
 							"settings":
@@ -678,8 +799,36 @@
 								"selection":
 								[
 									[
-										808,
-										808
+										1133,
+										1133
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 171.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 16,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/users/faron/.falcon/scripts/bin/ff.edit.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 695,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
 									]
 								],
 								"settings":
@@ -690,11 +839,124 @@
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 2,
+							"stack_index": 15,
 							"type": "text"
 						},
 						{
-							"buffer": 2,
+							"buffer": 4,
+							"file": "/etc/dhcp/dhclient.conf",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 814,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										809,
+										809
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 14,
+							"type": "text"
+						},
+						{
+							"buffer": 5,
+							"file": "/etc/resolvconf/resolv.conf.d/head",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 218,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										172,
+										172
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 13,
+							"type": "text"
+						},
+						{
+							"buffer": 6,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1747,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										760,
+										760
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 12,
+							"type": "text"
+						},
+						{
+							"buffer": 7,
+							"file": "/srv/www/default/htdocs/.player/demo/mediaelementplayer-responsive.html",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1204,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1032,
+										1032
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 475.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 8,
+							"type": "text"
+						},
+						{
+							"buffer": 8,
 							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 							"semi_transient": false,
 							"settings":
@@ -706,8 +968,8 @@
 								"selection":
 								[
 									[
-										318,
-										318
+										650,
+										650
 									]
 								],
 								"settings":
@@ -718,31 +980,287 @@
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
-							"stack_index": 1,
+							"stack_index": 9,
 							"type": "text"
 						},
 						{
-							"buffer": 3,
-							"file": "/usr/local/bin/ff.scripts.sync",
+							"buffer": 9,
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 816,
+								"buffer_size": 846,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										498,
-										498
+										846,
+										846
+									]
+								],
+								"settings":
+								{
+									"auto_name": "With the growth of internet, many of materials hav",
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 11,
+							"type": "text"
+						},
+						{
+							"buffer": 10,
+							"file": "/srv/www/default/htdocs/test.html",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1542,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 11,
+							"file": "/srv/www/default/htdocs/test.min.html",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1370,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1370,
+										1370
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 342.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 4,
+							"type": "text"
+						},
+						{
+							"buffer": 12,
+							"file": "/srv/www/default/htdocs/.jsc/js/mediaelement/mediaelement-and-player.min.js",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 116111,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1359,
+										1359
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 298.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 7,
+							"type": "text"
+						},
+						{
+							"buffer": 13,
+							"file": "/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.css",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 20847,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										20847,
+										20847
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/CSS/CSS.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 1938.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 6,
+							"type": "text"
+						},
+						{
+							"buffer": 14,
+							"file": "/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.min.css",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 20847,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										20847,
+										20847
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/CSS/CSS.tmLanguage"
+								},
+								"translation.x": 207402.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 5,
+							"type": "text"
+						},
+						{
+							"buffer": 15,
+							"file": "/home/users/faron/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 4274,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										801,
+										801
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/JavaScript/JSON.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 10,
+							"type": "text"
+						},
+						{
+							"buffer": 16,
+							"file": "/srv/www/default/htdocs/me.html",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1637,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1254,
+										1254
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 57.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						},
+						{
+							"buffer": 17,
+							"file": "/srv/www/default/htdocs/videopager.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 36,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										36,
+										36
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 18,
+							"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.videopager.sh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2308,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										362,
+										362
 									]
 								],
 								"settings":
 								{
 									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 								},
-								"translation.x": 0.0,
+								"translation.x": -0.0,
 								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
@@ -788,7 +1306,7 @@
 				"height": 0.0
 			},
 			"pinned_build_system": "",
-			"position": "0,0,0,0,0,281,201,1814,1052,1920,1080",
+			"position": "0,0,0,0,0,245,144,1778,995,1920,1080",
 			"project": "",
 			"replace":
 			{

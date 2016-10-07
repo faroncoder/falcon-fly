@@ -11,7 +11,7 @@ if [[ "$( hostname -s  )" == "f8" ]]; then
 else
 	echo -e -n "$Fwarn sync-ing falcon scripts..."
 	rsync -avzh --delete --exclude .git --exclude Sublime faron@192.168.1.8:~/.falcon/scripts ~/.falcon/
-	echo -e $Fok
+	/usr/local/bin/ff.load
 fi
 
 

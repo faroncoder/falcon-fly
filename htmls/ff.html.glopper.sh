@@ -30,9 +30,9 @@ fi
 
 
 glopCSS() {
-	RESULT=`find -L $PWD/.jsc/css -maxdepth 1 -type f -name '*.css' ! -name 'cssengine.css' | wc -l`
+	RESULT=`find -L $PWD/.jsc/css -maxdepth 1 -name '*.css' ! -name 'cssengine.css' | wc -l`
 	sudo su -c "echo \"@charset \"UTF-8\";\" > \"$_fileTarget\""
-	sudo su -c "echo \"@import url('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');\" >> \"$_fileTarget\""
+	sudo su -c "echo \"@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');\" >> \"$_fileTarget\""
 	for b in "${GETFILES[@]}"; do
 		INJECTION="@import url(`printf  \"'$b'\"`);"
 	 	sudo su -c "echo \"$INJECTION\" >> $_fileTarget"
@@ -43,9 +43,9 @@ glopCSS() {
 
 glopJS() {
 
-		RESULT=`find -L $PWD/.jsc/js -maxdepth 1 -type f -name '*.js' ! -name 'appengine.js' ! -name 'jquery-ui*.js'  ! -name 'bootstrap*.js' ! -name 'angular*.js' ! -name '*ie*.js' | wc -l`
+		RESULT=`find -L $PWD/.jsc/js -maxdepth 1 -name '*.js' ! -name 'appengine.js' ! -name 'jquery-ui*.js'  ! -name 'bootstrap*.js' ! -name 'angular*.js' ! -name '*ie*.js' | wc -l`
 
-	sudo su -c "echo \"\$.getScript('http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', function(data, textStatus) {
+	sudo su -c "echo \"\$.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', function(data, textStatus) {
 		console.log('bootstrap.min.js loaded', textStatus);
 });
 \$.getScript('./.jsc/js/angular.min.js', function(data, textStatus) {

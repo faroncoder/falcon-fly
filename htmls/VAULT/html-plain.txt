@@ -12,6 +12,4 @@
 		<![endif]-->
 	</head>
 	<body>
-		{context}
-	</body>
-</html>
+	
