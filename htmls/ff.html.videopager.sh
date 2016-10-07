@@ -5,21 +5,26 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 #################### BEGIN
 
-LOCURL=$1
-FILEID=$2
-
-if [[ "$LOCURL" == "" ]]; then
-	echo -n "$Finfo Location of URL: http(s)://"
-	read LOCURL
-fi
+FILEID=$1
+GETUR=$2
 
 if [[ "$FILEID" == "" ]]; then
-	echo -n "$Finfo Which file to pinpoint? "
-	read FILEID
+    echo -n "$Finfo Which file to pinpoint? "
+    read FILEID
+    FILEID=`basename $FILEID`
 fi
 
-IDURL="$LOCURL/$FILEID.mp4"
-OUTHTML="$PWD/$FILEID.html"
+if [[ "$GETUR" == "" ]]; then
+	echo -n "$Finfo Location of URL: http(s)://"
+	read GETUR
+else
+    LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
+    FINALURL="https://$LOCURL"
+    URLIN=`echo $FINALURL | sed 's/\/srv\/www\/default\/htdocs//g'`
+fi
+IDURL="$URLIN/$FILEID"
+TRME=`echo $FILEID | rev | cut -d'.' -f2 | rev `
+OUTHTML="$TRME.html"
 DocVideo="<!DOCTYPE html>
 <html lang=\"en\">
     <head>
@@ -56,8 +61,11 @@ DocVideo="<!DOCTYPE html>
     </body>
 </html>"
 echo "$Fwarn creating $OUTHTML"
-echo $DocVideo > "$OUTHTML"
+echo -e "$DocVideo" >> "$OUTHTML"
 echo "$Fok"
+
+
+
 
 ################### END
 #cd $RETURN 1> /dev/null;
