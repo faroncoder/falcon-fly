@@ -11,20 +11,33 @@ GETUR=$2
 if [[ "$FILEID" == "" ]]; then
     echo -n "$Finfo Which file to pinpoint? "
     read FILEID
-    FILEID=`basename $FILEID`
 fi
 
 if [[ "$GETUR" == "" ]]; then
 	echo -n "$Finfo Location of URL: http(s)://"
 	read GETUR
-else
-    LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
-    FINALURL="https://$LOCURL"
-    URLIN=`echo $FINALURL | sed 's/\/srv\/www\/default\/htdocs//g'`
 fi
-IDURL="$URLIN/$FILEID"
-TRME=`echo $FILEID | rev | cut -d'.' -f2 | rev `
-OUTHTML="$TRME.html"
+    LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
+ 
+    FILEI=`basename $FILEID`
+    GETD=`dirname $FILEI`
+    PREFILE=`echo $FILEI | rev | cut -d'.' -f2 | rev`
+    PREEXT=`echo $FILEI | rev | cut -d'.' -f1 | rev`
+    ME=
+    FULLHTTP="https://$LOCURL`echo $PWD | tr '/' '|' | sed 's/|srv|www|//g' | sed 's/htdocs|//g' | tr '|' '  ' | awk '{ $1=""; print $0 }' | tr '  ' '/'`"
+
+    FULLHTTPmedia="$FULLHTTP/media/$PREFILE.$PREEXT"
+    FULLHTTPhtml="$GETD/$PREFILE.html"
+if [[ ! -d "$PWD/media" ]]; then 
+    mkdir -p $PWD/media 2> /dev/null    
+fi
+
+if [[ ! -d "$PWD/.jsc" ]]; then 
+    /usr/local/bin/ff.html.glopper
+fi
+
+/usr/local/bin/ff.media.thumbnailer "$FILEI"
+
 DocVideo="<!DOCTYPE html>
 <html lang=\"en\">
     <head>
@@ -33,7 +46,7 @@ DocVideo="<!DOCTYPE html>
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"faron\">
-        <title>$1</title>
+        <title>$PREFILE</title>
         <link rel=\"stylesheet\" href=\"./.jsc/css/cssengine.css\" />
         <link rel=\"stylesheet\" href=\"./.jsc/css/mediaelement/mediaelementplayer.min.css\" />
 		<link rel=\"stylesheet\" href=\"./.jsc/css/mediaelement/mejs-skins.css\" /> 
@@ -43,8 +56,8 @@ DocVideo="<!DOCTYPE html>
 		</style> 
 	</head>
     <body>
-        <video align=\"center\" class=\"mejs-skins\" id=\"$1\" controls muted> 
-	        <source src=\"$IDURL\" type=\"video/mp4\"> 
+        <video align=\"center\" class=\"mejs-skins\" id=\"$PREFILE\" controls=\"muted\"> 
+	        <source src=\"$FULLHTTPmedia\" type=\"video/mp4\"> 
         </video>
         <script src=\"https://code.jquery.com/jquery-1.12.4.min.js\"></script>
         <script src=\"./.jsc/js/appengine.js\"></script>
@@ -60,9 +73,10 @@ DocVideo="<!DOCTYPE html>
         </script>
     </body>
 </html>"
-echo "$Fwarn creating $OUTHTML"
-echo -e "$DocVideo" >> "$OUTHTML"
-echo "$Fok"
+echo "$Fwarn creating $PREFILE.html"
+echo -e "$DocVideo" > "$FULLHTTPhtml"
+mv $FILEI $PWD/media/
+
 
 
 

@@ -5,16 +5,26 @@ startgreen=`date +%s`
         mkdir -p "$PWD/thumbs"
 fi
 
-GETFILES=( ` find . -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ` )
+INPUT=$1
+if [[ "$INPUT" == "" ]]; then
+	GETFILES=( ` find . -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ` )	
+	for m in "${GETFILES[@]}"; do
+		PREFILE="$( rev <<< "$m" | cut -d "." -f2 | rev )"
+		ffmpeg -ss 00:01:00.000 -i $m -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
+	done
+else
+		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
+		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
+fi
+
+
+
 
 	#
 		#ffmpegthumbnailer -i "output/$PREFILE.mp4" -w -c png -s 0 -o "thumbs/$INPUT.png"
 
-for m in "${GETFILES[@]}"; do
-		PREFILE="$( rev <<< "$m" | cut -d "." -f2 | rev )"
-		ffmpeg -ss 00:01:00.000 -i $m -y -f image2 -vframes 1 "thumbs/$PREFILE.png" < /dev/null
 		#mv "$PWD/$PREFILE.mp4" "$PWD/output/"
-	done
+#	done
 
 
 # INDVI="$1"

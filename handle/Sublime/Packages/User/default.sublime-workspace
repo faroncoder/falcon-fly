@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"PRE",
+				"PREEXT"
+			],
+			[
+				"F",
+				"FILEID"
+			],
+			[
+				"GE",
+				"GETW"
+			],
+			[
+				"U",
+				"URLIN"
+			],
+			[
+				"Ur",
+				"URLCLEAN"
+			],
+			[
+				"if",
+				"if	if … fi"
+			],
+			[
+				"seq",
+				"seqfile"
+			],
+			[
+				"vi",
+				"videopager"
+			],
+			[
 				"marg",
 				"margin-top"
 			],
@@ -32,10 +64,6 @@
 				"GETFILDF"
 			],
 			[
-				"F",
-				"FILECHECKS"
-			],
-			[
 				"col",
 				"collection"
 			]
@@ -43,14 +71,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "this.options.socialurlforeach||this.createSocialMedia();\nthis.options.googleanalyticsaccount&&!window._gaq&&(window._gaq=window._gaq||\n												[],window._gaq.push([\"_setAccount\",this.options.googleanalyticsaccount]),window._gaq.push([\"_trackPageview\"]),b.getScript(\"https://ssl.google-analytics.com/ga.js\"))},createSocialMedia:function(){\n\nb(\".html5gallery-viral-\"+this.id,this.$gallery).empty();\nvar a=window.location.href;\nthis.options.socialurlforeach&&(a+=(0>window.location.href.indexOf(\"?\")?\"?\":\"&\")+\"html5galleryid=\"+this.elemArray[this.curElem][0]);\nif(this.options.showsocialmedia&&this.options.showfacebooklike){\nvar c=\"<div style='display:block;\n float:left;\n width:110px;\n height:21px;\n'></div>\",\n											c=this.options.facebooklikeurl&&0<this.options.facebooklikeurl.length?c+encodeURIComponent(this.options.facebooklikeurl):c+a;\nb(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\"&amp;\nsend=false&amp;\nlayout=button_count&amp;\nwidth=450&amp;\nshow_faces=false&amp;\naction=like&amp;\ncolorscheme=light&amp;\nfont&amp;\nheight=21' scrolling='no' frameborder='0' style='border:none;\n;\noverflow:hidden;\n width:110px;\n height:21px;\n' allowTransparency='true'></iframe></div>\")}this.options.showsocialmedia&&this.options.showtwitter&&\n											(c=\"<div style='display:block;\n float:left;\n width:110px;\n height:21px;\n'><a href='https://twitter.com/share' class='twitter-share-button'\",c=this.options.twitterurl&&0<this.options.twitterurl.length?c+(\" data-url='\"+this.options.twitterurl+\"'\"):c+(\" data-url='\"+a+\"'\"),this.options.twitterusername&&0<this.options.twitterusername.length&&(c+=\" data-via='\"+this.options.twittervia+\"' data-related='\"+this.options.twitterusername+\"'\"),b(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\">Tweet</a></div>\"),\n											b.getScript(\"https://platform.twitter.com/widgets.js\"));\nthis.options.showsocialmedia&&this.options.showgoogleplus&&(c=\"<div style='display:block;\n float:left;\n width:100px;\n height:21px;\n'><div class='g-plusone' data-size='medium'\",c=this.options.googleplusurl&&0<this.options.googleplusurl.length?c+(\" data-href='\"+this.options.googleplusurl+\"'\"):c+(\" data-href='\"+a+\"'\"),b(\".html5gallery-viral-\"+this.id,this.$gallery).append(c+\"></div></div>\"),b.getScript(\"https://apis.google.com/js/plusone.js\"))},playGallery:function(){\n\nvar a=\n											this;",
-			"settings":
-			{
-				"buffer_size": 2338,
-				"line_ending": "Unix"
-			}
-		},
 		{
 			"contents": "#!/bin/bash -e\nRETURN=$PWD\nif [ ! \"$( echo $PATH | grep '/usr/local/bin' )\" ]; then export PATH=$PATH:/usr/local/bin; fi\nfcbk=\"$(tput setaf 0)\"; fcr=\"$(tput setaf 1)\"; fcg=\"$(tput setaf 2)\"; fcy=\"$(tput setaf 3)\"; fcb=\"$(tput setaf 4)\"; fcp=\"$(tput setaf 5)\"; fcc=\"$(tput setaf 6)\"; fcw=\"$(tput setaf 7)\"; fco=\"$(tput sgr0)\"; fcm=\"OK\";\nXeB=1455908241\nfunction XeF {\nXeE=1455908241; XeT=$( echo \"$(( $XeB - $XeE ))\" ); logger \"$0 | $XeB | $XeE | $XeT \"; exit 0\n}\nif [ \"$1\" ]; then\n\nFILENAMEME=$1\n\n#################### BEGIN\n#BINPULL=\"/home/users/faron/.falcon/scripts/htmls/VAULT\"\n\n\nLOC=$1\nif [[ \"$LOC\" == \"\" ]]; then\n	LOC=$PWD\nfi\n\nGETFILES=( `find $LOC -maxdepth 1 -name '*.mp4'` )\nvideobackbone=\"\n<!DOCTYPE html>\n<html>\n	<head>\n		<meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\" />\n		<title>$_FileMe</title>\n		<style>\n			body { background: black; }\n			video { width:100%; height:100%; }\n		</style>\n	</head>\n	<body>\n		<video id=\\\"$_fileme\\\" controls=\\\"controls\\\">\n			<source src=\\\"http://192.168.1.6:8800/$_FileMe.mp4\\\" type=\\\"video/mp4\\\">\n			<! -- <track kind=\\\"captions\\\" src=\\\"http://192.168.1.6:8800/cc/$_fileme.vtt\\\" srclang=\\\"en\\\" ></track>  -->\n				<p>Your browser leaves much to be desired.</p>\n			</video>\n		</body>\n	</html>\n\"\nfor file in \"${GETFILES[@]}\"; do\n		_FileMe=`echo $file | rev | cut -d'.' -f2 | rev`\n		mkdir $PWD/docs -p\n	echo $videobackbone > \"$PWD/docs/$_FileMe.html\"\ndone\n\n################### END\n#cd $RETURN\n#else fcm=\"WARNING: Arg needed\"; echo \"[$fcy$fcm$fco]\"; fi\n### exit code for clean exit\nXeF\n### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS\n### [FALCON] name=ff.script.new active=y\n\n",
 			"file": "/usr/local/bin/ff.generate.html.video",
@@ -71,68 +91,11 @@
 			}
 		},
 		{
-			"file": "/home/users/faron/.falcon/scripts/bin/ff.edit.sh",
-			"settings":
-			{
-				"buffer_size": 695,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/etc/dhcp/dhclient.conf",
-			"settings":
-			{
-				"buffer_size": 814,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/etc/resolvconf/resolv.conf.d/head",
-			"settings":
-			{
-				"buffer_size": 218,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/tmp/videopager.sh",
-			"settings":
-			{
-				"buffer_size": 1880,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<!DOCTYPE html>\n<html lang=\\\"en\\\">\n	<head>\n		<meta http-equiv=\\\"Content-Type\\\" content=\\\"text/html; charset=utf-8\\\">\n		<meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=Edge,chrome=1\\\">\n		<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\n		<meta name=\\\"description\\\" content=\\\"\\\">\n		<meta name=\\\"author\\\" content=\\\"faron\\\">\n		<title>$PREFILE</title>\n		<link rel=\\\"stylesheet\\\" href=\\\"./.jsc/css/mediaelement/mediaelementplayer.min.css\\\" />\n		<link rel=\\\"stylesheet\\\" href=\\\"./.jsc/css/mediaelement/mejs-skins.css\\\" />\n		<link rel=\\\"stylesheet\\\" href=\\\"./.jsc/css/cssengine.css\\\" />\n		<style>\n				html {\n					height: 100%;\n					width:  100%;\n				}\n				body {\n					min-width: 100% ;\n					min-height:  100%;\n					background: black;\n				}\n				video {\n					min-width: 100%;\n					min-height: 100%;\n					margin-left: auto;\n					margin-right: auto;\n					margin-top: auto;\n					margin-bottom: auto;\n				}\n		</style>\n	</head>\n	<body>\n		<video class=\\\"mejs-skins\\\" id=\\\"$PREFILE\\\" controls muted >\n			<source src=\\\"https://tv.faron.ca/.priv/$PREFILE.mp4\\\" type=\\\"video/mp4\\\" >\n		</video>\n		<script src=\\\"https://code.jquery.com/jquery-1.12.4.min.js\\\"></script>\n		<script src=\\\"./.jsc/js/appengine.js\\\"></script>\n		<script src=\\\"./.jsc/js/mediaelement/mediaelement-and-player.min.js\\\"></script>\n		<script>\n		\\$('audio,video').mediaelementplayer({\n			defaultVideoHeight: 480,\n			defaultVideoWeight: 800,\n			videoWidth: -1,\n			videoHeight: -1,\n			pluginHeight: -1,\n			pluginWeight: -1,\n			startLanguage:'en',\n			stretching: 'none'\n			// automatically translate into these languages\n			// translations:['es','ar','zh','ru'],\n			// // enable the dropdown list of languages\n			//translationSelector: true\n		});\n		</script>\n	</body>\n</html>",
-			"settings":
-			{
-				"buffer_size": 1747,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/srv/www/default/htdocs/.player/demo/mediaelementplayer-responsive.html",
-			"settings":
-			{
-				"buffer_size": 1204,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 			"settings":
 			{
 				"buffer_size": 903,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "With the growth of internet, many of materials have been digitalized for the use by internet such as documents and websites and all of information available on the earth as much as possible.  99% of public information are accessible on internet.  For last few years, there is a quick rising of videos being deployed via streaming which also, became very accessible by anyone - even mobile. \n\nAfter so much surge rise of videos being available on market, almost all streaming companies do not offer closed-captioning nor does not have subtitle feature available in their player/embed iframe in their http document.  I am deaf and I rely on closed-captioning / subtitle for an obvious reason, which is something that these companies frustrated me so much, especially when doing homework for university course that rely on videos off the internet.  ",
-			"settings":
-			{
-				"buffer_size": 846,
-				"line_ending": "Unix",
-				"name": "With the growth of internet, many of materials hav"
 			}
 		}
 	],
@@ -152,7 +115,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -176,11 +139,33 @@
 	],
 	"file_history":
 	[
+		"/srv/www/default/htdocs/tv/HAR/a.html",
 		"/srv/www/default/htdocs/me.html",
-		"/usr/local/bin/ff.html.glopper",
+		"/home/users/faron/.falcon/scripts/video/ff.media.thumbnailer.sh",
+		"/home/users/faron/.falcon/scripts/htmls/ff.html.videobulking.sh",
+		"/home/users/faron/.falcon/scripts/handle/ff.handle.seq.sh",
+		"/home/users/faron/.falcon/scripts/htmls/ff.html.videopager.sh",
+		"/usr/local/bin/ff.media.thumbnailer",
+		"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
+		"/home/users/faron/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/srv/www/default/htdocs/test.min.html",
+		"/srv/www/default/htdocs/test.html",
+		"/srv/www/default/htdocs/.player/demo/mediaelementplayer-responsive.html",
+		"/etc/resolvconf/resolv.conf.d/head",
+		"/etc/dhcp/dhclient.conf",
+		"/home/users/faron/.falcon/scripts/bin/ff.edit.sh",
+		"/srv/www/default/htdocs/.jsc/js/mediaelement/mediaelement-and-player.min.js",
 		"/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.css",
-		"/srv/www/default/htdocs/.jsc/js/mediaelement-and-player.min.js",
 		"/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.min.min.css",
+		"/usr/local/bin/ff.video.thumbnailer",
+		"/home/users/faron/.falcon/scripts/network/ff.network.ip6-loader.sh",
+		"/home/users/faron/skyjump_sarah_jeff_canary_islands.html",
+		"/srv/www/default/htdocs/videopager.sh",
+		"/srv/www/default/htdocs/.jsc/css/cssengine.css",
+		"/srv/www/default/htdocs/.jsc/css/mediaelement/mediaelementplayer.",
+		"/tmp/videopager.sh",
+		"/usr/local/bin/ff.html.glopper",
+		"/srv/www/default/htdocs/.jsc/js/mediaelement-and-player.min.js",
 		"/srv/www/default/htdocs/.jsc/js/mediaelement.min.js",
 		"/srv/www/default/htdocs/.jsc/css/mediaelementplayer.min.css",
 		"/srv/www/default/htdocs/.jsc/css/mediaelement/mejs-skins.css",
@@ -239,7 +224,6 @@
 		"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/falcon/scripts/video/ff.vid.mp4.run.sh",
 		"/home/users/faron/Videos/1h7Yd5Oiece8UTyhDyf0FleYWnPZXMbB.sh",
 		"/run/user/1000/gvfs/sftp:host=192.168.1.7/srv/clips7/YF7n6Gi5oP27dZNf2yQEogHkXsjPD6mm",
-		"/home/users/faron/.falcon/scripts/start/ff.new.start.sh",
 		"/home/users/faron/.falcon/scripts/start/ff.new.fstab.sh",
 		"/home/users/faron/.falcon/scripts/bash/lib/functions",
 		"/home/users/faron/.falcon/scripts/apt/ff.apt.verify.sh",
@@ -266,6 +250,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"PREFILE",
+			"\"",
+			"url(../img/",
 			"853",
 			"{",
 			"}",
@@ -333,6 +320,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"1",
+			"\\\"",
+			"url(../../img/",
 			"{\n",
 			"}\n",
 			";\n",
@@ -396,38 +386,11 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2338,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2338,
-								2338
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/usr/local/bin/ff.generate.html.video",
 					"semi_transient": false,
 					"settings":
@@ -449,14 +412,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.video.embed.sh",
 					"semi_transient": false,
 					"settings":
@@ -468,8 +431,8 @@
 						"selection":
 						[
 							[
-								1133,
-								1133
+								280,
+								280
 							]
 						],
 						"settings":
@@ -477,184 +440,14 @@
 							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 123.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/users/faron/.falcon/scripts/bin/ff.edit.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 695,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/etc/dhcp/dhclient.conf",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								809,
-								809
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/etc/resolvconf/resolv.conf.d/head",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								172,
-								172
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/tmp/videopager.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1880,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								946,
-								946
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 125.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1747,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								760,
-								760
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/srv/www/default/htdocs/.player/demo/mediaelementplayer-responsive.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1204,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								777,
-								777
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 342.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
+					"buffer": 2,
 					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 					"semi_transient": false,
 					"settings":
@@ -678,34 +471,6 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 846,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								846,
-								846
-							]
-						],
-						"settings":
-						{
-							"auto_name": "With the growth of internet, many of materials hav",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
 					"type": "text"
 				}
@@ -714,7 +479,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -751,7 +516,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 102.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

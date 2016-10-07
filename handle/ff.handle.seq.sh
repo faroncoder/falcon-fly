@@ -6,20 +6,24 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #################### BEGIN
 
 if [[ "$1" == "" ]]; then
+	PATHD=$PWD
+else
+	PATHD="$1"
+	cd $PATHD 1> /dev/null
+fi
+if [[ "$2" == "" ]]; then
 	MEXT=0
 else
-	MEXT=$1
+	MEXT=$2
 fi
 
-cp -r $PWD /tmp/backup/
-
-GETALL=( ` find $PWD -maxdepth 1 -type f -exec basename {} \;` )
+GETALL=( ` find $PATHD -maxdepth 1 -type f -exec basename {} \;` )
 COUNT=`echo "${GETALL[@]}"  | wc -w`
 for seqfile in "${GETALL[@]}"; do
 	NEWNAME="$( seq -w 0000 $MEXT | tail -n 1 )"
 	PREEX=`echo $seqfile | rev | cut -d'.' -f1 | rev`
-	rename "s/$seqfile/$NEWNAME.$PREEX/g" $seqfile
-	echo "$Fok $seqfile --> $NEWNAME.$PREEX "
+	rename "s/$seqfile/$NEWNAME.$PREEX/g" "$seqfile"
+	echo "$Fwarn $seqfile --> $NEWNAME.$PREEX "
 	MEXT=`echo $(( $MEXT + 1 ))`
 done
 
