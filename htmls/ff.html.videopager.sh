@@ -5,6 +5,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 #################### BEGIN
 
+<<<<<<< HEAD
 # if [[ "$FILEID" == "" ]]; then
 #     echo -n "$Finfo Which file to pinpoint? "
 #     read FILEID
@@ -33,10 +34,27 @@ else
 ## formating the 2nd agrumenet into a string for command pushing
 	LOCURL=`echo $GETURL | sed 's/https:\/\///g' | sed 's/http:\/\///g'`
 ## configuring 1st arugment into pieces and formating urls for the document printing 
+=======
+FILEID=$1
+GETUR=$2
+
+if [[ "$FILEID" == "" ]]; then
+    echo -n "$Finfo Which file to pinpoint? "
+    read FILEID
+fi
+
+if [[ "$GETUR" == "" ]]; then
+	echo -n "$Finfo Location of URL: http(s)://"
+	read GETUR
+fi
+    LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
+ 
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
     FILEI=`basename $FILEID`
     GETD=`dirname $FILEI`
     PREFILE=`echo $FILEI | rev | cut -d'.' -f2 | rev`
     PREEXT=`echo $FILEI | rev | cut -d'.' -f1 | rev`
+<<<<<<< HEAD
     ME=`echo $PWD | sed 's/\/srv\/www\/default\/htdocs//g' `
     #FULLHTTP="https://$LOCURL`echo $PWD | tr '/' '|' | sed 's/|srv|www|//g' | sed 's/htdocs|//g' | tr '|' '  ' | awk '{ $1=""; print $0 }' | tr '  ' '/'`"
 	FULLHTTP="http://$LOCURL$ME"
@@ -57,6 +75,23 @@ JQUERYLIB="jquery-1.12.4.min.js"
 JSC="./.jsc"
 JSCJ="$JSC/js"
 JSCC="$JSC/css"
+=======
+    ME=
+    FULLHTTP="https://$LOCURL`echo $PWD | tr '/' '|' | sed 's/|srv|www|//g' | sed 's/htdocs|//g' | tr '|' '  ' | awk '{ $1=""; print $0 }' | tr '  ' '/'`"
+
+    FULLHTTPmedia="$FULLHTTP/media/$PREFILE.$PREEXT"
+    FULLHTTPhtml="$GETD/$PREFILE.html"
+if [[ ! -d "$PWD/media" ]]; then 
+    mkdir -p $PWD/media 2> /dev/null    
+fi
+
+if [[ ! -d "$PWD/.jsc" ]]; then 
+    /usr/local/bin/ff.html.glopper
+fi
+
+/usr/local/bin/ff.media.thumbnailer "$FILEI"
+
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 DocVideo="<!DOCTYPE html>
 <html lang=\"en\">
     <head>
@@ -66,6 +101,7 @@ DocVideo="<!DOCTYPE html>
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"faron\">
         <title>$PREFILE</title>
+<<<<<<< HEAD
         <link rel=\"stylesheet\" href=\"$JSCC/cssengine.css\" />
         <link rel=\"stylesheet\" href=\"$JSCC/mediaelement/mediaelementplayer.min.css\" />
 		<link rel=\"stylesheet\" href=\"$JSCC/mediaelement/mejs-skins.css\" /> 
@@ -84,15 +120,47 @@ DocVideo="<!DOCTYPE html>
         <script>
         \$( document ).ready(function(){
 	        \$('audio,video').mediaelementplayer();
+=======
+        <link rel=\"stylesheet\" href=\"./.jsc/css/cssengine.css\" />
+        <link rel=\"stylesheet\" href=\"./.jsc/css/mediaelement/mediaelementplayer.min.css\" />
+		<link rel=\"stylesheet\" href=\"./.jsc/css/mediaelement/mejs-skins.css\" /> 
+		 <style>
+ 		 html { height: 100%; width: 100%; } body { min-width: 100% ; min-height:  100%; background: black;
+ 		} video { min-height: 100%; min-width: 800px; }
+		</style> 
+	</head>
+    <body>
+        <video align=\"center\" class=\"mejs-skins\" id=\"$PREFILE\" controls=\"muted\"> 
+	        <source src=\"$FULLHTTPmedia\" type=\"video/mp4\"> 
+        </video>
+        <script src=\"https://code.jquery.com/jquery-1.12.4.min.js\"></script>
+        <script src=\"./.jsc/js/appengine.js\"></script>
+        <script src=\"./.jsc/js/mediaelement/mediaelement-and-player.min.js\"></script> 
+        <script>
+        \$( document ).ready(function(){
+	        \$('audio,video').mediaelementplayer({
+    	        defaultVideoHeight: 480,
+        	    startLanguage: 'en',
+            	stretching: 'auto'
+	        });
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 	    });
         </script>
     </body>
 </html>"
+<<<<<<< HEAD
 echo -e "$DocVideo" > "$FULLHTTPhtml"
 echo "$Fok $PREFILE.html created"
 mv $FILEI $PWD/media/
 
 fi
+=======
+echo "$Fwarn creating $PREFILE.html"
+echo -e "$DocVideo" > "$FULLHTTPhtml"
+mv $FILEI $PWD/media/
+
+
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 
 
 

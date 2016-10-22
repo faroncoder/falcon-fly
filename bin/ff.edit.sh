@@ -7,6 +7,7 @@ if [[ "$1" != "" ]]; then
 
 
 filecheck=`which $1`
+<<<<<<< HEAD
 ffilb="/usr/local/bin/$1"
 if [[ -f "$filecheck" ]]; then
 	if [[ "$( hostname -s )" == "f6" ]]; then
@@ -17,6 +18,11 @@ if [[ -f "$filecheck" ]]; then
 	fi
 	echo $Fok
 
+=======
+if [[ -f "$filecheck" ]]; then
+	subl $filecheck	
+	echo $Fok
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 else
 	echo "$Fno $Fgreen $1 $Foff is not a live command"
 fi

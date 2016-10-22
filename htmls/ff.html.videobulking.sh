@@ -54,12 +54,15 @@ GETZ=""
 echo "$Fok $COUNT files created"
 /usr/local/bin/ff.handle.seq
 
+<<<<<<< HEAD
 if [[ "$2" != "ssl" ]]; then
 	sed -i -e 's/https/http/g' $PWD/*
 fi
 
 
 
+=======
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 ################### END
 #cd $RETURN 1> /dev/null;
 

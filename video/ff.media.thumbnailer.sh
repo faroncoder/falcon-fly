@@ -5,6 +5,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 #################### BEGIN
 
+<<<<<<< HEAD
 # ## check if directory 'media' exists
 # 	if [[ ! -d "$PWD/media" ]]; then 
 # ## If not, make it
@@ -43,6 +44,33 @@ else
 	# 		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
 	# 		echo "$Fok $PREFILE.png --> thumbs/"
 	#XeF
+=======
+INPUT="$1"
+
+
+if [[ ! -d "$PWD/thumbs" ]]; then
+        echo "$Fwarn creating thumbs directory"
+        mkdir -p "$PWD/thumbs"
+fi
+
+if [[ "$INPUT" == "" ]]; then
+	#GETFILES=( ` find . -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ` )	
+	echo "$Fno no file to media-thumbnail"
+	exit 0
+else
+#	COUNT=0
+#	for m in "${GETFILES[@]}"; do
+		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
+		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
+		echo "$Fok $PREFILE.png thumbed"
+#		COUNT=`echo $(( $COUNT + 1 ))`
+#	done
+#	echo "$Fstat $COUNT thumbs created"
+#else
+#		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
+#		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
+#		echo "$Fok $PREFILE.png --> thumbs/"
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 fi
 
 

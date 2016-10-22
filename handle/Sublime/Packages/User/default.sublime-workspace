@@ -91,6 +91,7 @@
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "/run/user/1000/gvfs/sftp:host=192.168.1.6/usr/local/etc/flumotion/examples/default.xml",
 			"settings":
 			{
@@ -123,12 +124,15 @@
 			}
 		},
 		{
+=======
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 			"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 			"settings":
 			{
 				"buffer_size": 903,
 				"line_ending": "Unix"
 			}
+<<<<<<< HEAD
 		},
 		{
 			"contents": "#!/bin/bash\n\n#sudo flumotion-manager -v -T tcp -H 192.168.1.10 -P 8642 /etc/flumotion/managers/default/planet.xml\n/usr/local/sbin/flumotion-manager -v -T -H 192.168.1.8 tcp /usr/local/etc/flumotion/managers/default/planet.xml  | /usr/local/sbin/flumotion-worker -v -T tcp -H 192.168.1.8 -u user -p test",
@@ -202,6 +206,8 @@
 				"buffer_size": 440,
 				"line_ending": "Unix"
 			}
+=======
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 		}
 	],
 	"build_system": "",
@@ -240,6 +246,7 @@
 	},
 	"expanded_folders":
 	[
+<<<<<<< HEAD
 		"/srv",
 		"/srv/www/default",
 		"/srv/www/default/htdocs",
@@ -256,6 +263,12 @@
 		"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/.falcon/files/configs/flumotion/f6_multi_casing.xml",
 		"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/.falcon/files/configs/flumotion/f10_planet.xml",
 		"/run/user/1000/gvfs/sftp:host=192.168.1.6/home/users/faron/.falcon/files/configs/flumotion/planet.xml",
+=======
+		"/run/user/1000/gvfs/sftp:host=192.168.1.6/srv"
+	],
+	"file_history":
+	[
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 		"/srv/www/default/htdocs/tv/HAR/a.html",
 		"/srv/www/default/htdocs/me.html",
 		"/home/users/faron/.falcon/scripts/video/ff.media.thumbnailer.sh",
@@ -367,8 +380,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
 			"url(",
 			"../img/mediaelement/",
+=======
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 			"PREFILE",
 			"\"",
 			"url(../img/",
@@ -439,8 +455,11 @@
 		"regex": false,
 		"replace_history":
 		[
+<<<<<<< HEAD
 			"url(../img/mediaelement/",
 			"../img/",
+=======
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 			"1",
 			"\\\"",
 			"url(../../img/",
@@ -507,7 +526,11 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 3,
+=======
+			"selected": 2,
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 			"sheets":
 			[
 				{
@@ -533,10 +556,17 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
+<<<<<<< HEAD
 						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
+=======
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 					"type": "text"
 				},
 				{
@@ -561,6 +591,7 @@
 							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
+<<<<<<< HEAD
 						"translation.y": 105.0,
 						"zoom_level": 1.0
 					},
@@ -592,12 +623,16 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+=======
+						"translation.y": 123.0,
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
+<<<<<<< HEAD
 					"buffer": 3,
 					"file": "/srv/www/default/htdocs/3.html",
 					"semi_transient": false,
@@ -686,6 +721,9 @@
 				},
 				{
 					"buffer": 6,
+=======
+					"buffer": 2,
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 					"file": "/home/users/faron/.falcon/scripts/htmls/ff.html.looplinking.sh",
 					"semi_transient": false,
 					"settings":
@@ -705,6 +743,7 @@
 						{
 							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
+<<<<<<< HEAD
 						"translation.x": -0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
@@ -937,11 +976,17 @@
 						{
 							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
+=======
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 14,
+=======
+					"stack_index": 0,
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 					"type": "text"
 				}
 			]
@@ -986,7 +1031,11 @@
 	"project": "",
 	"replace":
 	{
+<<<<<<< HEAD
 		"height": 78.0
+=======
+		"height": 64.0
+>>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 	},
 	"save_all_on_build": true,
 	"select_file":
