@@ -1,0 +1,17 @@
+NODE_PATH=/usr/bin/node;
+#NWJS=/usr/local/bin/nwjs;
+#ANDROID_HOME=/home/users/$USER/Android/Sdk;
+JAVA_HOME=/usr/lib/jvm/java-8-oracle
+JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
+NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH:$JRE_HOME"
+
+CLEAN=`echo $NEWPATH | tr ':' '\n' | sort | uniq | tr '\n' ':'`
+
+export PATH=$CLEAN
+
+
+
+alias rm="trash-put"
+alias rm1="rm"
+
+

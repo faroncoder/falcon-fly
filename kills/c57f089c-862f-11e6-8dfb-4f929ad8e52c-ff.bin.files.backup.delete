@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+
+CMD=`find $PWD -maxdepth 1 -name "$fire" -exec rm {} \;`
+
+
+FILTER=( *.*~ .*_*~ *.sh~ *~ .*~ *.*save )
+for fire in "${FILTER[@]}"; do
+	$CMD
+done
+exit 0
