@@ -42,9 +42,5 @@ alias ports="     sudo netstat -tulanp "
 alias rm="trash-put"
 alias rm1="/bin/rm"
 alias setup="     cd $HOME/.falcon/setup "
-<<<<<<< HEAD
 alias goFfmpeg="GET=( `ls *.*`  ); for j in \"${GET[@]}\"; do ff.vid.mp4.run $j; done; GET=\"\";"
 alias ff.node=" cd /srv/www/default/nodejs 1> /dev/null;"
-=======
-alias goFfmpeg="GET=( `ls *.*`  ); for j in \"${GET[@]}\"; do ff.vid.mp4.run $j; done; GET=\"\";"
->>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
