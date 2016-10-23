@@ -21,15 +21,15 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 	git commit -am 	"`echo $COMMIT`"; 
 	git push -u origin master;
 	git pull; < /dev/null
-	echo "$Fwarn Updating: $gitnewname"
+	echo "$Fstat Updating: $gitnewname"
 	git checkout; < /dev/null
-	echo "$Fstat Cleaning: local $gitnewname"
+	echo "$Finfo Cleaning: local $gitnewname"
 	git checkout master; < /dev/null
-	echo "$Fstat Checkout: local $gitnewname"
-	git fetch  2> /dev/null  < /dev/null
-	git pull  2> /dev/null  < /dev/null
-	git push  2> /dev/null  < /dev/null
-	echo "$Fstat Checkout: remote $gitnewname"
+	echo "$Finfo Checkout: $Fyellow local$Foff $gitnewname"
+	git fetch  1> /dev/null 2> /dev/null  < /dev/null
+	git pull  1> /dev/null 2> /dev/null  < /dev/null
+	git push  1> /dev/null 2> /dev/null  < /dev/null
+	echo "$Finfo Checkout: $Fyellow remote$Foff $gitnewname"
 	git checkout 2> /dev/null  < /dev/null
 	
 	echo "$Fok"
