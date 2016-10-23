@@ -5,16 +5,23 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
-COMMIT=$1
-cd $HOME/.falcon/scripts 1> /dev/null;
-if [[ ! $COMMIT ]]; then
-	echo -e -n "$Fstatus Commit message? "
-	read COMMIT
-else
-	exit 1
-fi
 
-	git status; git add -A; git commit -am "`echo $COMMIT`"; git push; git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
+		gitnewname=$( basename $PWD )
+		if [[ "$gitnewname" == "scripts" ]]; then
+			gitnewname="falcon"
+		fi
+		echo "$Finfo Target: $gitnewname"
+		#confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
+
+		echo -e -n "$Fstatus Commit message? "
+		read COMMIT
+
+	git status; echo "$Finfo status checked"
+	git add -A; echo "$Finfo files checked"
+	git commit -am 	"`echo $COMMIT`"; 
+	git push -u origin master;
+	git pull; git checkout; git checkout master; git fetch; git pull; git push; git checkout; 
+	
 	echo "$Fok"
 
 
