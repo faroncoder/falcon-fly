@@ -4,7 +4,7 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
-
+openshengine
 
 		gitnewname=$( basename $PWD )
 		if [[ "$gitnewname" == "scripts" ]]; then

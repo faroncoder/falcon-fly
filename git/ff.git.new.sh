@@ -5,12 +5,14 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 #################### BEGIN
 
-
+	openshengine
 
 		gitnewname=$( basename $PWD )
-		echo -n "echo $Finfo Creating new branch $gitnewname.git.  Proceed? "
+		GITUL="https://github.com/faroncoder/falcon-$gitnewname.git"
+		echo "$Fstat URL: $GITUL"
+		echo -n "$Fwarn New repository: $gitnewname ... Proceed? (y/n)  "
 		read comfirmgit
-		confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
+		
 
 		if [ "$comfirmgit" == "y" ]
 			then
@@ -31,10 +33,15 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 		" > $PWD/.git/config
 
+		echo "node_modules" > .gitignore
+
 
 				touch README.md
 				git init
-				git remote add origin
+				git status
+				git commit -am "First commit"
+				git remote add origin git@github.com:faroncoder/falcon-$gitnewname.git
+				git push --set-upstream origin master
 				ff.git.updater
 			fi
 

@@ -5,7 +5,6 @@ XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $
 
 
 openshengine(){
-        opensh_started
         echo "Initializing SSH agent..."
         chmod 700 -R ~/.ssh;
         echo "privizating ~/.ssh : done";
