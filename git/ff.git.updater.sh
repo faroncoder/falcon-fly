@@ -8,7 +8,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 		gitnewname=$( basename $PWD )
 		if [[ "$gitnewname" == "scripts" ]]; then
-			gitnewname="falcon"
+			gitnewname="falcon-fly"
 		fi
 		echo "$Fstat Target: $gitnewname"
 		#confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
