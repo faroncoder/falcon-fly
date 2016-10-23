@@ -10,16 +10,16 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 		if [[ "$gitnewname" == "scripts" ]]; then
 			gitnewname="falcon"
 		fi
-		echo "$Finfo Target: $gitnewname"
+		echo "$Fstat Target: $gitnewname"
 		#confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
 
-		echo -e -n "$Fstatus Commit message? "
+		echo -n "$Finfo Commit message? "
 		read COMMIT
 	git checkout  1> /dev/null 2> /dev/null  < /dev/null
-	git status; echo "$Finfo status checked" 1> /dev/null 2> /dev/null  1< /dev/null
-	git add -A; echo "$Finfo files checked"
+	git status; echo "$Finfo status checked" 1> /dev/null 2> /dev/null  < /dev/null
+	git add -A; echo "$Finfo files checked" 1> /dev/null 2> /dev/null  < /dev/null
 	git commit -am 	"`echo $COMMIT`"; 
-	git push -u origin master;
+	git push -u origin master; 
 	git pull 1> /dev/null 2> /dev/null  < /dev/null
 	echo "$Fstat $Fyellow Updating$Foff $gitnewname" 1> /dev/null 2> /dev/null  < /dev/null
 	git checkout 1> /dev/null 2> /dev/null  < /dev/null
