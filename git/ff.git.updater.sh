@@ -15,20 +15,20 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 		echo -n "$Finfo Commit message? "
 		read COMMIT
-	git checkout  1> /dev/null 2> /dev/null  < /dev/null
-	git status; echo "$Finfo status checked" 1> /dev/null 2> /dev/null  < /dev/null
-	git add -A; echo "$Finfo files checked" 1> /dev/null 2> /dev/null  < /dev/null
+	git checkout  2> /dev/null  
+	git status; echo "$Finfo status checked" 2> /dev/null
+	git add -A; echo "$Finfo files checked" 2> /dev/null
 	git commit -am 	"`echo $COMMIT`"; 
 	git push -u origin master; 
-	git pull 1> /dev/null 2> /dev/null  < /dev/null
-	echo "$Fstat $Fyellow Updating$Foff $gitnewname" 1> /dev/null 2> /dev/null  < /dev/null
-	git checkout 1> /dev/null 2> /dev/null  < /dev/null
-	echo "$Finfo $Fred Cleaning$Foff: local $gitnewname" 1> /dev/null 2> /dev/null  < /dev/null
-	git checkout master 1> /dev/null 2> /dev/null  < /dev/null
+	git pull 2> /dev/null
+	echo "$Fstat $Fyellow Updating$Foff $gitnewname" 2> /dev/null
+	git checkout 2> /dev/null
+	echo "$Finfo $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
+	git checkout master 2> /dev/null
 	echo "$Finfo Checkout: $Fyellow local$Foff $gitnewname"
-	git fetch  1> /dev/null 2> /dev/null  < /dev/null
-	git pull  1> /dev/null 2> /dev/null  < /dev/null
-	git push  1> /dev/null 2> /dev/null  < /dev/null
+	git fetch  2> /dev/null
+	git pull  2> /dev/null
+	git push  2> /dev/null
 	echo "$Finfo Checkout: $Fyellow remote$Foff $gitnewname"
 	git checkout 2> /dev/null  < /dev/null
 	
