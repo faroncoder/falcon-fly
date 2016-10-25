@@ -1,13 +1,23 @@
-NODE_PATH=/usr/bin/node;
-#NWJS=/usr/local/bin/nwjs;
-#ANDROID_HOME=/home/users/$USER/Android/Sdk;
+NODE_PATH=/usr/local/bin/node;
+NPM_PATH=/usr/local/bin/npm;
+NODE_GLOBAL=$HOME/.node_modules_global
+NODE_LOCAL=$HOME/.node_modules
 JAVA_HOME=/usr/lib/jvm/java-8-oracle
 JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
-NEWPATH="$( getconf PATH ):/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$JAVA_HOME/bin:$NODE_PATH:$JRE_HOME"
 
-CLEAN=`echo $NEWPATH | tr ':' '\n' | sort | uniq | tr '\n' ':'`
+XE=/usr
+DA=bin
+DF=sbin
+LD=$XE/local
 
-export PATH=$CLEAN
+	GETPATH=( $XE/$DA /$DA /$DF $XE/$DF $LD/$DA  $LD/$DF $JAVA_HOME/$DA  $NODE_PATH  $JRE_HOME/$DA $NPM_PATH $NODE_PATH )
+	SEMI=""
+	for dir in "${GETPATH[@]}"; do
+		NEWI="$SEMI$dir"
+		CLEAN="$CLEAN$NEWI"
+		SEMI=":"
+	done
+	export PATH="$( printf "$CLEAN" )"
 
 
 
