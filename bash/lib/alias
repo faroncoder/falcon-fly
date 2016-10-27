@@ -44,3 +44,4 @@ alias rm1="/bin/rm"
 alias setup="     cd $HOME/.falcon/setup "
 alias goFfmpeg="GET=( `ls *.*`  ); for j in \"${GET[@]}\"; do ff.vid.mp4.run $j; done; GET=\"\";"
 alias ff.node=" cd /srv/www/default/nodejs "
+

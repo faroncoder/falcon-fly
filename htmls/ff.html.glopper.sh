@@ -17,12 +17,12 @@ if [[ ! -d "$_PROJ/.jsc" ]]; then
 	if [[ ! -d "$_DOCPATH/.jsc" ]]; then
 		cd $_DOCPATH 1> /dev/null
 		sudo tar -jxvf /home/users/faron/.falcon/scripts/htmls/VAULT/jsc-build.tar.bz2
-		sudo chown -R www-data:www-data $_DOCPATH
-		sudo chown www-data:www-data $_DOCPATH/*
+		sudo chown -R www-data:faron $_DOCPATH
+		sudo chown www-data:faron $_DOCPATH/*
 		sudo chmod 775 $_DOCPATH/*
 		sudo chmod -R 775 $_DOCPATH
 		cd $_PROJ 1> /dev/null
-		mv $_PROJ/jsc $_PROJ/.jsc 2> /dev/null
+#		mv $_PROJ/jsc $_PROJ/.jsc 2> /dev/null
 	else
 		ln -s "$_DOCPATH/.jsc" 2> /dev/null
 	fi
