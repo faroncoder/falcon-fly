@@ -1,97 +1,109 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
-#if [[ "$1" != "" ]]; then
 #################### BEGIN
-xcv="$1"
-xcs="$2"
-interactive="$3"
-if [[ -z "$interactive" ]]; then
-	echo -n "$Fwarn script to interact with user? (y or n) "
-	read interactive
-	echo "$Fstat Enter short description explaining how to interact with the script:"
-	read Descript
-	LOADDes="$Descript"
-	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
-	ENDINTERACT="else echo \"\$Fno \$Fred Arg 1 \$Foff=\$Fyellow $LOADDes \$Foff\"; fi"
-fi
-if [[ "$interactive" == "y" ]]; then
-	echo "$Fstat Enter short description explaining how to interact with the script:"
-	read Descript
-	LOADDes="\"$Descript\""
-	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
-	ENDINTERACT="else echo \"\$Fno \$Fred Arg 1 \$Foff=\$Fyellow $LOADDes \$Foff\"; fi"
-else
-	INTERACT=""
-	ENDINTERACT=""
-#	INTERACT="#if [[ \"\$1\" != \"\" ]]; then"
-#	ENDINTERACT="#else echo \"\$Fno \$Fred Arg 1 \$Foff=\$Fyellow $Descript \$Foff\"; fi"
-fi
-#echo "$Fwarn script to be interacted: $interactive"
 
-CL=`basename "$xcv"`
-
-if [[ "$CL" == "" ]]; then
-	echo -n -e "$Finfo name of the script? "
+if [[ "$1" == "" ]]; then
+	echo -n "$Finfo script name? "
 	read CL
 fi
-if [[ "$xcs" == "" ]]; then
-	echo -n -e "$Finfo which folder? "
+if [[ "$2" == "" ]]; then
+	echo -n "$Finfo folder? "
 	read xcs
 fi
-if [[ "$interactive" == "" ]]; then
-	echo -n -e "$Finfo which folder? "
-	read xcs
+CL=$1
+xcs=$2
+arumentsInstall(){
+echo -n "$Finfo Script response when no arguments is entered?  "
+		read Descript
+		LOADDes="$Descript"
+		INTERACT="if [[ \"\$1\" != \"\" ]]; then"
+		ENDINTERACT="else echo \"\$Fno \$Fred no argument is supplied.\$Foff\""
+		LOADIN="echo \"\$Finfo \$Fyellow `echo $LOADDes` as an argument \$Foff\"; fi"
+}
+
+if [[ "$3" == "y" ]]; then
+	arumentsInstall
+elif  [[ "$3" == "" ]]; then
+	echo -n "$Fwarn script to interact with user? (y=yes) "
+	read interactive
+	if [[ "$interactive" == "y" ]]; then
+		arumentsInstall
+	fi
+elif [[ "$3" == "n" ]]; then
+	INTERACT=""
+	ENDINTERACT=""
+	LOADIN=""
 fi
+
+pointofreturninstall(){
+	LOADHOME="RETURN=\$PWD"
+	LANDHOME="cd  \$RETURN 1> /dev/null 2> /dev/null;"
+}
+
+if [[ "$4" == "y" ]]; then
+	pointofreturninstall
+elif  [[ "$4" == "" ]]; then
+	echo -n "$Finfo return to current CWD?  "
+	read ENTRYRETURN
+	if [[ "$ENTRYRETURN" == "y" ]]; then
+		pointofreturninstall
+	fi
+elif [[ "$4" == "n" ]]; then
+	LOADHOME=""
+	LANDHOME=""
+fi
+
+HEADER="#!/bin/bash
+$LOADHOME
+if [[ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]]; then export PATH=\$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
+$INTERACT
+#################### BEGIN
+"
+FOOTER="################### END
+$ENDINTERACT
+$LOADIN
+$LANDHOME
+XeF  ### exit code for clean exit
+### [ FILE:\$MEF ACTIVE:y ]
+
+"
 LYH="/home/users/faron/.falcon/scripts"
 XF="$( echo $CL | tr '  ' ' ' | sed 's/.sh//g' ).sh"
-MEF="$LYH/$xcs/$XF"
+MEF="$LYH/$2/$XF"
 jj=$( uuid );
 ji=`printf $jj | cut -d '-' -f 4`
 KIL="$LYH/kills/$ji-killed-$XF"
-#XD="/home/users/faron/.falcon/scripts/$xcs/$CL"
-#MEF="$PWD/$XF"
 if [[ -f "$MEF" ]]; then
-	echo -e "$Fno filename exists."; XeF
-fi
+	echo "$Fwarn filename exists."
+	XeF
+else
+	> $MEF
+	chmod +x $MEF
 
-
- #ji=$( uuid );
-> $MEF
-chmod +x $MEF
-
-echo "#!/bin/bash
-RETURN=\$PWD
-if [[ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]]; then export PATH=\$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
-$INTERACT
-#################### BEGIN
-
+echo -e "$HEADER" | sed '/^$/d' > "$MEF"
+echo -e " your script goes here
 echo \"\$Fstat\"
 echo \"\$Fno\"
 echo \"\$Fwarn\"
 echo \"\$Finfo\"
-echo \"\$Fok\"
+echo \"\$Fok\"" >> "$MEF"
+echo -e "$FOOTER"   | sed '/^$/d' >> "$MEF"
 
 
-################### END
-#cd \$RETURN 1> /dev/null;
-$ENDINTERACT
-### exit code for clean exit
-XeF
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] $MEF [ACTIVE] y
+echo "$Fstat $Fblue $XF $Fgreen created $Foff"
 
-" > "$MEF"
-echo -e "$Fstat $Fblue $XF $Fgreen created. $Foff"
+fi
 ff.load
-subl "$MEF"
+SERVER=`hostname -s`
+if [[ "$SERVER" == "f8" ]]; then
+	EDIT="subl"
+else
+	EDIT="nano"
+fi
+$EDIT $MEF
 
 ################### END
-#cd $RETURN 1> /dev/null;
-#else echo -e "$Fstatus $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
-### exit code for clean exit
-XeF
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /usr/local/bin/ff.script.new  [ACTIVE] y
+XeF  ### exit code for clean exit
+### [FILE:ff.script.new ACTIVE:y

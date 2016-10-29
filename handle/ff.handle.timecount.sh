@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
-
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #################### BEGIN
 
  num=$1
@@ -27,15 +25,12 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
     else
         ((sec=num))
     fi
+     day=`seq -w 00 $day | tail -n 1`
+     hour=`seq -w 00 $hour | tail -n 1`
+     min=`seq -w 00 $min | tail -n 1`
+     sec=`seq -w 00 $sec | tail -n 1`
     echo "$day:$hour:$min:$sec"
 
-
 ################### END
-#cd $RETURN 1> /dev/null;
-
-### exit code for clean exit
-XeF
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /home/users/faron/.falcon/scripts/handle/ff.handle.timecount.sh [ACTIVE] y
-
-
+XeF  ### exit code for clean exit
+### [FILE:ff.script.new ACTIVE:y

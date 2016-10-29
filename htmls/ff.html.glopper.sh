@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
-#if [[ "$1" != "" ]]; then
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #################### BEGIN
 
 _PROJ=$PWD
@@ -75,12 +73,7 @@ GETFILES=( `find -L $PWD/.jsc/js -maxdepth 1 -type f -name '*.js' ! -name 'appen
 glopJS
 
 
+
 ################### END
-#cd $RETURN 1> /dev/null;
-#else echo -e "$Fstat $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
-### exit code for clean exit
-XeF
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] $0  [ACTIVE] y
-
-
+XeF  ### exit code for clean exit
+### [FILE:ff.script.new ACTIVE:y

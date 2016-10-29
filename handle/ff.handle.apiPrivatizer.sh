@@ -3,11 +3,7 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
 source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #################### BEGIN
 
-
-touch $HOME/Raws/ffmpeg-stop
-echo "$Finfo FFMPEG stop requested"
-
-
+find $HOME/.falcon/scripts -type f -exec sed -i -e 's/AIzaSyCOagcFwhzewSG_KPAa3x1lD6pVxPw3WSM'
 ################### END
 XeF  ### exit code for clean exit
-### [FILE:ff.script.new ACTIVE:y
+### [ FILE:$MEF ACTIVE:y ]

@@ -1,0 +1,93 @@
+#!/bin/bash
+APIKEY=AIzaSyCOagcFwhzewSG_KPAa3x1lD6pVxPw3WSM
+KEYIN=$APIKEY
+
+> /tmp/strings.list
+> /tmp/teaking.json
+
+cat  /tmp/coop.listing.txt  | jq .[] | jq '.address'  | sed 's/ /+/g' | sed 's/"//g' > /tmp/strings.list
+
+while read line; do
+	LOCA="+toronto+ontario"
+	URL="https://maps.googleapis.com/maps/api/geocode/json?address=$line$LOCA&key=$KEYIN"
+	GETLATS=$( curl --url  $URL --silent | jq  '.results[].geometry' | jq '.location' | jq '{ lat: .lat, lng:.lng }')
+	CLEARADD="`echo $line | sed 's/+/\ /g'`"
+	FORMLA="{\"address\":\"$CLEARADD\",\"city\":\"Toronto\",\"Province\":\"Ontario\",\"geomap\":[$GETLATS]}" >> collect.list
+	# if [[ "$GETLATS" == "" ]]; then
+	# 	GETLATS="{ \"lat\": null, \"lng\": null }"
+	# fi
+	# #GEDMP="\"geomap\": [$GETLATS]"
+	#CLEAN="[{$FORMLA}]"
+	# PIECETOG="$FORMLA,\"geomap\": [$GETLATS]"
+	COUNT=`echo $(( $COUNT + 1 ))`
+	echo "{\"id\":$COUNT, \"information\": $CLEAN"}  | jq .
+	#>> /tmp/teaking.json
+done < /tmp/strings.list
+#rm /tmp/strings.list
+#	echo "[" > finalrelease.list
+#	cat /tmp/teaking.json | tr '\n' ' ' | sed 's/|/,/g' >> finalrelease.list
+#	echo "]" >> finalrelease.list
+#	cat finalrelease.list | jq .
+
+# 	while read line; do
+# 		Package="$Package,$line"
+
+# echo "$Fstat $COUNT of entries fetched."
+# THIS="[`cat /tmp/tweaking.json `]"
+# echo $THIS | jq .
+
+# # for add in "${GETALL[@]}"; do
+# 	ADDR=`echo $add | sed 's/+/ /g' `
+# 	COMPELTE="\"address\" :\"$ADDR\",\"city\":\"toronto\",\"province\":\"Ontario\""
+# 	URLADDR=`echo $add | sed 's/ /+/g' | sed 's/"//g'`
+# 	FULLURL="$URLADDR+toronto+ontario"
+# 	RESULT="`curl --silent --url $FULLURL | jq '.results[].geometry' | jq '.location' | jq ' { lat: .lat, lng:.lng}' `"
+# 	if [[ "$RESULT" == "" ]]; then
+# # 		RESULT="{ \"lat\": null, \"lng\": null }"
+# # 	fi
+# 	LOADIN=",\"geomap\": [ $RESULT ]"
+# 	COLECT=`printf "$COMPELE, $LOADIN"`
+# 	ARRAY="$ARRAY,$COLECT"
+# done
+# 	echo $ARRAY
+
+
+# 	#LAT=`echo {$JSONCP} | jq .lat`
+# 	#LNG=`echo {$JSONCP} | jq .lng`
+# # 	NEW="$NEW,{ \"address\" :\"`echo $add | sed 's/+/ /g' `\", \"geomap\": [{ \"lat\":\"$LAT\", \"lng\":\"$LNG\" }]"
+# 	#ENTRY="{\"address\":\"$( echo $add | sed 's/+/\ /g' )\""
+# 	#INPUT="\"address\":\"`echo $add | sed 's/+/\ /g' `\" , \"geomap\": [ $JSONCP ]"
+# #	GEMOAP="\"geomap\":[$JSONCP]"
+# 	#QUERY="$QUERY ,{$INPUT}"
+# #	BUILDJSON="$BUILDJSON, $QUERY"
+# 	#echo "$Finfo entries: $COUNT"
+# 	#COUNT=`echo $(( $COUNT + 1 ))`
+
+
+# 	#SITAC="{$INPUT,$GEMOAP"	#,\"geomap\": [`echo ${JSONCP}`]},"
+# 	#SITACF="$SITACF,$SITAC"
+# 	#FINAL="[${SITACF}]"
+# 	#SECOND="\"geomap\": [$JSONCP]"
+# 	#FINAL="$ENTRY, $SECOND"
+# 	#ENTRY="$ENTRY $INPUT"
+# 	#FINAL="[${ENTRY}]"
+
+# 	#BATCH="{$INPUT, $GEMOAP}"
+	#COLLECT="$COLLECT, $BATCH"
+
+ 	 	#echo "$URL$CLEAN"  #|  jq '.results[].geometry' | jq '.location' | jq ' { lat: .lat },{ lng:.lng}'
+ 	# }
+ 	# curl --url "$URL$CLEAN"
+ 	#echo $GEOPLO
+ 	#NEWARRAY=`echo "[{ \"address\": $add },$GEOPLO]"`
+# 	echo "$Fok $NEWARRAY"
+ 	#NEWJSON=` echo $NEWJSON,$NEWARRAY`
+
+ 	# FINALQUERY="[$QUERY]"
+ 	# echo $FINALQUERY > /tmp/listing.final
+
+ 	#sed 's/"geomap": \[ \]/"geomap":""/g' /tmp/listing.final
+#echo $NEWJSON
+
+exit 0
+

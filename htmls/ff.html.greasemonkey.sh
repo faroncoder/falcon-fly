@@ -28,7 +28,7 @@ done
 
 
 
-echo "[$fcg$fcm$fco]"
+echo "$Fok"
 
 ################### END
 #cd $RETURN

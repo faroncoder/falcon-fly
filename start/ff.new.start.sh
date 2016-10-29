@@ -238,7 +238,7 @@ echo "$Fwarn /home/$USER --> /home/users/$USER"
 #!/bin/bash
 RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; loadSudo;
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; 
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
 
