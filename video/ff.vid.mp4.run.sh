@@ -1,10 +1,11 @@
 #!/bin/bash
-RETURN=$PWD
+RAWHOME=/home/users/$USER/Raws
+
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; 
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
 #if [[ "$1" != "" ]]; then
 #################### BEGIN
-cd "$HOME/Raws" 1> /dev/null 2> /dev/null
+cd "$RAWHOME" 1> /dev/null
 
 if [[ $EUID == 0 ]]; then
 	echo -e "$Fno sudo yourself out"
@@ -14,21 +15,21 @@ fi
 CHECK="$@"
 
 if [[  "$CHECK" == "" ]]; then
-	GOLP=( `find . -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/.ts/d' | sed '/.mov/d'` )
+	GOLP=( `find $RAWHOME -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/ffmpeg-/g' |  sed '/.ts/d' | sed '/.mov/d'` )
 else
-	GOLP=$CHECK
+	GOLP=( $CHECK )
 fi
 
 THISVERSION="15ebc8d6-9c26-11e6-82a1-4305264aedd3:Oct272016"
-OLDVER=( 730ebd32-d446-11e5-b1f0-7bf895f2366a )
-if [[ ! -d "$PWD/new-mp4" ]]; then
-	mkdir "$PWD/new-mp4" -p 2> /dev/null;
+#OLDVER=( 730ebd32-d446-11e5-b1f0-7bf895f2366a )
+if [[ ! -d "$RAWHOME/new-mp4" ]]; then
+	mkdir "$RAWHOME/new-mp4" -p 2> /dev/null;
 fi
-if [[ ! -d "$PWD/mediainfo" ]]; then
-	mkdir "$PWD/mediainfo" -p 2> /dev/null;
+if [[ ! -d "$RAWHOME/mediainfo" ]]; then
+	mkdir "$RAWHOME/mediainfo" -p 2> /dev/null;
 fi
-if [[ ! -d "$PWD/origs-trash" ]]; then
-	mkdir "$PWD/origs-trash" -p 2> /dev/null;
+if [[ ! -d "$RAWHOME/origs-trash" ]]; then
+	mkdir "$RAWHOME/origs-trash" -p 2> /dev/null;
 fi
 filePrep(){
 	GETNAME=$( rev <<< $j | cut -d"." -f2 | rev )
@@ -41,16 +42,17 @@ filePrep(){
 	### new name###
 	NEWFILE="$NEWNAME.mp4"
 	### new file name###
-	TRASH="$PWD/origs-trash/$GETNAME$GETEXT"
+	TRASH="$RAWHOME/origs-trash/$GETNAME$GETEXT"
 	### file to be trashed###
-	COLLECT="$PWD/new-mp4/$NEWFILE"
+	COLLECT="$RAWHOME/new-mp4/$NEWFILE"
 	### converted file###
-	FEED="$PWD/$NEWNAME-feed.dat"
+	FEED="$RAWHOME/$NEWNAME-feed.dat"
 	#### data -feed###
-	INFOA="$PWD/mediainfo/$NEWNAME-original.info"
+	INFOA="$RAWHOME/mediainfo/$NEWNAME-original.info"
 	#### data  mediainfo original ###
-	INFOB="$PWD/mediainfo/$NEWNAME-converted.info"
+	INFOB="$RAWHOME/mediainfo/$NEWNAME-converted.info"
 	#### data  mediainfo converted ##
+	NOTIFYSYS="$RAWHOME/ffmpeg-on"
 }
 fireUpTheEngine(){
 	YEARFILE=`date`
@@ -65,7 +67,7 @@ fireUpTheEngine(){
 	MAXRATE="$MAXRATE$SMIL"
 	#BUFRAT="$MAXRAT"
 	BUFRAT=` echo $(( 2 * $MAXRAT  ))`
-	PRESET="veryslow"
+	PRESET="slow"
 	COMMENTFILE="Encoded by Faron the Falcon"
 
 	#PREFILE="$( rev <<< "$INPUT" | cut -d"." -f2 | rev )"
@@ -105,13 +107,13 @@ COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
 echo "$Finfo $ALLFILES files queued"
 for j in "${GOLP[@]}"; do
-			CHECK=`find $( printf "/home/users/$USER" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
+			CHECK=`find $( printf "$RAWHOME" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
 			if [[ -f "$CHECK" ]]; then
 				rm $CHECK
 				echo "$Fwarn FFMPEG engine stopped. $COUNT files completed."
 				exit 1
 			else
-				rm "*-feed.dat" 2> /dev/null
+				rm "$RAWHOME/*-feed.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
 				start=`date +%s`
 				echo -n "$Finfo $j ==> "
@@ -123,7 +125,7 @@ for j in "${GOLP[@]}"; do
 				echo " $Fok [$Fyellow$COUNT$Foff of $Fred$ALLFILES$Foff completed in $Fteal$OUTTIME$Foff ]"
 			fi
 done
-
+rm $RAWHOME/ffmpeg-on
 ################### END
 #cd $RETURN 1> /dev/null;
 #else echo -e "$Fstat $Fred File needed $Foff=$Fyellow one or bulk files $Foff"; fi
