@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 GETDATE="$( date )"
 YEAR="$( echo $GETDATE | awk '{print$6}' )"
 DAY="$( echo $GETDATE | awk '{print$3}' )"
@@ -41,12 +43,9 @@ if [ -z "$1" ]
             done < listing.txt
         else
             echo "terminating..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-    fi
-else
-    INPUT="$1"
-    tsizing
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-fi
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ts-tsx-er.sh  [ACTIVE] y
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

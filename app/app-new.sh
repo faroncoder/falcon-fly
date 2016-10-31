@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 typedest="$1"
 appname="$2"
 binpull="/home/users/faron/.falcon/scripts/app/libsafe"
@@ -30,34 +32,9 @@ if [ "$typedest"="n" ] || [ "$typedest"="N" ]
 	echo "configuring $appname ..."
 	cp $binpull/html-full.txt $pathdir/public/index.html
 	echo "app created!  Current directory: $PWD and you may begin scripting..."
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] app-new.sh  [ACTIVE] y
 
-fi
-if [ "$typedest"="h" ] || [ "$typedest"="H" ]
-	then
-	pathdir="/home/users/$USER/var/Scripts/htmls/projects/$appname"
-	mkdir -p $pathdir
-	echo "app created and heading to the path now..."
-	cd $pathdir
-	echo "app is being building..."
-	app-jsc h $appname
-	echo "configuring $appname ..."
-	cp $binpull/html-full.txt $pathdir/index.html
-	echo "now we are here and you may begin scripting..."
-
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-fi
-
-
-##########################
-
-# if [ ! -d $pathdir ]
-#	then
-#	echo "creating new project: $appname"
-# 	mkdir -p $pathdir
-#	html-jsc $pathjsc
-# fi
-
-
-
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

@@ -1,9 +1,6 @@
 #!/bin/bash
-RAWHOME=/home/users/$USER/Raws
-
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
-#if [[ "$1" != "" ]]; then
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 cd "$RAWHOME" 1> /dev/null
 
@@ -128,12 +125,8 @@ for j in "${GOLP[@]}"; do
 done
 rm $RAWHOME/ffmpeg-on
 ################### END
-#cd $RETURN 1> /dev/null;
-#else echo -e "$Fstat $Fred File needed $Foff=$Fyellow one or bulk files $Foff"; fi
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] $0  [ACTIVE] y
-
-
+### [FILE] ff.vid.mp4.run.sh  [ACTIVE] y
 

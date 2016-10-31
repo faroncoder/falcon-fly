@@ -1,13 +1,6 @@
 #!/bin/bash
-if [ "$( echo $PATH | grep '/usr/local/bin/' )" = '' ]; then
-	export PATH=$PATH:/usr/local/bin:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); echo "$0 | $XeB | $XeE | $XeT " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-}
-
-#if [ "$1" != "" ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 TASKPOLICY=$1
 STRINGCOL=$2
@@ -39,14 +32,8 @@ yokadi t_add $TASKPOLICY $STRINGCOL
 
 
 ################### END
-#elif [ "$1" = "" ];
-#	then
-#  echo "usage: ff.task.add "
-#  echo "example:    "
-#fi
-
-
-## TALON: ff.task.add
-XeF
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.task.add.sh  [ACTIVE] y
 

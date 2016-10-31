@@ -1,12 +1,6 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/usr/local/bin/' )" ]; then
-	export PATH=$PATH:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-#if [ "$1" != "" ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 wget -nv https://download.owncloud.org/download/repositories/stable/Ubuntu_15.10/Release.key -O Release.key
 sudo apt-key add - < Release.key 
@@ -17,12 +11,8 @@ sudo apt-get install owncloud
 
 
 ################### END
-#elif [ "$1" = '' ];
-#	then
-#  echo "usage: install_owncloud "
-#  echo "example:  install_owncloud  "
-#fi
-## TALON:
-XeF
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] install_owncloud.sh  [ACTIVE] y
 

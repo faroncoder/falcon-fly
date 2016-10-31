@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 
 filename="$1"
 if [ -z "$filename" ]
@@ -10,11 +12,9 @@ if [ -z "$filename" ]
 			NEWNAME="$( echo $filename | tr 'A-Z' 'a-z' )";
 			mv $filename $NEWNAME;
 		done
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
-    else
-    		SINGLEFILE="$( echo $filename | tr 'A-Z' 'a-z' )";
-    		mv $filename $SINGLEFILE
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0
-fi
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.handle.lowercase.sh  [ACTIVE] y
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/faron/.falcon/logs/scripts.log; exit 0

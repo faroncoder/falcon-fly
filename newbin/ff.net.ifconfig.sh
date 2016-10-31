@@ -1,15 +1,6 @@
 #!/bin/bash
-if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
-<<<<<<< HEAD
-source /usr/local/lib/faron_falcon/colors
-=======
-fcbk="$(tput setaf 0)"; fcr="$(tput setaf 1)"; fcg="$(tput setaf 2)"; fcy="$(tput setaf 3)"; fcb="$(tput setaf 4)"; fcp="$(tput setaf 5)"; fcc="$(tput setaf 6)"; fcw="$(tput setaf 7)"; fco="$(tput sgr0)"; fcok="[$fcg OK $fco]"; fcer="[$fcr ERR $fco]";
->>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 if [[ $USER != 0 ]]; then
@@ -89,4 +80,14 @@ echo -e "$Finfo ipv6 tunnel up and operating"
  echo -e "$fcok :: interface check completed!"
 >>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
  XeF
+
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.net.ifconfig.sh  [ACTIVE] y
+
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.net.ifconfig.sh  [ACTIVE] y
 

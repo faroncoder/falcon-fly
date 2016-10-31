@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; 
-
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 
@@ -64,11 +62,8 @@ fi
 =======
 >>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 ################### END
-#cd $RETURN 1> /dev/null;
-
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /home/users/faron/.falcon/scripts/htmls/ff.html.videopager.sh [ACTIVE] y
-
+### [FILE] ff.html.videobulking.sh  [ACTIVE] y
 

@@ -1,13 +1,6 @@
 #!/bin/bash
-HERE=$PWD
-if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then
-	export PATH=$PATH:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-#if [ "$1" != "" ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 if [ ! -d /home/users/$USER/.originals ]; then
@@ -33,13 +26,8 @@ else
 fi
 
 ################### END
-cd $HERE 2> /dev/null
-#elif [ "$1" = '' ];
-#	then
-#  echo "usage: ff.comment.purge "
-#  echo "example:  ff.comment.purge  "
-#fi
-## TALON:
-XeF
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.comment.purge.sh  [ACTIVE] y
 

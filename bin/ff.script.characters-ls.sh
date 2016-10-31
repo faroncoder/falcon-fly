@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LBF="/usr/local/lib/faron_falcon"; . $LBF/colors; source /usr/local/lib/faron_falcon/functions;
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 CT=0
@@ -19,6 +19,8 @@ CT=0
 echo ""
 
 ################### END
-cd  $RETURN 1> /dev/null 2> /dev/null;
-XeF  ### exit code for clean exit
-### [ FILE:$MEF ACTIVE:y ]
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.script.characters-ls.sh  [ACTIVE] y
+

@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 
 pathdir="$PWD"
 locpath="$1"
@@ -25,40 +27,9 @@ locpath="$1"
                               echo "done!"
                         fi
                   getmod_getowner_allfiles
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-              fi
-              fi
-              if  [ $locpath == "a" ]
-                    then
-                      filelocpath="$pathdir"
-                        echo -n "confirming: $filelocpath (y/n) ? "
-                        read proceedcollection
-                            if [ $proceedcollection == "y" ]
-                              then
-                                echo "collecting..."
-                                find $filelocpath -exec stat --format "chown %G:%G ${MPOINT}%n && chmod %a ${MPOINT}%n" {} \; >>  restore-chmod-chown.sh
-                                echo "done!"
-                            fi
-                  getmod_getowner_allfiles
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-              fi
-              filelocpath="$pathdir/$locpath"
-              echo -n "confirming: $filelocpath (y/n) ? "
-              read proceedcollection
-                  if [ $proceedcollection == "y" ]
-                      then
-                         echo "collecting..."
-                         find $filelocpath -exec stat --format "chown %G:%G ${MPOINT}%n && chmod %a ${MPOINT}%n" {} \; >>  restore-chmod-chown.sh
-                         echo "done!"
-                  fi
-                  getmod_getowner_allfiles
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-        fi      
-  
-  if [ $commandget == "e" ]
-      then
-      chmod +x $PWD/restore-chmod-chown.sh
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
-  fi
-  getmod_getowner_allfiles
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] getmod_getowner_all.sh  [ACTIVE] y
+

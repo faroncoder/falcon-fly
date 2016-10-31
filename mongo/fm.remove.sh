@@ -1,19 +1,6 @@
 #!/bin/bash
-startgreen=`date +%s`
-stopwatchtime() {
-	stopred=`date +%s`
-	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log;
-	exit 0
-}
-helpecho() {
-echo "usage: `echo $0` [collection] [query stings]"
-  echo "example:  `echo $0` faron admin \"{id:100}\""
-  echo "example:  `echo $0` faron admin \"{}\" to remove everything from the collection"
-  stopwatchtime
-}
-
-if [ "$3" != '' ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 CMD="db.$2.remove($3);"
@@ -51,8 +38,8 @@ else
 fi
 
 ################### END
-
-stopwatchtime
-## TALON: fm.remove
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] fm.remove.sh  [ACTIVE] y
 

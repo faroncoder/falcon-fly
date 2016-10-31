@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 ####################BEGIN
 
 fucntion humanTime(){
@@ -33,3 +33,13 @@ fucntion humanTime(){
      echo "$DAY:$HOUR:$MIN:$SEC"
     sec=""; hour=""; min=""; sec="";
 exit 0
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.handle.timecount.sh  [ACTIVE] y
+
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.handle.timecount.sh  [ACTIVE] y
+

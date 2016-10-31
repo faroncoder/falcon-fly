@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 
 > listing.txt
 ls -p *.mp4 >> listing.txt
@@ -31,4 +33,9 @@ INPUT="$PWD/$line"
 
     done < listing.txt
 rm listing.txt
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] m3u8-bulk-files.sh  [ACTIVE] y
+

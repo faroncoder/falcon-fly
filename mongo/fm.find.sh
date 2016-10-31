@@ -1,19 +1,6 @@
 #!/bin/bash
-startgreen=`date +%s`
-stopwatchtime() {
-	stopred=`date +%s`
-	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log;
-	exit 0
-}
-helpecho() {
-echo 'usage: fm.insert [collection] [query stings]'
-  echo 'example:  fm.find faron admin'
-
-  stopwatchtime
-}
-
-if [ "$1" != '' ] && [ "$2" != '' ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 CMD="db.$2.find();"
@@ -49,14 +36,8 @@ echo "$CMD" | mongo $1 --quiet
 fi
 
 ################### END
-if [ "$1" = '' ]; then
-		helpecho
-fi
-if [ "$1" = '' ] && [ "$2" = '' ]; then
-		helpecho
-fi
-
-stopwatchtime
-## TALON: fm.insert
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] fm.find.sh  [ACTIVE] y
 

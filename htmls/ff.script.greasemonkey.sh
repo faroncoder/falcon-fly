@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
  newscript="// ==UserScript==
 // @name         {NAME}
@@ -47,17 +47,8 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 
 
            ///////////// END
-            }
-        }, 100);
-})();"
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.script.greasemonkey.sh  [ACTIVE] y
 
-NAME=$1
-if [[ "$NAME" == "" ]]; then
-	echo -n "$Finfo Name of script?     "
-	read NAME
-fi
-echo "$Fok script created"
-echo "$newscript" > "$HOME/falcon-$NAME.js"
-################### END
-XeF  ### exit code for clean exit
-### [ FILE:$MEF ACTIVE:y ]

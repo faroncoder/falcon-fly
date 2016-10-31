@@ -1,0 +1,5 @@
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] {FILENAME}  [ACTIVE] y
+

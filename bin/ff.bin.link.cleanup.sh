@@ -1,27 +1,10 @@
-#!/bin/sh -e
+#!/bin/bash
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.bin.link.cleanup.sh  [ACTIVE] y
 
- LOC="$1"
-if [ -z "$LOC" ]
-	then
-	    LOC="$PWD"
-fi
-
-
-#PATHDIR=$PWD
-#FINDLINK="$( find $PATHDIR -maxdepth 1 -name 'Link*to*' -exec rename 's/Link\ to\ //g' {} \; )"
-find $LOC -maxdepth 1 -name 'Link*to*' -exec rename 's/Link\ to\ //g' {} \; -exec echo "`basename {}` updated." \;
-#-exec DISPLAY=0:0 /usr/bin//notify-send -i /home/users/$USER/var/Pictures/self/sunfaron.png "bin: {} :: link cleaned up " \;
-# > x.list
-# ls Link* >> x.list
-# sed -i -e 's/\ /\\ /g' x.list
-# while read line
-# 	do
-# #FINDLINK="$( ls Link* )"
-# #if [ ! -z "$FINDLINK" ]
-#             #then
-# 	           		/usr/bin//rename 's/Link\ to\ //g' $line;
-# 	                       /usr/bin//rename 's/.sh//g' $line;
-#  			DISPLAY=:0.0 /usr/bin//notify-send -i /home/users/$USER/var/Pictures/self/sunfaron.png "bin: $( echo $line ) :: link cleaned up ";
-#  done
-#  rm x.list
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

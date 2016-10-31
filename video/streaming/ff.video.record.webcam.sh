@@ -1,8 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;  
-RETURN=$PWD;
-#if [[ "$1" != "" ]]; then
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 ## avail for coding in colors: ##
 ## Fok Fno Finfo Fwarn Fstat ##
@@ -12,10 +10,8 @@ ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -pix_fmt yuv420p -i /dev/video0
 
 
 ################### END
-#cd $RETURN 1> /dev/null
-#else echo -e "$Fwarn Arg 1:$Fyellow name of arg $Foff \n$Fwarn Arg 2: $Fyellow name of arg $Foff"; exit 1; fi
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FALCON] name=$( basename $0 ) active=y
+### [FILE] ff.video.record.webcam.sh  [ACTIVE] y
 

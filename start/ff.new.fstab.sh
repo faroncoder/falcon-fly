@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; 
-#if [[ "$1" != "" ]]; then
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 PATH="/"
 $SUDO /bin/sed -i -e '/UUID/d' /etc/fstab
@@ -27,11 +25,8 @@ done
 /bin/echo "$Fok /etc/fstab configured"
 
 ################### END
-#cd $RETURN 1> /dev/null;
-#else echo -e "$Fstat $Fred Arg 1 $Foff=$Fyellow name of package to check in dpkg$Foff"; fi
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] $0  [ACTIVE] y
-
+### [FILE] ff.new.fstab.sh  [ACTIVE] y
 

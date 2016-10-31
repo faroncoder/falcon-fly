@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 SELECT=""
 while [[ "$SELECT" != $"\x0a" && "$SELECT" != $"\x20" ]]; do
@@ -21,5 +21,8 @@ done
 
 echo "$Fok"
 ################### END
-XeF  ### exit code for clean exit
-### [ FILE:$MEF ACTIVE:y ]
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] lab.env.live.sh  [ACTIVE] y
+

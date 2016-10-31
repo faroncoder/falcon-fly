@@ -1,12 +1,6 @@
 #!/bin/bash
-if [ "$( echo $PATH | grep '/usr/local/bin/' )" = '' ]; then
-	export PATH=$PATH:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-#if [ "$1" != "" ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 HUNTFILE=( `find -L /home/users/faron/.falcon/code/sublime/User -maxdepth 1 -type f -name '*-snippet'  `  )
@@ -25,10 +19,8 @@ fi
 
 
 ################### END
-#elif [ "$1" = '' ];
-#	then
-#  echo "usage:  "
-#  echo "example:    "
-#fi
-## TALON:
-XeF
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.handle.snippetsaver.sh  [ACTIVE] y
+

@@ -1,13 +1,6 @@
 #!/bin/bash
-HERE=$PWD
-if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then
-	export PATH=$PATH:/usr/local/bin
-fi
-XeB=`date +%s`
-function XeF {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
-}
-#if [ "$1" != "" ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | head -n 1
@@ -15,13 +8,8 @@ ifconfig -a | cut -d' ' -f1 | sort | sed '/^$/d' | head -n 1
 
 
 ################### END
-cd $HERE
-#elif [ "$1" = '' ];
-#	then
-#  echo "usage: ff.network.devices.sh "
-#  echo "example:  ff.network.devices.sh  "
-#fi
-## TALON:
-XeF
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.net.iface.sh  [ACTIVE] y
 

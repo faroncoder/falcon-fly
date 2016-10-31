@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; XeB
-#if [[ "$1" != "" ]]; then
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 # CT=0; while read line; do CT=`echo $(( $CT + 1 ))`;
 # export CHR$CT=$line;
@@ -28,7 +26,8 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 # echo "";
 
 ################### END
-cd  $RETURN 1> /dev/null 2> /dev/null;
-XeF  ### exit code for clean exit
-### [ FILE:$MEF ACTIVE:y ]
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.script.characters-export.sh  [ACTIVE] y
 

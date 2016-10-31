@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 
 if [ -z "$1" ]; then
     echo "usage: ./movie_preview.sh VIDEO [HEIGHT=120] [COLS=100] [ROWS=1] [OUTPUT]"
@@ -55,3 +57,9 @@ FFMPEG_CMD="ffmpeg -i \"$MOVIE\" -y -frames 1 -q:v 1 -vf \"select=not(mod(n\,$NT
 
 eval $FFMPEG_CMD
 echo $OUT_FILEPATH
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] videopreview_generator.sh  [ACTIVE] y
+

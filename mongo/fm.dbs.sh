@@ -1,17 +1,6 @@
 #!/bin/bash
-startgreen=`date +%s`
-stopwatchtime() {
-	stopred=`date +%s`
-	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log;
-	exit 0
-}
-helpecho() {
-HELP="execute ff.mongo.dbs without arguments"
-  echo $HELP
-  stopwatchtime
-}
-
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 CMD="show databases"
@@ -45,7 +34,8 @@ echo "$CMD" | mongo $1 --quiet
 
 
 ################### END
-
-stopwatchtime
-## TALON: ff.mongo.dbs
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] fm.dbs.sh  [ACTIVE] y
 

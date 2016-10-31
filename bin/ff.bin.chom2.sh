@@ -1,13 +1,6 @@
 #!/bin/bash
-startgreen=`date +%s`
-stopwatchtime() {
-	stopred=`date +%s`
-	faronruntime=$( echo "$(( $startgreen - $stopred ))" );
-	echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log;
-	exit 0
-}
-
-#if [ "$1" != "" ]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 USER=""
 GROUP=""
@@ -82,13 +75,8 @@ sudo chmod -R 775 $PWD/*
 
 
 ################### END
-#elif [ "$1" = "" ];
-#	then
-#  echo "usage: ff.bin.www-ch-own-mod "
-#  echo "example:    "
-#fi
-
-stopwatchtime
-## TALON: ff.bin.www-ch-own-mod
-
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.bin.chom2.sh  [ACTIVE] y
 

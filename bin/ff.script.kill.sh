@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
-if [ ! "$( echo $PATH | grep '/usr/local/bin' )" ]; then export PATH=$PATH:/usr/local/bin; fi
-x=( colors functions ); for z in "${x[@]}"; do source /usr/local/lib/faron_falcon/$z; done
-#if [[ "$1" != "" ]]; then
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
 FILESTART="$1"
@@ -212,10 +210,8 @@ fi
 #fi
 
 ################### END
-#cd $RETURN 1> /dev/null;
-#else echo "$Fwarn Arg 1= $Fyellow Specific file to kill $Foff "; fi
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FALCON] name=$( basename $0 ) active=y
+### [FILE] ff.script.kill.sh  [ACTIVE] y
 

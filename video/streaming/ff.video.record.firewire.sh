@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 file=$( uuid | cut -d"-" -f1 )
 
@@ -35,5 +35,8 @@ dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultra
 else echo "$Fno firewire doesn't run on this server.  Only F6."; fi
 
 ################### END
-XeF  ### exit code for clean exit
-### [FILE:ff.script.new ACTIVE:y
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.video.record.firewire.sh  [ACTIVE] y
+

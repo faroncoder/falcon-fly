@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 # By keeping options in alphabetical order, it's easy to add more.
 
 display_help() {
@@ -16,45 +18,9 @@ do
       -h | --help)
 	  display_help  # Call your function
 	  # no shifting needed here, we're done.
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
-	  ;;
-      -u | --user)
-	  username="$2"
-	  echo $2 # You may want to check validity of $2
-	  shift 2
-	  ;;
-      -v | --verbose)
-          #  It's better to assign a string, than a number like "verbose=1"
-	  #  because if you're debugging script with "bash -x" code like this:
-	  #
-	  #    if [ "$verbose" ] ...
-	  #
-	  #  You will see:
-	  #
-	  #    if [ "verbose" ] ...
-	  #
-          #  Instead of cryptic
-	  #
-	  #    if [ "1" ] ...
-	  #
-	  verbose="verbose"
-	  shift
-	  ;;
-      --) # End of all options
-	  shift
-	  break
-	  ;;
-      -*)
-	  echo "Error: Unknown option: $1" >&2
-	  exit 1
-	  ;;
-      *)  # No more options
-	  break
-	  ;;
-    esac
-done
-
-# End of file
-
-
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] script-args-options-function-with-sub-agrument.sh  [ACTIVE] y
 

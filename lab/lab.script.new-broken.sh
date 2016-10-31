@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LOC=/usr/local/lib/faron_falcon; . $LOC/colors; . $LOC/functions;
-if [[ "$1" != "" ]]; then
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 xcv="$1"
 xcs="$2"
@@ -42,19 +40,8 @@ if [[ \"\$1\" != \"\" ]]; then
 
 
 ################### END
-#cd \$RETURN 1> /dev/null;
-else echo -e \"\$Fstatus \$Fred Arg 1 \$Foff=\$Fyellow explain argments before calling. \$Foff\"; fi
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] $0  [ACTIVE] y
-"  > "$MEF"
-echo -e "$Fstat $Fblue $XF $Fgreen created. $Foff"
-subl "$MEF"
-################### END
-#cd $RETURN 1> /dev/null;
-else echo -e "$Fstatus $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
-### exit code for clean exit
-XeF
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /home/users/faron/.falcon/scripts/bin/ff.new.script  [ACTIVE] y
+### [FILE] lab.script.new-broken.sh  [ACTIVE] y
+

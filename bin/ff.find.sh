@@ -1,5 +1,7 @@
 #!/bin/bash
-startgreen=`date +%s`
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+#################### BEGIN
 
 while :
 do
@@ -85,4 +87,10 @@ if [ "$EUID" = 0 ]; then
 	sh -c find $LOCPA $DEPTH $DIR $FILE $NAME $SEARCH $EXEC $PATHFOLDER $CUST
 
 fi
+
+#################### END
+### exit code for clean exit
+doneTime
+### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
+### [FILE] ff.find.sh  [ACTIVE] y
 
