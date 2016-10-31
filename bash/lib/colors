@@ -37,7 +37,7 @@ FGmsg(){
 	FMsend="[$Fgreen$FFFF$Foff]"
 }
 FYmsg(){
-	FFFF=`echo $GETMSG`
+	FFFF=$GETMSG
 	FMsend="[$Fyellow$FFFF$Foff]"
 }
 FBmsg(){

@@ -1,9 +1,10 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
-#################### BEGIN
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
+####################BEGIN
 
- num=$1
+fucntion humanTime(){
+ num=$RAW
     min=0
     hour=0
     day=0
@@ -25,12 +26,10 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
     else
         ((sec=num))
     fi
-     day=`seq -w 00 $day | tail -n 1`
-     hour=`seq -w 00 $hour | tail -n 1`
-     min=`seq -w 00 $min | tail -n 1`
-     sec=`seq -w 00 $sec | tail -n 1`
-    echo "$day:$hour:$min:$sec"
-
-################### END
-XeF  ### exit code for clean exit
-### [FILE:ff.script.new ACTIVE:y
+     DAY=`seq -w 00 $day | tail -n 1 2> /dev/null `
+      HOUR=`seq -w 00 $hour | tail -n 1 2> /dev/null `
+      MIN=`seq -w 00 $min | tail -n 1 2> /dev/null `
+      SEC=`seq -w 00 $sec | tail -n 1 2> /dev/null `
+     echo "$DAY:$HOUR:$MIN:$SEC"
+    sec=""; hour=""; min=""; sec="";
+exit 0

@@ -1,8 +1,6 @@
 #!/bin/bash
-RETURN=$PWD
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions;
-#if [[ "$1" != "" ]]; then
+source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
 LOC="/home/users/faron/.falcon/scripts";
@@ -41,14 +39,15 @@ if [[ ! -d "$LOC" ]]; then
 				makelink;
 		done
 	fi
-	source $HOME/.profile
-	echo "$Finfo Falcon Bin sync-ed."
+	source $HOME/.bashrc
+	echo "$Fok Falcon Bin sync-ed."
 fi
 
-################### END
-#cd $RETURN 1> /dev/null;
-#else echo -e "$Fstat $Fred Arg 1 $Foff=$Fyellow explain argments before calling. $Foff"; fi
+#checkTime
+
 ### exit code for clean exit
-XeF
+doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /home/users/faron/.falcon/scripts/bin/ff.load.sh  [ACTIVE] y
+### [FILE] /home/users/faron/.falcon/scripts/handle/ff.handle.folders.memory.sh [ACTIVE] y
+
+
