@@ -1,11 +1,11 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgrn=`date +%s`
 
 INPUT="$1"
 
 if [ -z $INPUT ] 
 	then
-		echo "INPUT name is needed (orginial file)"
+		echo "INPUT name is nded (orginial file)"
 		exit 1
 fi	
 
@@ -43,4 +43,4 @@ if [ -z "$CHECKFILE" ]
 -metadata artist="" "NEW-direct-x264-$FILE.mp4" < /dev/null
 fi
 
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgrn )); echo "$0 | $startgrn | $stopred | $faronruntime " >> /home/users/faron/.falcon/logs/scripts.log; exit 0

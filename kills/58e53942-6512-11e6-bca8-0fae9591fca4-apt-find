@@ -1,5 +1,5 @@
 #!/bin/bash
-startgreen=`date +%s`
+startgrn=`date +%s`
 BULK=( "$@" )
 NEWBULK=( $( echo ${BULK[@]} | sed "s/$1//g" ) )
 OPEN="sudo apt-cache search"
@@ -43,7 +43,7 @@ echo "-----"
 BULKED=`echo ${GETAPP[@]} | tr '|' '\n' | awk '{print $1}' `
 SORTED=`echo $BULKED | wc --words`
 echo "Packages found: $SORTED"
-echo -n "Proceed to installation?  [y]es or [n]"
+echo -n "Procd to installation?  [y]es or [n]"
 read NEXTCOMM
 if [[ "$NEXTCOMM" == "y" ]];
 	then
@@ -53,4 +53,4 @@ if [[ "$NEXTCOMM" == "y" ]];
 				sudo apt-get install $pull
 			done
 fi
-stopred=`date +%s`; faronruntime=$(( $stopred - $startgreen )); echo "$0 | $startgreen | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0
+stopred=`date +%s`; faronruntime=$(( $stopred - $startgrn )); echo "$0 | $startgrn | $stopred | $faronruntime " >> ~/.falcon/logs/scripts.log; exit 0

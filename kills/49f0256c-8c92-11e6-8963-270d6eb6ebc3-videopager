@@ -10,9 +10,9 @@ DocVideo="<!DOCTYPE html>
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"faron\">
         <title>$PREFILE</title>
-        <link rel=\"stylesheet\" href=\"./.jsc/css/cssengine.css\" />
-        <link rel=\"stylesheet\" href=\"./.jsc/css/mediaelement/mediaelementplayer.min.css\" />
-		<link rel=\"stylesheet\" href=\"./.jsc/css/mediaelement/mejs-skins.css\" /> 
+        <link rel=\"stylesht\" href=\"./.jsc/css/cssengine.css\" />
+        <link rel=\"stylesht\" href=\"./.jsc/css/mediaelement/mediaelementplayer.min.css\" />
+		<link rel=\"stylesht\" href=\"./.jsc/css/mediaelement/mejs-skins.css\" /> 
 		 <style>
  		 html { height: 100%; width: 100%; } body { min-width: 100% ; min-height:  100%; background: black;
  		} video { min-height: 100%; min-width: 800px; }
