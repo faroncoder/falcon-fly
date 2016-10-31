@@ -97,7 +97,7 @@ Fok="[$Fgreen$CHR23$Foff]"
 Fno="[$Fred$CHR24$Foff]"
 Finfo="[$Fblue$CHR152$Foff]"
 Fwarn="[$Fyellow$CHR161$Foff]"
-Fstat="[$Fteal$CHR47$Foff]"
+Fstat="[$BCyan$CHR153$Foff]"
 
 FGmsg(){
         FFFF=`echo $GETMSG`
