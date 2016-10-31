@@ -1,6 +1,7 @@
 XeB=`date +%s`
 function XeF() {
-XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
+XeE=`date +%s`; XeT=`echo $(( $XeE - $XeB ))`;  RES=`ff.handle.timecount $XeT`;  echo "$Fpurple $RES"
+exit 0
 }
 
 

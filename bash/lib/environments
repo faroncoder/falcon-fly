@@ -18,6 +18,8 @@ FALCON=/home/users/faron/.falcon/scripts
 	done
 	export PATH=$CLEAN
 
+
+
 alias rm="trash-put"
 alias rm1="rm"
 

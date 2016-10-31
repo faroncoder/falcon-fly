@@ -106,6 +106,7 @@ fireUpTheEngine(){
 COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
 echo "$Finfo $ALLFILES files queued"
+touch $NOTIFYSYS
 for j in "${GOLP[@]}"; do
 			CHECK=`find $( printf "$RAWHOME" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
 			if [[ -f "$CHECK" ]]; then

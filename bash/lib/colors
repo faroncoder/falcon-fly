@@ -1,5 +1,10 @@
-
-			
+# # CT=0;
+# # while read line; do
+# #   CT=`echo $(( $CT + 1 ))`
+# #   export CH$CT=$line
+# done < /usr/local/lib/faron_falcon/characters
+# echo "$Fok"
+source /usr/local/lib/faron_falcon/characters
 
 fg_black=`tput setaf 0  2> /dev/null `
 fg_red=`tput setaf 1  2> /dev/null `
@@ -11,8 +16,6 @@ fg_cyan=`tput setaf 6  2> /dev/null `
 fg_white=`tput setaf 7  2> /dev/null `
 reset=`tput sgr0  2> /dev/null `
 
-
-
 Fred=$( echo -e $fg_red  )
 Fblack=$( echo -e $fg_black  )
 Fgreen=$( echo -e $fg_green  )
@@ -23,11 +26,41 @@ Fteal=$( echo -e $fg_cyan  )
 Fwhite=$( echo -e $fg_white  )
 Foff=$( echo -e $reset  )
 
-Fok="[$Fgreen OK $Foff]"
-Fno="[$Fred ERR $Foff]"
-Finfo="[$Fblue INFO $Foff]"
-Fwarn="[$Fyellow WARN $Foff]"
-Fstat="[$Fteal Status $Foff]"
+Fok="[$Fgreen$CHR23$Foff]"
+Fno="[$Fred$CHR24$Foff]"
+Finfo="[$Fblue$CHR152$Foff]"
+Fwarn="[$Fyellow$CHR161$Foff]"
+Fstat="[$Fteal$CHR47$Foff]"
+
+FGmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fgreen$FFFF$Foff]"
+}
+FYmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fyellow$FFFF$Foff]"
+}
+FBmsg(){
+FFFF=`echo $GETMSG`
+	FMsend="[$Fblue$FFFF$Foff]"
+}
+FTmsg(){
+FFFF=`echo $GETMSG`
+	FMsend="[$Fteal$FFFF$Foff]"
+}
+FPmsg(){
+FFFF=`echo $GETMSG`
+	FMsend="[$Fpurple$FFFF$Foff]"
+}
+FWmsg(){
+FFFF=`echo $GETMSG`
+	FMsend="[$Fwhite$FFFF$Foff]"
+}
+FRmsg(){
+FFFF=`echo $GETMSG`
+	FMsend="[$Fred$FFFF$Foff]"
+}
+
 
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
 reset_SHELL="\[\e[00m\]" #  Reset
@@ -165,5 +198,4 @@ On_IBlue='\e[0;104m'   # Blue
 On_IPurple='\e[0;105m' # Purple
 On_ICyan='\e[0;106m'   # Cyan
 On_IWhite='\e[0;107m'  # White
-
 

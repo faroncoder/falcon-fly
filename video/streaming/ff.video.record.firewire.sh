@@ -22,7 +22,7 @@ dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultra
 
 #dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264  -preset ultrafast -maxrate 1512k -bufsize 768k -crf 25.0 -qp 0 -tune zerolatency -g 60 -pix_fmt yuv420p -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f asf "$HOME/$file.avi"
 
-#dvgrab -noavc -format dv2 -opendml -lockstep  -guid 1 -timecode - | ffmpeg -re -i - -c:v libx265  -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f mpegts "$HOME/$file.ts"
+#dvgrab -noavc -format dv2 -opendml -lockstep  -guid 1 -timecode - | ffmpeg -re -i - -c:v li7\bx265  -flags +loop -flags +global_header -acodec libmp3lame -b:a 128k -ar 44100 -ac 2 -f mpegts "$HOME/$file.ts"
 
 #-preset ultrafast -maxrate 1512k -bufsize 768k -crf 25.0 -qp 0 -tune zerolatency -g 60 -pix_fmt yuv420p#
 

@@ -8,7 +8,7 @@ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/fu
 LOC="/home/users/faron/.falcon/scripts";
 
 
-if [[ ! -d "$LOC" ]]; then  
+if [[ ! -d "$LOC" ]]; then
 		echo "$Fno Falcon is not mounted. Exiting"
 		XeF
 	else
@@ -19,17 +19,17 @@ if [[ ! -d "$LOC" ]]; then
 		FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
 	fi
 
-	echo -e "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
-	
-	
+	echo "$Finfo $( echo "${FILEHUNT[@]}" | wc -w )"
+
+
 
 	makelink(){
 				EXT=".`echo $entry | rev | cut -d'.' -f1 | rev`"
 				FILEBODY=`echo $entry | sed "s/$EXT//g"`
 				NEWHOME=`basename $FILEBODY`
 				BINLOC="/usr/local/bin/$NEWHOME"
-				#echo "$entry --> $BINLOC" 
-				ln -s "$entry" "$BINLOC"					
+				#echo "$entry --> $BINLOC"
+				ln -s "$entry" "$BINLOC"
 	}
 
 	if [[ -z "$FILEHUNT" ]];  then
@@ -42,7 +42,7 @@ if [[ ! -d "$LOC" ]]; then
 		done
 	fi
 	source $HOME/.profile
-	echo -e "$Fok Falcon Bin sync-ed."
+	echo "$Finfo Falcon Bin sync-ed."
 fi
 
 ################### END
