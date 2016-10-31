@@ -1,4 +1,3 @@
-source /usr/local/lib/faron_falcon/colors
 function humanTime() {
  num=$TIMERAW
     min=0
@@ -26,7 +25,10 @@ function humanTime() {
       HOUR=`seq -w 00 $hour | tail -n 1 2> /dev/null `
       MIN=`seq -w 00 $min | tail -n 1 2> /dev/null `
       SEC=`seq -w 00 $sec | tail -n 1 2> /dev/null `
-    export TIMED="$DAY:$HOUR:$MIN:$SEC"
+      TIMED="$DAY:$HOUR:$MIN:$SEC"
+      export TIMED=$TIMED
+#	GETMSG=$CHR153; FPmsg;
+#HOWLONG="$FMsend $TIMED $Foff"
     sec=""; hour=""; min=""; sec="";
 
 }
@@ -35,15 +37,17 @@ startTime() {
 }
 stopTime() {
         TIMEEND=`date +%s`
-        TIMERAW=$(( $TIMEEND - $TIMESTART ))
-}
-
+        export TIMEEND=$TIMEEND
+        export TIMERAW=$(( $TIMEEND - $TIMESTART ))
+    }
 
 checkTime() {
         stopTime
         humanTime
-        echo "$FGreen$TIMED$Foff"
-}
+       GETMESG=$CHR183
+        FPmsg
+        echo "$FMsend $Fred $TIMED$Foff"
+    }
 
 doneTime() {
         stopTime
@@ -87,3 +91,36 @@ loadSudo(){
         if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
 }
 loadSudo
+
+
+Fok="[$Fgreen$CHR23$Foff]"
+Fno="[$Fred$CHR24$Foff]"
+Finfo="[$Fblue$CHR152$Foff]"
+Fwarn="[$Fyellow$CHR161$Foff]"
+Fstat="[$Fteal$CHR47$Foff]"
+
+FGmsg(){
+        FFFF=`echo $GETMSG`
+        FMsend="[$Fgreen$FFFF$Foff]"
+}
+FYmsg(){
+        FFFF=$GETMSG
+        FMsend="[$Fyellow$FFFF$Foff]"
+}
+
+FBmsg(){
+FFFF=`echo $GETMSG`
+        FMsend="[$Fblue$FFFF$Foff]"
+}
+FTmsg(){
+FFFF=`echo $GETMSG`
+        FMsend="[$Fteal$FFFF$Foff]"
+}
+FPmsg(){
+FFFF=`echo $GETMSG`
+        FMsend="[$Fpurple$FFFF$Foff]"
+}
+FRmsg(){
+FFFF=`echo $GETMSG`
+        FMsend="[$Fred$FFFF$Foff]"
+}
