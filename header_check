@@ -1,0 +1,20 @@
+#!/bin/bash
+
+GET=( `find  -type f -name '*.sh' ! -path '*/kills*/'` )
+CTE=0
+touch /tmp/Master
+for CHK in "${GET[@]}"; do
+	CLE=`basename $CHK`
+	CTE=`echo $(( $CTE + 1 ))`
+	cat $CHK | head -n 3 > /tmp/$CLE
+	CHKDF=`md5sum /tmp/$CLE`
+# 	head -n 3 $CHK >>
+# 	cat $CHK | head -n 3 >> /tmp/$CTE;
+ 	#CHKDF=`md5sum  /tmp/$CHK`
+ 	if [[ "$CHKDF" == d41d8cd98f00b204e9800998ecf8427e ]]; then
+ 			 rm /tmp/$CLE
+ 	fi
+
+ done
+
+exit 0

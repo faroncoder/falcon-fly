@@ -45,7 +45,7 @@ make install
 rm -r $TMP/mod_h264_streaming-2.2.7
 cd /etc/apache2
 
- sh -c "echo \"LoadModule h264_streaming_module /usr/lib/apache2/modules/mod_h264_streaming.so\" > $TMP/mods-available/h264_streaming.load"
+ sh -c "echo \"LoadModule h264_streaming_modul source /usr/lib/apache2/modules/mod_h264_streaming.so\" > $TMP/mods-available/h264_streaming.load"
  sh -c "echo \"AddHandler h264-streaming.extensions  .mp4\" > $TMP/mods-available/h264_streaming.conf"
 cd /etc/apache2/mods-enabled 2> /dev/null
  ln -s /etc/apache2/mods-available/h264_streaming.conf 2> /dev/null

@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-. /usr/local/lib/faron_falcon/colors; . /usr/local/lib/faron_falcon/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors;  source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
 
@@ -15,13 +15,13 @@ echo "$Fok $CT exported"
 
 # CT=0; while read line; do CT=`echo $(( $CT + 1 ))`;
 # export CHR$CT=$line;
-# done < /usr/local/lib/faron_falcon/characters
+# done  source /usr/local/lib/faron_falcon/characters
 
 # CT=0;
 # while read line; do
 # 	CT=`echo $(( $CT + 1 ))`
 # 	export CH$CT=$line
-# done < /usr/local/lib/faron_falcon/characters
+# done  source /usr/local/lib/faron_falcon/characters
 # echo "$Fok"
 
 # CT=0
@@ -33,7 +33,7 @@ echo "$Fok $CT exported"
 #         echo "$FGmsg CHR$CT"
 #        # $MEF "$Fteal[$CT]$Foff$( echo $LINE )"
 #         NE=`echo $(( $NE + 1))`
-#      done < /usr/local/lib/faron_falcon/characters
+#      done  source /usr/local/lib/faron_falcon/characters
 # echo "";
 
 ################### END
@@ -41,4 +41,3 @@ echo "$Fok $CT exported"
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
 ### [FILE] ff.script.characters-export.sh  [ACTIVE] y
-

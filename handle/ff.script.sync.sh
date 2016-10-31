@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
 if [[ "$( hostname -s  )" == "f8" ]]; then
@@ -9,7 +9,7 @@ if [[ "$( hostname -s  )" == "f8" ]]; then
 else
 	echo -e -n "$Fwarn sync-ing falcon scripts..."
 	rsync -avzh --delete --exclude .git --exclude Sublime faron@192.168.1.8:~/.falcon/scripts ~/.falcon/
-	/usr/local/bin/ff.load
+	source /usr/local/bin/ff.load
 fi
 
 

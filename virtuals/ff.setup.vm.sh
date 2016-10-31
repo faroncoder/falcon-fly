@@ -1,8 +1,8 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
-#!/usr/bin/env bash
+#!source /usr/bin/env bash
 
 sudo apt-get update 2> /dev/null
 
@@ -91,8 +91,8 @@ fi
 sudo service apache2 reload 2> /dev/null
 
 # copy addwebsite command
-cp /vagrant/addwebsite /usr/local/bin/addwebsite 2> /dev/null
-chmod +x /usr/local/bin/addwebsite 2> /dev/null
+cp /vagrant/addwebsit source /usr/local/bin/addwebsite 2> /dev/null
+chmod + source /usr/local/bin/addwebsite 2> /dev/null
 cp /vagrant/skeleton /etc/apache2/sites-available/skeleton 2> /dev/null
 
 sudo apt-get install -y git 2> /dev/null

@@ -1,13 +1,13 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
 
 WEBROOT="/srv/www/default/htdocs"
 VHOSTDIR="/srv/www/settings/sites"
 EXTENSION=""
-RESTARTCMD="/usr/bin/sudo service apache2 reload"
+RESTARTCMD="source /usr/bin/sudo service apache2 reload"
 
 if [ "$1" != '' ]; then
   if [ ! -f "$VHOSTDIR$1.conf" ]; then

@@ -1,11 +1,11 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 PATH="/"
 $SUDO /bin/sed -i -e '/UUID/d' /etc/fstab
 NUMB="0 1"
-UUIDS=( `/sbin/blkid | /bin/grep 'ext4' | /usr/bin/cut -d'"' -f2 ` )
+UUIDS=( `/sbin/blkid | /bin/grep 'ext4'  source /usr/bin/cut -d'"' -f2 ` )
 for m in "${UUIDS[@]}"; do
 	CODES="$PATH ext4 errors=remount-ro $NUMB"
 	LINEFS="UUID=$m $CODES"
@@ -14,7 +14,7 @@ for m in "${UUIDS[@]}"; do
 	NUMB="0 0"
 	PATH="/home"
 done
-CODE=( `/sbin/blkid | /bin/grep 'swap' | /usr/bin/cut -d'"' -f2 ` )
+CODE=( `/sbin/blkid | /bin/grep 'swap'  source /usr/bin/cut -d'"' -f2 ` )
 
 for o in "${CODE[@]}"; do
 	sCODES="none swap sw   0 0"

@@ -1,10 +1,10 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
  #/home/users/$USER/var/streamings/files/raw
-/usr/local/bin/file-name-cleaner
+source /usr/local/bin/file-name-cleaner
 findMKV=( ls *.mkv )
 for cc in "${findMKV[@]}";
 	do mv $cc mkv/;
@@ -12,16 +12,16 @@ done
 
 ## function to collect all exisiting files in this directory only but one by one at a time
 
-grabavi=( /usr/bin//find  $PWD -maxdepth 1 -type f  -name '*.avi' ! -name '*.mkv'  ! -name '*.sh'  ! -name '*.txt' -exec /usr/bin//basename {} \;  )
+grabavi= source /usr/bin//find  $PWD -maxdepth 1 -type f  -name '*.avi' ! -name '*.mkv'  ! -name '*.sh'  ! -name '*.txt' -exe source /usr/bin//basename {} \;  )
 
 for INPUTZ in "${grabavi[@]}";
 	do
-		INPUT="$( /usr/bin//basename $INPUTZ )";
-		PREFILE="$( /usr/bin//rev <<< "$INPUT" | /usr/bin//cut -d"." -f2 | /usr/bin//rev )";
-		/usr/bin//avidemux "$INPUT" --save
+		INPUT="$ source /usr/bin//basename $INPUTZ )";
+		PREFILE="$ source /usr/bin//rev <<< "$INPUT"  source /usr/bin//cut -d"." -f2  source /usr/bin//rev )";
+		source /usr/bin//avidemux "$INPUT" --save
 		read respondAvidemux
 		echo $respondAvidemux
-		/usr/bin//mkvmerge --output "mkv/$PREFILE.mkv" --language 0:eng --cues 0:all --default-track 0:no --compression 0:none --language 1:eng "$INPUT" --track-order 0:0,0:1  < /dev/null
+		source /usr/bin//mkvmerge --output "mkv/$PREFILE.mkv" --language 0:eng --cues 0:all --default-track 0:no --compression 0:none --language 1:eng "$INPUT" --track-order 0:0,0:1  < /dev/null
 		mv $INPUT old/
 	done
 

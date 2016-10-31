@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
 <<<<<<< HEAD
@@ -27,7 +27,7 @@ else
 ## check if directory '.jsc' exists
 	if [[ ! -d "$PWD/.jsc" ]]; then 
 ## fire the command to resolve the missing directory
-	    /usr/local/bin/ff.html.glopper
+	   source /usr/local/bin/ff.html.glopper
 	fi
 ## formating the 2nd agrumenet into a string for command pushing
 	LOCURL=`echo $GETURL | sed 's/https:\/\///g' | sed 's/http:\/\///g'`
@@ -67,7 +67,7 @@ fi
 #	echo "$Fwarn $PREFILE.png thumbed"
 
 
-/usr/local/bin/ff.media.thumbnailer "$FILEI"  
+source /usr/local/bin/ff.media.thumbnailer "$FILEI"  
 
 JQUERYLIB="jquery-1.12.4.min.js"
 JSC="./.jsc"
@@ -84,10 +84,10 @@ if [[ ! -d "$PWD/media" ]]; then
 fi
 
 if [[ ! -d "$PWD/.jsc" ]]; then 
-    /usr/local/bin/ff.html.glopper
+   source /usr/local/bin/ff.html.glopper
 fi
 
-/usr/local/bin/ff.media.thumbnailer "$FILEI"
+source /usr/local/bin/ff.media.thumbnailer "$FILEI"
 
 >>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 DocVideo="<!DOCTYPE html>

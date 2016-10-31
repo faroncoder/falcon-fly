@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 BINPULL="/home/users/faron/.falcon/scripts/htmls/VAULT"
 faceboxdoc="
@@ -398,7 +398,7 @@ echo $videobackbone > "$PWD/facebox.html"
 	# sed -i -e "s/\/EXTTYPE/\/$EXTTYPE/g" "./jsc/htmls/$NAME.html"
 	# sed -i -e "s/EXT/$EXT/g" "./jsc/htmls/$NAME.html"
 	done
-	/usr/local/bin/cssglop
+	source /usr/local/bin/cssglop
 	sudo chown -R www-data:www-data $PWD
 	sudo chmod -R 775 $PWD
 	# if [[ "$EXT"="ts" ]]; then
@@ -420,7 +420,7 @@ echo $videobackbone > "$PWD/facebox.html"
 	# if [ "$EXT"="flv" ]
 	# then
 	# 	cd ./jsc/media
-	# 	/usr/local/bin/flv-tsx-er
+	# 	source /usr/local/bin/flv-tsx-er
 	# fi
 #################### END
 ### exit code for clean exit

@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 ## avail for coding in colors: ##
 ## Fok Fno Finfo Fwarn Fstat ##
@@ -16,7 +16,7 @@ if [[ "$CMD" == "" ]]; then
 	read CMD
 fi
 #echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
-echo "alias $AliasName=\"$CMD\"" >> /usr/local/lib/faron_falcon/alias
+echo "alias $AliasName=\"$CMD\"" > source /usr/local/lib/faron_falcon/alias
 echo -e $Fok
 source $HOME/.bashrc
 

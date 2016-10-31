@@ -9,7 +9,7 @@ mkdir ~/ffmpeg_sources
 cd ~/ffmpeg_sources
 #hg clone https://bitbucket.org/multicoreware/x265
 cd ~/ffmpeg_sources/x265/build/linux
-PATH="/usr/local/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source
+PATH="source /usr/local/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source
 make
 make install
 make distclean
@@ -47,7 +47,7 @@ PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig"
   --pkg-config-flags="--static" \
   --extra-cflags="-I$HOME/ffmpeg_build/include" \
   --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
-  --bindir="/usr/local/bin" \
+  --bindir="source /usr/local/bin" \
   --enable-gpl \
   --enable-libass \
   --enable-libfdk-aac \

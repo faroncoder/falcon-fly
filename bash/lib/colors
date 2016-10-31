@@ -1,10 +1,4 @@
-# # CT=0;
-# # while read line; do
-# #   CT=`echo $(( $CT + 1 ))`
-# #   export CH$CT=$line
-# done < /usr/local/lib/faron_falcon/characters
-# echo "$Fok"
-#source /usr/local/lib/faron_falcon/characters
+source /usr/local/lib/faron_falcon/characters
 
 fg_black=`tput setaf 0  2> /dev/null `
 fg_red=`tput setaf 1  2> /dev/null `

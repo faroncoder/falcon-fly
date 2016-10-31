@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
 
@@ -45,12 +45,12 @@ GETW=( `find -L . -maxdepth 1 -type f -name '*.webm' -exec basename {} \; ` )
 GETZ=( `echo ${GETM[@]} ${GETW[@]} ` )
 
 for video in "${GETZ[@]}"; do
-	/usr/local/bin/ff.html.videopager $video $LOCURL
+	source /usr/local/bin/ff.html.videopager $video $LOCURL
 	COUNT=`echo $(( $COUNT + 1 ))`
 done
 GETZ=""
 echo "$Fok $COUNT files created"
-/usr/local/bin/ff.handle.seq
+source /usr/local/bin/ff.handle.seq
 
 <<<<<<< HEAD
 if [[ "$2" != "ssl" ]]; then

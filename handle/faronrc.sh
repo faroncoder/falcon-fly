@@ -1,11 +1,11 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 <<<<<<< HEAD
-FARON_PATH="/usr/.bin:/usr/local/bin:/home/local/.bin"
+FARON_PATH="source /usr/.bin:source /usr/local/bin:/home/local/.bin"
 =======
-FARON_PATH="/usr/bin/:/home/users/$USER/bin:/home/local/bin"
+FARON_PATH="source /usr/bin/:/home/users/$USER/bin:/home/local/bin"
 >>>>>>> 7ec161e5c2fe99a9c3028e53ce2a2b3d0bb30954
 export PATH="$PATH:$FARON_PATH"
 LOG="/home/users/faron/.falcon/logs/faronrc/logging.log"

@@ -1,4 +1,4 @@
-#!/usr/bin//env ruby
+#!source /usr/bin//env ruby
 
 # Originally -- by Dave Deriso -- deriso@gmail.com
 # If you contribute, put your name here!

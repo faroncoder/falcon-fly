@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
-. /usr/local/lib/faron_falcon/colors; . /usr/local/lib/faron_falcon/functions; startTime
+if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/colors;  source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 CT=0
 while read line; do
@@ -14,7 +14,7 @@ while read line; do
     	fi
 	$MEF$trim
     	NE=`echo $(( $NE + 1))`
-	done < /usr/local/lib/faron_falcon/characters
+	done  < /usr/local/lib/faron_falcon/characters
 echo ""
 
 ################### END

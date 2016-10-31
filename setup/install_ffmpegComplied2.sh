@@ -10,7 +10,7 @@ mkdir ~/ffmpeg_sources
 cd ~/ffmpeg_sources
 hg clone https://bitbucket.org/multicoreware/x265
 cd ~/ffmpeg_sources/x265/build/linux
-PATH="/usr/local/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source
+PATH="source /usr/local/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source
 =======
 export PATH=$PATH:/usr/local/bin
 
@@ -26,7 +26,7 @@ if [ ! -d "$FFMPG" ]; then
 cd $FFMPG
 hg clone https://bitbucket.org/multicoreware/x265
 cd ~/ffmpeg_sources/x265/build/linux
-PATH="/usr/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/usr" -DENABLE_SHARED:bool=off ../../source
+PATH="source /usr/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="source /usr" -DENABLE_SHARED:bool=off ../../source
 >>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 make
 make install
@@ -45,7 +45,7 @@ autoreconf -fiv
 <<<<<<< HEAD
 ./configure --prefix="$HOME/ffmpeg_build" --disable-shared
 =======
-./configure --prefix="/usr" --disable-shared
+./configure --prefix="source /usr" --disable-shared
 >>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
 make
 make install
@@ -82,18 +82,18 @@ PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig"
   --pkg-config-flags="--static" \
   --extra-cflags="-I$HOME/ffmpeg_build/include" \
   --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
-  --bindir="/usr/local/bin" \
+  --bindir="source /usr/local/bin" \
 =======
 #tar xjvf ffmpeg-snapshot.tar.bz2
 #rm ffmpeg-snapshot.tar.bz2
 cd ffmpeg
-PKG_CONFIG_PATH="/usr/lib/pkgconfig"
+PKG_CONFIG_PATH="source /usr/lib/pkgconfig"
 ./configure \
-  --prefix="/usr" \
+  --prefix="source /usr" \
   --pkg-config-flags="--static" \
-  --extra-cflags="-I/usr/include" \
-  --extra-ldflags="-L/usr/lib" \
-  --bindir="/usr/bin" \
+  --extra-cflags="-Isource /usr/include" \
+  --extra-ldflags="-Lsource /usr/lib" \
+  --bindir="source /usr/bin" \
 >>>>>>> 4a57841db1f93d2f7c01ff2befe5e273d068f2c8
   --enable-gpl \
   --enable-libass \

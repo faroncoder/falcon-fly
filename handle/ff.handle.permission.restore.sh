@@ -1,6 +1,6 @@
 #!/bin/bash
 PATH=$PWD
-/usr/bin/find "$PATH" -type f -exec /usr/bin/stat {} --format "chown %G:%G ${MPOINT}%n && chmod %a ${MPOINT}%n"  \; >>  /tmp/this.txt
+source /usr/bin/find "$PATH" -type f -exe source /usr/bin/stat {} --format "chown %G:%G ${MPOINT}%n && chmod %a ${MPOINT}%n"  \; >>  /tmp/this.txt
 
 echo "#!/bin/bash" > /tmp/final.txt
 echo "export PATH=\$PATH:/usr/bin:/bin" > /tmp/final.txt

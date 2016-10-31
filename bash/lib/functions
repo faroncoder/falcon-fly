@@ -1,3 +1,4 @@
+source /usr/local/lib/faron_falcon/colors
 function humanTime() {
  num=$TIMERAW
     min=0
@@ -27,6 +28,7 @@ function humanTime() {
       SEC=`seq -w 00 $sec | tail -n 1 2> /dev/null `
     export TIMED="$DAY:$HOUR:$MIN:$SEC"
     sec=""; hour=""; min=""; sec="";
+
 }
 startTime() {
         export TIMESTART=`date +%s`
@@ -35,6 +37,7 @@ stopTime() {
         TIMEEND=`date +%s`
         TIMERAW=$(( $TIMEEND - $TIMESTART ))
 }
+
 
 checkTime() {
         stopTime
@@ -84,4 +87,3 @@ loadSudo(){
         if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
 }
 loadSudo
-
