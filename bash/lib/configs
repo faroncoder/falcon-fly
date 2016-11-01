@@ -114,5 +114,4 @@ esac
 			FILESTT="$FILESTT$Red_SHELL|"
 		fi
 	done
-	PS1+="$FILESTT$reset_SHELL "
-
+	PS1+="$FILESTT$reset_SHELL$Foff "

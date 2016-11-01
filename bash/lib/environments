@@ -7,8 +7,9 @@ XE=/usr
 DA=bin
 DF=sbin
 LD=$XE/local
-LDL=$LD/lib
-	GETPATH=( $XE/$DA /$DA /$DF $LDL/depot_tools $XE/$DF $LD/$DA  $LD/$DF $JAVA_HOME/$DA  $JRE_HOME/$DA $NODE_HOME $NPM_HOME/bin )
+FALCON=/home/users/faron/.falcon/scripts
+
+	GETPATH=( $XE/$DA /$DA /$DF $LD/lib/depot_tools $XE/$DF $LD/$DA  $LD/$DF $JAVA_HOME/$DA  $JRE_HOME/$DA $NODE_HOME $NPM_HOME/bin )
 	SEMI=""
 	for dir in "${GETPATH[@]}"; do
 		NEWI="$SEMI$dir"
@@ -16,7 +17,6 @@ LDL=$LD/lib
 		SEMI=":"
 	done
 	export PATH=$CLEAN
-	export FALCON=$HOME/.falcon/scripts
 
 
 

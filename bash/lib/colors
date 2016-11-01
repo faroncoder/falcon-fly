@@ -1,4 +1,4 @@
-#source /usr/local/lib/faron_falcon/characters
+source /usr/local/lib/faron_falcon/characters
 
 fg_black=`tput setaf 0  2> /dev/null `
 fg_red=`tput setaf 1  2> /dev/null `
@@ -10,6 +10,17 @@ fg_cyan=`tput setaf 6  2> /dev/null `
 fg_white=`tput setaf 7  2> /dev/null `
 reset=`tput sgr0  2> /dev/null `
 
+fb_black=`tput bold setaf 0  2> /dev/null `
+fb_red=`tput bold setaf 1  2> /dev/null `
+fb_green=`tput bold setaf 2  2> /dev/null `
+fb_yellow=`tput bold setaf 3  2> /dev/null `
+fb_blue=`tput bold setaf 4  2> /dev/null `
+fb_magenta=`tput bold setaf 5  2> /dev/null `
+fb_cyan=`tput bold setaf 6  2> /dev/null `
+fb_white=`tput bold setaf 7  2> /dev/null `
+
+fb_clearline=`tput ich 15  2> /dev/null `
+
 Fred=$( echo -e $fg_red  )
 Fblack=$( echo -e $fg_black  )
 Fgreen=$( echo -e $fg_green  )
@@ -19,6 +30,51 @@ Fpurple=$( echo -e $fg_magenta  )
 Fteal=$( echo -e $fg_cyan  )
 Fwhite=$( echo -e $fg_white  )
 Foff=$( echo -e $reset  )
+
+Fbred=$( echo -e $fb_red  )
+Fbblack=$( echo -e $fb_black  )
+Fbgreen=$( echo -e $fb_green  )
+Fbyellow=$( echo -e $fb_yellow  )
+Fbblue=$( echo -e $fb_blue  )
+Fbpurple=$( echo -e $fb_magenta  )
+Fbteal=$( echo -e $fb_cyan  )
+Fbwhite=$( echo -e $fb_white  )
+
+Fok="[$Fgreen$CHR346$Foff]"
+Fno="[$Fred$CHR146$Foff]"
+Finfo="[$Fblue$CHR152$Foff]"
+Fwarn="[$Fyellow$CHR182$Foff]"
+Fstat="[$Fteal$CHR47$Foff]"
+
+FGmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fgreen$FFFF$Foff]"
+}
+FYmsg(){
+	FFFF=$GETMSG
+	FMsend="[$Fyellow$FFFF$Foff]"
+}
+FBmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fblue$FFFF$Foff]"
+}
+FTmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fteal$FFFF$Foff]"
+}
+FPmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fpurple$FFFF$Foff]"
+}
+FWmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fwhite$FFFF$Foff]"
+}
+FRmsg(){
+	FFFF=`echo $GETMSG`
+	FMsend="[$Fred$FFFF$Foff]"
+}
+
 
 Color_Off_SHELL="\[\e[0m\]" # Text Reset
 reset_SHELL="\[\e[00m\]" #  Reset

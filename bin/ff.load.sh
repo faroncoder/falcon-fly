@@ -1,21 +1,23 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors;  source /usr/local/lib/faron_falcon/functions; startTime
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
 #################### BEGIN
 
-if [[ ! -d "$FALCON" ]]; then
+LOC="/home/users/faron/.falcon/scripts";
+
+
+if [[ ! -d "$LOC" ]]; then
 		echo "$Fno Falcon is not mounted. Exiting"
 		XeF
 	else
 
 	if [[ "$1" != "" ]]; then
-		FILEHUNT=( `find $FALCON -type f -name "*$1*" ! -path '*/.git/*' ` )
+		FILEHUNT=( `find $LOC -type f -name "*$1*" ! -path '*/.git/*' ` )
 	else
-		FILEHUNT=( ` find $FALCON -type f -name 'ff.*' ! -path '*/.git/*' ` );
+		FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
 	fi
-
-	export GETMSG=$CHR145; FTmsg;
-	echo "$FMsend $( echo "${FILEHUNT[@]}" | wc -w )"
+	export GETMSG=$CHR147; FRmsg;
+	echo "$FMsend $( echo "${FILEHUNT[@]}" | wc -w ) found to be reload."
 
 
 
@@ -38,17 +40,28 @@ if [[ ! -d "$FALCON" ]]; then
 		done
 	fi
 	source $HOME/.bashrc
+	#echo "$Fok Falcon Bin sync-ed."
+		#export GETMSG=$CHR145; FTmsg;
+		#echo "$FMsend So, you are this?$Foff "
+	#export GETMSG=$CHR99; FPmsg
+	#	echo "$FMsend$COLR$RESSF$Foff $k"
+	#	echo "$FMsend Oh ok, ahem! $Foff "
+	#export GETMSG=$CHR145; FTmsg;
+	#echo "$`FMsend $( echo "${FILEHUNT[@]}" | wc -w )`"
+#	echo "`FTmsg $( echo "${FILEHUNT[@]}" | wc -w )`"
 
-	GETMSG=$CHR95; FGmsg
-	echo "$FMsend Falcon Bin sync-ed."
-	FMsend=""
-	GETMSG=""
+	export GETMSG=$CHR182; FGmsg
+	#COUFN=`find -L /usr/local/bin -type f -name 'ff.*' | wc -l`
+	echo "$Fwarn $COUFN sync-ed."
+
 fi
-	#checkTime
-#	echo "$HOWLONG"
+	echo GETMSG="`echo "${FILEHUNT[@]}" | wc -w )`"
+	COMPR=`echo find -L . -name "ff.*" | wc -l `
+	echo "$Fok $COUFN found.  $COMPR files installed. "
+#checkTime
 
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] /home/users/faron/.falcon/scripts/handle/ff.handle.folders.memory.sh [ACTIVE] y
+### [FILE] ff.load.sh  [ACTIVE] y
 

@@ -1,18 +1,40 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
+####################BEGIN
+lauchUpdaterEngine(){
 
-FILESTART="$1"
-BASE="/home/users/faron/.falcon/scripts"
-KILLHOME="$BASE/kills"
-killerScript(){
+	KILLHOME="/tmp/$THIS-discharged/kills"
+	THIS=`uuid`
+	FILESTART=$FILELOC
+	tar -jcvf $HOME/Falcon_backup.tar.bz2 $FALCON
+
+	cp -r $FALCON "$KILLHOME"
+	mv $FALCON/scripts $FALCON/old_scripts
+	kilerScript
+	keepRecursive() {
+		PAVE="Y"
+		KILLCONFIRM="$PAVE"
+	}
+	find $KILLHOME-type f -name '*.sh'
+	deathReaperCheck
+
+	#echo "$Finfo In upgrading mode: scripts updater"
+	#echo "$Fwarn library is being backed up."
+}
+
+keepRecursive() {
+			PAVE="Y"
+			KILLCONFIRM="$PAVE"
+		}
+
+
+	killerScript(){
 	jj=`uuid`
 	FILEHERE=`basename $FILESTART`
 	KILLED="$( echo $KILLHOME/$jj-$FILEHERE | sed 's/.sh//g' )"
 }
-
-deathReaper(){
+	deathReaper(){
 	killerScript
 	mv $FILESTART $KILLED 2> /dev/null
 	echo "$Fok $FILEHERE killed"
@@ -20,14 +42,14 @@ deathReaper(){
 	chmod -x $KILLED
 	echo "$Fok $FILEHERE de-executable and read-only"
 }
-
-deathReaperCheck(){
+	deathReaperCheck(){
 	jj=`uuid`
 	FILEHERE=`basename $FILESTART`
 	KILLED="$( echo $KILLHOME/$jj-$FILEHERE | sed 's/.sh//g' )"
-	echo -n "$Fwarn kill $FILEHERE ? (y/Y) "
-	read KILLCONFIRM
-	if [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
+	if [[ "$KILLCONFIRM" == "" ]]; then
+		echo -n "$Fwarn kill $FILEHERE ? (y/Y) "
+		read KILLCONFIRM
+	elif [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
 		mv $FILESTART $KILLED 2> /dev/null
 		echo "$Fok $FILEHERE killed"
 		chmod -x $KILLED
@@ -39,179 +61,68 @@ deathReaperCheck(){
 	KILLCONFIRM=""
 }
 
-if [[ -f "$PWD/$FILESTART" ]]; then
-			FILELOC="$PWD/$FILESTART"
-			FILESTART=$FILELOC
-			deathReaper
+	FILESTART="$@"
+	if [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
+		mv $FILESTART $KILLED 2> /dev/null
+		echo "$Fok $FILEHERE killed"
+		chmod -x $KILLED
+		chmod 555 $KILLED
+		echo "$Fok $FILEHERE de-executable and read-only"
+	fi
+	if [[ -f "$PWD/$FILESTART" ]]; then
+		FILELOC="$PWD/$FILESTART"
+		FILESTART=$FILELOC
+		deathReaper
 	else
-			COLLECT=( ` find $BASE -type f -name "*$FILESTART*" -name '*.sh' ! -path "*/kills/*" ` )
-			if [[ "${COLLECT[@]}" == "" ]]; then
-				echo "$Fno no file found by that name"
-				XeF
-			fi
-			FILECOUNT=`echo ${COLLECT[@]} | tr ' ' '\n' | wc -l`
-			if [[ "$FILECOUNT" -gt 1 ]]; then
-				for FILESTART in "${COLLECT[@]}"; do
-						deathReaperCheck
-				done
-			else
-				for FILESTART in "${COLLECT[@]}"; do
-						deathReaper
-					done
-			fi
+		COLLECT=( ` find $BASE -type f -name "*$FILESTART*" -name '*.sh' ! -path "*/kills/*" ` )
+		if [[ "${COLLECT[@]}" == "" ]]; then
+			echo "$Fno no file found by that name"
+			doneTime
+		fi
+		FILECOUNT=`echo ${COLLECT[@]} | tr ' ' '\n' | wc -l`
+		if [[ "$FILECOUNT" -gt 1 ]]; then
+			for FILESTART in "${COLLECT[@]}"; do
+				keepRecursive
+				deathReaperCheck
+			done
+		else
+			for FILESTART in "${COLLECT[@]}"; do
+				deathReaper
+			done
+		fi
 		COLLECT=""
-fi
-			#echo ${FILESTART[@]} | tr ' ' '\n'
-			#varsGenerate
-			#echo $FILECOUNT
-			#echo $FILENO
-			#echo $FILEM
-		#else
-		#	
-		#	echo "${FILESTART[@]}"
-		#	for filenameget in "${FILESTART[@]}"; do
-		#		varsGenerate
-		#		echo $FILENO
-		#		echo $FILEM
-		#		echo $FILECOUNT
-		#	done
-			#FILESTART=( ` find $BASE -type f -name "*$FILEQUERY*" ! -path "*/kills/*" ` )
-			#echo "${FILESTART[@]}"
-		
-		# FILEM=`basename $filenameget`
-		# FILENO=`echo $FILEM | sed 's/.sh//g'`
-		# FILEKILL="$KILLHOME/$ji-$FILENO"
-		# 
-		# #FILELIVE="$LOC/$filenameget"
-#}		
-
-		# if [[ "$( `find $BASE -type f -name \"*$FILEQUERY*\" ` )" == "" ]]; then
-		# 	echo "$Fno no such a file"
-		# 	XeF
-		# else
-			#varsGenerate
-			
-#			FILESTART=( ` find $BASE -type f -name "*$FILEQUERY*" ! -path "*/kills/*" ` )
-#			echo ${FILESTART[@]}
-			#echo "$Finfo single file kill $delete => $FILEKILL"
-			#mv $delete $FILEKILL 2> /dev/null
-			#clearVars
-		# fi
-		# else
-		# 	LOC="/home/users/faron/.falcon/scripts"
-		# 	FILESTART=( ` find $LOC -type f -name "*$1*" ! -path "*/kills/*" ` )
-		# 	
-		# 	echo "$Finfo $FILECOUNT"
-		# 	echo "$Finfo ${FILESTART[@]}"
-		# fi
+	fi
 
 
+lauchUpdaterEngine(){
+	THIS=`uuid`
+	KILLHOME="/tmp/$THIS-discharged/kills"
+	FILESTART=$FILELOC
+	#tar -jcvf $HOME/Falcon_backup.tar.bz2 $FALCON
+	cp -r $FALCON "$KILLHOME"
+	#mv $FALCON/scripts $FALCON/old_scripts
+	COLLECTE=( `find $KILLHOME -type f -name '*.sh'` )
+	for bye in "${COLLECTE[@]}"; do
+		FILEHERE=$bye
+		KILLCONFIRM=Y
+		deathReaper
+
+	done
+
+	#echo "$Finfo In upgrading mode: scripts updater"
+	#echo "$Fwarn library is being backed up."
+}
 
 
-
-
-#varsGenerate
-
-# locationSet(){
-# 	if [[ -f  "$filenameget" ]]; then
-# 		delete="$filenameget"
-# 		engineGetScript
-		
-# 		clearVars
-# 	else
-# 		filenameget=""
-# 		LOC="/home/users/faron/.falcon/scripts"
-		
-# 		#CLEANUP=( `echo ${FILESTART[@]} | tr ' ' '\n' | sed '/\/kills\//d' | tr '\n' ' '` )
-		
-# 	fi
-# }
-
-# locationSet
-
-# if [[ "$2" != "all" ]]; then
-# 	for check in "${FILESTART[@]}"; do
-# 			delete="$check"
-# 			engineGetScript
-# 			clearVars
-# 	done
-# else
-# 	for purge in "${FILESTART[@]}"; do
-# 		FILEM=`basename $purge`
-# 		echo -n "$Fwarn kill $FILEM ? (y/Y) "
-# 		read KILLCONFIRM
-# 		if [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
-# 			delete="$purge"
-# 			engineGetScript
-# 			clearVars
-# 		else
-# 			echo "$Fno $FILEM not killed"
-# 			clearVars
-# 		fi
-# 	done
-# fi
-
-# 	delete=$PWD/$1
-# 	deathizeScript
-# 	delete=""
-# fi
-
-
-
-
-
-
-
-# singleKill(){
-# 	filegetdelete=( `find $LOC -type f -name "$1"` )
-# 	CHECKFILES=`echo "$filegetdelete[@]}" | wc -w`
-# 	#if [[ "$CHECKFILES" == 1 ]]; then
-# 	CLEANUP=( `echo ${filegetdelete[@]} | tr ' ' \n' | sed '/\/home\/users\/faron\/.falcon\/scripts\/kills/d' | tr '\n' ' ' '`  )
-# 	for singlekillgo in "${CLEANUP[@]}"; do
-# 			delete=$singlekillgo
-# 			fileid=`basename $singlekillgo`
-# 			deathizeScript
-# 			echo "$Fwarn $fileid killed"
-# 	done
-# 	singlekillgo=""
-# 	CHECKFILES=""
-# 	filegetdelete=""
-#  }
-
-# multiFiles(){
-# 		LOC="/home/users/faron/.falcon/scripts"
-#  		GETALL=( `find $LOC -type f -name "*$1*" -exec basename {} \; ` )
-#  		CLEANUP=( ` echo "${GETALL[@]}" | tr ' ' '\n' | sed '/\/home\/users\/faron\/.falcon\/scripts\/kills/d' | tr '\n' ' '  ` )
-# 		if [[ "${CLEANUP[@]}" == "" ]]; then 
-# 			echo "$Fno no scripts found"
-# 			XeF
-# 		else
-		
-# 			else
-# 				scriptExecutorAye				
-# 			fi
-# 		CLEANUP=""
-# 		fi
-# GETALL=""
-# }
-
-
-## find script from the folder holding all scripts
-
-
-#if [[ ! -f "$$FILECHECK" ]]; then
-#	echo "$Fno $GI - no such a file"
-#else
-
-
-#mv $PWD/$1 /home/users/faron/.falcon/scripts/kills/$jj-$GI
-#mv "$XD/$XF" "$XD/old-$ji-$XF";
-#echo -e "$Fstat $1 killed."
-#fi
+while :
+do
+SELECT=""
+ 	case "$SELECT" in
+ 		--update) lauchUpdaterEngine;  break ;;
+		*)  launchKiller; break ;;
+	esac
+done
 
 ################### END
-### exit code for clean exit
 doneTime
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
 ### [FILE] ff.script.kill.sh  [ACTIVE] y
-

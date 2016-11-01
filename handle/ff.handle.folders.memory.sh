@@ -36,22 +36,26 @@ for k in "${CORRECTED[@]}"; do
 		CKK=`echo $RESSF | grep 'K'`
                         CKM=`echo $RESSF | grep 'M'`
 			if [[ "$CKG" != "" ]]; then
-				COLR="$Fred"
-			elif [[ "$CKK" != "" ]]; then
-				COLR="$Fyellow"
+				COLR="$FTeal"
+				export GETMSG=$CHR97; ME=`FTmsg`
 			elif [[ "$CKM" != "" ]]; then
-				COLR="$Fgreen"
+				COLR="$Fyellow"
+				export GETMSG=$CHR100; ME=`FYmsg`
+			elif [[ "$CKK" != "" ]]; then
+				COLR="$Fpurple"
+				export GETMSG=$CHR99; ME=`FPmsg`
 			else
 				COLR=""
 			fi
-		GETMSG=$CHR55
-		FYmsg
+
+			GETMSG=$CHR125
+			FYmsg
+
 		echo "$FMsend$COLR$RESSF$Foff $k"
 	done
 
 ####################END
-### exit code for clean exit
+
 doneTime
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
 ### [FILE] ff.handle.folders.memory.sh  [ACTIVE] y
 

@@ -1,3 +1,4 @@
+
 function humanTime() {
  num=$TIMERAW
     min=0
@@ -25,29 +26,28 @@ function humanTime() {
       HOUR=`seq -w 00 $hour | tail -n 1 2> /dev/null `
       MIN=`seq -w 00 $min | tail -n 1 2> /dev/null `
       SEC=`seq -w 00 $sec | tail -n 1 2> /dev/null `
-      TIMED="$DAY:$HOUR:$MIN:$SEC"
-      export TIMED=$TIMED
-#	GETMSG=$CHR153; FPmsg;
-#HOWLONG="$FMsend $TIMED $Foff"
+    export TIMED="$DAY:$HOUR:$MIN:$SEC"
     sec=""; hour=""; min=""; sec="";
 
 }
+
 startTime() {
         export TIMESTART=`date +%s`
 }
 stopTime() {
         TIMEEND=`date +%s`
-        export TIMEEND=$TIMEEND
-        export TIMERAW=$(( $TIMEEND - $TIMESTART ))
-    }
+        TIMERAW=`echo $(( $TIMEEND - $TIMESTART ))`
+}
+
 
 checkTime() {
         stopTime
         humanTime
-       GETMESG=$CHR183
-        FPmsg
-        echo "$FMsend $Fred $TIMED$Foff"
-    }
+         export FMsg="$FBpurple$TIMED$Foff"
+      #  echo -n "$Fwarn $FMsg"
+         GETT=`echo $FMsg`
+         echo " $FMsg"
+}
 
 doneTime() {
         stopTime
@@ -92,35 +92,3 @@ loadSudo(){
 }
 loadSudo
 
-
-Fok="[$Fgreen$CHR23$Foff]"
-Fno="[$Fred$CHR24$Foff]"
-Finfo="[$Fblue$CHR152$Foff]"
-Fwarn="[$Fyellow$CHR161$Foff]"
-Fstat="[$FTeal$CHR153$Foff]"
-
-FGmsg(){
-        FFFF=`echo $GETMSG`
-        FMsend="[$Fgreen$FFFF$Foff]"
-}
-FYmsg(){
-        FFFF=$GETMSG
-        FMsend="[$Fyellow$FFFF$Foff]"
-}
-
-FBmsg(){
-FFFF=`echo $GETMSG`
-        FMsend="[$Fblue$FFFF$Foff]"
-}
-FTmsg(){
-FFFF=`echo $GETMSG`
-        FMsend="[$Fteal$FFFF$Foff]"
-}
-FPmsg(){
-FFFF=`echo $GETMSG`
-        FMsend="[$Fpurple$FFFF$Foff]"
-}
-FRmsg(){
-FFFF=`echo $GETMSG`
-        FMsend="[$Fred$FFFF$Foff]"
-}
