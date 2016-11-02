@@ -16,8 +16,9 @@ if [[ ! -d "$LOC" ]]; then
 	else
 		FILEHUNT=( ` find $LOC -type f -name 'ff.*' ! -path '*/.git/*' ` );
 	fi
-	export GETMSG=$CHR147; FRmsg;
-	echo "$FMsend $( echo "${FILEHUNT[@]}" | wc -w ) found to be reload."
+	COUN=`echo "${FILEHUNT[@]}" | wc -w`
+	export _send=${CHR182}
+	echo "${_ok}Total ${COUN} accounted for loading."
 
 
 
@@ -50,14 +51,17 @@ if [[ ! -d "$LOC" ]]; then
 	#echo "$`FMsend $( echo "${FILEHUNT[@]}" | wc -w )`"
 #	echo "`FTmsg $( echo "${FILEHUNT[@]}" | wc -w )`"
 
-	export GETMSG=$CHR182; FGmsg
+	export _send=${CHR182}
 	#COUFN=`find -L /usr/local/bin -type f -name 'ff.*' | wc -l`
-	echo "$Fwarn $COUFN sync-ed."
+	echo "${_FY}Total $TOTALCOU sync-ed."
 
 fi
-	echo GETMSG="`echo "${FILEHUNT[@]}" | wc -w )`"
-	COMPR=`echo find -L . -name "ff.*" | wc -l `
-	echo "$Fok $COUFN found.  $COMPR files installed. "
+
+	COMPR=`find -L . -name "ff.*" | wc -l `
+	export _send=${CHR230}
+	echo "${_FG}Total $TOTALCOU found.  $COMPR files installed. "
+
+
 #checkTime
 
 ### exit code for clean exit

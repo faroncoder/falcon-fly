@@ -1,3 +1,4 @@
+source /usr/local/lib/faron_falcon/characters
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
@@ -5,113 +6,56 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
-
-
-
 case $- in
 	*i*) ;;
 	*) return;;
 esac
-	HISTCONTROL=ignoreboth
-	shopt -s histappend
-	HISTSIZE=10000000
-	HISTFILESIZE=20000000
-	shopt -s checkwinsize
-	shopt -s globstar
-	export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-	if [ -x /usr/bin/dircolors ]; then
-		test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-		alias ls='ls --color=auto'
-		alias grep='grep --color=auto'
-		alias fgrep='fgrep --color=auto'
-		alias egrep='egrep --color=auto'
-	fi
-	alias ll='ls -alF'
-	alias la='ls -A'
-	alias l='ls -CF'
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=10000000
+HISTFILESIZE=20000000
+shopt -s checkwinsize
+shopt -s globstar
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
-	export LS_COLORS="di=1;35"
+export LS_COLORS="di=1;35"
+# LS_COLORS="di=1;37m"
 
-	last_command=$? ##   Must come first!
-	PS1=""
-	if [[ "$last_command" == 0 ]]; then
-			PS1+="$Green_SHELL$checkmark_SHELL"
-		else
-			PS1+="$Red_SHELL$fancyX_SHELL"
-	fi
-	if [[ "$USER" == "root" ]]; then
-		if [[ "$EUID" == 0 ]]; then
-		PS1+="$Red_SHELL\\h SUDO "
-		fi
+last_command=$? ##   Must come first!
+PS1=""
+if [[ "$last_command" == 0 ]]; then
+	USER="${b_red}${CHR24}${reset} "
+else
+	USER="${b_green}${CHR23}${reset} "
+fi
+if [[ "$EUID" == 0 ]]; then
+		USER="${USER}${b_red}\\u${reset}"
 	else
-		PS1+="$BGreen_SHELL\\h$BYellow_SHELL $USER "
-	fi
-	PS1+="$ICyan_SHELL$Red_SHELL"
-
-# STATUS=""
-# if [[ ! -f /home/users/faron/.falcon/.idle ]]; then STATUS="falcon$fancyX_SHELL " ; fi
-# if [[ ! -f /mnt/clips6/.idle ]]; then STATUS+="f6$fancyX_SHELL "; fi
-# if [[ ! -f /mnt/clips7/.idle  ]]; then STATUS+="f7$fancyX_SHELL "; fi
-# if [[ ! -f /mnt/clips10/.idle  ]]; then STATUS+="f10$fancyX_SHELL "; fi
-# PS1+="$STATUS"
-
-	# if [[  -f "/home/users/faron/.falcon/.idle" ]]; then
-	# 		GRAB="$GRAB $fancyX_SHELLfalcon"
-	# fi
-	# if [[  ! -f "/mnt/clips6/.idle" ]]; then
-	# 		GRAB="$GRAB $fancyX_SHELLf6"
-	# fi
-	# if [[  -f "/mnt/clips7/.idle" ]]; then
-	# 		GRAB="$GRAB $fancyX_SHELLf7"
-	# fi
-	# if [[  -f "/mnt/clips10/.idle" ]]; then
-	# 		GRAB="$GRAB $fancyX_SHELLf10"
-	# fi
-	PS1+="$ICyan_SHELL$GRAB$reset_SHELL"
-
- #           GETFOLDER=$( ls -al $PWD -d | awk '{ print $1 }' )
-	# B1=$( echo ${GETFOLDER:1:3} )
-	# B2=$( echo ${GETFOLDER:4:3} )
-	# B3=$( echo ${GETFOLDER:7:3} )
-	# SUP=( echo "$A1 $B2 $C3" )
-
-	# for g in "${SUP[@]}"; do
-	# 	N=1
-	# 	VAR="B$N"
-	# 	if [[ $g == "rwx" ]]; then
-	# 		PS1+="$Green_SHELL|$reset_SHELL"
-	# 	fi
-	# 	if [[ $g == "rws" ]]; then
-	# 		PS1+="$Green_SHELL|$reset_SHELL"
-	# 	fi
-	# 	if [[ "$G" == "r-x" ]]; then
-	# 		PS1+="$Yellow_SHELL|$reset_SHELL"
-	# 	fi
-	# 	if [[ "$G" == "r--" ]]; then
-	# 		PS1+="$Red_SHELL|$reset_SHELL"
-	# 	fi
-	# done
-	# PS1+="$reset_SHELL "
-	PS1+="$ICyan_SHELL\\w$ICyan_SHELL$reset_SHELL "
-	GETFOLDER=$( ls -al $PWD -d | awk '{ print $1 }' )
-	A1=$( echo ${GETFOLDER:1:3} )
-	B2=$( echo ${GETFOLDER:4:3} )
-	C3=$( echo ${GETFOLDER:7:3} )
-	SUP=( $(  echo $A1 $B2 $C3  )  )
-	FILESTT=""
-	for G in "${SUP[@]}"; do
-		if [[ "$G" == "rwx" ]]; then
-			FILESTT="$FILESTT$Green_SHELL|"
-		fi
-		if [[ "$G" == "rws" ]]; then
-			FILESTT="$FILESTT$Green_SHELL|"
-		fi
-		if [[ "$G" == "r-x" ]]; then
-			FILESTT="$FILESTT$Yellow_SHELL|"
-		fi
-		if [[ "$G" == "r--" ]]; then
-			FILESTT="$FILESTT$Red_SHELL|"
-		fi
-	done
-	PS1+="$FILESTT$reset_SHELL$Foff "
+		USER="${USER}${b_green}\\h${reset} "
+fi
+# for G in "${SUP[@]}"; do
+# 	if [[ "$G" == "rwx" ]]; then
+# 		FILESTT="${FILESTT}${b_green}|${reset}"
+# 	fi
+# 	if [[ "$G" == "rws" ]]; then
+# 		FILESTT="${FILESTT}${b_green}|${reset}"
+# 	fi
+# 	if [[ "$G" == "r-x" ]]; then
+# 		FILESTT="${FILESTT}${b_yellow}|${reset}"
+# 	fi
+# 	if [[ "$G" == "r--" ]]; then
+# 		FILESTT="${FILESTT}${b_red}|${reset}"
+# 	fi
+# done
+PS1+="${USER}${FILESTT}${reset} "

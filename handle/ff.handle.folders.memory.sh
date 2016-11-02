@@ -36,22 +36,18 @@ for k in "${CORRECTED[@]}"; do
 		CKK=`echo $RESSF | grep 'K'`
                         CKM=`echo $RESSF | grep 'M'`
 			if [[ "$CKG" != "" ]]; then
-				COLR="$FTeal"
-				export GETMSG=$CHR97; ME=`FTmsg`
+				COLR="${_FR}"
+				_send=${CHR88}
 			elif [[ "$CKM" != "" ]]; then
-				COLR="$Fyellow"
-				export GETMSG=$CHR100; ME=`FYmsg`
+				COLR="${_FY}"
+				_send=${CHR100}
 			elif [[ "$CKK" != "" ]]; then
-				COLR="$Fpurple"
-				export GETMSG=$CHR99; ME=`FPmsg`
+				COLR="${_FP}"
+				_send=${CHR99}
 			else
 				COLR=""
 			fi
-
-			GETMSG=$CHR125
-			FYmsg
-
-		echo "$FMsend$COLR$RESSF$Foff $k"
+			echo "${_send}$COLR$RESSF${reset} $k"
 	done
 
 ####################END

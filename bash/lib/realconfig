@@ -1,0 +1,43 @@
+source /usr/local/lib/faron_falcon/characters
+export COLUMNS=`tput $COLUMNS`
+export tabwidth=`tput it`
+export LINES=`tput lines`
+
+# tput sc;tput rc;tput el 2> /dev/null
+r_black=`tput setaf 0  2> /dev/null`
+r_red=`tput setaf 1  2> /dev/null`
+r_green=`tput setaf 2  2> /dev/null`
+r_yellow=`tput setaf 3  2> /dev/null`
+r_blue=`tput setaf 4  2> /dev/null`
+r_purple=`tput setaf 5  2> /dev/null`
+r_teal=`tput setaf 6  2> /dev/null`
+r_white=`tput setaf 7  2> /dev/null`
+_set=`tput
+_reset=`tput sgr0  2> /dev/null`
+_bold=`tput smso 2> /dev/null`
+_norm=`tput rmso 2> /dev/null`
+_flush=""
+#_clear=` tput sc;tput rc;tput el 2> /dev/null `
+b_black="${_bold}${r_black}\c"
+b_red="${_bold}${r_red}\c"
+b_green="${_bold}${r_green}\c"
+b_yellow="${_bold}${r_yellow}\c"
+b_blue="${_bold}${r_blue}\c"
+b_purple="${_bold}${r_purple}\c"
+b_teal="${_bold}${r_teal}\c"
+b_white="${_bold}${r_white}\c"
+_ok="[${_bold}${r_green}${CHR346}${_norm}${_end}]\c"
+_no="[${_bold}${b_red}${CHR146}${_norm}${_end}]\c"
+_info="[${_bold}${b_blue}${CHR152}${_norm}${_end}]\c"
+_warn="[${_bold}${b_yellow}${CHR182}${_norm}${_end}]\c"
+_stat="[${_bold}${b_teal}${CHR47}${_norm}${_end}]\c"
+_FG="[${_bold}${b_green}${_send}${_norm}${_end}${_flush}]\c"
+_FY="[${_bold}${b_yellow}${_send}${_norm}${_end}${_flush}]\c"
+_FB="[${_bold}${b_blue}${_send}${_norm}${_end}${_flush}]\c"
+_FT="[${_bold}${b_teal}${_send}${_norm}${_end}${_flush}]\c"
+_FP="[${_bold}${b_purple}${_send}${_norm}${_end}${_flush}]\c"
+_FW="[${_bold}${b_white}${_send}${_norm}${_end}${_flush}]\c"
+_FR="\[[${_bold}${b_red}${_send}${_norm}${_end}${_flush}\c"
+export COLUMNS=`tput $COLUMNS`
+export tabwidth=`tput it`
+export LINES=`tput lines`

@@ -88,7 +88,7 @@ builtin "$@";
 }
 
 loadSudo(){
-        if [[ "$EUID" != 0 ]]; then SUDO="sudo"; fi
+        if [[ "$EUID" != 0 ]]; then export SUDO="sudo"; fi
 }
 loadSudo
 

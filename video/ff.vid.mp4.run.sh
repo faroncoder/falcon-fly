@@ -2,7 +2,7 @@
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
-cd "$RAWHOME" 1> /dev/null
+cd /usr/users/faron/Raws/ 1> /dev/null;
 
 if [[ $EUID == 0 ]]; then
 	echo -e "$Fno sudo yourself out"
@@ -12,7 +12,7 @@ fi
 CHECK="$@"
 
 if [[  "$CHECK" == "" ]]; then
-	GOLP=( `find $RAWHOME -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/ffmpeg-/g' |  sed '/.ts/d' | sed '/.mov/d'` )
+	GOLP=( `find . -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/ffmpeg-/g' |  sed '/.ts/d' | sed '/.mov/d'` )
 else
 	GOLP=( $CHECK )
 fi
@@ -20,13 +20,13 @@ fi
 THISVERSION="15ebc8d6-9c26-11e6-82a1-4305264aedd3:Oct272016"
 #OLDVER=( 730ebd32-d446-11e5-b1f0-7bf895f2366a )
 if [[ ! -d "$RAWHOME/new-mp4" ]]; then
-	mkdir "$RAWHOME/new-mp4" -p 2> /dev/null;
+	mkdir "$PWD/new-mp4" -p 2> /dev/null;
 fi
-if [[ ! -d "$RAWHOME/mediainfo" ]]; then
-	mkdir "$RAWHOME/mediainfo" -p 2> /dev/null;
+if [[ ! -d "$PWD/mediainfo" ]]; then
+	mkdir "$PWD/mediainfo" -p 2> /dev/null;
 fi
-if [[ ! -d "$RAWHOME/origs-trash" ]]; then
-	mkdir "$RAWHOME/origs-trash" -p 2> /dev/null;
+if [[ ! -d "$PWD/origs-trash" ]]; then
+	mkdir "$PWD/origs-trash" -p 2> /dev/null;
 fi
 filePrep(){
 	GETNAME=$( rev <<< $j | cut -d"." -f2 | rev )
@@ -39,17 +39,17 @@ filePrep(){
 	### new name###
 	NEWFILE="$NEWNAME.mp4"
 	### new file name###
-	TRASH="$RAWHOME/origs-trash/$GETNAME$GETEXT"
+	TRASH="$PWD/origs-trash/$GETNAME$GETEXT"
 	### file to be trashed###
-	COLLECT="$RAWHOME/new-mp4/$NEWFILE"
+	COLLECT="$PWD/new-mp4/$NEWFILE"
 	### converted file###
-	FEED="$RAWHOME/$NEWNAME-feed.dat"
+	FEED="$PWD/$NEWNAME-feed.dat"
 	#### data -feed###
-	INFOA="$RAWHOME/mediainfo/$NEWNAME-original.info"
+	INFOA="$PWD/mediainfo/$NEWNAME-original.info"
 	#### data  mediainfo original ###
-	INFOB="$RAWHOME/mediainfo/$NEWNAME-converted.info"
+	INFOB="$PWD/mediainfo/$NEWNAME-converted.info"
 	#### data  mediainfo converted ##
-	NOTIFYSYS="$RAWHOME/ffmpeg-on"
+	NOTIFYSYS="$PWD/ffmpeg-on"
 }
 fireUpTheEngine(){
 	YEARFILE=`date`
@@ -105,13 +105,13 @@ ALLFILES=`echo ${GOLP[@]} | wc -w`
 echo "$Finfo $ALLFILES files queued"
 touch $NOTIFYSYS
 for j in "${GOLP[@]}"; do
-			CHECK=`find $( printf "$RAWHOME" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
+			CHECK=`find $( printf "$PWD" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
 			if [[ -f "$CHECK" ]]; then
 				rm $CHECK
 				echo "$Fwarn FFMPEG engine stopped. $COUNT files completed."
 				exit 1
 			else
-				rm "$RAWHOME/*-feed.dat" 2> /dev/null
+				rm $PWD/*-feed* "$RAWHOME/*-feed.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
 				start=`date +%s`
 				echo -n "$Finfo $j ==> "
