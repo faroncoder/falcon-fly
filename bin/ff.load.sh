@@ -41,7 +41,7 @@ if [[ ! -d "$LOC" ]]; then
 		done
 	fi
 	source $HOME/.bashrc
-	#echo "$Fok Falcon Bin sync-ed."
+	#echo "${_ok} Falcon Bin sync-ed."
 		#export GETMSG=$CHR145; FTmsg;
 		#echo "$FMsend So, you are this?$Foff "
 	#export GETMSG=$CHR99; FPmsg

@@ -3,9 +3,9 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
-echo -e $Finfo "Getting Meteor"
+echo -e ${_info} "Getting Meteor"
 curl https://install.meteor.com/ | sh  1> /dev/null < /dev/null
-echo -e $Finfo "Meteor installed! "
+echo -e ${_info} "Meteor installed! "
 
 
 ################### END

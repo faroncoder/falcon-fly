@@ -22,7 +22,7 @@ for j in "${GETFILES[@]}"; do
 	else
 		echo "$Fwarn processing $SystemFile to $FileAsTS"
 		ffmpeg -fflags genpts -i $j -flags +global_header -map 0:0 -codec copy -bsf:v h264_mp4toannexb $IamTheFile < /dev/null;
-		echo "$Fok done!"
+		echo "${_ok} done!"
 	fi
 done
 

@@ -15,7 +15,7 @@ IFLO="*.*save"
 find $RETURN -maxdepth 1 -type f -name "$IFLO" -exec /bin/rm {} \;
 IFLO=".*~ *.*save*~"
 find $RETURN -maxdepth 1 -type f -name "$IFLO" -exec /bin/rm {} \;
-echo "$Fok cleaned!"
+echo "${_ok} cleaned!"
 
 
 ################### END

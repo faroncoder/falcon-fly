@@ -16,8 +16,8 @@ for line in "${orderfiles[@]}"; do
 	rename "s/$GET/$LET/g" $line
 done
 
-echo -e "$Fok"
-#echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
+echo -e "${_ok}"
+#echo -e ${_ok}"$Fyellow $( basename $0 ) $Foff"
 
 ################### END
 ### exit code for clean exit

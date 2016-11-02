@@ -9,7 +9,7 @@ for j in "${PICKS[@]}"; do
 
 	CHECKDPKG=`dpkg-query --show --showformat='${db:Status-Status}' "$j" 2> /dev/null; `
 	if [[ "$CHECKDPKG" == "installed" ]]; then
-		echo -e "$Fok$Fgreen $j installed.$Foff"
+		echo -e "${_ok}$Fgreen $j installed.$Foff"
 	else
 		echo -e "$Fno$Fred $j is not installed.$Foff"
 	fi

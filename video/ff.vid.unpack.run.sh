@@ -15,7 +15,7 @@ for j in "${GETFILES[@]}"; do
 	FileAsUnpacked="$PWD/$PREFILE-FrameBUnpacked.$GETEXT"
 	echo -n "$Fwarn repairing $IamTheFile"
 	ffmpeg -fflags genpts -i $j -codec copy -flags +global_header -map 0:0 -bsf:v mpeg4_unpack_bframes $FileAsUnpacked < /dev/null;
-	echo "$Fok done!"
+	echo "${_ok} done!"
 done
 
 ################### END

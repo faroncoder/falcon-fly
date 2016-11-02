@@ -11,26 +11,26 @@ openshengine
 		echo "$Fstat Target: $gitnewname"
 		#confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
 
-		echo -n "$Finfo Commit message? "
+		echo -n "${_info} Commit message? "
 		read COMMIT
 	git checkout  2> /dev/null
-	git status; echo "$Finfo status checked" 2> /dev/null
-	git add -A; echo "$Finfo files checked" 2> /dev/null
+	git status; echo "${_info} status checked" 2> /dev/null
+	git add -A; echo "${_info} files checked" 2> /dev/null
 	git commit -am 	"`echo $COMMIT`";
 	git push -u origin master;
 	git pull 2> /dev/null
 	echo "$Fstat $Fyellow Updating$Foff $gitnewname" 2> /dev/null
 	git checkout 2> /dev/null
-	echo "$Finfo $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
+	echo "${_info} $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
 	git checkout master 2> /dev/null
-	echo "$Finfo Checkout: $Fyellow local$Foff $gitnewname"
+	echo "${_info} Checkout: $Fyellow local$Foff $gitnewname"
 	git fetch  2> /dev/null
 	git pull  2> /dev/null
 	git push  2> /dev/null
-	echo "$Finfo Checkout: $Fyellow remote$Foff $gitnewname"
+	echo "${_info} Checkout: $Fyellow remote$Foff $gitnewname"
 	git checkout 2> /dev/null  < /dev/null
 
-	echo "$Fok"
+	echo "${_ok}"
 
 
 ################### END

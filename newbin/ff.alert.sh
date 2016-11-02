@@ -4,7 +4,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 #################### BEGIN
 
 
-echo -e $Fok "$Fpurple $( basename $0 ) $Foff"
+echo -e ${_ok} "$Fpurple $( basename $0 ) $Foff"
 
 ################### END
 ### exit code for clean exit

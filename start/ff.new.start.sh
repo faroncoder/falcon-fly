@@ -17,7 +17,7 @@ sCODES=`cat /etc/fstab | grep swap | awk '{$1=""; $2=""; print $0}' | sed 's/1//
 for o in "${SCODES[@]}"; do
 	$SUDO sh -c "echo \"UUID=$o $sCODES $NUMB\" >> /etc/stab"
 done
-echo "$Fok /etc/fstab configured"
+echo "${_ok} /etc/fstab configured"
 
  $SUDO systemctl disable apparmor
  $SUDO systemctl enable apache2

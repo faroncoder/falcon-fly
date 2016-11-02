@@ -8,7 +8,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 GETUR=$1
 
 if [[ "$GETUR" == "" ]]; then
-	echo -n "$Finfo Location of URL: http(s)://"
+	echo -n "${_info} Location of URL: http(s)://"
 	read GETUR
 fi
     LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
@@ -16,7 +16,7 @@ fi
 
 # GET=$1
 # if [[ "$GET"  == "" ]]; then
-# 		echo -n "$Finfo url address? http(s)://"
+# 		echo -n "${_info} url address? http(s)://"
 # 		read GET
 # 		OUTMA=`echo $GET | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
 # 		GETACTU=`echo $OUTMA | tr '/' ' '`				
@@ -36,7 +36,7 @@ fi
 
 
 # if [[ "$GETUR" == "" ]]; then
-# 	echo -n "$Finfo address to point files to? "
+# 	echo -n "${_info} address to point files to? "
 # 	read GETUR
 # # fi
 
@@ -49,7 +49,7 @@ for video in "${GETZ[@]}"; do
 	COUNT=`echo $(( $COUNT + 1 ))`
 done
 GETZ=""
-echo "$Fok $COUNT files created"
+echo "${_ok} $COUNT files created"
 source /usr/local/bin/ff.handle.seq
 
 <<<<<<< HEAD

@@ -6,8 +6,8 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 echo -e "$Fstat"
 echo -e "$Fno"
 echo -e "$Fwarn"
-echo -e "$Finfo"
-echo -e "$Fok"
+echo -e "${_info}"
+echo -e "${_ok}"
 
 
 ################### END

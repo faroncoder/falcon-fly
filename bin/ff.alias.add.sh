@@ -15,9 +15,9 @@ if [[ "$CMD" == "" ]]; then
 	echo -e -n "$Fstat command ? ";
 	read CMD
 fi
-#echo -e $Fok"$Fyellow $( basename $0 ) $Foff"
+#echo -e ${_ok}"$Fyellow $( basename $0 ) $Foff"
 echo "alias $AliasName=\"$CMD\"" > source /usr/local/lib/faron_falcon/alias
-echo -e $Fok
+echo -e ${_ok}
 source $HOME/.bashrc
 
 ################### END

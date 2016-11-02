@@ -6,7 +6,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ## Fok Fno Finfo Fwarn Fstat ##
 ## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
 
-#echo -e "$Fok$Fyellow $( basename $0 ) $Foff"
+#echo -e "${_ok}$Fyellow $( basename $0 ) $Foff"
 TMP="/tmp/`uuid`"
 TMP0="/tmp/`uuid`"
 THISIF=`ff.network.devices | head -n 1`

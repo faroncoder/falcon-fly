@@ -11,12 +11,12 @@ fi
 
 
 
-echo -e "$Finfo $ME >> $YOU"
+echo -e "${_info} $ME >> $YOU"
 rsync -avz  /home/users/faron/.falcon/scripts "faron@$HOST:/home/users/faron/.falcon/" --exclude=.git
 rsync -avz  /home/users/faron/.falcon/scripts/bash/lib/* "faron@$HOST:source /usr/local/lib/faron_falcon/"
-echo -e "$Fok"
+echo -e "${_ok}"
 
-#echo -e "$Fok $ME >> $YOU"
+#echo -e "${_ok} $ME >> $YOU"
 #rsync -avz /home/users/faron/.falcon/scripts "faron@$HOST:/home/users/faron/.falcon/" --exclude=/home/users/faron/.falcon/scripts/.git
 #rsync -av source /usr/local/lib/faron_falcon/* "faron@$HOST:/home/users/faron/.falcon/scripts/bash/lib/" 
 

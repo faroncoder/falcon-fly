@@ -8,7 +8,7 @@ filecheck=`which $1`
 
 if [[ -f "$filecheck" ]]; then
 	subl $filecheck	
-	echo $Fok
+	echo ${_ok}
 else
 	echo "$Fno $Fgreen $1 $Foff is not a live command"
 fi

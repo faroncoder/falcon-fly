@@ -13,7 +13,7 @@ $SUDO ifconfig $MEEF down
 $SUDO ifconfig $MEEF up
 echo -e "$Fstat switching $MEEF on"
 $SUDO service networking reload
-echo -e "$Fok"
+echo -e "${_ok}"
 
 
 ################### END

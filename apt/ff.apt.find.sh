@@ -60,7 +60,7 @@ makelister(){
 
 pickProcesser(){
 
-	echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
+	echo -e "${_info} Keyword searched: $Fred $KEYWORD $Foff"
 	echo -n -e "Item to install ? "
 	read  PICKS
 	CHECKALL=( $PICKS )
@@ -75,7 +75,7 @@ F=0
 	for pickme in "${PICKS[@]}"; do
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
-		echo -e "$Finfo fetching $Fteal$WHOME$Foff";
+		echo -e "${_info} fetching $Fteal$WHOME$Foff";
 		source /usr/local/bin/ff.apt.verify $WHOME
 		#source /usr/local/bin/ff.apt.fetch $WHOME
 		echo "----------------------------------------------------"	
@@ -120,8 +120,8 @@ menuEngine(){
 #aptMenu
 #}
 
-#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do echo -e "$Finfo No package	
-#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "$Finfo No package is selected - exiting"; XeF ; done; fi
+#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do echo -e "${_info} No package	
+#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "${_info} No package is selected - exiting"; XeF ; done; fi
 
 #aptMenu
 

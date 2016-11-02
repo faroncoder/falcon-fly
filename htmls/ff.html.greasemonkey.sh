@@ -21,7 +21,7 @@ done
 
 
 
-echo "$Fok"
+echo "${_ok}"
 
 ################### END
 ### exit code for clean exit

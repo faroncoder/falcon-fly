@@ -14,7 +14,7 @@ SELECT=""
 
 done
 
-echo "$Fok"
+echo "${_ok}"
 ################### END
 doneTime
 ### [FILE] ff.script.kill.sh  [ACTIVE] y

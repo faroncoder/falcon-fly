@@ -6,7 +6,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ## Fok Fno Finfo Fwarn Fstat ##
 ## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
 
-#echo -e "$Fok$Fyellow $( basename $0 ) $Foff"
+#echo -e "${_ok}$Fyellow $( basename $0 ) $Foff"
 FWDP="<>1<3<<$BP:$LP<<$IP"
 
 

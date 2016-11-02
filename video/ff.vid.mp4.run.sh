@@ -102,7 +102,7 @@ fireUpTheEngine(){
 
 COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
-echo "$Finfo $ALLFILES files queued"
+echo "${_info} $ALLFILES files queued"
 touch $NOTIFYSYS
 for j in "${GOLP[@]}"; do
 			CHECK=`find $( printf "$PWD" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
@@ -114,13 +114,13 @@ for j in "${GOLP[@]}"; do
 				rm $PWD/*-feed* "$RAWHOME/*-feed.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
 				start=`date +%s`
-				echo -n "$Finfo $j ==> "
+				echo -n "${_info} $j ==> "
 				filePrep
 				fireUpTheEngine
 				end=`date +%s`
 				GETTIME=`echo $(( $end - $start ))`
 				OUTTIME=`ff.handle.timecount $GETTIME`
-				echo " $Fok [$Fyellow$COUNT$Foff of $Fred$ALLFILES$Foff completed in $Fteal$OUTTIME$Foff ]"
+				echo " ${_ok} [$Fyellow$COUNT$Foff of $Fred$ALLFILES$Foff completed in $Fteal$OUTTIME$Foff ]"
 			fi
 done
 rm $RAWHOME/ffmpeg-on

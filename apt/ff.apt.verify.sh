@@ -8,7 +8,7 @@ PACKAGES=( $@ )
 for j in "${PACKAGES[@]}"; do 
 	CHECKPAK=`dpkg -l | grep -e $j | awk '{ print $2 }' | head -n 1 `
 	if [[ "$CHECKPAK" == "$j" ]]; then
-		echo -e "$Fok $Fyellow$j$Fgreen verified$Foff in dpkg"
+		echo -e "${_ok} $Fyellow$j$Fgreen verified$Foff in dpkg"
 	else
 		echo -e "$Fno $Fyellow$j$Fred to be verified$Foff"
 		echo -e "$Fwarn installing $j"

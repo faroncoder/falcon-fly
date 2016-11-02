@@ -33,29 +33,18 @@ export LS_COLORS="di=1;35"
 # LS_COLORS="di=1;37m"
 
 last_command=$? ##   Must come first!
+
+
 PS1=""
 if [[ "$last_command" == 0 ]]; then
-	USER="${b_red}${CHR24}${reset} "
+	PS1+="${b_red}${CHR24}${_reset}"
 else
-	USER="${b_green}${CHR23}${reset} "
+	PS1+="${b_green}${CHR23}${_reset} "
 fi
 if [[ "$EUID" == 0 ]]; then
-		USER="${USER}${b_red}\\u${reset}"
+		PS1+="${b_red}\\u${_reset}"
 	else
-		USER="${USER}${b_green}\\h${reset} "
+		PS1+="${b_green}\\h${_reset} "
 fi
-# for G in "${SUP[@]}"; do
-# 	if [[ "$G" == "rwx" ]]; then
-# 		FILESTT="${FILESTT}${b_green}|${reset}"
-# 	fi
-# 	if [[ "$G" == "rws" ]]; then
-# 		FILESTT="${FILESTT}${b_green}|${reset}"
-# 	fi
-# 	if [[ "$G" == "r-x" ]]; then
-# 		FILESTT="${FILESTT}${b_yellow}|${reset}"
-# 	fi
-# 	if [[ "$G" == "r--" ]]; then
-# 		FILESTT="${FILESTT}${b_red}|${reset}"
-# 	fi
-# done
-PS1+="${USER}${FILESTT}${reset} "
+
+PS1+="\\A${c_cursor}${r_white} \$${_reset}${_off} "
