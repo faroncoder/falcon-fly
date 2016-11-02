@@ -12,7 +12,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 
 if [[ "$1" == "" ]]; then
-	echo "$Fno filename? "
+	echo "${_no} filename? "
 	XeF
 else
 ## Variablize the input
@@ -23,11 +23,11 @@ else
 
 	#if [[ ! -f "$PWD/thumbs/$INPUT" ]]; then
 	if [[ ! -d "$PWD/thumbs" ]]; then
-		echo "$Fwarn directory 'thumbs' created"
+		echo "${_warn} directory 'thumbs' created"
 	    mkdir -p "$PWD/thumbs" 2> /dev/null;
 	fi
 	ffmpeg -hide_banner -loglevel panic -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 $PWD/thumbs/$PREFILE.png < /dev/null
-	echo "$Fwarn $PREFILE.png thumbed"
+	echo "${_warn} $PREFILE.png thumbed"
 
 	#else
 ## otherwise, if this file exists, then we are all happy.
@@ -36,7 +36,7 @@ else
 			
 	# 		COUNT=`echo $(( $COUNT + 1 ))`
 	# 	done
-	# 	echo "$Fstat $COUNT thumbs created"
+	# 	echo "${_stat} $COUNT thumbs created"
 	# else
 	# 		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
 	# 		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
@@ -47,13 +47,13 @@ INPUT="$1"
 
 
 if [[ ! -d "$PWD/thumbs" ]]; then
-        echo "$Fwarn creating thumbs directory"
+        echo "${_warn} creating thumbs directory"
         mkdir -p "$PWD/thumbs"
 fi
 
 if [[ "$INPUT" == "" ]]; then
 	#GETFILES=( ` find . -maxdepth 1 -type f -name '*.mp4' -exec basename {} \; ` )	
-	echo "$Fno no file to media-thumbnail"
+	echo "${_no} no file to media-thumbnail"
 	exit 0
 else
 #	COUNT=0
@@ -63,7 +63,7 @@ else
 		echo "${_ok} $PREFILE.png thumbed"
 #		COUNT=`echo $(( $COUNT + 1 ))`
 #	done
-#	echo "$Fstat $COUNT thumbs created"
+#	echo "${_stat} $COUNT thumbs created"
 #else
 #		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
 #		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null

@@ -14,7 +14,7 @@ $LANDHOME
 doneTime ### [ FILE:\$MEF ACTIVE:y ]
 "
 NEWBODY=" your script goes here
-echo \"\$Fstat\"; echo \"\$Fno\"; echo \"\$Fwarn\";
+echo \"\${_stat}\"; echo \"\${_no}\"; echo \"\${_warn}\";
 echo \"\${_info}\"; echo\"\${_ok}\"
 "
 interactive=$3
@@ -37,7 +37,7 @@ scriptUpdaerEngine(){
 		cat "$FOOTER" | sed '/^$/d' >> "$MEF"
 		chmod +x $MEF
 		FILE=`basename $line`
-		echo "$Fwarn $COUNT of $GEF "
+		echo "${_warn} $COUNT of $GEF "
 		if [[ -f "$MEF" ]]; then
 			echo "${_ok} : $FILE "
 		fi
@@ -58,12 +58,12 @@ arumentsInstall(){
 	read Descript
 	LOADDes="$Descript"
 	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
-	ENDINTERACT="else echo \"\$Fno \$Fred no argument is supplied.\$Foff\""
+	ENDINTERACT="else echo \"\${_no} \$Fred no argument is supplied.\$Foff\""
 	LOADIN="echo \"\${_info} \$Fyellow `echo $LOADDes` as an argument \$Foff\"; fi"
 }
 newProcess(){
 	if [[ -f "$MEF" ]]; then
-		echo "$Fwarn filename exists."
+		echo "${_warn} filename exists."
 		doneTime
 	else
 		> $MEF
@@ -71,7 +71,7 @@ newProcess(){
 		cat "$HEADER" | sed '/^$/d' > "$MEF"
 		cat  "$NEWBODY" >> "$MEF"
 		cat "$FOOTER" | sed '/^$/d' >> "$MEF"
-		echo "$Fstat $FBgreen $XF $Foff created!"
+		echo "${_stat} $FBgreen $XF $Foff created!"
 	fi
 	finalRun
 }
@@ -85,7 +85,7 @@ newScripter(){
 		read xcs
 	fi
 	if  [[ "$interactive" == "" ]]; then
-		echo -n "$Fwarn script to interact with user? (y=yes) "
+		echo -n "${_warn} script to interact with user? (y=yes) "
 		read interactive
 		if [[ "$interactive" == "y" ]]; then
 			arumentsInstall

@@ -20,7 +20,7 @@ lauchUpdaterEngine(){
 	deathReaperCheck
 
 	#echo "${_info} In upgrading mode: scripts updater"
-	#echo "$Fwarn library is being backed up."
+	#echo "${_warn} library is being backed up."
 }
 
 keepRecursive() {
@@ -47,7 +47,7 @@ keepRecursive() {
 	FILEHERE=`basename $FILESTART`
 	KILLED="$( echo $KILLHOME/$jj-$FILEHERE | sed 's/.sh//g' )"
 	if [[ "$KILLCONFIRM" == "" ]]; then
-		echo -n "$Fwarn kill $FILEHERE ? (y/Y) "
+		echo -n "${_warn} kill $FILEHERE ? (y/Y) "
 		read KILLCONFIRM
 	elif [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
 		mv $FILESTART $KILLED 2> /dev/null
@@ -56,7 +56,7 @@ keepRecursive() {
 		chmod 555 $KILLED
 		echo "${_ok} $FILEHERE de-executable and read-only"
 	else
-		echo "$Fno $FILEHERE is not killed"
+		echo "${_no} $FILEHERE is not killed"
 	fi
 	KILLCONFIRM=""
 }
@@ -76,7 +76,7 @@ keepRecursive() {
 	else
 		COLLECT=( ` find $BASE -type f -name "*$FILESTART*" -name '*.sh' ! -path "*/kills/*" ` )
 		if [[ "${COLLECT[@]}" == "" ]]; then
-			echo "$Fno no file found by that name"
+			echo "${_no} no file found by that name"
 			doneTime
 		fi
 		FILECOUNT=`echo ${COLLECT[@]} | tr ' ' '\n' | wc -l`
@@ -110,7 +110,7 @@ lauchUpdaterEngine(){
 	done
 
 	#echo "${_info} In upgrading mode: scripts updater"
-	#echo "$Fwarn library is being backed up."
+	#echo "${_warn} library is being backed up."
 }
 
 

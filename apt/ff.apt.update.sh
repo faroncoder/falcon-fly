@@ -8,7 +8,7 @@ $SUDO dpkg --configure -a  2> /dev/null
 
 SERVER=`hostname -s`
 if [[ "$SERVER" == "f6" ]]; then
-	echo "$Fstat special update for $SERVER"
+	echo "${_stat} special update for $SERVER"
 	$SUDO apt-get update
 else
 	$SUDO apt-get dist-upgrade -y --force-yes 2> /dev/null

@@ -17,10 +17,10 @@ for j in "${GETFILES[@]}"; do
 	FileAsTS="$FileNill.ts"
 	IamTheFile="$PWD/$FileAsTS"
 	if [[ "$GETEXT" != "mp4" || "$GETEXT" != "mkv" ]]; then
-		echo "$Fno can't process $SystemFile to $FileAsTS as its type isn't mp4 affliciated."
+		echo "${_no} can't process $SystemFile to $FileAsTS as its type isn't mp4 affliciated."
 		exit 1
 	else
-		echo "$Fwarn processing $SystemFile to $FileAsTS"
+		echo "${_warn} processing $SystemFile to $FileAsTS"
 		ffmpeg -fflags genpts -i $j -flags +global_header -map 0:0 -codec copy -bsf:v h264_mp4toannexb $IamTheFile < /dev/null;
 		echo "${_ok} done!"
 	fi

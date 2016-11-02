@@ -10,10 +10,10 @@ THISFUILE="/tmp/`uuid`"
 KEYWORD="$1 $2 $3"
 
 if [[ "$KEYWORD" == "" ]]; then
-		echo -e "$Fno -- exiting"	
+		echo -e "${_no} -- exiting"	
 		XeF
 elif [[ "$KEYWORD" == " " ]]; then
-		echo -e "$Fno -- exiting"	
+		echo -e "${_no} -- exiting"	
 		XeF
 fi
 
@@ -32,7 +32,7 @@ fi
 
 checkList(){ 
 if [[ $G == $NUMB ]]; then
-	echo -e -n "$Fstat New search keyword: "
+	echo -e -n "${_stat} New search keyword: "
 	read NEWSEARCH
 	ff.apt.find $NEWSEARCH
 	XeF
@@ -66,7 +66,7 @@ pickProcesser(){
 	CHECKALL=( $PICKS )
 
 if [[ "${CHECKALL[@]}" == "" ]] || [[ "${CHECKALL[@]}" == " " ]]; then
-		echo -e "$Fno -- exiting"
+		echo -e "${_no} -- exiting"
 		XeF
 else
 

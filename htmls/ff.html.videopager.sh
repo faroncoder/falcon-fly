@@ -10,14 +10,14 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 # fi
 
 if [[ "$1" == "" ]]; then
-	echo "$Fno filename? "
+	echo "${_no} filename? "
 	XeF
 else
 ## Variablize the input
 	FILEID="$1"
 ## if 2nd argument is empty
 	if [[ "$2" == "" ]]; then
-		echo "$Fno url? "
+		echo "${_no} url? "
 ## exit
 		XeF
 	else
@@ -60,11 +60,11 @@ fi
     FULLHTTPhtml="$GETD/$PREFILE.html"
 
 	if [[ ! -d "$PWD/media" ]]; then
-		echo "$Fwarn directory 'media' created"
+		echo "${_warn} directory 'media' created"
 	    mkdir -p "$PWD/media" 2> /dev/null;
 	fi
 #	ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 $PWD/thumbs/$PREFILE.png < /dev/null
-#	echo "$Fwarn $PREFILE.png thumbed"
+#	echo "${_warn} $PREFILE.png thumbed"
 
 
 source /usr/local/bin/ff.media.thumbnailer "$FILEI"  
@@ -153,7 +153,7 @@ mv $FILEI $PWD/media/
 
 fi
 =======
-echo "$Fwarn creating $PREFILE.html"
+echo "${_warn} creating $PREFILE.html"
 echo -e "$DocVideo" > "$FULLHTTPhtml"
 mv $FILEI $PWD/media/
 

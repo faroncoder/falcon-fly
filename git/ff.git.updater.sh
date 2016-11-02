@@ -8,7 +8,7 @@ openshengine
 		if [[ "$gitnewname" == "scripts" ]]; then
 			gitnewname="falcon-fly"
 		fi
-		echo "$Fstat Target: $gitnewname"
+		echo "${_stat} Target: $gitnewname"
 		#confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
 
 		echo -n "${_info} Commit message? "
@@ -19,7 +19,7 @@ openshengine
 	git commit -am 	"`echo $COMMIT`";
 	git push -u origin master;
 	git pull 2> /dev/null
-	echo "$Fstat $Fyellow Updating$Foff $gitnewname" 2> /dev/null
+	echo "${_stat} $Fyellow Updating$Foff $gitnewname" 2> /dev/null
 	git checkout 2> /dev/null
 	echo "${_info} $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
 	git checkout master 2> /dev/null

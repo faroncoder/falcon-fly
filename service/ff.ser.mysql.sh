@@ -5,9 +5,9 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 $SUDO service apache2 restart
 
-# echo -e "$Fstat"
-# echo -e "$Fno"
-# echo -e "$Fwarn"
+# echo -e "${_stat}"
+# echo -e "${_no}"
+# echo -e "${_warn}"
 echo -e "${_info} mysql service restarted"
 # echo -e "${_ok}"
 

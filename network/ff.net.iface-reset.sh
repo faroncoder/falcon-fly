@@ -7,11 +7,11 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ## grab the function in getting interface name
 MEEF=`source /usr/local/bin/ff.net.devices`
 
-echo -e "$Fwarn switching $MEEF off"
+echo -e "${_warn} switching $MEEF off"
 $SUDO ifconfig $MEEF down
 
 $SUDO ifconfig $MEEF up
-echo -e "$Fstat switching $MEEF on"
+echo -e "${_stat} switching $MEEF on"
 $SUDO service networking reload
 echo -e "${_ok}"
 

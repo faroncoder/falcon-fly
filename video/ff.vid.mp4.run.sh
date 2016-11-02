@@ -5,7 +5,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 cd /usr/users/faron/Raws/ 1> /dev/null;
 
 if [[ $EUID == 0 ]]; then
-	echo -e "$Fno sudo yourself out"
+	echo -e "${_no} sudo yourself out"
 	XeF
 fi
 
@@ -108,7 +108,7 @@ for j in "${GOLP[@]}"; do
 			CHECK=`find $( printf "$PWD" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
 			if [[ -f "$CHECK" ]]; then
 				rm $CHECK
-				echo "$Fwarn FFMPEG engine stopped. $COUNT files completed."
+				echo "${_warn} FFMPEG engine stopped. $COUNT files completed."
 				exit 1
 			else
 				rm $PWD/*-feed* "$RAWHOME/*-feed.dat" 2> /dev/null

@@ -20,10 +20,10 @@ ff_ipLoad(){
 		if [[ $N == 0 ]]; then
 			$SUDO ifconfig $THISIF $CLR 2> /dev/null;
 			$SUDO ifconfig $THISIF:$N $CLR 2> /dev/null;
-			echo -e "$Fstat $THISIF cleared"
+			echo -e "${_stat} $THISIF cleared"
 		else
 			$SUDO ifconfig $THISIF:$N $CLR 2> /dev/null;
-			echo -e "$Fstat $THISIF:$N cleared"
+			echo -e "${_stat} $THISIF:$N cleared"
 		fi
 		N=`echo $(( $N + 1))`
 }

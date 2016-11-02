@@ -8,11 +8,11 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 AliasName=$1
 CMD=$2
 if [[ "$AliasName" == "" ]]; then
-	echo -e -n "$Fstat alias name ? ";
+	echo -e -n "${_stat} alias name ? ";
 	read AliasName
 fi
 if [[ "$CMD" == "" ]]; then
-	echo -e -n "$Fstat command ? ";
+	echo -e -n "${_stat} command ? ";
 	read CMD
 fi
 #echo -e ${_ok}"$Fyellow $( basename $0 ) $Foff"

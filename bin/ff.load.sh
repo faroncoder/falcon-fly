@@ -7,7 +7,7 @@ LOC="/home/users/faron/.falcon/scripts";
 
 
 if [[ ! -d "$LOC" ]]; then
-		echo "$Fno Falcon is not mounted. Exiting"
+		echo "${_no} Falcon is not mounted. Exiting"
 		XeF
 	else
 
@@ -32,7 +32,7 @@ if [[ ! -d "$LOC" ]]; then
 	}
 
 	if [[ -z "$FILEHUNT" ]];  then
-		echo "$Fno None found"
+		echo "${_no} None found"
 		XeF
 	else
 		find -L /usr/local/bin -name 'ff.*' -exec rm {} \;

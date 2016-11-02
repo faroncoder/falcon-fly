@@ -30,7 +30,7 @@ if [[ ! "$NT" ]]; then
 		if [[ "$NT" == "" ]]; then
 			cat $FILE
 			cat $FILEa
-			echo -e "$Fstatus File: $FILE"
+			echo -e "${_stat}us File: $FILE"
 			exit 0
 		fi
 
@@ -58,7 +58,7 @@ if [[ ! "$NT" ]]; then
 	 # 	NT=""; GW="";
 	 # 	echo -e "${_ok}"
 	else
-		echo -e "$Fstatus Done!"
+		echo -e "${_stat}us Done!"
 	fi
 functionGetRoutes
 

@@ -3,9 +3,9 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
 #################### BEGIN
 
-echo -e "$Fstat"
-echo -e "$Fno"
-echo -e "$Fwarn"
+echo -e "${_stat}"
+echo -e "${_no}"
+echo -e "${_warn}"
 echo -e "${_info}"
 echo -e "${_ok}"
 

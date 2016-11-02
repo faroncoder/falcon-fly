@@ -16,7 +16,7 @@ CHECKFACE=$( ifconfig | cut -d' ' -f1 | tr ' ' '\n' | sed '/lo/d' )
 if [[ "$CHECKFACE" == "$IFACE" ]]; then
 	echo -e "${_info} device matches"
 else
-	echo -e "$Fno interface mismatch$Foff"
+	echo -e "${_no} interface mismatch$Foff"
 	exit 1
 fi
 while read line; do

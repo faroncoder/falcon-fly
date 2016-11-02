@@ -32,7 +32,7 @@ LOADDATA="/tmp/`uuid`"
 $SUDO find . -type f >> $LOADDATA
 $SUDO sed -i -e 's/ /\\ /g' $LOADDATA
 TOTALCOUNT=`find . -type f | wc -l`
-echo "$Fstat collecting file information" 2> /dev/null
+echo "${_stat} collecting file information" 2> /dev/null
 echo "${_info} Total of files in $Fteal$PWD$Foff: $Fyellow$TOTALCOUNT$Foff"
 FILECOUNT=0
 ISSUECOUNT=0
@@ -49,7 +49,7 @@ while read line; do
 		#FILEOK=( ${FILEOK[@]} $GETFILE )
 		CLEANCOUNT=`echo $(( $CLEANCOUNT + 1 ))`
 	else
-		#echo "$Fno $GETFILE"
+		#echo "${_no} $GETFILE"
 		ISSUENO=( ${ISSUENO[@]} $GETFILE )
 		ISSUECOUNT=`echo $(( $ISSUECOUNT + 1 ))`
 	fi
@@ -63,7 +63,7 @@ echo "${_info}$Fyellow Result --$Foff Files:$Fyellow$TOTALCOUNT$Foff Processed:$
 # 	read LISTGO
 # 	if [[ "$LISTGO" == "l" ]]; then
 # 		for issueput in "${ISSUENO[@]}"; do	
-# 			printf "$Fwarn $issueput"
+# 			printf "${_warn} $issueput"
 # 		done
 # 	fi	
 # fi

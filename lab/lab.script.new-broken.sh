@@ -23,7 +23,7 @@ KIL="$LYH/kills/$ji-killed-$XF"
 #XD="/home/users/faron/.falcon/scripts/$xcs/$CL"
 #MEF="$PWD/$XF"
 if [[ -f "$MEF" ]]; then
-	echo -e "$Fno filename exists."; XeF
+	echo -e "${_no} filename exists."; XeF
 fi
 
 

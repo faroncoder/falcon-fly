@@ -18,7 +18,7 @@ for j in "${GETFILES[@]}"; do
 		j="$FileOriginal"
 	fi
 	FileAsFixed="$PWD/$PREFILE-repaired.$GETEXT"
-	echo "$Fwarn repairing $SystemFile"
+	echo "${_warn} repairing $SystemFile"
 	ffmpeg -fflags genpts -i $j -y -codec copy -flags +global_header -map 0:0 -acodec copy $FileAsFixed < /dev/null;
 	echo "${_ok} done!"
 done

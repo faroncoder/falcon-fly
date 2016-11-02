@@ -6,10 +6,10 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 GETSF=( `source /usr/local/bin/ff.net.iface-all` )
 for c in "${GETSF[@]}"; do
 	if [[ "$c" == "lo" ]]; then
-		echo -e "$Fstat ignoring $c"
+		echo -e "${_stat} ignoring $c"
 	else
 		$SUDO ifconfig $c 0.0.0.0 2> /dev/null;
-		echo -e "$Fwarn $c cleared"
+		echo -e "${_warn} $c cleared"
 	fi
 done
 

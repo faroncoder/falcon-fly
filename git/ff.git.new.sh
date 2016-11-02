@@ -7,8 +7,8 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 		gitnewname=$( basename $PWD )
 		GITUL="https://github.com/faroncoder/falcon-$gitnewname.git"
-		echo "$Fstat URL: $GITUL"
-		echo -n "$Fwarn New repository: $gitnewname ... Proceed? (y/n)  "
+		echo "${_stat} URL: $GITUL"
+		echo -n "${_warn} New repository: $gitnewname ... Proceed? (y/n)  "
 		read comfirmgit
 		
 

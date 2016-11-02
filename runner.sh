@@ -29,7 +29,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 
 # 	if [[ "$CHK" == "" ]]; then
-# 		echo $Fno
+# 		echo ${_no}
 # 		poor=""
 # 	fi
 
