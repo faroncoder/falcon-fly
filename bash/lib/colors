@@ -64,62 +64,82 @@ function doVarLoad() {
 
 
 function _ok() {
-	echo -e [${b_green}${CHR346}${b_closer}]
+	# if [[ "$_send" = "" ]]; then
+	echo -e ${reset}[${b_green}${CHR346}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_green}${CHR346}${b_closer}${reset}
+	# fi
 }
 function _no() {
-	echo -e [${b_red}${CHR146}${b_closer}]
+	# if [[ "$_send" == "" ]]; then
+	echo -e ${reset}[${b_red}${CHR146}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_red}${CHR146}${b_closer}${reset}
+	# fi
 }
+
 
 function _warn() {
-	echo -e [${b_yellow}${CHR182}${b_closer}]
+	# if [[ "$_send" == "" ]]; then
+	echo -e ${reset}[${b_yellow}${CHR182}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_yellow}${CHR182}${b_closer}${reset}
+	# fi
 }
+
 
 function _info() {
-	echo -e [${b_blue}${CHR152}${b_closer}]
+	# if [[ "$_send" = "" ]]; then
+	echo -e ${reset}[${b_blue}${CHR152}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_blue}${CHR152}${b_closer}${reset}
+	# fi
 }
 
+
 function _stat() {
-	echo -e [${b_teal}${CHR47}${b_closer}]
+	echo -e ${reset}[${b_teal}${CHR47}${b_closer}${reset}]
+	# echo -e ${reset}${b_teal}${CHR47}${b_closer}${reset}
 }
 
 function _FY() {
 	doVarLoad
-	echo -e [${b_yellow}${_send}${b_closer}] ${_comment}
+	echo -e [${b_yellow}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 function _FG() {
 	doVarLoad
-	echo -e [${b_green}${_send}${b_closer}] ${_comment}
+	echo -e [${b_green}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 
 function _FR() {
 	doVarLoad
-	echo -e [${b_red}${_send}${b_closer}] ${_comment}
+	echo -e [${b_red}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 
 function _FP() {
 	doVarLoad
-	echo -e [${b_purple}${_send}${b_closer}] ${_comment}
+	echo -e [${b_purple}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 
 function _FB() {
 	doVarLoad
-	echo -e [${b_blue}${_send}${b_closer}] ${_comment}
+	echo -e [${b_blue}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 
 function _FT() {
 	doVarLoad
-	echo -e [${b_teal}${_send}${b_closer}] ${_comment}
+	echo -e [${b_teal}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 
 function _FD() {
 	doVarLoad
-	echo -e [${b_gray}${_send}${b_closer}] ${_comment}
+	echo -e [${b_gray}${_send}${b_closer}${reset}] ${_comment}
 	doFlush
 }
 
