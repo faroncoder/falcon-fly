@@ -32,19 +32,20 @@ alias l='ls -CF'
 export LS_COLORS="di=1;35"
 # LS_COLORS="di=1;37m"
 
-last_command=$? ##   Must come first!
 
+
+last_command=$? ##   Must come first!
 
 PS1=""
 if [[ "$last_command" == 0 ]]; then
-	PS1+="${b_red}${CHR24}${_reset}"
+	PS1+="${y_bold}${b_green}${CHR23}${n_bold}${reset}"
 else
-	PS1+="${b_green}${CHR23}${_reset} "
+	PS1+="${b_red}${CHR24}${reset} "
 fi
 if [[ "$EUID" == 0 ]]; then
-		PS1+="${b_red}\\u${_reset}"
+		PS1+="${b_red}\\u${reset}"
 	else
-		PS1+="${b_green}\\h${_reset} "
+		PS1+="${b_green}\\h${reset} "
 fi
 
-PS1+="\\A${c_cursor}${r_white} \$${_reset}${_off} "
+PS1+="${y_bold}${b_blue}\\A${n_bold}${b_purple} \$${reset} "

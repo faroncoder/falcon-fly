@@ -23,7 +23,7 @@ KEEP="`echo $GET | awk '{ $1=""; print $0 }' | awk '{ for (i=NF; i>1; i--) print
 LAST="`echo $NEWLT |  tr '  ' ' ' |  sed 's/"//g' | sed 's/ //g'`"
 FIRST="`echo $NEWFR |  tr '  ' ' ' | sed 's/"//g' | sed 's/ //g'`"
 COMPELTE="$FIRST $KEEP $LAST"
-echo "$Fyellow$COMPELTE$Foff"
+echo "${b_yellow}${COMPELTE}${__reset} "
 
 
 ################### END
