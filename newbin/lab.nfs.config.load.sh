@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 	### GO TO /MEDIA AND ADD FOLDERS AS MANY AS YOU WANT BY 	mkdir -p <name  of folder>.  THIS WILL POPULATE INTO ARRAY AND USES IT TO CREATE NETWORK FOLDERS TO CORRESPOND TO THESE FOLDERS YOU JUST CREATED - ALL BY THE FLY !
 	GETARRAY=( $( sudo find /media -maxdepth 1 -type d -exec basename {} \; | sed '/media/d' | sed '/cdrom/d' | tr '\n' ' ' ) )
 	GETTOTAL=$( echo "${GETARRAY[@]}" | wc -w )
@@ -39,7 +39,7 @@ function checkStatus {
 	ENABLECONF=0
 	checkStatus
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

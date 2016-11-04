@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 
 function newrecord {
 curl  -H "X-DNSimple-Token: $ACCESSAPI" -H "Accept: application/json" -H "Content-Type: application/json" -X "POST" -d "{ \"record\": { \"name\": \"$NAME\", \"record_type\": \"$RECORD_TYPE\", \"content\": \"$IP\" }}" --url "https://api.dnsimple.com/v1/domains/$DOMAIN_ID/records/$RECORD_ID"
@@ -39,7 +39,7 @@ fi
 newrecord
 
 
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

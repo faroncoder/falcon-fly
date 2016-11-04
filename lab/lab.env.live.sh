@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
-####################BEGIN
+####################START
 while :
 do
 SELECT=""
@@ -15,7 +15,7 @@ SELECT=""
 done
 
 echo "${_ok}"
-################### END
+###################STOP
 doneTime
 ### [FILE] ff.script.kill.sh  [ACTIVE] y
 

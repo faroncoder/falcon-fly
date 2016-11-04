@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 file=$( uuid | cut -d"-" -f1 )
 
 if [[ "$FFSRV" == "f6" ]]; then
@@ -34,7 +34,7 @@ dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultra
 #dvgrab -noavc -format dv2 -guid 1 - | ffmpeg -re -i - -c:v libx264 -preset ultrafast -qp 0 -pix_fmt yuv420p -tune zerolatency -maxrate 1024k -bufsize 1024k -crf 24 -c:a libfdk_aac -ac 2 -ar 44100 -b:a 128k -f asf "$file.avi" > /dev/null & sleep 2; ffplay "$MYHOME/$file.avi";
 else echo "${_no} firewire doesn't run on this server.  Only F6."; fi
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
  newscript="<!DOCTYPE html>
 <html lang=\"en\">
     <head>
@@ -43,7 +43,7 @@ echo "${_ok} script created"
 echo "$newscript" > "$HOME/falcon-$NAME.html"
 sed -ie "s/{NAME}/$NAME/g" "$HOME/falcon-$NAME.html"
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

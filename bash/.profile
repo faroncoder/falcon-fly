@@ -15,3 +15,4 @@ if [ -n "$BASH_VERSION" ]; then
 		source ~/.bashrc 2> /dev/null
 	fi
 fi
+

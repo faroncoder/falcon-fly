@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 WHO="faron:faron"
 if [[ "$1" = "33" ]]; then WHO="www-data:www-data"; fi
 if [[ "$1" = "0" ]]; then WHO="root:root"; fi
@@ -11,7 +11,7 @@ if [[ "$EUID" != 0 ]]; then sudo $CMD; else $CMD; fi
 
 
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

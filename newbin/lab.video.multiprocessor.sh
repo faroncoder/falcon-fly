@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 
 processingLocals() {
 
@@ -60,7 +60,7 @@ processingFiles
 # 	fi
 # 	 GETBATHES=( $( find $f -type f -exec basename {} \; ) ); done; for j in "${GETBATHES[@]}"; do ffmpegthumbnailer -i $j -o $STPNAME.png -s $( echo $(( 128 * 4 )) ) -t 13 -q 10 -c png; done;
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

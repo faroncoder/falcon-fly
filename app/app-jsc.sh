@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 typedest="$1"
 appname="$2"
 if [ -z "$1" ]
@@ -38,7 +38,7 @@ binpull="/home/users/faron/.falcon/scripts/app/libsafe"
 	mv javascripts/* jsc/js/
 	rm -r images javascripts stylesheets fonts
 	echo "finishing up jsc building... "
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

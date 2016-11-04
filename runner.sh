@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 	if [[ "$LGK" == "" ]]; then
 		echo "dont have the format"
 		file="";
@@ -25,7 +25,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 # #echo $PATHF
 	mv $NEWF $NEWA
 	cp header.txt $NEWF
-	echo "#################### BEGIN" >>  $NEWF
+	echo "####################START" >>  $NEWF
 
 
 # 	if [[ "$CHK" == "" ]]; then
@@ -39,7 +39,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 # 		PATHF="$PWD/$NEWO/$NEWN"
 # 		cp $poor "$PATHF-old"
 # 		cp header.txt $PATHF
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

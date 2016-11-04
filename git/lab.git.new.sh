@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 		gitnewname=$( basename $PWD )
 		echo -n "Creating new branch $gitnewname.git.  Proceed? "
 		read comfirmgit
@@ -11,7 +11,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 if [ ! -f "$HOME/.ssh/git_rsa.pub" ]; then
 		ssh-keygen -t rsa -C "faronledger@gmail.com"
 		echo "save to $HOME.ssh/git_rsa at command prompt"
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

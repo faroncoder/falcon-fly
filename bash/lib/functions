@@ -1,3 +1,13 @@
+function startTime() {
+        export TIMESTART=`date +%s`
+}
+
+function stopTime() {
+       	TIMEEND=`date +%s`
+	export TIMEEND=$TIMEEND
+        TIMERAW=`echo "$TIMEEND - $TIMESTART" | bc`
+        }
+
 
 function humanTime() {
  num=$TIMERAW
@@ -26,30 +36,27 @@ function humanTime() {
       HOUR=`seq -w 00 $hour | tail -n 1 2> /dev/null `
       MIN=`seq -w 00 $min | tail -n 1 2> /dev/null `
       SEC=`seq -w 00 $sec | tail -n 1 2> /dev/null `
-    export TIMED="$DAY:$HOUR:$MIN:$SEC"
+    TIMED="$DAY:$HOUR:$MIN:$SEC"
+	export TIMED=$TIMED
     sec=""; hour=""; min=""; sec="";
 
 }
 
-startTime() {
-        export TIMESTART=`date +%s`
-}
-stopTime() {
-        TIMEEND=`date +%s`
-        TIMERAW=`echo $(( $TIMEEND - $TIMESTART ))`
-}
-
-
-checkTime() {
+function checkTime() {
         stopTime
         humanTime
-         export FMsg="$FBpurple$TIMED$Foff"
-      #  echo -n "$Fwarn $FMsg"
-         GETT=`echo $FMsg`
-         echo " $FMsg"
+        _comment="$FBpurple$TIMED$Foff"
+	_send="$b_yellow warn$reset"
+	_FY
 }
 
-doneTime() {
+
+
+
+
+
+
+function doneTime() {
         stopTime
         humanTime
         logger "`basename $0` | $TIMED"
@@ -58,7 +65,7 @@ doneTime() {
 
 
 
-openshengine(){
+function openshengine(){
         echo "Initializing SSH agent..."
         chmod 700 -R ~/.ssh;
         echo "privizating ~/.ssh : done";
@@ -71,15 +78,15 @@ openshengine(){
 }
 
 
-cd(){
-	builtin cd "$@";
+function cd(){
+builtin cd "$@";
 	RET="$?";
-	ls;
+	ls 2> /dev/null
 	return "$RET";
 }
 
 
-editrecent(){
+function editrecent(){
 
 builtin "$@";
 	RET="$?";
@@ -87,8 +94,104 @@ builtin "$@";
 	return "$RET";
 }
 
-loadSudo(){
+function loadSudo(){
         if [[ "$EUID" != 0 ]]; then export SUDO="sudo"; fi
 }
-loadSudo
+
+function doFlush() {
+	export  _send=""
+	export  _comment=""
+}
+
+function doVarLoad() {
+	 export _send=${_send}
+	 export _comment=${_comment}
+}
+
+
+
+function _ok() {
+	# if [[ "$_send" = "" ]]; then
+	echo -e ${reset}[${b_green}${CHR346}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_green}${CHR346}${b_closer}${reset}
+	# fi
+}
+function _no() {
+	# if [[ "$_send" == "" ]]; then
+	echo -e ${reset}[${b_red}${CHR146}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_red}${CHR146}${b_closer}${reset}
+	# fi
+}
+
+
+function _warn() {
+	# if [[ "$_send" == "" ]]; then
+	echo -e ${reset}[${b_yellow}${CHR182}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_yellow}${CHR182}${b_closer}${reset}
+	# fi
+}
+
+
+function _info() {
+	# if [[ "$_send" = "" ]]; then
+	echo -e ${reset}[${b_blue}${CHR152}${b_closer}${reset}]
+	# else
+	# echo -e ${reset}${b_blue}${CHR152}${b_closer}${reset}
+	# fi
+}
+
+
+function _stat() {
+	echo -e ${reset}[${b_teal}${CHR47}${b_closer}${reset}]
+	# echo -e ${reset}${b_teal}${CHR47}${b_closer}${reset}
+}
+
+function _FY() {
+	doVarLoad
+	echo -e [${b_yellow}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+function _FG() {
+	doVarLoad
+	echo -e [${b_green}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+
+function _FR() {
+	doVarLoad
+	echo -e [${b_red}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+
+function _FP() {
+	doVarLoad
+	echo -e [${b_purple}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+
+function _FB() {
+	doVarLoad
+	echo -e [${b_blue}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+
+function _FT() {
+	doVarLoad
+	echo -e [${b_teal}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+
+function _FD() {
+	doVarLoad
+	echo -e [${b_gray}${_send}${b_closer}${reset}] ${_comment}
+	doFlush
+}
+
+
+function _checkPath(){
+	echo $PATH | tr ':' '\n'
+}
 

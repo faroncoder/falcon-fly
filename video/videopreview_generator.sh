@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 
 if [ -z "$1" ]; then
     echo "usage: ./movie_preview.sh VIDEO [HEIGHT=120] [COLS=100] [ROWS=1] [OUTPUT]"
@@ -57,7 +57,7 @@ FFMPEG_CMD="ffmpeg -i \"$MOVIE\" -y -frames 1 -q:v 1 -vf \"select=not(mod(n\,$NT
 
 eval $FFMPEG_CMD
 echo $OUT_FILEPATH
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

@@ -1,7 +1,7 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/loader;
+ #################### START
 
 <<<<<<< HEAD
 # if [[ "$FILEID" == "" ]]; then
@@ -161,10 +161,6 @@ mv $FILEI $PWD/media/
 >>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 
 
-
-################### END
-### exit code for clean exit
+####################STOP
 doneTime
-### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] ff.html.videopager.sh  [ACTIVE] y
-
+### [FILE] ff.html.videopager.sh [ACTIVE] y

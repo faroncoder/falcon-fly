@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 appname="$1"
 if [ -z $1 ]
 	then
@@ -17,7 +17,7 @@ pathdir="/srv/www/htdocs/$appname"
 binpull="/home/users/faron/.falcon/scripting/dat"
 #######
 cat $binpull/robots.txt > $pathdir/
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

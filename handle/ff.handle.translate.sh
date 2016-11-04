@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 GRAB="${#1}"
 TRNASLTE="$@"
 LANG="es"
@@ -23,10 +23,10 @@ KEEP="`echo $GET | awk '{ $1=""; print $0 }' | awk '{ for (i=NF; i>1; i--) print
 LAST="`echo $NEWLT |  tr '  ' ' ' |  sed 's/"//g' | sed 's/ //g'`"
 FIRST="`echo $NEWFR |  tr '  ' ' ' | sed 's/"//g' | sed 's/ //g'`"
 COMPELTE="$FIRST $KEEP $LAST"
-echo "${b_yellow}${COMPELTE}${__reset} "
+echo "_ok ${COMPELTE}${_reset} "
 
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

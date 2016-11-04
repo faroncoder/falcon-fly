@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 
 cd /home/users/$USER/var/streamings/files/raw
 /home/users/faron/.falcon/scripts/.bin/file-name-cleaner.sh
@@ -56,7 +56,7 @@ fi
 #rm ffmpeg*
 
 #./in_mkv--out_mp4-480p.sh "$PREFILE.mkv"
-#################### END
+####################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

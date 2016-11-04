@@ -1,4 +1,6 @@
-source /usr/local/lib/faron_falcon/characters
+tput init
+export COLUMNS=`tput cols`
+
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
@@ -29,8 +31,15 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-export LS_COLORS="di=1;35"
-# LS_COLORS="di=1;37m"
+source /usr/local/lib/faron_falcon/alias
+source /usr/local/lib/faron_falcon/characters
+source /usr/local/lib/faron_falcon/colors
+
+
+
+LS_COLORS='di=1;34:fi=0;33:ln=0;33:pi=4;30:so=5:or=0;31:mi=1;31:ex=0;32:*.rpm=1;90'
+export LS_COLORS
+
 
 
 
@@ -38,14 +47,22 @@ last_command=$? ##   Must come first!
 
 PS1=""
 if [[ "$last_command" == 0 ]]; then
-	PS1+="${y_bold}${b_green}${CHR23}${n_bold}${reset}"
+	PS1="${B_green}${CHR23}${S_reset} "
 else
-	PS1+="${b_red}${CHR24}${reset} "
+	PS1="${B_red}${CHR24}${S_reset} "
 fi
 if [[ "$EUID" == 0 ]]; then
-		PS1+="${b_red}\\u${reset}"
+		PS1+="${B_red}\\u ${S_reset} "
 	else
-		PS1+="${b_green}\\h${reset} "
+		PS1+="${B_green}\\h${S_reset} "
 fi
 
-PS1+="${y_bold}${b_blue}\\A${n_bold}${b_purple} \$${reset} "
+PS1+="${B_blue}\\A ${B_yellow}\\w ${B_purple}\$${S_reset} "
+
+source /usr/local/lib/faron_falcon/alias
+
+COLUMNS=`tput cols 2> /dev/null`
+
+source /usr/local/lib/faron_falcon/functions
+
+

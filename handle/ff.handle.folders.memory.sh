@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
-####################BEGIN
+####################START
 
 
 # if [[ "$EUID" != 0 ]]; then
@@ -50,7 +50,7 @@ for k in "${CORRECTED[@]}"; do
 			echo "${_send}$COLR$RESSF${reset} $k"
 	done
 
-####################END
+####################STOP
 
 doneTime
 ### [FILE] ff.handle.folders.memory.sh  [ACTIVE] y

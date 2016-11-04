@@ -1,25 +1,15 @@
-PATH=""
 NODE_HOME=/usr/local/include/node
 NPM_HOME=/usr/local/lib/node_modules/npm
 JAVA_HOME=/usr/lib/jvm/java-8-oracle
 JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
-XE=/usr
-DA=bin
-DF=sbin
-LD=$XE/local
-FALCON=/home/users/faron/.falcon/scripts
+NWJS=/usr/local/lib/depot-tools
 
-	GETPATH=( $XE/$DA /$DA /$DF $LD/lib/depot_tools $XE/$DF $LD/$DA  $LD/$DF $JAVA_HOME/$DA  $JRE_HOME/$DA $NODE_HOME $NPM_HOME/bin )
-	SEMI=""
-	for dir in "${GETPATH[@]}"; do
-		NEWI="$SEMI$dir"
-		CLEAN="$CLEAN$NEWI"
-		SEMI=":"
-	done
-	export PATH=$CLEAN
+export PATH="$PATH:$NODE_HOME:$NPM_HOME:$JAVA_HOME/bin:$JRE_HOME/bin:$NWJS"
 
 
 
-alias rm="trash-put"
-alias rm1="rm"
 
+
+
+export FALCON=/home/users/faron/.falcon/scripts
+export FLIB=/usr/local/lib/faron_falcon

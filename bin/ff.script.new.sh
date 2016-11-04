@@ -1,15 +1,15 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
 LDD=/usr/local/lib/faron_falcon; . $LDD/colors; . $LDD/functions; startTime
-####################BEGIN
+####################START
 # WATCH=$@
 
 HEADER="#!/bin/bash
 if [[ ! \"\$( echo \$PATH | grep '/usr/local/bin' )\" ]]; then export PATH=\$PATH:/usr/local/bin; fi
 LDD=/usr/local/lib/faron_falcon; . \$LDD/colors; . \$LDD/functions; startTime
-#################### BEGIN
+####################START
 "
-FOOTER="################### END
+FOOTER="###################STOP
 $LANDHOME
 doneTime ### [ FILE:\$MEF ACTIVE:y ]
 "
@@ -128,6 +128,6 @@ echo -n "${_info}  $Fyellow -u$Foff upgrader and $Fgreenany key$Foff for new scr
 		*)  newScripter; break ;;
 	esac
 done
-################### END
+###################STOP
 doneTime
 ### [FILE] ff.script.kill.sh  [ACTIVE] y

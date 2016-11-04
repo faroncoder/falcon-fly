@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
+####################START
 
 URL="$1"
 if [[ -z "$QURID" ]]; then
@@ -25,7 +25,7 @@ fi
 
 curl -H "Content-Type: application/json" -X DELETE -d "{\"$OBJN\": \"$DATAFAL\"}" "$URL"
 
-################### END
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

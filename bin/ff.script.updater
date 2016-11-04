@@ -1,0 +1,34 @@
+#!/bin/bash
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/loader;
+ #################### START
+FILE=$1
+LOC=`dirname $FILE`
+FILEME=`basename $FILE`
+NEWFILE="$LOC/new-$FILEME"
+> $NEWFILE
+#awk 'NR==1,/START/' $0 >> $NEWFILE
+
+GETTOP=`awk 'NR==1,/START/{print NR}' $FILE  | wc -w`
+GETBTM=`awk '/STOP/,/END/{print NR}' $FILE | wc -w `
+# echo -e "$GETTOP"
+TR2=`echo $GETTOP + 1 | bc `
+# echo -e "$TR2"
+
+# echo -e "$GETBTM"
+TR1=`echo $GETBTM + 1 | bc`
+# echo -e "$TR1"
+
+less $FALCON/lib/script-start.txt >> $NEWFILE
+less $FILE | tail -n +$TR2 | head -n -$TR1   >> $NEWFILE
+less $FALCON/lib/script-stop.txt >> $NEWFILE
+FILEME=`basename $FILE`
+sed -i -e "s/{SCRIPTNAME}/$FILEME/g" $NEWFILE
+mv $FILE /tmp/
+mv $NEWFILE
+
+cat $NEWFILE
+echo "done"
+####################STOP
+doneTime
+### [FILE] ff.script.kill.sh  [ACTIVE] y

@@ -1,8 +1,8 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
-#################### BEGIN
-cd /usr/users/faron/Raws/ 1> /dev/null;
+ source /usr/local/lib/faron_falcon/loader; startTime
+####################START
+cd /home/users/faron/Raws/ 1> /dev/null;
 
 if [[ $EUID == 0 ]]; then
 	echo -e "${_no} sudo yourself out"
@@ -102,29 +102,36 @@ fireUpTheEngine(){
 
 COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
-echo "${_info} $ALLFILES files queued"
+echo "`_info` $ALLFILES files queued"
 touch $NOTIFYSYS
+
+
+function checkForCommands() {
+	ff.vid.ffmpeg.commands
+	sleep 10
+	checkForCommands
+}
+
 for j in "${GOLP[@]}"; do
-			CHECK=`find $( printf "$PWD" ) -maxdepth  2 -type f -name 'ffmpeg-stop' `
-			if [[ -f "$CHECK" ]]; then
-				rm $CHECK
-				echo "${_warn} FFMPEG engine stopped. $COUNT files completed."
-				exit 1
-			else
-				rm $PWD/*-feed* "$RAWHOME/*-feed.dat" 2> /dev/null
+				rm "$RAWHOME/*-feed.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
 				start=`date +%s`
-				echo -n "${_info} $j ==> "
+				_comment="$j ==>"
+				_send=`_warn`
+				_FY
 				filePrep
-				fireUpTheEngine
+				fireUpTheEngine && checkForCommands
 				end=`date +%s`
 				GETTIME=`echo $(( $end - $start ))`
-				OUTTIME=`ff.handle.timecount $GETTIME`
-				echo " ${_ok} [$Fyellow$COUNT$Foff of $Fred$ALLFILES$Foff completed in $Fteal$OUTTIME$Foff ]"
-			fi
+				export TIMERAW=`echo $GETTIME`
+				OUTTIME=`humanTIme`
+				_comment="[$b_yellow$COUNT${reset} of $b_red$ALLFILES$reset completed in $b_teal $OUTTIME $reset ]"
+				_send="`_ok`"
+				`_FG`
+
 done
-rm $RAWHOME/ffmpeg-on
-################### END
+rm $RAWHOME/ffmpeg-
+###################STOP
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS

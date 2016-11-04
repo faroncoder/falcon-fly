@@ -1,0 +1,6 @@
+#!/bin/bash
+FLIB=/usr/local/lib/faron_falcon
+source $FLIB/characters
+source $FLIB/colors
+source $FLIB/functions
+tput init
