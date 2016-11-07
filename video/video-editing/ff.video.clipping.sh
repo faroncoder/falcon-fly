@@ -68,23 +68,17 @@ fi
 
 STARTTIME="00:00:00"
 
-if [ ! -d "../clips" ]
+if [ ! -d "new-mp4" ]
 	then
-		mkdir ../clips
-		ln -s ../clips clips
-fi
+		mkdir $HOME/new-mp4 -p
 
-if [ ! -d "../clips-completed" ]
-	then
-		mkdir ../clips-completed
-		ln -s ../clips-completed clips-completed
 fi
 
 
 if [ -z "$1" ]
     then
     echo -n "Which clip you want to check? "
-    read CLIPNAME
+    read $PWD/CLIPNAME
 fi
 
 if [ -z "$2" ]
@@ -97,31 +91,38 @@ if [ -z "$2" ]
     fi
 fi
 
-if [ -z "$3" ]
-    then
+if [ -z "$3" ]; then
     getmovietimeend
     echo -n "Extract clip at ending time? [Enter for $CALENDTIME] "
     read GETENDTIME
-    if [ -z "$GETENDTIME"  ]
-        then
+
+fi
+
+ if [ -z "$GETENDTIME"  ]; then
             GETENDTIME=$CALENDTIME
     fi
-fi
 
 ENDTIME="$( echo $GETENDTIME | sed 's/\./:/g' )"
 STARTTIME="$( echo $GETSTARTTIME | sed 's/\./:/g' )"
+CALUF=`echo $ENDTIME - $STARTTIME | bc `
 
-ffmpeg -ss "$STARTTIME" -i "$CLIPNAME" -to "$ENDTIME" -c copy -pix_fmt yuv420p -map 0 -reset_timestamps 1 -fflags genpts -movflags +faststart -f mp4 "clips/$NEWNAME.mp4" < /dev/null
+echo $ENDTIME
+echo $STARTTIME
+echo $CALUF
+# ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -t "$CALUF" -c copy -pix_fmt yuv420p -map 0 -reset_timestamps 1 -fflags genpts -movflags +faststart -f mp4 "new-mp4/$NEWNAME.mp4" < /dev/null
 
-echo -n "push $CLIPNAME out as completed? "
-read PUSHRESPOND
-if [ "$PUSHRESPOND" = "y" ]
-    then
-        mv $CLIPNAME clips-completed/
-        echo "$CLIPNAME archieved as processed..."
-    else
-        echo "$CLIPNAME still resides in this directory..."
-fi
+# ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -to "$ENDTIME" -c copy "new-mp4/$NEWNAME.mp4" < /dev/null
+
+
+# echo -n "push $CLIPNAME out as completed? "
+# read PUSHRESPOND
+# if [ "$PUSHRESPOND" = "y" ]
+#     then
+#         mv $CLIPNAME clips-completed/
+#         echo "$CLIPNAME archieved as processed..."
+#     else
+#         echo "$CLIPNAME still resides in this directory..."
+# fi
 
 ####################STOP
 ### exit code for clean exit

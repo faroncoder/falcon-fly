@@ -15,9 +15,10 @@ if [[ "$( echo $THISURLCHECK | grep '/srv/www/' )" != "" ]]; then
 #
 #	chromium-browser "$THISURLOPEN" 
 	while read line; do 
-	 	firefox --url $line --new-tab --private 
+	 	#firefox --url $line --new-tab --private 
 	 	#chromium-browser $line < /dev/null
 	 	#echo "this is webpath :: $line"
+		google-chrome $line < /dev/null
 	done < /tmp/.cache_script
 	> /tmp/.cache_script
 fi	

@@ -1,0 +1,18 @@
+<snippet>
+  <!-- Example: Hello, ${1:this} is a ${2:snippet}. -->
+  <content><![CDATA[
+
+${1:ARRAY}=( `       ${2:DATA}             ` )
+
+for ${3:VAR} in " \${${1:ARRAY}[@]}"; do
+
+
+done
+
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>fly_array</tabTrigger>
+  <description>handling array to populate</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope></scope>
+</snippet>

@@ -1,15 +1,16 @@
-NODE_HOME=/usr/local/include/node
-NPM_HOME=/usr/local/lib/node_modules/npm
+NODE_PATH=/usr/local/include/node
+NPM_PATH=/usr/local/lib/node_modules/npm
 JAVA_HOME=/usr/lib/jvm/java-8-oracle
 JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
 NWJS=/usr/local/lib/depot-tools
 
+
 export PATH="$PATH:$NODE_HOME:$NPM_HOME:$JAVA_HOME/bin:$JRE_HOME/bin:$NWJS"
-
-
-
-
-
-
+export PATH=/usr/local/lib/flutter/bin:$PATH
 export FALCON=/home/users/faron/.falcon/scripts
 export FLIB=/usr/local/lib/faron_falcon
+export ANDRIOD_HOME=/usr/local/lib/android-studio/bin
+export IDEA_HOME=/usr/local/lib/idea/bin
+export FLUTTER_ROOT=/usr/local/lib/flutter
+export DART_HOME=/usr/local/lib/dart
+ICONDefault=$FLIB/icon.jpg

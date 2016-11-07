@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+<snippet>
+	<content><![CDATA${1:[}
+
+${5:CONTENT}
+
+]${2:]}></content>
+	<tabTrigger>fly_${3:language}_${4:name}</tabTrigger> 
+}
+</snippet>
+
+
+]]></content>
+	<tabTrigger>fly_snippet_new</tabTrigger> 
+</snippet>

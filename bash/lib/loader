@@ -1,6 +1,68 @@
-#!/bin/bash
-FLIB=/usr/local/lib/faron_falcon
-source $FLIB/characters
-source $FLIB/colors
-source $FLIB/functions
-tput init
+source /usr/local/lib/faron_falcon/environments
+
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completions ]; then
+		. /etc/bash_completion
+	fi
+fi
+case $- in
+	*i*) ;;
+	*) return;;
+esac
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=10000000
+HISTFILESIZE=20000000
+shopt -s checkwinsize
+shopt -s globstar
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+source /usr/local/lib/faron_falcon/colors
+source /usr/local/lib/faron_falcon/environments
+source /usr/local/lib/faron_falcon/alias
+source /usr/local/lib/faron_falcon/characters
+source /usr/local/lib/faron_falcon/functions
+
+
+
+
+LS_COLORS='di=1;34:fi=0;33:ln=0;33:pi=4;30:so=5:or=0;31:mi=1;31:ex=0;32:*.rpm=1;90'
+export LS_COLORS
+
+
+
+
+last_command=$? ##   Must come first!
+
+PS1=""
+if [[ "$last_command" == 0 ]]; then
+	PS1="${B_green}${CHR23}${S_reset} "
+else
+	PS1="${B_red}${CHR24}${S_reset} "
+fi
+if [[ "$EUID" == 0 ]]; then
+		PS1+="${B_red}\\u ${S_reset} "
+	else
+		PS1+="${B_green}\\h${S_reset} "
+fi
+
+PS1+="${B_blue}\\A ${B_yellow}\\w ${B_purple}\$${S_clear} "
+
+
+
+
+
+
+

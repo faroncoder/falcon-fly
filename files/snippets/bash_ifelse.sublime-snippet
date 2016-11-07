@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+if [[ "\$${1:VAR}" != "" ]]; then
+		${2:VAR}=( \$${1:VAR}  )
+		for ${3:VAR} in "\${${2:VAR}[@]}"; do
+				${5:RESULT}=`${4:COMMAND} \$${3:VAR}`
+			if [[ "\$${5:RESULT}" != "" ]]; then
+				
+			else
+
+			fi
+		done
+fi
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fly_bash_ifelse</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

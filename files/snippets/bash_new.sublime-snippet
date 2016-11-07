@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+#!/bin/bash
+if [[ ! "\$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=\$PATH:/usr/local/bin; fi
+ source /usr/local/lib/faron_falcon/loader; startTime;
+ ####################START
+
+
+
+
+
+
+
+####################STOP
+doneTime
+### [FILE] ${1:FILENAME}  [ACTIVE] y
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fly_bash_new</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

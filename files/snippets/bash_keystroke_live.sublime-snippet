@@ -1,0 +1,35 @@
+<snippet>
+<!-- AWK LINE -->	<content><![CDATA[
+
+echo -e -n "$Finfo proceed setting up as $ASKDOMAIN? (y/Y)"
+
+
+${4:nameNewFunction}(){
+	## commands here
+}
+
+${6:nameNewFunction}(){
+	## commands here
+}
+
+${8:nameNewFunction}(){
+	## commands here
+}
+
+
+${1:STRING}=""
+while [[ "\$${1:STRING}" != \$"\x0a" && "\$${1:STRING}" != \$"\x40" ]]; do
+    #read -s -N 1 ${1:STRING}
+    IFS= read -s -n 1 ${1:STRING}
+     	echo -e "\n\$Fstat your response: \$${1:STRING}"
+ 	case "\$${1:STRING}" in
+ 		${3: argument}) ${4:nameNewFunction}; break ;;
+ 		${5: argument}) ${6:nameNewFunction}; shift ;;
+ 		${7: argument}) ${8:nameNewFunction}; shift 1 ;;
+		*) echo "\$Fwarn exiting"; break;;
+	esac
+done
+
+]]></content>  <!-- AWK MARK -->
+	<tabTrigger>fly_bash_live</tabTrigger>
+</snippet>

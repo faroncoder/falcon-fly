@@ -3,7 +3,7 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
  source /usr/local/lib/faron_falcon/loader;
  #################### START
 
-notify-send "$@"   -i "$FLIB/icon.jpg"  2> /dev/null;  1< /dev/null
+notify-send -u critical -a "FFMPEG" "COMPLETED!" -i $FLIB/icon.jpg"$@"  < /dev/null
 
 ####################STOP
 doneTime

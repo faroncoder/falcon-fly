@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+${1:COUNT}=0
+${1:COUNT}=`echo "\$${1:COUNT} + ${2:NUMBER}"" | bc`
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fly_bash_counting</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

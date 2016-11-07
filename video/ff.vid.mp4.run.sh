@@ -20,36 +20,36 @@ fi
 THISVERSION="15ebc8d6-9c26-11e6-82a1-4305264aedd3:Oct272016"
 #OLDVER=( 730ebd32-d446-11e5-b1f0-7bf895f2366a )
 if [[ ! -d "$RAWHOME/new-mp4" ]]; then
-	mkdir "$PWD/new-mp4" -p 2> /dev/null;
+	mkdir "$RAWHOME/new-mp4" -p 2> /dev/null;
 fi
-if [[ ! -d "$PWD/mediainfo" ]]; then
-	mkdir "$PWD/mediainfo" -p 2> /dev/null;
+if [[ ! -d "$RAWHOME/mediainfo" ]]; then
+	mkdir "$RAWHOME/mediainfo" -p 2> /dev/null;
 fi
-if [[ ! -d "$PWD/origs-trash" ]]; then
-	mkdir "$PWD/origs-trash" -p 2> /dev/null;
+if [[ ! -d "$RAWHOME/origs-trash" ]]; then
+	mkdir "$RAWHOME/origs-trash" -p 2> /dev/null;
 fi
 filePrep(){
 	GETNAME=$( rev <<< $j | cut -d"." -f2 | rev )
 	### name###
 	GETEXT=".$( rev <<< $j | cut -d"." -f1 | rev )"
 	### .ext###
-	#GETFILE="$PWD/$GETNAME$GETEXT"
+	#GETFILE="$RAWHOME/$GETNAME$GETEXT"
 	### current file$Foff###
 	NEWNAME=`echo $GETNAME | tr '.' '-'`
 	### new name###
 	NEWFILE="$NEWNAME.mp4"
 	### new file name###
-	TRASH="$PWD/origs-trash/$GETNAME$GETEXT"
+	TRASH="$RAWHOME/origs-trash/$GETNAME$GETEXT"
 	### file to be trashed###
-	COLLECT="$PWD/new-mp4/$NEWFILE"
+	COLLECT="$RAWHOME/new-mp4/$NEWFILE"
 	### converted file###
-	FEED="$PWD/$NEWNAME-feed.dat"
+	FEED="$RAWHOME/$NEWNAME-feed.dat"
 	#### data -feed###
-	INFOA="$PWD/mediainfo/$NEWNAME-original.info"
+	INFOA="$RAWHOME/mediainfo/$NEWNAME-original.info"
 	#### data  mediainfo original ###
-	INFOB="$PWD/mediainfo/$NEWNAME-converted.info"
+	INFOB="$RAWHOME/mediainfo/$NEWNAME-converted.info"
 	#### data  mediainfo converted ##
-	NOTIFYSYS="$PWD/ffmpeg-on"
+	NOTIFYSYS="$RAWHOME/ffmpeg-on"
 }
 fireUpTheEngine(){
 	YEARFILE=`date`
@@ -89,7 +89,7 @@ fireUpTheEngine(){
 	# -cmp chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 \
 	# -g 59.94 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0 \
 	# -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k -f mp4 "$FEED" < /dev/null;
-	mv $GETFILE $TRASH
+	mv "$GETFILE" "$TRASH/"
 	mediainfo "$TRASH" > "$INFOA"
 	ffmpeg -i "$FEED" -y -codec copy \
 	-metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" \
@@ -102,35 +102,32 @@ fireUpTheEngine(){
 
 COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
-echo "`_info` $ALLFILES files queued"
-touch $NOTIFYSYS
+_send=$CHR23; _comment="$b_yellow$ALLFILES$reset files queued"
+_FG
+touch "$NOTIFYSYS"
 
 
-function checkForCommands() {
-	ff.vid.ffmpeg.commands
-	sleep 10
-	checkForCommands
-}
+
 
 for j in "${GOLP[@]}"; do
 				rm "$RAWHOME/*-feed.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
-				start=`date +%s`
+				startTimeScript
 				_comment="$j ==>"
-				_send=`_warn`
+				_send=$CHR24;
 				_FY
 				filePrep
-				fireUpTheEngine && checkForCommands
-				end=`date +%s`
-				GETTIME=`echo $(( $end - $start ))`
-				export TIMERAW=`echo $GETTIME`
-				OUTTIME=`humanTIme`
-				_comment="[$b_yellow$COUNT${reset} of $b_red$ALLFILES$reset completed in $b_teal $OUTTIME $reset ]"
-				_send="`_ok`"
-				`_FG`
+				fireUpTheEngine
+				STIMED=`tellTimeScript`
+				echo  "$STIMED  --   $j" >>  $RAWHOME/ffmpeg-results
+				_comment="$b_yellow$COUNT${reset} of $b_red$ALLFILES$reset completed in $b_teal $STIMED $reset "
+				_send="$CHR23"
+				rm $RAWHOME/*-feed.dat
+				notify-send "Item done" "`_FG`"
+
+
 
 done
-rm $RAWHOME/ffmpeg-
 ###################STOP
 ### exit code for clean exit
 doneTime

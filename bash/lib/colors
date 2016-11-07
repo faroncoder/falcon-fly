@@ -1,11 +1,3 @@
-tput init
-export COLUMNS=`tput cols 2> /dev/null`
-source /usr/local/lib/faron_falcon/characters
-
-
-cursor_return=` tput rc 2> /dev/null; tput ed 2> /dev/null `
-cursor_save=`tput sc 2> /dev/null;`
-
 
 R_black="\[\e[0;30m\]"  # Black
 R_red="\[\e[0;31m\]" # Red
@@ -59,95 +51,95 @@ b_gray="\e[1;37m"  # White
 
 
 
-function doFlush() {
-	export  _send=""
-	export _comment=""
-}
+# function doFlush() {
+# 	export  _send=""
+# 	export _comment=""
+# }
 
-function doVarLoad() {
-	 export _send=${_send}
-	 export _comment=${_comment}
-}
-
-
-
-function _ok() {
-	# if [[ "$_send" = "" ]]; then
-	echo -e ${b_green}${CHR346}${reset}]
-	# else
-	# echo -e ${reset}${b_green}${CHR346}${reset}
-	# fi
-}
-function _no() {
-	# if [[ "$_send" == "" ]]; then
-	echo -e ${b_red}${CHR146}${reset}]
-	# else
-	# echo -e ${reset}${b_red}${CHR146}${reset}
-	# fi
-}
+# function doVarLoad() {
+# 	 export _send=${_send}
+# 	 export _comment=${_comment}
+# }
 
 
-function _warn() {
-	# if [[ "$_send" == "" ]]; then
-	echo -e ${b_yellow}${CHR182}${reset}]
-	# else
-	# echo -e ${reset}${b_yellow}${CHR182}${reset}
-	# fi
-}
+
+# function _ok() {
+# 	# if [[ "$_send" = "" ]]; then
+# 	echo -e ${b_green}${CHR346}${reset}]
+# 	# else
+# 	# echo -e ${reset}${b_green}${CHR346}${reset}
+# 	# fi
+# }
+# function _no() {
+# 	# if [[ "$_send" == "" ]]; then
+# 	echo -e ${b_red}${CHR146}${reset}]
+# 	# else
+# 	# echo -e ${reset}${b_red}${CHR146}${reset}
+# 	# fi
+# }
 
 
-function _info() {
-	# if [[ "$_send" = "" ]]; then
-	echo -e ${b_blue}${CHR152}${reset}]
-	# else
-	# echo -e ${reset}${b_blue}${CHR152}${reset}
-	# fi
-}
+# function _warn() {
+# 	# if [[ "$_send" == "" ]]; then
+# 	echo -e ${b_yellow}${CHR182}${reset}]
+# 	# else
+# 	# echo -e ${reset}${b_yellow}${CHR182}${reset}
+# 	# fi
+# }
 
 
-function _stat() {
-	echo -e ${b_teal}${CHR47}${reset}
-	# echo -e ${reset}${b_teal}${CHR47}${reset}
-}
+# function _info() {
+# 	# if [[ "$_send" = "" ]]; then
+# 	echo -e ${b_blue}${CHR152}${reset}]
+# 	# else
+# 	# echo -e ${reset}${b_blue}${CHR152}${reset}
+# 	# fi
+# }
 
-function _FY() {
-	doVarLoad
-	echo -e [${b_yellow}${_send}${reset}] ${_comment}
-	doFlush
-}
-function _FG() {
-	doVarLoad
-	echo -e [${b_green}${_send}${reset}] ${_comment}
-	doFlush
-}
 
-function _FR() {
-	doVarLoad
-	echo -e [${b_red}${_send}${reset}] ${_comment}
-	doFlush
-}
+# function _stat() {
+# 	echo -e ${b_teal}${CHR47}${reset}
+# 	# echo -e ${reset}${b_teal}${CHR47}${reset}
+# }
 
-function _FP() {
-	doVarLoad
-	echo -e [${b_purple}${_send}${reset}] ${_comment}
-	doFlush
-}
+# function _FY() {
+# 	doVarLoad
+# 	echo -e [${b_yellow}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
+# function _FG() {
+# 	doVarLoad
+# 	echo -e [${b_green}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
 
-function _FB() {
-	doVarLoad
-	echo -e [${b_blue}${_send}${reset}] ${_comment}
-	doFlush
-}
+# function _FR() {
+# 	doVarLoad
+# 	echo -e [${b_red}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
 
-function _FT() {
-	doVarLoad
-	echo -e [${b_teal}${_send}${reset}] ${_comment}
-	doFlush
-}
+# function _FP() {
+# 	doVarLoad
+# 	echo -e [${b_purple}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
 
-function _FD() {
-	doVarLoad
-	echo -e [${b_gray}${_send}${reset}] ${_comment}
-	doFlush
-}
+# function _FB() {
+# 	doVarLoad
+# 	echo -e [${b_blue}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
+
+# function _FT() {
+# 	doVarLoad
+# 	echo -e [${b_teal}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
+
+# function _FD() {
+# 	doVarLoad
+# 	echo -e [${b_gray}${_send}${reset}] ${_comment}
+# 	doFlush
+# }
 
