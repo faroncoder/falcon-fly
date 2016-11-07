@@ -53,7 +53,7 @@ function processArray() {
 }
 
 function decodeVarsClear() {
-		num="";  sec=""; hour=""; min=""; day=""; mms="";
+		num=";  sec="; hour="; min="; day="; mms=";
 }
 
 
@@ -92,7 +92,7 @@ function checkTime() {
 	stopTime
 	decodeSec
 	TIMED=$PASS
-	_comment="$b_purple$TIMED$reset"
+	_comment=$b_purple$TIMED$reset
 	_send="`_warn`"
 	_FY
 }
@@ -162,110 +162,110 @@ function doFlush() {
 }
 
 function doVarLoad() {
-	 export _send=${_send}
-	 export _comment=${_comment}
+	 export _send=$_send
+	 export _comment=$_comment
 }
 
 function Go_ok() {
-	echo -e ${reset}${b_green}${CHR346}${b_closer}${reset}
+	echo -e "$reset$b_green$CHR346$reset"
 }
 function Go_no() {
-	echo -e ${reset}${b_red}${CHR146}${b_closer}${reset}
+	echo -e "$reset$b_red$CHR146$reset"
 }
 
 
 function Go_warn() {
-	echo -e ${reset}${b_yellow}${CHR182}${b_closer}${reset}
+	echo -e "$reset$b_yellow$CHR182$reset"
 }
 
 
 function Go_info() {
-	echo -e ${reset}${b_blue}${CHR152}${b_closer}${reset}
+	echo -e "$reset$b_blue$CHR152$reset"
 }
 
 
 function Go_stat() {
-	echo -e ${reset}[${b_teal}${CHR47}${b_closer}${reset}]
+	echo -e "$reset[$b_teal$CHR47$reset"
 }
 
 function _ok() {
-	echo -e -n ${reset}${b_green}${CHR346}${b_closer}${reset}
+	echo -e -n "$reset$b_green$CHR346$reset"
 }
 function _no() {
-	# if [[ "$_send" == "" ]]; then
-	echo -e -n ${reset}${b_red}${CHR146}${b_closer}${reset}
+	# if [[ $_send ==  ]]; then
+	echo -e -n "$reset$b_red$CHR146$reset"
 	# else
-	# echo -e ${reset}${b_red}${CHR146}${b_closer}${reset}
+	# echo -e $reset$b_red$CHR146$reset
 	# fi
+
 }
 
-
 function _warn() {
-	# if [[ "$_send" == "" ]]; then
-	echo -e -n ${reset}${b_yellow}${CHR182}${b_closer}${reset}
+	# if [[ "$_send" == " ]]; then
+	echo -e -n "$reset$b_yellow$CHR182$reset"
 	# else
-	# echo -e ${reset}${b_yellow}${CHR182}${b_closer}${reset}
+	# echo -e "$reset$b_yellow$CHR182$reset"
 	# fi
 }
 
 
 function _info() {
-	# if [[ "$_send" = "" ]]; then
-	echo -e -n ${reset}${b_blue}${CHR152}${b_closer}${reset}
+	# if [[ "$_send" = " ]]; then
+	echo -e -n "$reset$b_blue$CHR152$reset"
 	# else
-	# echo -e ${reset}${b_blue}${CHR152}${b_closer}${reset}
+	# echo -e "$reset$b_blue$CHR152$reset
 	# fi
 }
 
 
 function _stat() {
-	echo -e -n ${reset}[${b_teal}${CHR47}${b_closer}${reset}]
-	# echo -e ${reset}${b_teal}${CHR47}${b_closer}${reset}
+	echo -e -n "$reset$b_teal$CHR47$reset]"
+	# echo -e $reset$b_teal$CHR47$reset
 }
 
 function _FY() {
 	doVarLoad
-	echo -e [${b_yellow}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_yellow$_send$reset] $_comment "
 	doFlush
 }
 function _FG() {
 	doVarLoad
-	echo -e [${b_green}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_green$_send$reset] $_comment "
 	doFlush
 }
 
 function _FR() {
 	doVarLoad
-	echo -e [${b_red}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_red$_send$reset] $_comment "
 	doFlush
 }
 
-function _FP() {
+_FP() {
 	doVarLoad
-	echo -e [${b_purple}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_purple$_send$reset] $_comment "
 	doFlush
 }
 
-function _FB() {
+_FB() {
 	doVarLoad
-	echo -e [${b_blue}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_blue$_send$reset] $_comment "
 	doFlush
 }
 
-function _FT() {
+_FT() {
 	doVarLoad
-	echo -e [${b_teal}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_teal$_send$reset] $_comment "
 	doFlush
 }
 
-function _FD() {
+_FD() {
 	doVarLoad
-	echo -e [${b_gray}${_send}${b_closer}${reset}] ${_comment}
+	echo -e "[$b_gray$_send$reset] $_comment "
 	doFlush
 }
 
 
-function _checkPath() {
+_checkPath() {
 	echo $PATH | tr ':' '\n'
 }
 

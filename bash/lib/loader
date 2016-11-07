@@ -1,4 +1,8 @@
+
+source /usr/local/lib/faron_falcon/characters
 source /usr/local/lib/faron_falcon/environments
+source /usr/local/lib/faron_falcon/colors
+source /usr/local/lib/faron_falcon/functions
 
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -29,11 +33,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-source /usr/local/lib/faron_falcon/colors
-source /usr/local/lib/faron_falcon/environments
 source /usr/local/lib/faron_falcon/alias
-source /usr/local/lib/faron_falcon/characters
-source /usr/local/lib/faron_falcon/functions
+
+
+
+
 
 
 
