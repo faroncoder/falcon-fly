@@ -10,7 +10,7 @@ if [[ -f "$filecheck" ]]; then
 	subl $filecheck	
 	echo ${_ok}
 else
-	echo "${_no} $Fgreen $1 $Foff is not a live command"
+	echo "$_no $Fgreen $1 $Foff is not a live command"
 fi
 
 

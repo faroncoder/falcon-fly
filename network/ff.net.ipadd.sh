@@ -5,11 +5,11 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 IPGET="$1"
 CDR="$2"
 if [[ "$IPGET" == "" ]]; then
-	echo -n -e "${_stat} ip address: "
+	echo -n -e "_stat ip address: "
 	read IPGET
 fi
 if [[ "$CDR" == "" ]]; then
-	echo -n -e "${_stat} CIDR netmask? "
+	echo -n -e "_stat CIDR netmask? "
 	read CDR
 fi
 

@@ -4,7 +4,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ####################START
 
 while read line; do
-	echo -e "${_info} $line $Foff"
+	echo -e "$_info $line $Foff"
 	$line
 done < $1
 

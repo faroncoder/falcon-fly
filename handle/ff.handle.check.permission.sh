@@ -7,7 +7,7 @@ GETINPUTUID=$1
 GETINPUTGROUPS=$2
 
 if [[ "$GETINPUTUID" == "" ]]; then
-	echo -n "${_info} targeted UID? ($Fyellow default=$UID$Foff )? "
+	echo -n "$_info targeted UID? ($Fyellow default=$UID$Foff )? "
 	read GETUID
 else
 	GETUID=$GETINPUTUID
@@ -16,7 +16,7 @@ fi
 
 
 if [[ "$GETINPUTGROUPS" == "" ]]; then
-	echo -n "${_info} targeted GROUP ($Fyellow default=$GROUPS$Foff )? "
+	echo -n "$_info targeted GROUP ($Fyellow default=$GROUPS$Foff )? "
 	read GETGROUPS
 else
 	GETGROUPS=$GETINPUTGROUPS
@@ -32,8 +32,8 @@ LOADDATA="/tmp/`uuid`"
 $SUDO find . -type f >> $LOADDATA
 $SUDO sed -i -e 's/ /\\ /g' $LOADDATA
 TOTALCOUNT=`find . -type f | wc -l`
-echo "${_stat} collecting file information" 2> /dev/null
-echo "${_info} Total of files in $Fteal$PWD$Foff: $Fyellow$TOTALCOUNT$Foff"
+echo "_stat collecting file information" 2> /dev/null
+echo "$_info Total of files in $Fteal$PWD$Foff: $Fyellow$TOTALCOUNT$Foff"
 FILECOUNT=0
 ISSUECOUNT=0
 CLEANCOUNT=0
@@ -49,7 +49,7 @@ while read line; do
 		#FILEOK=( ${FILEOK[@]} $GETFILE )
 		CLEANCOUNT=`echo $(( $CLEANCOUNT + 1 ))`
 	else
-		#echo "${_no} $GETFILE"
+		#echo "$_no $GETFILE"
 		ISSUENO=( ${ISSUENO[@]} $GETFILE )
 		ISSUECOUNT=`echo $(( $ISSUECOUNT + 1 ))`
 	fi
@@ -57,13 +57,13 @@ while read line; do
 done <  $LOADDATA
 /bin/rm $LOADDATA
 
-echo "${_info}$Fyellow Result --$Foff Files:$Fyellow$TOTALCOUNT$Foff Processed:$Fteal$FILECOUNT$Foff Issues:$Fred$ISSUECOUNT$Foff Intact:$Fgreen$CLEANCOUNT$Foff"
+echo "$_info$Fyellow Result --$Foff Files:$Fyellow$TOTALCOUNT$Foff Processed:$Fteal$FILECOUNT$Foff Issues:$Fred$ISSUECOUNT$Foff Intact:$Fgreen$CLEANCOUNT$Foff"
 # if [[ "$ISSUECOUNT" != 0 ]]; then
-# 	echo -n "${_info} press l to list all files with issues (enter for nay)  "
+# 	echo -n "$_info press l to list all files with issues (enter for nay)  "
 # 	read LISTGO
 # 	if [[ "$LISTGO" == "l" ]]; then
 # 		for issueput in "${ISSUENO[@]}"; do	
-# 			printf "${_warn} $issueput"
+# 			printf "$_warn $issueput"
 # 		done
 # 	fi	
 # fi

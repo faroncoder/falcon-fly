@@ -25,7 +25,7 @@ echo "${_ok} /etc/fstab configured"
  rm $PWD/ff.new.start.sh 2> /dev/null
  source /usr/local/bin/ff.apt.update
 # $SUDO reboot
-#echo "${_warn} rebooting"
+#echo "$_warn rebooting"
 
 exit 0
 ### exit code for clean exit

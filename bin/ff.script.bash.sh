@@ -36,7 +36,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 NAME=$1
 if [[ "$NAME" == "" ]]; then
-	echo -n "${_info} Name of script?     "
+	echo -n "$_info Name of script?     "
 	read NAME
 fi
 echo "${_ok} script created"

@@ -14,9 +14,9 @@ IFACE=$( head -n 1 $FILETHIS )
 MYIP=$( hostname -I )
 CHECKFACE=$( ifconfig | cut -d' ' -f1 | tr ' ' '\n' | sed '/lo/d' )
 if [[ "$CHECKFACE" == "$IFACE" ]]; then
-	echo -e "${_info} device matches"
+	echo -e "$_info device matches"
 else
-	echo -e "${_no} interface mismatch$Foff"
+	echo -e "$_no interface mismatch$Foff"
 	exit 1
 fi
 while read line; do

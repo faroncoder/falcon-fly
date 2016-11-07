@@ -6,7 +6,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 $SUDO service apache2 restart
 
-echo -e "${_info} apache2 service restarted"
+echo -e "$_info apache2 service restarted"
 
 
 ###################STOP

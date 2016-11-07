@@ -16,8 +16,8 @@ grabavi= source /usr/bin//find  $PWD -maxdepth 1 -type f  -name '*.avi' ! -name 
 
 for INPUTZ in "${grabavi[@]}";
 	do
-		INPUT="$ source /usr/bin//basename $INPUTZ )";
-		PREFILE="$ source /usr/bin//rev <<< "$INPUT"  source /usr/bin//cut -d"." -f2  source /usr/bin//rev )";
+		INPUT="_stat source /usr/bin//basename $INPUTZ )";
+		PREFILE="_stat source /usr/bin//rev <<< "$INPUT"  source /usr/bin//cut -d"." -f2  source /usr/bin//rev )";
 		source /usr/bin//avidemux "$INPUT" --save
 		read respondAvidemux
 		echo $respondAvidemux

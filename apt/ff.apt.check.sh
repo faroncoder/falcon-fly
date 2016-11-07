@@ -11,7 +11,7 @@ for j in "${PICKS[@]}"; do
 	if [[ "$CHECKDPKG" == "installed" ]]; then
 		echo -e "${_ok}$Fgreen $j installed.$Foff"
 	else
-		echo -e "${_no}$Fred $j is not installed.$Foff"
+		echo -e "$_no$Fred $j is not installed.$Foff"
 	fi
 	j=""
 done

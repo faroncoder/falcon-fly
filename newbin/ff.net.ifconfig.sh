@@ -60,15 +60,15 @@ if [[ "$GETASSIGNIP" == "$CHECKIP" ]]; then
 
  logger "$GETLOGA | $GETLOGB "
 
-echo -e "${_info} reseting ipv6 tunnel"
+echo -e "$_info reseting ipv6 tunnel"
  $SUDO ifconfig teredo down
-echo -e "${_info} ipv6 tunnel up and operating"
+echo -e "$_info ipv6 tunnel up and operating"
  $SUDO ifconfig teredo up
 
 
  echo "=================="
  echo -e "$fcok :: interface check completed!"
- echo -e "${_info} restarting the networking ...."
+ echo -e "$_info restarting the networking ...."
 	service networking restart
 
 

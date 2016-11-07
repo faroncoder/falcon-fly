@@ -10,10 +10,10 @@ PATHHOME="$PATHMIEF/hold"
 cd $PATHMIEF
 <<<<<<< HEAD
 DATGET="$( /.bin/ls /home/users/$USER/var/Streamings/files/engine/factory-mp4/mkv/*.dat  source /usr/bin/sort  source /usr/bin/head -n 1 )"
-PREFILE="$ source /usr/bin/rev <<< "$DATGET"  source /usr/bin/cut -d "." -f2  source /usr/bin/rev )"
+PREFILE="_stat source /usr/bin/rev <<< "$DATGET"  source /usr/bin/cut -d "." -f2  source /usr/bin/rev )"
 =======
 DATGET="$( /bin/ls /home/users/$USER/var/Streamings/files/engine/factory-mp4/mkv/*.dat  source /usr/bin//sort  source /usr/bin//head -n 1 )"
-PREFILE="$ source /usr/bin//rev <<< "$DATGET"  source /usr/bin//cut -d "." -f2  source /usr/bin//rev )"
+PREFILE="_stat source /usr/bin//rev <<< "$DATGET"  source /usr/bin//cut -d "." -f2  source /usr/bin//rev )"
 >>>>>>> 7ec161e5c2fe99a9c3028e53ce2a2b3d0bb30954
 if [[ -z "$DATGET" ]]; then
 ####################STOP

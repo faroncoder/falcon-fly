@@ -6,7 +6,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 $SUDO service networking restart
 
-echo -e "${_info} networking service restarted"
+echo -e "$_info networking service restarted"
 
 
 ###################STOP

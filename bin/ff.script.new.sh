@@ -14,8 +14,8 @@ $LANDHOME
 doneTime ### [ FILE:\$MEF ACTIVE:y ]
 "
 NEWBODY=" your script goes here
-echo \"\${_stat}\"; echo \"\${_no}\"; echo \"\${_warn}\";
-echo \"\${_info}\"; echo\"\${_ok}\"
+echo \"\$\"; echo \"\$_no\"; echo \"\$_warn\";
+echo \"\$_info\"; echo\"\${_ok}\"
 "
 interactive=$3
 scriptUpdaerEngine(){
@@ -37,7 +37,7 @@ scriptUpdaerEngine(){
 		cat "$FOOTER" | sed '/^$/d' >> "$MEF"
 		chmod +x $MEF
 		FILE=`basename $line`
-		echo "${_warn} $COUNT of $GEF "
+		echo "$_warn $COUNT of $GEF "
 		if [[ -f "$MEF" ]]; then
 			echo "${_ok} : $FILE "
 		fi
@@ -54,16 +54,16 @@ finalRun(){
 }
 
 arumentsInstall(){
-	echo -n "${_info} Script response when no arguments is entered?  "
+	echo -n "$_info Script response when no arguments is entered?  "
 	read Descript
 	LOADDes="$Descript"
 	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
-	ENDINTERACT="else echo \"\${_no} \$Fred no argument is supplied.\$Foff\""
-	LOADIN="echo \"\${_info} \$Fyellow `echo $LOADDes` as an argument \$Foff\"; fi"
+	ENDINTERACT="else echo \"\$_no \$Fred no argument is supplied.\$Foff\""
+	LOADIN="echo \"\$_info \$Fyellow `echo $LOADDes` as an argument \$Foff\"; fi"
 }
 newProcess(){
 	if [[ -f "$MEF" ]]; then
-		echo "${_warn} filename exists."
+		echo "$_warn filename exists."
 		doneTime
 	else
 		> $MEF
@@ -71,21 +71,21 @@ newProcess(){
 		cat "$HEADER" | sed '/^$/d' > "$MEF"
 		cat  "$NEWBODY" >> "$MEF"
 		cat "$FOOTER" | sed '/^$/d' >> "$MEF"
-		echo "${_stat} $FBgreen $XF $Foff created!"
+		echo "_stat $FBgreen $XF $Foff created!"
 	fi
 	finalRun
 }
 newScripter(){
 	if [[ "$1" == "" ]]; then
-		echo -n "${_info} script name? "
+		echo -n "$_info script name? "
 		read CL
 	fi
 	if [[ "$2" == "" ]]; then
-		echo -n "${_info} folder? "
+		echo -n "$_info folder? "
 		read xcs
 	fi
 	if  [[ "$interactive" == "" ]]; then
-		echo -n "${_warn} script to interact with user? (y=yes) "
+		echo -n "$_warn script to interact with user? (y=yes) "
 		read interactive
 		if [[ "$interactive" == "y" ]]; then
 			arumentsInstall
@@ -121,7 +121,7 @@ tester(){
 while :
 do
 SELECT="$@"
-echo -n "${_info}  $Fyellow -u$Foff upgrader and $Fgreenany key$Foff for new script  "
+echo -n "$_info  $Fyellow -u$Foff upgrader and $Fgreenany key$Foff for new script  "
  	case "$SELECT" in
  		-u) scriptUpdaerEngine;  break ;;
 		--help) tester; break ;;

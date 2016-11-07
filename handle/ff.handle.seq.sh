@@ -21,11 +21,11 @@ for seqfile in "${GETALL[@]}"; do
 	NEWNAME="$( seq -w 0000 $MEXT | tail -n 1 )"
 	PREEX=`echo $seqfile | rev | cut -d'.' -f1 | rev`
 	rename "s/$seqfile/$NEWNAME.$PREEX/g" "$seqfile"
-	echo "${_warn} $seqfile --> $NEWNAME.$PREEX "
+	echo "$_warn $seqfile --> $NEWNAME.$PREEX "
 	MEXT=`echo $(( $MEXT + 1 ))`
 done
 
-echo "${_stat} $COUNT files ==> $MEXT seqfile"
+echo "_stat $COUNT files ==> $MEXT seqfile"
 
 ###################STOP
 ### exit code for clean exit

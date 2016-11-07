@@ -10,10 +10,10 @@ THISFUILE="/tmp/`uuid`"
 KEYWORD="$1 $2 $3"
 
 if [[ "$KEYWORD" == "" ]]; then
-		echo -e "${_no} -- exiting"	
+		echo -e "$_no -- exiting"	
 		XeF
 elif [[ "$KEYWORD" == " " ]]; then
-		echo -e "${_no} -- exiting"	
+		echo -e "$_no -- exiting"	
 		XeF
 fi
 
@@ -32,7 +32,7 @@ fi
 
 checkList(){ 
 if [[ $G == $NUMB ]]; then
-	echo -e -n "${_stat} New search keyword: "
+	echo -e -n "_stat New search keyword: "
 	read NEWSEARCH
 	ff.apt.find $NEWSEARCH
 	XeF
@@ -60,13 +60,13 @@ makelister(){
 
 pickProcesser(){
 
-	echo -e "${_info} Keyword searched: $Fred $KEYWORD $Foff"
+	echo -e "$_info Keyword searched: $Fred $KEYWORD $Foff"
 	echo -n -e "Item to install ? "
 	read  PICKS
 	CHECKALL=( $PICKS )
 
 if [[ "${CHECKALL[@]}" == "" ]] || [[ "${CHECKALL[@]}" == " " ]]; then
-		echo -e "${_no} -- exiting"
+		echo -e "$_no -- exiting"
 		XeF
 else
 
@@ -75,7 +75,7 @@ F=0
 	for pickme in "${PICKS[@]}"; do
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
-		echo -e "${_info} fetching $Fteal$WHOME$Foff";
+		echo -e "$_info fetching $Fteal$WHOME$Foff";
 		source /usr/local/bin/ff.apt.verify $WHOME
 		#source /usr/local/bin/ff.apt.fetch $WHOME
 		echo "----------------------------------------------------"	
@@ -120,8 +120,8 @@ menuEngine(){
 #aptMenu
 #}
 
-#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do echo -e "${_info} No package	
-#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "${_info} No package is selected - exiting"; XeF ; done; fi
+#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do echo -e "$_info No package	
+#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "$_info No package is selected - exiting"; XeF ; done; fi
 
 #aptMenu
 

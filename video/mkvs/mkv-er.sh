@@ -20,8 +20,8 @@ if [ -z "$INPUTZ" ]
 		echo "no more file left"
 		exit 1
 	else
-		INPUT="$ source /usr/bin//basename $INPUTZ )"
-		PREFILE="$ source /usr/bin//rev <<< "$INPUT"  source /usr/bin//cut -d"." -f2  source /usr/bin//rev )"
+		INPUT="_stat source /usr/bin//basename $INPUTZ )"
+		PREFILE="_stat source /usr/bin//rev <<< "$INPUT"  source /usr/bin//cut -d"." -f2  source /usr/bin//rev )"
 		mediainfo $INPUT >> "mediainfos/raw-$PREFILE.list"
 #TYPEFILE="FEED"
 #TITLEFILE="", YEARFILE="", ALBUMFILE="", CONTAINTERFILE="", ARTISTFILE="", COMMENTFILE="Encoded by Faron the Falcon"

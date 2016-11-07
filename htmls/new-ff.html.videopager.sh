@@ -5,19 +5,19 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
 
 <<<<<<< HEAD
 # if [[ "$FILEID" == "" ]]; then
-#     echo -n "${_info} Which file to pinpoint? "
+#     echo -n "$_info Which file to pinpoint? "
 #     read FILEID
 # fi
 
 if [[ "$1" == "" ]]; then
-	echo "${_no} filename? "
+	echo "$_no filename? "
 	XeF
 else
 ## Variablize the input
 	FILEID="$1"
 ## if 2nd argument is empty
 	if [[ "$2" == "" ]]; then
-		echo "${_no} url? "
+		echo "$_no url? "
 ## exit
 		XeF
 	else
@@ -37,12 +37,12 @@ FILEID=$1
 GETUR=$2
 
 if [[ "$FILEID" == "" ]]; then
-    echo -n "${_info} Which file to pinpoint? "
+    echo -n "$_info Which file to pinpoint? "
     read FILEID
 fi
 
 if [[ "$GETUR" == "" ]]; then
-	echo -n "${_info} Location of URL: http(s)://"
+	echo -n "$_info Location of URL: http(s)://"
 	read GETUR
 fi
     LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
@@ -60,11 +60,11 @@ fi
     FULLHTTPhtml="$GETD/$PREFILE.html"
 
 	if [[ ! -d "$PWD/media" ]]; then
-		echo "${_warn} directory 'media' created"
+		echo "$_warn directory 'media' created"
 	    mkdir -p "$PWD/media" 2> /dev/null;
 	fi
 #	ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 $PWD/thumbs/$PREFILE.png < /dev/null
-#	echo "${_warn} $PREFILE.png thumbed"
+#	echo "$_warn $PREFILE.png thumbed"
 
 
 source /usr/local/bin/ff.media.thumbnailer "$FILEI"  
@@ -153,7 +153,7 @@ mv $FILEI $PWD/media/
 
 fi
 =======
-echo "${_warn} creating $PREFILE.html"
+echo "$_warn creating $PREFILE.html"
 echo -e "$DocVideo" > "$FULLHTTPhtml"
 mv $FILEI $PWD/media/
 

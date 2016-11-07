@@ -7,11 +7,11 @@ xcs="$2"
 CL=$( basename "$xcv" )
 
 if [[ "$CL" == "" ]]; then
-	echo -n -e "${_info} name of the script? "
+	echo -n -e "$_info name of the script? "
 	read CL
 fi
 if [[ "$xcs" == "" ]]; then
-	echo -n -e "${_info} which folder? "
+	echo -n -e "$_info which folder? "
 	read xcs
 fi
 LYH="/home/users/faron/.falcon/scripts"
@@ -23,7 +23,7 @@ KIL="$LYH/kills/$ji-killed-$XF"
 #XD="/home/users/faron/.falcon/scripts/$xcs/$CL"
 #MEF="$PWD/$XF"
 if [[ -f "$MEF" ]]; then
-	echo -e "${_no} filename exists."; XeF
+	echo -e "$_no filename exists."; XeF
 fi
 
 

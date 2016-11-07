@@ -5,9 +5,9 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 
 THIS=`curl http://myip.dnsomatic.com 2> /dev/null`
-echo -e "${_info} Public IP: $THIS"
-echo -e "${_info} Local IP: $( hostname -i )"
-echo -e "${_info} Networked IP: $( hostname -I )"
+echo -e "$_info Public IP: $THIS"
+echo -e "$_info Local IP: $( hostname -i )"
+echo -e "$_info Networked IP: $( hostname -I )"
 
 
 

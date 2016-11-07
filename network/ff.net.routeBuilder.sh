@@ -25,12 +25,12 @@ loadSudo" > $FILE
 functionGetRoutes(){
 if [[ ! "$NT" ]]; then
 
-		echo -e -n "${_info} Network: "
+		echo -e -n "$_info Network: "
 		read NT
 		if [[ "$NT" == "" ]]; then
 			cat $FILE
 			cat $FILEa
-			echo -e "${_stat}us File: $FILE"
+			echo -e "$us File: $FILE"
 			exit 0
 		fi
 
@@ -38,7 +38,7 @@ if [[ ! "$NT" ]]; then
 		BP="$2"; LP=":$3";
 		if [[ "$2" = "" ]]; then BP="?";
 
-		echo -e -n "${_info} Port Forwarding $GETHOST "
+		echo -e -n "$_info Port Forwarding $GETHOST "
 		read BP
 		fi
 		# GETHOST=`echo "$NT:$BP$LP"`
@@ -58,7 +58,7 @@ if [[ ! "$NT" ]]; then
 	 # 	NT=""; GW="";
 	 # 	echo -e "${_ok}"
 	else
-		echo -e "${_stat}us Done!"
+		echo -e "$us Done!"
 	fi
 functionGetRoutes
 

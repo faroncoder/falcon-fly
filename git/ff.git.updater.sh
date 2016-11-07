@@ -8,26 +8,26 @@ openshengine
 		if [[ "$gitnewname" == "scripts" ]]; then
 			gitnewname="falcon-fly"
 		fi
-		echo "${_stat} Target: $gitnewname"
+		echo "_stat Target: $gitnewname"
 		#confirmgitnew="https://github.com/faroncoder/falcon-$gitnewname.git"
 
-		echo -n "${_info} Commit message? "
+		echo -n "$_info Commit message? "
 		read COMMIT
 	git checkout  2> /dev/null
-	git status; echo "${_info} status checked" 2> /dev/null
-	git add -A; echo "${_info} files checked" 2> /dev/null
+	git status; echo "$_info status checked" 2> /dev/null
+	git add -A; echo "$_info files checked" 2> /dev/null
 	git commit -am 	"`echo $COMMIT`";
 	git push -u origin master;
 	git pull 2> /dev/null
-	echo "${_stat} $Fyellow Updating$Foff $gitnewname" 2> /dev/null
+	echo "_stat $Fyellow Updating$Foff $gitnewname" 2> /dev/null
 	git checkout 2> /dev/null
-	echo "${_info} $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
+	echo "$_info $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
 	git checkout master 2> /dev/null
-	echo "${_info} Checkout: $Fyellow local$Foff $gitnewname"
+	echo "$_info Checkout: $Fyellow local$Foff $gitnewname"
 	git fetch  2> /dev/null
 	git pull  2> /dev/null
 	git push  2> /dev/null
-	echo "${_info} Checkout: $Fyellow remote$Foff $gitnewname"
+	echo "$_info Checkout: $Fyellow remote$Foff $gitnewname"
 	git checkout 2> /dev/null  < /dev/null
 
 	echo "${_ok}"

@@ -5,7 +5,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 cd /home/users/faron/Raws/ 1> /dev/null;
 
 if [[ $EUID == 0 ]]; then
-	echo -e "${_no} sudo yourself out"
+	echo -e "$_no sudo yourself out"
 	XeF
 fi
 
