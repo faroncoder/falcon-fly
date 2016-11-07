@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime
 ####################START
 echo "\$.getScript(\"./jsc/jsc/$line\", function(data, textStatus) { " > script.dat
 echo "       console.log(\"\BASHFILENAME loaded\", textStatus); " >> script.dat

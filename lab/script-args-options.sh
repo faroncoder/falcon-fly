@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors; source /usr/local/lib/faron_falcon/functions; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime
 ####################START
 # By keeping options in alphabetical order, it's easy to add more.
 
