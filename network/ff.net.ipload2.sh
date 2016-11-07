@@ -4,9 +4,9 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ####################START
 ## avail for coding in colors: ##
 ## Fok Fno Finfo Fwarn Fstat ##
-## Fred Fblack Fgreen Fyellow Fblue Fpurple Fteal Fwhite Foff ##
+## b_red Fblack b_green b_yellow b_blue b_purple b_teal Fwhite reset ##
 
-#echo -e "${_ok}$Fyellow $( basename $0 ) $Foff"
+#echo -e "${_ok}$b_yellow $( basename $0 ) $reset"
 TMP="/tmp/`uuid`"
 TMP0="/tmp/`uuid`"
 THISIF=`ff.network.devices | head -n 1`

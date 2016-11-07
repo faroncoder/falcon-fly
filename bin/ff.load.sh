@@ -54,10 +54,10 @@ if [[ ! -d "$FALCON" ]]; then
 	source $HOME/.bashrc
 		#echo "${_ok} Falcon Bin sync-ed."
 			#export GETMSG=$CHR145; FTmsg;
-			#echo "$FMsend So, you are this?$Foff "
+			#echo "$FMsend So, you are this?$reset "
 		#export GETMSG=$CHR99; FPmsg
-		#	echo "$FMsend$COLR$RESSF$Foff $k"
-		#	echo "$FMsend Oh ok, ahem! $Foff "
+		#	echo "$FMsend$COLR$RESSF$reset $k"
+		#	echo "$FMsend Oh ok, ahem! $reset "
 		#export GETMSG=$CHR145; FTmsg;
 		#echo "$`FMsend $( echo "${FILEHUNT[@]}" | wc -w )`"
 	#	echo "`FTmsg $( echo "${FILEHUNT[@]}" | wc -w )`"

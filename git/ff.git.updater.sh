@@ -19,15 +19,15 @@ openshengine
 	git commit -am 	"`echo $COMMIT`";
 	git push -u origin master;
 	git pull 2> /dev/null
-	echo "_stat $Fyellow Updating$Foff $gitnewname" 2> /dev/null
+	echo "_stat $b_yellow Updating$reset $gitnewname" 2> /dev/null
 	git checkout 2> /dev/null
-	echo "$_info $Fred Cleaning$Foff: local $gitnewname" 2> /dev/null
+	echo "$_info $b_red Cleaning$reset: local $gitnewname" 2> /dev/null
 	git checkout master 2> /dev/null
-	echo "$_info Checkout: $Fyellow local$Foff $gitnewname"
+	echo "$_info Checkout: $b_yellow local$reset $gitnewname"
 	git fetch  2> /dev/null
 	git pull  2> /dev/null
 	git push  2> /dev/null
-	echo "$_info Checkout: $Fyellow remote$Foff $gitnewname"
+	echo "$_info Checkout: $b_yellow remote$reset $gitnewname"
 	git checkout 2> /dev/null  < /dev/null
 
 	echo "${_ok}"

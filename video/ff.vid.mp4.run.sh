@@ -34,7 +34,7 @@ filePrep(){
 	GETEXT=".$( rev <<< $j | cut -d"." -f1 | rev )"
 	### .ext###
 	#GETFILE="$RAWHOME/$GETNAME$GETEXT"
-	### current file$Foff###
+	### current file$reset###
 	NEWNAME=`echo $GETNAME | tr '.' '-'`
 	### new name###
 	NEWFILE="$NEWNAME.mp4"

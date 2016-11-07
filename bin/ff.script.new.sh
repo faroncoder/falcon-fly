@@ -58,8 +58,8 @@ arumentsInstall(){
 	read Descript
 	LOADDes="$Descript"
 	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
-	ENDINTERACT="else echo \"\$_no \$Fred no argument is supplied.\$Foff\""
-	LOADIN="echo \"\$_info \$Fyellow `echo $LOADDes` as an argument \$Foff\"; fi"
+	ENDINTERACT="else echo \"\$_no \$b_red no argument is supplied.\$reset\""
+	LOADIN="echo \"\$_info \$b_yellow `echo $LOADDes` as an argument \$reset\"; fi"
 }
 newProcess(){
 	if [[ -f "$MEF" ]]; then
@@ -71,7 +71,7 @@ newProcess(){
 		cat "$HEADER" | sed '/^$/d' > "$MEF"
 		cat  "$NEWBODY" >> "$MEF"
 		cat "$FOOTER" | sed '/^$/d' >> "$MEF"
-		echo "_stat $FBgreen $XF $Foff created!"
+		echo "_stat $FBgreen $XF $reset created!"
 	fi
 	finalRun
 }
@@ -121,7 +121,7 @@ tester(){
 while :
 do
 SELECT="$@"
-echo -n "$_info  $Fyellow -u$Foff upgrader and $Fgreenany key$Foff for new script  "
+echo -n "$_info  $b_yellow -u$reset upgrader and $b_greenany key$reset for new script  "
  	case "$SELECT" in
  		-u) scriptUpdaerEngine;  break ;;
 		--help) tester; break ;;

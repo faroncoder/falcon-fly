@@ -14,7 +14,7 @@ while read line
 	rm updateServer
 fi
 
-#echo -e ${_ok}"$Fyellow $( basename $0 ) $Foff"
+#echo -e ${_ok}"$b_yellow $( basename $0 ) $reset"
 
 ###################STOP
 ### exit code for clean exit

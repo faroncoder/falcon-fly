@@ -51,16 +51,16 @@ makelister(){
 			N=`echo $(( $N + 1 ))`
 			NAMEPF=`echo $line | awk '{print $1}'`
 			DESPPF=`echo $line | awk '{$1= ""; print $0}'`
-			echo -e "$Fred$N $Fgreen$NAMEPF$Fyellow$DESPPF$Foff"
+			echo -e "$b_red$N $b_green$NAMEPF$b_yellow$DESPPF$reset"
 		done < $THISFUILE
 		echo "-----"
-		echo -e "Packages found:$Fblue $NUMB $Foff"
+		echo -e "Packages found:$b_blue $NUMB $reset"
 }
 
 
 pickProcesser(){
 
-	echo -e "$_info Keyword searched: $Fred $KEYWORD $Foff"
+	echo -e "$_info Keyword searched: $b_red $KEYWORD $reset"
 	echo -n -e "Item to install ? "
 	read  PICKS
 	CHECKALL=( $PICKS )
@@ -75,7 +75,7 @@ F=0
 	for pickme in "${PICKS[@]}"; do
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
-		echo -e "$_info fetching $Fteal$WHOME$Foff";
+		echo -e "$_info fetching $b_teal$WHOME$reset";
 		source /usr/local/bin/ff.apt.verify $WHOME
 		#source /usr/local/bin/ff.apt.fetch $WHOME
 		echo "----------------------------------------------------"	
@@ -84,10 +84,10 @@ F=0
 		#DPKG=`dpkg -l | grep -w "$WHOME" | awk '{ print $2 }'`
 #			if [[ "$DPKG" == "$WHOME" ]]; then
 #			G=`echo $(( $G + 1 ))`
-#			echo -e "[ $Fgreen INSTALLED$Foff ] $Fyellow $WHOME $Foff | Installed:$Fgreen$G$Foff | Not installed:$Fred$FO$Foff"
+#			echo -e "[ $b_green INSTALLED$reset ] $b_yellow $WHOME $reset | Installed:$b_green$G$reset | Not installed:$b_red$FO$reset"
 #		else
 #			F=`echo $(( $F + 1 ))`
-#			echo -e "[$Fred NOT INSTALLED$Foff ] $WHOME | $Fyellow Installed: $Fgreen$G$Foff | $Fyellow Not installed:$Fred$FO$Foff"
+#			echo -e "[$b_red NOT INSTALLED$reset ] $WHOME | $b_yellow Installed: $b_green$G$reset | $b_yellow Not installed:$b_red$FO$reset"
 #			fi
 		pickme=""
 		WHOME=""
