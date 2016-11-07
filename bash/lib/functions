@@ -167,33 +167,33 @@ function doVarLoad() {
 }
 
 function Go_ok() {
-	echo -e "$reset$b_green$CHR346$reset"
+	echo -e "$clear$b_green$CHR346$reset"
 }
 function Go_no() {
-	echo -e "$reset$b_red$CHR146$reset"
+	echo -e "$clear$b_red$CHR146$reset"
 }
 
 
 function Go_warn() {
-	echo -e "$reset$b_yellow$CHR182$reset"
+	echo -e "$clear$b_yellow$CHR182$reset"
 }
 
 
 function Go_info() {
-	echo -e "$reset$b_blue$CHR152$reset"
+	echo -e "$clear$b_blue$CHR152$reset"
 }
 
 
 function Go_stat() {
-	echo -e "$reset[$b_teal$CHR47$reset"
+	echo -e "$clear[$b_teal$CHR47$reset"
 }
 
 function _ok() {
-	echo -e -n "$reset$b_green$CHR346$reset"
+	echo -e -n "$clear$b_green$CHR346$reset"
 }
 function _no() {
 	# if [[ $_send ==  ]]; then
-	echo -e -n "$reset$b_red$CHR146$reset"
+	echo -e -n "$clear$b_red$CHR146$reset"
 	# else
 	# echo -e $reset$b_red$CHR146$reset
 	# fi
@@ -202,24 +202,24 @@ function _no() {
 
 function _warn() {
 	# if [[ "$_send" == " ]]; then
-	echo -e -n "$reset$b_yellow$CHR182$reset"
+	echo -e -n "$clear$b_yellow$CHR182$reset"
 	# else
-	# echo -e "$reset$b_yellow$CHR182$reset"
+	# echo -e "$clear$b_yellow$CHR182$reset"
 	# fi
 }
 
 
 function _info() {
 	# if [[ "$_send" = " ]]; then
-	echo -e -n "$reset$b_blue$CHR152$reset"
+	echo -e -n "$clear$b_blue$CHR152$reset"
 	# else
-	# echo -e "$reset$b_blue$CHR152$reset
+	# echo -e "$clear$b_blue$CHR152$reset
 	# fi
 }
 
 
 function _stat() {
-	echo -e -n "$reset$b_teal$CHR47$reset]"
+	echo -e -n "$clear$b_teal$CHR47$reset]"
 	# echo -e $reset$b_teal$CHR47$reset
 }
 
@@ -240,32 +240,32 @@ function _FR() {
 	doFlush
 }
 
-_FP() {
+function _FP() {
 	doVarLoad
 	echo -e "[$b_purple$_send$reset] $_comment "
 	doFlush
 }
 
-_FB() {
+function _FB() {
 	doVarLoad
 	echo -e "[$b_blue$_send$reset] $_comment "
 	doFlush
 }
 
-_FT() {
+function _FT() {
 	doVarLoad
 	echo -e "[$b_teal$_send$reset] $_comment "
 	doFlush
 }
 
-_FD() {
+function _FD() {
 	doVarLoad
 	echo -e "[$b_gray$_send$reset] $_comment "
 	doFlush
 }
 
 
-_checkPath() {
+function _checkPath() {
 	echo $PATH | tr ':' '\n'
 }
 
