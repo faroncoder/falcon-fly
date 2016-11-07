@@ -6,8 +6,8 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 echo -e "$"
 echo -e "$_no"
 echo -e "$_warn"
-echo -e "$_info"
-echo -e "${_ok}"
+echo -e "_info"
+echo -e "_ok"
 
 
 ###################STOP

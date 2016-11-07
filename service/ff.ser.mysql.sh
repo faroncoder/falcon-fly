@@ -8,8 +8,8 @@ $SUDO service apache2 restart
 # echo -e "$"
 # echo -e "$_no"
 # echo -e "$_warn"
-echo -e "$_info mysql service restarted"
-# echo -e "${_ok}"
+echo -e "_info mysql service restarted"
+# echo -e "_ok"
 
 
 

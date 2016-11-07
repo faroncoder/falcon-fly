@@ -22,7 +22,7 @@ for o in "${CODE[@]}"; do
 	/bin/echo $YUDI
 	#$SUDO sh -c echo $YUDI >> /etc/fstab
 done
-/bin/echo "${_ok} /etc/fstab configured"
+/bin/echo "_ok /etc/fstab configured"
 
 ###################STOP
 ### exit code for clean exit

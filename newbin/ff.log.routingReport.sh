@@ -11,12 +11,12 @@ LOG="$BASE/router.log"
 ACCEPT="$BASE/accepted.log"
 DROP="$BASE/dropped.log"
 
-echo -e "$_info Collecting ACCEPT report"
+echo -e "_info Collecting ACCEPT report"
 grep 'ACCEPT' $LOG | sort | uniq  >> $ACCEPT
-echo -e "${_ok} ACCEPTED report generated"
-echo -e "$_info Collecting DROP report"
+echo -e "_ok ACCEPTED report generated"
+echo -e "_info Collecting DROP report"
 grep 'DROP' $LOG | sort | uniq  >> $DROP
-echo -e "${_ok} DROPPED report generated"
+echo -e "_ok DROPPED report generated"
 
 
 ###################STOP

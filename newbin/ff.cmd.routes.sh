@@ -14,7 +14,7 @@ IFACE=$( head -n 1 $FILETHIS )
 MYIP=$( hostname -I )
 CHECKFACE=$( ifconfig | cut -d' ' -f1 | tr ' ' '\n' | sed '/lo/d' )
 if [[ "$CHECKFACE" == "$IFACE" ]]; then
-	echo -e "$_info device matches"
+	echo -e "_info device matches"
 else
 	echo -e "$_no interface mismatch$reset"
 	exit 1
@@ -24,7 +24,7 @@ while read line; do
 		CMD="$SUDO route add $line $IFACE"
 		#printf "$CMD" %q
 		$CMD 2> /dev/null < /dev/null
-		echo -e "${_ok} $line $reset"
+		echo -e "_ok $line $reset"
 	fi
 done < "$FILETHIS"
 

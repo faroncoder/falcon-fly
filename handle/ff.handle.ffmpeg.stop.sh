@@ -5,7 +5,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 
 touch $HOME/Raws/ffmpeg-stop
-echo "$_info FFMPEG stop requested"
+echo "_info FFMPEG stop requested"
 
 
 ###################STOP

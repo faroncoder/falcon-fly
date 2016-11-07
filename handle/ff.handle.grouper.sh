@@ -15,8 +15,8 @@ for line in "${orderfiles[@]}"; do
 	rename "s/$GET/$LET/g" $GETB
 done
 
-echo -e "${_ok}"
-#echo -e ${_ok}"$b_yellow $( basename $0 ) $reset"
+echo -e "_ok"
+#echo -e _ok"$b_yellow $( basename $0 ) $reset"
 
 ###################STOP
 ### exit code for clean exit

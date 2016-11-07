@@ -36,10 +36,10 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 NAME=$1
 if [[ "$NAME" == "" ]]; then
-	echo -n "$_info Name of script?     "
+	echo -n "_info Name of script?     "
 	read NAME
 fi
-echo "${_ok} script created"
+echo "_ok script created"
 echo "$newscript" > "$HOME/falcon-$NAME.html"
 sed -ie "s/{NAME}/$NAME/g" "$HOME/falcon-$NAME.html"
 

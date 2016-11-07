@@ -19,7 +19,7 @@ lauchUpdaterEngine(){
 	find $KILLHOME-type f -name '*.sh'
 	deathReaperCheck
 
-	#echo "$_info In upgrading mode: scripts updater"
+	#echo "_info In upgrading mode: scripts updater"
 	#echo "$_warn library is being backed up."
 }
 
@@ -37,10 +37,10 @@ keepRecursive() {
 	deathReaper(){
 	killerScript
 	mv $FILESTART $KILLED 2> /dev/null
-	echo "${_ok} $FILEHERE killed"
+	echo "_ok $FILEHERE killed"
 	chmod 555 $KILLED
 	chmod -x $KILLED
-	echo "${_ok} $FILEHERE de-executable and read-only"
+	echo "_ok $FILEHERE de-executable and read-only"
 }
 	deathReaperCheck(){
 	jj=`uuid`
@@ -51,10 +51,10 @@ keepRecursive() {
 		read KILLCONFIRM
 	elif [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
 		mv $FILESTART $KILLED 2> /dev/null
-		echo "${_ok} $FILEHERE killed"
+		echo "_ok $FILEHERE killed"
 		chmod -x $KILLED
 		chmod 555 $KILLED
-		echo "${_ok} $FILEHERE de-executable and read-only"
+		echo "_ok $FILEHERE de-executable and read-only"
 	else
 		echo "$_no $FILEHERE is not killed"
 	fi
@@ -64,10 +64,10 @@ keepRecursive() {
 	FILESTART="$@"
 	if [[ "$KILLCONFIRM" == "Y" || "$KILLCONFIRM" == "y" ]]; then
 		mv $FILESTART $KILLED 2> /dev/null
-		echo "${_ok} $FILEHERE killed"
+		echo "_ok $FILEHERE killed"
 		chmod -x $KILLED
 		chmod 555 $KILLED
-		echo "${_ok} $FILEHERE de-executable and read-only"
+		echo "_ok $FILEHERE de-executable and read-only"
 	fi
 	if [[ -f "$PWD/$FILESTART" ]]; then
 		FILELOC="$PWD/$FILESTART"
@@ -109,7 +109,7 @@ lauchUpdaterEngine(){
 
 	done
 
-	#echo "$_info In upgrading mode: scripts updater"
+	#echo "_info In upgrading mode: scripts updater"
 	#echo "$_warn library is being backed up."
 }
 

@@ -40,7 +40,7 @@ else
 	# else
 	# 		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
 	# 		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
-	# 		echo "${_ok} $PREFILE.png --> thumbs/"
+	# 		echo "_ok $PREFILE.png --> thumbs/"
 	#XeF
 =======
 INPUT="$1"
@@ -60,14 +60,14 @@ else
 #	for m in "${GETFILES[@]}"; do
 		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
 		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
-		echo "${_ok} $PREFILE.png thumbed"
+		echo "_ok $PREFILE.png thumbed"
 #		COUNT=`echo $(( $COUNT + 1 ))`
 #	done
 #	echo "_stat $COUNT thumbs created"
 #else
 #		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
 #		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
-#		echo "${_ok} $PREFILE.png --> thumbs/"
+#		echo "_ok $PREFILE.png --> thumbs/"
 >>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 fi
 

@@ -5,7 +5,7 @@ if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/us
 
 <<<<<<< HEAD
 # if [[ "$FILEID" == "" ]]; then
-#     echo -n "$_info Which file to pinpoint? "
+#     echo -n "_info Which file to pinpoint? "
 #     read FILEID
 # fi
 
@@ -37,12 +37,12 @@ FILEID=$1
 GETUR=$2
 
 if [[ "$FILEID" == "" ]]; then
-    echo -n "$_info Which file to pinpoint? "
+    echo -n "_info Which file to pinpoint? "
     read FILEID
 fi
 
 if [[ "$GETUR" == "" ]]; then
-	echo -n "$_info Location of URL: http(s)://"
+	echo -n "_info Location of URL: http(s)://"
 	read GETUR
 fi
     LOCURL=`echo $GETUR | sed 's/http:\/\///g' |  sed 's/https:\/\///g' `
@@ -148,7 +148,7 @@ DocVideo="<!DOCTYPE html>
 </html>"
 <<<<<<< HEAD
 echo -e "$DocVideo" > "$FULLHTTPhtml"
-echo "${_ok} $PREFILE.html created"
+echo "_ok $PREFILE.html created"
 mv $FILEI $PWD/media/
 
 fi

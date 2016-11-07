@@ -7,7 +7,7 @@ GETINPUTUID=$1
 GETINPUTGROUPS=$2
 
 if [[ "$GETINPUTUID" == "" ]]; then
-	echo -n "$_info targeted UID? ($b_yellow default=$UID$reset )? "
+	echo -n "_info targeted UID? ($b_yellow default=$UID$reset )? "
 	read GETUID
 else
 	GETUID=$GETINPUTUID
@@ -16,7 +16,7 @@ fi
 
 
 if [[ "$GETINPUTGROUPS" == "" ]]; then
-	echo -n "$_info targeted GROUP ($b_yellow default=$GROUPS$reset )? "
+	echo -n "_info targeted GROUP ($b_yellow default=$GROUPS$reset )? "
 	read GETGROUPS
 else
 	GETGROUPS=$GETINPUTGROUPS
@@ -33,7 +33,7 @@ $SUDO find . -type f >> $LOADDATA
 $SUDO sed -i -e 's/ /\\ /g' $LOADDATA
 TOTALCOUNT=`find . -type f | wc -l`
 echo "_stat collecting file information" 2> /dev/null
-echo "$_info Total of files in $b_teal$PWD$reset: $b_yellow$TOTALCOUNT$reset"
+echo "_info Total of files in $b_teal$PWD$reset: $b_yellow$TOTALCOUNT$reset"
 FILECOUNT=0
 ISSUECOUNT=0
 CLEANCOUNT=0
@@ -57,9 +57,9 @@ while read line; do
 done <  $LOADDATA
 /bin/rm $LOADDATA
 
-echo "$_info$b_yellow Result --$reset Files:$b_yellow$TOTALCOUNT$reset Processed:$b_teal$FILECOUNT$reset Issues:$b_red$ISSUECOUNT$reset Intact:$b_green$CLEANCOUNT$reset"
+echo "_info$b_yellow Result --$reset Files:$b_yellow$TOTALCOUNT$reset Processed:$b_teal$FILECOUNT$reset Issues:$b_red$ISSUECOUNT$reset Intact:$b_green$CLEANCOUNT$reset"
 # if [[ "$ISSUECOUNT" != 0 ]]; then
-# 	echo -n "$_info press l to list all files with issues (enter for nay)  "
+# 	echo -n "_info press l to list all files with issues (enter for nay)  "
 # 	read LISTGO
 # 	if [[ "$LISTGO" == "l" ]]; then
 # 		for issueput in "${ISSUENO[@]}"; do	

@@ -6,7 +6,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 
 sudo apt-get build-dep $1 -y --yes 2> /dev/null;
-echo -e "${_ok} build-dep checked!"
+echo -e "_ok build-dep checked!"
 
 
 ###################STOP

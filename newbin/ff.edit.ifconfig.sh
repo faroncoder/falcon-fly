@@ -10,7 +10,7 @@ $SUDO subl /etc/dhcp/dhclient.conf
 $SUDO subl /etc/hosts
 $SUDO subl /etc/hostname
 $SUDO subl /etc/network/if-up.d/ff.net.ifaces
-echo -e ${_ok}
+echo -e _ok
 
 ###################STOP
 ### exit code for clean exit

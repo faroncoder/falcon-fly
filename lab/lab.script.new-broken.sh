@@ -7,11 +7,11 @@ xcs="$2"
 CL=$( basename "$xcv" )
 
 if [[ "$CL" == "" ]]; then
-	echo -n -e "$_info name of the script? "
+	echo -n -e "_info name of the script? "
 	read CL
 fi
 if [[ "$xcs" == "" ]]; then
-	echo -n -e "$_info which folder? "
+	echo -n -e "_info which folder? "
 	read xcs
 fi
 LYH="/home/users/faron/.falcon/scripts"

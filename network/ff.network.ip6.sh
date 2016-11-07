@@ -12,7 +12,7 @@ ip addr add $IP6FETCH/64 dev he-ipv6
 ip route add ::/0 dev he-ipv6
 ip -f inet6 addr
 ifconfig
-echo "${_ok}"
+echo "_ok"
 
 
 ###################STOP

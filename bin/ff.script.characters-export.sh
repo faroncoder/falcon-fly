@@ -10,7 +10,7 @@ while read line; do
   #export CH$CT=$line
   	$line
 done < /usr/local/lib/faron_falcon/characters
-echo "${_ok} $CT exported"
+echo "_ok $CT exported"
 
 
 # CT=0; while read line; do CT=`echo $(( $CT + 1 ))`;
@@ -22,7 +22,7 @@ echo "${_ok} $CT exported"
 # 	CT=`echo $(( $CT + 1 ))`
 # 	export CH$CT=$line
 # done  source /usr/local/lib/faron_falcon/characters
-# echo "${_ok}"
+# echo "_ok"
 
 # CT=0
 #  while read line; do

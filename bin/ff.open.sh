@@ -4,7 +4,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ####################START
 
 nautilus "$PWD" 
-echo "${_ok}"
+echo "_ok"
 
 
 ###################STOP

@@ -15,7 +15,7 @@ doneTime ### [ FILE:\$MEF ACTIVE:y ]
 "
 NEWBODY=" your script goes here
 echo \"\$\"; echo \"\$_no\"; echo \"\$_warn\";
-echo \"\$_info\"; echo\"\${_ok}\"
+echo \"\_info\"; echo\"\_ok\"
 "
 interactive=$3
 scriptUpdaerEngine(){
@@ -39,7 +39,7 @@ scriptUpdaerEngine(){
 		FILE=`basename $line`
 		echo "$_warn $COUNT of $GEF "
 		if [[ -f "$MEF" ]]; then
-			echo "${_ok} : $FILE "
+			echo "_ok : $FILE "
 		fi
 	done <  $HOMDI/ref
 }
@@ -54,12 +54,12 @@ finalRun(){
 }
 
 arumentsInstall(){
-	echo -n "$_info Script response when no arguments is entered?  "
+	echo -n "_info Script response when no arguments is entered?  "
 	read Descript
 	LOADDes="$Descript"
 	INTERACT="if [[ \"\$1\" != \"\" ]]; then"
 	ENDINTERACT="else echo \"\$_no \$b_red no argument is supplied.\$reset\""
-	LOADIN="echo \"\$_info \$b_yellow `echo $LOADDes` as an argument \$reset\"; fi"
+	LOADIN="echo \"\_info \$b_yellow `echo $LOADDes` as an argument \$reset\"; fi"
 }
 newProcess(){
 	if [[ -f "$MEF" ]]; then
@@ -77,11 +77,11 @@ newProcess(){
 }
 newScripter(){
 	if [[ "$1" == "" ]]; then
-		echo -n "$_info script name? "
+		echo -n "_info script name? "
 		read CL
 	fi
 	if [[ "$2" == "" ]]; then
-		echo -n "$_info folder? "
+		echo -n "_info folder? "
 		read xcs
 	fi
 	if  [[ "$interactive" == "" ]]; then
@@ -115,13 +115,13 @@ newScripter(){
 
 
 tester(){
-	echo ${_ok}
+	echo _ok
 }
 
 while :
 do
 SELECT="$@"
-echo -n "$_info  $b_yellow -u$reset upgrader and $b_greenany key$reset for new script  "
+echo -n "_info  $b_yellow -u$reset upgrader and $b_greenany key$reset for new script  "
  	case "$SELECT" in
  		-u) scriptUpdaerEngine;  break ;;
 		--help) tester; break ;;

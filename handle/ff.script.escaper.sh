@@ -25,7 +25,7 @@ else
 
 		cat $FILE  | tr "\t" "\n" | awk '{print $0}' |
 		sed 's/"/\\"/g' | sed 's/\$/\\\$/g' | sed "s/'/\\'/g"  >> $FILENW
-		echo "${_ok}  piped to $FILENW"
+		echo "_ok  piped to $FILENW"
 	else
 		cat $FILE  | tr "\t" "\n" | awk '{print $0}' |
 		sed 's/"/\\"/g' | sed 's/\$/\\\$/g' | sed "s/'/\\'/g"

@@ -26,7 +26,7 @@ MEIFME=`echo $FINDME | cut -d ':' -f1 `
 
 ## fire the command to add virtual address via ifconfig ( ifconfig dev:# device )
 $SUDO ifconfig $MEIFME:$ASSI $IPGET/$CDR;
-echo -e "${_ok}"
+echo -e "_ok"
 # $SUDO ifconfig $MEIFME $ASSI IPGET/$CDR
 
 # ifconfig

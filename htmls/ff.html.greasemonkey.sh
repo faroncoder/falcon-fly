@@ -21,7 +21,7 @@ done
 
 
 
-echo "${_ok}"
+echo "_ok"
 
 ###################STOP
 ### exit code for clean exit

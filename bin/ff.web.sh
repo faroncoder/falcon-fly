@@ -6,7 +6,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 google-chrome-stable "$@" 2>&1 /dev/null; < /dev/null; 
 
-echo -e "${_ok}"
+echo -e "_ok"
 
 
 ###################STOP
