@@ -20,7 +20,7 @@ INPUT=$( basename $1 )
 PREFILE=$( rev <<< "$INPUT" | cut -d"." -f2 | rev )
 ffmpeg -i $INPUT -y  \
 -vcodec libx264 \
--preset slow \
+-pclear slow \
 -pix_fmt yuv420p \
 -b:v "$BITRAT" \
 -maxrate "$MAXRAT" \

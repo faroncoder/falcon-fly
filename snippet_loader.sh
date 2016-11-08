@@ -19,10 +19,10 @@ FOUNDS=( ` find $LOC -type  f -name "*$NAME*" -exec basename {} \;  ` )
 			COUNT=`echo "$COUNT + 1" | bc `
 			ASSI=""
 			FILE$COUNT="$file"
-			echo -e "$b_teal $COUNT$reset - $file "
+			echo -e "$b_teal $COUNT$clear - $file "
 		done8
 
-		echo -e -n "[${b_yellow}$CHR119{$reset}] Which file to proceed with ?"
+		echo -e -n "[${b_yellow}$CHR119{$clear}] Which file to proceed with ?"
 		read CHOCIE
 		while : ; do
 		PICK="$CHOICE"

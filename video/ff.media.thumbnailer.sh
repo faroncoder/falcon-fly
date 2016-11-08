@@ -13,7 +13,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 if [[ "$1" == "" ]]; then
 	echo "$_no filename? "
-	XeF
+	doneTime
 else
 ## Variablize the input
 	INPUT="$1"
@@ -41,7 +41,7 @@ else
 	# 		PREFILE="$( rev <<< "$INPUT" | cut -d "." -f2 | rev )"
 	# 		ffmpeg -ss 00:01:00.000 -i $INPUT -y -f image2 -vframes 1 "$PWD/thumbs/$PREFILE.png" < /dev/null
 	# 		echo "_ok $PREFILE.png --> thumbs/"
-	#XeF
+	#doneTime
 =======
 INPUT="$1"
 

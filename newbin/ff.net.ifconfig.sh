@@ -60,7 +60,7 @@ if [[ "$GETASSIGNIP" == "$CHECKIP" ]]; then
 
  logger "$GETLOGA | $GETLOGB "
 
-echo -e "_info reseting ipv6 tunnel"
+echo -e "_info clearing ipv6 tunnel"
  $SUDO ifconfig teredo down
 echo -e "_info ipv6 tunnel up and operating"
  $SUDO ifconfig teredo up
@@ -79,7 +79,7 @@ echo -e "_info ipv6 tunnel up and operating"
  echo "=================="
  echo -e "$fcok :: interface check completed!"
 >>>>>>> 1e8affc5bfb91802d90196acf1c34ab90c678927
- XeF
+ doneTime
 
 ### exit code for clean exit
 doneTime

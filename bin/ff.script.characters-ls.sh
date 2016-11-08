@@ -6,7 +6,7 @@ CT=0
 while read line; do
 	CT=`echo $(( $CT + 1 ))`
  	edit=`echo $line | cut -d"=" -f2`
- 	trim="[$b_green$CT$reset]$edit"
+ 	trim="[$b_green$CT$clear]$edit"
 	MEF="echo -n "
 	if [[ "$NE" == 5 ]]; then
         		MEF="echo "

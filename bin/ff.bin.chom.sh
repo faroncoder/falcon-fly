@@ -47,7 +47,7 @@ do
 			fcm="$fcy SELECTED $fco"
 			echo -e "$fcnf Dry run for $fcy $USER:$GROUP $fco"
 			shift 3
-			XeF
+			doneTime
 			break
 	;;
 	--) # End of all options

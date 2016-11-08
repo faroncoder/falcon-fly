@@ -1,53 +1,53 @@
-☺
-☻
-✌
-✍
-✎
-✉
-☀
-☃
-☁
-☂
-★
-☆
-☮
-☯
+☺:smile
+☻:smile-white
+✌:ok
+✍ :write
+✎ :pencil
+✉ :email
+☀ :sun
+☃ :snowman
+☁ :cloud
+☂ :umbella
+★ :star-white
+☆ :start
+☮ :peace
+☯ :tao
 〠
-☎
-☏
+☎:phone-white
+☏:phone
 ♕
-❏
+❏ :checkbox-empty
 ☐
-☑
-☒
-✓
-✗
+☑ :checkbox-checked
+☒ :checkbox-cancelled
+✓ :checkmark
+✗ :errormark
 ¢
 €
 £
-❤
+❤ :heart-white
 ❣
 ❦
-♣
-♤
-♥
-♦
-♧
-►
+♣ :club
+♤:spade
+♥ :heart-white
+♦ :diamond-white
+♧:lucky
+►:giant-arrow
 ❝
 ❞
-☜
-☝
-☞
-☟
-☚
-☛
-☹
+☜ :finger-left
+☝ :finger-up
+☞ :finger-right
+☟ :finger-down
+☚:finger-left-white
+☛:finger-right-white
+☹:sadface
 త
-☣
-☠
-✑
-✒
+☣ :hiv
+☠ :skull
+✑ :pen
+✒ :pen-white
 ÷
 ‰
 √
@@ -55,54 +55,54 @@
 ∞
 ❛
 ❜
-™
-©
-®
-✄
-✁
-✂
-✇
-✿
-❀
+™ :trademark
+© :copyright
+® :restricted
+✄ :sissors
+✁ :cut
+✂ :sissors-white
+✇ :steeringwheel
+✿ :flower
+❀ :sunflower
 “
 ”
 „
 ‟
 «
 »
-♪
-♫
+♪ :song
+♫ :songs
 …
 ◆
 ◇
 ✣
-✪
-✰
+✪ :lonestar
+✰ :3Dstar
 ✧
 ✦
-☔
-☕
-☼
-☾
-❆
+☔ :umbella-rained
+☕ :coffee
+☼ :on
+☾ :moon
+❆ 
 ❅
-❄
+❄:snowflake
 ✵
-♲
-♻
-♿
-⚅
-⚑
-⚐
-↑
-→
-↓
-↔
-↕
-⇄
-⇅
-↲
-↳
+♲:recycling
+♻:recycling-white
+♿:wheelchair
+⚅ :dice
+⚑:flag-white
+⚐:flag
+↑ : arrow-up
+→ :arrow-right
+↓ :arrow-down
+↔ :arrow-hoz
+↕ :arrow-ver
+⇄ :2ways-hoz
+⇅ :2ways-ver
+↲:turn-left
+↳:turn-right
 ↴
 ↵
 ↶
@@ -141,32 +141,32 @@
 ◁
 ▷
 ◊
-⚒
-⚓
-⚔
-⚕
+⚒ :fireman
+⚓ :navy
+⚔ :swords
+⚕ :ER
 ⚘
-⚖
-⚛
+⚖ :justice
+⚛:ion
 ⚚
-⚠
-⚡
-♀
-♂
-⚢
-⚣
-⚤
+⚠ :hazard
+⚡ :elec
+♀:fem
+♂:male
+⚢:lez
+⚣:gay
+⚤:str8
 ⚰
 ⚱
-☢
-☤
-✝
+☢:hazard-medical
+☤ :ER2
+✝:cross
 ☦
 ☧
 ☨
 ☩
 ☪
-☭
+☭:soviet
 ♈
 ♉
 ♊
@@ -179,11 +179,11 @@
 ♑
 ♒
 ♓
-⌚
-⌛
-⌨
+⌚:clock
+⌛:wait
+⌨:keyboard
 ⏎
-✈
+✈:plane
 ♨
 ☸
 ⚭
@@ -215,7 +215,7 @@
 ×
 ±
 ÷
-∅
+∅:ban
 ∗
 ∙
 ∂
@@ -227,8 +227,8 @@
 ∁
 ∟
 ∠
-∡
-∢
+∡:geometry
+∢:geometry2
 ∥
 ∦
 ⊕
@@ -237,10 +237,10 @@
 ≥
 ≪
 ≫
-∫
-∬
-∭
-∮
+∫ -sing
+∬-sing2
+∭-sing3
+∮ -sing4
 ∯
 ∰
 ∱
@@ -333,18 +333,18 @@
 ⌊
 ⌋
 ₓ
-♔
-♕
-♖
-♗
-♘
-♙
-♚
-♛
-♜
-♝
-♞
-♟
+♔:king
+♕:queen
+♖:tower
+♗:bishop
+♘:knight
+♙:soldier
+♚:king-white
+♛:queen-white
+♜:tower-white
+♝:bishop-white
+♞:knight-white
+♟:soldier-white
 ℗
 ♭
 ♮
@@ -353,7 +353,7 @@
 ☊
 ♒
 ☄
-✆
+✆:phone
 ꁚ
 ꀪ
 ꀎ
@@ -372,7 +372,7 @@
 ❶
 ❷
 ❸
-☘
+☘:charm
 ⌖
 ℹ
 ⚀

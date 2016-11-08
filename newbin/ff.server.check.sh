@@ -22,7 +22,7 @@ for check in "${DOMAINS[@]}"; do
 done
 
 if [ ! "$DOWNSERVER" ]; then
-	XeF
+	doneTime
 else
 for down in "${DOWNSERVER[@]}"; do
 		status='is down'

@@ -11,7 +11,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 if [[ "$1" == "" ]]; then
 	echo "$_no filename? "
-	XeF
+	doneTime
 else
 ## Variablize the input
 	FILEID="$1"
@@ -19,7 +19,7 @@ else
 	if [[ "$2" == "" ]]; then
 		echo "$_no url? "
 ## exit
-		XeF
+		doneTime
 	else
 ## otherwise we variablize the 2nd agrument
 		GETURL="$2"

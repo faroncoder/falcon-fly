@@ -54,22 +54,22 @@ if [[ ! -d "$FALCON" ]]; then
 	source $HOME/.bashrc
 		#echo "_ok Falcon Bin sync-ed."
 			#export GETMSG=$CHR145; FTmsg;
-			#echo "$FMsend So, you are this?$reset "
+			#echo "$FMsend So, you are this?$clear "
 		#export GETMSG=$CHR99; FPmsg
-		#	echo "$FMsend$COLR$RESSF$reset $k"
-		#	echo "$FMsend Oh ok, ahem! $reset "
+		#	echo "$FMsend$COLR$RESSF$clear $k"
+		#	echo "$FMsend Oh ok, ahem! $clear "
 		#export GETMSG=$CHR145; FTmsg;
 		#echo "$`FMsend $( echo "${FILEHUNT[@]}" | wc -w )`"
 	#	echo "`FTmsg $( echo "${FILEHUNT[@]}" | wc -w )`"
 
-		_send=${CHR23}; _comment="Confirmed ${b_purple} $COUN${reset} files as sync-ed.";
+		_send=${CHR23}; _comment="Confirmed ${b_purple} $COUN${clear} files as sync-ed.";
 		_FG
 
-		_send=${CHR182}; _comment="Total ${b_green} $COUN${reset} are sync-ed.";
+		_send=${CHR182}; _comment="Total ${b_green} $COUN${clear} are sync-ed.";
 		_FP
 
 
-		_send=${CHR23}; _comment="Confirmed ${b_green} $COUN${reset} files as sync-ed.";
+		_send=${CHR23}; _comment="Confirmed ${b_green} $COUN${clear} files as sync-ed.";
 		_FG
 		#CHEKCKFN=`find -L /usr/local/bin -type f -name 'ff.*' | wc -l`
 
@@ -77,7 +77,7 @@ if [[ ! -d "$FALCON" ]]; then
 
 		COMPR=`echo $(( $FCOUNT - $COUN ))`
 
-		_send=${CHR230}; _comment="Total ${b_yellow}$COUN${reset} exists. ${b_blue}$COMPR${reset} files installed. "
+		_send=${CHR230}; _comment="Total ${b_yellow}$COUN${clear} exists. ${b_blue}$COMPR${clear} files installed. "
 		_FG
 
 fi

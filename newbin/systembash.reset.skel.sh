@@ -34,5 +34,5 @@ source $PATHHOME/.bashrc
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] systembash.reset.skel.sh  [ACTIVE] y
+### [FILE] systembash.clear.skel.sh  [ACTIVE] y
 

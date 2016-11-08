@@ -5,7 +5,7 @@
 
 function stopTime() {
        	TIMEEND=`date +%s`
-	num=`echo "$TIMEEND - $TIMESTART" | bc`
+	num=`echo $TIMEEND - $TIMESTART | bc`
 	export num=$num
         }
 
@@ -16,7 +16,7 @@ function startTimeScript() {
 
 function stopTimeScript() {
        	STIMEEND=`date +%s`
-	num=`echo "$STIMEEND - $STIMESTART" | bc`
+	num=`echo $STIMEEND - $STIMESTART | bc`
 	export num=$num
 
         }
@@ -92,7 +92,7 @@ function checkTime() {
 	stopTime
 	decodeSec
 	TIMED=$PASS
-	_comment=$b_purple$TIMED$reset
+	_comment=$b_purple$TIMED$clear
 	_send="`_warn`"
 	_FY
 }
@@ -166,101 +166,115 @@ function doVarLoad() {
 	 export _comment=$_comment
 }
 
-function Go_ok() {
-	echo -e "$clear$b_green$CHR346$reset"
-}
-function Go_no() {
-	echo -e "$clear$b_red$CHR146$reset"
-}
+# function Go_ok() {
+# 	echo -e "$clear$b_green$CHR346$clear"
+# }
+# function Go_no() {
+# 	echo -e "$clear$b_red$CHR146$clear"
+# }
 
 
-function Go_warn() {
-	echo -e "$clear$b_yellow$CHR182$reset"
-}
+# function Go_warn() {
+# 	echo -e "$clear$b_yellow$CHR182$clear"
+# }
 
 
-function Go_info() {
-	echo -e "$clear$b_blue$CHR152$reset"
-}
+# function Go_info() {
+# 	echo -e "$clear$b_blue$CHR152$clear"
+# }
 
 
-function Go_stat() {
-	echo -e "$clear[$b_teal$CHR47$reset"
-}
+# function Go_stat() {
+# 	echo -e "$clear[$b_teal$CHR47$clear"
+# }
 
 function _ok() {
-	echo -e -n "$clear$b_green$CHR346$reset"
+	# echo -e -n "$clear$b_green$CHR346$clear"
+
+
+		_send="$CHR346";
+	echo -e -n "$clear$b_green$_send$clear $_comment"
 }
 function _no() {
 	# if [[ $_send ==  ]]; then
-	echo -e -n "$clear$b_red$CHR146$reset"
+	# echo -e -n "$clear$b_red$CHR146$clear"
 	# else
-	# echo -e $reset$b_red$CHR146$reset
+	# echo -e $clear$b_red$CHR146$clear
 	# fi
+		_send="$CHR146";
+	echo -e -n "$clear$b_red$_send$clear $_comment"
 
 }
 
 function _warn() {
 	# if [[ "$_send" == " ]]; then
-	echo -e -n "$clear$b_yellow$CHR182$reset"
+	# echo -e -n "$clear$b_yellow$CHR182$clear"
+
+		_send="$CHR182";
+	echo -e -n "$clear$b_yellow$_send$clear $_comment"
+
 	# else
-	# echo -e "$clear$b_yellow$CHR182$reset"
+	# echo -e "$clear$b_yellow$CHR182$clear"
 	# fi
 }
 
 
 function _info() {
 	# if [[ "$_send" = " ]]; then
-	echo -e -n "$clear$b_blue$CHR152$reset"
+	_send="$CHR152";
+	echo -e -n "$clear$b_blue$_send$clear $_comment"
 	# else
-	# echo -e "$clear$b_blue$CHR152$reset
+	# echo -e "$clear$b_blue$CHR152$clear
 	# fi
 }
 
 
 function _stat() {
-	echo -e -n "$clear$b_teal$CHR47$reset]"
-	# echo -e $reset$b_teal$CHR47$reset
+		_send="$CHR47";
+	echo -e -n "$clear$b_teal$_send$clear $_comment"
+
+	# echo -e -n "$clear$b_teal$CHR47$clear]"
+	# echo -e $clear$b_teal$CHR47$clear
 }
 
 function _FY() {
 	doVarLoad
-	echo -e "[$b_yellow$_send$reset] $_comment "
+	echo -e "[$b_yellow$_send$clear] $_comment "
 	doFlush
 }
 function _FG() {
 	doVarLoad
-	echo -e "[$b_green$_send$reset] $_comment "
+	echo -e "[$b_green$_send$clear] $_comment "
 	doFlush
 }
 
 function _FR() {
 	doVarLoad
-	echo -e "[$b_red$_send$reset] $_comment "
+	echo -e "[$b_red$_send$clear] $_comment "
 	doFlush
 }
 
 function _FP() {
 	doVarLoad
-	echo -e "[$b_purple$_send$reset] $_comment "
+	echo -e "[$b_purple$_send$clear] $_comment "
 	doFlush
 }
 
 function _FB() {
 	doVarLoad
-	echo -e "[$b_blue$_send$reset] $_comment "
+	echo -e "[$b_blue$_send$clear] $_comment "
 	doFlush
 }
 
 function _FT() {
 	doVarLoad
-	echo -e "[$b_teal$_send$reset] $_comment "
+	echo -e "[$b_teal$_send$clear] $_comment "
 	doFlush
 }
 
 function _FD() {
 	doVarLoad
-	echo -e "[$b_gray$_send$reset] $_comment "
+	echo -e "[$b_gray$_send$clear] $_comment "
 	doFlush
 }
 

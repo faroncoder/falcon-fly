@@ -4,7 +4,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ####################START
 
 if [[ "$( hostname -s )" != "f8" ]]; then
-	XeF
+	doneTime
 fi
 	HOST="192.168.0.7"
 	ME="f8"; YOU="f7";

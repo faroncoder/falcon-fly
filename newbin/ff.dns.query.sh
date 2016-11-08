@@ -2,7 +2,7 @@ if [ ! "$( echo $PATH | grep 'source /usr/local/bin/' )" ]; then
 	export PATH=$PATH:/usr/local/bin
 fi
 XeB=`date +%s`
-function XeF {
+function doneTime {
 XeE=`date +%s`; XeT=$( echo "$(( $XeB - $XeE ))" ); logger "$0 | $XeB | $XeE | $XeT "; exit 0
 }
 USERHOST=$1
@@ -54,4 +54,4 @@ if [ -z $RESP ]; then
 		
 		domainCHECK	
 fi
-XeF
+doneTime

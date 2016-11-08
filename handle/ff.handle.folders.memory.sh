@@ -47,7 +47,7 @@ for k in "${CORRECTED[@]}"; do
 			else
 				COLR=""
 			fi
-			echo "${_send}$COLR$RESSF${reset} $k"
+			echo "${_send}$COLR$RESSF${clear} $k"
 	done
 
 ####################STOP

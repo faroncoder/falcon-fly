@@ -4,7 +4,7 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 ####################START
 ## avail for coding in colors: ##
 ## Fok Fno Finfo Fwarn Fstat ##
-## b_red Fblack b_green b_yellow b_blue b_purple b_teal Fwhite reset ##
+## b_red Fblack b_green b_yellow b_blue b_purple b_teal Fwhite clear ##
 
 $SUDO ifconfig enp1s5 0.0.0.0
 $SUDO ifconfig enp1s5:1 10.0.0.10/8

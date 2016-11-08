@@ -31,7 +31,7 @@ echo "_ok $CT exported"
 #         export CHR$CT=$line
 #         MSG="yes"
 #         echo "$FGmsg CHR$CT"
-#        # $MEF "$b_teal[$CT]$reset$( echo $LINE )"
+#        # $MEF "$b_teal[$CT]$clear$( echo $LINE )"
 #         NE=`echo $(( $NE + 1))`
 #      done  source /usr/local/lib/faron_falcon/characters
 # echo "";

@@ -16,7 +16,7 @@ for line in "${orderfiles[@]}"; do
 done
 
 echo -e "_ok"
-#echo -e _ok"$b_yellow $( basename $0 ) $reset"
+#echo -e _ok"$b_yellow $( basename $0 ) $clear"
 
 ###################STOP
 ### exit code for clean exit

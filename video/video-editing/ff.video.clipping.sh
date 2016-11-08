@@ -109,7 +109,7 @@ CALUF=`echo $ENDTIME - $STARTTIME | bc `
 echo $ENDTIME
 echo $STARTTIME
 echo $CALUF
-# ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -t "$CALUF" -c copy -pix_fmt yuv420p -map 0 -reset_timestamps 1 -fflags genpts -movflags +faststart -f mp4 "new-mp4/$NEWNAME.mp4" < /dev/null
+# ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -t "$CALUF" -c copy -pix_fmt yuv420p -map 0 -clear_timestamps 1 -fflags genpts -movflags +faststart -f mp4 "new-mp4/$NEWNAME.mp4" < /dev/null
 
 # ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -to "$ENDTIME" -c copy "new-mp4/$NEWNAME.mp4" < /dev/null
 

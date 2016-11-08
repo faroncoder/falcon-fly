@@ -20,5 +20,5 @@ echo -e "_ok"
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] ff.net.iface-reset.sh  [ACTIVE] y
+### [FILE] ff.net.iface-clear.sh  [ACTIVE] y
 

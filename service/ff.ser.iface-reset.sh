@@ -14,5 +14,5 @@ echo -e "_ok"
 ### exit code for clean exit
 doneTime
 ### IGNORE BELOW. THIS IS MEGATAG FOR MY SCRIPTS
-### [FILE] ff.ser.iface-reset.sh  [ACTIVE] y
+### [FILE] ff.ser.iface-clear.sh  [ACTIVE] y
 
