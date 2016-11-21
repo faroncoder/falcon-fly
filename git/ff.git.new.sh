@@ -23,35 +23,37 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 			then
 
 
-		echo "
-		[core]
-			repositoryformatversion = 0
-			filemode = true
-			bare = false
-			logallrefupdates = true
-		[branch \"master\"]
-			remote = origin
-			merge = refs/heads/master
-
-		[remote \"origin\"]
-				url = git@github.com:faroncoder/falcon-$gitnewname.git
-				fetch = +refs/heads/*:refs/remotes/origin/*
-		[user]
-				name = faroncoder
-				email = faronledger@gmail.com
-
-		" > $PWD/.git/config
+	
 
 		echo "node_modules" > .gitignore
 
-		git config --global push.default matching
-		git remote add origin git@github.com:faroncoder/falcon-$gitnewname.git
 		
 				touch README.md
 				git init
+				
+	echo "[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote \"origin\"]
+	url = git@github.com:faroncoder/falcon-datasystem.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch \"master\"]
+	remote = origin
+	merge = refs/heads/master
+
+" > $PWD/.git/config
+
+				git config --global user.name "faroncoder"
+    			git config --global user.email "faronledger@gmail.com"
+				git config --global push.default simple
+				git remote add origin git@github.com:faroncoder/falcon-$gitnewname.git
+				git commit --amend --reset-author
 				git status
 				git commit -am "First commit"
-				git push
+				git push --set-upstream origin master
+				git push origin master
 				ff.git.updater
 			fi
 
