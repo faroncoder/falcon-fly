@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 IPGET="$1"
 CDR="$2"
@@ -18,7 +18,7 @@ fi
 #FINDMI=`echo $FINDME | cut -d ':' -f2 `
 
 # grab the interface name via 
-FINDMI=`source /usr/local/bin/ff.net.devices`
+FINDMI=` /usr/local/bin/ff.net.devices`
 
 ### NUMBER to assign to interface
 ASSI=`echo $(( $FINDMI + 1 )) `

@@ -1,9 +1,9 @@
 #!/bin/bash
-if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader;
+if [[ ! "$( echo $PATH | grep '/usr/local/bin' )" ]]; then export PATH="$PATH:/usr/local/bin"; fi
+ source /usr/local/lib/faron_falcon/loader; startTime
  ####################START
 
-FALCON=/home/users/faron/.falcon/scripts
+FALCON=$HOME/.falcon/scripts
 
 if [[ ! -d "$FALCON" ]]; then
 		_send=_no; _comment="Falcon is not mounted. Exiting";
@@ -14,7 +14,7 @@ if [[ ! -d "$FALCON" ]]; then
 	if [[ "$@" != "" ]]; then
 		CHECKD=( $@  )
 		for k in "${CHECKD[@]}"; do
-			FID=`find /home/users/faron/.falcon/scripts -type f -name "*$k*"`
+			FID=`find $FALCON -type f -name "*$k*"`
 			if [[ "$FID" != "" ]]; then
 				COLLEC="$COLLEC $FID"
 			else
@@ -23,7 +23,7 @@ if [[ ! -d "$FALCON" ]]; then
 		done
 		PICKUP=( ${COLLEC} )
 	else
-		PICKUP=( ` find /home/users/faron/.falcon/scripts -type f -name 'ff.*' ! -path ' */.git/*' ! -path '*/kills/*' ` );
+		PICKUP=( ` find $FALCON -type f -name 'ff.*' ! -path ' */.git/*' ! -path '*/kills/*' ` );
 	fi
 	if [[  "$PICKUP" == ""  ]];  then
 
@@ -41,11 +41,14 @@ if [[ ! -d "$FALCON" ]]; then
 				#echo "$entry --> $BINLOC"
 				ln -s "$findme" "$BINLOC" 2> /dev/null
 	}
-	#LINKS=( `find -L /usr/local/bin -name 'ff.*'  ` )
-	#EXISTING=`echo ${LINKS[@]} | wc -w`
-	rm -r /usr/local/bin/ff.*
+
+	SAVEME=( `ls -al /usr/local/bin | grep '.falcon' | sed '/ff./d' | awk '{print $9}' `)
+	SVCOUNT=`echo ${SAVEME[@]} | wc -w`
+	find -L  /usr/local/bin -type f -name 'ff.*'  ! -name '*ff.load*' -exec rm {} \;
+
 	#for linkme in "${LINKS[@]}"; do rm $linkme; COUNT=`echo $(( $COUNT + 1 ))`; done
 	for findme in "${PICKUP[@]}"; do  makelink; FCOUNT=`echo $(( $FCOUNT + 1 ))`; done
+	for return in "${SAVEME[@]}"; do ME=`echo $return | sed 's/.sh//g'`; ln -s $return /usr/local/bin/$ME; done
 	#ACCOUNTED=`echo $(( $COUNT - $FCOUNT ))`
 	# if [[ "$ACCOUNTED" != 0 ]]; then
 	# 	_send=$CHR24; _comment="Caution: Files are not accounted for"
@@ -75,9 +78,9 @@ if [[ ! -d "$FALCON" ]]; then
 
 
 
-		COMPR=`echo $(( $FCOUNT - $COUN ))`
+		COMPR=`echo $FCOUNT - $COUN | bc`
 
-		_send=${CHR230}; _comment="Total ${b_yellow}$COUN${clear} exists. ${b_blue}$COMPR${clear} files installed. "
+		_send=${CHR230}; _comment="Total ${b_blue}$SVCOUN${clear} special files. ${b_blue}$COMPR${clear} files sync-ed. "
 		_FG
 
 fi

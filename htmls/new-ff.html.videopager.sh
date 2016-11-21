@@ -27,7 +27,7 @@ else
 ## check if directory '.jsc' exists
 	if [[ ! -d "$PWD/.jsc" ]]; then 
 ## fire the command to resolve the missing directory
-	   source /usr/local/bin/ff.html.glopper
+	    /usr/local/bin/ff.html.glopper
 	fi
 ## formating the 2nd agrumenet into a string for command pushing
 	LOCURL=`echo $GETURL | sed 's/https:\/\///g' | sed 's/http:\/\///g'`
@@ -67,7 +67,7 @@ fi
 #	echo "$_warn $PREFILE.png thumbed"
 
 
-source /usr/local/bin/ff.media.thumbnailer "$FILEI"  
+ /usr/local/bin/ff.media.thumbnailer "$FILEI"  
 
 JQUERYLIB="jquery-1.12.4.min.js"
 JSC="./.jsc"
@@ -84,10 +84,10 @@ if [[ ! -d "$PWD/media" ]]; then
 fi
 
 if [[ ! -d "$PWD/.jsc" ]]; then 
-   source /usr/local/bin/ff.html.glopper
+    /usr/local/bin/ff.html.glopper
 fi
 
-source /usr/local/bin/ff.media.thumbnailer "$FILEI"
+ /usr/local/bin/ff.media.thumbnailer "$FILEI"
 
 >>>>>>> 68abc402eb9935b362c9bf7374716bdfe4020a43
 DocVideo="<!DOCTYPE html>

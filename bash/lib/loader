@@ -1,6 +1,4 @@
-
 source /usr/local/lib/faron_falcon/characters
-source /usr/local/lib/faron_falcon/environments
 source /usr/local/lib/faron_falcon/colors
 source /usr/local/lib/faron_falcon/functions
 
@@ -25,14 +23,14 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
+	alias ls='ls --color=always'
+	alias grep='grep --color=always'
+	alias fgrep='fgrep --color=always'
+	alias egrep='egrep --color=always'
 fi
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -alhF --color=always'
+alias ls='ls --color=always'
+
 source /usr/local/lib/faron_falcon/alias
 
 
@@ -42,7 +40,7 @@ source /usr/local/lib/faron_falcon/alias
 
 
 
-LS_COLORS='di=1;34:fi=0;33:ln=0;33:pi=4;30:so=5:or=0;31:mi=1;31:ex=0;32:*.rpm=1;90'
+LS_COLORS='di=1;37:fi=0;33:ln=0;33:pi=4;30:so=5:or=0;31:mi=1;31:ex=0;32:*.rpm=1;90'
 export LS_COLORS
 
 
@@ -52,21 +50,18 @@ last_command=$? ##   Must come first!
 
 PS1=""
 if [[ "$last_command" == 0 ]]; then
-	PS1="${B_green}${CHR23}${S_reset} "
+	PS1="${B_green}${CHR23} "
 else
-	PS1="${B_red}${CHR24}${S_reset} "
+	PS1="${B_red}${CHR24} "
 fi
 if [[ "$EUID" == 0 ]]; then
-		PS1+="${B_red}\\u ${S_reset} "
+		PS1+="${B_red}\\u "
 	else
-		PS1+="${B_green}\\h${S_reset} "
+		PS1+="${B_green}\\h "
 fi
 
 PS1+="${B_blue}\\A ${B_yellow}\\w ${B_purple}\$${S_clear} "
 
 
-
-
-
-
+source /usr/local/lib/faron_falcon/environments
 

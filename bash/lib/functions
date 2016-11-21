@@ -4,8 +4,8 @@
 }
 
 function stopTime() {
-       	TIMEEND=`date +%s`
-	num=`echo $TIMEEND - $TIMESTART | bc`
+        TIMEEND=`date +%s`
+	num=`echo $TIMEEND - $TIMESTART | bc `
 	export num=$num
         }
 
@@ -15,7 +15,7 @@ function startTimeScript() {
 }
 
 function stopTimeScript() {
-       	STIMEEND=`date +%s`
+        STIMEEND=`date +%s`
 	num=`echo $STIMEEND - $STIMESTART | bc`
 	export num=$num
 
@@ -92,8 +92,8 @@ function checkTime() {
 	stopTime
 	decodeSec
 	TIMED=$PASS
-	_comment=$b_purple$TIMED$clear
-	_send="`_warn`"
+	_comment=$b_purple$TIMED $reset
+	_send=""
 	_FY
 }
 
@@ -144,7 +144,7 @@ function openshengine() {
 function cd() {
 builtin cd "$@";
 	RET="$?";
-	ls
+	ls --color=always
 	return "$RET";
 }
 
@@ -192,7 +192,7 @@ function _ok() {
 	# echo -e -n "$clear$b_green$CHR346$clear"
 
 
-		_send="$CHR346";
+		_send="$CHR23";
 	echo -e -n "$clear$b_green$_send$clear $_comment"
 }
 function _no() {
@@ -201,7 +201,7 @@ function _no() {
 	# else
 	# echo -e $clear$b_red$CHR146$clear
 	# fi
-		_send="$CHR146";
+		_send="$CHR24";
 	echo -e -n "$clear$b_red$_send$clear $_comment"
 
 }

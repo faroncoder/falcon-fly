@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 
 
@@ -76,8 +76,8 @@ F=0
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
 		echo -e "_info fetching $b_teal$WHOME$clear";
-		source /usr/local/bin/ff.apt.verify $WHOME
-		#source /usr/local/bin/ff.apt.fetch $WHOME
+		 /usr/local/bin/ff.apt.verify $WHOME
+		# /usr/local/bin/ff.apt.fetch $WHOME
 		echo "----------------------------------------------------"	
 #		
 

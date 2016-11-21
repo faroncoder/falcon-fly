@@ -1,12 +1,11 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
-
 PICKS=( $@ )
 
 for j in "${PICKS[@]}"; do
-		source /usr/local/bin/ff.apt.build $j
+		sudo apt-get build-dep -y --force-yes $j
 		sudo apt-get install -y $j --force-yes 2> /dev/null;
 		j=""
 done

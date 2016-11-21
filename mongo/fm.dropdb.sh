@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 
 CMD="db.runCommand( { dropDatabase: 1} )"
@@ -38,11 +38,8 @@ echo "$CMD" | mongo $1 --quiet
 ## place your script here
 #> /tmp/mongo.dat
 else
-	stopwatchtime
-fi
-
-else
 	helpecho
+
 fi
 
 ###################STOP

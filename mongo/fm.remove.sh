@@ -1,41 +1,41 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 
 CMD="db.$2.remove($3);"
 
-# while :
-# do
-#     case "$1" in
-#   	-f)
-# 			FDL="$FDL,$2:1"
-# 			CMD="db.$1.remove({},{ $FDL });"
-# 			shift 2
-# 	;;
-#        --) # End of all options
-# 	 	shift
-# 	  	break
-# 	  ;;
-#       -*)
-# 	  	echo "Error: Unknown option: $1" >&2
-# 	  	exit 1
-# 	  ;;
-#       *)  # No more options
-# 	  	break
-# 	  ;;
-#     esac
-# done
+while :
+do
+    case "$1" in
+  	-f)
+			FDL="$FDL,$2:1"
+			CMD="db.$1.remove({},{ $FDL });"
+			shift 2
+	;;
+       --) # End of all options
+	 	shift
+	  	break
+	  ;;
+      -*)
+	  	echo "Error: Unknown option: $1" >&2
+	  	exit 1
+	  ;;
+      *)  # No more options
+	  	break
+	  ;;
+    esac
+done
 
 
 
 echo "$CMD" | mongo $1 --quiet
 #mongo $1 "/tmp/mongo.dat"
 ## place your script here
-#> /tmp/mongo.dat
-else
-	helpecho
-fi
+# #> /tmp/mongo.dat
+# else
+# 	helpecho
+# fi
 
 ###################STOP
 ### exit code for clean exit
