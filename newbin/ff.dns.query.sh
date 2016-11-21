@@ -1,4 +1,4 @@
-if [ ! "$( echo $PATH | grep 'source /usr/local/bin/' )" ]; then
+if [ ! "$( echo $PATH | grep ' /usr/local/bin/' )" ]; then
 	export PATH=$PATH:/usr/local/bin
 fi
 XeB=`date +%s`

@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 
 _PROJ=$PWD
@@ -30,7 +30,9 @@ fi
 glopCSS() {
 	RESULT=`find -L $PWD/.jsc/css -maxdepth 1 -name '*.css' ! -name 'cssengine.css' | wc -l`
 	sudo su -c "echo \"@charset \"UTF-8\";\" > \"$_fileTarget\""
-	sudo su -c "echo \"@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');\" >> \"$_fileTarget\""
+	sudo su -c "echo \"@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css');\" >> \"$_fileTarget\""
+	sudo su -c "echo \"@import url('https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css');\" >> \"$_fileTarget\""
+
 	for b in "${GETFILES[@]}"; do
 		INJECTION="@import url(`printf  \"'$b'\"`);"
 	 	sudo su -c "echo \"$INJECTION\" >> $_fileTarget"
@@ -43,14 +45,16 @@ glopJS() {
 
 		RESULT=`find -L $PWD/.jsc/js -maxdepth 1 -name '*.js' ! -name 'appengine.js' ! -name 'jquery-ui*.js'  ! -name 'bootstrap*.js' ! -name 'angular*.js' ! -name '*ie*.js' | wc -l`
 
-	sudo su -c "echo \"\$.getScript('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', function(data, textStatus) {
-		console.log('bootstrap.min.js loaded', textStatus);
-});
-\$.getScript('./.jsc/js/angular.min.js', function(data, textStatus) {
-		console.log('angular.min.js loaded', textStatus);
-});
-\$.getScript('./.jsc/js/jquery-ui.min.js', function(data, textStatus) {
-		console.log('jquery-ui.min.js loaded', textStatus);
+	sudo su -c "echo \"\$.getScript('https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js', function(data, textStatus) {
+		console.log('tether.js loaded', textStatus); });
+\$.getScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', function(data, textStatus) {
+		console.log('jquery-ui.min.js loaded', textStatus); });
+\$.getScript('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', function(data, textStatus) {
+		console.log('bootstrap.min.js loaded', textStatus); });
+\$.getScript('https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/angular2.min.js', function(data, textStatus) {
+		console.log('angular.min.js loaded', textStatus); });
+\$.getScript('https://cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.12/jstorage.min.js', function(data, textStatus) {
+		console.log('jstorage.js loaded', textStatus);
 });\" > $_fileTarget"
  	for w in "${GETFILES[@]}"; do
 		INPUTLOAD="

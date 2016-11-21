@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 if [ "$1" != "" ]; then
 
@@ -32,7 +32,7 @@ echo "$CMD" | mongo $1 --quiet
 #mongo $1 "/tmp/mongo.dat"
 ## place your script here
 #> /tmp/mongo.dat
-
+fi
 
 ###################STOP
 ### exit code for clean exit

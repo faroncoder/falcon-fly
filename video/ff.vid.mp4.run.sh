@@ -1,20 +1,20 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
-cd /home/users/faron/Raws/ 1> /dev/null;
+#cd /home/users/faron/Raws/ 1> /dev/null;
 
 if [[ $EUID == 0 ]]; then
-	echo -e "$_no sudo yourself out"
+	echo -e "`_no` sudo yourself out"
 	doneTime
 fi
 
-CHECK="$@"
+CHECK=( `echo $@` )
 
-if [[  "$CHECK" == "" ]]; then
+if [[  "${CHECK[@]}" == "" ]]; then
 	GOLP=( `find . -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/ffmpeg-/d' |  sed '/.ts/d' | sed '/.mov/d'` )
 else
-	GOLP=( ${CHECK} )
+	GOLP=( `echo ${CHECK[@]} ` )
 fi
 
 THISVERSION="15ebc8d6-9c26-11e6-82a1-4305264aedd3:Oct272016"
@@ -29,13 +29,12 @@ if [[ ! -d "$PWD/origs-trash" ]]; then
 	mkdir "$PWD/origs-trash" -p 2> /dev/null;
 fi
 filePrep(){
-	> feed.mp4
 	GETNAME=$( rev <<< $j | cut -d"." -f2 | rev )
 	### name###
 	GETEXT=".$( rev <<< $j | cut -d"." -f1 | rev )"
 	### .ext###
 	#GETFILE="$PWD/$GETNAME$GETEXT"
-	### current file$clear###
+	### current file$reset###
 	NEWNAME=`echo $GETNAME | tr '.' '-'`
 	### new name###
 	NEWFILE="$NEWNAME.mp4"
@@ -44,33 +43,36 @@ filePrep(){
 	### file to be trashed###
 	COLLECT="$PWD/new-mp4/$NEWFILE"
 	### converted file###
-	FEED="$PWD/feed.mp4"
+	FEED="$PWD/$GETNAME-new.mp4"
 	#### data -feed###
 	INFOA="$PWD/mediainfo/$NEWNAME.original.info"
 	#### data  mediainfo original ###
 	INFOB="$PWD/mediainfo/$NEWNAME.converted.info"
 	#### data  mediainfo converted ##
-	NOTIFYSYS="$PWD/ffmpeg.on"
+#	NOTIFYSYS="$PWD/ffmpeg.on"
 }
 fireUpTheEngine(){
 	YEARFILE=`date`
-	HEIGHTWT="480"
+	HEIGHTWT="360"
 	TITLEFILE=""
 	YEARFILE=""
 	ALBUMFILE=""
 	CONTAINTERFILE=""
 	SMIL="K"
 	ARTISTFILE=""
-	MAXRAT="1372"
-	MAXRATE="$MAXRATE$SMIL"
+	MAXRAT=""
+	MAXRATE=""
 	#BUFRAT="$MAXRAT"
-	BUFRAT=` echo $(( 2 * $MAXRAT  ))`
+	#BUFRAT=` echo $(( 2 * $MAXRAT  ))`
 	PRESET="slow"
 	COMMENTFILE="Encoded by Faron the Falcon"
-
+	> $FEED
 	#PREFILE="$( rev <<< "$INPUT" | cut -d"." -f2 | rev )"
-	ffmpeg -loglevel quiet  -i "$j" -y -codec:v libx264 -preset "$PRESET" -maxrate "$MAXRAT$SMIL" -b:v "$MAXRAT$SMIL" -bufsize "$BUFRAT$SMIL" -g 60 -vf "scale=trunc(oh*a/2)*2:$HEIGHTWT,format=yuv420p" -movflags +faststart -flags +global_header -pix_fmt yuv420p -crf 25  -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k -f mp4 "$FEED" < /dev/null
-	# 		ffmpeg f-i $GETFILE -y -codec:v $CODECVID -pclear $CALCULATED -maxrate "$( echo $MAXRAT)k" \
+	ffmpeg -loglevel quiet  -i $j -y -codec:v libx264 -preset "$PRESET" -g 60 -vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" -movflags +faststart -flags +global_header -pix_fmt yuv420p -crf 25.0  -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k   -f  mp4 $FEED < /dev/null
+#	ffmpeg -loglevel quiet  -i $j -y -codec:v libx264 -preset "$PRESET" -maxrate "$MAXRATE" -b:v "$MAXRATE" -g 60 -vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" -movflags +faststart -flags +global_header -pix_fmt yuv420p -crf 25.0  -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k   -f  mp4 $FEED < /dev/null
+
+#	ffmpeg -loglevel quiet  -i $j -y -codec:v libx264 -preset "$PRESET" -maxrate "$MAXRAT$SMIL" -b:v "$MAXRAT$SMIL" -bufsize "$BUFRAT$SMIL" -g 60 -vf "scale=trunc(oh*a/2)*2:$HEIGHTWT,format=yuv420p" -movflags +faststart -flags +global_header -pix_fmt yuv420p -crf 25.0  -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k -f mp4 "$FEED" < /dev/null
+	# 		ffmpeg f-i $GETFILE -y -codec:v $CODECVID -preset $CALCULATED -maxrate "$( echo $MAXRAT)k" \
 	# -bufsize "$( echo $BUFRAT)k" -b:v "$( echo $BITRAT)k" -crf $CRF -pix_fmt +yuv420p \
 	# -vf "scale=trunc(oh*a/2)*2:$HEIGHTWT" -coder 1 -flags +loop \
 	# -flags +global_header -movflags +faststart -x264opts keyint=600:min-keyint=30:bframes=16 \
@@ -79,33 +81,32 @@ fireUpTheEngine(){
 	# -codec:a aac -strict -2 -ar 44100 -ac 2 -ab 128k -f mp4 "$FEED" < /dev/null;
 	mv "$j" "$TRASH"
 	mediainfo "$TRASH" > "$INFOA"
-	ffmpeg -i "$FEED" -y -codec copy -metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" -metadata comment="$COMMENTFILE" -f mp4  "$COLLECT"  < /dev/null;
+	ffmpeg -i "$FEED" -y -codec copy -metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" -metadata comment="$COMMENTFILE"   "$COLLECT"  < /dev/null;
 	mediainfo "$COLLECT" > "$INFOB"
 }
 
 COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
-_send=$CHR23; _comment="$b_yellow$ALLFILES$clear files queued"
+_send=$CHR23; _comment="$b_yellow$ALLFILES$reset files queued"
 _FG
-> "$NOTIFYSYS"
-
-
+> $PWD/ffmpeg-on
 
 
 for j in "${GOLP[@]}"; do
 				# rm "$PWD/*.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
 				startTimeScript
-				_comment="$j ==>"
+				_comment="$j ==> "
 				_send=$CHR24;
-				_FY
+				_ok
 				filePrep
-				fireUpTheEngine
+				fireUpTheEngine 2> /dev/null < /dev/null
 				STIMED=`tellTimeScript`
-				echo  "$STIMED  --   $j" >>  $PWD/ffmpeg-results
-				_comment="$b_yellow$COUNT${clear} of $b_red$ALLFILES$clear completed in $b_teal $STIMED $clear "
+				echo  -n "$STIMED  --   $j" >>  $PWD/ffmpeg-results
+				_comment="$b_yellow$COUNT$reset of $b_red$ALLFILES$reset completed in $b_teal $STIMED $reset "
 				_send="$CHR23"
 				notify-send "Item done" "`_FG`"
+				rm $FEED
 
 
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 #!source /usr/bin/env bash
 
@@ -91,8 +91,8 @@ fi
 sudo service apache2 reload 2> /dev/null
 
 # copy addwebsite command
-cp /vagrant/addwebsit source /usr/local/bin/addwebsite 2> /dev/null
-chmod + source /usr/local/bin/addwebsite 2> /dev/null
+cp /vagrant/addwebsit  /usr/local/bin/addwebsite 2> /dev/null
+chmod +  /usr/local/bin/addwebsite 2> /dev/null
 cp /vagrant/skeleton /etc/apache2/sites-available/skeleton 2> /dev/null
 
 sudo apt-get install -y git 2> /dev/null

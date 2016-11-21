@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 GETPASS=$( ruby -e 'print "$1".crypt("JU"); print("\n");' )
 echo $GETPASS >> /srv/www/access/.htpasswd

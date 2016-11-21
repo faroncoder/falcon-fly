@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 
 loadSudo
@@ -10,11 +10,11 @@ THISFUILE="/tmp/`uuid`"
 KEYWORD="$1 $2 $3"
 
 if [[ "$KEYWORD" == "" ]]; then
-		echo -e "$_no -- exiting"	
-		doneTime
+		echo -e "$Fno -- exiting"
+		XeF
 elif [[ "$KEYWORD" == " " ]]; then
-		echo -e "$_no -- exiting"	
-		doneTime
+		echo -e "$Fno -- exiting"
+		XeF
 fi
 
 	if [[ ! -z "$2" ]]; then
@@ -27,16 +27,15 @@ fi
 	else
 			apt-cache search $1  > $THISFUILE
 #		 	KEYWORD="$1" # >> $THISFUILE
- 
+
 fi
 
-checkList(){ 
+checkList(){
 if [[ $G == $NUMB ]]; then
-	_send="$CHR182"; _comment="New search keyword: "
-	_FR
+	echo -e -n "$Fstat New search keyword: "
 	read NEWSEARCH
 	ff.apt.find $NEWSEARCH
-	doneTime
+	XeF
 fi
 }
 
@@ -49,35 +48,26 @@ makelister(){
 		fi
 		N=0
 		while read line; do
-			N=`echo "$N + 1" | bc `
+			N=`echo $(( $N + 1 ))`
 			NAMEPF=`echo $line | awk '{print $1}'`
 			DESPPF=`echo $line | awk '{$1= ""; print $0}'`
-			echo -e "$b_red$N $b_green$NAMEPF$b_yellow$DESPPF$clear"
+			echo -e "$Fred$N $Fgreen$NAMEPF$Fyellow$DESPPF$Foff"
 		done < $THISFUILE
 		echo "-----"
-		echo -e "Packages found:$b_blue $NUMB $clear"
+		echo -e "Packages found:$Fblue $NUMB $Foff"
 }
 
 
 pickProcesser(){
-	_send="$CHR23"; _comment="Keyword searched: $b_red $KEYWORD $clear"
-	_FT
-	#echo -n -e "Item to install ? "
-	#echo -e ""
-	_comment="Item to install? "
-	_stat; #read PICKS
-	
-	#CHECKALL=( ${PICKS} )
-	
-	read  PICKS
-	CHECKALL=( ${PICKS} )
 
-# if [[ "${CHECKALL[@]}" == "" ]] || [[ "${CHECKALL[@]}" == " " ]]; then
-if [[ "${CHECKALL[@]}" == "" ]]; then
-		_comment="no -- exiting. "
-		_FR
-		#echo -e "$_no -- exiting"
-		doneTime
+	echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
+	echo -n -e "Item to install ? "
+	read  PICKS
+	CHECKALL=( `echo ${PICKS}` )
+
+if [[ "${CHECKALL[@]}" == "" ]] || [[ "${CHECKALL[@]}" == " " ]]; then
+		echo -e "$Fno -- exiting"
+		XeF
 else
 
 G=0
@@ -85,32 +75,23 @@ F=0
 	for pickme in "${CHECKALL[@]}"; do
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
-		#_comment="
-		COLLECT="$COLLECT $WHOME"
-	done
-		_comment="${COLLECT}"
-		_stat "${COLLECT}"
+		echo -e "$Finfo fetching $Fteal$WHOME$Foff";
+		# /usr/local/bin/ff.apt.verify $WHOME
+		#ff.apt.fetch $WHOME
+		echo "----------------------------------------------------"
 #
-	$SUDO apt-get build-dep ${COLLECT} 2> /dev/null < /dev/null
-	$SUDO apt-get install -y --force-yes ${COLLECT} 2> /dev/null < /dev/null
-	
-		# fetching $b_teal$WHOME$clear";
-		#source /usr/local/bin/ff.apt.verify $WHOME
-		#source /usr/local/bin/ff.apt.fetch $WHOME
-		# echo "----------------------------------------------------"	
-#		
 
 		#DPKG=`dpkg -l | grep -w "$WHOME" | awk '{ print $2 }'`
 #			if [[ "$DPKG" == "$WHOME" ]]; then
 #			G=`echo $(( $G + 1 ))`
-#			echo -e "[ $b_green INSTALLED$clear ] $b_yellow $WHOME $clear | Installed:$b_green$G$clear | Not installed:$b_red$FO$clear"
+#			echo -e "[ $Fgreen INSTALLED$Foff ] $Fyellow $WHOME $Foff | Installed:$Fgreen$G$Foff | Not installed:$Fred$FO$Foff"
 #		else
 #			F=`echo $(( $F + 1 ))`
-#			echo -e "[$b_red NOT INSTALLED$clear ] $WHOME | $b_yellow Installed: $b_green$G$clear | $b_yellow Not installed:$b_red$FO$clear"
+#			echo -e "[$Fred NOT INSTALLED$Foff ] $WHOME | $Fyellow Installed: $Fgreen$G$Foff | $Fyellow Not installed:$Fred$FO$Foff"
 #			fi
-	# 	pickme=""
-	# 	WHOME=""
-	# done
+		pickme=""
+		WHOME=""
+	done
 
 
 fi
@@ -124,11 +105,14 @@ menuEngine(){
 	pickProcesser
 }
 
+menuEngine
 
-#	while :
+echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
+echo -n -e "Item to install ? "
+	while :0
 #		do
 #			case "$pickme" in
-#				$pickme) 
+#				$pickme)
 #					ff.apt.fetch "$( awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' )";
 #					break
 #				;;
@@ -139,12 +123,12 @@ menuEngine(){
 #aptMenu
 #}
 
-#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do _infoNo package	
-#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "_info No package is selected - exiting"; doneTime ; done; fi
+#	if [[ "$SELECT" == $"" ]] || [[ "$SELECT" == $"" ]]; then do echo -e "$Finfo No package
+#	if [[ "$SELECT" == "" ]] || [[ "$SELECT" == "" ]]; then do echo -e "$Finfo No package is selected - exiting"; XeF ; done; fi
 
 #aptMenu
 
-menuEngine
+
 
 ###################STOP
 ### exit code for clean exit

@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 BINPULL="/home/users/faron/.falcon/scripts/htmls/VAULT"
 
@@ -175,7 +175,7 @@ printf "echo \$ONEFILE"
 	# if [ "$EXT"="flv" ]
 	# then
 	# 	cd ./jsc/media
-	# 	source /usr/local/bin/flv-tsx-er
+	# 	 /usr/local/bin/flv-tsx-er
 	# fi
 
 

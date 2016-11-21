@@ -1,47 +1,67 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 DATABASE=$1
 TABLE=$2
-ARG=$( ${@:3} )
-echo $ARG
+ARG=( `echo ${@} | awk '{ $1="";$2=""; print $0 }' ` )
 
-DATABASE=$1
-TABLE=$2
-ARG="${@:3}"
-
-
-
-while :
-	do
-	case "${ARG}" in
-		$ARG) 
-			if [[ "$2" == "" ]]; then
-				echo -e "$fcer no entry for $1";
-				exit 1;
-				break;
-			else
-				if [[ "$SRING" != "" ]]; then
-					SRING="$SRING,\"$1\":\"$2\""
-					shift 2
-				else
-					SRING="\"$1\":\"$2\"";
-					shift 2;
-				fi	
-			fi
-			;;
-	esac
+COMA=""
+for single in "${ARG[@]}"; do
+	#ping=`echo $single | sed 's/://g'`
+	ping=`echo $single | sed "s/'/\"/g"`
+	trim1=`echo $ping | cut -d':' -f 1`
+	trim2=`echo $ping | cut -d':' -f 2`
+	CHK=`echo $trim2 | grep '[0-9]' `
+	if [[ "$CHK" == "" ]]; then
+		OL="\""
+	else
+		OL=""
+	fi
+	populate="$COMA\"$trim1\":$OL$trim2$OL"
+	populateALL="${populateALL}$populate"
+	COMA=","
 done
 
-echo -e "$fcok $DATABASE"
-echo -e "$fcok $TABLE"
-echo -e "$fcok $SRING"
+THIS="[{${populateALL}}]"
+
+# echo -e $THIS
+# echo ${THIS}
+echo  "db.$2.insert( ${THIS} )" | mongo $1 --quiet 2>/dev/null
+
+# echo "db.$2.insert( `echo ${populateALL}`  )" | mongo $1 --quiet 2>/dev/null
+# _send=$CHR23; _comment="Data added!"
+# _FG
+
+
+
+# while :
+# 	do
+# 	case "${ARG}" in
+# 		$ARG)
+# 			if [[ "$2" == "" ]]; then
+# 				echo -e "$fcer no entry for $1";
+# 				exit 1;
+# 				break;
+# 			else
+# 				if [[ "$SRING" != "" ]]; then
+# 					SRING="$SRING,\"$1\":\"$2\""
+# 					shift 2
+# 				else
+# 					SRING="\"$1\":\"$2\"";
+# 					shift 2;
+# 				fi
+# 			fi
+# 			;;
+# 	esac
+# done
+
+
 
 # while :
 # 	do
 # 	case "$3" in
-# 	$3)	
+# 	$3)
 # 			if [[ "$4" != "" ]]; then  SRING="\"$1\":\"$2\""; fi;  shift 2 ;;
 
 # 		# $1)

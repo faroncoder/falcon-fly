@@ -45,7 +45,7 @@ b_gray="\e[1;37m"  # White
 
 	_send=""
 	_comment=""
-	reset="\e[00m"
+	S_reset="\e[00m"
 	clear="\e[0m"
 
 

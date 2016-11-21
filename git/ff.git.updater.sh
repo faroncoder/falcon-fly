@@ -1,12 +1,15 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 openshengine
 
 		gitnewname=`basename $PWD`
 		if [[ "$gitnewname" == "scripts" ]]; then
 			gitnewname="falcon-fly"
+		fi
+		if [[ "$gitnewname" == "db" ]]; then
+			gitnewname="databasesystem"
 		fi
 		_send="$CHR182"; _comment="Target: $gitnewname"
 		#echo "_stat Target: $gitnewname"

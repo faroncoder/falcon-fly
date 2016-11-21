@@ -22,7 +22,7 @@
 #  #      blipme
 #  #   done
 
-# #cd /home/users/$USER/var/Desktop/engine/method1 && inotifyexe source /usr/local/bin/blipme < /dev/null
+# #cd /home/users/$USER/var/Desktop/engine/method1 && inotifyexe  /usr/local/bin/blipme < /dev/null
 
 # /home/users/$USER/var/Desktop/engine/method1/./inotifyexec blipme
 

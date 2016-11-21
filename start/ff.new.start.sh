@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/loader; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
 
 
@@ -23,7 +23,7 @@ echo "_ok /etc/fstab configured"
  $SUDO systemctl enable apache2
  $SUDO mysql_secure_installation
  rm $PWD/ff.new.start.sh 2> /dev/null
- source /usr/local/bin/ff.apt.update
+  /usr/local/bin/ff.apt.update
 # $SUDO reboot
 #echo "$_warn rebooting"
 
