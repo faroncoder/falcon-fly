@@ -13,7 +13,7 @@ for single in "${ARG[@]}"; do
 	ping=`echo $single | sed "s/'//g"`
 	ping=`echo $ping | sed 's/"//g'`
 	trim1=`echo $ping | cut -d':' -f 1`
-	trim2=`echo $ping | cut -d':' -f 2`
+	trim2=`echo $ping | sed "/$trim1://g"`
 	CHK=`echo $trim2 | grep '[A-Za-z]' `
 	if [[ "$CHK" != "" ]]; then
 		OL="\""

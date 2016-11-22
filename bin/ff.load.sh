@@ -21,7 +21,7 @@ if [[ ! -d "$FALCON" ]]; then
 				k="";
 			fi
 		done
-		PICKUP=( ${COLLEC} )
+		PICKUP=(  `find $FALCON -type f -name 'ff.*' ! -path ' */.git/*' ! -path '*/kills/*' ` ${COLLEC} )
 	else
 		PICKUP=( ` find $FALCON -type f -name 'ff.*' ! -path ' */.git/*' ! -path '*/kills/*' ` );
 	fi
@@ -48,7 +48,7 @@ if [[ ! -d "$FALCON" ]]; then
 
 	#for linkme in "${LINKS[@]}"; do rm $linkme; COUNT=`echo $(( $COUNT + 1 ))`; done
 	for findme in "${PICKUP[@]}"; do  makelink; FCOUNT=`echo $(( $FCOUNT + 1 ))`; done
-	for return in "${SAVEME[@]}"; do ME=`echo $return | sed 's/.sh//g'`; ln -s $return /usr/local/bin/$ME; done
+	for return in "${SAVEME[@]}"; do ME=`echo $return | sed 's/.sh//g'`; ln -s $return /usr/local/bin/$ME 2> /dev/null; done
 	#ACCOUNTED=`echo $(( $COUNT - $FCOUNT ))`
 	# if [[ "$ACCOUNTED" != 0 ]]; then
 	# 	_send=$CHR24; _comment="Caution: Files are not accounted for"
