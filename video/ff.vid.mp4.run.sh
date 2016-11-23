@@ -9,9 +9,12 @@ if [[ $EUID == 0 ]]; then
 	doneTime
 fi
 
+
 CHECK=( `echo $@` )
 
 if [[  "${CHECK[@]}" == "" ]]; then
+	GET=( `ls *.mp4` ); for n in "${GET[@]}"; do MD5=`md5sum $n | awk '{print $1}'`; FILE=`echo $n | sed 's/.mp4//g'`; rename "s/$FILE/$MD5/g" $n ; done
+	GET=""
 	GOLP=( `find . -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/ffmpeg-/d' |  sed '/.ts/d' | sed '/.mov/d'` )
 else
 	GOLP=( `echo ${CHECK[@]} ` )
@@ -43,7 +46,7 @@ filePrep(){
 	### file to be trashed###
 	COLLECT="$PWD/new-mp4/$NEWFILE"
 	### converted file###
-	FEED="$PWD/$GETNAME-new.mp4"
+	FEED="$PWD/feed-$j.mp4"
 	#### data -feed###
 	INFOA="$PWD/mediainfo/$NEWNAME.original.info"
 	#### data  mediainfo original ###
@@ -93,19 +96,25 @@ _FG
 
 
 for j in "${GOLP[@]}"; do
+				startTimeScript
 				# rm "$PWD/*.dat" 2> /dev/null
 				COUNT=`echo $(( $COUNT + 1 ))`
-				startTimeScript
 				_comment="$j ==> "
 				_send=$CHR24;
-				_ok
+				_FG
 				filePrep
 				fireUpTheEngine 2> /dev/null < /dev/null
+				
 				STIMED=`tellTimeScript`
+
+
 				echo  -n "$STIMED  --   $j" >>  $PWD/ffmpeg-results
 				_comment="$b_yellow$COUNT$reset of $b_red$ALLFILES$reset completed in $b_teal $STIMED $reset "
-				_send="$CHR23"
-				notify-send "Item done" "`_FG`"
+				_send=$CHR156
+				_CMD=$( notify-send "Item done" )
+				_ok 
+
+				
 				rm $FEED
 
 

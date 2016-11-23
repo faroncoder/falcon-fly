@@ -1,6 +1,6 @@
-source /usr/local/lib/faron_falcon/characters
-source /usr/local/lib/faron_falcon/colors
 source /usr/local/lib/faron_falcon/functions
+
+source /usr/local/lib/faron_falcon/colors
 
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -64,4 +64,5 @@ PS1+="${B_blue}\\A ${B_yellow}\\w ${B_purple}\$${S_clear} "
 
 
 source /usr/local/lib/faron_falcon/environments
+
 

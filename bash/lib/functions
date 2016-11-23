@@ -1,6 +1,7 @@
  function startTime() {
         TIMERAW=""
         export TIMESTART=`date +%s`
+        doFlush
 }
 
 function stopTime() {
@@ -87,12 +88,13 @@ function decodeSec() {
 		export PASS="$DAY:$HOUR:$MIN:$SEC"
 }
 
-function checkTime() {
+function _checkTime() {
 	decodeVarsClear
 	stopTime
 	decodeSec
 	TIMED=$PASS
-	_comment=$b_purple$TIMED $reset
+	_send=$CHR
+	_comment="$b_purple$TIMED $reset"
 	_send=""
 	_FY
 }
@@ -156,15 +158,48 @@ function loadSudo() {
         if [[ "$EUID" != 0 ]]; then export SUDO="sudo"; fi
 }
 
-function doFlush() {
-	export  _send=""
-	export  _comment=""
+function doFlush() {		
+export _send=""
+export _comment=""
+export _CMD=""
+export _complyAskQ=""
+export _complyVar0=""
+export _complyVar1=""
+export _complyAskCMD=""
+export _complyCloseCMD=""
+export _complyCloseComment=""
+export _CMDA0=""
+export _CMDA1=""
+export _commentA1=""
+export _commentA0=""
+export _send0=""
+export _send1=""
+export _sendAsk=""
+export _sendClose=""
+doVarLoad
 }
 
 function doVarLoad() {
-	 export _send=$_send
-	 export _comment=$_comment
+export _send=$_send
+export _comment=$_comment
+export _CMD=$_CMD
+export _complyAskQ=$_complyAskQ
+export _complyVar0=$_complyVar0
+export _complyVar1=$_complyVar1
+export _complyAskCMD=$_complyAskCMD
+export _complyCloseCMD=$_complyCloseCMD
+export _complyCloseComment=$_complyCloseComment
+export _CMDA0=$_CMDA0
+export _CMDA1=$_CMDA1
+export _commentA1=$_commentA1
+export _commentA0=$_commentA0
+export _send0=$_send0
+export _send1=$_send1
+export _sendAsk=$_sendAsk
+export _sendClose=$_sendClose
 }
+
+
 
 # function Go_ok() {
 # 	echo -e "$clear$b_green$CHR346$clear"
@@ -190,29 +225,32 @@ function doVarLoad() {
 
 function _ok() {
 	# echo -e -n "$clear$b_green$CHR346$clear"
-
-
-		_send="$CHR23";
+    
+	
+	
 	echo -e -n "$clear$b_green$_send$clear $_comment"
+	read ACTION
 }
+
 function _no() {
 	# if [[ $_send ==  ]]; then
 	# echo -e -n "$clear$b_red$CHR146$clear"
 	# else
 	# echo -e $clear$b_red$CHR146$clear
 	# fi
-		_send="$CHR24";
-	echo -e -n "$clear$b_red$_send$clear $_comment"
+	
 
+	echo -e -n "$clear$b_red$_send$clear $_comment"
+	read ACTION
 }
 
 function _warn() {
 	# if [[ "$_send" == " ]]; then
 	# echo -e -n "$clear$b_yellow$CHR182$clear"
+	
 
-		_send="$CHR182";
 	echo -e -n "$clear$b_yellow$_send$clear $_comment"
-
+	read ACTION
 	# else
 	# echo -e "$clear$b_yellow$CHR182$clear"
 	# fi
@@ -220,66 +258,131 @@ function _warn() {
 
 
 function _info() {
+
 	# if [[ "$_send" = " ]]; then
-	_send="$CHR152";
+
 	echo -e -n "$clear$b_blue$_send$clear $_comment"
 	# else
 	# echo -e "$clear$b_blue$CHR152$clear
 	# fi
+	read ACTION
 }
 
 
 function _stat() {
-		_send="$CHR47";
+	
+
 	echo -e -n "$clear$b_teal$_send$clear $_comment"
+	read ACTION
 
 	# echo -e -n "$clear$b_teal$CHR47$clear]"
 	# echo -e $clear$b_teal$CHR47$clear
 }
 
 function _FY() {
-	doVarLoad
+
 	echo -e "[$b_yellow$_send$clear] $_comment "
-	doFlush
+
 }
 function _FG() {
-	doVarLoad
+
 	echo -e "[$b_green$_send$clear] $_comment "
-	doFlush
+
 }
 
 function _FR() {
-	doVarLoad
+
 	echo -e "[$b_red$_send$clear] $_comment "
-	doFlush
+
 }
 
 function _FP() {
-	doVarLoad
+
 	echo -e "[$b_purple$_send$clear] $_comment "
-	doFlush
+
 }
 
 function _FB() {
-	doVarLoad
+
 	echo -e "[$b_blue$_send$clear] $_comment "
-	doFlush
+
 }
 
 function _FT() {
-	doVarLoad
+
 	echo -e "[$b_teal$_send$clear] $_comment "
-	doFlush
+
 }
 
 function _FD() {
-	doVarLoad
+
 	echo -e "[$b_gray$_send$clear] $_comment "
-	doFlush
+
 }
 
+function _CMD(){
+	echo -e	$_CMD
+}
 
 function _checkPath() {
 	echo $PATH | tr ':' '\n'
 }
 
+
+
+
+function _complyClose(){
+	
+	echo -e $_complyCloseCMD
+	_comment=$_complyCloseComment
+	_sendAsk=
+	_FT
+
+	}
+	
+function _complyAsk() {
+		_comment=$_complyAskQ
+		if [[ "$_complyASKCMD" != "" ]]; then
+		echo -e $_complyASKCMD
+		fi
+		_ok
+}
+
+
+function _comply0() {		
+		_comment=$_commentA1
+		if [[ "$_CMDA0" != "" ]]; then
+		echo -e $_CMDA0
+		fi
+		_FG
+}
+function _comply1() {
+		_comment=$_commentA1
+		if [[ "$_CMDA1" != "" ]]; then
+		echo -e $_CMDA1
+		fi
+		_FB
+}
+
+
+function _complyConfirm() {
+doVarLoad
+	_complyAsk
+
+if [[ "$_complyVar1" == "" ]]; then 
+
+		if [[ "$ACTION" == "$_complyVar0" ]]; then
+				_comply0
+		fi
+
+else
+		if [[ "$ACTION" == "$_complyVar0" ]]; then
+				_comply1
+		else 
+				_comply0
+		fi
+fi
+
+_complyClose
+
+}

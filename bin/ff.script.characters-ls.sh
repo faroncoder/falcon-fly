@@ -1,21 +1,13 @@
 #!/bin/bash
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
- source /usr/local/lib/faron_falcon/colors;  source /usr/local/lib/faron_falcon/functions; startTime
+ source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
-CT=0
-while read line; do
-	CT=`echo $(( $CT + 1 ))`
- 	edit=`echo $line | cut -d"=" -f2`
- 	trim="[$b_green$CT$clear]$edit"
-	MEF="echo -n "
-	if [[ "$NE" == 5 ]]; then
-        		MEF="echo "
-        		NE=0
-    	fi
-	$MEF$trim
-    	NE=`echo $(( $NE + 1))`
-	done  < /usr/local/lib/faron_falcon/characters
-echo ""
+
+source $FALCON/bash/lib/characters
+charsMenu
+   
+
+#	done  < /usr/local/lib/faron_falcon/characters
 
 ###################STOP
 ### exit code for clean exit

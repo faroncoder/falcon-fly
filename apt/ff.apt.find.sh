@@ -32,10 +32,11 @@ fi
 
 checkList(){
 if [[ $G == $NUMB ]]; then
-	echo -e -n "$Fstat New search keyword: "
-	read NEWSEARCH
-	ff.apt.find $NEWSEARCH
-	XeF
+	_commend=" New search keyword: "
+	_stat
+	read ACTION
+	ff.apt.find $ACTION
+	doneTime
 fi
 }
 
@@ -51,23 +52,24 @@ makelister(){
 			N=`echo $(( $N + 1 ))`
 			NAMEPF=`echo $line | awk '{print $1}'`
 			DESPPF=`echo $line | awk '{$1= ""; print $0}'`
-			echo -e "$Fred$N $Fgreen$NAMEPF$Fyellow$DESPPF$Foff"
+			echo -e "$b_red$N $b_green$NAMEPF$b_yellow$DESPPF$reset"
 		done < $THISFUILE
 		echo "-----"
-		echo -e "Packages found:$Fblue $NUMB $Foff"
+		echo -e "Packages found:$b_blue $NUMB $reset"
 }
 
 
 pickProcesser(){
 
-	echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
-	echo -n -e "Item to install ? "
+	_comment="Keyword searched: $b_red $KEYWORD $reset"
+	_info
 	read  PICKS
 	CHECKALL=( `echo ${PICKS}` )
 
 if [[ "${CHECKALL[@]}" == "" ]] || [[ "${CHECKALL[@]}" == " " ]]; then
-		echo -e "$Fno -- exiting"
-		XeF
+		_comment="no -- exiting";
+		_FR
+		doneTime
 else
 
 G=0
@@ -75,7 +77,8 @@ F=0
 	for pickme in "${CHECKALL[@]}"; do
 #		if [[ $F == 0 ]]; then FO="---"; fi
 		WHOME=`awk "NR==$pickme" $THISFUILE | awk '{ print $1 }' `
-		echo -e "$Finfo fetching $Fteal$WHOME$Foff";
+		_comment="fetching $b_teal$WHOME$reset"; _info
+
 		# /usr/local/bin/ff.apt.verify $WHOME
 		#ff.apt.fetch $WHOME
 		echo "----------------------------------------------------"
@@ -84,10 +87,10 @@ F=0
 		#DPKG=`dpkg -l | grep -w "$WHOME" | awk '{ print $2 }'`
 #			if [[ "$DPKG" == "$WHOME" ]]; then
 #			G=`echo $(( $G + 1 ))`
-#			echo -e "[ $Fgreen INSTALLED$Foff ] $Fyellow $WHOME $Foff | Installed:$Fgreen$G$Foff | Not installed:$Fred$FO$Foff"
+#			echo -e "[ $b_green INSTALLED$reset ] $b_yellow $WHOME $reset | Installed:$b_green$G$reset | Not installed:$b_red$FO$reset"
 #		else
 #			F=`echo $(( $F + 1 ))`
-#			echo -e "[$Fred NOT INSTALLED$Foff ] $WHOME | $Fyellow Installed: $Fgreen$G$Foff | $Fyellow Not installed:$Fred$FO$Foff"
+#			echo -e "[$b_red NOT INSTALLED$reset ] $WHOME | $b_yellow Installed: $b_green$G$reset | $b_yellow Not installed:$b_red$FO$reset"
 #			fi
 		pickme=""
 		WHOME=""
@@ -107,7 +110,8 @@ menuEngine(){
 
 menuEngine
 
-echo -e "$Finfo Keyword searched: $Fred $KEYWORD $Foff"
+_send=$CHR23; _comment="Keyword searched: $b_red $KEYWORD $reset" 
+_FB 
 echo -n -e "Item to install ? "
 	while :0
 #		do
