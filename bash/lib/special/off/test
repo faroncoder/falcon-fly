@@ -1,0 +1,98 @@
+FALCONLIB=/home/users/faron/.falcon/scripts/bash/lib
+CHARFILE=$FALCONLIB/special/chars.list
+source $CHARFILE
+
+function collectChars() {
+CHARS=( `grep -r -o 'CHR[0-9][0-9][0-9]' $FALCON --exclude-dir=kills --exclude-dir=special | sed '/Binary/d' | cut -d':' -f2 | sort | uniq ` )
+
+> $FILE
+for j in "${CHARS[@]}"; do
+ 	FINDME=`grep "$j" /usr/local/lib/faron_falcon/special/export-characters.list | awk '{ print $3}'`
+ 	echo "export $j=$FINDME" >> $FILE
+done
+chmod +x $FILE
+}
+
+
+GETCH=( `grep -r '$fa_' --exclude-dir=kills --exclude-dir=special  | sed '/Binary/d' | cut -d':' -f2 | sed 's/\$/\n\$/g' | grep 'fa_'  | sed 's/\$//g' ` )
+for k in "${GETCH[@]}"; do
+	FINDMYID=`grep '$k' $FALCONLIB/special/export-characters.list`
+	find $FALCON -type f -name '*.sh' -exec sed -i -e 's/$GETCH/$FINDMYID/g'
+done
+
+function collectCharsName() {
+CHARS=( `grep -r -o 'fa_' /home/users/faron/.falcon --exclude-dir=kills --exclude-dir=special | sed '/Binary/d' | cut -d':' -f2 | sort | uniq ` )
+
+> $FILE
+for j in "${CHARS[@]}"; do
+ 	FINDME=`grep "$j" special/export-characters.list | awk '{ print $3}'`
+ 	echo -e "export $j=$FINDME" >> $FILE
+done
+chmod +x $FILE
+}
+
+# _charsPopulate() { 
+# while read line; do 
+# 	line=`echo $line | tr '_' ' '`; 
+# 	ID=`echo $line | awk '{print $1}'`; 
+# 	DESP=`echo $line | awk '{print $2}'`; 
+# 	ICON=`echo $line | awk '{print $3}'`; 
+# 	export CHR$ID=$ICON; 
+# 	export i_$DESP=$ICON; 
+# done < characters.all 
+# }
+
+
+
+
+# _charsCheckLoaded(){
+# 	if [[ "$CHR740" ==  "" ]]; then 
+# 		_send=$i_sadface
+# 		_comment="Nope it's not loaded...but let's do it anyways"
+# 		_FY
+# 		_charsPopulate
+# 	else
+# 		_send=$i_happyfacewhite
+# 		_comment="Yahoo! It's already loaded"
+# 		_FG
+# 	fi
+# }
+
+
+
+
+# _charsMenu(){
+# startTime
+# 	while read line; do 
+# 		line=`echo $line | tr '_' ' '`; 
+# 		ID=`echo $line | awk '{print $1}'`; 
+# 		DESP=`echo $line | awk '{print $2}'`; 
+# 		ICON=`echo $line | awk '{print $3}'`; 
+# 		NAME="$_yellow$ID$clear:$_green $ICON $clear($_teal$DESP$clear)"
+# 		echo -e $NAME
+# 	done < special/export-characters.list
+# 	echo ""
+# 	_checkTime
+# }
+
+# charsMenuIds(){
+# startTime
+# CH=0; NAF=1;
+# for char in "${THIS[@]}"; do 
+# 
+# SPACEBA="        "
+# NAME="$CH:$_green$CHAR$_yellow$DESP$clear$SPACEBA"
+
+# if [[ "$NAF" == 0 ]]; then
+# 	echo "$NAME"
+# 	NAF=1
+# else
+# 	echo -n "$NAME"
+# 	NAF=0
+# fi
+
+# done
+# echo ""
+# _checkTime
+
+# }

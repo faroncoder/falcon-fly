@@ -1,7 +1,6 @@
  function startTime() {
         TIMERAW=""
         export TIMESTART=`date +%s`
-        doFlush
 }
 
 function stopTime() {
@@ -54,7 +53,7 @@ function processArray() {
 }
 
 function decodeVarsClear() {
-		num=";  sec="; hour="; min="; day="; mms=";
+		num="";  sec=""; hour=""; min=""; day=""; mms="";
 }
 
 
@@ -76,9 +75,14 @@ function decodeMsec() {
 
 }
 
+function findCharId() {
+	echo -n "$CHR568 keyword to find the char?  "
+	read WHICHONE
+	grep "$WHICHONE" /usr/local/lib/faron_falcon/special/export-characters.list
+}
 
 function decodeSec() {
-		sec=0
+		sec=0 
 		min=0
 		hour=0
 		day=0
@@ -93,10 +97,66 @@ function _checkTime() {
 	stopTime
 	decodeSec
 	TIMED=$PASS
-	_send=$CHR
-	_comment="$b_purple$TIMED $reset"
-	_send=""
+	_comment="$_yellow$TIMED $clear"
+	_send="$b_teal$CHR154$clear"
 	_FY
+}
+
+
+function doVarLoad() {		
+export _send=""
+export _comment=""
+export _CMD=""
+ export _complyAskQCmd=""
+ export _complyAskQSend=""
+ export _complyAskQComment=""
+ export _complyAskQResponseA=""
+ export _complyAskQResponseB=""
+ export _complyAskCloseCmd=""
+ export _complyAskCloseSend=""
+ export _complyAskCloseComment=""
+ export _complyAskCondACmd=""
+ export _complyAskCondASend=""
+ export _complyAskCondAComment=""
+ export _complyAskCondBCmd=""
+ export _complyAskCondBSend=""
+ export _complyAskCondBComment=""
+ export _complyAskElseIfCmd=""
+ export _complyAskElseIfSend=""
+ export _complyAskElseIfComment=""
+ export _complyAskElseElseCmd=""
+ export _complyAskElseElseSend=""
+ export _complyAskElseElseComment=""
+ export _complyARespond=$_complyARespond
+ export _complyACmd=$_complyACmd
+ export _complyASend=$_complyASend
+ export _complyAComment=$_complyAComment
+ export _complyAskCmd=$_complyAskCmd
+ export _complyAskQ=$_complyAskQ
+ export _complyAskRespond=$_complyAskRespond
+ export _complyAskQCmd=$_complyAskQCmd
+ export _complyAskQSend=$_complyAskQSend
+ export _complyAskQComment=$_complyAskQComment
+ export _complyAskQResponseA=$_complyAskQResponseA
+ export _complyAskQResponseB=$_complyAskQResponseB
+ export _complyAskCloseCmd=$_complyAskCloseCmd
+ export _complyAskCloseSend=$_complyAskCloseSend
+ export _complyAskCloseComment=$_complyAskCloseComment
+ export _complyAskCondACmd=$_complyAskCondACmd
+ export _complyAskCondASend=$_complyAskCondASend
+ export _complyAskCondAComment=$_complyAskCondAComment
+ export _complyAskCondBCmd=$_complyAskCondBCmd
+ export _complyAskCondBSend=$_complyAskCondBSend
+ export _complyAskCondBComment=$_complyAskCondBComment
+ export _complyAskElseIfCmd=$_complyAskElseIfCmd
+ export _complyAskElseIfSend=$_complyAskElseIfSend
+ export _complyAskElseIfComment=$_complyAskElseIfComment
+ export _complyAskElseElseCmd=$_complyAskElseElseCmd
+ export _complyAskElseElseSend=$_complyAskElseElseSend
+ export _complyAskElseElseComment=$_complyAskElseElseComment
+export _send=$_send
+export _comment=$_comment
+export _CMD=$_CMD
 }
 
 function doneTime() {
@@ -105,6 +165,7 @@ function doneTime() {
 	decodeSec
 	TIMED=$PASS
 	logger "`basename $0` | $TIMED"
+	doVarLoad
 	exit 0
 }
 
@@ -129,6 +190,7 @@ function tellTimeScript() {
 	stopTimeScript
 	decodeSec
 	export STIMED=$PASS
+	echo $STIMED
 }
 
 function openshengine() {
@@ -158,46 +220,8 @@ function loadSudo() {
         if [[ "$EUID" != 0 ]]; then export SUDO="sudo"; fi
 }
 
-function doFlush() {		
-export _send=""
-export _comment=""
-export _CMD=""
-export _complyAskQ=""
-export _complyVar0=""
-export _complyVar1=""
-export _complyAskCMD=""
-export _complyCloseCMD=""
-export _complyCloseComment=""
-export _CMDA0=""
-export _CMDA1=""
-export _commentA1=""
-export _commentA0=""
-export _send0=""
-export _send1=""
-export _sendAsk=""
-export _sendClose=""
-doVarLoad
-}
 
-function doVarLoad() {
-export _send=$_send
-export _comment=$_comment
-export _CMD=$_CMD
-export _complyAskQ=$_complyAskQ
-export _complyVar0=$_complyVar0
-export _complyVar1=$_complyVar1
-export _complyAskCMD=$_complyAskCMD
-export _complyCloseCMD=$_complyCloseCMD
-export _complyCloseComment=$_complyCloseComment
-export _CMDA0=$_CMDA0
-export _CMDA1=$_CMDA1
-export _commentA1=$_commentA1
-export _commentA0=$_commentA0
-export _send0=$_send0
-export _send1=$_send1
-export _sendAsk=$_sendAsk
-export _sendClose=$_sendClose
-}
+
 
 
 
@@ -227,7 +251,6 @@ function _ok() {
 	# echo -e -n "$clear$b_green$CHR346$clear"
     
 	
-	
 	echo -e -n "$clear$b_green$_send$clear $_comment"
 	read ACTION
 }
@@ -247,9 +270,8 @@ function _no() {
 function _warn() {
 	# if [[ "$_send" == " ]]; then
 	# echo -e -n "$clear$b_yellow$CHR182$clear"
-	
-
-	echo -e -n "$clear$b_yellow$_send$clear $_comment"
+	_send=$CHR714
+	echo -e -n " $clear$b_yellow$_send $clear $_comment$clear"
 	read ACTION
 	# else
 	# echo -e "$clear$b_yellow$CHR182$clear"
@@ -275,114 +297,182 @@ function _stat() {
 	echo -e -n "$clear$b_teal$_send$clear $_comment"
 	read ACTION
 
-	# echo -e -n "$clear$b_teal$CHR47$clear]"
+	# echo -e -n "$clear$b_teal$CHR47$clear]]"
 	# echo -e $clear$b_teal$CHR47$clear
 }
 
 function _FY() {
 
-	echo -e "[$b_yellow$_send$clear] $_comment "
+	echo -e "$b_yellow$_send$clear $_comment "
 
 }
 function _FG() {
 
-	echo -e "[$b_green$_send$clear] $_comment "
+	echo -e "$b_green$_send$clear $_comment "
 
 }
 
 function _FR() {
 
-	echo -e "[$b_red$_send$clear] $_comment "
+	echo -e "$b_red$_send$clear $_comment "
 
 }
 
 function _FP() {
 
-	echo -e "[$b_purple$_send$clear] $_comment "
+	echo -e "$b_purple$_send$clear $_comment "
 
 }
 
 function _FB() {
 
-	echo -e "[$b_blue$_send$clear] $_comment "
+	echo -e "$b_blue$_send$clear $_comment "
 
 }
 
 function _FT() {
 
-	echo -e "[$b_teal$_send$clear] $_comment "
+	echo -e "$b_teal$_send$clear $_comment "
 
 }
 
 function _FD() {
 
-	echo -e "[$b_gray$_send$clear] $_comment "
+	echo -e "$b_gray$_send$clear $_comment "
 
 }
 
 function _CMD(){
-	echo -e	$_CMD
+	$_CMD
 }
 
 function _checkPath() {
-	echo $PATH | tr ':' '\n'
+	export PATH=`echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':' | sed 's/:\/bin/\/bin/g' | sed 's/\/usr\/sbin:/\/usr\/sbin/g'`
 }
 
 
 
+function _complyAsk() {
+	
+# complyAskQPackage="$( $_complyAskCmd ) | $( $_complyAskQ ) | $( $_complyAskRespond )"
+		_comment=$_complyAskQComment 
+		_send=$_complyAskQSend
+		if [[ "$_complyAskQCmd" != "" ]]; then
+			$_complyAskQCmd
+		fi
+		echo -e -n "$_yellow$_send$clear$_comment  "
+		
+}
+
+function _comply0() {		
+
+# complyAPack="$(  $_complyARespond ) | $( $_complyACmd) | $( $_complyASend ) | $( $_complyAComment )"
+		_comment=$_complyAskCondAComment
+		_send=$_complyAskCondASend
+
+		if [[ "$_complyAskCondACmd" != "" ]]; then
+			$_complyAskCondACmd
+		fi
+		echo -e -n 
+
+		_FY
+}
+function _comply1() {		
+
+# complyBPack="$(  $_complyBRespond ) | $( $_complyBCmd) | $( $_complyBSend ) | $( $_complyBComment ) | $( $_complyElseElseCmd )"
+
+		_comment=$_complyAskCondBComment
+		_send=$_complyAskCondBSend
+		if [[ "$_complyAskCondBCmd" != "" ]]; then
+			$_complyAskCondBCmd
+		fi
+		_FY
+}
 
 function _complyClose(){
 	
-	echo -e $_complyCloseCMD
-	_comment=$_complyCloseComment
-	_sendAsk=
-	_FT
-
-	}
-	
-function _complyAsk() {
-		_comment=$_complyAskQ
-		if [[ "$_complyASKCMD" != "" ]]; then
-		echo -e $_complyASKCMD
-		fi
-		_ok
-}
-
-
-function _comply0() {		
-		_comment=$_commentA1
-		if [[ "$_CMDA0" != "" ]]; then
-		echo -e $_CMDA0
+#complyAskClose="$( $_complyAskCloseCmd ) | $( $_complyAskCloseSend ) | $( $_complyAskCloseComment )"		
+		_comment=$_complyAskCloseComment
+		_send=$_complyAskCloseSend
+		if [[ "$_complyAskCloseCmd" != "" ]]; then
+			$_complyAskCloseCmd
 		fi
 		_FG
-}
-function _comply1() {
-		_comment=$_commentA1
-		if [[ "$_CMDA1" != "" ]]; then
-		echo -e $_CMDA1
+
+}	
+	
+
+function _complyElseIf() {	
+	
+# complyElseIfPack="$(  $_complyElseIfRespond ) | $( $_complyElseIfCmd ) | $( $_complyAskElseIfSend ) | $( $_complyAskElseIfComment ) "
+		_comment=$_complyAskElseIfComment
+		_send=$_complyAskElseIfSend
+		if [[ "$_complyAskElseIfCmd" != "" ]]; then
+			$_complyAskElseIfCmd
 		fi
-		_FB
+		_FY
 }
+
+function _complyElseElse() {		
+
+# complyElseElsePack="$( $_complyElseElseCmd ) | $( $_complyAskElseElseSend ) | $( $_complyAskElseElseComment ) "
+		_comment=$_complyAskElseElseComment
+		_send=$_complyAskElseElseSend
+		if [[ "$_complyAskElseElseCmd" != "" ]]; then
+			$_complyAskElseElseCmd
+		fi
+		_FY
+}
+
 
 
 function _complyConfirm() {
-doVarLoad
-	_complyAsk
 
-if [[ "$_complyVar1" == "" ]]; then 
+_complyAsk
 
-		if [[ "$ACTION" == "$_complyVar0" ]]; then
-				_comply0
+		if [[ "$_complyAskQResponseA" != "" ]] && [[ "$_complyAskQResponseB" == "" ]] &&  [[ "$_complyElseElseCmd" == "" ]] ||  [[ "$_complyElseElseComment" == "" ]]
+			then
+				if [[ "$ACTION" == "$_complyAskQResponseA" ]]; then
+					_comply0	
+				fi
+		elif  [[ "$_complyAskQResponseA" != "" ]] && [[ "$_complyAskQResponseB" != "" ]] &&  [[ "$_complyAskElseElseCmd" != "" ]] ||  [[ "$_complyAskElseElseComment" != "" ]] 
+			then
+				if [[ "$ACTION" == "$_complyAskQResponseA" ]]
+					then
+						_comply0
+				elif  [[ "$ACTION" == "$_complyAskQResponseB" ]]
+					then
+						_comply1
+				else
+						_complyElseElse
+				fi
+
+		elif [[ "$_complyAskQResponseA" != "" ]]  && [[  "$_complyAskQResponseB" == "" ]]  &&  [[ "$_complyAskElseElseCmd" != "" ]] ||  [[ "$_complyAskElseElseComment" != "" ]] 
+				then
+					if [[ "$ACTION" == "$_complyAskQResponseA" ]]
+						then
+							_comply0
+					else
+							_complyElseElse
+					fi		
+		elif [[ "$_complyAskQResponseA" != "" ]] && [[ "$_complyAskQResponseB" != "" ]] && [[ "$_complyAskElseElseCmd" != "" ]] ||  [[ "$_complyAskElseElseComment" != "" ]] 
+				then
+					if [[ "$ACTION" == "$_complyAskQResponseA" ]]
+						then
+							_comply0
+					fi
+					if [[ "$ACTION" == "$_complyAskQResponseB" ]]
+						then
+							_comply1
+					fi
+
+		else
+
+			_no
 		fi
-
-else
-		if [[ "$ACTION" == "$_complyVar0" ]]; then
-				_comply1
-		else 
-				_comply0
-		fi
-fi
+		
 
 _complyClose
 
 }
+

@@ -1,0 +1,35 @@
+
+#!/bin/bash
+if [[ ! "$( echo  | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
+source /usr/local/lib/faron_falcon/loader; startTime
+####################START
+
+
+# _sendAsk=$CHR23
+# _complyAskQ="Hello - do you want to do this? A or B ?   "
+# # _complyAskCMD=""
+
+
+
+   _complyAskQCmd="`hostname -s`"
+   _complyAskQSend="$i_train"
+   _complyAskQComment="Lets see - which will you pick: A or B? "
+   _complyAskQResponseA="A"
+   _complyAskQResponseB="B"
+   _complyAskCondASend="$i_apple"
+   _complyAskCondAComment="I see you picked A - not my sister, B.  Well done!"
+   _complyAskCondBCmd="hostname -d"
+   _complyAskCondBSend="$i_sadface"
+   _complyAskCondBComment="Heheheh you picked B...thank you!"
+ 
+ _complyConfirm
+
+
+
+####################STOP
+doneTime
+### [FILE] FILENAME  [ACTIVE] y
+
+
+
+

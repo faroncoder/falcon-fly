@@ -136,7 +136,7 @@ spawnKills(){
 	#     		fi
 	#     	done
 	#     	for kill in "${CAMP[@]}"; do
-	#     			echo "File to be killed: $kill"
+	#     			echo "File to be killed: $FINDMEMEill"
 	#     	done
 	#     fi
 	# fi

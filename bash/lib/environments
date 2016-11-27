@@ -4,7 +4,6 @@ JAVA_HOME=/usr/lib/jvm/java-8-oracle
 JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
 NWJS=/usr/local/lib/depot-tools
 
-
 export PATH="$PATH:$NODE_HOME:$NPM_HOME:$JAVA_HOME/bin:$JRE_HOME/bin:$NWJS"
 export PATH=/usr/local/lib/flutter/bin:$PATH
 export FALCON=/home/users/faron/.falcon/scripts

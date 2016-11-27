@@ -27,10 +27,10 @@ done
 CORRECTED=(  `echo  "${COLLECT[@]}" | awk '{$1=""; print $0}'` )
 
 for k in "${CORRECTED[@]}"; do
-		if [[ -f "$k" ]]; then
+		if [[ -f "$FINDMEME" ]]; then
 			k=""
 		fi
-		RESSF=` du -sh $k 2>  /dev/null |  awk '{print $1}'  `
+		RESSF=` du -sh $FINDMEME 2>  /dev/null |  awk '{print $1}'  `
 
 		CKG=`echo $RESSF | grep 'G'`
 		CKK=`echo $RESSF | grep 'K'`
@@ -47,7 +47,7 @@ for k in "${CORRECTED[@]}"; do
 			else
 				COLR=""
 			fi
-			echo "${_send}$COLR$RESSF${clear} $k"
+			echo "${_send}$COLR$RESSF${clear} $FINDMEME"
 	done
 
 ####################STOP

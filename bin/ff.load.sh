@@ -14,7 +14,7 @@ if [[ ! -d "$FALCON" ]]; then
 	if [[ "$@" != "" ]]; then
 		CHECKD=( $@  )
 		for k in "${CHECKD[@]}"; do
-			FID=`find $FALCON -type f -name "*$k*"`
+			FID=`find $FALCON -type f -name "*$FINDMEME*"`
 			if [[ "$FID" != "" ]]; then
 				COLLEC="$COLLEC $FID"
 			else
@@ -59,7 +59,7 @@ if [[ ! -d "$FALCON" ]]; then
 			#export GETMSG=$CHR145; FTmsg;
 			#echo "$FMsend So, you are this?$clear "
 		#export GETMSG=$CHR99; FPmsg
-		#	echo "$FMsend$COLR$RESSF$clear $k"
+		#	echo "$FMsend$COLR$RESSF$clear $FINDMEME"
 		#	echo "$FMsend Oh ok, ahem! $clear "
 		#export GETMSG=$CHR145; FTmsg;
 		#echo "$`FMsend $( echo "${FILEHUNT[@]}" | wc -w )`"

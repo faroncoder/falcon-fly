@@ -1,0 +1,1 @@
+SEARCH=( ` grep -r '"$i_' * | cut -d'=' -f2 | sed '/_$/d' `)

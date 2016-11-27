@@ -64,5 +64,5 @@ PS1+="${B_blue}\\A ${B_yellow}\\w ${B_purple}\$${S_clear} "
 
 
 source /usr/local/lib/faron_falcon/environments
-
+_checkPath
 

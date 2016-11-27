@@ -13,9 +13,9 @@ fi
 CHECK=( `echo $@` )
 
 if [[  "${CHECK[@]}" == "" ]]; then
-	GET=( `ls *.mp4` ); for n in "${GET[@]}"; do MD5=`md5sum $n | awk '{print $1}'`; FILE=`echo $n | sed 's/.mp4//g'`; rename "s/$FILE/$MD5/g" $n ; done
-	GET=""
-	GOLP=( `find . -maxdepth 1 -type f -exec basename {} \; | sed '/.sh/d' | sed '/ffmpeg-/d' |  sed '/.ts/d' | sed '/.mov/d'` )
+#	GET=( `ls *.mp4` ); for n in "${GET[@]}"; do MD5=`md5sum $n | awk '{print $1}'`; FILE=`echo $n | sed 's/.mp4//g'`; rename "s/$FILE/$MD5/g" $n ; done
+#	GET=""
+	GOLP=( `find . -maxdepth 1 -type f -exec basename {} \;` )
 else
 	GOLP=( `echo ${CHECK[@]} ` )
 fi
@@ -53,6 +53,9 @@ filePrep(){
 	INFOB="$PWD/mediainfo/$NEWNAME.converted.info"
 	#### data  mediainfo converted ##
 #	NOTIFYSYS="$PWD/ffmpeg.on"
+	####  listing of allowed type of file (by extension only)
+	
+
 }
 fireUpTheEngine(){
 	YEARFILE=`date`
@@ -87,39 +90,49 @@ fireUpTheEngine(){
 	ffmpeg -i "$FEED" -y -codec copy -metadata title="$TITLEFILE" -metadata album="$ALBUMFILE" -metadata year="$YEARFILE" -metadata container="$CONTAINTERFILE" -metadata artist="$ARTISTFILE" -metadata comment="$COMMENTFILE"   "$COLLECT"  < /dev/null;
 	mediainfo "$COLLECT" > "$INFOB"
 }
-
+EXTS=( mp4 wmv avi ts )
 COUNT=0
 ALLFILES=`echo ${GOLP[@]} | wc -w`
-_send=$CHR23; _comment="$b_yellow$ALLFILES$reset files queued"
+_send=$CHR23; _comment="$b_yellow$ALLFILES$clear files queued"
 _FG
 > $PWD/ffmpeg-on
 
 
 for j in "${GOLP[@]}"; do
-				startTimeScript
-				# rm "$PWD/*.dat" 2> /dev/null
-				COUNT=`echo $(( $COUNT + 1 ))`
-				_comment="$j ==> "
-				_send=$CHR24;
-				_FG
-				filePrep
-				fireUpTheEngine 2> /dev/null < /dev/null
-				
-				STIMED=`tellTimeScript`
+	CHKD=`echo $j | cut -d'.' -f2`
+	for ext in "${EXTS[@]}"; do
+		if [[ "$CHKD" != "$ext" ]]; then
+			j=""
+		fi
+		if [[ "$j" != "" ]]; then 
+
+			GETTIME=""
+			startTimeScript
+			sleep 2
+			# rm "$PWD/*.dat" 2> /dev/null
+			COUNT=`echo $(( $COUNT + 1 ))`
+			GETTIME=`tellTimeScript`
+			_comment="$j ==> $GETTIME"
+			_send=$CHR24;
+			_FG
+			filePrep
+			fireUpTheEngine < /dev/null
 
 
-				echo  -n "$STIMED  --   $j" >>  $PWD/ffmpeg-results
-				_comment="$b_yellow$COUNT$reset of $b_red$ALLFILES$reset completed in $b_teal $STIMED $reset "
-				_send=$CHR156
-				_CMD=$( notify-send "Item done" )
-				_ok 
+			echo  -n "$STIMED  --   $j" >>  $PWD/ffmpeg-results
+			_comment="$b_yellow$COUNT$clear of $b_red$ALLFILES$clear completed in $b_teal $GETTIME $clear "
+			_send=$CHR156
+			#_CMD=$( notify-send "Item done" )
+			_FG
 
-				
-				rm $FEED
-
-
+			
+			rm $FEED 2> /dev/null
+		fi
+	done
 
 done
+SSGETTIME=`_checkTime`
+echo "Script completed in total of $SSGETTIME"
 ###################STOP
 ### exit code for clean exit
 doneTime

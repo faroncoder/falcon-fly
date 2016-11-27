@@ -26,6 +26,8 @@ if [[ ! -d "$_PROJ/.jsc" ]]; then
 	fi
 fi
 
+### Search for duplicated links inside .jsc and deletem them
+GET=( `find $PWD/.jsc -maxdepth 3 -type l` ); for j in "${GET[@]}"; do IDM=`basename $j`;  if [[ "$IDM" != ".jsc" ]]; then j=""; else  rm $j; fi;  done
 
 glopCSS() {
 	RESULT=`find -L $PWD/.jsc/css -maxdepth 1 -name '*.css' ! -name 'cssengine.css' | wc -l`

@@ -42,4 +42,4 @@ alias rm="trash-put"
 alias rm1="/bin/rm"
 alias setup="     cd $HOME/.falcon/setup "
 alias ff.node=" cd /srv/www/default/nodejs "
-
+alias ff.log="tail -n 100 /var/log/syslog 2> /dev/null"
