@@ -5,15 +5,15 @@ if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$P
 
 DATABASE=$1
 TABLE=$2
-ARG=( `echo ${@} | awk '{ $1="";$2=""; print $0 }' ` )
+ARG=( `echo "${@}" | awk '{ $1="";$2=""; print $0 }' ` )
 
 COMA=""
 for single in "${ARG[@]}"; do
-	#ping=`echo $single | sed 's/://g'`
+#	ping=`echo $single | sed 's/://g'`
 	ping=`echo $single | sed "s/'//g"`
 	ping=`echo $ping | sed 's/"//g'`
 	trim1=`echo $ping | cut -d':' -f 1`
-	trim2=`echo $ping | sed "/$trim1://g"`
+	trim2=`echo $ping | sed "s/$trim1://g"`
 	CHK=`echo $trim2 | grep '[A-Za-z]' `
 	if [[ "$CHK" != "" ]]; then
 		OL="\""
@@ -21,11 +21,11 @@ for single in "${ARG[@]}"; do
 		OL=""
 	fi
 	populate="$COMA\"$trim1\":$OL$trim2$OL"
-	populateALL="${populateALL}$populate"
+	populateALL="${populateALL} $populate"
 	COMA=","
 done
 
-THIS="[{${populateALL}}]"
+THIS="{${populateALL}}"
 
 # echo -e $THIS
 # echo ${THIS}

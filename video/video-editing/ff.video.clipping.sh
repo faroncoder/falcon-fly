@@ -2,127 +2,104 @@
 if [[ ! "$( echo $PATH | grep 'source /usr/local/bin' )" ]]; then export PATH=$PATH:/usr/local/bin; fi
  source /usr/local/lib/faron_falcon/loader; startTime;
 ####################START
-CLIPNAME="$1"
-STARTTIME="$2"
-ENDTIME="$3"
-NEWNAME="$( uuid | cut -d '-' -f1-2 )"
+FILENAME="$1"
+GETSTTIME="$2"
+GETENDTIME="$3"
+# NEWNAME="$( uuid | cut -d '-' -f1-2 )"
 
-function getmovietimeend {
+# function getmovietimeend {
 
-GETRAWTIME="$( mediainfo "$CLIPNAME" | awk '{ if ( $1 =="Duration" ) {print $0; exit; }}' )"
-POSHOUR="$( echo $GETRAWTIME | awk '{ print $3 }' )"
-POSMIN="$( echo $GETRAWTIME | awk '{ print $4 }' )"
-POSSEC="$( echo $GETRAWTIME | awk '{ print $5 }' )"
-POSSM="$( echo $GETRAWTIME | awk '{ print $5 }' )"
+    mediainfo $FILENAME | grep 'Duration' | head -n 1 | cut -d':' -f2 > /tmp/time.txt
+    sed -i -e 's/ /\n/g' /tmp/time.txt
+    # echo $TIMEDONE | tr '  ' '\n' >> /tmp/time.txt
+    # for time in "${TIMEDONE[@]}"; do
+        sed -i -e '/ms/d' /tmp/time.txt
+        HR=`grep 'h' /tmp/time.txt | sed 's/h//g'`
+        MN=`grep 'mn' /tmp/time.txt | sed 's/[A-Za-z]//g'`
+        SC=`grep 's' /tmp/time.txt | sed 's/[A-Za-z]//g' `
+                
+        CHK=`echo $HR`
+        if [[ "$CHK" == "" ]]; then
+            HR="0"
+        fi
+        CHK=`echo $MN`
+        if [[ "$CHK" == "" ]]; then
+            MN="0"
+        fi
+        CHK=`echo $SC`
+        if [[ "$CHK" == "" ]]; then
+            SC="0"
+        fi
+        HR=`seq -w 00 $HR | tail -n 1`
+        MN=`seq -w 00 $MN | tail -n 1`
+        SC=`seq -w 00 $SC | tail -n 1`
+        REELTIMEEND="$HR:$MN:$SC"   
+        if [[ ! -f "$PWD/orig-$FILENAME" ]]; then
+                    cp $FILENAME "orig-$FILENAME"
+        fi
+        CLIPNAME="$FILENAME"
+        if [[ "$GETSTTIME" == "" ]]; then
+            echo -n "Begin time of clip? ( format: 00:00:00 ) "
+            read GETSTTIME
+        fi
+        if [[ "$GETENDTIME" == "" ]]; then
+            echo -n "End time of clip?  ( $REELTIMEEND ) "
+            read GETENDTIME
+       fi
 
-CHECKFORMAT="$( echo "${POSHOUR: -1}" )"
+STARTTIME=`echo $GETSTTIME | tr '.' ':'`
+ENDTIME=`echo $GETENDTIME | tr '.' ':'`
+    
 
-if [ "$CHECKFORMAT" = "h" ]
-    then
+    # timeA=$STARTTIME # 09:59:35
+    # timeB=$ENDTIME # 17:32:55
 
+    # feeding variables by using read and splitting with IFS
+    IFS=: read ah am as <<< "$STARTTIME"
+    IFS=: read bh bm bs <<< "$ENDTIME"
 
-        PLHOUR="$( echo $POSHOUR | tr 'h' ' '| tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' ' )"
-        PLMINUTE="$( echo $POSMIN | tr 'h' ' '| tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' ' )"
-        PLSECOND="$( echo $POSSEC | tr 'h' ' '| tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' '  )"
-        PLSECMM="$( echo $POSSM | tr 'h' ' ' | tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' '  )"
-      CALENDTIME="$( echo "$PLHOUR:$PLMINUTE:$PLSECOND" | sed 's/ //g' )"
-fi
-if [ "$CHECKFORMAT" = "n" ]
-    then
+    # Convert hours to minutes.
+    # The 10# is there to avoid errors with leading zeros
+    # by telling bash that we use base 10
+    secondsA=`echo "( $ah * 60 * 60 ) + ( $am * 60 ) + ( $as )" | bc `
+    secondsB=`echo "( $bh * 60 * 60 ) + ( $bm * 60 ) + ( $bs )" | bc `
+    
+    # echo $((10#$ah*60*60 + 10#$am*60 + 10#$as))
+    # secondsB=echo $((10#$bh*60*60 + 10#$bm*60 + 10#$bs))
+    DIFF_SEC=`echo "$secondsB -  $secondsA" | bc `
+    # echo "The difference is $DIFF_SEC seconds.";
 
-        PLHOUR="$( echo 00 )"
-        PLMINUTE="$( echo $POSHOUR | tr 'mn' ' ' )"
-        PLMINUTE="$( printf '%02i\n' $PLMINUTE )"
-        PLSECOND="$( echo $POSMIN | tr 's' ' '  )"
-        PLSECOND="$( printf '%02i\n' $PLSECOND )"
-        PLSECMM="$( echo $POSSEC | tr 'ms' ' '  )"
-        PLSECMM="$( printf '%02i\n' $PLSECMM )"
-        CALENDTIME="$( echo "$PLHOUR:$PLMINUTE:$PLSECOND" | sed 's/ //g' )"
-  fi
-if [ "$CHECKFORMAT" = "s" ]
-    then
+    SEC=$(($DIFF_SEC%60))
+    MIN=$((($DIFF_SEC-$SEC)%3600/60))
+    HRS=$((($DIFF_SEC-$MIN*60)/3600))
+   
+    SEC=`seq -w 00 $SEC | tail -n 1`
+    MIN=`seq -w 00 $MIN | tail -n 1`
+    HRS=`seq -w 00 $HRS | tail -n 1`
+    TIME_DIFF="$HRS:$MIN:$SEC";
+    TIMEWHERE=$TIME_DIFF
 
-        PLHOUR="$( echo 00 )"
-        PLMINUTE="$( echo 00 )"
-        PLSECOND="$( echo $POSHOUR | tr 'h' ' '| tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' ' )"
-        PLSECOND="$( printf '%02i\n' $PLSECOND )"
-        PLSECMM="$( echo $POSMIN | tr 'h' ' '| tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' '  )"
-        PLSECMM="$( printf '%02i\n' $PLSECMM )"
-      CALENDTIME="$( echo "$PLHOUR:$PLMINUTE:$PLSECOND" | sed 's/ //g' )"
-  fi
-if [ "$CHECKFORMAT" = "ms" ]
-    then
+    echo $TIMEWHERE
+#        NEWCLIPNAME="clipped-`uuid`-$CLIPNAME"
+#      # echo "$STARTTIME for $TOTAL seconds on $CLIPNAME"
+#      # echo $TIMEWHERE
+ EXT=`echo $CLIPNAME | rev | cut -d'.' -f1 | rev`
 
-        PLHOUR="$( echo 00 )"
-        PLMINUTE="$( echo 00 )"
-        PLSECOND="$( echo 00 )"
-        PLSECMM="$( echo $POSHOUR | tr 'h' ' '| tr 'mn' ' '| tr 's' ' ' | tr 'ms' ' ' )"
-        PLSECMM="$( printf '%02i\n' $PLSECMM )"
-        CALENDTIME="$( echo "$PLHOUR:$PLMINUTE:$PLSECOND" | sed 's/ //g' )"
+  
+    TEMP=`uuid`
+    TEMPFILE="$TEMP.$EXT"
 
-fi
+       ffmpeg   -ss "$STARTTIME" -i "$CLIPNAME" -t "$TIMEWHERE" -c copy -metadata comment="clipped from orginial" -f "$EXT" "$TEMPFILE" < /dev/null
+# # done    
+# GETCLIPPED=( ` find . maxdepth 1 -type f -name 'clipped-*' ` )
 
-## returns time as CALENDTIME
+            NEWCLIPNAME="`md5sum $TEMPFILE | awk '{print $1}'`"
+            # POSTNAME="$NEWCLIPNAME.$EXT"
+                # OLD=`echo $CLIPNAME | sed "s/.$EXT//g"`
+            # echo "$OLD == $NEWCLIPNAME  | $CLIPNAME"
 
-}
-
-STARTTIME="00:00:00"
-
-if [ ! -d "new-mp4" ]
-	then
-		mkdir $HOME/new-mp4 -p
-
-fi
-
-
-if [ -z "$1" ]
-    then
-    echo -n "Which clip you want to check? "
-    read $PWD/CLIPNAME
-fi
-
-if [ -z "$2" ]
-    then
-    echo -n "Extract clip at starting time? [Enter if 00:00:00] "
-    read GETSTARTTIME
-    if [ -z "$GETSTARTTIME"  ]
-        then
-            GETSTARTTIME="00:00:00"
-    fi
-fi
-
-if [ -z "$3" ]; then
-    getmovietimeend
-    echo -n "Extract clip at ending time? [Enter for $CALENDTIME] "
-    read GETENDTIME
-
-fi
-
- if [ -z "$GETENDTIME"  ]; then
-            GETENDTIME=$CALENDTIME
-    fi
-
-ENDTIME="$( echo $GETENDTIME | sed 's/\./:/g' )"
-STARTTIME="$( echo $GETSTARTTIME | sed 's/\./:/g' )"
-CALUF=`echo $ENDTIME - $STARTTIME | bc `
-
-echo $ENDTIME
-echo $STARTTIME
-echo $CALUF
-# ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -t "$CALUF" -c copy -pix_fmt yuv420p -map 0 -clear_timestamps 1 -fflags genpts -movflags +faststart -f mp4 "new-mp4/$NEWNAME.mp4" < /dev/null
-
-# ffmpeg   -ss "$STARTTIME" -i  "$CLIPNAME" -to "$ENDTIME" -c copy "new-mp4/$NEWNAME.mp4" < /dev/null
-
-
-# echo -n "push $CLIPNAME out as completed? "
-# read PUSHRESPOND
-# if [ "$PUSHRESPOND" = "y" ]
-#     then
-#         mv $CLIPNAME clips-completed/
-#         echo "$CLIPNAME archieved as processed..."
-#     else
-#         echo "$CLIPNAME still resides in this directory..."
-# fi
+            # rename "s/$OLD/$NEW/g" $CLIPNAME
+            rename "s/$TEMP/$NEWCLIPNAME-clipped/g" $TEMPFILE
 
 ####################STOP
 ### exit code for clean exit

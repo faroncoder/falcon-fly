@@ -86,7 +86,11 @@ function decodeSec() {
 		min=0
 		hour=0
 		day=0
-		num=$num
+		if [[ "$getnum" == "" ]]; then
+			num=$num
+		else 
+			num=`echo $getnum`
+		fi
 		processArray
 		populate
 		export PASS="$DAY:$HOUR:$MIN:$SEC"
